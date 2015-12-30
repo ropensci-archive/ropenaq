@@ -66,8 +66,11 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
     query <- paste0(query, "&parameter=", parameter)
   }
   # has_geo
-  if(!is.null(has_geo)&has_geo==TRUE){
-    query <- paste0(query, "&has_geo=1")
+  if(!is.null(has_geo)){
+    if(has_geo==TRUE){
+      query <- paste0(query, "&has_geo=1")
+    }
+
   }
 
   # check dates
@@ -121,8 +124,8 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
     }
 
     tableOfData <- dplyr::mutate(tableOfData,dateUTC=lubridate::ymd_hms(dateUTC),
-                                 dateLocal=lubridate::ymd_hms(substr(dateLocal, 1, 19)))%>%
-      dplyr::arrange(dateUTC)
+                                 dateLocal=lubridate::ymd_hms(substr(dateLocal, 1, 19)))
+    tableOfData <- dplyr::arrange(tableOfData, dateUTC)
 
     # DONE!
     return(tableOfData)
