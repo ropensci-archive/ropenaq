@@ -24,7 +24,7 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 
-\item{date_from}{Show results after a certain date. (ex. "2015-12-20")}
+\item{date_from}{Show results after a certain date. (ex. "2015-12-20").}
 
 \item{date_to}{Show results before a certain date. (ex. "2015-12-20")}
 }
