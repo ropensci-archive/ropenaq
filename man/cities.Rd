@@ -7,7 +7,7 @@
 cities(country = NULL)
 }
 \arguments{
-\item{country}{}
+\item{country}{Limit results by a certain country.}
 }
 \value{
 a data.table with locations, count, country, city columns.

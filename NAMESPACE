@@ -2,6 +2,7 @@
 
 export(cities)
 export(countries)
+export(latest)
 export(locations)
 export(measurements)
 import(dplyr)

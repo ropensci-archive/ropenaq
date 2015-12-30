@@ -2,7 +2,7 @@
 #'
 #' @import dplyr
 #' @import httr
-#' @param country
+#' @param country Limit results by a certain country.
 #'
 #' @return a data.table with locations, count, country, city columns.
 #' @export

@@ -9,7 +9,24 @@ locations(city = NULL, country = NULL, location = NULL,
   date_from = NULL, date_to = NULL)
 }
 \arguments{
-\item{date_to}{}
+\item{city}{Limit results by a certain city.}
+
+\item{country}{Limit results by a certain country.}
+
+\item{location}{Limit results by a certain location.}
+
+\item{parameter}{Limit to only a certain parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc").
+If no parameter is given, all parameters are retrieved.}
+
+\item{has_geo}{Filter out items that have or do not have geographic information.Can only be TRUE for now.}
+
+\item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
+
+\item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
+
+\item{date_from}{Show results after a certain date. (ex. "2015-12-20")}
+
+\item{date_to}{Show results before a certain date. (ex. "2015-12-20")}
 }
 \value{
 A data.table with for each location: its name, the city and the country it is in, the number of measures for this location,

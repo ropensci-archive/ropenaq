@@ -3,7 +3,7 @@
 #' @import dplyr
 #' @import lubridate
 #' @import httr
-#' @param country 	Limit results by a certain country.
+#' @param country Limit results by a certain country.
 #' @param city 	Limit results by a certain city.
 #' @param location Limit results by a certain location.
 #' @param parameter Limit to only a certain parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc").
@@ -23,7 +23,7 @@
 #' #'
 #' @examples
 #' measurements(country="AU")
-#' measurements(country="AU", has_geo=TRUE)
+#' measurements(country="US", has_geo=TRUE)
 #' @export
 
 measurements <- function(country=NULL, city=NULL, location=NULL,
@@ -118,9 +118,23 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
                  city=city,
                  country=country))
 
+    geoCoordLat <- function(x){
+      if(is.null(x$coordinates$latitude)){
+        return(NA)
+      }
+      else(return(x$coordinates$latitude))
+    }
+
+    geoCoordLong <- function(x){
+      if(is.null(x$coordinates$longitude)){
+        return(NA)
+      }
+      else(return(x$coordinates$longitude))
+    }
+
     if(!is.null(unlist(lapply(contentPage[[2]], function (x) x$coordinates$latitude)))){
-      latitude <- unlist(lapply(contentPage[[2]], function (x) x$coordinates$latitude))
-      longitude <- unlist(lapply(contentPage[[2]], function (x) x$coordinates$longitude))
+      latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
+      longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
       tableOfData <- dplyr::mutate(tableOfData, latitude=latitude, longitude=longitude)
     }
 

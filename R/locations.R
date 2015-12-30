@@ -2,15 +2,17 @@
 #'
 #' @imports dplyr
 #' @imports lubridate
-#' @param city
-#' @param country
-#' @param location
-#' @param parameter
-#' @param has_geo
-#' @param value_from
-#' @param value_to
-#' @param date_from
-#' @param date_to
+#'
+#' @param city 	Limit results by a certain city.
+#' @param country Limit results by a certain country.
+#' @param location Limit results by a certain location.
+#' @param parameter Limit to only a certain parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc").
+#' If no parameter is given, all parameters are retrieved.
+#' @param has_geo Filter out items that have or do not have geographic information.Can only be TRUE for now.
+#' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
+#' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
+#' @param date_from Show results after a certain date. (ex. "2015-12-20")
+#' @param date_to Show results before a certain date. (ex. "2015-12-20")
 #'
 #' @return A data.table with for each location: its name, the city and the country it is in, the number of measures for this location,
 #'  the name of the source, and the dates and times at which it was first and last updated, respectively.
