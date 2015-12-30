@@ -14,3 +14,8 @@ test_that("if has_geo is TRUE then we get a table with coordinates", {
   expect_true("latitude" %in% names(measurementsTable))
   expect_true("longitude" %in% names(measurementsTable))
 })
+
+test_that("if there is no result the function outputs an error", {
+  expect_error(measurements(country="RIEN"), "No results for this query")
+})
+
