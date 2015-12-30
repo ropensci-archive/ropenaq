@@ -63,7 +63,7 @@ locations <- function(city=NULL,
   }
 
   # check dates
-  if(!is.null(date_from)&!is.null(date_from)){
+  if(!is.null(date_from)&!is.null(date_to)){
     if(ymd(date_from)>ymd(date_to)){
       stop("The start date must be smaller than the end date.")
     }
