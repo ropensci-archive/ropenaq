@@ -14,6 +14,7 @@ cities <- function(country=NULL){
   query <- "https://api.openaq.org/v1/cities"
   # country
   if(!is.null(country)){
+    if(!(country%in%countries()$code)){stop("This country is not available within the platform.")}
     query <- paste0(query, "?country=", country)
   }
 

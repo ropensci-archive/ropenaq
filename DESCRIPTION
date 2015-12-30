@@ -11,3 +11,6 @@ LazyData: TRUE
 RoxygenNote: 5.0.1
 URL: http://github.com/masalmon/Ropenaq
 BugReports: http://github.com/masalmon/Ropenaq/issues
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

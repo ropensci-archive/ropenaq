@@ -1,0 +1,76 @@
+---
+title: "Vignette for the Ropenaq package"
+author: "Maëlle Salmon"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+This package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table, that can be further processed and analysed.
+
+The package depends on three packages in total: `httr`, `dplyr` and `lubridate`.
+
+# Finding data availability
+
+Three functions of the package allow to get lists of available information. Measurements are obtained from *locations* that are in *cities* that are in *countries*. 
+
+## The `countries` function
+
+The `countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument.
+
+````{r, warning=FALSE}
+library("Ropenaq")
+countries()
+
+```
+
+## The `cities` function
+
+Using the `cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, and the country it is in.
+
+```{r}
+cities()
+
+```
+
+The optional `country` argument allows to do this for a given country instead of the whole world.
+
+```{r}
+cities(country="IN")
+
+```
+
+If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
+
+```{r, error=TRUE}
+cities(country="PANEM")
+```
+
+## The `locations` function
+
+The `locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum. Below are several examples.
+
+Here we only look for locations with PM2.5 information in India.
+
+```{r}
+locations(country="IN", parameter="pm25")
+```
+
+# Getting data
+
+
+## The `measurements` function
+
+```{r}
+measurements(country="IN", parameter="pm25", limit=9)
+
+```
+
+
+## The `latest` function
+
