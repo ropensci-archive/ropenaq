@@ -2,6 +2,7 @@
 
 export(cities)
 export(countries)
+export(locations)
 export(measurements)
 import(dplyr)
 import(httr)

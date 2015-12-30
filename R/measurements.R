@@ -46,6 +46,7 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
 
   # country
   if(!is.null(country)){
+    if(!(country%in%countries()$code)){stop("This country is not available within the platform.")}
     query <- paste0(query, "&country=", country)
   }
 

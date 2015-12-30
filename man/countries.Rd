@@ -6,6 +6,9 @@
 \usage{
 countries()
 }
+\value{
+data.table with code and name for each country, as well as the number of sources in each country.
+}
 \description{
 Providing a simple listing of countries within the platform.
 }

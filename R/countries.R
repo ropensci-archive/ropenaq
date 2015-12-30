@@ -1,6 +1,7 @@
 #' Providing a simple listing of countries within the platform.
 #'
-#' @return
+#' @imports dplur
+#' @return data.table with code and name for each country, as well as the number of sources in each country.
 #' @export
 #'
 #' @examples
