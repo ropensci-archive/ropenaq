@@ -120,7 +120,7 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
     if(!is.null(unlist(lapply(contentPage[[2]], function (x) x$coordinates$latitude)))){
       latitude <- unlist(lapply(contentPage[[2]], function (x) x$coordinates$latitude))
       longitude <- unlist(lapply(contentPage[[2]], function (x) x$coordinates$longitude))
-      tableOfData <- mutate(tableOfData, latitude=latitude, longitude=longitude)
+      tableOfData <- dplyr::mutate(tableOfData, latitude=latitude, longitude=longitude)
     }
 
     tableOfData <- dplyr::mutate(tableOfData,dateUTC=lubridate::ymd_hms(dateUTC),
