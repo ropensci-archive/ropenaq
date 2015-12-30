@@ -1,0 +1,11 @@
+Package: Ropenaq
+Type: Package
+Title: The Package is a R Interface to the openaq API
+Version: 0.1
+Date: 2015-12-30
+Author: Maëlle Salmon
+Maintainer: Who to complain to <maelle.salmon@yahoo.se>
+Description: See https://docs.openaq.org/
+License: GPL (version 2 or later)
+LazyData: TRUE
+RoxygenNote: 5.0.1
