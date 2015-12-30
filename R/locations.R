@@ -75,7 +75,7 @@ locations <- function(city=NULL,
     query <- paste0(query, "&date_from=", date_from)
   }
   # date_to
-  if(!is.null(date_from)){
+  if(!is.null(date_to)){
     query <- paste0(query, "&date_to=", date_to)
   }
 
@@ -98,7 +98,7 @@ locations <- function(city=NULL,
     query <- paste0(query, "&value_to=", date_to)
   }
 
-  if(query=="https://api.openaq.org/v1/locations?"){
+  if(identical(as.character("https://api.openaq.org/v1/locations?"), as.character(query))){
     query <- "https://api.openaq.org/v1/locations"
   }
   # get results
