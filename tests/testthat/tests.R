@@ -1,6 +1,6 @@
 library("Ropenaq")
 #################################################################################################
-context("Measurements")
+context("measurements")
 #################################################################################################
 
 test_that("measurements returns a data table", {
@@ -16,6 +16,26 @@ test_that("if has_geo is TRUE then we get a table with coordinates", {
 })
 
 test_that("if there is no result the function outputs an error", {
-  expect_error(measurements(country="RIEN"), "No results for this query")
+  expect_error(measurements(country="PANEM"), "No results for this query")
 })
 
+#################################################################################################
+context("cities")
+#################################################################################################
+test_that("cities returns a data table", {
+  expect_that(cities(country="IN"), is_a("tbl_df"))
+
+})
+
+test_that("if there is no result the function outputs an error", {
+  expect_error(cities(country="PANEM"), "No results for this query")
+})
+
+
+#################################################################################################
+context("countries")
+#################################################################################################
+test_that("countries returns a data table", {
+  expect_that(countries(), is_a("tbl_df"))
+
+})
