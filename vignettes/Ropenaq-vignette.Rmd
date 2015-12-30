@@ -9,6 +9,10 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+```{r, echo=FALSE}
+library("knitr")
+``` 
+
 # Introduction
 
 This package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table, that can be further processed and analysed.
@@ -25,7 +29,8 @@ The `countries` function allows to see for which countries information is availa
 
 ````{r, warning=FALSE}
 library("Ropenaq")
-countries()
+countriesTable <- countries()
+kable(countriesTable)
 
 ```
 
@@ -33,16 +38,16 @@ countries()
 
 Using the `cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, and the country it is in.
 
-```{r}
-cities()
-
+```{r, cache=TRUE}
+citiesTable <- cities()
+kable(head(citiesTable))
 ```
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
-```{r}
-cities(country="IN")
-
+```{r, cache=TRUE}
+citiesTableIndia <- cities(country="IN")
+kable(citiesTableIndia)
 ```
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
@@ -57,20 +62,20 @@ The `locations` function has far more arguments than the first two functions. On
 
 Here we only look for locations with PM2.5 information in India.
 
-```{r}
-locations(country="IN", parameter="pm25")
+```{r, cache=TRUE}
+locationsIndia <- locations(country="IN", parameter="pm25")
+kable(locationsIndia)
+```
+
+Then we could only choose to see the locations with results before 2015-10-01.
+
+```{r, cache=TRUE}
+locationsIndia2 <- locations(country="IN", parameter="pm25", date_to="2015-10-01")
+kable(locationsIndia2)
 ```
 
 # Getting data
 
 
 ## The `measurements` function
-
-```{r}
-measurements(country="IN", parameter="pm25", limit=9)
-
-```
-
-
-## The `latest` function
 
