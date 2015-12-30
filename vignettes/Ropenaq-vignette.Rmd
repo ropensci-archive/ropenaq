@@ -15,7 +15,7 @@ library("knitr")
 
 # Introduction
 
-This package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table, that can be further processed and analysed.
+This package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table objects, that can be further processed and analysed.
 
 The package depends on three packages in total: `httr`, `dplyr` and `lubridate`.
 
@@ -76,6 +76,39 @@ kable(locationsIndia2)
 
 # Getting data
 
+Two functions allow to get data: `measurement` and `latest`.
 
 ## The `measurements` function
+
+The measurements function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
+
+```{r, cache=TRUE}
+tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
+kable(head(tableResults))
+```
+
+One can also get all possible parameters in the same table.
+
+```{r, cache=TRUE}
+tableResults2 <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter=NULL)
+kable(head(tableResults2))
+```
+
+## The `latest` function
+
+This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are `NULL`, it gives all the newest measures for all locations.
+
+
+```{r, cache=TRUE}
+tableLatest <- latest()
+knitr::kable(head(tableLatest))
+```
+
+Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
+
+```{r, cache=TRUE}
+tableLatest <- latest(country="IN", city="Delhi", location="Anand+Vihar")
+knitr::kable(head(tableLatest))
+```
+
 

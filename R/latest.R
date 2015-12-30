@@ -29,6 +29,7 @@ latest <- function(city=NULL,
     query <- paste0(query, "&country=", country)
   }
 
+
   # city
   if(!is.null(city)){
     query <- paste0(query, "&city=", city)
