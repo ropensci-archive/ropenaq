@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "R package Ropenaq"
+author: "M. Salmon"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
