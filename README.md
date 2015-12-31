@@ -5,3 +5,108 @@ The Package is a R Interface to the openaq API
 library("devtools")
 
 install_github("masalmon/Ropenaq", build_vignettes=TRUE)
+
+
+```{r, echo=FALSE}
+library("knitr")
+``` 
+
+# Introduction
+
+This package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table objects, that can be further processed and analysed.
+
+The package depends on three packages in total: `httr`, `dplyr` and `lubridate`.
+
+# Finding data availability
+
+Three functions of the package allow to get lists of available information. Measurements are obtained from *locations* that are in *cities* that are in *countries*. 
+
+## The `countries` function
+
+The `countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument.
+
+````{r, warning=FALSE}
+library("Ropenaq")
+countriesTable <- countries()
+head(countriesTable)
+
+```
+
+## The `cities` function
+
+Using the `cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, and the country it is in.
+
+```{r, cache=TRUE}
+citiesTable <- cities()
+kable(head(citiesTable))
+```
+
+The optional `country` argument allows to do this for a given country instead of the whole world.
+
+```{r, cache=TRUE}
+citiesTableIndia <- cities(country="IN")
+kable(citiesTableIndia)
+```
+
+If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
+
+```{r, error=TRUE}
+cities(country="PANEM")
+```
+
+## The `locations` function
+
+The `locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum. Below are several examples.
+
+Here we only look for locations with PM2.5 information in India.
+
+```{r, cache=TRUE}
+locationsIndia <- locations(country="IN", parameter="pm25")
+kable(locationsIndia)
+```
+
+Then we could only choose to see the locations with results before 2015-10-01.
+
+```{r, cache=TRUE}
+locationsIndia2 <- locations(country="IN", parameter="pm25", date_to="2015-10-01")
+kable(locationsIndia2)
+```
+
+# Getting data
+
+Two functions allow to get data: `measurement` and `latest`.
+
+## The `measurements` function
+
+The measurements function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
+
+```{r, cache=TRUE}
+tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
+kable(head(tableResults))
+```
+
+One can also get all possible parameters in the same table.
+
+```{r, cache=TRUE}
+tableResults2 <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter=NULL)
+kable(head(tableResults2))
+```
+
+## The `latest` function
+
+This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are `NULL`, it gives all the newest measures for all locations.
+
+
+```{r, cache=TRUE}
+tableLatest <- latest()
+knitr::kable(head(tableLatest))
+```
+
+Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
+
+```{r, cache=TRUE}
+tableLatest <- latest(country="IN", city="Delhi", location="Anand+Vihar")
+knitr::kable(head(tableLatest))
+```
+
+
