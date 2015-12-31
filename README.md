@@ -1,9 +1,9 @@
 Introduction
 ============
 
-This package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table objects, that can be further processed and analysed.
+This R package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table objects, that can be further processed and analysed.
 
-The package depends on three packages in total: `httr`, `dplyr` and `lubridate`.
+The package depends on three R packages in total: `httr`, `dplyr` and `lubridate`.
 
 For installing the package,
 
