@@ -9,7 +9,7 @@ For installing the package,
 
 ``` r
 library("devtools")
-install_github("masalmon/Ropenaq", build_vignettes=TRUE)
+install_github("masalmon/Ropenaq")
 ```
 
 Finding data availability
