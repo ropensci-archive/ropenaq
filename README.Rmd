@@ -7,15 +7,18 @@ output:
     variant: markdown_github
 ---
 
-```{r, echo=FALSE}
-library("knitr")
-``` 
-
 # Introduction
 
 This package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table objects, that can be further processed and analysed.
 
 The package depends on three packages in total: `httr`, `dplyr` and `lubridate`.
+
+For installing the package,
+
+```{r, eval=FALSE}
+library("devtools")
+install_github("masalmon/Ropenaq", build_vignettes=TRUE)
+```
 
 # Finding data availability
 
@@ -28,6 +31,7 @@ The `countries` function allows to see for which countries information is availa
 ````{r, warning=FALSE}
 library("Ropenaq")
 countriesTable <- countries()
+library("knitr")
 kable(countriesTable)
 
 ```
@@ -85,12 +89,8 @@ tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar",
 kable(head(tableResults))
 ```
 
-One can also get all possible parameters in the same table.
+One could also get all possible parameters in the same table.
 
-```{r, cache=TRUE}
-tableResults2 <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter=NULL)
-kable(head(tableResults2))
-```
 
 ## The `latest` function
 
@@ -99,14 +99,14 @@ This function gives a table with all newest measures for the locations that are 
 
 ```{r, cache=TRUE}
 tableLatest <- latest()
-knitr::kable(head(tableLatest))
+kable(head(tableLatest))
 ```
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
 
 ```{r, cache=TRUE}
 tableLatest <- latest(country="IN", city="Delhi", location="Anand+Vihar")
-knitr::kable(head(tableLatest))
+kable(head(tableLatest))
 ```
 
 
