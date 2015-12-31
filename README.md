@@ -7,7 +7,7 @@ library("devtools")
 install_github("masalmon/Ropenaq", build_vignettes=TRUE)
 
 
-```{r, echo=FALSE}
+``` r
 library("knitr")
 ``` 
 
@@ -25,10 +25,10 @@ Three functions of the package allow to get lists of available information. Meas
 
 The `countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument.
 
-````{r, warning=FALSE}
+``` r
 library("Ropenaq")
 countriesTable <- countries()
-head(countriesTable)
+kable(countriesTable)
 
 ```
 
@@ -36,14 +36,14 @@ head(countriesTable)
 
 Using the `cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, and the country it is in.
 
-```{r, cache=TRUE}
+``` r
 citiesTable <- cities()
 kable(head(citiesTable))
 ```
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
-```{r, cache=TRUE}
+``` r
 citiesTableIndia <- cities(country="IN")
 kable(citiesTableIndia)
 ```
@@ -60,7 +60,7 @@ The `locations` function has far more arguments than the first two functions. On
 
 Here we only look for locations with PM2.5 information in India.
 
-```{r, cache=TRUE}
+``` r
 locationsIndia <- locations(country="IN", parameter="pm25")
 kable(locationsIndia)
 ```
@@ -80,7 +80,7 @@ Two functions allow to get data: `measurement` and `latest`.
 
 The measurements function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
 
-```{r, cache=TRUE}
+``` r
 tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
 kable(head(tableResults))
 ```
@@ -97,14 +97,14 @@ kable(head(tableResults2))
 This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are `NULL`, it gives all the newest measures for all locations.
 
 
-```{r, cache=TRUE}
+``` r
 tableLatest <- latest()
 knitr::kable(head(tableLatest))
 ```
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
 
-```{r, cache=TRUE}
+``` r
 tableLatest <- latest(country="IN", city="Delhi", location="Anand+Vihar")
 knitr::kable(head(tableLatest))
 ```
