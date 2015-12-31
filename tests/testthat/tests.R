@@ -4,13 +4,13 @@ context("measurements")
 #################################################################################################
 
 test_that("measurements returns a data table", {
-  measurementsTable <- measurements(country="AU")
+  measurementsTable <- measurements(country="IN", limit=9, city="Chennai")
   expect_that(measurementsTable, is_a("tbl_df"))
 
 })
 
 test_that("if has_geo is TRUE then we get a table with coordinates", {
-  measurementsTable <- measurements(has_geo=TRUE, limit=10)
+  measurementsTable <- measurements(has_geo=TRUE, limit=10, country="US")
   expect_true("latitude" %in% names(measurementsTable))
   expect_true("longitude" %in% names(measurementsTable))
 })

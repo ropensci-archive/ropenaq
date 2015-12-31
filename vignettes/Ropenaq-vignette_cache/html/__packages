@@ -1,3 +1,6 @@
 base
 Ropenaq
 knitr
+httr
+lubridate
+dplyr

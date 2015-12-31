@@ -41,7 +41,7 @@ value_from and value_to were not included because one could filter the output ta
 #'
 }
 \examples{
-measurements(country="AU")
+measurements(country="IN", limit=9, city="Chennai")
 measurements(country="US", has_geo=TRUE)
 }
 
