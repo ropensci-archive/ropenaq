@@ -106,6 +106,8 @@ locations <- function(city=NULL,
   page <- httr::GET(query)
 
   contentPage <- httr::content(page)
+  contentPageText <- httr::content(page,as = "text")
+  if(grepl("Gateway time-out", toString(contentPageText))){stop("Gateway time-out, but try again in a few minutes.")}
   if(length(contentPage[[2]])==0){stop("No results for this query")}
   else{
     location <- unlist(lapply(contentPage[[2]], function (x) x['location']))
