@@ -14,7 +14,7 @@
 #' @examples
 #' latest(country="IN", city="Chennai")
 #' latest(parameter="co")
-#' @return
+#' @return a data.table with location, city, country, parameter, value, the last time at which this value was updated, unit, latitude and longitude (NA when non available).
 #' @export
 #'
 #' @examples
@@ -169,27 +169,7 @@ latest <- function(city=NULL,
                  lastUpdated=lastUpdated,
                  unit=unit))
 
-    geoCoordLat <- function(x){
-      if(is.null(x$coordinates$latitude)){
-        return(NA)
-      }
-      else(return(x$coordinates$latitude))
-    }
 
-    geoCoordLong <- function(x){
-      if(is.null(x$coordinates$longitude)){
-        return(NA)
-      }
-      else(return(x$coordinates$longitude))
-    }
-
-    if(!is.null(unlist(lapply(contentPage[[2]], function (x) x$coordinates$latitude)))){
-      latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
-      latitude <- rep(latitude, noOfParameters)
-      longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
-      longitude <- rep(longitude, noOfParameters)
-      latestTable <- dplyr::mutate(latestTable, latitude=latitude, longitude=longitude)
-    }
 
     # ditch empty lines and transforme date time
     latestTable <- dplyr::filter(latestTable, !is.na(parameter))

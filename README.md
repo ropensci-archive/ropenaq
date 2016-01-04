@@ -24,6 +24,29 @@ The `countries` function allows to see for which countries information is availa
 
 ``` r
 library("Ropenaq")
+```
+
+    ## Loading required package: httr
+    ## Loading required package: lubridate
+    ## Loading required package: dplyr
+    ## 
+    ## Attaching package: 'dplyr'
+    ## 
+    ## The following objects are masked from 'package:lubridate':
+    ## 
+    ##     intersect, setdiff, union
+    ## 
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+    ## 
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+    ## 
+    ## Loading required package: testthat
+
+``` r
 countriesTable <- countries()
 library("knitr")
 kable(countriesTable)

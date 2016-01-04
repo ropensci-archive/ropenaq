@@ -23,6 +23,9 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 }
+\value{
+a data.table with location, city, country, parameter, value, the last time at which this value was updated, unit, latitude and longitude (NA when non available).
+}
 \description{
 Provides the latest value of each available parameter for every location in the system.
 }

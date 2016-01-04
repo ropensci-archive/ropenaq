@@ -32,7 +32,7 @@ If no parameter is given, all parameters are retrieved.}
 }
 \value{
 A data.table with UTC date and time, local date and time, country, location, city, parameter, unit, measure,
-and geographical coordinates if they were available.
+and geographical coordinates if they were available (otherwise the columns latitude and longitude are full of NA).
 }
 \description{
 Function for getting measurements table from the openAQ API

@@ -17,7 +17,7 @@
 
 #'
 #' @return A data.table with UTC date and time, local date and time, country, location, city, parameter, unit, measure,
-#' and geographical coordinates if they were available.
+#' and geographical coordinates if they were available (otherwise the columns latitude and longitude are full of NA).
 #' @details The sort and sort_by parameters from the API were not included because one can still re-order the table in R.
 #' Regarding the number of page, similarly here it does not make any sense to have it.
 #' include_fields was not included either.
@@ -204,8 +204,13 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
     if(!is.null(unlist(lapply(contentPage[[2]], function (x) x$coordinates$latitude)))){
       latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
       longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
-      tableOfData <- dplyr::mutate(tableOfData, latitude=latitude, longitude=longitude)
+
     }
+    else{
+      latitude <- rep(NA, nrow(tableOfData))
+      longitude <- rep(NA, nrow(tableOfData))
+    }
+    tableOfData <- dplyr::mutate(tableOfData, latitude=latitude, longitude=longitude)
 
     tableOfData <- dplyr::mutate(tableOfData,dateUTC=lubridate::ymd_hms(dateUTC),
                                  dateLocal=lubridate::ymd_hms(substr(dateLocal, 1, 19)))

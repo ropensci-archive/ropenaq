@@ -59,11 +59,6 @@ test_that("measurements returns a data table", {
 
 })
 
-test_that("if has_geo is TRUE then we get a table with coordinates", {
-  measurementsTable <- measurements(has_geo=TRUE, limit=10, country="US")
-  expect_true("latitude" %in% names(measurementsTable))
-  expect_true("longitude" %in% names(measurementsTable))
-})
 
 test_that("Country, city and location are checked for consistency", {
   expect_error(measurements(country="PANEM"), "This country is not available within the platform.")
