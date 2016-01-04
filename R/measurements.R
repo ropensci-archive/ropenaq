@@ -1,8 +1,8 @@
 #' Function for getting measurements table from the openAQ API
 #'
-#' @import dplyr
-#' @import lubridate
-#' @import httr
+#' @importFrom dplyr tbl_df mutate arrange
+#' @importFrom lubridate ymd ymd_hms
+#' @importFrom httr GET content
 #' @param country Limit results by a certain country.
 #' @param city 	Limit results by a certain city.
 #' @param location Limit results by a certain location.

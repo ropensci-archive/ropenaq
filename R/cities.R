@@ -1,7 +1,7 @@
 #' Providing a simple listing of cities within the platform.
 #'
-#' @import dplyr
-#' @import httr
+#' @importFrom dplyr tbl_df
+#' @importFrom httr GET content
 #' @param country Limit results by a certain country.
 #'
 #' @return a data.table with locations, count, country, city columns.
