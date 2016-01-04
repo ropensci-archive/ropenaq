@@ -31,7 +31,9 @@ locations <- function(city=NULL,
                       value_to=NULL,
                       date_from=NULL,
                       date_to=NULL){
-
+  #####################################################
+  # BUILD QUERY
+  #####################################################
   query <- "https://api.openaq.org/v1/locations?"
 
   # country
@@ -138,7 +140,10 @@ locations <- function(city=NULL,
   if(identical(as.character("https://api.openaq.org/v1/locations?"), as.character(query))){
     query <- "https://api.openaq.org/v1/locations"
   }
-  # get results
+
+  #####################################################
+  # GET AND TRANSFORM RESULTS
+  #####################################################
 
   page <- httr::GET(query)
 
@@ -188,7 +193,9 @@ locations <- function(city=NULL,
       locationsTable <- dplyr::mutate(locationsTable, latitude=latitude, longitude=longitude)
     }
 
-
+    #####################################################
+    # DONE!
+    #####################################################
     return(locationsTable)
   }
 }

@@ -8,9 +8,14 @@
 #' @examples
 #' countries()
 countries <- function(){
+  #####################################################
+  # BUILD QUERY
+  #####################################################
   query <- "https://api.openaq.org/v1/countries"
 
-  # get results
+  #####################################################
+  # GET AND TRANSFORM RESULTS
+  #####################################################
 
   page <- httr::GET(query)
 
@@ -27,7 +32,9 @@ countries <- function(){
       data.frame(code=code,
                  name=name,
                  count=count))
-
+    #####################################################
+    # DONE!
+    #####################################################
     return(countriesTable)
   }
 

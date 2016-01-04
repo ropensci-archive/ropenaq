@@ -23,7 +23,9 @@ latest <- function(city=NULL,
                    has_geo=NULL,
                    value_from=NULL,
                    value_to=NULL){
-
+  #####################################################
+  # BUILD QUERY
+  #####################################################
   query <- "https://api.openaq.org/v1/latest?"
 
   # country
@@ -119,7 +121,10 @@ latest <- function(city=NULL,
   if(query=="https://api.openaq.org/v1/latest?"){
     query <- "https://api.openaq.org/v1/latest"
   }
-  # get results
+
+  #####################################################
+  # GET AND TRANSFORM RESULTS
+  #####################################################
 
   page <- httr::GET(query)
 
@@ -188,6 +193,9 @@ latest <- function(city=NULL,
     latestTable <- dplyr::filter(latestTable, !is.na(parameter))
     latestTable <- dplyr::mutate(latestTable, lastUpdated=lubridate::ymd_hms(lastUpdated))
 
-return(latestTable)
+    #####################################################
+    # DONE!
+    #####################################################
+  return(latestTable)
   }
 }

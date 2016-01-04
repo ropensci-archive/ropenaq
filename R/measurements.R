@@ -36,6 +36,10 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
                          limit=100,
                          value_from=NULL,
                          value_to=NULL){
+
+  #####################################################
+  # BUILD QUERY
+  #####################################################
   # base URL
   query <- "https://api.openaq.org/v1/measurements?page=1"
 
@@ -150,7 +154,10 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
     if(value_to<0){stop("No negative value for value_to please!")}
     query <- paste0(query, "&value_to=", value_to)
   }
-  # get results
+
+  #####################################################
+  # GET AND TRANSFORM RESULTS
+  #####################################################
 
   page <- httr::GET(query)
 
@@ -204,7 +211,9 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
                                  dateLocal=lubridate::ymd_hms(substr(dateLocal, 1, 19)))
     tableOfData <- dplyr::arrange(tableOfData, dateUTC)
 
+    #####################################################
     # DONE!
+    #####################################################
     return(tableOfData)
   }
 

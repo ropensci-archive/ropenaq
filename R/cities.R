@@ -11,7 +11,9 @@
 #' @examples
 #' cities(country="IN")
 cities <- function(country=NULL){
-
+  #####################################################
+  # BUILD QUERY
+  #####################################################
   query <- "https://api.openaq.org/v1/cities"
   # country
   if(!is.null(country)){
@@ -19,7 +21,9 @@ cities <- function(country=NULL){
     query <- paste0(query, "?country=", country)
   }
 
-  # get results
+  #####################################################
+  # GET AND TRANSFORM RESULTS
+  #####################################################
 
   page <- httr::GET(query)
 
@@ -40,7 +44,9 @@ cities <- function(country=NULL){
                  country=country,
                  city=city))
 
-
+    #####################################################
+    # DONE!
+    #####################################################
     return(citiesTable)
   }
 
