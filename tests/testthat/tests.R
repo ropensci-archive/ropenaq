@@ -4,11 +4,13 @@ library("Ropenaq")
 context("cities")
 #################################################################################################
 test_that("cities returns a data table", {
+  skip_on_cran()
   expect_that(cities(country="IN"), is_a("tbl_df"))
 
 })
 
 test_that("Country is checked for consistency", {
+  skip_on_cran()
   expect_error(cities(country="PANEM"), "This country is not available within the platform.")
 
 })
@@ -17,16 +19,19 @@ context("locations")
 #################################################################################################
 
 test_that("if the country is not available the function outputs an error", {
+  skip_on_cran()
   expect_error(locations(country="PANEM"), " This country is not available within the platform.")
 })
 
 test_that("bad value_from and value_to provoke errors", {
+  skip_on_cran()
   expect_error(locations(value_from=-3), "No negative values please!")
   expect_error(locations(value_to=-3), "No negative values please!")
   expect_error(locations(value_from=3, value_to=1), "The max value must be bigger than the min value.")
 })
 
 test_that("Country, city and location are checked for consistency", {
+  skip_on_cran()
   expect_error(locations(country="PANEM"), "This country is not available within the platform.")
   expect_error(locations(country="IN", city="Barcelona"), "This city is not available within the platform for this country.")
   expect_error(locations(city="Capitole"), "This city is not available within the platform.")
@@ -38,6 +43,7 @@ test_that("Country, city and location are checked for consistency", {
 })
 
 test_that("The format of date_from and date_to are checked", {
+  skip_on_cran()
   expect_error(locations(date_from="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
   expect_error(locations(date_to="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
 })
@@ -46,6 +52,7 @@ test_that("The format of date_from and date_to are checked", {
 context("countries")
 #################################################################################################
 test_that("countries returns a data table", {
+  skip_on_cran()
   expect_that(countries(), is_a("tbl_df"))
 
 })
@@ -54,6 +61,7 @@ context("measurements")
 #################################################################################################
 
 test_that("measurements returns a data table", {
+  skip_on_cran()
   measurementsTable <- measurements(has_geo=TRUE, limit=10, country="US")
   expect_that(measurementsTable, is_a("tbl_df"))
 
@@ -61,6 +69,7 @@ test_that("measurements returns a data table", {
 
 
 test_that("Country, city and location are checked for consistency", {
+  skip_on_cran()
   expect_error(measurements(country="PANEM"), "This country is not available within the platform.")
   expect_error(measurements(country="IN", city="Barcelona"), "This city is not available within the platform for this country.")
   expect_error(measurements(city="Capitole"), "This city is not available within the platform.")
@@ -73,15 +82,18 @@ test_that("Country, city and location are checked for consistency", {
 
 
 test_that("Parameter has to be available", {
+  skip_on_cran()
   expect_error(measurements(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
 })
 
 test_that("The value_from and value_to arguments work as they should", {
+  skip_on_cran()
   expect_true(all(measurements(city="Hyderabad", value_from=10, limit=10)$value>=10))
   expect_true(all(measurements(city="Hyderabad", value_to=10, limit=10)$value<=10))
 })
 
 test_that("The format of date_from and date_to are checked", {
+  skip_on_cran()
   expect_error(measurements(date_from="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
   expect_error(measurements(date_to="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
 })
@@ -89,11 +101,13 @@ test_that("The format of date_from and date_to are checked", {
 context("latest")
 #################################################################################################
 test_that("latest returns a data table", {
+  skip_on_cran()
   expect_that(latest(), is_a("tbl_df"))
 
 })
 
 test_that("Country, city and location are checked for consistency", {
+  skip_on_cran()
   expect_error(latest(country="PANEM"), "This country is not available within the platform.")
   expect_error(latest(country="IN", city="Barcelona"), "This city is not available within the platform for this country.")
   expect_error(latest(city="Capitole"), "This city is not available within the platform.")
@@ -105,10 +119,12 @@ test_that("Country, city and location are checked for consistency", {
 })
 
 test_that("Parameter has to be available", {
+  skip_on_cran()
   expect_error(latest(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
 })
 
 test_that("The value_from and value_to arguments work as they should", {
+  skip_on_cran()
   expect_true(all(latest(value_from=10)$value>=10), TRUE)
   expect_true(all(latest(value_to=10)$value<=10), TRUE)
 })
