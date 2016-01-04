@@ -38,5 +38,6 @@ Providing data about distinct measurement locations.
 }
 \examples{
 locations(country="IN")
+locations(city="Houston", parameter="co")
 }
 

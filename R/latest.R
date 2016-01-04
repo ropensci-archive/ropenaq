@@ -11,7 +11,9 @@
 #' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
 #' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
 #' @details Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
-#'
+#' @examples
+#' latest(country="IN", city="Chennai")
+#' latest(parameter="co")
 #' @return
 #' @export
 #'

@@ -22,6 +22,7 @@
 #'
 #' @examples
 #' locations(country="IN")
+#' locations(city="Houston", parameter="co")
 locations <- function(city=NULL,
                       country=NULL,
                       location=NULL,

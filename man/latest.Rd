@@ -29,4 +29,8 @@ Provides the latest value of each available parameter for every location in the 
 \details{
 Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
 }
+\examples{
+latest(country="IN", city="Chennai")
+latest(parameter="co")
+}
 
