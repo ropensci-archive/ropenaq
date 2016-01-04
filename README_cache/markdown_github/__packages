@@ -1,0 +1,7 @@
+base
+httr
+lubridate
+dplyr
+testthat
+Ropenaq
+knitr

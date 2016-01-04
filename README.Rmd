@@ -85,8 +85,8 @@ Two functions allow to get data: `measurement` and `latest`.
 The measurements function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
 
 ```{r, cache=TRUE}
-tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
-kable(head(tableResults))
+tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25", limit=9)
+kable(tableResults)
 ```
 
 One could also get all possible parameters in the same table.

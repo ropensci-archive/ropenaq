@@ -159,18 +159,21 @@ The `measurements` function
 The measurements function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
 
 ``` r
-tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
-kable(head(tableResults))
+tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25", limit=9)
+kable(tableResults)
 ```
 
-| dateUTC             | dateLocal           | parameter | location    |  value| unit  | city  | country |
-|:--------------------|:--------------------|:----------|:------------|------:|:------|:------|:--------|
-| 2015-12-26 11:10:00 | 2015-12-26 16:40:00 | pm25      | Anand Vihar |    125| µg/m³ | Delhi | IN      |
-| 2015-12-26 11:30:00 | 2015-12-26 17:00:00 | pm25      | Anand Vihar |    145| µg/m³ | Delhi | IN      |
-| 2015-12-26 12:10:00 | 2015-12-26 17:40:00 | pm25      | Anand Vihar |    145| µg/m³ | Delhi | IN      |
-| 2015-12-26 12:25:00 | 2015-12-26 17:55:00 | pm25      | Anand Vihar |    145| µg/m³ | Delhi | IN      |
-| 2015-12-26 13:10:00 | 2015-12-26 18:40:00 | pm25      | Anand Vihar |    155| µg/m³ | Delhi | IN      |
-| 2015-12-26 13:30:00 | 2015-12-26 19:00:00 | pm25      | Anand Vihar |    199| µg/m³ | Delhi | IN      |
+| dateUTC             | dateLocal           | parameter | location    |  value| unit  | city  | country | latitude | longitude |
+|:--------------------|:--------------------|:----------|:------------|------:|:------|:------|:--------|:---------|:----------|
+| 2015-12-29 08:30:00 | 2015-12-29 14:00:00 | pm25      | Anand Vihar |    121| µg/m³ | Delhi | IN      | NA       | NA        |
+| 2015-12-29 08:50:00 | 2015-12-29 14:20:00 | pm25      | Anand Vihar |    121| µg/m³ | Delhi | IN      | NA       | NA        |
+| 2015-12-29 09:30:00 | 2015-12-29 15:00:00 | pm25      | Anand Vihar |    102| µg/m³ | Delhi | IN      | NA       | NA        |
+| 2015-12-29 10:30:00 | 2015-12-29 16:00:00 | pm25      | Anand Vihar |     84| µg/m³ | Delhi | IN      | NA       | NA        |
+| 2015-12-29 11:30:00 | 2015-12-29 17:00:00 | pm25      | Anand Vihar |     78| µg/m³ | Delhi | IN      | NA       | NA        |
+| 2015-12-29 12:10:00 | 2015-12-29 17:40:00 | pm25      | Anand Vihar |     78| µg/m³ | Delhi | IN      | NA       | NA        |
+| 2015-12-29 12:30:00 | 2015-12-29 18:00:00 | pm25      | Anand Vihar |    104| µg/m³ | Delhi | IN      | NA       | NA        |
+| 2015-12-29 13:10:00 | 2015-12-29 18:40:00 | pm25      | Anand Vihar |    104| µg/m³ | Delhi | IN      | NA       | NA        |
+| 2015-12-29 13:30:00 | 2015-12-29 19:00:00 | pm25      | Anand Vihar |    129| µg/m³ | Delhi | IN      | NA       | NA        |
 
 One could also get all possible parameters in the same table.
 
@@ -184,14 +187,14 @@ tableLatest <- latest()
 kable(head(tableLatest))
 ```
 
-| location         | city   | country | parameter |   value| lastUpdated         | unit  |   latitude|  longitude|
-|:-----------------|:-------|:--------|:----------|-------:|:--------------------|:------|----------:|----------:|
-| Tha Pradu, Mueng | Rayong | TH      | pm10      |  50.000| 2015-10-23 18:00:00 | µg/m³ |   12.68092|  101.27358|
-| Tha Pradu, Mueng | Rayong | TH      | no2       |   0.039| 2015-11-19 01:00:00 | ppm   |   13.59631|  100.60046|
-| Tha Pradu, Mueng | Rayong | TH      | pm25      |  15.150| 2015-12-01 22:00:00 | µg/m³ |  -36.92333|  -73.03613|
-| Tha Pradu, Mueng | Rayong | TH      | o3        |   0.017| 2015-12-02 01:00:00 | ppm   |   13.68423|  100.44599|
-| Tha Pradu, Mueng | Rayong | TH      | so2       |   8.056| 2015-12-02 10:00:00 | µg/m³ |  -32.77899|  -71.37303|
-| Tha Pradu, Mueng | Rayong | TH      | so2       |   2.750| 2015-12-02 10:00:00 | µg/m³ |  -32.78786|  -71.52772|
+| location         | city   | country | parameter |   value| lastUpdated         | unit  |
+|:-----------------|:-------|:--------|:----------|-------:|:--------------------|:------|
+| Tha Pradu, Mueng | Rayong | TH      | pm10      |  50.000| 2015-10-23 18:00:00 | µg/m³ |
+| Tha Pradu, Mueng | Rayong | TH      | no2       |   0.039| 2015-11-19 01:00:00 | ppm   |
+| Tha Pradu, Mueng | Rayong | TH      | pm25      |  15.150| 2015-12-01 22:00:00 | µg/m³ |
+| Tha Pradu, Mueng | Rayong | TH      | o3        |   0.017| 2015-12-02 01:00:00 | ppm   |
+| Tha Pradu, Mueng | Rayong | TH      | so2       |   8.056| 2015-12-02 10:00:00 | µg/m³ |
+| Tha Pradu, Mueng | Rayong | TH      | so2       |   2.750| 2015-12-02 10:00:00 | µg/m³ |
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
 
