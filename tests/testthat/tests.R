@@ -37,6 +37,11 @@ test_that("Country, city and location are checked for consistency", {
   expect_error(locations(city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this city.")
 })
 
+test_that("The format of date_from and date_to are checked", {
+  expect_error(locations(date_from="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
+  expect_error(locations(date_to="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
+})
+
 #################################################################################################
 context("countries")
 #################################################################################################
@@ -79,6 +84,11 @@ test_that("Parameter has to be available", {
 test_that("The value_from and value_to arguments work as they should", {
   expect_true(all(measurements(city="Hyderabad", value_from=10, limit=10)$value>=10))
   expect_true(all(measurements(city="Hyderabad", value_to=10, limit=10)$value<=10))
+})
+
+test_that("The format of date_from and date_to are checked", {
+  expect_error(measurements(date_from="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
+  expect_error(measurements(date_to="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
 })
 #################################################################################################
 context("latest")
