@@ -4,7 +4,7 @@ context("measurements")
 #################################################################################################
 
 test_that("measurements returns a data table", {
-  measurementsTable <- measurements(country="IN", limit=9, city="Chennai")
+  measurementsTable <- measurements(country="IN", limit=9, city="Delhi")
   expect_that(measurementsTable, is_a("tbl_df"))
 
 })
@@ -15,8 +15,15 @@ test_that("if has_geo is TRUE then we get a table with coordinates", {
   expect_true("longitude" %in% names(measurementsTable))
 })
 
-test_that("if the country is not available the function outputs an error", {
+test_that("Country, city and location are checked for consistency", {
   expect_error(measurements(country="PANEM"), "This country is not available within the platform.")
+  expect_error(measurements(country="IN", city="Barcelona"), "This city is not available within the platform for this country.")
+  expect_error(measurements(city="Capitole"), "This city is not available within the platform.")
+
+  expect_error(measurements(location="Nirgendwo"), "This location is not available within the platform.")
+  expect_error(measurements(country="IN", location="Nirgendwo"), "This location is not available within the platform for this country.")
+  expect_error(measurements(country="IN", city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this country and this city.")
+  expect_error(measurements(city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this city.")
 })
 
 #################################################################################################
@@ -27,7 +34,10 @@ test_that("cities returns a data table", {
 
 })
 
+test_that("Country is checked for consistency", {
+  expect_error(cities(country="PANEM"), "This country is not available within the platform.")
 
+})
 #################################################################################################
 context("locations")
 #################################################################################################
@@ -40,6 +50,17 @@ test_that("bad value_from and value_to provoke errors", {
   expect_error(locations(value_from=-3), "No negative values please!")
   expect_error(locations(value_to=-3), "No negative values please!")
   expect_error(locations(value_from=3, value_to=1), "The max value must be bigger than the min value.")
+})
+
+test_that("Country, city and location are checked for consistency", {
+  expect_error(locations(country="PANEM"), "This country is not available within the platform.")
+  expect_error(locations(country="IN", city="Barcelona"), "This city is not available within the platform for this country.")
+  expect_error(locations(city="Capitole"), "This city is not available within the platform.")
+
+  expect_error(locations(location="Nirgendwo"), "This location is not available within the platform.")
+  expect_error(locations(country="IN", location="Nirgendwo"), "This location is not available within the platform for this country.")
+  expect_error(locations(country="IN", city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this country and this city.")
+  expect_error(locations(city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this city.")
 })
 
 #################################################################################################
@@ -56,4 +77,15 @@ context("latest")
 test_that("latest returns a data table", {
   expect_that(latest(), is_a("tbl_df"))
 
+})
+
+test_that("Country, city and location are checked for consistency", {
+  expect_error(latest(country="PANEM"), "This country is not available within the platform.")
+  expect_error(latest(country="IN", city="Barcelona"), "This city is not available within the platform for this country.")
+  expect_error(latest(city="Capitole"), "This city is not available within the platform.")
+
+  expect_error(latest(location="Nirgendwo"), "This location is not available within the platform.")
+  expect_error(latest(country="IN", location="Nirgendwo"), "This location is not available within the platform for this country.")
+  expect_error(latest(country="IN", city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this country and this city.")
+  expect_error(latest(city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this city.")
 })
