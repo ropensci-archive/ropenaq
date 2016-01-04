@@ -20,6 +20,8 @@
 #' Regarding the number of page, similarly here it does not make any sense to have it.
 #' include_fields was not included either.
 #' value_from and value_to were not included because one could filter the output table in R directly.
+#' Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
+#'
 #' #'
 #' @examples
 #' measurements(country="IN", limit=9, city="Chennai")
@@ -98,8 +100,15 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
     if(!(parameter%in%c("pm25", "pm10", "so2", "no2", "o3", "co", "bc"))){
       stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")
     }
+
+
+    locationsTable <- locations(country=country, city=city, location=location)
+    if(sum(grepl(parameter, locationsTable$parameters))==0){
+      stop("This parameter is not available for any location corresponding to your query")
+    }
     query <- paste0(query, "&parameter=", parameter)
   }
+
   # has_geo
   if(!is.null(has_geo)){
     if(has_geo==TRUE){

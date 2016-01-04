@@ -16,6 +16,7 @@
 #'
 #' @return A data.table with for each location: its name, the city and the country it is in, the number of measures for this location,
 #'  the name of the source, and the dates and times at which it was first and last updated, respectively.
+#'  @details Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
 #' @export
 #'
 #' @examples

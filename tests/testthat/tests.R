@@ -26,6 +26,10 @@ test_that("Country, city and location are checked for consistency", {
   expect_error(measurements(city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this city.")
 })
 
+
+test_that("Parameter has to be available", {
+  expect_error(measurements(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
+})
 #################################################################################################
 context("cities")
 #################################################################################################
@@ -88,4 +92,8 @@ test_that("Country, city and location are checked for consistency", {
   expect_error(latest(country="IN", location="Nirgendwo"), "This location is not available within the platform for this country.")
   expect_error(latest(country="IN", city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this country and this city.")
   expect_error(latest(city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this city.")
+})
+
+test_that("Parameter has to be available", {
+  expect_error(latest(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
 })

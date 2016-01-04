@@ -5,6 +5,7 @@
 #' @param country Limit results by a certain country.
 #'
 #' @return a data.table with locations, count, country, city columns.
+#' @details Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
 #' @export
 #'
 #' @examples
