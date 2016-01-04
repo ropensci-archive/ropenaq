@@ -28,7 +28,7 @@ Three functions of the package allow to get lists of available information. Meas
 
 The `countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument.
 
-````{r, warning=FALSE}
+````{r, warning=FALSE, message=FALSE}
 library("Ropenaq")
 countriesTable <- countries()
 library("knitr")
