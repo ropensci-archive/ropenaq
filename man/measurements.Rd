@@ -6,7 +6,7 @@
 \usage{
 measurements(country = NULL, city = NULL, location = NULL,
   parameter = NULL, has_geo = NULL, date_from = NULL, date_to = NULL,
-  limit = 100)
+  limit = 100, value_from = NULL, value_to = NULL)
 }
 \arguments{
 \item{country}{Limit results by a certain country.}
@@ -25,6 +25,10 @@ If no parameter is given, all parameters are retrieved.}
 \item{date_to}{Show results before a certain date. (ex. "2015-12-20")}
 
 \item{limit}{Change the number of results returned, max is 1000.}
+
+\item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
+
+\item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 }
 \value{
 A data.table with UTC date and time, local date and time, country, location, city, parameter, unit, measure,
@@ -37,7 +41,6 @@ Function for getting measurements table from the openAQ API
 The sort and sort_by parameters from the API were not included because one can still re-order the table in R.
 Regarding the number of page, similarly here it does not make any sense to have it.
 include_fields was not included either.
-value_from and value_to were not included because one could filter the output table in R directly.
 Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
 
 #'

@@ -8,6 +8,8 @@
 #' @param location Limit results by a certain location.
 #' @param parameter Limit to only a certain parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc").
 #' If no parameter is given, all parameters are retrieved.
+#' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
+#' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
 #' @param has_geo Filter out items that have or do not have geographic information.Can only be TRUE for now.
 #' @param date_from Show results after a certain date. (ex. "2015-12-20")
 #' @param date_to Show results before a certain date. (ex. "2015-12-20")
@@ -19,7 +21,6 @@
 #' @details The sort and sort_by parameters from the API were not included because one can still re-order the table in R.
 #' Regarding the number of page, similarly here it does not make any sense to have it.
 #' include_fields was not included either.
-#' value_from and value_to were not included because one could filter the output table in R directly.
 #' Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
 #'
 #' #'
@@ -32,7 +33,9 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
                          parameter=NULL,
                          has_geo=NULL,
                          date_from=NULL, date_to=NULL,
-                         limit=100){
+                         limit=100,
+                         value_from=NULL,
+                         value_to=NULL){
   # base URL
   query <- "https://api.openaq.org/v1/measurements?page=1"
 
@@ -132,6 +135,18 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
   # date_to
   if(!is.null(date_from)){
     query <- paste0(query, "&date_to=", date_to)
+  }
+
+  # value_from
+  if(!is.null(value_from)){
+    if(value_from<0){stop("No negative value for value_from please!")}
+    query <- paste0(query, "&value_from=", value_from)
+  }
+
+  # value_to
+  if(!is.null(value_to)){
+    if(value_to<0){stop("No negative value for value_to please!")}
+    query <- paste0(query, "&value_to=", value_to)
   }
   # get results
 

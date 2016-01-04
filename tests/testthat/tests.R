@@ -1,35 +1,5 @@
 library("Ropenaq")
-#################################################################################################
-context("measurements")
-#################################################################################################
 
-test_that("measurements returns a data table", {
-  measurementsTable <- measurements(country="IN", limit=9, city="Delhi")
-  expect_that(measurementsTable, is_a("tbl_df"))
-
-})
-
-test_that("if has_geo is TRUE then we get a table with coordinates", {
-  measurementsTable <- measurements(has_geo=TRUE, limit=10, country="US")
-  expect_true("latitude" %in% names(measurementsTable))
-  expect_true("longitude" %in% names(measurementsTable))
-})
-
-test_that("Country, city and location are checked for consistency", {
-  expect_error(measurements(country="PANEM"), "This country is not available within the platform.")
-  expect_error(measurements(country="IN", city="Barcelona"), "This city is not available within the platform for this country.")
-  expect_error(measurements(city="Capitole"), "This city is not available within the platform.")
-
-  expect_error(measurements(location="Nirgendwo"), "This location is not available within the platform.")
-  expect_error(measurements(country="IN", location="Nirgendwo"), "This location is not available within the platform for this country.")
-  expect_error(measurements(country="IN", city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this country and this city.")
-  expect_error(measurements(city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this city.")
-})
-
-
-test_that("Parameter has to be available", {
-  expect_error(measurements(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
-})
 #################################################################################################
 context("cities")
 #################################################################################################
@@ -74,7 +44,42 @@ test_that("countries returns a data table", {
   expect_that(countries(), is_a("tbl_df"))
 
 })
+#################################################################################################
+context("measurements")
+#################################################################################################
 
+test_that("measurements returns a data table", {
+  measurementsTable <- measurements(has_geo=TRUE, limit=10, country="US")
+  expect_that(measurementsTable, is_a("tbl_df"))
+
+})
+
+test_that("if has_geo is TRUE then we get a table with coordinates", {
+  measurementsTable <- measurements(has_geo=TRUE, limit=10, country="US")
+  expect_true("latitude" %in% names(measurementsTable))
+  expect_true("longitude" %in% names(measurementsTable))
+})
+
+test_that("Country, city and location are checked for consistency", {
+  expect_error(measurements(country="PANEM"), "This country is not available within the platform.")
+  expect_error(measurements(country="IN", city="Barcelona"), "This city is not available within the platform for this country.")
+  expect_error(measurements(city="Capitole"), "This city is not available within the platform.")
+
+  expect_error(measurements(location="Nirgendwo"), "This location is not available within the platform.")
+  expect_error(measurements(country="IN", location="Nirgendwo"), "This location is not available within the platform for this country.")
+  expect_error(measurements(country="IN", city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this country and this city.")
+  expect_error(measurements(city="Chennai", location="Nirgendwo"), "This location is not available within the platform for this city.")
+})
+
+
+test_that("Parameter has to be available", {
+  expect_error(measurements(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
+})
+
+test_that("The value_from and value_to arguments work as they should", {
+  expect_true(all(measurements(city="Hyderabad", value_from=10, limit=10)$value>=10))
+  expect_true(all(measurements(city="Hyderabad", value_to=10, limit=10)$value<=10))
+})
 #################################################################################################
 context("latest")
 #################################################################################################
@@ -96,4 +101,9 @@ test_that("Country, city and location are checked for consistency", {
 
 test_that("Parameter has to be available", {
   expect_error(latest(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
+})
+
+test_that("The value_from and value_to arguments work as they should", {
+  expect_true(all(latest(value_from=10)$value>=10), TRUE)
+  expect_true(all(latest(value_to=10)$value<=10), TRUE)
 })

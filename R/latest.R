@@ -104,14 +104,14 @@ latest <- function(city=NULL,
   }
   # value_from
   if(!is.null(value_from)){
-    if(value_from<0){stop("No negative values please!")}
+    if(value_from<0){stop("No negative value for value_from please!")}
     query <- paste0(query, "&value_from=", value_from)
   }
 
   # value_to
   if(!is.null(value_to)){
-    if(value_to<0){stop("No negative values please!")}
-    query <- paste0(query, "&value_to=", date_to)
+    if(value_to<0){stop("No negative value for value_to please!")}
+    query <- paste0(query, "&value_to=", value_to)
   }
 
   if(query=="https://api.openaq.org/v1/latest?"){
