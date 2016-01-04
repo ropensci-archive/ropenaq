@@ -38,6 +38,8 @@ The sort and sort_by parameters from the API were not included because one can s
 Regarding the number of page, similarly here it does not make any sense to have it.
 include_fields was not included either.
 value_from and value_to were not included because one could filter the output table in R directly.
+Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
+
 #'
 }
 \examples{

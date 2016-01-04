@@ -15,6 +15,9 @@ a data.table with locations, count, country, city columns.
 \description{
 Providing a simple listing of cities within the platform.
 }
+\details{
+Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
+}
 \examples{
 cities(country="IN")
 }
