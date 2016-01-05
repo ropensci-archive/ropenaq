@@ -1,0 +1,12 @@
+language: r
+sudo: true
+
+r_binary_packages:
+  - rgdal
+
+# r_packages:
+
+notifications:
+    email:
+      on_success: change
+      on_failure: change
