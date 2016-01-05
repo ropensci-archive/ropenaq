@@ -46,7 +46,9 @@ Please note that if an argument is composed by several words, e.g. "RK Puram" as
 #'
 }
 \examples{
+\dontrun{
 measurements(country="IN", limit=9, city="Chennai")
 measurements(country="US", has_geo=TRUE)
+}
 }
 

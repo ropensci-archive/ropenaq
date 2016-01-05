@@ -25,8 +25,10 @@
 #'
 #' #'
 #' @examples
+#' \dontrun{
 #' measurements(country="IN", limit=9, city="Chennai")
 #' measurements(country="US", has_geo=TRUE)
+#' }
 #' @export
 
 measurements <- function(country=NULL, city=NULL, location=NULL,
