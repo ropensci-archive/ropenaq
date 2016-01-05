@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq)
+
 Introduction
 ============
 
@@ -31,19 +33,19 @@ kable(countriesTable)
 
 | code | name           |   count|
 |:-----|:---------------|-------:|
-| AU   | Australia      |  188013|
-| BR   | Brazil         |  297024|
-| CL   | Chile          |  455537|
-| CN   | China          |   11608|
-| GB   | United Kingdom |   94186|
-| ID   | Indonesia      |     340|
-| IN   | India          |  104531|
-| MN   | Mongolia       |  302455|
-| NL   | Netherlands    |  570039|
-| PL   | Poland         |  115768|
-| TH   | Thailand       |  229133|
-| US   | United States  |  118313|
-| VN   | Viet Nam       |     425|
+| AU   | Australia      |  190085|
+| BR   | Brazil         |  301706|
+| CL   | Chile          |  459076|
+| CN   | China          |   11701|
+| GB   | United Kingdom |   94539|
+| ID   | Indonesia      |     424|
+| IN   | India          |  105598|
+| MN   | Mongolia       |  304401|
+| NL   | Netherlands    |  575264|
+| PL   | Poland         |  117756|
+| TH   | Thailand       |  232137|
+| US   | United States  |  120573|
+| VN   | Viet Nam       |     467|
 
 The `cities` function
 ---------------------

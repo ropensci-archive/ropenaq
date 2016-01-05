@@ -6,6 +6,7 @@ output:
   md_document:
     variant: markdown_github
 ---
+[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq)
 
 # Introduction
 
