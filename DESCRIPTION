@@ -14,4 +14,4 @@ BugReports: http://github.com/masalmon/Ropenaq/issues
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
-Depends: httr, lubridate, dplyr, testthat
+Depends: httr, lubridate, dplyr, testthat, XML
