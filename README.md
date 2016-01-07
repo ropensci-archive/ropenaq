@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq) See <https://github.com/openaq/openaq-api/issues/157> (the package is probably ok, but the openaq-platform has some infrastructure growing pains.)
+[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq)
+
+See <https://github.com/openaq/openaq-api/issues/157>
 
 Introduction
 ============
@@ -33,19 +35,19 @@ kable(countriesTable)
 
 | code | name           |   count|
 |:-----|:---------------|-------:|
-| AU   | Australia      |  190195|
-| BR   | Brazil         |  301883|
-| CL   | Chile          |  459279|
-| CN   | China          |   11706|
-| GB   | United Kingdom |   94561|
-| ID   | Indonesia      |     426|
-| IN   | India          |  105657|
-| MN   | Mongolia       |  304521|
-| NL   | Netherlands    |  575539|
-| PL   | Poland         |  117849|
-| TH   | Thailand       |  232281|
-| US   | United States  |  120655|
-| VN   | Viet Nam       |     468|
+| AU   | Australia      |  194719|
+| BR   | Brazil         |  308039|
+| CL   | Chile          |  467990|
+| CN   | China          |   11867|
+| GB   | United Kingdom |   95743|
+| ID   | Indonesia      |     514|
+| IN   | India          |  107769|
+| MN   | Mongolia       |  309396|
+| NL   | Netherlands    |  587639|
+| PL   | Poland         |  120455|
+| TH   | Thailand       |  237947|
+| US   | United States  |  124056|
+| VN   | Viet Nam       |     512|
 
 The `cities` function
 ---------------------
