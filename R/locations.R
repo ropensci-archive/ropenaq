@@ -100,13 +100,6 @@ locations <- function(city=NULL,
 
   }
 
-  # check dates
-  if(!is.null(date_from)&!is.null(date_to)){
-    if(ymd(date_from)>ymd(date_to)){
-      stop("The start date must be smaller than the end date.")
-    }
-
-  }
 
   # date_from
   if(!is.null(date_from)){
@@ -119,6 +112,13 @@ locations <- function(city=NULL,
     query <- paste0(query, "&date_to=", date_to)
   }
 
+  # check dates
+  if(!is.null(date_from)&!is.null(date_to)){
+    if(lubridate::ymd(date_from)>lubridate::ymd(date_to)){
+      stop("The start date must be smaller than the end date.")
+    }
+
+  }
   # check values
   if(!is.null(value_from)&!is.null(value_to)){
     if(value_to<value_from){

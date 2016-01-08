@@ -46,6 +46,12 @@ test_that("The format of date_from and date_to are checked", {
   skip_on_cran()
   expect_error(locations(date_from="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
   expect_error(locations(date_to="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
+  expect_error(locations(date_to="2014-12-29", date_from="2015-12-29"), "The start date must be smaller than the end date.")
+})
+
+test_that("Parameter has to be available", {
+  skip_on_cran()
+  expect_error(locations(parameter="lalala"), "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")
 })
 
 #################################################################################################
@@ -59,6 +65,10 @@ test_that("countries returns a data table", {
 #################################################################################################
 context("measurements")
 #################################################################################################
+
+test_that("An error is thrown is limit>1000",{
+  expect_error(- measurements(has_geo=TRUE, limit=9999999, country="US"), "limit cannot be more than 1000")
+})
 
 test_that("measurements returns a data table", {
   skip_on_cran()
@@ -84,6 +94,14 @@ test_that("Country, city and location are checked for consistency", {
 test_that("Parameter has to be available", {
   skip_on_cran()
   expect_error(measurements(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
+  expect_error(measurements(city="Hyderabad", parameter="lalala"), "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")
+})
+
+test_that("bad value_from and value_to provoke errors", {
+  skip_on_cran()
+  expect_error(measurements(value_from=-3), "No negative values please!")
+  expect_error(measurements(value_to=-3), "No negative values please!")
+  expect_error(measurements(value_from=3, value_to=1), "The max value must be bigger than the min value.")
 })
 
 test_that("The value_from and value_to arguments work as they should", {
@@ -96,6 +114,7 @@ test_that("The format of date_from and date_to are checked", {
   skip_on_cran()
   expect_error(measurements(date_from="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
   expect_error(measurements(date_to="2014-29-12"), "date_from and date_to have to be inputed as year-month-day.")
+  expect_error(measurements(date_to="2014-12-29", date_from="2015-12-29"), "The start date must be smaller than the end date.")
 })
 #################################################################################################
 context("latest")
@@ -121,6 +140,7 @@ test_that("Country, city and location are checked for consistency", {
 test_that("Parameter has to be available", {
   skip_on_cran()
   expect_error(latest(city="Hyderabad", parameter="co"), "This parameter is not available for any location corresponding to your query.")
+  expect_error(latest(city="Hyderabad", parameter="lalala"), "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")
 })
 
 test_that("The value_from and value_to arguments work as they should", {

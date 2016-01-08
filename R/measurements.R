@@ -126,13 +126,6 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
 
   }
 
-  # check dates
-  if(!is.null(date_from)&!is.null(date_to)){
-    if(ymd(date_from)>ymd(date_to)){
-      stop("The start date must be smaller than the end date.")
-    }
-
-  }
 
   # date_from
   if(!is.null(date_from)){
@@ -143,6 +136,14 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
   if(!is.null(date_to)){
     if(is.na(lubridate::ymd(date_to))){stop("date_from and date_to have to be inputed as year-month-day")}
     query <- paste0(query, "&date_to=", date_to)
+  }
+
+  # check dates
+  if(!is.null(date_from)&!is.null(date_to)){
+    if(ymd(date_from)>ymd(date_to)){
+      stop("The start date must be smaller than the end date.")
+    }
+
   }
 
   # value_from
