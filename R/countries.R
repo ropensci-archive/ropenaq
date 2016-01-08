@@ -21,8 +21,8 @@ countries <- function(){
 
   contentPage <- httr::content(page)
   contentPageText <- httr::content(page,as = "text")
-  if(grepl("Gateway time-out", toString(contentPageText))){stop("Gateway time-out, but try again in a few minutes.")}
-  if(length(contentPage[[2]])==0){stop("No results for this query")}
+  if(grepl("Gateway time-out", toString(contentPageText))){stop("Gateway time-out, but try again in a few minutes.")} # nocov
+  if(length(contentPage[[2]])==0){stop("No results for this query")} # nocov
   else{
     code <- unlist(lapply(contentPage[[2]], function (x) x['code']))
     name <- unlist(lapply(contentPage[[2]], function (x) x['name']))
