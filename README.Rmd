@@ -7,8 +7,7 @@ output:
     variant: markdown_github
 ---
 [![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq)
-
-See https://github.com/openaq/openaq-api/issues/157
+[![codecov.io](https://codecov.io/github/masalmon/Ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
 # Introduction
 

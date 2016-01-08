@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq)
-
-See <https://github.com/openaq/openaq-api/issues/157>
+[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq) [![codecov.io](https://codecov.io/github/masalmon/Ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
 Introduction
 ============
@@ -35,19 +33,19 @@ kable(countriesTable)
 
 | code | name           |   count|
 |:-----|:---------------|-------:|
-| AU   | Australia      |  194719|
-| BR   | Brazil         |  308039|
-| CL   | Chile          |  467990|
+| AU   | Australia      |  197181|
+| BR   | Brazil         |  310760|
+| CL   | Chile          |  472829|
 | CN   | China          |   11867|
 | GB   | United Kingdom |   95743|
-| ID   | Indonesia      |     514|
-| IN   | India          |  107769|
-| MN   | Mongolia       |  309396|
-| NL   | Netherlands    |  587639|
-| PL   | Poland         |  120455|
-| TH   | Thailand       |  237947|
-| US   | United States  |  124056|
-| VN   | Viet Nam       |     512|
+| ID   | Indonesia      |     562|
+| IN   | India          |  107888|
+| MN   | Mongolia       |  312353|
+| NL   | Netherlands    |  594239|
+| PL   | Poland         |  121878|
+| TH   | Thailand       |  241829|
+| US   | United States  |  125913|
+| VN   | Viet Nam       |     536|
 
 The `cities` function
 ---------------------
