@@ -46,10 +46,10 @@ locations <- function(city=NULL,
   # city
   if(!is.null(city)){
     if(!is.null(country)){
-      if(!(gsub("\\+", " ", city)%in%cities(country=country)$city)){stop("This city is not available within the platform for this country.")}
+      if(!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8")%in%cities(country=country)$city)){stop("This city is not available within the platform for this country.")}
     }
     else{
-      if(!(gsub("\\+", " ", city)%in%cities()$city)){stop("This city is not available within the platform.")}
+      if(!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8")%in%cities()$city)){stop("This city is not available within the platform.")}
     }
     query <- paste0(query, "&city=", city)
 
@@ -60,12 +60,12 @@ locations <- function(city=NULL,
     query <- paste0(query, "&location=", location)
     if(!is.null(country)){
       if(!is.null(city)){
-        if(!(location%in%gsub(" ", "+",locations(country=country, city=city)$location))){
+        if(!(iconv(location, "LATIN2", "UTF-8")%in%gsub(" ", "\\+",locations(country=country, city=city)$location))){
           stop("This location is not available within the platform for this country and this city.")
         }
       }
       else{
-        if(!(location%in%gsub(" ", "+",locations(country=country)$location))){
+        if(!(iconv(location, "LATIN2", "UTF-8")%in%gsub(" ", "\\+",locations(country=country)$location))){
           stop("This location is not available within the platform for this country.")
         }
       }
@@ -74,12 +74,12 @@ locations <- function(city=NULL,
 
     else{
       if(!is.null(city)){
-        if(!(location%in%gsub(" ", "+",locations( city=city)$location))){
+        if(!(location%in%gsub(" ", "\\+",locations( city=city)$location))){
           stop("This location is not available within the platform for this city.")
         }
       }
       else{
-        if(!(location%in%gsub(" ", "+",locations(country=country, city=city)$location))){
+        if(!(location%in%gsub(" ", "\\+",locations(country=country, city=city)$location))){
           stop("This location is not available within the platform.")
         }
       }
