@@ -58,7 +58,7 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
   # country
   if(!is.null(country)){
     if(!(country%in%countries()$code)){stop("This country is not available within the platform.")}
-    query <- paste0(query, "&country=", country)
+    query <- paste0(query, "&country=", URLencode(country))
   }
 
   # city
@@ -71,21 +71,22 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
       if(!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8")%in%cities()$city)){
         stop("This city is not available within the platform.")}
     }
-    query <- paste0(query, "&city=", city)
+    query <- paste0(query, "&city=", URLencode(city))
 
   }
 
   # location
   if(!is.null(location)){
     query <- paste0(query, "&location=", location)
+    location <- URLdecode(location)
     if(!is.null(country)){
       if(!is.null(city)){
-        if(!(iconv(location, "LATIN2", "UTF-8")%in%gsub(" ", "\\+",locations(country=country, city=city)$location))){
+        if(!(iconv(gsub("\\+", " ",location), "LATIN2", "latin1")%in%unlist(lapply(as.character(locations(country=country, city=city)$"location"),iconv, "UTF-8", "latin1")))){
           stop("This location is not available within the platform for this country and this city.")
         }
       }
       else{
-        if(!(iconv(location, "LATIN2", "UTF-8")%in%gsub(" ", "\\+",locations(country=country)$location))){
+        if(!(iconv(gsub("\\+", " ",location), "LATIN2", "latin1")%in%unlist(lapply(as.character(locations(country=country)$"location"),iconv, "UTF-8", "latin1")))){
           stop("This location is not available within the platform for this country.")
         }
       }
@@ -94,12 +95,12 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
 
     else{
       if(!is.null(city)){
-        if(!(iconv(location, "LATIN2", "UTF-8")%in%gsub(" ", "\\+",locations( city=city)$"location"))){
+        if(!(iconv(gsub("\\+", " ",location), "LATIN2", "latin1")%in%unlist(lapply(as.character(locations( city=city)$"location"),iconv, "UTF-8", "latin1")))){
           stop("This location is not available within the platform for this city.")
            }
       }
       else{
-        if(!(iconv(location, "LATIN2", "UTF-8")%in%gsub(" ", "\\+",locations(country=country, city=city)$"location"))){
+        if(!(iconv(gsub("\\+", " ",location), "LATIN2", "latin1")%in%unlist(lapply(as.character(locations()$"location"),iconv, "UTF-8", "latin1")))){
           stop("This location is not available within the platform.")
       }
       }

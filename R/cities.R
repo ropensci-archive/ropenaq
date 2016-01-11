@@ -18,7 +18,7 @@ cities <- function(country=NULL){
   # country
   if(!is.null(country)){
     if(!(country%in%countries()$code)){stop("This country is not available within the platform.")}
-    query <- paste0(query, "?country=", country)
+    query <- paste0(query, "?country=", URLencode(country))
   }
 
   #####################################################
