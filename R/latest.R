@@ -39,10 +39,10 @@ latest <- function(city=NULL,
   # city
   if(!is.null(city)){
     if(!is.null(country)){
-      if(!(city%in%cities(country=country)$city)){stop("This city is not available within the platform for this country.")}
+      if(!(gsub("\\+", " ", city)%in%cities(country=country)$city)){stop("This city is not available within the platform for this country.")}
     }
     else{
-      if(!(city%in%cities()$city)){stop("This city is not available within the platform.")}
+      if(!(gsub("\\+", " ", city)%in%cities()$city)){stop("This city is not available within the platform.")}
     }
     query <- paste0(query, "&city=", city)
 

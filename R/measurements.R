@@ -64,10 +64,10 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
   # city
   if(!is.null(city)){
     if(!is.null(country)){
-      if(!(city%in%cities(country=country)$city)){stop("This city is not available within the platform for this country.")}
+      if(!(gsub("\\+", " ", city)%in%cities(country=country)$city)){stop("This city is not available within the platform for this country.")}
     }
     else{
-      if(!(city%in%cities()$city)){stop("This city is not available within the platform.")}
+      if(!(gsub("\\+", " ", city)%in%cities()$city)){stop("This city is not available within the platform.")}
     }
     query <- paste0(query, "&city=", city)
 
@@ -156,6 +156,14 @@ measurements <- function(country=NULL, city=NULL, location=NULL,
   if(!is.null(value_to)){
     if(value_to<0){stop("No negative value for value_to please!")}
     query <- paste0(query, "&value_to=", value_to)
+  }
+
+  # check values
+  if(!is.null(value_from)&!is.null(value_to)){
+    if(value_to<value_from){
+      stop("The max value must be bigger than the min value.")
+    }
+
   }
 
   #####################################################

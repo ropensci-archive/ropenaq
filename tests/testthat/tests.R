@@ -72,7 +72,7 @@ test_that("An error is thrown is limit>1000",{
 
 test_that("measurements returns a data table", {
   skip_on_cran()
-  measurementsTable <- measurements(has_geo=TRUE, limit=10, country="US")
+  measurementsTable <- measurements(limit=10, city="Sao+Paulo")
   expect_that(measurementsTable, is_a("tbl_df"))
 
 })
@@ -99,8 +99,8 @@ test_that("Parameter has to be available", {
 
 test_that("bad value_from and value_to provoke errors", {
   skip_on_cran()
-  expect_error(measurements(value_from=-3), "No negative values please!")
-  expect_error(measurements(value_to=-3), "No negative values please!")
+  expect_error(measurements(value_from=-3), "No negative value for value_from please!")
+  expect_error(measurements(value_to=-3), "No negative value for value_to please!")
   expect_error(measurements(value_from=3, value_to=1), "The max value must be bigger than the min value.")
 })
 
