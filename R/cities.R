@@ -4,7 +4,8 @@
 #' @importFrom httr GET content
 #' @param country Limit results by a certain country.
 #'
-#' @return a data.table with locations, count, country, city columns.
+#' @return a data.table with locations, count, country, city columns,
+#' and also an URL encoded string for the city.
 #' @details Please note that if an argument is composed by several words,
 #' e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
 #' @export
@@ -45,11 +46,19 @@ cities <- function(country = NULL) {
                                  function(x) x["country"]))
         city <- unlist(lapply(contentPage[[2]],
                               function(x) x["city"]))
+        cityURL <- unlist(lapply(city, URLencode,
+                                 reserved=TRUE))
+        cityURL <- unlist(lapply(cityURL, gsub,
+                                 pattern = "\\%20",
+                                 replacement = "+"))
 
         citiesTable <- dplyr::tbl_df(data.frame(locations = locations,
                                                 count = count,
                                                 country = country,
-                                                city = city))
+                                                city = city,
+                                                cityURL = cityURL))
+        citiesTable <- dplyr::mutate(citiesTable,
+                                     cityURL = as.character(cityURL))
 
         ####################################################
         # DONE!

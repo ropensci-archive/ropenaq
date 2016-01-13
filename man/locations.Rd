@@ -15,7 +15,7 @@ locations(city = NULL, country = NULL, location = NULL,
 
 \item{location}{Limit results by a certain location.}
 
-\item{parameter}{Limit to only a certain parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc").
+\item{parameter}{Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 If no parameter is given, all parameters are retrieved.}
 
 \item{has_geo}{Filter out items that have or do not have geographic information.Can only be TRUE for now.}
@@ -24,20 +24,21 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 
-\item{date_from}{Show results after a certain date. (ex. "2015-12-20").}
+\item{date_from}{Show results after a certain date. (ex. '2015-12-20').}
 
-\item{date_to}{Show results before a certain date. (ex. "2015-12-20")}
+\item{date_to}{Show results before a certain date. (ex. '2015-12-20')}
 }
 \value{
 A data.table with for each location: its name, the city and the country it is in, the number of measures for this location,
- the name of the source, and the dates and times at which it was first and last updated, respectively.
- @details Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
+ the name of the source, and the dates and times at which it was first and last updated, respectively. City and location are
+ also provided as URL encoded strings which makes further queries easier.
+ @details Please note that if an argument is composed by several words, e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
 }
 \description{
 Providing data about distinct measurement locations.
 }
 \examples{
-locations(country="IN")
-locations(city="Houston", parameter="co")
+locations(country='IN')
+locations(city='Houston', parameter='co')
 }
 

@@ -13,7 +13,6 @@ output:
 
 This R package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table objects, that can be further processed and analysed.
 
-The package depends on three R packages in total: `httr`, `dplyr` and `lubridate`.
 
 For installing the package,
 
@@ -21,6 +20,7 @@ For installing the package,
 library("devtools")
 install_github("masalmon/Ropenaq")
 ```
+
 
 # Finding data availability
 
@@ -40,7 +40,7 @@ kable(countriesTable)
 
 ## The `cities` function
 
-Using the `cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, and the country it is in.
+Using the `cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, the URL encoded string, and the country it is in.
 
 ```{r, cache=TRUE}
 citiesTable <- cities()
@@ -62,7 +62,7 @@ cities(country="PANEM")
 
 ## The `locations` function
 
-The `locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum. Below are several examples.
+The `locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum. In the output table one also gets URL encoded strings for the city and the location. Below are several examples.
 
 Here we only look for locations with PM2.5 information in India.
 
@@ -80,15 +80,15 @@ kable(locationsIndia2)
 
 # Getting data
 
-Two functions allow to get data: `measurement` and `latest`.
+Two functions allow to get data: `measurement` and `latest`. In both of them the arguments city and location needs to be given as URL encoded strings.
 
 ## The `measurements` function
 
-The measurements function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
+The measurements function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India. 
 
 ```{r, cache=TRUE}
-tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25", limit=9)
-kable(tableResults)
+tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
+kable(head(tableResults))
 ```
 
 One could also get all possible parameters in the same table.

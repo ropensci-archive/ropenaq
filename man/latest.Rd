@@ -14,7 +14,7 @@ latest(city = NULL, country = NULL, location = NULL, parameter = NULL,
 
 \item{location}{Limit results by a certain location.}
 
-\item{parameter}{Limit to only a certain parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc").
+\item{parameter}{Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 If no parameter is given, all parameters are retrieved.}
 
 \item{has_geo}{has_geo Filter out items that have or do not have geographic information.Can only be TRUE for now.}
@@ -30,10 +30,10 @@ a data.table with location, city, country, parameter, value, the last time at wh
 Provides the latest value of each available parameter for every location in the system.
 }
 \details{
-Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
+Please note that if an argument is composed by several words, e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
 }
 \examples{
-latest(country="IN", city="Chennai")
-latest(parameter="co")
+latest(country='IN', city='Chennai')
+latest(parameter='co')
 }
 

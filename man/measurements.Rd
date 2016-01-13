@@ -15,14 +15,14 @@ measurements(country = NULL, city = NULL, location = NULL,
 
 \item{location}{Limit results by a certain location.}
 
-\item{parameter}{Limit to only a certain parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc").
+\item{parameter}{Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 If no parameter is given, all parameters are retrieved.}
 
 \item{has_geo}{Filter out items that have or do not have geographic information.Can only be TRUE for now.}
 
-\item{date_from}{Show results after a certain date. (ex. "2015-12-20")}
+\item{date_from}{Show results after a certain date. (ex. '2015-12-20')}
 
-\item{date_to}{Show results before a certain date. (ex. "2015-12-20")}
+\item{date_to}{Show results before a certain date. (ex. '2015-12-20')}
 
 \item{limit}{Change the number of results returned, max is 1000.}
 
@@ -41,14 +41,14 @@ Function for getting measurements table from the openAQ API
 The sort and sort_by parameters from the API were not included because one can still re-order the table in R.
 Regarding the number of page, similarly here it does not make any sense to have it.
 include_fields was not included either.
-Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
+Please note that if an argument is composed by several words, e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
 
 #'
 }
 \examples{
 \dontrun{
-measurements(country="IN", limit=9, city="Chennai")
-measurements(country="US", has_geo=TRUE)
+measurements(country='IN', limit=9, city='Chennai')
+measurements(country='US', has_geo=TRUE)
 }
 }
 

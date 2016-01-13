@@ -4,3 +4,5 @@ knitr
 httr
 lubridate
 dplyr
+testthat
+XML

@@ -10,15 +10,17 @@ cities(country = NULL)
 \item{country}{Limit results by a certain country.}
 }
 \value{
-a data.table with locations, count, country, city columns.
+a data.table with locations, count, country, city columns,
+and also an URL encoded string for the city.
 }
 \description{
 Providing a simple listing of cities within the platform.
 }
 \details{
-Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
+Please note that if an argument is composed by several words,
+e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
 }
 \examples{
-cities(country="IN")
+cities(country='IN')
 }
 

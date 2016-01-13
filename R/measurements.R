@@ -4,7 +4,7 @@
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
 #' @param country Limit results by a certain country.
-#' @param city \tLimit results by a certain city.
+#' @param city Limit results by a certain city.
 #' @param location Limit results by a certain location.
 #' @param parameter Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 #' If no parameter is given, all parameters are retrieved.
@@ -54,59 +54,48 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
         if (!(country %in% countries()$code)) {
             stop("This country is not available within the platform.")
         }
-        query <- paste0(query, "&country=", URLencode(country))
+        query <- paste0(query, "&country=", country)
     }
 
     # city
     if (!is.null(city)) {
         if (!is.null(country)) {
-            if (!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8") %in%
-                  cities(country = country)$city)) {
+            if (!(city %in% cities(country = country)$cityURL)) {
                 stop("This city is not available within the platform for this country.")# nolint
             }
         } else {
-            if (!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8") %in%
-                  cities()$city)) {
+            if (!(city %in% cities()$cityURL)) {
                 stop("This city is not available within the platform.")
             }
         }
-        query <- paste0(query, "&city=", URLencode(city))
+        query <- paste0(query, "&city=", city)
 
     }
 
     # location
     if (!is.null(location)) {
         query <- paste0(query, "&location=", location)
-        location <- URLdecode(location)
         if (!is.null(country)) {
             if (!is.null(city)) {
-                if (!(iconv(gsub("\\+", " ", location), "LATIN2", "latin1") %in%
-                      unlist(lapply(as.character(locations(country = country,
-                  city = city)$location), iconv, "UTF-8", "latin1")))) {
+                if (!(location %in%
+                      locations(country = country, city = city)$locationURL)) {
                   stop("This location is not available within the platform for this country and this city.")# nolint
                 }
             } else {
-                if (!(iconv(gsub("\\+", " ", location), "LATIN2", "latin1") %in%
-                      unlist(lapply(
-                        as.character(locations(country = country)$location),
-                  iconv, "UTF-8", "latin1")))) {
+                if (!(location %in%
+                      locations(country = country)$locationURL)) {
                   stop("This location is not available within the platform for this country.")# nolint
                 }
             }
 
         } else {
             if (!is.null(city)) {
-                if (!(iconv(gsub("\\+", " ", location), "LATIN2", "latin1") %in%
-                      unlist(lapply(
-                        as.character(locations(city = city)$location),
-                  iconv, "UTF-8", "latin1")))) {
+                if (!(location %in%
+                      locations(city = city)$locationURL)) {
                   stop("This location is not available within the platform for this city.")# nolint
                 }
             } else {
-                if (!(iconv(gsub("\\+", " ", location), "LATIN2", "latin1") %in%
-                      unlist(lapply(
-                        as.character(locations()$location),
-                  iconv, "UTF-8", "latin1")))) {
+                if (!(location %in% locations()$locationURL)) {
                   stop("This location is not available within the platform.")# nolint
                 }
             }
@@ -212,6 +201,10 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
                                    function(x) x["parameter"]))
         location <- unlist(lapply(contentPage[[2]],
                                   function(x) x["location"]))
+        locationURL <- unlist(lapply(location, URLencode,
+                                     reserved=TRUE))
+        locationURL <- unlist(lapply(locationURL, gsub,
+                                     pattern="\\%20", replacement="+"))
         unit <- unlist(lapply(contentPage[[2]],
                               function(x) x["unit"]))
         city <- unlist(lapply(contentPage[[2]],
@@ -224,6 +217,7 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
                                                 dateLocal = dateLocal,
                                                 parameter = parameter,
                                                 location = location,
+                                                locationURL = locationURL,
                                                 value = value,
                                                 unit = unit,
                                                 city = city,
@@ -255,6 +249,7 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
                                      longitude = longitude)
 
         tableOfData <- dplyr::mutate(tableOfData,
+                                     locationURL = as.character(locationURL),
                                      dateUTC = lubridate::ymd_hms(dateUTC),
                                      dateLocal =
                                        lubridate::ymd_hms(
