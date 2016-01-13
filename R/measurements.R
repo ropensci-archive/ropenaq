@@ -258,7 +258,7 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
                                      dateUTC = lubridate::ymd_hms(dateUTC),
                                      dateLocal =
                                        lubridate::ymd_hms(
-                                         substr(dateLocal,1, 19)))
+                                         substr(dateLocal, 1, 19)))
         tableOfData <- dplyr::arrange(tableOfData, dateUTC)
 
         ##################################################### DONE!
