@@ -12,6 +12,7 @@ RoxygenNote: 5.0.1
 URL: http://github.com/masalmon/Ropenaq
 BugReports: http://github.com/masalmon/Ropenaq/issues
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    lintr
 VignetteBuilder: knitr
 Depends: httr, lubridate, dplyr, testthat, XML

@@ -4,15 +4,15 @@
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
 #' @param country Limit results by a certain country.
-#' @param city 	Limit results by a certain city.
+#' @param city \tLimit results by a certain city.
 #' @param location Limit results by a certain location.
-#' @param parameter Limit to only a certain parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc").
+#' @param parameter Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 #' If no parameter is given, all parameters are retrieved.
 #' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
 #' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
 #' @param has_geo Filter out items that have or do not have geographic information.Can only be TRUE for now.
-#' @param date_from Show results after a certain date. (ex. "2015-12-20")
-#' @param date_to Show results before a certain date. (ex. "2015-12-20")
+#' @param date_from Show results after a certain date. (ex. '2015-12-20')
+#' @param date_to Show results before a certain date. (ex. '2015-12-20')
 #' @param limit Change the number of results returned, max is 1000.
 
 #'
@@ -21,221 +21,249 @@
 #' @details The sort and sort_by parameters from the API were not included because one can still re-order the table in R.
 #' Regarding the number of page, similarly here it does not make any sense to have it.
 #' include_fields was not included either.
-#' Please note that if an argument is composed by several words, e.g. "RK Puram" as a location, it has to be written "RK+Puram" as in a URL.
+#' Please note that if an argument is composed by several words, e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
 #'
 #' #'
 #' @examples
 #' \dontrun{
-#' measurements(country="IN", limit=9, city="Chennai")
-#' measurements(country="US", has_geo=TRUE)
+#' measurements(country='IN', limit=9, city='Chennai')
+#' measurements(country='US', has_geo=TRUE)
 #' }
 #' @export
 
-measurements <- function(country=NULL, city=NULL, location=NULL,
-                         parameter=NULL,
-                         has_geo=NULL,
-                         date_from=NULL, date_to=NULL,
-                         limit=100,
-                         value_from=NULL,
-                         value_to=NULL){
+measurements <- function(country = NULL, city = NULL, location = NULL,
+                         parameter = NULL, has_geo = NULL, date_from = NULL,
+                         date_to = NULL, limit = 100, value_from = NULL,
+                         value_to = NULL) {
 
-  #####################################################
-  # BUILD QUERY
-  #####################################################
-  # base URL
-  query <- "https://api.openaq.org/v1/measurements?page=1"
+    ##################################################### BUILD QUERY base URL
+    query <- "https://api.openaq.org/v1/measurements?page=1"
 
-  # limit
-  if(is.null(limit)){
-    limit <- 100
-  }
-  if(limit>1000){
-    stop("limit cannot be more than 1000")
-  }
-
-  query <- paste0(query, "&limit=", limit)
-
-  # country
-  if(!is.null(country)){
-    if(!(country%in%countries()$code)){stop("This country is not available within the platform.")}
-    query <- paste0(query, "&country=", URLencode(country))
-  }
-
-  # city
-  if(!is.null(city)){
-    if(!is.null(country)){
-      if(!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8")%in%cities(country=country)$city)){
-        stop("This city is not available within the platform for this country.")}
+    # limit
+    if (is.null(limit)) {
+        limit <- 100
     }
-    else{
-      if(!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8")%in%cities()$city)){
-        stop("This city is not available within the platform.")}
+    if (limit > 1000) {
+        stop("limit cannot be more than 1000")
     }
-    query <- paste0(query, "&city=", URLencode(city))
 
-  }
+    query <- paste0(query, "&limit=", limit)
 
-  # location
-  if(!is.null(location)){
-    query <- paste0(query, "&location=", location)
-    location <- URLdecode(location)
-    if(!is.null(country)){
-      if(!is.null(city)){
-        if(!(iconv(gsub("\\+", " ",location), "LATIN2", "latin1")%in%unlist(lapply(as.character(locations(country=country, city=city)$"location"),iconv, "UTF-8", "latin1")))){
-          stop("This location is not available within the platform for this country and this city.")
+    # country
+    if (!is.null(country)) {
+        if (!(country %in% countries()$code)) {
+            stop("This country is not available within the platform.")
         }
-      }
-      else{
-        if(!(iconv(gsub("\\+", " ",location), "LATIN2", "latin1")%in%unlist(lapply(as.character(locations(country=country)$"location"),iconv, "UTF-8", "latin1")))){
-          stop("This location is not available within the platform for this country.")
+        query <- paste0(query, "&country=", URLencode(country))
+    }
+
+    # city
+    if (!is.null(city)) {
+        if (!is.null(country)) {
+            if (!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8") %in%
+                  cities(country = country)$city)) {
+                stop("This city is not available within the platform for this country.")# nolint
+            }
+        } else {
+            if (!(iconv(gsub("\\+", " ", city), "LATIN2", "UTF-8") %in%
+                  cities()$city)) {
+                stop("This city is not available within the platform.")
+            }
         }
-      }
+        query <- paste0(query, "&city=", URLencode(city))
 
     }
 
-    else{
-      if(!is.null(city)){
-        if(!(iconv(gsub("\\+", " ",location), "LATIN2", "latin1")%in%unlist(lapply(as.character(locations( city=city)$"location"),iconv, "UTF-8", "latin1")))){
-          stop("This location is not available within the platform for this city.")
-           }
-      }
-      else{
-        if(!(iconv(gsub("\\+", " ",location), "LATIN2", "latin1")%in%unlist(lapply(as.character(locations()$"location"),iconv, "UTF-8", "latin1")))){
-          stop("This location is not available within the platform.")
-      }
-      }
-    }
-  }
+    # location
+    if (!is.null(location)) {
+        query <- paste0(query, "&location=", location)
+        location <- URLdecode(location)
+        if (!is.null(country)) {
+            if (!is.null(city)) {
+                if (!(iconv(gsub("\\+", " ", location), "LATIN2", "latin1") %in%
+                      unlist(lapply(as.character(locations(country = country,
+                  city = city)$location), iconv, "UTF-8", "latin1")))) {
+                  stop("This location is not available within the platform for this country and this city.")# nolint
+                }
+            } else {
+                if (!(iconv(gsub("\\+", " ", location), "LATIN2", "latin1") %in%
+                      unlist(lapply(
+                        as.character(locations(country = country)$location),
+                  iconv, "UTF-8", "latin1")))) {
+                  stop("This location is not available within the platform for this country.")# nolint
+                }
+            }
 
-  # parameter
-  if(!is.null(parameter)){
-    if(!(parameter%in%c("pm25", "pm10", "so2", "no2", "o3", "co", "bc"))){
-      stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")
-    }
-
-
-    locationsTable <- locations(country=country, city=city, location=location)
-    if(sum(grepl(parameter, locationsTable$parameters))==0){
-      stop("This parameter is not available for any location corresponding to your query")
-    }
-    query <- paste0(query, "&parameter=", parameter)
-  }
-
-  # has_geo
-  if(!is.null(has_geo)){
-    if(has_geo==TRUE){
-      query <- paste0(query, "&has_geo=1")
-    }
-
-  }
-
-
-  # date_from
-  if(!is.null(date_from)){
-    if(is.na(lubridate::ymd(date_from))){stop("date_from and date_to have to be inputed as year-month-day")}
-    query <- paste0(query, "&date_from=", date_from)
-  }
-  # date_to
-  if(!is.null(date_to)){
-    if(is.na(lubridate::ymd(date_to))){stop("date_from and date_to have to be inputed as year-month-day")}
-    query <- paste0(query, "&date_to=", date_to)
-  }
-
-  # check dates
-  if(!is.null(date_from)&!is.null(date_to)){
-    if(ymd(date_from)>ymd(date_to)){
-      stop("The start date must be smaller than the end date.")
+        } else {
+            if (!is.null(city)) {
+                if (!(iconv(gsub("\\+", " ", location), "LATIN2", "latin1") %in%
+                      unlist(lapply(
+                        as.character(locations(city = city)$location),
+                  iconv, "UTF-8", "latin1")))) {
+                  stop("This location is not available within the platform for this city.")# nolint
+                }
+            } else {
+                if (!(iconv(gsub("\\+", " ", location), "LATIN2", "latin1") %in%
+                      unlist(lapply(
+                        as.character(locations()$location),
+                  iconv, "UTF-8", "latin1")))) {
+                  stop("This location is not available within the platform.")# nolint
+                }
+            }
+        }
     }
 
-  }
+    # parameter
+    if (!is.null(parameter)) {
+        if (!(parameter %in% c("pm25", "pm10", "so2",
+                               "no2", "o3", "co", "bc"))) {
+            stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
+        }
 
-  # value_from
-  if(!is.null(value_from)){
-    if(value_from<0){stop("No negative value for value_from please!")}
-    query <- paste0(query, "&value_from=", value_from)
-  }
 
-  # value_to
-  if(!is.null(value_to)){
-    if(value_to<0){stop("No negative value for value_to please!")}
-    query <- paste0(query, "&value_to=", value_to)
-  }
-
-  # check values
-  if(!is.null(value_from)&!is.null(value_to)){
-    if(value_to<value_from){
-      stop("The max value must be bigger than the min value.")
+        locationsTable <- locations(country = country,
+                                    city = city,
+                                    location = location)
+        if (sum(grepl(parameter, locationsTable$parameters)) == 0) {
+            stop("This parameter is not available for any location corresponding to your query")# nolint
+        }
+        query <- paste0(query, "&parameter=", parameter)
     }
 
-  }
-
-  #####################################################
-  # GET AND TRANSFORM RESULTS
-  #####################################################
-
-  page <- httr::GET(query)
-
-  contentPage <- httr::content(page)
-  contentPageText <- httr::content(page,as = "text")
-
-  if(grepl("Gateway time-out", toString(contentPageText))){stop("Gateway time-out, but try again in a few minutes.")} # nocov
-  if(length(contentPage[[2]])==0){stop("No results for this query")} # nocov
-  else{
-    # Extract all future columns
-    value <- unlist(lapply(contentPage[[2]], function (x) x['value']))
-    dateUTC <- unlist(lapply(contentPage[[2]], function (x) x$date$utc))
-    dateLocal <- unlist(lapply(contentPage[[2]], function (x) x$date$local))
-    parameter <- unlist(lapply(contentPage[[2]], function (x) x['parameter']))
-    location <- unlist(lapply(contentPage[[2]], function (x) x['location']))
-    unit <- unlist(lapply(contentPage[[2]], function (x) x['unit']))
-    city <- unlist(lapply(contentPage[[2]], function (x) x['city']))
-    country <- unlist(lapply(contentPage[[2]], function (x) x['country']))
-
-    # create the data.table, transforming dates using lubridate
-    tableOfData <- dplyr::tbl_df(
-      data.frame(dateUTC=dateUTC,
-                 dateLocal=dateLocal,
-                 parameter=parameter,
-                 location=location,
-                 value=value,
-                 unit=unit,
-                 city=city,
-                 country=country))
-
-    geoCoordLat <- function(x){
-      if(is.null(x$coordinates$latitude)){
-        return(NA)
-      }
-      else(return(x$coordinates$latitude))
-    }
-
-    geoCoordLong <- function(x){
-      if(is.null(x$coordinates$longitude)){
-        return(NA)
-      }
-      else(return(x$coordinates$longitude))
-    }
-
-    if(!is.null(unlist(lapply(contentPage[[2]], function (x) x$coordinates$latitude)))){
-      latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
-      longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
+    # has_geo
+    if (!is.null(has_geo)) {
+        if (has_geo == TRUE) {
+            query <- paste0(query, "&has_geo=1")
+        }
 
     }
-    else{
-      latitude <- rep(NA, nrow(tableOfData))
-      longitude <- rep(NA, nrow(tableOfData))
+
+
+    # date_from
+    if (!is.null(date_from)) {
+        if (is.na(lubridate::ymd(date_from))) {
+            stop("date_from and date_to have to be inputed as year-month-day")
+        }
+        query <- paste0(query, "&date_from=", date_from)
     }
-    tableOfData <- dplyr::mutate(tableOfData, latitude=latitude, longitude=longitude)
+    # date_to
+    if (!is.null(date_to)) {
+        if (is.na(lubridate::ymd(date_to))) {
+            stop("date_from and date_to have to be inputed as year-month-day")
+        }
+        query <- paste0(query, "&date_to=", date_to)
+    }
 
-    tableOfData <- dplyr::mutate(tableOfData,dateUTC=lubridate::ymd_hms(dateUTC),
-                                 dateLocal=lubridate::ymd_hms(substr(dateLocal, 1, 19)))
-    tableOfData <- dplyr::arrange(tableOfData, dateUTC)
+    # check dates
+    if (!is.null(date_from) & !is.null(date_to)) {
+        if (ymd(date_from) > ymd(date_to)) {
+            stop("The start date must be smaller than the end date.")
+        }
 
-    #####################################################
-    # DONE!
-    #####################################################
-    return(tableOfData)
-  }
+    }
+
+    # value_from
+    if (!is.null(value_from)) {
+        if (value_from < 0) {
+            stop("No negative value for value_from please!")
+        }
+        query <- paste0(query, "&value_from=", value_from)
+    }
+
+    # value_to
+    if (!is.null(value_to)) {
+        if (value_to < 0) {
+            stop("No negative value for value_to please!")
+        }
+        query <- paste0(query, "&value_to=", value_to)
+    }
+
+    # check values
+    if (!is.null(value_from) & !is.null(value_to)) {
+        if (value_to < value_from) {
+            stop("The max value must be bigger than the min value.")
+        }
+
+    }
+
+    ####################################################
+    # GET AND TRANSFORM RESULTS
+
+    page <- httr::GET(query)
+
+    contentPage <- httr::content(page)
+    contentPageText <- httr::content(page, as = "text")
+
+    if (grepl("Gateway time-out", toString(contentPageText))){
+            stop("Gateway time-out, but try again in a few minutes.")# nolint
+        }  # nocov
+    if (length(contentPage[[2]]) == 0){
+            stop("No results for this query")
+        }  # nocov
+ else {
+        # Extract all future columns
+        value <- unlist(lapply(contentPage[[2]],
+                               function(x) x["value"]))
+        dateUTC <- unlist(lapply(contentPage[[2]],
+                                 function(x) x$date$utc))
+        dateLocal <- unlist(lapply(contentPage[[2]],
+                                   function(x) x$date$local))
+        parameter <- unlist(lapply(contentPage[[2]],
+                                   function(x) x["parameter"]))
+        location <- unlist(lapply(contentPage[[2]],
+                                  function(x) x["location"]))
+        unit <- unlist(lapply(contentPage[[2]],
+                              function(x) x["unit"]))
+        city <- unlist(lapply(contentPage[[2]],
+                              function(x) x["city"]))
+        country <- unlist(lapply(contentPage[[2]],
+                                 function(x) x["country"]))
+
+        # create the data.table, transforming dates using lubridate
+        tableOfData <- dplyr::tbl_df(data.frame(dateUTC = dateUTC,
+                                                dateLocal = dateLocal,
+                                                parameter = parameter,
+                                                location = location,
+                                                value = value,
+                                                unit = unit,
+                                                city = city,
+                                                country = country))
+
+        geoCoordLat <- function(x) {
+            if (is.null(x$coordinates$latitude)) {
+                return(NA)
+            } else (return(x$coordinates$latitude))
+        }
+
+        geoCoordLong <- function(x) {
+            if (is.null(x$coordinates$longitude)) {
+                return(NA)
+            } else (return(x$coordinates$longitude))
+        }
+
+        if (!is.null(unlist(lapply(contentPage[[2]],
+                                   function(x) x$coordinates$latitude)))) {
+            latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
+            longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
+
+        } else {
+            latitude <- rep(NA, nrow(tableOfData))
+            longitude <- rep(NA, nrow(tableOfData))
+        }
+        tableOfData <- dplyr::mutate(tableOfData,
+                                     latitude = latitude,
+                                     longitude = longitude)
+
+        tableOfData <- dplyr::mutate(tableOfData,
+                                     dateUTC = lubridate::ymd_hms(dateUTC),
+                                     dateLocal =
+                                       lubridate::ymd_hms(
+                                         substr(dateLocal,1, 19)))
+        tableOfData <- dplyr::arrange(tableOfData, dateUTC)
+
+        ##################################################### DONE!
+        return(tableOfData)
+    }
 
 
 }

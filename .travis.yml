@@ -6,6 +6,7 @@ r_binary_packages:
 
 r_github_packages:
   - jimhester/covr
+  - jimhester/lintr
 
 notifications:
     email:
@@ -14,3 +15,6 @@ notifications:
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
+
+env:
+- LINTR_COMMENT_BOT=false

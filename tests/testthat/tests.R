@@ -148,3 +148,11 @@ test_that("The value_from and value_to arguments work as they should", {
   expect_true(all(latest(value_from=10)$value>=10), TRUE)
   expect_true(all(latest(value_to=10)$value<=10), TRUE)
 })
+
+#################################################################################################
+if (requireNamespace("lintr", quietly = TRUE)) {
+  context("lints")
+  test_that("Package Style", {
+    lintr::expect_lint_free()
+  })
+}
