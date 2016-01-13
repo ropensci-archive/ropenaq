@@ -202,9 +202,9 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
         location <- unlist(lapply(contentPage[[2]],
                                   function(x) x["location"]))
         locationURL <- unlist(lapply(location, URLencode,
-                                     reserved=TRUE))
+                                     reserved = TRUE))
         locationURL <- unlist(lapply(locationURL, gsub,
-                                     pattern="\\%20", replacement="+"))
+                                     pattern = "\\%20", replacement = "+"))
         unit <- unlist(lapply(contentPage[[2]],
                               function(x) x["unit"]))
         city <- unlist(lapply(contentPage[[2]],

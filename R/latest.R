@@ -179,7 +179,7 @@ latest <- function(city = NULL, country = NULL, location = NULL,
         locationURL <- unlist(lapply(locationURL, gsub,
                                      pattern = "\\%20", replacement = "+"))
         cityURL <- unlist(lapply(city, URLencode,
-                                 reserved=TRUE))
+                                 reserved = TRUE))
         cityURL <- unlist(lapply(cityURL, gsub,
                                  pattern = "\\%20",
                                  replacement = "+"))
