@@ -1,0 +1,61 @@
+---
+title: "A few graphics"
+author: "M. Salmon"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+In this vignette I want to draw a graph inspired by <https://pbs.twimg.com/media/CYOAGowW8AQs4Fy.png:large>.
+
+```{r, warning=FALSE, message=FALSE}
+library("Ropenaq")
+library("ggplot2")
+library("dplyr")
+
+```
+# Graph 1
+
+```{r fig.width=7, fig.height=4}
+tbHanoi <- measurements(city="Hanoi", parameter="pm25", date_from="2016-01-10", limit=1000)
+
+tbJakarta <- measurements(city="Jakarta", parameter="pm25", date_from="2016-01-10", limit=1000)
+
+tbSaoPaulo <- measurements(city="Sao+Paulo", location="Congonhas", parameter="pm25", date_from="2016-01-10", limit=1000)
+
+tbSydney <- measurements(city="Sydney+North-west", parameter="pm25", date_from="2016-01-10", limit=1000)
+
+tbWarsaw <- measurements(city="Warszawa", location="Marsza%C5%82kowska", parameter="pm25", date_from="2016-01-10", limit=1000)
+
+
+tbPM <- rbind(tbHanoi,
+            tbJakarta,
+            tbSaoPaulo,
+            tbSydney,
+            tbWarsaw)
+tbPM <- filter(tbPM, value>=0)
+
+ggplot() + geom_line(data=tbPM,
+                     aes(x=dateLocal, y=value, colour=location),
+                     size=1.5) +
+  ylab(expression(paste("PM2.5 concentration (", mu, "g/",m^3,")"))) +
+  theme(text = element_text(size=15))
+
+```
+
+# Graph 2
+
+Another graph, for India.
+
+```{r fig.width=7, fig.height=4}
+tbIndia <- measurements(country="IN", parameter="pm25", date_from="2016-01-10", limit=1000)
+tbIndia <- filter(tbIndia, value>=0)
+ggplot() + geom_line(data=tbIndia,
+                     aes(x=dateLocal, y=value, colour=location),
+                     size=1.5) +
+  ylab(expression(paste("PM2.5 concentration (", mu, "g/",m^3,")"))) +
+  theme(text = element_text(size=15))
+```

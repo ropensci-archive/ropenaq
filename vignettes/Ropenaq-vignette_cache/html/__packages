@@ -6,3 +6,4 @@ lubridate
 dplyr
 testthat
 XML
+ggplot2

@@ -1,4 +1,5 @@
 #' Provides the latest value of each available parameter for every location in the system.
+#'
 #' @importFrom httr GET content
 #' @importFrom dplyr tbl_df mutate filter
 #' @importFrom lubridate ymd_hms
@@ -17,7 +18,6 @@
 #' @return a data.table with location, city, country, parameter, value, the last time at which this value was updated, unit, latitude and longitude (NA when non available).
 #' @export
 #'
-#' @examples
 latest <- function(city = NULL, country = NULL, location = NULL,
                    parameter = NULL, has_geo = NULL,
                    value_from = NULL, value_to = NULL) {
@@ -185,10 +185,10 @@ latest <- function(city = NULL, country = NULL, location = NULL,
                                  replacement = "+"))
 
         latestTable <- dplyr::tbl_df(data.frame(location = location,
+                                                location = locationURL,
                                                 city = city,
                                                 cityURL = cityURL,
                                                 country = country,
-                                                countryURL = countryURL,
                                                 parameter = parameter,
                                                 value = value,
                                                 lastUpdated = lastUpdated,

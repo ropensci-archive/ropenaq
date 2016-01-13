@@ -1,7 +1,7 @@
 #' Providing data about distinct measurement locations.
 #'
-#' @imports dplyr tbl_df mutate
-#' @imports lubridate ymd ymd_hms
+#' @importFrom dplyr tbl_df mutate
+#' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
 #'
 #' @param city Limit results by a certain city.

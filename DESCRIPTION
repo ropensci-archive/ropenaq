@@ -15,4 +15,4 @@ Suggests: knitr,
     rmarkdown,
     lintr
 VignetteBuilder: knitr
-Depends: httr, lubridate, dplyr, testthat, XML
+Depends: httr, lubridate, dplyr, testthat, XML, ggplot2
