@@ -173,9 +173,22 @@ latest <- function(city = NULL, country = NULL, location = NULL,
             }
         }
 
+
+        locationURL <- unlist(lapply(location, URLencode,
+                                     reserved = TRUE))
+        locationURL <- unlist(lapply(locationURL, gsub,
+                                     pattern = "\\%20", replacement = "+"))
+        cityURL <- unlist(lapply(city, URLencode,
+                                 reserved=TRUE))
+        cityURL <- unlist(lapply(cityURL, gsub,
+                                 pattern = "\\%20",
+                                 replacement = "+"))
+
         latestTable <- dplyr::tbl_df(data.frame(location = location,
                                                 city = city,
+                                                cityURL = cityURL,
                                                 country = country,
+                                                countryURL = countryURL,
                                                 parameter = parameter,
                                                 value = value,
                                                 lastUpdated = lastUpdated,

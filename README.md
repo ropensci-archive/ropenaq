@@ -55,14 +55,14 @@ citiesTable <- cities()
 kable(head(citiesTable))
 ```
 
-|  locations|  count| country | city         |
-|----------:|------:|:--------|:-------------|
-|         14|  73537| NL      | Amsterdam    |
-|          1|   1910| CL      | Andacollo    |
-|          1|   3530| CL      | Antofagasta  |
-|          1|   1730| CL      | Arica        |
-|          1|   4140| TH      | Ayutthaya    |
-|          1|   8130| NL      | Badhoevedorp |
+|  locations|  count| country | city         | cityURL      |
+|----------:|------:|:--------|:-------------|:-------------|
+|         14|  81241| NL      | Amsterdam    | Amsterdam    |
+|          1|   2097| CL      | Andacollo    | Andacollo    |
+|          1|   3884| CL      | Antofagasta  | Antofagasta  |
+|          1|   1919| CL      | Arica        | Arica        |
+|          1|   4912| TH      | Ayutthaya    | Ayutthaya    |
+|          1|   8986| NL      | Badhoevedorp | Badhoevedorp |
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
@@ -71,13 +71,13 @@ citiesTableIndia <- cities(country="IN")
 kable(citiesTableIndia)
 ```
 
-|  locations|   count| country | city      |
-|----------:|-------:|:--------|:----------|
-|          1|     426| IN      | Chennai   |
-|          5|  102830| IN      | Delhi     |
-|          1|     425| IN      | Hyderabad |
-|          1|     425| IN      | Kolkata   |
-|          1|     425| IN      | Mumbai    |
+|  locations|   count| country | city      | cityURL   |
+|----------:|-------:|:--------|:----------|:----------|
+|          1|     662| IN      | Chennai   | Chennai   |
+|          5|  107036| IN      | Delhi     | Delhi     |
+|          1|     661| IN      | Hyderabad | Hyderabad |
+|          1|     661| IN      | Kolkata   | Kolkata   |
+|          1|     661| IN      | Mumbai    | Mumbai    |
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
@@ -99,17 +99,17 @@ locationsIndia <- locations(country="IN", parameter="pm25")
 kable(locationsIndia)
 ```
 
-| location                      | city      | country |  count| sourceName          | firstUpdated        | lastUpdated         | parameters |  latitude|  longitude|
-|:------------------------------|:----------|:--------|------:|:--------------------|:--------------------|:--------------------|:-----------|---------:|----------:|
-| US Diplomatic Post: Chennai   | Chennai   | IN      |    426| StateAir\_Chennai   | 2015-12-11 21:30:00 | 2015-12-29 14:30:00 | pm25       |  13.05237|   80.25193|
-| Anand Vihar                   | Delhi     | IN      |   3779| Anand Vihar         | 2015-06-29 14:30:00 | 2015-12-29 13:30:00 | pm25       |        NA|         NA|
-| Mandir Marg                   | Delhi     | IN      |   5539| Mandir Marg         | 2015-06-29 14:30:00 | 2015-12-29 14:10:00 | pm25       |        NA|         NA|
-| Punjabi Bagh                  | Delhi     | IN      |   5363| Punjabi Bagh        | 2015-06-29 00:30:00 | 2015-12-29 14:05:00 | pm25       |        NA|         NA|
-| RK Puram                      | Delhi     | IN      |   5892| RK Puram            | 2015-06-29 14:30:00 | 2015-12-29 14:10:00 | pm25       |        NA|         NA|
-| US Diplomatic Post: New Delhi | Delhi     | IN      |    425| StateAir\_NewDelhi  | 2015-12-11 21:30:00 | 2015-12-29 13:30:00 | pm25       |  28.59810|   77.18907|
-| US Diplomatic Post: Hyderabad | Hyderabad | IN      |    425| StateAir\_Hyderabad | 2015-12-11 21:30:00 | 2015-12-29 13:30:00 | pm25       |  17.44346|   78.47489|
-| US Diplomatic Post: Kolkata   | Kolkata   | IN      |    425| StateAir\_Kolkata   | 2015-12-11 21:30:00 | 2015-12-29 13:30:00 | pm25       |  22.54714|   88.35105|
-| US Diplomatic Post: Mumbai    | Mumbai    | IN      |    425| StateAir\_Mumbai    | 2015-12-11 21:30:00 | 2015-12-29 13:30:00 | pm25       |  19.06602|   72.86870|
+| location                      | locationURL                     | city      | cityURL   | country |  count| sourceName          | firstUpdated        | lastUpdated         | parameters |  latitude|  longitude|
+|:------------------------------|:--------------------------------|:----------|:----------|:--------|------:|:--------------------|:--------------------|:--------------------|:-----------|---------:|----------:|
+| US Diplomatic Post: Chennai   | US+Diplomatic+Post%3A+Chennai   | Chennai   | Chennai   | IN      |    662| StateAir\_Chennai   | 2015-12-11 21:30:00 | 2016-01-13 13:30:00 | pm25       |  13.05237|   80.25193|
+| Anand Vihar                   | Anand+Vihar                     | Delhi     | Delhi     | IN      |   3911| Anand Vihar         | 2015-06-29 14:30:00 | 2016-01-13 13:20:00 | pm25       |        NA|         NA|
+| Mandir Marg                   | Mandir+Marg                     | Delhi     | Delhi     | IN      |   5729| Mandir Marg         | 2015-06-29 14:30:00 | 2016-01-13 13:50:00 | pm25       |        NA|         NA|
+| Punjabi Bagh                  | Punjabi+Bagh                    | Delhi     | Delhi     | IN      |   5565| Punjabi Bagh        | 2015-06-29 00:30:00 | 2016-01-13 13:45:00 | pm25       |        NA|         NA|
+| RK Puram                      | RK+Puram                        | Delhi     | Delhi     | IN      |   6077| RK Puram            | 2015-06-29 14:30:00 | 2016-01-13 13:50:00 | pm25       |        NA|         NA|
+| US Diplomatic Post: New Delhi | US+Diplomatic+Post%3A+New+Delhi | Delhi     | Delhi     | IN      |    661| StateAir\_NewDelhi  | 2015-12-11 21:30:00 | 2016-01-13 13:30:00 | pm25       |  28.59810|   77.18907|
+| US Diplomatic Post: Hyderabad | US+Diplomatic+Post%3A+Hyderabad | Hyderabad | Hyderabad | IN      |    661| StateAir\_Hyderabad | 2015-12-11 21:30:00 | 2016-01-13 13:30:00 | pm25       |  17.44346|   78.47489|
+| US Diplomatic Post: Kolkata   | US+Diplomatic+Post%3A+Kolkata   | Kolkata   | Kolkata   | IN      |    661| StateAir\_Kolkata   | 2015-12-11 21:30:00 | 2016-01-13 13:30:00 | pm25       |  22.54714|   88.35105|
+| US Diplomatic Post: Mumbai    | US+Diplomatic+Post%3A+Mumbai    | Mumbai    | Mumbai    | IN      |    661| StateAir\_Mumbai    | 2015-12-11 21:30:00 | 2016-01-13 13:30:00 | pm25       |  19.06602|   72.86870|
 
 Then we could only choose to see the locations with results before 2015-10-01.
 
@@ -118,12 +118,12 @@ locationsIndia2 <- locations(country="IN", parameter="pm25", date_to="2015-10-01
 kable(locationsIndia2)
 ```
 
-| location     | city  | country |  count| sourceName   | firstUpdated        | lastUpdated         | parameters |
-|:-------------|:------|:--------|------:|:-------------|:--------------------|:--------------------|:-----------|
-| Anand Vihar  | Delhi | IN      |   1499| Anand Vihar  | 2015-06-29 14:30:00 | 2015-09-14 12:30:00 | pm25       |
-| Mandir Marg  | Delhi | IN      |   2023| Mandir Marg  | 2015-06-29 14:30:00 | 2015-09-30 23:50:00 | pm25       |
-| Punjabi Bagh | Delhi | IN      |   1516| Punjabi Bagh | 2015-06-29 00:30:00 | 2015-09-30 23:50:00 | pm25       |
-| RK Puram     | Delhi | IN      |   1886| RK Puram     | 2015-06-29 14:30:00 | 2015-09-30 23:50:00 | pm25       |
+| location     | locationURL  | city  | cityURL | country |  count| sourceName   | firstUpdated        | lastUpdated         | parameters |
+|:-------------|:-------------|:------|:--------|:--------|------:|:-------------|:--------------------|:--------------------|:-----------|
+| Anand Vihar  | Anand+Vihar  | Delhi | Delhi   | IN      |   1499| Anand Vihar  | 2015-06-29 14:30:00 | 2015-09-14 12:30:00 | pm25       |
+| Mandir Marg  | Mandir+Marg  | Delhi | Delhi   | IN      |   2023| Mandir Marg  | 2015-06-29 14:30:00 | 2015-09-30 23:50:00 | pm25       |
+| Punjabi Bagh | Punjabi+Bagh | Delhi | Delhi   | IN      |   1516| Punjabi Bagh | 2015-06-29 00:30:00 | 2015-09-30 23:50:00 | pm25       |
+| RK Puram     | RK+Puram     | Delhi | Delhi   | IN      |   1886| RK Puram     | 2015-06-29 14:30:00 | 2015-09-30 23:50:00 | pm25       |
 
 Getting data
 ============
@@ -179,9 +179,9 @@ kable(head(tableLatest))
 
 | location    | city  | country | parameter |   value| lastUpdated         | unit  |
 |:------------|:------|:--------|:----------|-------:|:--------------------|:------|
-| Anand Vihar | Delhi | IN      | pm10      |   516.0| 2015-12-29 13:30:00 | µg/m³ |
-| Anand Vihar | Delhi | IN      | so2       |    24.1| 2015-12-29 13:30:00 | µg/m³ |
-| Anand Vihar | Delhi | IN      | o3        |     9.6| 2015-12-29 13:30:00 | µg/m³ |
-| Anand Vihar | Delhi | IN      | no2       |   116.9| 2015-12-29 13:30:00 | µg/m³ |
-| Anand Vihar | Delhi | IN      | pm25      |   129.0| 2015-12-29 13:30:00 | µg/m³ |
-| Anand Vihar | Delhi | IN      | co        |  2800.0| 2015-12-29 13:30:00 | µg/m³ |
+| Anand Vihar | Delhi | IN      | pm10      |   859.0| 2016-01-13 13:20:00 | µg/m³ |
+| Anand Vihar | Delhi | IN      | so2       |    15.9| 2016-01-13 13:35:00 | µg/m³ |
+| Anand Vihar | Delhi | IN      | o3        |     8.9| 2016-01-13 13:35:00 | µg/m³ |
+| Anand Vihar | Delhi | IN      | no2       |   127.5| 2016-01-13 13:35:00 | µg/m³ |
+| Anand Vihar | Delhi | IN      | pm25      |   460.0| 2016-01-13 13:20:00 | µg/m³ |
+| Anand Vihar | Delhi | IN      | co        |  2900.0| 2016-01-13 13:35:00 | µg/m³ |

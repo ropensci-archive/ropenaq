@@ -3,6 +3,6 @@ httr
 lubridate
 dplyr
 testthat
+XML
 Ropenaq
 knitr
-XML
