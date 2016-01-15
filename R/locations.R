@@ -9,7 +9,7 @@
 #' @param location Limit results by a certain location.
 #' @param parameter Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 #' If no parameter is given, all parameters are retrieved.
-#' @param has_geo Filter out items that have or do not have geographic information.Can only be TRUE for now.
+#' @param has_geo Filter out items that have or do not have geographic information.
 #' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
 #' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
 #' @param date_from Show results after a certain date. (ex. '2015-12-20').
@@ -95,6 +95,9 @@ locations <- function(city = NULL, country = NULL, location = NULL,
         if (has_geo == TRUE) {
             query <- paste0(query, "&has_geo=1")
         }
+      if (has_geo == FALSE) {
+        query <- paste0(query, "&has_geo=false")
+      }
 
     }
 

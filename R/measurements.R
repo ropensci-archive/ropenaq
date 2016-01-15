@@ -10,7 +10,7 @@
 #' If no parameter is given, all parameters are retrieved.
 #' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
 #' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
-#' @param has_geo Filter out items that have or do not have geographic information.Can only be TRUE for now.
+#' @param has_geo Filter out items that have or do not have geographic information.
 #' @param date_from Show results after a certain date. (ex. '2015-12-20')
 #' @param date_to Show results before a certain date. (ex. '2015-12-20')
 #' @param limit Change the number of results returned, max is 1000.
@@ -121,9 +121,12 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
 
     # has_geo
     if (!is.null(has_geo)) {
-        if (has_geo == TRUE) {
-            query <- paste0(query, "&has_geo=1")
-        }
+      if (has_geo == TRUE) {
+        query <- paste0(query, "&has_geo=1")
+      }
+      if (has_geo == FALSE) {
+        query <- paste0(query, "&has_geo=false")
+      }
 
     }
 

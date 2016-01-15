@@ -18,7 +18,7 @@ measurements(country = NULL, city = NULL, location = NULL,
 \item{parameter}{Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 If no parameter is given, all parameters are retrieved.}
 
-\item{has_geo}{Filter out items that have or do not have geographic information.Can only be TRUE for now.}
+\item{has_geo}{Filter out items that have or do not have geographic information.}
 
 \item{date_from}{Show results after a certain date. (ex. '2015-12-20')}
 

@@ -17,7 +17,7 @@ latest(city = NULL, country = NULL, location = NULL, parameter = NULL,
 \item{parameter}{Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 If no parameter is given, all parameters are retrieved.}
 
-\item{has_geo}{has_geo Filter out items that have or do not have geographic information.Can only be TRUE for now.}
+\item{has_geo}{has_geo Filter out items that have or do not have geographic information.}
 
 \item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
 
