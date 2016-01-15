@@ -2,8 +2,7 @@ language: r
 sudo: true
 
 r_binary_packages:
-  - rgdal
-  - OpenStreetMaps
+  - OpenStreetMap
   - ggplot2
 
 r_github_packages:
