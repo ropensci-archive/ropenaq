@@ -5,11 +5,11 @@ Introduction
 
 This R package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table objects, that can be further processed and analysed.
 
-For installing the package,
+For installing the package, you can copy the following lines. Set `build_vignettes` to FALSE if you do not wish to install the suggested packages.
 
 ``` r
 library("devtools")
-install_github("masalmon/Ropenaq")
+install_github("masalmon/Ropenaq", build_vignettes=TRUE)
 ```
 
 Finding data availability
@@ -31,19 +31,19 @@ kable(countriesTable)
 
 | code | name           |   count|
 |:-----|:---------------|-------:|
-| AU   | Australia      |  210181|
-| BR   | Brazil         |  329664|
-| CL   | Chile          |  496508|
-| CN   | China          |   11981|
-| GB   | United Kingdom |   96544|
-| ID   | Indonesia      |     812|
-| IN   | India          |  109681|
-| MN   | Mongolia       |  327194|
-| NL   | Netherlands    |  628889|
-| PL   | Poland         |  128903|
-| TH   | Thailand       |  261535|
-| US   | United States  |  135585|
-| VN   | Viet Nam       |     661|
+| AU   | Australia      |  214523|
+| BR   | Brazil         |  334656|
+| CL   | Chile          |  504791|
+| CN   | China          |   12129|
+| GB   | United Kingdom |   97815|
+| ID   | Indonesia      |     900|
+| IN   | India          |  111903|
+| MN   | Mongolia       |  332364|
+| NL   | Netherlands    |  640714|
+| PL   | Poland         |  131307|
+| TH   | Thailand       |  268365|
+| US   | United States  |  138937|
+| VN   | Viet Nam       |     705|
 
 The `cities` function
 ---------------------

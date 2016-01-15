@@ -14,11 +14,11 @@ output:
 This R package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.table objects, that can be further processed and analysed.
 
 
-For installing the package,
+For installing the package, you can copy the following lines. Set `build_vignettes` to FALSE if you do not wish to install the suggested packages.
 
 ```{r, eval=FALSE}
 library("devtools")
-install_github("masalmon/Ropenaq")
+install_github("masalmon/Ropenaq", build_vignettes=TRUE)
 ```
 
 
