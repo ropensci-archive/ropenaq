@@ -173,7 +173,7 @@ locations <- function(city = NULL, country = NULL, location = NULL,
         city <- as.character(unlist(lapply(contentPage[[2]],
                               function(x) x["city"])))
         cityURL <- unlist(lapply(city, URLencode,
-                                     reserved=TRUE))
+                                     reserved = TRUE))
         cityURL <- unlist(lapply(cityURL, gsub,
                                      pattern = "\\%20",
                                  replacement = "+"))
