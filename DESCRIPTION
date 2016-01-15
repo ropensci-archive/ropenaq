@@ -13,6 +13,8 @@ URL: http://github.com/masalmon/Ropenaq
 BugReports: http://github.com/masalmon/Ropenaq/issues
 Suggests: knitr,
     rmarkdown,
-    lintr
+    lintr,
+    ggplot2,
+    OpenStreetMap
 VignetteBuilder: knitr
-Depends: httr, lubridate, dplyr, testthat, XML, ggplot2
+Depends: httr, lubridate, dplyr, testthat, XML

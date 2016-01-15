@@ -219,13 +219,18 @@ locations <- function(city = NULL, country = NULL, location = NULL,
             } else (return(x$coordinates$longitude))
         }
 
-        if (!is.null(unlist(lapply(
-          contentPage[[2]], function(x) x$coordinates$latitude)))) {
-            latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
-            longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
-            locationsTable <- dplyr::mutate(locationsTable, latitude = latitude,
-                                            longitude = longitude)
+        if (!is.null(unlist(lapply(contentPage[[2]],
+                                   function(x) x$coordinates$latitude)))) {
+          latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
+          longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
+
+        } else {
+          latitude <- rep(NA, nrow(locationsTable))
+          longitude <- rep(NA, nrow(locationsTable))
         }
+        locationsTable <- dplyr::mutate(locationsTable,
+                                     latitude = latitude,
+                                     longitude = longitude)
 
         ##################################################### DONE!
         return(locationsTable)
