@@ -153,6 +153,7 @@ test_that("The value_from and value_to arguments work as they should", {
 if (requireNamespace("lintr", quietly = TRUE)) {
   context("lints")
   test_that("Package Style", {
+    skip_on_appveyor()
     lintr::expect_lint_free()
   })
 }
