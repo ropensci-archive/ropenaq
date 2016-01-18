@@ -194,7 +194,6 @@ locations <- function(city = NULL, country = NULL, location = NULL,
         parameters <- unlist(lapply(contentPage[[2]],
                                     function(x) toString(
                                       unlist(x["parameters"]))))
-
         locationsTable <- dplyr::tbl_df(data.frame(location = location,
                                                    locationURL = locationURL,
                                                    city = city,

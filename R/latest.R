@@ -188,7 +188,7 @@ latest <- function(city = NULL, country = NULL, location = NULL,
                                  replacement = "+"))
 
         latestTable <- dplyr::tbl_df(data.frame(location = location,
-                                                location = locationURL,
+                                                locationURL = locationURL,
                                                 city = city,
                                                 cityURL = cityURL,
                                                 country = country,
