@@ -36,6 +36,7 @@ measurementsNL <- dplyr::mutate(measurementsNL, date=dateLocal,
   filter(value>=0)
 
 # for now openair functions do not work with tbl_df objects
+# on MY computer
 measurementsNL <- as.data.frame(measurementsNL)
 
 # cool calendar plot
@@ -56,7 +57,8 @@ measurementsNL2 <- measurements(country="NL",
 measurementsNL2 <-  dplyr::mutate(measurementsNL2, date=dateLocal,
                                      pm25=value) %>%
   filter(value>=0)
-
+# for now openair functions do not work with tbl_df objects
+# on MY computer
 measurementsNL2 <- as.data.frame(measurementsNL2)
 
 GoogleMapsPlot(measurementsNL2, lat = "latitude", long = "longitude",
