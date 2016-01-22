@@ -5,6 +5,10 @@ library("Ropenaq")
 library("openair")
 library("dplyr")
 
+
+#####################################
+# TIMEPLOT, CALENDARPLOT
+#####################################
 measurementsNL <- NULL
 # get all measurements for 2015
 # not very nice code regarding date sequences
@@ -40,3 +44,21 @@ calendarPlot(mydata=measurementsNL, pollutant = "pm25", year =2015)
 # useful timeplot
 timePlot(mydata=measurementsNL, pollutant = "pm25")
 
+#####################################
+# GoogleMapsPlot
+#####################################
+measurementsNL2 <- measurements(country="NL",
+                                parameter="pm25",
+                                limit=1000,
+                                date_from="2016-01-21",
+                                date_to="2016-01-22")
+
+measurementsNL2 <-  dplyr::mutate(measurementsNL2, date=dateLocal,
+                                     pm25=value) %>%
+  filter(value>=0)
+
+measurementsNL2 <- as.data.frame(measurementsNL2)
+
+GoogleMapsPlot(measurementsNL2, lat = "latitude", long = "longitude",
+               pollutant = "pm25", cex=3,
+               type = "date", maptype = "roadmap", col = "jet")
