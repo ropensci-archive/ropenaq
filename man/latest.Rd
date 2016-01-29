@@ -10,7 +10,7 @@ latest(city = NULL, country = NULL, location = NULL, parameter = NULL,
 \arguments{
 \item{city}{Limit results by a certain city.}
 
-\item{country}{Limit results by a certain country.}
+\item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
 
 \item{location}{Limit results by a certain location.}
 

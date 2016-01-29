@@ -4,7 +4,7 @@
 #' @importFrom dplyr tbl_df mutate filter "%>%"
 #' @importFrom lubridate ymd_hms
 #' @param city Limit results by a certain city.
-#' @param country Limit results by a certain country.
+#' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
 #' @param location Limit results by a certain location.
 #' @param parameter  Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 #' If no parameter is given, all parameters are retrieved.

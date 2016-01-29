@@ -2,7 +2,7 @@
 #'
 #' @importFrom dplyr tbl_df "%>%"
 #' @importFrom httr GET content
-#' @param country Limit results by a certain country.
+#' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
 #'
 #' @return a data.frame (dplyr "tbl_df") with locations, count, country, city columns,
 #' and also an URL encoded string for the city.

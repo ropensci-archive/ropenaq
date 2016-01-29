@@ -7,7 +7,7 @@
 cities(country = NULL)
 }
 \arguments{
-\item{country}{Limit results by a certain country.}
+\item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
 }
 \value{
 a data.frame (dplyr "tbl_df") with locations, count, country, city columns,

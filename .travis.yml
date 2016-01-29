@@ -5,6 +5,7 @@ r_binary_packages:
   - OpenStreetMap
   - ggplot2
   - testthat
+  - xml2
 
 r_github_packages:
   - jimhester/covr
