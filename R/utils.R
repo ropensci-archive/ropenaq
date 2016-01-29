@@ -1,8 +1,9 @@
+######################################################################################
 base_url <- function() {
   "https://api.openaq.org/v1/"
 }
 
-
+######################################################################################
 buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        parameter = NULL, has_geo = NULL, date_from = NULL,
                        date_to = NULL, value_from = NULL,
@@ -143,4 +144,62 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   }
 
   return(query)
+}
+######################################################################################
+getResults <- function(query){
+  page <- httr::GET(query)
+
+  # convert the http error to a R error
+  httr::stop_for_status(page)
+  contentPage <- httr::content(page, as = "text")
+
+  # parse the data
+  resTable <- jsonlite::fromJSON(contentPage)$results
+  resTable <- dplyr::tbl_df(resTable)
+  return(resTable)
+}
+
+######################################################################################
+addCityURL <- function(resTable){
+  cityURL <- unlist(lapply(resTable$city,
+                           URLencode,
+                           reserved = TRUE))
+  cityURL <- unlist(lapply(cityURL, gsub,
+                           pattern = "\\%20",
+                           replacement = "+"))
+  resTable <- dplyr::mutate(resTable,
+                               cityURL = cityURL)
+  return(resTable)
+}
+
+addLocationURL <- function(resTable){
+  locationURL <- unlist(lapply(resTable$location,
+                           URLencode,
+                           reserved = TRUE))
+  locationURL <- unlist(lapply(locationURL, gsub,
+                           pattern = "\\%20",
+                           replacement = "+"))
+  resTable <- dplyr::mutate(resTable,
+                            locationURL = locationURL)
+  return(resTable)
+}
+######################################################################################
+
+addGeo <- function(resTable){
+  if ("coordinates" %in% names(resTable)){
+    longitude <- resTable$coordinates$longitude
+    latitude <- resTable$coordinates$latitude
+    resTable <- dplyr::select(resTable,
+                              - coordinates)
+  }
+  else{
+    longitude <- rep(NA, nrow(resTable))
+    latitude <- rep(NA, nrow(resTable))
+  }
+
+  resTable <- dplyr::mutate(resTable,
+                            longitude = longitude,
+                            latitude = latitude)
+
+  return(resTable)
 }

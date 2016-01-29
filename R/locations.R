@@ -41,87 +41,18 @@ locations <- function(country = NULL, city = NULL, location = NULL,
                         query = query)
     ####################################################
     # GET AND TRANSFORM RESULTS
+    locationsTable <- getResults(query)
+    locationsTable <- addCityURL(locationsTable)
+    locationsTable <- addLocationURL(locationsTable)
+    locationsTable <- dplyr::mutate(locationsTable,
+                                    firstUpdated =
+                                      lubridate::ymd_hms(firstUpdated),
+                                    lastUpdated =
+                                      lubridate::ymd_hms(lastUpdated))
+    locationsTable <- addGeo(locationsTable)
 
-    page <- httr::GET(query)
+    ####################################################
+    # DONE!
+    return(locationsTable)
 
-    contentPage <- httr::content(page)
-    contentPageText <- httr::content(page, as = "text")
-    if (grepl("Gateway time-out", toString(contentPageText))){
-            stop("Gateway time-out, but try again in a few minutes.")
-        }  # nocov
-    if (length(contentPage[[2]]) == 0){
-            stop("No results for this query")
-        }  # nocov
- else {
-        location <- unlist(lapply(contentPage[[2]],
-                                  function(x) x["location"]))
-        locationURL <- unlist(lapply(location, URLencode,
-                                     reserved = TRUE))
-        locationURL <- unlist(lapply(locationURL, gsub,
-                                     pattern = "\\%20", replacement = "+"))
-
-        city <- as.character(unlist(lapply(contentPage[[2]],
-                              function(x) x["city"])))
-        cityURL <- unlist(lapply(city, URLencode,
-                                     reserved = TRUE))
-        cityURL <- unlist(lapply(cityURL, gsub,
-                                     pattern = "\\%20",
-                                 replacement = "+"))
-
-        country <- unlist(lapply(contentPage[[2]],
-                                 function(x) x["country"]))
-        count <- unlist(lapply(contentPage[[2]],
-                               function(x) x["count"]))
-        sourceName <- unlist(lapply(contentPage[[2]],
-                                    function(x) x["sourceName"]))
-        firstUpdated <- unlist(lapply(contentPage[[2]],
-                                      function(x) x["firstUpdated"]))
-        lastUpdated <- unlist(lapply(contentPage[[2]],
-                                     function(x) x["lastUpdated"]))
-        parameters <- unlist(lapply(contentPage[[2]],
-                                    function(x) toString(
-                                      unlist(x["parameters"]))))
-        locationsTable <- dplyr::tbl_df(data.frame(location = location,
-                                                   locationURL = locationURL,
-                                                   city = city,
-                                                   cityURL = cityURL,
-                                                   country = country,
-                                                   count = count,
-                                                   sourceName = sourceName,
-                                                   firstUpdated = firstUpdated,
-                                                   lastUpdated = lastUpdated,
-                                                   parameters = parameters)) %>%
-            dplyr::mutate(firstUpdated = lubridate::ymd_hms(firstUpdated),
-                          lastUpdated = lubridate::ymd_hms(lastUpdated),
-                          locationURL = as.character(locationURL),
-                          cityURL = as.character(cityURL))
-
-        geoCoordLat <- function(x) {
-            if (is.null(x$coordinates$latitude)) {
-                return(NA)
-            } else (return(x$coordinates$latitude))
-        }
-
-        geoCoordLong <- function(x) {
-            if (is.null(x$coordinates$longitude)) {
-                return(NA)
-            } else (return(x$coordinates$longitude))
-        }
-
-        if (!is.null(unlist(lapply(contentPage[[2]],
-                                   function(x) x$coordinates$latitude)))) {
-          latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
-          longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
-
-        } else {
-          latitude <- rep(NA, nrow(locationsTable))
-          longitude <- rep(NA, nrow(locationsTable))
-        }
-        locationsTable <- dplyr::mutate(locationsTable,
-                                     latitude = latitude,
-                                     longitude = longitude)
-
-        ##################################################### DONE!
-        return(locationsTable)
-    }
 }

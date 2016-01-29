@@ -17,39 +17,15 @@ cities <- function(country = NULL) {
     ####################################################
     # BUILD QUERY
     query <- paste0(base_url(), "cities?")
-
     query <- buildQuery(country = country,
                         query = query)
 
     ####################################################
     # GET AND TRANSFORM RESULTS
-
-    page <- httr::GET(query)
-
-    # convert the http error to a R error
-    httr::stop_for_status(page)
-    contentPage <- httr::content(page, as = "text")
-
-    # parse the data
-    citiesTable <- jsonlite::fromJSON(contentPage)$results
-    citiesTable <- dplyr::tbl_df(citiesTable)
-
-    # now add cityURL
-    cityURL <- unlist(lapply(citiesTable$city,
-                             URLencode,
-                             reserved = TRUE))
-    cityURL <- unlist(lapply(cityURL, gsub,
-                             pattern = "\\%20",
-                             replacement = "+"))
-
-
-    citiesTable <- dplyr::mutate(citiesTable,
-                                 cityURL = cityURL)
+    citiesTable <- getResults(query)
+    citiesTable <- addCityURL(citiesTable)
 
     ####################################################
     # DONE!
     return(citiesTable)
-
-
-
 }
