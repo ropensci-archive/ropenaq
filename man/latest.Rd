@@ -35,7 +35,9 @@ Please note that if an argument is composed by several words, e.g. 'RK Puram' as
   If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
 }
 \examples{
+\dontrun{
 latest(country='IN', city='Chennai')
 latest(parameter='co')
+}
 }
 

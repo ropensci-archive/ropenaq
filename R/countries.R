@@ -15,6 +15,6 @@ countries <- function() {
 
     ####################################################
     # GET AND TRANSFORM RESULTS
-    countriesTable <- getResults(query)
+    countriesTable <- dplyr::tbl_df(getResults(query))
     return(countriesTable)
 }

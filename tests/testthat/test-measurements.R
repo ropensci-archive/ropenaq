@@ -34,7 +34,8 @@ test_that("measurements has the right columns", {
                                        "latitude")))
   expect_true(class(tableRes$location) == "character")
   expect_true(class(tableRes$parameter) == "character")
-  expect_true(class(tableRes$value) == "numeric")
+  expect_true(class(tableRes$value) == "numeric" |
+                class(tableRes$value) == "integer")
   expect_true(class(tableRes$unit) == "character")
   expect_true(class(tableRes$country) == "character")
   expect_true(class(tableRes$city) == "character")

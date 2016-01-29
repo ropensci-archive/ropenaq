@@ -22,7 +22,7 @@ cities <- function(country = NULL) {
 
     ####################################################
     # GET AND TRANSFORM RESULTS
-    citiesTable <- getResults(query)
+    citiesTable <- dplyr::tbl_df(getResults(query))
     citiesTable <- addCityURL(citiesTable)
 
     ####################################################

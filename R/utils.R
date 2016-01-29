@@ -157,7 +157,7 @@ getResults <- function(query){
 
   # parse the data
   resTable <- jsonlite::fromJSON(contentPage)$results
-  resTable <- dplyr::tbl_df(resTable)
+  resTable <- resTable
   return(resTable)
 }
 

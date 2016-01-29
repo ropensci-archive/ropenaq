@@ -41,7 +41,7 @@ locations <- function(country = NULL, city = NULL, location = NULL,
                         query = query)
     ####################################################
     # GET AND TRANSFORM RESULTS
-    locationsTable <- getResults(query)
+    locationsTable <- dplyr::tbl_df(getResults(query))
     locationsTable <- addCityURL(locationsTable)
     locationsTable <- addLocationURL(locationsTable)
     locationsTable <- dplyr::mutate(locationsTable,

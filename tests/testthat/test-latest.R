@@ -23,19 +23,19 @@ test_that("latest has the right columns", {
                                        "unit",
                                        "cityURL",
                                        "locationURL")))
-  classCol <- unlist(lapply(tableRes, class))
-  expect_true(all(classCol==c("character",
-                             "character",
-                             "character",
-                             "numeric",
-                             "numeric",
-                             "character",
-                             "numeric",
-                             "POSIXct",
-                             "POSIXt",
-                             "character",
-                             "character",
-                             "character")))
+  expect_true(class(tableRes$location) == "character")
+  expect_true(class(tableRes$parameter) == "character")
+  expect_true(class(tableRes$value) == "numeric")
+  expect_true(class(tableRes$unit) == "character")
+  expect_true(class(tableRes$country) == "character")
+  expect_true(class(tableRes$city) == "character")
+  expect_true(class(tableRes$cityURL) == "character")
+  expect_true(class(tableRes$locationURL) == "character")
+  expect_true(class(tableRes$lastUpdated)[1] == "POSIXct")
+  expect_true(class(tableRes$longitude) == "numeric" |
+                class(tableRes$longitude) == "logical")
+  expect_true(class(tableRes$latitude) == "numeric" |
+                class(tableRes$latitude) == "logical")
 })
 
 # test_that("The value_from and value_to arguments work as they should", {
