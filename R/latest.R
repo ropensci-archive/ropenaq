@@ -49,6 +49,7 @@ latest <- function(country = NULL, city = NULL, location = NULL,
                                     lastUpdated =
                                       lubridate::ymd_hms(
                                         lastUpdated))
+    tableOfResults <- dplyr::tbl_df(tableOfResults)
 
     return(tableOfResults)
 }

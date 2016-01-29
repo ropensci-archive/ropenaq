@@ -44,11 +44,19 @@ locations <- function(country = NULL, city = NULL, location = NULL,
     locationsTable <- dplyr::tbl_df(getResults(query))
     locationsTable <- addCityURL(locationsTable)
     locationsTable <- addLocationURL(locationsTable)
+
+    parameters <- toString(locationsTable$parameters)
+    parameters <- gsub("c", "", parameters)
+    parameters <- gsub("\"", "", parameters)
+    parameters <- gsub("\\(", "", parameters)
+    parameters <- gsub("\\)", "", parameters)
+
     locationsTable <- dplyr::mutate(locationsTable,
                                     firstUpdated =
                                       lubridate::ymd_hms(firstUpdated),
                                     lastUpdated =
-                                      lubridate::ymd_hms(lastUpdated))
+                                      lubridate::ymd_hms(lastUpdated),
+                                    parameters = parameters)
     locationsTable <- addGeo(locationsTable)
 
     ####################################################
