@@ -43,11 +43,11 @@ locations <- function(country = NULL, city = NULL, location = NULL,
     # GET AND TRANSFORM RESULTS
     locationsTable <- getResults(query)
 
-    parameters <- toString(locationsTable$parameters)
-    parameters <- gsub("c", "", parameters)
+    parameters <- lapply(locationsTable$parameters,
+                         toString)
     parameters <- gsub("\"", "", parameters)
     parameters <- gsub("\\(", "", parameters)
-    parametersGood <- gsub("\\)", "", parameters)
+    parametersGood <- gsub("c\\)", "", parameters)
 
     locationsTable <- addGeo(locationsTable)
 
