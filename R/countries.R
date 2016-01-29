@@ -11,7 +11,7 @@
 countries <- function() {
     ####################################################
   # BUILD QUERY
-    query <- "https://api.openaq.org/v1/countries"
+    query <- paste0(base_url(), "countries")
 
     ####################################################
     # GET AND TRANSFORM RESULTS

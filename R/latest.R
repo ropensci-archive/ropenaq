@@ -24,115 +24,15 @@ latest <- function(country = NULL, city = NULL, location = NULL,
                    parameter = NULL, has_geo = NULL,
                    value_from = NULL, value_to = NULL) {
     ##################################################### BUILD QUERY
-    query <- "https://api.openaq.org/v1/latest?"
+    query <- paste0(base_url(), "latest?")
 
-    # country
-    if (!is.null(country)) {
-        if (!(country %in% countries()$code)) {
-            stop("This country is not available within the platform.")
-        }
-        query <- paste0(query, "&country=", country)
-    }
-
-    # city
-    if (!is.null(city)) {
-        if (!is.null(country)) {
-            if (!(city %in% cities(country = country)$cityURL)) {
-                stop("This city is not available within the platform for this country.") # nolint
-            }
-        } else {
-            if (!(city %in% cities()$cityURL)) {
-                stop("This city is not available within the platform.")
-            }
-        }
-        query <- paste0(query, "&city=", city)
-
-    }
-
-    # location
-    if (!is.null(location)) {
-        query <- paste0(query, "&location=", location)
-        if (!is.null(country)) {
-            if (!is.null(city)) {
-                if (!(location %in%
-                      locations(country = country,
-                                city = city)$locationURL)) {
-                  stop("This location is not available within the platform for this country and this city.")# nolint
-                }
-            } else {
-                if (!(location %in% locations(country = country)$locationURL)) {
-                  stop("This location is not available within the platform for this country.")# nolint
-                }
-            }
-
-        } else {
-            if (!is.null(city)) {
-                if (!(location %in% locations(city = city)$locationURL)) {
-                  stop("This location is not available within the platform for this city.")# nolint
-                }
-            } else {
-                if (!(location %in% locations()$locationURL)) {
-                  stop("This location is not available within the platform.")
-                }
-            }
-        }
-    }
-
-
-    # parameter
-    if (!is.null(parameter)) {
-        if (!(parameter %in% c("pm25", "pm10", "so2", "no2",
-                               "o3", "co", "bc"))) {
-            stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
-        }
-
-
-        locationsTable <- locations(country = country,
-                                    city = city,
-                                    location = location)
-        if (sum(grepl(parameter, locationsTable$parameters)) == 0) {
-            stop("This parameter is not available for any location corresponding to your query")# nolint
-        }
-        query <- paste0(query, "&parameter=", parameter)
-    }
-
-    # has_geo
-    if (!is.null(has_geo)) {
-      if (has_geo == TRUE) {
-        query <- paste0(query, "&has_geo=1")
-      }
-      if (has_geo == FALSE) {
-        query <- paste0(query, "&has_geo=false")
-      }
-
-    }
-
-    # check values
-    if (!is.null(value_from) & !is.null(value_to)) {
-        if (value_to < value_from) {
-            stop("The max value must be bigger than the min value.")
-        }
-
-    }
-    # value_from
-    if (!is.null(value_from)) {
-        if (value_from < 0) {
-            stop("No negative value for value_from please!")
-        }
-        query <- paste0(query, "&value_from=", value_from)
-    }
-
-    # value_to
-    if (!is.null(value_to)) {
-        if (value_to < 0) {
-            stop("No negative value for value_to please!")
-        }
-        query <- paste0(query, "&value_to=", value_to)
-    }
-
-    if (query == "https://api.openaq.org/v1/latest?") {
-        query <- "https://api.openaq.org/v1/latest"
-    }
+    query <- buildQuery(country = country, city = city,
+                        location = location,
+                        parameter = parameter,
+                        has_geo = has_geo,
+                        value_from = value_from,
+                        value_to = value_to,
+                        query = query)
 
     ####################################################
     # GET AND TRANSFORM RESULTS

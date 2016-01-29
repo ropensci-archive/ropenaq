@@ -1,3 +1,3 @@
 linters:with_defaults(camel_case_linter = NULL,
               object_length_linter(50))
-exclusions: list("tests/testthat.R", "tests/testthat/tests.R")
+exclusions: list("tests/testthat.R", "tests/testthat/tests.R", "tests/testthat/test-buildQueries.R", "tests/testthat/test-cities.R", "tests/testthat/test-countries.R", "tests/testthat/test-latest.R", "tests/testthat/test-locations.R", "tests/testthat/test-measurements.R")

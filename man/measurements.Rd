@@ -20,9 +20,9 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{has_geo}{Filter out items that have or do not have geographic information.}
 
-\item{date_from}{Show results after a certain date. (ex. '2015-12-20')}
+\item{date_from}{Show results after a certain date. (character year-month-day, ex. '2015-12-20')}
 
-\item{date_to}{Show results before a certain date. (ex. '2015-12-20')}
+\item{date_to}{Show results before a certain date. (character year-month-day, ex. '2015-12-20')}
 
 \item{limit}{Change the number of results returned, max is 1000.}
 
