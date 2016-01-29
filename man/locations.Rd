@@ -4,14 +4,14 @@
 \alias{locations}
 \title{Providing data about distinct measurement locations.}
 \usage{
-locations(city = NULL, country = NULL, location = NULL,
+locations(country = NULL, city = NULL, location = NULL,
   parameter = NULL, has_geo = NULL, value_from = NULL, value_to = NULL,
   date_from = NULL, date_to = NULL)
 }
 \arguments{
-\item{city}{Limit results by a certain city.}
-
 \item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
+
+\item{city}{Limit results by a certain city.}
 
 \item{location}{Limit results by a certain location.}
 
@@ -33,6 +33,8 @@ A data.frame (dplyr "tbl_df") with for each location: its name, the city and the
  the name of the source, and the dates and times at which it was first and last updated, respectively. City and location are
  also provided as URL encoded strings which makes further queries easier.
  @details Please note that if an argument is composed by several words, e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
+ You can query any combination of country/location/city, but only one of them at the same time.
+  If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
 }
 \description{
 Providing data about distinct measurement locations.

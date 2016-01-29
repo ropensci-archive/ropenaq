@@ -6,6 +6,10 @@ r_binary_packages:
   - ggplot2
   - testthat
   - xml2
+  - doParallel
+  - NMF
+  - igraph
+  - knitr
 
 r_github_packages:
   - jimhester/covr

@@ -11,8 +11,8 @@
 #' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
 #' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
 #' @param has_geo Filter out items that have or do not have geographic information.
-#' @param date_from Show results after a certain date. (ex. '2015-12-20')
-#' @param date_to Show results before a certain date. (ex. '2015-12-20')
+#' @param date_from Show results after a certain date. (character year-month-day, ex. '2015-12-20')
+#' @param date_to Show results before a certain date. (character year-month-day, ex. '2015-12-20')
 #' @param limit Change the number of results returned, max is 1000.
 
 #'
