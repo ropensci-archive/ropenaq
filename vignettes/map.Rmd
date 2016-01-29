@@ -21,7 +21,7 @@ library("Ropenaq")
 
 Getting coordinates and transformating it.
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
 lat <- NULL
 long <- NULL
 name <- NULL
@@ -44,7 +44,7 @@ monitors_merc$name <- dataGeo$name
 
 Getting the empty map.
 
-```{r fig.width=7, fig.height=4, cache=TRUE}
+```{r fig.width=7, fig.height=4, cache=TRUE, eval=FALSE}
 
 worldMap <- OpenStreetMap::openmap(c(85,-179.99999),
                                     c(-60,179.99999),
@@ -54,7 +54,7 @@ ggplot2::autoplot(worldMap)+ theme_bw()
 
 Map with monitors.
 
-```{r fig.width=7, fig.height=4}
+```{r fig.width=7, fig.height=4, eval=FALSE}
 ggplot2::autoplot(worldMap)+ theme_bw()+
   geom_point(data = monitors_merc, aes(x=x, y=y), size=2, shape=7)+
   theme(axis.line=element_blank(),axis.text.x=element_blank(),
