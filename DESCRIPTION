@@ -18,4 +18,4 @@ Suggests: knitr,
     OpenStreetMap,
     testthat
 VignetteBuilder: knitr
-Imports: httr, lubridate, dplyr
+Imports: httr, lubridate, dplyr, jsonlite

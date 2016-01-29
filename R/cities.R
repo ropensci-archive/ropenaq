@@ -2,6 +2,7 @@
 #'
 #' @importFrom dplyr tbl_df "%>%"
 #' @importFrom httr GET content
+#' @importFrom jsonlite fromJSON
 #' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
 #'
 #' @return a data.frame (dplyr "tbl_df") with locations, count, country, city columns,
@@ -25,41 +26,30 @@ cities <- function(country = NULL) {
 
     page <- httr::GET(query)
 
-    contentPage <- httr::content(page)
-    contentPageText <- httr::content(page, as = "text")
-    if (grepl("Gateway time-out", toString(contentPageText))){
-            stop("Gateway time-out, but try again in a few minutes.")
-        }  # nocov
-    if (length(contentPage[[2]]) == 0){
-            stop("No results for this query")
-        }  # nocov
-   else{
-        locations <- unlist(lapply(contentPage[[2]],
-                                   function(x) x["locations"]))
-        count <- unlist(lapply(contentPage[[2]],
-                               function(x) x["count"]))
-        country <- unlist(lapply(contentPage[[2]],
-                                 function(x) x["country"]))
-        city <- unlist(lapply(contentPage[[2]],
-                              function(x) x["city"]))
-        cityURL <- unlist(lapply(city, URLencode,
-                                 reserved = TRUE))
-        cityURL <- unlist(lapply(cityURL, gsub,
-                                 pattern = "\\%20",
-                                 replacement = "+"))
+    # convert the http error to a R error
+    httr::stop_for_status(page)
+    contentPage <- httr::content(page, as = "text")
 
-        citiesTable <- dplyr::tbl_df(data.frame(locations = locations,
-                                                count = count,
-                                                country = country,
-                                                city = city,
-                                                cityURL = cityURL))
-        citiesTable <- dplyr::mutate(citiesTable,
-                                     cityURL = as.character(cityURL))
+    # parse the data
+    citiesTable <- jsonlite::fromJSON(contentPage)$results
+    citiesTable <- dplyr::tbl_df(citiesTable)
 
-        ####################################################
-        # DONE!
-        return(citiesTable)
-    }
+    # now add cityURL
+    cityURL <- unlist(lapply(citiesTable$city,
+                             URLencode,
+                             reserved = TRUE))
+    cityURL <- unlist(lapply(cityURL, gsub,
+                             pattern = "\\%20",
+                             replacement = "+"))
+
+
+    citiesTable <- dplyr::mutate(citiesTable,
+                                 cityURL = cityURL)
+
+    ####################################################
+    # DONE!
+    return(citiesTable)
+
 
 
 }
