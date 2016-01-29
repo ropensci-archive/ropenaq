@@ -5,10 +5,8 @@ Version: 0.1
 Date: 2015-12-30
 Author: Maëlle Salmon
 Maintainer: Maëlle Salmon <maelle.salmon@yahoo.se>
-Description: The package allows to access air quality data from the API of OpenAQ <https://docs.openaq.org/>,
-with the different services the API offers (getting measurements for a given query, getting latest measurements,
-getting lists of available countries/cities/locations).
-License: GPL (version 2 or later)
+Description: The package allows to access air quality data from the API of OpenAQ <https://docs.openaq.org/>, with the different services the API offers (getting measurements for a given query, getting latest measurements, getting lists of available countries/cities/locations).
+License: GPL (>= 2)
 LazyData: TRUE
 RoxygenNote: 5.0.1
 URL: http://github.com/masalmon/Ropenaq
@@ -17,6 +15,7 @@ Suggests: knitr,
     rmarkdown,
     lintr,
     ggplot2,
-    OpenStreetMap
+    OpenStreetMap,
+    testthat
 VignetteBuilder: knitr
-Imports: httr, lubridate, dplyr, testthat
+Imports: httr, lubridate, dplyr

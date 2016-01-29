@@ -1,6 +1,6 @@
 #' Providing data about distinct measurement locations.
 #'
-#' @importFrom dplyr tbl_df mutate
+#' @importFrom dplyr tbl_df mutate "%>%"
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
 #'

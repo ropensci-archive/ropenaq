@@ -1,7 +1,7 @@
 #' Provides the latest value of each available parameter for every location in the system.
 #'
 #' @importFrom httr GET content
-#' @importFrom dplyr tbl_df mutate filter
+#' @importFrom dplyr tbl_df mutate filter "%>%"
 #' @importFrom lubridate ymd_hms
 #' @param city Limit results by a certain city.
 #' @param country Limit results by a certain country.

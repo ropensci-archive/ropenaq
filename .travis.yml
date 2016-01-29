@@ -4,6 +4,7 @@ sudo: true
 r_binary_packages:
   - OpenStreetMap
   - ggplot2
+  - testthat
 
 r_github_packages:
   - jimhester/covr

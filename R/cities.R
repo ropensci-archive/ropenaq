@@ -1,6 +1,6 @@
 #' Providing a simple listing of cities within the platform.
 #'
-#' @importFrom dplyr tbl_df
+#' @importFrom dplyr tbl_df "%>%"
 #' @importFrom httr GET content
 #' @param country Limit results by a certain country.
 #'

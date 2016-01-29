@@ -1,6 +1,6 @@
 #' Function for getting measurements table from the openAQ API
 #'
-#' @importFrom dplyr tbl_df mutate arrange
+#' @importFrom dplyr tbl_df mutate arrange "%>%"
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
 #' @param country Limit results by a certain country.
