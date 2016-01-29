@@ -1,8 +1,0 @@
-base
-httr
-lubridate
-dplyr
-testthat
-XML
-Ropenaq
-knitr

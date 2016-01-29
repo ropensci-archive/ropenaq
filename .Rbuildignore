@@ -1,3 +1,10 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^appveyor\.yml$
+^\.travis\.yml$
+^README\.md$
+^README\.Rmd$
+^\.lintr$
+^\.gitignore$
+^\.Rhistory$
+^CONDUCT\.md$

@@ -143,11 +143,11 @@ test_that("Parameter has to be available", {
   expect_error(latest(city="Hyderabad", parameter="lalala"), "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")
 })
 
-test_that("The value_from and value_to arguments work as they should", {
-  skip_on_cran()
-  expect_true(all(latest(value_from=10)$value>=10), TRUE)
-  expect_true(all(latest(value_to=10)$value<=10), TRUE)
-})
+# test_that("The value_from and value_to arguments work as they should", {
+#   skip_on_cran()
+#   expect_true(all(latest(value_from=10)$value>=10), TRUE)
+#   expect_true(all(latest(value_to=10)$value<=10), TRUE)
+# })
 
 #################################################################################################
 if (requireNamespace("lintr", quietly = TRUE)) {

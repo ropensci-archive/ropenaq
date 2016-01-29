@@ -9,10 +9,10 @@ library("dplyr")
 # RESULTS FOR ONE LOCATION
 ##########################################
 
-locIN <- locations(country="IN")
-locationURL <- locIN[4,]$locationURL
-locationName <- locIN[4,]$location
-firstUpdated <- locIN[4,]$firstUpdated
+locIN <- locations(city="Warszawa", parameter="pm25")[2,]
+locationURL <- locIN$locationURL
+locationName <- locIN$location
+firstUpdated <- locIN$firstUpdated
 
 measurementsForPlot <- findMissing2015(locationURL,
                                        locationName,

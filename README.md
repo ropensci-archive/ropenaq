@@ -1,3 +1,6 @@
+Ropenaq
+=======
+
 [![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/ropenaq) [![codecov.io](https://codecov.io/github/masalmon/Ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
 Introduction
@@ -31,19 +34,19 @@ kable(countriesTable)
 
 | code | name           |   count|
 |:-----|:---------------|-------:|
-| AU   | Australia      |  221694|
-| BR   | Brazil         |  346455|
-| CL   | Chile          |  520316|
-| CN   | China          |   12210|
-| GB   | United Kingdom |   98425|
-| ID   | Indonesia      |    1052|
-| IN   | India          |  112924|
-| MN   | Mongolia       |  340356|
-| NL   | Netherlands    |  661614|
-| PL   | Poland         |  135583|
-| TH   | Thailand       |  280272|
-| US   | United States  |  144710|
-| VN   | Viet Nam       |     781|
+| TH   | Thailand       |  319365|
+| CN   | China          |   12346|
+| MN   | Mongolia       |  369830|
+| GB   | United Kingdom |   99528|
+| CL   | Chile          |  575463|
+| US   | United States  |  164674|
+| AU   | Australia      |  248248|
+| IN   | India          |  114292|
+| VN   | Viet Nam       |    1041|
+| BR   | Brazil         |  384562|
+| PL   | Poland         |  148685|
+| NL   | Netherlands    |  731574|
+| ID   | Indonesia      |    1572|
 
 The `cities` function
 ---------------------
