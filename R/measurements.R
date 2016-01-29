@@ -57,88 +57,22 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
 
     ####################################################
     # GET AND TRANSFORM RESULTS
+    tableOfResults <- getResults(query)
+    tableOfResults <- addCityURL(tableOfResults)
+    tableOfResults <- addLocationURL(tableOfResults)
+    dateUTC <- tableOfResults$date$utc
+    dateLocal <- tableOfResults$date$local
+    tableOfResults <- dplyr::mutate(tableOfResults,
+                                    dateUTC =
+                                      lubridate::ymd_hms(dateUTC),
+                                    dateLocal =
+                                      lubridate::ymd_hms(dateLocal))
+    tableOfResults <- dplyr::select(tableOfResults,
+                                    - date)
+    tableOfResults <- addGeo(tableOfResults)
 
-    page <- httr::GET(query)
-
-    contentPage <- httr::content(page)
-    contentPageText <- httr::content(page, as = "text")
-
-    if (grepl("Gateway time-out", toString(contentPageText))){
-            stop("Gateway time-out, but try again in a few minutes.")# nolint
-        }  # nocov
-    if (length(contentPage[[2]]) == 0){
-            stop("No results for this query")
-        }  # nocov
- else {
-        # Extract all future columns
-        value <- unlist(lapply(contentPage[[2]],
-                               function(x) x["value"]))
-        dateUTC <- unlist(lapply(contentPage[[2]],
-                                 function(x) x$date$utc))
-        dateLocal <- unlist(lapply(contentPage[[2]],
-                                   function(x) x$date$local))
-        parameter <- unlist(lapply(contentPage[[2]],
-                                   function(x) x["parameter"]))
-        location <- unlist(lapply(contentPage[[2]],
-                                  function(x) x["location"]))
-        locationURL <- unlist(lapply(location, URLencode,
-                                     reserved = TRUE))
-        locationURL <- unlist(lapply(locationURL, gsub,
-                                     pattern = "\\%20", replacement = "+"))
-        unit <- unlist(lapply(contentPage[[2]],
-                              function(x) x["unit"]))
-        city <- unlist(lapply(contentPage[[2]],
-                              function(x) x["city"]))
-        country <- unlist(lapply(contentPage[[2]],
-                                 function(x) x["country"]))
-
-        # create the data.table, transforming dates using lubridate
-        tableOfData <- dplyr::tbl_df(data.frame(dateUTC = dateUTC,
-                                                dateLocal = dateLocal,
-                                                parameter = parameter,
-                                                location = location,
-                                                locationURL = locationURL,
-                                                value = value,
-                                                unit = unit,
-                                                city = city,
-                                                country = country))
-
-        geoCoordLat <- function(x) {
-            if (is.null(x$coordinates$latitude)) {
-                return(NA)
-            } else (return(x$coordinates$latitude))
-        }
-
-        geoCoordLong <- function(x) {
-            if (is.null(x$coordinates$longitude)) {
-                return(NA)
-            } else (return(x$coordinates$longitude))
-        }
-
-        if (!is.null(unlist(lapply(contentPage[[2]],
-                                   function(x) x$coordinates$latitude)))) {
-            latitude <- unlist(lapply(contentPage[[2]], geoCoordLat))
-            longitude <- unlist(lapply(contentPage[[2]], geoCoordLong))
-
-        } else {
-            latitude <- rep(NA, nrow(tableOfData))
-            longitude <- rep(NA, nrow(tableOfData))
-        }
-        tableOfData <- dplyr::mutate(tableOfData,
-                                     latitude = latitude,
-                                     longitude = longitude)
-
-        tableOfData <- dplyr::mutate(tableOfData,
-                                     locationURL = as.character(locationURL),
-                                     dateUTC = lubridate::ymd_hms(dateUTC),
-                                     dateLocal =
-                                       lubridate::ymd_hms(
-                                         substr(dateLocal, 1, 19)))
-        tableOfData <- dplyr::arrange(tableOfData, dateUTC)
-
-        ##################################################### DONE!
-        return(tableOfData)
-    }
-
+    ####################################################
+    # DONE!
+    return(tableOfResults)
 
 }

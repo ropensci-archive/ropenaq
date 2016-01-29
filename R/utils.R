@@ -47,13 +47,15 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
         }
       }
 
-    } else {
+    }
+    else {
       if (!is.null(city)) {
         if (!(location %in%
               locations(city = city)$locationURL)) {
           stop("This location is not available within the platform for this city.")# nolint
         }
-      } else {
+      }
+      else {
         if (!(location %in% locations()$locationURL)) {
           stop("This location is not available within the platform.")# nolint
         }
@@ -184,7 +186,6 @@ addLocationURL <- function(resTable){
   return(resTable)
 }
 ######################################################################################
-
 addGeo <- function(resTable){
   if ("coordinates" %in% names(resTable)){
     longitude <- resTable$coordinates$longitude

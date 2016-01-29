@@ -2,6 +2,7 @@
 #'
 #' @importFrom httr GET content
 #' @importFrom dplyr tbl_df mutate filter "%>%"
+#' @importFrom tidyr unnest
 #' @importFrom lubridate ymd_hms
 #' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
 #' @param city Limit results by a certain city.
@@ -36,78 +37,16 @@ latest <- function(country = NULL, city = NULL, location = NULL,
 
     ####################################################
     # GET AND TRANSFORM RESULTS
+    tableOfResults <- getResults(query)
+    tableOfResults <- addGeo(tableOfResults)
+    tableOfResults <- tidyr::unnest_(tableOfResults,
+                                     "measurements")
+    tableOfResults <- addCityURL(tableOfResults)
+    tableOfResults <- addLocationURL(tableOfResults)
+    tableOfResults <- dplyr::mutate(tableOfResults,
+                                    lastUpdated =
+                                      lubridate::ymd_hms(
+                                        lastUpdated))
 
-    page <- httr::GET(query)
-
-    contentPage <- httr::content(page)
-    contentPageText <- httr::content(page, as = "text")
-    if (grepl("Gateway time-out", toString(contentPageText))){
-            stop("Gateway time-out, but try again in a few minutes.")
-        }  # nocov
-    if (length(contentPage[[2]]) == 0){
-            stop("No results for this query")
-        }  # nocov
- else {
-        location <- unlist(lapply(contentPage[[2]], function(x) x["location"]))
-        city <- unlist(lapply(contentPage[[2]], function(x) x["city"]))
-        country <- unlist(lapply(contentPage[[2]], function(x) x["country"]))
-
-        # repeat for each parameters
-        noOfParameters <- 7
-        location <- rep(location, each = noOfParameters)
-        city <- rep(city, each = noOfParameters)
-        country <- rep(country, each = noOfParameters)
-        parameter <- rep(NA, length(country))
-        value <- rep(NA, length(country))
-        lastUpdated <- rep(NA, length(country))
-        unit <- rep(NA, length(country))
-
-        # Here this is slow
-        for (loc in 1:length(contentPage[[2]])) {
-          paramMax <- (length(contentPage[[2]][[loc]]$measurements) - 1)
-            for (param in 0:paramMax) {
-                parameter[loc + param] <-
-                  contentPage[[2]][[loc]]$measurements[[param + 1]]$parameter
-                value[loc + param] <-
-                  contentPage[[2]][[loc]]$measurements[[param + 1]]$value
-                lastUpdated[loc + param] <-
-                  contentPage[[2]][[loc]]$measurements[[param + 1]]$lastUpdated
-                unit[loc + param] <-
-                  contentPage[[2]][[loc]]$measurements[[param + 1]]$unit
-
-            }
-        }
-
-
-        locationURL <- unlist(lapply(location, URLencode,
-                                     reserved = TRUE))
-        locationURL <- unlist(lapply(locationURL, gsub,
-                                     pattern = "\\%20", replacement = "+"))
-        cityURL <- unlist(lapply(city, URLencode,
-                                 reserved = TRUE))
-        cityURL <- unlist(lapply(cityURL, gsub,
-                                 pattern = "\\%20",
-                                 replacement = "+"))
-
-        latestTable <- dplyr::tbl_df(data.frame(location = location,
-                                                locationURL = locationURL,
-                                                city = city,
-                                                cityURL = cityURL,
-                                                country = country,
-                                                parameter = parameter,
-                                                value = value,
-                                                lastUpdated = lastUpdated,
-                                                unit = unit))
-
-
-
-        # ditch empty lines and transforme date time
-        latestTable <- dplyr::filter(latestTable, !is.na(parameter))
-        latestTable <- dplyr::mutate(latestTable,
-                                     lastUpdated = lubridate::ymd_hms(
-                                       lastUpdated))
-
-        ##################################################### DONE!
-        return(latestTable)
-    }
+    return(tableOfResults)
 }
