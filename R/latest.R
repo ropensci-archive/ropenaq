@@ -16,8 +16,10 @@
 #'  You can query any combination of country/location/city, but only one of them at the same time.
 #'   If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
 #' @examples
+#' \dontrun{
 #' latest(country='IN', city='Chennai')
 #' latest(parameter='co')
+#' }
 #' @return a data.frame (dplyr "tbl_df") with location, city, country, parameter, value, the last time at which this value was updated, unit, latitude and longitude (NA when non available).
 #' @export
 #'
