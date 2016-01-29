@@ -15,7 +15,7 @@
 #' @param date_from Show results after a certain date. (ex. '2015-12-20').
 #' @param date_to Show results before a certain date. (ex. '2015-12-20')
 #'
-#' @return A data.table with for each location: its name, the city and the country it is in, the number of measures for this location,
+#' @return A data.frame (dplyr "tbl_df") with for each location: its name, the city and the country it is in, the number of measures for this location,
 #'  the name of the source, and the dates and times at which it was first and last updated, respectively. City and location are
 #'  also provided as URL encoded strings which makes further queries easier.
 #'  @details Please note that if an argument is composed by several words, e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.

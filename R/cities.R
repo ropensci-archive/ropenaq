@@ -4,7 +4,7 @@
 #' @importFrom httr GET content
 #' @param country Limit results by a certain country.
 #'
-#' @return a data.table with locations, count, country, city columns,
+#' @return a data.frame (dplyr "tbl_df") with locations, count, country, city columns,
 #' and also an URL encoded string for the city.
 #' @details Please note that if an argument is composed by several words,
 #' e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.

@@ -10,7 +10,7 @@ cities(country = NULL)
 \item{country}{Limit results by a certain country.}
 }
 \value{
-a data.table with locations, count, country, city columns,
+a data.frame (dplyr "tbl_df") with locations, count, country, city columns,
 and also an URL encoded string for the city.
 }
 \description{

@@ -15,7 +15,7 @@
 #' @examples
 #' latest(country='IN', city='Chennai')
 #' latest(parameter='co')
-#' @return a data.table with location, city, country, parameter, value, the last time at which this value was updated, unit, latitude and longitude (NA when non available).
+#' @return a data.frame (dplyr "tbl_df") with location, city, country, parameter, value, the last time at which this value was updated, unit, latitude and longitude (NA when non available).
 #' @export
 #'
 latest <- function(city = NULL, country = NULL, location = NULL,

@@ -2,7 +2,7 @@
 #'
 #' @importFrom dplyr tbl_df "%>%"
 #' @importFrom httr GET content
-#' @return data.table with code and name for each country,
+#' @return data.frame (dplyr "tbl_df") with code and name for each country,
 #' as well as the number of sources in each country.
 #' @export
 #'

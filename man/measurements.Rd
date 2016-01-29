@@ -31,7 +31,7 @@ If no parameter is given, all parameters are retrieved.}
 \item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 }
 \value{
-A data.table with UTC date and time, local date and time, country, location, city, parameter, unit, measure,
+A data.frame (dplyr "tbl_df") with UTC date and time, local date and time, country, location, city, parameter, unit, measure,
 and geographical coordinates if they were available (otherwise the columns latitude and longitude are full of NA).
 }
 \description{

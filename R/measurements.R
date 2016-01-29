@@ -16,7 +16,7 @@
 #' @param limit Change the number of results returned, max is 1000.
 
 #'
-#' @return A data.table with UTC date and time, local date and time, country, location, city, parameter, unit, measure,
+#' @return A data.frame (dplyr "tbl_df") with UTC date and time, local date and time, country, location, city, parameter, unit, measure,
 #' and geographical coordinates if they were available (otherwise the columns latitude and longitude are full of NA).
 #' @details The sort and sort_by parameters from the API were not included because one can still re-order the table in R.
 #' Regarding the number of page, similarly here it does not make any sense to have it.

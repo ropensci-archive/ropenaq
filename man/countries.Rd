@@ -7,7 +7,7 @@
 countries()
 }
 \value{
-data.table with code and name for each country,
+data.frame (dplyr "tbl_df") with code and name for each country,
 as well as the number of sources in each country.
 }
 \description{
