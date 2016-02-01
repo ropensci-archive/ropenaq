@@ -1,6 +1,6 @@
 #' Function for getting measurements table from the openAQ API
 #'
-#' @importFrom dplyr tbl_df mutate arrange "%>%"
+#' @importFrom dplyr tbl_df select_
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET content
@@ -70,18 +70,14 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
     ####################################################
     # GET AND TRANSFORM RESULTS
     tableOfResults <- getResults(urlAQ, argsList)
-    tableOfResults <- addCityURL(tableOfResults)
-    tableOfResults <- addLocationURL(tableOfResults)
-    dateUTC <- tableOfResults$date$utc
-    dateLocal <- tableOfResults$date$local
-    tableOfResults <- dplyr::mutate(tableOfResults,
-                                    dateUTC =
-                                      lubridate::ymd_hms(dateUTC),
-                                    dateLocal =
-                                      lubridate::ymd_hms(dateLocal))
-    tableOfResults <- dplyr::select(tableOfResults,
-                                    - date)
-    tableOfResults <- addGeo(tableOfResults)
+    tableOfResults <- addCityURL(resTable = tableOfResults)
+    tableOfResults <- addLocationURL(resTable = tableOfResults)
+
+    tableOfResults <- functionTime2(resTable = tableOfResults)
+
+    tableOfResults <- dplyr::select_(tableOfResults,
+                                      ~ - date)
+    tableOfResults <- addGeo(resTable = tableOfResults)
 
     ####################################################
     # DONE!

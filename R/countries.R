@@ -1,6 +1,5 @@
 #' Providing a simple listing of countries within the platform.
 #'
-#' @importFrom dplyr tbl_df "%>%"
 #' @importFrom httr GET content
 #' @return data.frame (dplyr "tbl_df") with 3 columns:
 #' \itemize{

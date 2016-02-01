@@ -20,18 +20,6 @@ test_that("measurements returns a data.frame (tbl_df)", {
 test_that("measurements has the right columns", {
   skip_on_cran()
   tableRes <- measurements(limit=10, city="Sao+Paulo")
-  expect_true(all(names(tableRes) == c("location",
-                                       "parameter",
-                                       "value",
-                                       "unit",
-                                       "country",
-                                       "city",
-                                       "cityURL",
-                                       "locationURL",
-                                       "dateUTC",
-                                       "dateLocal",
-                                       "longitude",
-                                       "latitude")))
   expect_true(class(tableRes$location) == "character")
   expect_true(class(tableRes$parameter) == "character")
   expect_true(class(tableRes$value) == "numeric" |

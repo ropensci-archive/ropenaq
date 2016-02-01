@@ -1,6 +1,7 @@
 #' Providing a simple listing of cities within the platform.
 #'
-#' @importFrom dplyr tbl_df "%>%"
+#' @importFrom lazyeval interp
+#' @importFrom dplyr mutate_ select_ "%>%"
 #' @importFrom httr GET content
 #' @importFrom jsonlite fromJSON
 #' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.

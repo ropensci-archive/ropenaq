@@ -1,3 +1,4 @@
+
 ######################################################################################
 base_url <- function() {
   "https://api.openaq.org/v1/"
@@ -9,12 +10,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        date_to = NULL, value_from = NULL,
                        value_to = NULL, limit = NULL){
   # limit
-  if (is.null(limit)) {
-    limit <- 100
+  if (!is.null(limit)) {
+    if (limit > 1000) {
+      stop("limit cannot be more than 1000")
+    }
   }
-  if (limit > 1000) {
-    stop("limit cannot be more than 1000")
-  }
+
 
   # country
   if (!is.null(country)) {
@@ -171,45 +172,87 @@ getResults <- function(urlAQ, argsList){
 }
 
 ######################################################################################
+functionURL <- function(resTable, col1, newColName) {
+  mutateCall <- lazyeval::interp( ~ gsub(sapply(a, URLencode,
+                                                reserved = TRUE),
+                                         pattern = "\\%20",
+                                         replacement = "+"),
+                                  a = as.name(col1))
+
+  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
+                                               newColName))
+}
+
 addCityURL <- function(resTable){
-  cityURL <- unlist(lapply(resTable$city,
-                           URLencode,
-                           reserved = TRUE))
-  cityURL <- unlist(lapply(cityURL, gsub,
-                           pattern = "\\%20",
-                           replacement = "+"))
-  resTable <- dplyr::mutate(resTable,
-                               cityURL = cityURL)
+  resTable <- functionURL(resTable,
+                col1 = "city",
+                newColName = "cityURL")
+
   return(resTable)
 }
 
+
+
 addLocationURL <- function(resTable){
-  locationURL <- unlist(lapply(resTable$location,
-                           URLencode,
-                           reserved = TRUE))
-  locationURL <- unlist(lapply(locationURL, gsub,
-                           pattern = "\\%20",
-                           replacement = "+"))
-  resTable <- dplyr::mutate(resTable,
-                            locationURL = locationURL)
+  resTable <- functionURL(resTable,
+                          col1 = "location",
+                          newColName = "locationURL")
   return(resTable)
 }
 ######################################################################################
+functionGeo <- function(resTable, newColName) {
+  mutateCall <- lazyeval::interp( ~ a$newColName,
+                                   a = as.name("coordinates"))
+  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
+                                               newColName))
+}
+
+functionNotGeo <- function(resTable, newColName) {
+  mutateCall <- lazyeval::interp( ~ NA)
+  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
+                                               newColName))
+}
+
 addGeo <- function(resTable){
   if ("coordinates" %in% names(resTable)){
-    longitude <- resTable$coordinates$longitude
-    latitude <- resTable$coordinates$latitude
-    resTable <- dplyr::select(resTable,
-                              - coordinates)
+    resTable <- functionGeo(resTable, "longitude")
+    resTable <- functionGeo(resTable, "latitude")
+    resTable <- dplyr::select_( resTable,
+                                quote(- coordinates))
   }
   else{
-    longitude <- rep(NA, nrow(resTable))
-    latitude <- rep(NA, nrow(resTable))
+    resTable <- functionNotGeo(resTable, "latitude")
+    resTable <- functionNotGeo(resTable, "longitude")
   }
-
-  resTable <- dplyr::mutate(resTable,
-                            longitude = longitude,
-                            latitude = latitude)
-
   return(resTable)
+}
+######################################################################################
+functionTime <- function(resTable, newColName) {
+  mutateCall <- lazyeval::interp( ~ lubridate::ymd_hms(a),
+                                   a = as.name(newColName))
+
+  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
+                                               newColName))
+}
+
+functionTime2 <- function(resTable) {
+  mutateCall1 <- lazyeval::interp( ~ lubridate::ymd_hms(a[,"utc"]),
+                                   a = as.name("date"))
+  mutateCall2 <- lazyeval::interp( ~ lubridate::ymd_hms(a[,"local"]),
+                                   a = as.name("date"))
+  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall1),
+                                               "dateUTC")) %>%
+    dplyr::mutate_(.dots = setNames(list(mutateCall2),
+                                    "dateLocal"))
+}
+######################################################################################
+functionParameters <- function(resTable) {
+  mutateCall <- lazyeval::interp( ~ lapply(a, toString), a = as.name("parameters")) %>%
+    lazyeval::interp( ~ gsub(.dot, pattern = "\"", sub = "")) %>%
+    lazyeval::interp( ~ gsub(.dot, pattern = "\\(", sub = "")) %>%
+    lazyeval::interp( ~ gsub(.dot, pattern = "c\\)", sub = "")) %>%
+    lazyeval::interp( ~ .dot)
+
+  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
+                                               "parameters"))
 }

@@ -1,7 +1,6 @@
 #' Provides the latest value of each available parameter for every location in the system.
 #'
 #' @importFrom httr GET content
-#' @importFrom dplyr tbl_df mutate filter "%>%"
 #' @importFrom tidyr unnest
 #' @importFrom lubridate ymd_hms
 #' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
@@ -64,10 +63,8 @@ latest <- function(country = NULL, city = NULL, location = NULL,
                                      "measurements")
     tableOfResults <- addCityURL(tableOfResults)
     tableOfResults <- addLocationURL(tableOfResults)
-    tableOfResults <- dplyr::mutate(tableOfResults,
-                                    lastUpdated =
-                                      lubridate::ymd_hms(
-                                        lastUpdated))
+    tableOfResults <- functionTime(tableOfResults,
+                                   "lastUpdated")
 
     return(tableOfResults)
 }

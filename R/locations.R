@@ -1,6 +1,5 @@
 #' Providing data about distinct measurement locations.
 #'
-#' @importFrom dplyr tbl_df mutate "%>%"
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
 #'
@@ -63,24 +62,23 @@ locations <- function(country = NULL, city = NULL, location = NULL,
     # GET AND TRANSFORM RESULTS
     locationsTable <- getResults(urlAQ, argsList)
 
-    parameters <- lapply(locationsTable$parameters,
-                         toString)
-    parameters <- gsub("\"", "", parameters)
-    parameters <- gsub("\\(", "", parameters)
-    parametersGood <- gsub("c\\)", "", parameters)
+    locationsTable <- addGeo(resTable =
+                               locationsTable)
 
-    locationsTable <- addGeo(locationsTable)
-
-    locationsTable <- addCityURL(locationsTable)
-    locationsTable <- addLocationURL(locationsTable)
+    locationsTable <- addCityURL(resTable =
+                                   locationsTable)
+    locationsTable <- addLocationURL(resTable =
+                                       locationsTable)
 
 
-    locationsTable <- dplyr::mutate(locationsTable,
-                                    firstUpdated =
-                                      lubridate::ymd_hms(firstUpdated),
-                                    lastUpdated =
-                                      lubridate::ymd_hms(lastUpdated),
-                                    parameters = parametersGood)
+    locationsTable <- functionTime(resTable =
+                                     locationsTable,
+                                   "firstUpdated")
+    locationsTable <- functionTime(resTable = locationsTable,
+                                   "lastUpdated")
+
+    locationsTable <- functionParameters(resTable =
+                                           locationsTable)
     ####################################################
     # DONE!
     return(locationsTable)
