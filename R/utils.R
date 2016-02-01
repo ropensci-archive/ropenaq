@@ -166,7 +166,7 @@ getResults <- function(urlAQ, argsList){
 
   # parse the data
   resTable <- jsonlite::fromJSON(contentPage)$results
-  resTable <- resTable
+  resTable <- dplyr::tbl_df(resTable)
   return(resTable)
 }
 

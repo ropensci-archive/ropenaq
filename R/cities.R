@@ -28,8 +28,7 @@ cities <- function(country = NULL) {
 
     ####################################################
     # GET AND TRANSFORM RESULTS
-    citiesTable <- dplyr::tbl_df(getResults(urlAQ,
-                                            argsList))
+    citiesTable <- getResults(urlAQ, argsList)
     citiesTable <- addCityURL(citiesTable)
 
     ####################################################

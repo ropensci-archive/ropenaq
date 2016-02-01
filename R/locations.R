@@ -81,7 +81,6 @@ locations <- function(country = NULL, city = NULL, location = NULL,
                                     lastUpdated =
                                       lubridate::ymd_hms(lastUpdated),
                                     parameters = parametersGood)
-    locationsTable <- dplyr::tbl_df(locationsTable)
     ####################################################
     # DONE!
     return(locationsTable)

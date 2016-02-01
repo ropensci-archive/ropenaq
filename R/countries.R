@@ -24,6 +24,5 @@ countries <- function() {
   ####################################################
   # GET AND TRANSFORM RESULTS
   countriesTable <- getResults(urlAQ, argsList)
-  countriesTable <- dplyr::tbl_df(countriesTable)
     return(countriesTable)
 }

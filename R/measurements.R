@@ -82,7 +82,6 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
     tableOfResults <- dplyr::select(tableOfResults,
                                     - date)
     tableOfResults <- addGeo(tableOfResults)
-    tableOfResults <- dplyr::tbl_df(tableOfResults)
 
     ####################################################
     # DONE!
