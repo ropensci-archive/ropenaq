@@ -26,20 +26,21 @@
 latest <- function(country = NULL, city = NULL, location = NULL,
                    parameter = NULL, has_geo = NULL,
                    value_from = NULL, value_to = NULL) {
-    ##################################################### BUILD QUERY
-    query <- paste0(base_url(), "latest?")
 
-    query <- buildQuery(country = country, city = city,
-                        location = location,
-                        parameter = parameter,
-                        has_geo = has_geo,
-                        value_from = value_from,
-                        value_to = value_to,
-                        query = query)
+    ####################################################
+    # BUILD QUERY base URL
+    urlAQ <- paste0(base_url(), "latest")
+
+    argsList <- buildQuery(country = country, city = city,
+                           location = location,
+                           parameter = parameter,
+                           has_geo = has_geo,
+                           value_from = value_from,
+                           value_to = value_to)
 
     ####################################################
     # GET AND TRANSFORM RESULTS
-    tableOfResults <- getResults(query)
+    tableOfResults <- getResults(urlAQ, argsList)
     tableOfResults <- addGeo(tableOfResults)
     tableOfResults <- tidyr::unnest_(tableOfResults,
                                      "measurements")

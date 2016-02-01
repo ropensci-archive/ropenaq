@@ -37,27 +37,24 @@ measurements <- function(country = NULL, city = NULL, location = NULL,
                          date_to = NULL, limit = 100, value_from = NULL,
                          value_to = NULL) {
 
-    ##################################################### BUILD QUERY base URL
-    query <- paste0(base_url(), "measurements?page=1")
+    ####################################################
+    # BUILD QUERY base URL
+    urlAQ <- paste0(base_url(), "measurements")
 
-    # limit
-    if (is.null(limit)) {
-        limit <- 100
-    }
-    if (limit > 1000) {
-        stop("limit cannot be more than 1000")
-    }
-
-    query <- paste0(query, "&limit=", limit)
-
-    query <- buildQuery(country, city, location,
-                        parameter, has_geo, date_from,
-                        date_to, value_from,
-                        value_to, query)
+    argsList <- buildQuery(country = country,
+                           city = city,
+                           location = location,
+                          parameter = parameter,
+                          has_geo = has_geo,
+                          date_from = date_from,
+                          date_to = date_to,
+                          value_from = value_from,
+                          value_to = value_to,
+                          limit = limit)
 
     ####################################################
     # GET AND TRANSFORM RESULTS
-    tableOfResults <- getResults(query)
+    tableOfResults <- getResults(urlAQ, argsList)
     tableOfResults <- addCityURL(tableOfResults)
     tableOfResults <- addLocationURL(tableOfResults)
     dateUTC <- tableOfResults$date$utc

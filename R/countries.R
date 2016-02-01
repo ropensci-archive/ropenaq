@@ -9,12 +9,15 @@
 #' @examples
 #' countries()
 countries <- function() {
-    ####################################################
-    # BUILD QUERY
-    query <- paste0(base_url(), "countries")
+  ####################################################
+  # BUILD QUERY base URL
+  urlAQ <- paste0(base_url(), "countries?")
 
-    ####################################################
-    # GET AND TRANSFORM RESULTS
-    countriesTable <- dplyr::tbl_df(getResults(query))
+  argsList <- buildQuery()
+
+  ####################################################
+  # GET AND TRANSFORM RESULTS
+  countriesTable <- getResults(urlAQ, argsList)
+  countriesTable <- dplyr::tbl_df(countriesTable)
     return(countriesTable)
 }

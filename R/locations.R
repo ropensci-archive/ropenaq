@@ -29,19 +29,23 @@
 locations <- function(country = NULL, city = NULL, location = NULL,
                       parameter = NULL, has_geo = NULL, value_from = NULL,
                       value_to = NULL, date_from = NULL, date_to = NULL) {
-    ##################################################### BUILD QUERY
-    query <- paste0(base_url(), "locations?")
 
-    query <- buildQuery(country = country, city = city,
-                        location = location,
-                        parameter = parameter, has_geo = has_geo,
-                        value_from = value_from,
-                        value_to = value_to, date_from = date_from,
-                        date_to = date_to,
-                        query = query)
+    ####################################################
+    # BUILD QUERY base URL
+    urlAQ <- paste0(base_url(), "locations")
+
+    argsList <- buildQuery(country = country, city = city,
+                           location = location,
+                           parameter = parameter,
+                           has_geo = has_geo,
+                           value_from = value_from,
+                           value_to = value_to,
+                           date_from = date_from,
+                           date_to = date_to)
+
     ####################################################
     # GET AND TRANSFORM RESULTS
-    locationsTable <- getResults(query)
+    locationsTable <- getResults(urlAQ, argsList)
 
     parameters <- lapply(locationsTable$parameters,
                          toString)
