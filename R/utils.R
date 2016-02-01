@@ -23,7 +23,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # country
   if (!is.null(country)) {
     if (!(country %in% countries()$code)) {
-      stop("This country is not available within the platform.")
+      stop("This country is not available within the platform. See ?countries")
     }
   }
 
@@ -31,11 +31,11 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   if (!is.null(city)) {
     if (!is.null(country)) {
       if (!(city %in% cities(country = country)$cityURL)) {
-        stop("This city is not available within the platform for this country.")# nolint
+        stop("This city is not available within the platform for this country. See ?cities.")# nolint
       }
     } else {
       if (!(city %in% cities()$cityURL)) {
-        stop("This city is not available within the platform.")
+        stop("This city is not available within the platform. See ?cities")
       }
     }
     # make sure it won't be re-encoded by httr
@@ -49,12 +49,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       if (!is.null(city)) {
         if (!(location %in%
               locations(country = country, city = city)$locationURL)) {
-          stop("This location is not available within the platform for this country and this city.")# nolint
+          stop("This location is not available within the platform for this country and this city. See ?locations")# nolint
         }
       } else {
         if (!(location %in%
               locations(country = country)$locationURL)) {
-          stop("This location is not available within the platform for this country.")# nolint
+          stop("This location is not available within the platform for this country. See ?locations")# nolint
         }
       }
     }
@@ -62,12 +62,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       if (!is.null(city)) {
         if (!(location %in%
               locations(city = city)$locationURL)) {
-          stop("This location is not available within the platform for this city.")# nolint
+          stop("This location is not available within the platform for this city. See ?locations")# nolint
         }
       }
       else {
         if (!(location %in% locations()$locationURL)) {
-          stop("This location is not available within the platform.")# nolint
+          stop("This location is not available within the platform. See ?locations")# nolint
         }
       }
     }
@@ -88,7 +88,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                                 city = city,
                                 location = location)
     if (sum(grepl(parameter, locationsTable$parameters)) == 0) {
-      stop("This parameter is not available for any location corresponding to your query")# nolint
+      stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
     }
   }
 
@@ -247,9 +247,9 @@ functionTime <- function(resTable, newColName) {
 # transform the date column
 # in two distinct POSIXct columns
 functionTime2 <- function(resTable) {
-  mutateCall1 <- lazyeval::interp( ~ lubridate::ymd_hms(a[,"utc"]),
+  mutateCall1 <- lazyeval::interp( ~ lubridate::ymd_hms(a[, "utc"]),
                                    a = as.name("date"))
-  mutateCall2 <- lazyeval::interp( ~ lubridate::ymd_hms(a[,"local"]),
+  mutateCall2 <- lazyeval::interp( ~ lubridate::ymd_hms(a[, "local"]),
                                    a = as.name("date"))
   resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall1),
                                                "dateUTC")) %>%
