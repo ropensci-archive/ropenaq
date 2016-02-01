@@ -1,10 +1,13 @@
 
 ######################################################################################
+# base URL for all queries
 base_url <- function() {
   "https://api.openaq.org/v1/"
 }
 
 ######################################################################################
+# checks arguments
+# and if no error returns their list
 buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        parameter = NULL, has_geo = NULL, date_from = NULL,
                        date_to = NULL, value_from = NULL,
@@ -157,6 +160,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   return(argsList)
 }
 ######################################################################################
+# does the query and then parses it
 getResults <- function(urlAQ, argsList){
   page <- httr::GET(url = urlAQ,
                     query = argsList)
@@ -172,6 +176,7 @@ getResults <- function(urlAQ, argsList){
 }
 
 ######################################################################################
+# for getting URL encoded versions of city and locations
 functionURL <- function(resTable, col1, newColName) {
   mutateCall <- lazyeval::interp( ~ gsub(sapply(a, URLencode,
                                                 reserved = TRUE),
@@ -183,6 +188,7 @@ functionURL <- function(resTable, col1, newColName) {
                                                newColName))
 }
 
+# encoding city name
 addCityURL <- function(resTable){
   resTable <- functionURL(resTable,
                 col1 = "city",
@@ -191,8 +197,7 @@ addCityURL <- function(resTable){
   return(resTable)
 }
 
-
-
+# encoding location name
 addLocationURL <- function(resTable){
   resTable <- functionURL(resTable,
                           col1 = "location",
@@ -200,19 +205,22 @@ addLocationURL <- function(resTable){
   return(resTable)
 }
 ######################################################################################
+# here I get coordinates
+# when there are some
 functionGeo <- function(resTable, newColName) {
   mutateCall <- lazyeval::interp( ~ a$newColName,
                                    a = as.name("coordinates"))
   resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
                                                newColName))
 }
-
+# where there are not any
 functionNotGeo <- function(resTable, newColName) {
   mutateCall <- lazyeval::interp( ~ NA)
   resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
                                                newColName))
 }
-
+# transform the table,
+# adding latitude and longitude columns
 addGeo <- function(resTable){
   if ("coordinates" %in% names(resTable)){
     resTable <- functionGeo(resTable, "longitude")
@@ -227,6 +235,7 @@ addGeo <- function(resTable){
   return(resTable)
 }
 ######################################################################################
+# transform a given column in POSIXct
 functionTime <- function(resTable, newColName) {
   mutateCall <- lazyeval::interp( ~ lubridate::ymd_hms(a),
                                    a = as.name(newColName))
@@ -235,6 +244,8 @@ functionTime <- function(resTable, newColName) {
                                                newColName))
 }
 
+# transform the date column
+# in two distinct POSIXct columns
 functionTime2 <- function(resTable) {
   mutateCall1 <- lazyeval::interp( ~ lubridate::ymd_hms(a[,"utc"]),
                                    a = as.name("date"))
@@ -246,8 +257,10 @@ functionTime2 <- function(resTable) {
                                     "dateLocal"))
 }
 ######################################################################################
+# create the parameters column
 functionParameters <- function(resTable) {
-  mutateCall <- lazyeval::interp( ~ lapply(a, toString), a = as.name("parameters")) %>%
+  mutateCall <- lazyeval::interp( ~ lapply(a, toString),
+                                  a = as.name("parameters")) %>%
     lazyeval::interp( ~ gsub(.dot, pattern = "\"", sub = "")) %>%
     lazyeval::interp( ~ gsub(.dot, pattern = "\\(", sub = "")) %>%
     lazyeval::interp( ~ gsub(.dot, pattern = "c\\)", sub = "")) %>%
