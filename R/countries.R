@@ -2,8 +2,14 @@
 #'
 #' @importFrom dplyr tbl_df "%>%"
 #' @importFrom httr GET content
-#' @return data.frame (dplyr "tbl_df") with code and name for each country,
-#' as well as the number of sources in each country.
+#' @return data.frame (dplyr "tbl_df") with 3 columns:
+#' \itemize{
+#' \item the number of measures for a country ("count"),
+#' \item the code of the country ("code"),
+#' \item and its name ("name").
+#' }
+#' @details For queries involving a country argument,
+#' the code of the country, not its name, should be used.
 #' @export
 #'
 #' @examples

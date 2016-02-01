@@ -15,12 +15,28 @@
 #' @param date_from Show results after a certain date. (character year-month-day, ex. '2015-12-20').
 #' @param date_to Show results before a certain date. (character year-month-day, ex. '2015-12-20')
 #'
-#' @return A data.frame (dplyr "tbl_df") with for each location: its name, the city and the country it is in, the number of measures for this location,
-#'  the name of the source, and the dates and times at which it was first and last updated, respectively. City and location are
-#'  also provided as URL encoded strings which makes further queries easier.
-#'  @details Please note that if an argument is composed by several words, e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
-#'  You can query any combination of country/location/city, but only one of them at the same time.
+#' @return A data.frame (dplyr "tbl_df") with 12 columns:
+#'  \itemize{
+#'  \item the name of the location ("location"),
+#'  \item the city it is in ("city"),
+#'  \item the code of country it is in ("country"),
+#'  \item the name of the source of the information ("sourceName"),
+#'  \item the number of measures for this location in the platform ("count"),
+#'  \item the last time and date at which measures were updated for this location ("lastUpdated"),
+#'  \item the first time and date at which measures were updated for this location ("firstUpdated"),
+#'  \item the parameters available for this location ("parameters"),
+#'  \item its longitude ("longitude") and latitude if available ("latitude"),
+#'  \item and finally an URL encoded version of the city name ("cityURL")
+#'  \item and of the location name ("locationURL").
+#'  }
+#' @details For queries involving a city or location argument,
+#' the URL-encoded name of the city/location (as in cityURL/locationURL),
+#' not its name, should be used.
+#'  You can query any nested combination of country/location/city (level 1, 2 and 3),
+#'  with only one value for each argument.
 #'   If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
+#'   If you write city="Delhi", you do not need to write the code of the country, unless
+#'   one day there is a city with the same name in another country.
 #' @export
 #'
 #' @examples

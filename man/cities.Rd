@@ -10,15 +10,22 @@ cities(country = NULL)
 \item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
 }
 \value{
-a data.frame (dplyr "tbl_df") with locations, count, country, city columns,
-and also an URL encoded string for the city.
+a data.frame (dplyr "tbl_df") with 5 columns:
+\itemize{
+\item city name ("city"), country code ("country"),
+\item number of measures in total for the city ("count"),
+\item number of locations ("locations"),
+\item and also an URL encoded string for the city ("cityURL") which can be useful for
+queries involving a city argument.
+}
 }
 \description{
 Providing a simple listing of cities within the platform.
 }
 \details{
-Please note that if an argument is composed by several words,
-e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
+For queries involving a city argument,
+the URL-encoded name of the city (as in cityURL),
+not its name, should be used.
 }
 \examples{
 cities(country='IN')

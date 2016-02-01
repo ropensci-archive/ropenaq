@@ -6,13 +6,16 @@
 #' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
 #'
 #' @return a data.frame (dplyr "tbl_df") with 5 columns:
-#' city name ("city"), country code ("country"),
-#'  number of measures in total for the city ("count"),
-#' number of locations ("locations"),
-#' and also an URL encoded string for the city ("cityURL") which can be useful for
+#' \itemize{
+#' \item city name ("city"), country code ("country"),
+#' \item number of measures in total for the city ("count"),
+#' \item number of locations ("locations"),
+#' \item and also an URL encoded string for the city ("cityURL") which can be useful for
 #' queries involving a city argument.
-#' @details Please note that if an argument is composed by several words,
-#' e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
+#' }
+#' @details For queries involving a city argument,
+#' the URL-encoded name of the city (as in cityURL),
+#' not its name, should be used.
 #' @export
 #'
 #' @examples

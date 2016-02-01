@@ -17,14 +17,29 @@
 #' @param limit Change the number of results returned, max is 1000.
 
 #'
-#' @return A data.frame (dplyr "tbl_df") with UTC date and time, local date and time, country, location, city, parameter, unit, measure,
-#' and geographical coordinates if they were available (otherwise the columns latitude and longitude are full of NA).
-#' @details The sort and sort_by parameters from the API were not included because one can still re-order the table in R.
-#' Regarding the number of page, similarly here it does not make any sense to have it.
-#' include_fields was not included either.
-#' Please note that if an argument is composed by several words, e.g. 'RK Puram' as a location, it has to be written 'RK+Puram' as in a URL.
+#' @return a data.frame (dplyr "tbl_df") with 12 columns:
+#' \itemize{
+#'  \item the name of the location ("location"),
+#'  \item the parameter ("parameter")
+#'  \item the value of the measurement ("value")
+#'  \item the unit of the measure ("unit")
+#'  \item the code of country the location is in ("country"),
+#'  \item the city it is in ("city"),
+#'  \item and finally an URL encoded version of the city name ("cityURL")
+#'  \item and of the location name ("locationURL"),
+#'  \item the UTC POSIXct time ("dateUTC"),
+#'  \item the local POSIXct time ("dateLocal"),
+#'  \item its longitude ("longitude") and latitude if available ("latitude").
+#' }
+#' @details For queries involving a city or location argument,
+#' the URL-encoded name of the city/location (as in cityURL/locationURL),
+#' not its name, should be used.
+#'  You can query any nested combination of country/location/city (level 1, 2 and 3),
+#'  with only one value for each argument.
+#'   If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
+#'   If you write city="Delhi", you do not need to write the code of the country, unless
+#'   one day there is a city with the same name in another country.
 #'
-#' #'
 #' @examples
 #' \dontrun{
 #' measurements(country='IN', limit=9, city='Chennai')
