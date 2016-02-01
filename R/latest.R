@@ -21,8 +21,8 @@
 #'   one day there is a city with the same name in another country.
 #' @examples
 #' \dontrun{
-#' latest(country='IN', city='Chennai')
-#' latest(parameter='co')
+#' aq_latest(country='IN', city='Chennai')
+#' aq_latest(parameter='co')
 #' }
 #' @return a data.frame (dplyr "tbl_df") with 11 columns:
 #' \itemize{
@@ -40,7 +40,7 @@
 #' }.
 #' @export
 #'
-latest <- function(country = NULL, city = NULL, location = NULL,
+aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
                    parameter = NULL, has_geo = NULL,
                    value_from = NULL, value_to = NULL) {
 

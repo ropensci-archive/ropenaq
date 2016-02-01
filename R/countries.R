@@ -12,8 +12,8 @@
 #' @export
 #'
 #' @examples
-#' countries()
-countries <- function() {
+#' aq_countries()
+aq_countries <- function() {# nolint
   ####################################################
   # BUILD QUERY base URL
   urlAQ <- paste0(base_url(), "countries?")

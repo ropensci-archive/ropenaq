@@ -42,12 +42,12 @@
 #'
 #' @examples
 #' \dontrun{
-#' measurements(country='IN', limit=9, city='Chennai')
-#' measurements(country='US', has_geo=TRUE)
+#' aq_measurements(country='IN', limit=9, city='Chennai')
+#' aq_measurements(country='US', has_geo=TRUE)
 #' }
 #' @export
 
-measurements <- function(country = NULL, city = NULL, location = NULL,
+aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolint
                          parameter = NULL, has_geo = NULL, date_from = NULL,
                          date_to = NULL, limit = 100, value_from = NULL,
                          value_to = NULL) {

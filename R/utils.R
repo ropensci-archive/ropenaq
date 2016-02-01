@@ -22,7 +22,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
   # country
   if (!is.null(country)) {
-    if (!(country %in% countries()$code)) {
+    if (!(country %in% aq_countries()$code)) {# nolint
       stop("This country is not available within the platform. See ?countries")
     }
   }
@@ -30,11 +30,11 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # city
   if (!is.null(city)) {
     if (!is.null(country)) {
-      if (!(city %in% cities(country = country)$cityURL)) {
+      if (!(city %in% aq_cities(country = country)$cityURL)) {# nolint
         stop("This city is not available within the platform for this country. See ?cities.")# nolint
       }
     } else {
-      if (!(city %in% cities()$cityURL)) {
+      if (!(city %in% aq_cities()$cityURL)) {# nolint
         stop("This city is not available within the platform. See ?cities")
       }
     }
@@ -48,12 +48,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     if (!is.null(country)) {
       if (!is.null(city)) {
         if (!(location %in%
-              locations(country = country, city = city)$locationURL)) {
+              aq_locations(country = country, city = city)$locationURL)) {# nolint
           stop("This location is not available within the platform for this country and this city. See ?locations")# nolint
         }
       } else {
         if (!(location %in%
-              locations(country = country)$locationURL)) {
+              aq_locations(country = country)$locationURL)) {# nolint
           stop("This location is not available within the platform for this country. See ?locations")# nolint
         }
       }
@@ -61,12 +61,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     else {
       if (!is.null(city)) {
         if (!(location %in%
-              locations(city = city)$locationURL)) {
+              aq_locations(city = city)$locationURL)) {# nolint
           stop("This location is not available within the platform for this city. See ?locations")# nolint
         }
       }
       else {
-        if (!(location %in% locations()$locationURL)) {
+        if (!(location %in% aq_locations()$locationURL)) {# nolint
           stop("This location is not available within the platform. See ?locations")# nolint
         }
       }
@@ -84,7 +84,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     }
 
 
-    locationsTable <- locations(country = country,
+    locationsTable <- aq_locations(country = country,# nolint
                                 city = city,
                                 location = location)
     if (sum(grepl(parameter, locationsTable$parameters)) == 0) {

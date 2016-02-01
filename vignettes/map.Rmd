@@ -26,8 +26,8 @@ lat <- NULL
 long <- NULL
 name <- NULL
 
-for (country in Ropenaq::countries()$code){
-  locationsCountry <- Ropenaq::locations(country=country)
+for (country in Ropenaq::aq_countries()$code){
+  locationsCountry <- Ropenaq::aq_locations(country=country)
   lat <- c(lat, locationsCountry$latitude)
   long <- c(long, locationsCountry$longitude)
   name <- c(name, locationsCountry$location)

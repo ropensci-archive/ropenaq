@@ -15,103 +15,96 @@ Ropenaq
 
 # Introduction
 
-This R package is aimed at accessing the openaq API. See the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.frame (dplyr "tbl_df") objects, that can be further processed and analysed.
+This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <https://openaq.org/> and see the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.frame (dplyr "tbl_df") objects, that can be further processed and analysed.
 
-
-For installing the package, you can copy the following lines. Set `build_vignettes` to FALSE if you do not wish to install the suggested packages.
-
-```{r, eval=FALSE}
-library("devtools")
-install_github("masalmon/Ropenaq", build_vignettes=TRUE)
-```
 
 
 # Finding data availability
 
 Three functions of the package allow to get lists of available information. Measurements are obtained from *locations* that are in *cities* that are in *countries*. 
 
-## The `countries` function
+## The `aq_countries` function
 
-The `countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument.
+The `aq_countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument.
 
 ````{r, warning=FALSE, message=FALSE}
 library("Ropenaq")
-countriesTable <- countries()
+countriesTable <- aq_countries()
 library("knitr")
 kable(countriesTable)
 
 ```
 
-## The `cities` function
+## The `aq_cities` function
 
-Using the `cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, the URL encoded string, and the country it is in.
+Using the `aq_cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, the URL encoded string, and the country it is in.
 
-```{r, cache=FALSE}
-citiesTable <- cities()
+```{r, cache=TRUE}
+citiesTable <- aq_cities()
 kable(head(citiesTable))
 ```
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
-```{r, cache=FALSE}
-citiesTableIndia <- cities(country="IN")
+```{r, cache=TRUE}
+citiesTableIndia <- aq_cities(country="IN")
 kable(citiesTableIndia)
 ```
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
 ```{r, error=TRUE}
-cities(country="PANEM")
+aq_cities(country="PANEM")
 ```
 
 ## The `locations` function
 
-The `locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum. In the output table one also gets URL encoded strings for the city and the location. Below are several examples.
+The `aq_locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum. In the output table one also gets URL encoded strings for the city and the location. Below are several examples.
 
 Here we only look for locations with PM2.5 information in India.
 
-```{r, cache=FALSE}
-locationsIndia <- locations(country="IN", parameter="pm25")
+```{r, cache=TRUE}
+locationsIndia <- aq_locations(country="IN", parameter="pm25")
 kable(locationsIndia)
 ```
 
 Then we could only choose to see the locations with results before 2015-10-01.
 
-```{r, cache=FALSE}
-locationsIndia2 <- locations(country="IN", parameter="pm25", date_to="2015-10-01")
+```{r, cache=TRUE}
+locationsIndia2 <- aq_locations(country="IN", parameter="pm25", date_to="2015-10-01")
 kable(locationsIndia2)
 ```
 
 # Getting data
 
-Two functions allow to get data: `measurement` and `latest`. In both of them the arguments city and location needs to be given as URL encoded strings.
+Two functions allow to get data: `aq_measurement` and `aq_latest`. In both of them the arguments city and location needs to be given as URL encoded strings.
 
-## The `measurements` function
+## The `aq_measurements` function
 
-The measurements function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India. 
+The `aq_measurements` function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India. 
 
-```{r, cache=FALSE}
-tableResults <- measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
+```{r, cache=TRUE}
+tableResults <- aq_measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
 kable(head(tableResults))
 ```
 
 One could also get all possible parameters in the same table.
 
 
-## The `latest` function
+## The `aq_latest` function
 
 This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are `NULL`, it gives all the newest measures for all locations.
 
 
-```{r, cache=FALSE}
-tableLatest <- latest()
+```{r, cache=TRUE}
+tableLatest <- aq_latest()
 kable(head(tableLatest))
 ```
 
-Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
+Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
 
-```{r, cache=FALSE}
-tableLatest <- latest(country="IN", city="Delhi", location="Anand+Vihar")
+```{r, cache=TRUE}
+tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")
 kable(head(tableLatest))
 ```
 

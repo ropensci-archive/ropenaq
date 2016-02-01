@@ -20,8 +20,8 @@
 #' @export
 #'
 #' @examples
-#' cities(country='IN')
-cities <- function(country = NULL) {
+#' aq_cities(country='IN')
+aq_cities <- function(country = NULL) {# nolint
     ####################################################
     # BUILD QUERY
     urlAQ <- paste0(base_url(), "cities")

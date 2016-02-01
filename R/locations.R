@@ -39,9 +39,9 @@
 #' @export
 #'
 #' @examples
-#' locations(country='IN')
-#' locations(city='Houston', parameter='co')
-locations <- function(country = NULL, city = NULL, location = NULL,
+#' aq_locations(country='IN')
+#' aq_locations(city='Houston', parameter='co')
+aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
                       parameter = NULL, has_geo = NULL, value_from = NULL,
                       value_to = NULL, date_from = NULL, date_to = NULL) {
 
