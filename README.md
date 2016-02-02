@@ -3,6 +3,36 @@ Ropenaq
 
 [![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/ropenaq) [![codecov.io](https://codecov.io/github/masalmon/Ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
+Installation
+============
+
+To install the package, you will need the devtools package.
+
+``` r
+library("devtools")
+install_github("masalmon/Ropenaq")
+```
+
+If you experience trouble using the package on a Linux machine, please run
+
+``` r
+url::curl_version()$ssl_version
+```
+
+If it answers `GnuTLS`, run
+
+``` r
+apt-get install libcurl4-openssl-dev
+```
+
+And desinstall then re-install `curl`.
+
+``` r
+install.packages("curl")
+```
+
+If it still doesn't work, please open a new issue!
+
 Introduction
 ============
 
@@ -27,19 +57,19 @@ kable(countriesTable)
 
 |   count| code | name           |
 |-------:|:-----|:---------------|
-|  336025| TH   | Thailand       |
-|   12703| CN   | China          |
-|  380924| MN   | Mongolia       |
-|  102222| GB   | United Kingdom |
-|  598075| CL   | Chile          |
-|  172272| US   | United States  |
-|  257263| AU   | Australia      |
-|  114802| IN   | India          |
-|    1143| VN   | Viet Nam       |
-|  400273| BR   | Brazil         |
-|  154040| PL   | Poland         |
-|  759624| NL   | Netherlands    |
-|    1776| ID   | Indonesia      |
+|  336228| TH   | Thailand       |
+|   12708| CN   | China          |
+|  381054| MN   | Mongolia       |
+|  102256| GB   | United Kingdom |
+|  598329| CL   | Chile          |
+|  172376| US   | United States  |
+|  257347| AU   | Australia      |
+|  114807| IN   | India          |
+|    1144| VN   | Viet Nam       |
+|  400430| BR   | Brazil         |
+|  154094| PL   | Poland         |
+|  759899| NL   | Netherlands    |
+|    1778| ID   | Indonesia      |
 
 The `aq_cities` function
 ------------------------
@@ -53,12 +83,12 @@ kable(head(citiesTable))
 
 | city         | country |  count|  locations| cityURL      |
 |:-------------|:--------|------:|----------:|:-------------|
-| Amsterdam    | NL      |  97857|         14| Amsterdam    |
-| Andacollo    | CL      |   2563|          1| Andacollo    |
-| Antofagasta  | CL      |   4714|          1| Antofagasta  |
-| Arica        | CL      |   2321|          1| Arica        |
-| Ayutthaya    | TH      |   6375|          1| Ayutthaya    |
-| Badhoevedorp | NL      |  10770|          1| Badhoevedorp |
+| Amsterdam    | NL      |  97893|         14| Amsterdam    |
+| Andacollo    | CL      |   2564|          1| Andacollo    |
+| Antofagasta  | CL      |   4716|          1| Antofagasta  |
+| Arica        | CL      |   2322|          1| Arica        |
+| Ayutthaya    | TH      |   6378|          1| Ayutthaya    |
+| Badhoevedorp | NL      |  10774|          1| Badhoevedorp |
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
@@ -69,11 +99,11 @@ kable(citiesTableIndia)
 
 | city      | country |   count|  locations| cityURL   |
 |:----------|:--------|-------:|----------:|:----------|
-| Chennai   | IN      |    1144|          1| Chennai   |
-| Delhi     | IN      |  110229|          5| Delhi     |
-| Hyderabad | IN      |    1143|          1| Hyderabad |
-| Kolkata   | IN      |    1143|          1| Kolkata   |
-| Mumbai    | IN      |    1143|          1| Mumbai    |
+| Chennai   | IN      |    1145|          1| Chennai   |
+| Delhi     | IN      |  110230|          5| Delhi     |
+| Hyderabad | IN      |    1144|          1| Hyderabad |
+| Kolkata   | IN      |    1144|          1| Kolkata   |
+| Mumbai    | IN      |    1144|          1| Mumbai    |
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
@@ -101,11 +131,11 @@ kable(locationsIndia)
 | Mandir Marg                   | Delhi     | IN      | Mandir Marg         |   5871| 1453665600  | 1435588200   | pm25       |         NA|        NA| Delhi     | Mandir+Marg                     |
 | Punjabi Bagh                  | Delhi     | IN      | Punjabi Bagh        |   5697| 1453665300  | 1435537800   | pm25       |         NA|        NA| Delhi     | Punjabi+Bagh                    |
 | RK Puram                      | Delhi     | IN      | RK Puram            |   6186| 1453665300  | 1435588200   | pm25       |         NA|        NA| Delhi     | RK+Puram                        |
-| US Diplomatic Post: Chennai   | Chennai   | IN      | StateAir\_Chennai   |   1144| 1454427000  | 1449869400   | pm25       |   80.25193|  13.05237| Chennai   | US+Diplomatic+Post%3A+Chennai   |
-| US Diplomatic Post: Hyderabad | Hyderabad | IN      | StateAir\_Hyderabad |   1143| 1454427000  | 1449869400   | pm25       |   78.47489|  17.44346| Hyderabad | US+Diplomatic+Post%3A+Hyderabad |
-| US Diplomatic Post: Kolkata   | Kolkata   | IN      | StateAir\_Kolkata   |   1143| 1454427000  | 1449869400   | pm25       |   88.35105|  22.54714| Kolkata   | US+Diplomatic+Post%3A+Kolkata   |
-| US Diplomatic Post: Mumbai    | Mumbai    | IN      | StateAir\_Mumbai    |   1143| 1454427000  | 1449869400   | pm25       |   72.86870|  19.06602| Mumbai    | US+Diplomatic+Post%3A+Mumbai    |
-| US Diplomatic Post: New Delhi | Delhi     | IN      | StateAir\_NewDelhi  |   1143| 1454427000  | 1449869400   | pm25       |   77.18907|  28.59810| Delhi     | US+Diplomatic+Post%3A+New+Delhi |
+| US Diplomatic Post: Chennai   | Chennai   | IN      | StateAir\_Chennai   |   1145| 1454430600  | 1449869400   | pm25       |   80.25193|  13.05237| Chennai   | US+Diplomatic+Post%3A+Chennai   |
+| US Diplomatic Post: Hyderabad | Hyderabad | IN      | StateAir\_Hyderabad |   1144| 1454430600  | 1449869400   | pm25       |   78.47489|  17.44346| Hyderabad | US+Diplomatic+Post%3A+Hyderabad |
+| US Diplomatic Post: Kolkata   | Kolkata   | IN      | StateAir\_Kolkata   |   1144| 1454430600  | 1449869400   | pm25       |   88.35105|  22.54714| Kolkata   | US+Diplomatic+Post%3A+Kolkata   |
+| US Diplomatic Post: Mumbai    | Mumbai    | IN      | StateAir\_Mumbai    |   1144| 1454430600  | 1449869400   | pm25       |   72.86870|  19.06602| Mumbai    | US+Diplomatic+Post%3A+Mumbai    |
+| US Diplomatic Post: New Delhi | Delhi     | IN      | StateAir\_NewDelhi  |   1144| 1454430600  | 1449869400   | pm25       |   77.18907|  28.59810| Delhi     | US+Diplomatic+Post%3A+New+Delhi |
 
 Then we could only choose to see the locations with results before 2015-10-01.
 
@@ -159,12 +189,12 @@ kable(head(tableLatest))
 
 | location   | city        | country |  longitude|   latitude| parameter |    value| lastUpdated         | unit  | cityURL     | locationURL |
 |:-----------|:------------|:--------|----------:|----------:|:----------|--------:|:--------------------|:------|:------------|:------------|
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| co        |  8009.00| 2016-02-02 16:00:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| no2       |   116.00| 2015-09-27 00:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| o3        |     5.00| 2015-09-08 07:00:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| pm10      |  2502.00| 2015-09-10 16:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| so2       |   282.00| 2015-10-07 17:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 21 de mayo | Los Angeles | CL      |  -72.36146|  -37.47118| pm10      |    72.89| 2015-12-13 12:00:00 | µg/m³ | Los+Angeles | 21+de+mayo  |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| co        |  7025.00| 2016-02-02 16:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| no2       |   108.00| 2015-09-27 01:15:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| o3        |     5.00| 2015-09-08 08:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| pm10      |  1952.00| 2015-09-10 18:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| so2       |   259.00| 2015-10-07 19:15:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 21 de mayo | Los Angeles | CL      |  -72.36146|  -37.47118| pm10      |    53.96| 2015-12-13 19:00:00 | µg/m³ | Los+Angeles | 21+de+mayo  |
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
 

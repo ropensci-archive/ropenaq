@@ -13,6 +13,36 @@ Ropenaq
 [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/ropenaq)
 [![codecov.io](https://codecov.io/github/masalmon/Ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
+# Installation
+
+To install the package, you will need the devtools package.
+
+```{r, eval = FALSE}
+library("devtools")
+install_github("masalmon/Ropenaq")
+
+```
+
+If you experience trouble using the package on a Linux machine, please run
+
+```{r, eval = FALSE}
+url::curl_version()$ssl_version
+```
+
+If it answers `GnuTLS`,  run
+
+```{r, eval = FALSE}
+apt-get install libcurl4-openssl-dev
+```
+
+And desinstall then re-install `curl`.
+
+```{r, eval = FALSE}
+install.packages("curl")
+```
+
+If it still doesn't work, please open a new issue!
+
 # Introduction
 
 This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <https://openaq.org/> and see the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.frame (dplyr "tbl_df") objects, that can be further processed and analysed.
