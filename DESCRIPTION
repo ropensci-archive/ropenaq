@@ -14,7 +14,6 @@ Suggests: knitr,
     rmarkdown,
     lintr,
     ggplot2,
-    OpenStreetMap,
     testthat
 VignetteBuilder: knitr
 Imports: httr, lubridate, dplyr, jsonlite, tidyr, lazyeval

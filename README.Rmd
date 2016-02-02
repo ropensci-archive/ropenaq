@@ -39,14 +39,14 @@ kable(countriesTable)
 
 Using the `aq_cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, the URL encoded string, and the country it is in.
 
-```{r, cache=TRUE}
+```{r}
 citiesTable <- aq_cities()
 kable(head(citiesTable))
 ```
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
-```{r, cache=TRUE}
+```{r}
 citiesTableIndia <- aq_cities(country="IN")
 kable(citiesTableIndia)
 ```
@@ -63,14 +63,14 @@ The `aq_locations` function has far more arguments than the first two functions.
 
 Here we only look for locations with PM2.5 information in India.
 
-```{r, cache=TRUE}
+```{r}
 locationsIndia <- aq_locations(country="IN", parameter="pm25")
 kable(locationsIndia)
 ```
 
 Then we could only choose to see the locations with results before 2015-10-01.
 
-```{r, cache=TRUE}
+```{r}
 locationsIndia2 <- aq_locations(country="IN", parameter="pm25", date_to="2015-10-01")
 kable(locationsIndia2)
 ```
@@ -83,7 +83,7 @@ Two functions allow to get data: `aq_measurement` and `aq_latest`. In both of th
 
 The `aq_measurements` function has many arguments for getting a query specific to, say, a given parameter in a given location. Below we get the PM2.5 measures for Anand Vihar in Delhi in India. 
 
-```{r, cache=TRUE}
+```{r}
 tableResults <- aq_measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
 kable(head(tableResults))
 ```
@@ -96,14 +96,14 @@ One could also get all possible parameters in the same table.
 This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are `NULL`, it gives all the newest measures for all locations.
 
 
-```{r, cache=TRUE}
+```{r}
 tableLatest <- aq_latest()
 kable(head(tableLatest))
 ```
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
 
-```{r, cache=TRUE}
+```{r}
 tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")
 kable(head(tableLatest))
 ```

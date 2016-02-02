@@ -1,5 +1,5 @@
 ---
-title: "World Map"
+title: "World Map of Open AQ Monitors"
 author: "M. Salmon"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -11,15 +11,15 @@ vignette: >
 
 In this vignette I want to plot a map of the world with points to represent monitors whose data is available on the platform. However there are not geographical coordinates for all locations so the map will not be exhaustive.
 
-Loading packages.
+Loading packages. Note that an even nicer map could be drawn with the R package OpenStreetMaps which requires the rJava package.
 
 ```{r, warning=FALSE, message=FALSE}
-library("OpenStreetMap")
+library("ggmap")
 library("ggplot2")
 library("Ropenaq")
 ```
 
-Getting coordinates and transformating it.
+Getting coordinates and transformating it. 
 
 ```{r, warning=FALSE, message=FALSE, eval=FALSE}
 lat <- NULL
@@ -27,36 +27,42 @@ long <- NULL
 name <- NULL
 
 for (country in Ropenaq::aq_countries()$code){
+  print(country)
   locationsCountry <- Ropenaq::aq_locations(country=country)
   lat <- c(lat, locationsCountry$latitude)
   long <- c(long, locationsCountry$longitude)
   name <- c(name, locationsCountry$location)
 }
-
 dataGeo <- data.frame(latitude=lat,
                       longitude=long,
                             name=name)
 dataGeo <- dataGeo[!is.na(dataGeo$latitude),]
-monitors_merc <- as.data.frame(
-  projectMercator(dataGeo$latitude, dataGeo$longitude, drop=FALSE))
-monitors_merc$name <- dataGeo$name
+```
+
+```{r, warning=FALSE, message=FALSE, eval=FALSE, echo=FALSE}
+save(dataGeo, file = "data/dataGeo.RData")
+```
+
+```{r, warning=FALSE, message=FALSE, eval=TRUE, echo=FALSE}
+load("data/dataGeo.RData")
 ```
 
 Getting the empty map.
 
-```{r fig.width=7, fig.height=4, cache=TRUE, eval=FALSE}
+```{r fig.width=7, fig.height=4}
 
-worldMap <- OpenStreetMap::openmap(c(85,-179.99999),
-                                    c(-60,179.99999),
-               type="stamen-watercolor")
-ggplot2::autoplot(worldMap)+ theme_bw()
+worldMap <- ggmap::get_map(location=c(-179.99999,
+                                      -60,
+                                      179.99999,
+                                      85))
+ggmap::ggmap(worldMap)
 ```
 
 Map with monitors.
 
-```{r fig.width=7, fig.height=4, eval=FALSE}
-ggplot2::autoplot(worldMap)+ theme_bw()+
-  geom_point(data = monitors_merc, aes(x=x, y=y), size=2, shape=7)+
+```{r fig.width=7, fig.height=4}
+plotMap <- ggmap::ggmap(worldMap)+
+  geom_point(data = dataGeo, aes(x=longitude, y=latitude), size=2, shape=7)+
   theme(axis.line=element_blank(),axis.text.x=element_blank(),
        axis.text.y=element_blank(),axis.ticks=element_blank(),
        axis.title.x=element_blank(),
@@ -65,5 +71,6 @@ ggplot2::autoplot(worldMap)+ theme_bw()+
        panel.grid.minor=element_blank(),plot.background=element_blank())+
    ggtitle("OpenAQ data sources with geographical coordinates") +
   theme(plot.title = element_text(lineheight=1, face="bold"))
+print(plotMap)
 
 ```

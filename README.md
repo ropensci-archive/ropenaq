@@ -27,19 +27,19 @@ kable(countriesTable)
 
 |   count| code | name           |
 |-------:|:-----|:---------------|
-|  335226| TH   | Thailand       |
-|   12675| CN   | China          |
-|  380175| MN   | Mongolia       |
-|  102088| GB   | United Kingdom |
-|  596735| CL   | Chile          |
-|  171833| US   | United States  |
-|  256720| AU   | Australia      |
-|  114772| IN   | India          |
-|    1137| VN   | Viet Nam       |
-|  399501| BR   | Brazil         |
-|  153753| PL   | Poland         |
-|  758249| NL   | Netherlands    |
-|    1764| ID   | Indonesia      |
+|  336025| TH   | Thailand       |
+|   12703| CN   | China          |
+|  380924| MN   | Mongolia       |
+|  102222| GB   | United Kingdom |
+|  598075| CL   | Chile          |
+|  172272| US   | United States  |
+|  257263| AU   | Australia      |
+|  114802| IN   | India          |
+|    1143| VN   | Viet Nam       |
+|  400273| BR   | Brazil         |
+|  154040| PL   | Poland         |
+|  759624| NL   | Netherlands    |
+|    1776| ID   | Indonesia      |
 
 The `aq_cities` function
 ------------------------
@@ -53,12 +53,12 @@ kable(head(citiesTable))
 
 | city         | country |  count|  locations| cityURL      |
 |:-------------|:--------|------:|----------:|:-------------|
-| Amsterdam    | NL      |  96957|         14| Amsterdam    |
-| Andacollo    | CL      |   2540|          1| Andacollo    |
-| Antofagasta  | CL      |   4668|          1| Antofagasta  |
-| Arica        | CL      |   2303|          1| Arica        |
-| Ayutthaya    | TH      |   6303|          1| Ayutthaya    |
-| Badhoevedorp | NL      |  10670|          1| Badhoevedorp |
+| Amsterdam    | NL      |  97857|         14| Amsterdam    |
+| Andacollo    | CL      |   2563|          1| Andacollo    |
+| Antofagasta  | CL      |   4714|          1| Antofagasta  |
+| Arica        | CL      |   2321|          1| Arica        |
+| Ayutthaya    | TH      |   6375|          1| Ayutthaya    |
+| Badhoevedorp | NL      |  10770|          1| Badhoevedorp |
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
@@ -69,11 +69,11 @@ kable(citiesTableIndia)
 
 | city      | country |   count|  locations| cityURL   |
 |:----------|:--------|-------:|----------:|:----------|
-| Chennai   | IN      |    1119|          1| Chennai   |
-| Delhi     | IN      |  110204|          5| Delhi     |
-| Hyderabad | IN      |    1118|          1| Hyderabad |
-| Kolkata   | IN      |    1118|          1| Kolkata   |
-| Mumbai    | IN      |    1118|          1| Mumbai    |
+| Chennai   | IN      |    1144|          1| Chennai   |
+| Delhi     | IN      |  110229|          5| Delhi     |
+| Hyderabad | IN      |    1143|          1| Hyderabad |
+| Kolkata   | IN      |    1143|          1| Kolkata   |
+| Mumbai    | IN      |    1143|          1| Mumbai    |
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
@@ -101,11 +101,11 @@ kable(locationsIndia)
 | Mandir Marg                   | Delhi     | IN      | Mandir Marg         |   5871| 1453665600  | 1435588200   | pm25       |         NA|        NA| Delhi     | Mandir+Marg                     |
 | Punjabi Bagh                  | Delhi     | IN      | Punjabi Bagh        |   5697| 1453665300  | 1435537800   | pm25       |         NA|        NA| Delhi     | Punjabi+Bagh                    |
 | RK Puram                      | Delhi     | IN      | RK Puram            |   6186| 1453665300  | 1435588200   | pm25       |         NA|        NA| Delhi     | RK+Puram                        |
-| US Diplomatic Post: Chennai   | Chennai   | IN      | StateAir\_Chennai   |   1119| 1454337000  | 1449869400   | pm25       |   80.25193|  13.05237| Chennai   | US+Diplomatic+Post%3A+Chennai   |
-| US Diplomatic Post: Hyderabad | Hyderabad | IN      | StateAir\_Hyderabad |   1118| 1454337000  | 1449869400   | pm25       |   78.47489|  17.44346| Hyderabad | US+Diplomatic+Post%3A+Hyderabad |
-| US Diplomatic Post: Kolkata   | Kolkata   | IN      | StateAir\_Kolkata   |   1118| 1454337000  | 1449869400   | pm25       |   88.35105|  22.54714| Kolkata   | US+Diplomatic+Post%3A+Kolkata   |
-| US Diplomatic Post: Mumbai    | Mumbai    | IN      | StateAir\_Mumbai    |   1118| 1454337000  | 1449869400   | pm25       |   72.86870|  19.06602| Mumbai    | US+Diplomatic+Post%3A+Mumbai    |
-| US Diplomatic Post: New Delhi | Delhi     | IN      | StateAir\_NewDelhi  |   1118| 1454337000  | 1449869400   | pm25       |   77.18907|  28.59810| Delhi     | US+Diplomatic+Post%3A+New+Delhi |
+| US Diplomatic Post: Chennai   | Chennai   | IN      | StateAir\_Chennai   |   1144| 1454427000  | 1449869400   | pm25       |   80.25193|  13.05237| Chennai   | US+Diplomatic+Post%3A+Chennai   |
+| US Diplomatic Post: Hyderabad | Hyderabad | IN      | StateAir\_Hyderabad |   1143| 1454427000  | 1449869400   | pm25       |   78.47489|  17.44346| Hyderabad | US+Diplomatic+Post%3A+Hyderabad |
+| US Diplomatic Post: Kolkata   | Kolkata   | IN      | StateAir\_Kolkata   |   1143| 1454427000  | 1449869400   | pm25       |   88.35105|  22.54714| Kolkata   | US+Diplomatic+Post%3A+Kolkata   |
+| US Diplomatic Post: Mumbai    | Mumbai    | IN      | StateAir\_Mumbai    |   1143| 1454427000  | 1449869400   | pm25       |   72.86870|  19.06602| Mumbai    | US+Diplomatic+Post%3A+Mumbai    |
+| US Diplomatic Post: New Delhi | Delhi     | IN      | StateAir\_NewDelhi  |   1143| 1454427000  | 1449869400   | pm25       |   77.18907|  28.59810| Delhi     | US+Diplomatic+Post%3A+New+Delhi |
 
 Then we could only choose to see the locations with results before 2015-10-01.
 
@@ -159,12 +159,12 @@ kable(head(tableLatest))
 
 | location   | city        | country |  longitude|   latitude| parameter |    value| lastUpdated         | unit  | cityURL     | locationURL |
 |:-----------|:------------|:--------|----------:|----------:|:----------|--------:|:--------------------|:------|:------------|:------------|
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| co        |  5279.00| 2016-02-01 14:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| no2       |   111.00| 2015-09-25 23:15:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| o3        |     2.00| 2015-09-05 18:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| pm10      |   559.00| 2015-09-08 14:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| so2       |   162.00| 2015-10-05 13:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 21 de mayo | Los Angeles | CL      |  -72.36146|  -37.47118| pm10      |    53.33| 2015-12-04 03:00:00 | µg/m³ | Los+Angeles | 21+de+mayo  |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| co        |  8009.00| 2016-02-02 16:00:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| no2       |   116.00| 2015-09-27 00:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| o3        |     5.00| 2015-09-08 07:00:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| pm10      |  2502.00| 2015-09-10 16:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| so2       |   282.00| 2015-10-07 17:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 21 de mayo | Los Angeles | CL      |  -72.36146|  -37.47118| pm10      |    72.89| 2015-12-13 12:00:00 | µg/m³ | Los+Angeles | 21+de+mayo  |
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
 
