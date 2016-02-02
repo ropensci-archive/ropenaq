@@ -16,7 +16,7 @@ Three functions of the package allow to get lists of available information. Meas
 The `aq_countries` function
 ---------------------------
 
-The `aq_countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument.
+The `aq_countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument. The code for each country is its ISO 3166-1 alpha-2 code.
 
 ``` r
 library("Ropenaq")
@@ -27,19 +27,19 @@ kable(countriesTable)
 
 |   count| code | name           |
 |-------:|:-----|:---------------|
-|  332075| TH   | Thailand       |
-|   12579| CN   | China          |
-|  377705| MN   | Mongolia       |
-|  101491| GB   | United Kingdom |
-|  592505| CL   | Chile          |
-|  170387| US   | United States  |
-|  255047| AU   | Australia      |
-|  114677| IN   | India          |
-|    1118| VN   | Viet Nam       |
-|  396648| BR   | Brazil         |
-|  152722| PL   | Poland         |
-|  752749| NL   | Netherlands    |
-|    1726| ID   | Indonesia      |
+|  335226| TH   | Thailand       |
+|   12675| CN   | China          |
+|  380175| MN   | Mongolia       |
+|  102088| GB   | United Kingdom |
+|  596735| CL   | Chile          |
+|  171833| US   | United States  |
+|  256720| AU   | Australia      |
+|  114772| IN   | India          |
+|    1137| VN   | Viet Nam       |
+|  399501| BR   | Brazil         |
+|  153753| PL   | Poland         |
+|  758249| NL   | Netherlands    |
+|    1764| ID   | Indonesia      |
 
 The `aq_cities` function
 ------------------------

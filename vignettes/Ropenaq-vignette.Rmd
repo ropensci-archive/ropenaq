@@ -20,7 +20,7 @@ Three functions of the package allow to get lists of available information. Meas
 
 ## The `aq_countries` function
 
-The `aq_countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument.
+The `aq_countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument. The code for each country is its ISO 3166-1 alpha-2 code.
 
 ````{r, warning=FALSE, message=FALSE}
 library("Ropenaq")
