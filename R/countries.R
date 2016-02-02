@@ -4,7 +4,7 @@
 #' @return data.frame (dplyr "tbl_df") with 3 columns:
 #' \itemize{
 #' \item the number of measures for a country ("count"),
-#' \item the code of the country ("code"),
+#' \item the ISO 3166-1 alpha-2 code of the country ("code"),
 #' \item and its name ("name").
 #' }
 #' @details For queries involving a country argument,
