@@ -131,7 +131,7 @@ tableLatest <- aq_latest()
 kable(head(tableLatest))
 ```
 
-Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
+Below are the latest values for Anand Vihar at the time this vignette was compiled.
 
 ```{r}
 tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")

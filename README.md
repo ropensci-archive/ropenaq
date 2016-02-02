@@ -57,19 +57,19 @@ kable(countriesTable)
 
 |   count| code | name           |
 |-------:|:-----|:---------------|
-|  336228| TH   | Thailand       |
-|   12708| CN   | China          |
-|  381054| MN   | Mongolia       |
-|  102256| GB   | United Kingdom |
-|  598329| CL   | Chile          |
+|  336316| TH   | Thailand       |
+|   12710| CN   | China          |
+|  381116| MN   | Mongolia       |
+|  102292| GB   | United Kingdom |
+|  598414| CL   | Chile          |
 |  172376| US   | United States  |
-|  257347| AU   | Australia      |
+|  257455| AU   | Australia      |
 |  114807| IN   | India          |
-|    1144| VN   | Viet Nam       |
-|  400430| BR   | Brazil         |
-|  154094| PL   | Poland         |
-|  759899| NL   | Netherlands    |
-|    1778| ID   | Indonesia      |
+|    1145| VN   | Viet Nam       |
+|  400588| BR   | Brazil         |
+|  154144| PL   | Poland         |
+|  760174| NL   | Netherlands    |
+|    1780| ID   | Indonesia      |
 
 The `aq_cities` function
 ------------------------
@@ -83,12 +83,12 @@ kable(head(citiesTable))
 
 | city         | country |  count|  locations| cityURL      |
 |:-------------|:--------|------:|----------:|:-------------|
-| Amsterdam    | NL      |  97893|         14| Amsterdam    |
+| Amsterdam    | NL      |  97929|         14| Amsterdam    |
 | Andacollo    | CL      |   2564|          1| Andacollo    |
 | Antofagasta  | CL      |   4716|          1| Antofagasta  |
 | Arica        | CL      |   2322|          1| Arica        |
-| Ayutthaya    | TH      |   6378|          1| Ayutthaya    |
-| Badhoevedorp | NL      |  10774|          1| Badhoevedorp |
+| Ayutthaya    | TH      |   6381|          1| Ayutthaya    |
+| Badhoevedorp | NL      |  10778|          1| Badhoevedorp |
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
@@ -189,14 +189,14 @@ kable(head(tableLatest))
 
 | location   | city        | country |  longitude|   latitude| parameter |    value| lastUpdated         | unit  | cityURL     | locationURL |
 |:-----------|:------------|:--------|----------:|----------:|:----------|--------:|:--------------------|:------|:------------|:------------|
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| co        |  7025.00| 2016-02-02 16:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| no2       |   108.00| 2015-09-27 01:15:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| o3        |     5.00| 2015-09-08 08:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| pm10      |  1952.00| 2015-09-10 18:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| so2       |   259.00| 2015-10-07 19:15:00 | µg/m³ | Ulaanbaatar | 100+ail     |
-| 21 de mayo | Los Angeles | CL      |  -72.36146|  -37.47118| pm10      |    53.96| 2015-12-13 19:00:00 | µg/m³ | Los+Angeles | 21+de+mayo  |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| co        |  7963.00| 2016-02-02 17:15:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| no2       |   112.00| 2015-09-27 01:45:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| o3        |     5.00| 2015-09-08 09:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| pm10      |  1556.00| 2015-09-10 19:30:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 100 ail    | Ulaanbaatar | MN      |  106.92138|   47.93291| so2       |   284.00| 2015-10-07 20:15:00 | µg/m³ | Ulaanbaatar | 100+ail     |
+| 21 de mayo | Los Angeles | CL      |  -72.36146|  -37.47118| pm10      |    45.18| 2015-12-14 00:00:00 | µg/m³ | Los+Angeles | 21+de+mayo  |
 
-Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=TRUE).
+Below are the latest values for Anand Vihar at the time this vignette was compiled.
 
 ``` r
 tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")
