@@ -17,26 +17,32 @@ Loading packages. Note that an even nicer map could be drawn with the R package 
 library("ggmap")
 library("ggplot2")
 library("Ropenaq")
+library("dplyr")
 ```
 
 Getting coordinates and transformating it. 
 
-```{r, warning=FALSE, message=FALSE, eval=FALSE}
-lat <- NULL
-long <- NULL
-name <- NULL
 
-for (country in Ropenaq::aq_countries()$code){
+
+## create a list to hold output
+
+
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+country_codes <- Ropenaq::aq_countries()$code
+locations_country <- vector(mode = "list", length = length(country_codes))
+names(locations_country) <- as.character(country_codes)
+
+for (country in country_codes) {
   print(country)
-  locationsCountry <- Ropenaq::aq_locations(country=country)
-  lat <- c(lat, locationsCountry$latitude)
-  long <- c(long, locationsCountry$longitude)
-  name <- c(name, locationsCountry$location)
+  locations_country[[country]] <- Ropenaq::aq_locations(country = country)
 }
-dataGeo <- data.frame(latitude=lat,
-                      longitude=long,
-                            name=name)
-dataGeo <- dataGeo[!is.na(dataGeo$latitude),]
+
+dataGeo <- dplyr::bind_rows(locations_country)
+dataGeo <- dplyr::select(dataGeo,
+                         latitude, 
+                         longitude,
+                         location) %>%
+  dplyr::filter(!is.na(latitude))
 ```
 
 ```{r, warning=FALSE, message=FALSE, eval=FALSE, echo=FALSE}
