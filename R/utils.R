@@ -176,7 +176,7 @@ getResults <- function(urlAQ, argsList){
   resTable <- dplyr::tbl_df(resTable)
 
   # for aq_measurements, get the count
-  if(grepl("measurements", urlAQ)){
+  if (grepl("measurements", urlAQ)){
     meta <-  jsonlite::fromJSON(contentPage)$meta
     found <- meta$found
     limit <- meta$limit
