@@ -6,7 +6,7 @@
 \usage{
 aq_measurements(country = NULL, city = NULL, location = NULL,
   parameter = NULL, has_geo = NULL, date_from = NULL, date_to = NULL,
-  limit = 100, value_from = NULL, value_to = NULL)
+  limit = 100, value_from = NULL, value_to = NULL, page = 1)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
@@ -29,6 +29,8 @@ If no parameter is given, all parameters are retrieved.}
 \item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
 
 \item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
+
+\item{page}{The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.}
 }
 \value{
 a data.frame (dplyr "tbl_df") with 12 columns:

@@ -58,6 +58,11 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     ####################################################
     # GET AND TRANSFORM RESULTS
     tableOfResults <- getResults(urlAQ, argsList)
+    # if no results
+    if (nrow(tableOfResults) == 0){
+      warning("No results for this query, returning an empty table.")
+      return(tableOfResults)
+    }
     tableOfResults <- addGeo(tableOfResults)
     tableOfResults <- tidyr::unnest_(tableOfResults,
                                      "measurements")

@@ -30,6 +30,11 @@ aq_cities <- function(country = NULL) {# nolint
     ####################################################
     # GET AND TRANSFORM RESULTS
     citiesTable <- getResults(urlAQ, argsList)
+    # if no results
+    if (nrow(citiesTable) == 0){
+      warning("No results for this query, returning an empty table.")
+      return(citiesTable)
+    }
     citiesTable <- addCityURL(citiesTable)
 
     ####################################################

@@ -3,6 +3,9 @@ library("Ropenaq")
 #################################################################################################
 context("measurements")
 #################################################################################################
+test_that("If there are more results than limit a warning is given", {
+  expect_warning(aq_measurements(), "Your query has yielded")
+})
 
 test_that("The value_from and value_to arguments work as they should", {
   skip_on_cran()

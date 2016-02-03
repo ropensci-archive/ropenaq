@@ -15,6 +15,7 @@
 #' @param date_from Show results after a certain date. (character year-month-day, ex. '2015-12-20')
 #' @param date_to Show results before a certain date. (character year-month-day, ex. '2015-12-20')
 #' @param limit Change the number of results returned, max is 1000.
+#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
 
 #'
 #' @return a data.frame (dplyr "tbl_df") with 12 columns:
@@ -50,7 +51,7 @@
 aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolint
                          parameter = NULL, has_geo = NULL, date_from = NULL,
                          date_to = NULL, limit = 100, value_from = NULL,
-                         value_to = NULL) {
+                         value_to = NULL, page = 1) {
 
     ####################################################
     # BUILD QUERY base URL
@@ -65,11 +66,18 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                           date_to = date_to,
                           value_from = value_from,
                           value_to = value_to,
-                          limit = limit)
+                          limit = limit,
+                          page = page)
 
     ####################################################
     # GET AND TRANSFORM RESULTS
     tableOfResults <- getResults(urlAQ, argsList)
+    # if no results
+    if (nrow(tableOfResults) == 0){
+      warning("No results for this query, returning an empty table.")
+      return(tableOfResults)
+    }
+
     tableOfResults <- addCityURL(resTable = tableOfResults)
     tableOfResults <- addLocationURL(resTable = tableOfResults)
 

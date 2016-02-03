@@ -61,7 +61,11 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
     ####################################################
     # GET AND TRANSFORM RESULTS
     locationsTable <- getResults(urlAQ, argsList)
-
+    # if no results
+    if (nrow(locationsTable) == 0){
+      warning("No results for this query, returning an empty table.")
+      return(locationsTable)
+    }
     locationsTable <- addGeo(resTable =
                                locationsTable)
 

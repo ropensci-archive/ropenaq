@@ -11,7 +11,8 @@ base_url <- function() {
 buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        parameter = NULL, has_geo = NULL, date_from = NULL,
                        date_to = NULL, value_from = NULL,
-                       value_to = NULL, limit = NULL){
+                       value_to = NULL, limit = NULL,
+                       page = NULL){
   # limit
   if (!is.null(limit)) {
     if (limit > 1000) {
@@ -155,7 +156,8 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                    date_to = date_to,
                    value_from = value_from,
                    value_to = value_to,
-                   limit = limit)
+                   limit = limit,
+                   page = page)
 
   return(argsList)
 }
@@ -172,6 +174,18 @@ getResults <- function(urlAQ, argsList){
   # parse the data
   resTable <- jsonlite::fromJSON(contentPage)$results
   resTable <- dplyr::tbl_df(resTable)
+
+  # for aq_measurements, get the count
+  if(grepl("measurements", urlAQ)){
+    meta <-  jsonlite::fromJSON(contentPage)$meta
+    found <- meta$found
+    limit <- meta$limit
+    nPages <- floor(found / limit) + 1
+    if (found > limit){
+      warning(paste0("Your query has yielded ", found," measurements. With the limit of ", limit, " you will need to query ", nPages, " pages to get them all. You can write a loop where you change the page argument of the aq_measurements function, and if needed of the limit argument with limit<=1000."))# nolint
+    }
+  }
+
   return(resTable)
 }
 
