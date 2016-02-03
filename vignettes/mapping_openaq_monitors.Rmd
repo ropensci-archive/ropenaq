@@ -4,7 +4,7 @@ author: "M. Salmon"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{World Map}
+  %\VignetteIndexEntry{World Map of Open AQ Monitors}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
