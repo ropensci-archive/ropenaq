@@ -63,12 +63,6 @@ locationsIndia <- aq_locations(country="IN", parameter="pm25")
 kable(locationsIndia)
 ```
 
-Then we could only choose to see the locations with results before 2015-10-01.
-
-```{r, cache=FALSE}
-locationsIndia2 <- aq_locations(country="IN", parameter="pm25", date_to="2015-10-01")
-kable(locationsIndia2)
-```
 
 # Getting data
 

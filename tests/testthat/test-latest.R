@@ -38,8 +38,4 @@ test_that("latest has the right columns", {
                 class(tableRes$latitude) == "logical")
 })
 
-# test_that("The value_from and value_to arguments work as they should", {
-#   skip_on_cran()
-#   expect_true(all(aq_latest(value_from=10)$value>=10), TRUE)
-#   expect_true(all(aq_latest(value_to=10)$value<=10), TRUE)
-# })
+

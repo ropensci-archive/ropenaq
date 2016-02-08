@@ -5,8 +5,7 @@
 \title{Providing data about distinct measurement locations.}
 \usage{
 aq_locations(country = NULL, city = NULL, location = NULL,
-  parameter = NULL, has_geo = NULL, value_from = NULL, value_to = NULL,
-  date_from = NULL, date_to = NULL)
+  parameter = NULL, has_geo = NULL)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
@@ -19,14 +18,6 @@ aq_locations(country = NULL, city = NULL, location = NULL,
 If no parameter is given, all parameters are retrieved.}
 
 \item{has_geo}{Filter out items that have or do not have geographic information.}
-
-\item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
-
-\item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
-
-\item{date_from}{Show results after a certain date. (character year-month-day, ex. '2015-12-20').}
-
-\item{date_to}{Show results before a certain date. (character year-month-day, ex. '2015-12-20')}
 }
 \value{
 A data.frame (dplyr "tbl_df") with 12 columns:

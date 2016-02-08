@@ -5,7 +5,7 @@
 \title{Provides the latest value of each available parameter for every location in the system.}
 \usage{
 aq_latest(country = NULL, city = NULL, location = NULL,
-  parameter = NULL, has_geo = NULL, value_from = NULL, value_to = NULL)
+  parameter = NULL, has_geo = NULL)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
@@ -18,10 +18,6 @@ aq_latest(country = NULL, city = NULL, location = NULL,
 If no parameter is given, all parameters are retrieved.}
 
 \item{has_geo}{has_geo Filter out items that have or do not have geographic information.}
-
-\item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
-
-\item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 }
 \value{
 a data.frame (dplyr "tbl_df") with 11 columns:

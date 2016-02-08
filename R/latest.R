@@ -9,8 +9,6 @@
 #' @param parameter  Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 #' If no parameter is given, all parameters are retrieved.
 #' @param has_geo has_geo Filter out items that have or do not have geographic information.
-#' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
-#' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
 #' @details For queries involving a city or location argument,
 #' the URL-encoded name of the city/location (as in cityURL/locationURL),
 #' not its name, should be used.
@@ -41,8 +39,7 @@
 #' @export
 #'
 aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
-                   parameter = NULL, has_geo = NULL,
-                   value_from = NULL, value_to = NULL) {
+                   parameter = NULL, has_geo = NULL) {
 
     ####################################################
     # BUILD QUERY base URL
@@ -51,9 +48,7 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     argsList <- buildQuery(country = country, city = city,
                            location = location,
                            parameter = parameter,
-                           has_geo = has_geo,
-                           value_from = value_from,
-                           value_to = value_to)
+                           has_geo = has_geo)
 
     ####################################################
     # GET AND TRANSFORM RESULTS
