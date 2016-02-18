@@ -16,6 +16,7 @@ library("ggmap")
 library("ggplot2")
 library("Ropenaq")
 library("dplyr")
+library("tidyr")
 ```
 
 
@@ -54,6 +55,9 @@ dailyIndia <- measurementsIndia %>%
            location) %>%
   summarize(value = mean(value)) %>%
   mutate(location = as.factor(location))
+
+
+dailyIndia <- complete(dailyIndia, day, location, fill = list(value = NA))
 ```
 
 # Re-add longitude and latitude
