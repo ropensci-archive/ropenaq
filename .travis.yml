@@ -3,9 +3,9 @@ sudo: true
 
 install:
  - Rscript -e 'install.packages("devtools", repos = "http://cran.rstudio.com")'
+ - Rscript -e 'install.packages("knitr", repos = "http://cran.rstudio.com")'
 
 r_binary_packages:
-  - OpenStreetMap
   - ggplot2
   - testthat
   - xml2
