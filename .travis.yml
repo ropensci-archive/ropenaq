@@ -2,6 +2,7 @@ language: r
 sudo: true
 
 r_binary_packages:
+  - devtools
   - ggplot2
   - testthat
   - xml2
