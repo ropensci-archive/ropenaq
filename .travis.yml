@@ -18,7 +18,7 @@ r_github_packages:
   - jimhester/lintr
   - hadley/dplyr
   - hadley/lubridate
-  - dgrtwo/gganimate
+
 
 notifications:
     email:

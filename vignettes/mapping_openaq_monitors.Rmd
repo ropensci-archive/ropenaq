@@ -27,16 +27,8 @@ Getting coordinates and transformating it.
 ## create a list to hold output
 
 
-```{r, warning=FALSE, message=FALSE, eval=FALSE}
+```{r, warning=FALSE, message=FALSE, eval=TRUE}
 dataGeo <- Ropenaq::aq_locations()
-```
-
-```{r, warning=FALSE, message=FALSE, eval=FALSE, echo=FALSE}
-save(dataGeo, file = "data/dataGeo.RData")
-```
-
-```{r, warning=FALSE, message=FALSE, eval=TRUE, echo=FALSE}
-load("data/dataGeo.RData")
 ```
 
 Getting the empty map.
