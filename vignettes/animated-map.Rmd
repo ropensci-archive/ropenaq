@@ -104,6 +104,6 @@ plotMap <- ggmap(indiaMap)+ theme_bw()+
   ggtitle("PM 2.5 concentration") +
   theme(plot.title = element_text(lineheight=1, face="bold"))
 
-ani.options(interval = 0.5, ani.width = 800, ani.height = 800)
+ani.options(interval = 0.25, ani.width = 800, ani.height = 800)
 gg_animate(plotMap, "map.mp4")
 ```
