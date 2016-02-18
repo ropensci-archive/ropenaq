@@ -28,21 +28,7 @@ Getting coordinates and transformating it.
 
 
 ```{r, warning=FALSE, message=FALSE, eval=FALSE}
-country_codes <- Ropenaq::aq_countries()$code
-locations_country <- vector(mode = "list", length = length(country_codes))
-names(locations_country) <- as.character(country_codes)
-
-for (country in country_codes) {
-  print(country)
-  locations_country[[country]] <- Ropenaq::aq_locations(country = country)
-}
-
-dataGeo <- dplyr::bind_rows(locations_country)
-dataGeo <- dplyr::select(dataGeo,
-                         latitude, 
-                         longitude,
-                         location) %>%
-  dplyr::filter(!is.na(latitude))
+dataGeo <- Ropenaq::aq_locations()
 ```
 
 ```{r, warning=FALSE, message=FALSE, eval=FALSE, echo=FALSE}

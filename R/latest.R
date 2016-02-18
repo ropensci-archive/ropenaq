@@ -3,6 +3,7 @@
 #' @importFrom httr GET content
 #' @importFrom tidyr unnest
 #' @importFrom lubridate ymd_hms
+#' @importFrom dplyr bind_rows
 #' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
 #' @param city Limit results by a certain city.
 #' @param location Limit results by a certain location.
@@ -37,7 +38,6 @@
 
 #' }.
 #' @export
-#'
 aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
                    parameter = NULL, has_geo = NULL) {
 
