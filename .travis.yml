@@ -11,6 +11,7 @@ r_binary_packages:
   - igraph
   - knitr
   - XML
+  - devtools
 
 r_github_packages:
   - jimhester/covr
