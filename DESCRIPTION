@@ -16,6 +16,7 @@ Suggests: knitr,
     ggplot2,
     testthat,
     ggmap,
-    openair
+    openair,
+    devtools
 VignetteBuilder: knitr
 Imports: httr, lubridate, dplyr, jsonlite, tidyr, lazyeval
