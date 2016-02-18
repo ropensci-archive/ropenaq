@@ -3,7 +3,14 @@ sudo: true
 
 install:
   - Rscript -e 'install.packages("devtools", repos = "http://cran.rstudio.com")'
+  - Rscript -e 'install.packages("ggplot2", repos = "http://cran.rstudio.com")'
+  - Rscript -e 'install.packages("testthat", repos = "http://cran.rstudio.com")'
+  - Rscript -e 'install.packages("xml2", repos = "http://cran.rstudio.com")'
+  - Rscript -e 'install.packages("doParallel", repos = "http://cran.rstudio.com")'
+  - Rscript -e 'install.packages("NMF", repos = "http://cran.rstudio.com")'
+  - Rscript -e 'install.packages("igraph", repos = "http://cran.rstudio.com")'
   - Rscript -e 'install.packages("knitr", repos = "http://cran.rstudio.com")'
+  - Rscript -e 'install.packages("XML", repos = "http://cran.rstudio.com")'
 
 r_binary_packages:
   - devtools
