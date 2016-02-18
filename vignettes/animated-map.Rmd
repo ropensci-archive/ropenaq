@@ -4,7 +4,7 @@ author: "M. Salmon"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Animated Map of PM2.5 concentrations in India}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -74,7 +74,7 @@ indiaMap <- get_map(location = c(65,
 ggmap(indiaMap)
 ```
 
-# Do the animated map
+# Make the animated map
 
 You'll need to have installed both gganimate (see <https://github.com/dgrtwo/gganimate>) and animation package (from CRAN), and also have the ffmpeg software (<https://www.ffmpeg.org/>)
 
