@@ -21,7 +21,6 @@ build_script:
   - travis-tool.sh install_r devtools
   - travis-tool.sh install_github hadley/dplyr
   - travis-tool.sh install_github hadley/lubridate
-  - travis-tool.sh install_github dgrtwo/gganimate
 
 test_script:
   - travis-tool.sh run_tests

@@ -19,7 +19,6 @@ r_github_packages:
   - hadley/dplyr
   - hadley/lubridate
 
-
 notifications:
     email:
       on_success: change

@@ -9,50 +9,101 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+The goal of this vignette is to show how to use the gganimate package (see <https://github.com/dgrtwo/gganimate>) for making an animated map of air PM2.5 concentrations in India. Obviously this could be adapted to other subsets of OpenAQ data.
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r, warning=FALSE, message=FALSE}
+library("ggmap")
+library("ggplot2")
+library("Ropenaq")
+library("dplyr")
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+# First, get the data and calculate daily average
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+We only query locations for which we have geographical information and we only want positive concentrations. Since there are many measurements we need to loop over several pages.
 
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+measurementsIndia <- NULL
+for (page in 1:7){
+  print(page)
+  measurementsIndia <- rbind(measurementsIndia,
+                             aq_measurements(country = "IN", 
+                                             has_geo = TRUE, 
+                                             page = page,
+                                             parameter = "pm25", 
+                                             limit = 1000,
+                                             date_from = "2015-09-01",
+                                             value_from = 0))}
 ```
 
-Also a quote using `>`:
+```{r, warning=FALSE, message=FALSE, eval=FALSE, echo=FALSE}
+save(measurementsIndia, file="data/measurementsIndia.RData")
+```
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+
+```{r, warning=FALSE, message=FALSE, eval=TRUE, echo=FALSE}
+load("data/measurementsIndia.RData")
+```
+
+# Calculate daily averages
+
+```{r}
+dailyIndia <- measurementsIndia %>%
+  group_by(day = as.Date(dateLocal),
+           location) %>%
+  summarize(value = mean(value)) %>%
+  mutate(location = as.factor(location))
+```
+
+# Re-add longitude and latitude
+
+```{r}
+tableGeo <- unique(select(measurementsIndia, location,
+                          longitude, latitude))
+
+dailyIndia <- dailyIndia %>% left_join(tableGeo)
+```
+
+# Open map for India
+```{r}
+indiaMap <- get_map(location = c(65,
+                                 6,
+                                 97,
+                                 36))
+ggmap(indiaMap)
+```
+
+# Do the animated map
+
+You'll need to have installed both gganimate (see <https://github.com/dgrtwo/gganimate>) and animation package (from CRAN), and also have the ffmpeg software (<https://www.ffmpeg.org/>)
+
+You'll find the resulting video in the vignettes folder.
+
+```{r, echo = TRUE, eval = FALSE}
+library("gganimate")
+library("animation")
+minConc <- min(dailyIndia$value)
+maxConc <- max(dailyIndia$value)
+plotMap <- ggmap(indiaMap)+ theme_bw()+
+  geom_point(data = dailyIndia, aes(x=longitude,
+                                  y=latitude,
+                                  frame=day,
+                                       colour = value),
+             size=8)+
+  scale_colour_gradient(limits=c(minConc, maxConc), 
+                        low="yellow", 
+                        high="red") +
+  theme(axis.line=element_blank(),axis.text.x=element_blank(),
+        axis.text.y=element_blank(),axis.ticks=element_blank(),
+        axis.title.x=element_blank(),
+        text = element_text(size=20),
+        axis.title.y=element_blank(),
+        panel.background=element_blank(),panel.border=element_blank(),panel.grid.major=element_blank(),
+        panel.grid.minor=element_blank(),plot.background=element_blank())+
+  ggtitle("PM 2.5 concentration") +
+  theme(plot.title = element_text(lineheight=1, face="bold"))
+
+ani.options(interval = 0.5, ani.width = 800, ani.height = 800)
+gg_animate(plotMap, "map.mp4")
+```
