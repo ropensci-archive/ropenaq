@@ -273,7 +273,7 @@ functionTime2 <- function(resTable) {
 ######################################################################################
 # create the parameters column
 functionParameters <- function(resTable) {
-  mutateCall <- lazyeval::interp( ~ lapply(a, toString),
+  mutateCall <- lazyeval::interp( ~ lapply(a, toString)[[1]],
                                   a = as.name("parameters")) %>%
     lazyeval::interp( ~ gsub(.dot, pattern = "\"", sub = "")) %>%
     lazyeval::interp( ~ gsub(.dot, pattern = "\\(", sub = "")) %>%
