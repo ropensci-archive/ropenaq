@@ -26,7 +26,6 @@ tbJakarta <- aq_measurements(city="Jakarta", parameter="pm25", date_from=as.char
 
 tbSaoPaulo <- aq_measurements(city="Sao+Paulo", location="Campinas-V.Uni%C3%A3o", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
 
-tbSydney <- aq_measurements(city="Sydney+North-west", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
 
 tbWarsaw <- aq_measurements(city="Warszawa", location="Marsza%C5%82kowska", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
 
@@ -34,7 +33,6 @@ tbWarsaw <- aq_measurements(city="Warszawa", location="Marsza%C5%82kowska", para
 tbPM <- rbind(tbHanoi,
             tbJakarta,
             tbSaoPaulo,
-            tbSydney,
             tbWarsaw)
 tbPM <- filter(tbPM, value>=0)
 
