@@ -23,6 +23,6 @@ Needs hourly values for O3, NO2 and PM2.5. Difference with Wikipedia definition:
  calculates per location for now.
 }
 \examples{
-data <-
+data <- cbind(aq_measurements(city = "Delhi", parameter = "o3", location = "Anand Vihar"))
 }
 
