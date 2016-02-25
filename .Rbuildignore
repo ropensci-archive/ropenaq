@@ -8,3 +8,4 @@
 ^\.gitignore$
 ^\.Rhistory$
 ^CONDUCT\.md$
+data_management.R
