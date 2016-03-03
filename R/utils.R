@@ -263,7 +263,8 @@ functionTime <- function(resTable, newColName) {
 functionTime2 <- function(resTable) {
   mutateCall1 <- lazyeval::interp( ~ lubridate::ymd_hms(a[, "utc"]),
                                    a = as.name("date"))
-  mutateCall2 <- lazyeval::interp( ~ lubridate::ymd_hms(a[, "local"]),
+  mutateCall2 <- lazyeval::interp( ~ lubridate::ymd_hms( #no lint
+                                                        gsub("\\+.*", "", a[, "local"])),#no lint
                                    a = as.name("date"))
   resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall1),
                                                "dateUTC")) %>%

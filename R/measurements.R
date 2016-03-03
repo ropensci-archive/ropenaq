@@ -80,7 +80,6 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
 
     tableOfResults <- addCityURL(resTable = tableOfResults)
     tableOfResults <- addLocationURL(resTable = tableOfResults)
-
     tableOfResults <- functionTime2(resTable = tableOfResults)
 
     tableOfResults <- dplyr::select_(tableOfResults,
