@@ -24,7 +24,7 @@ tbHanoi <- aq_measurements(city="Hanoi", parameter="pm25", date_from=as.characte
 
 tbJakarta <- aq_measurements(city="Jakarta", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
 
-tbSaoPaulo <- aq_measurements(city="Sao+Paulo", location="Campinas-V.Uni%C3%A3o", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
+tbSaoPaulo <- aq_measurements(city="Chennai", location="US+Diplomatic+Post%3A+Chennai", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
 
 tbSydney <- aq_measurements(city="Sydney+North-west", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
 

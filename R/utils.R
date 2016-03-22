@@ -107,13 +107,13 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # date_from
   if (!is.null(date_from)) {
     if (is.na(lubridate::ymd(date_from))) {
-      stop("date_from and date_to have to be inputed as year-month-day")
+      stop("date_from and date_to have to be inputed as year-month-day.")
     }
   }
   # date_to
   if (!is.null(date_to)) {
     if (is.na(lubridate::ymd(date_to))) {
-      stop("date_from and date_to have to be inputed as year-month-day")
+      stop("date_from and date_to have to be inputed as year-month-day.")
     }
   }
 
