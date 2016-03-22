@@ -13,6 +13,8 @@ install:
 environment:
   GITHUB_PAT:
     secure: zuFCb2IKZvA6E+eE5aSCdvaSd2Z60lgMFfJdtKGmqK67DA4l3Uz+VEPkLvrQiNam
+    matrix:
+    - R_VERSION: stable
 # Adapt as necessary starting from here
 
 build_script:
