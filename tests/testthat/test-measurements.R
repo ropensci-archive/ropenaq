@@ -15,14 +15,14 @@ test_that("The value_from and value_to arguments work as they should", {
 
 test_that("measurements returns a data.frame (tbl_df)", {
   skip_on_cran()
-  measurementsTable <- aq_measurements(limit=10, city="Sao+Paulo")
+  measurementsTable <- aq_measurements(limit=10, city="Chennai")
   expect_that(measurementsTable, is_a("tbl_df"))
 
 })
 
 test_that("measurements has the right columns", {
   skip_on_cran()
-  tableRes <- aq_measurements(limit=10, city="Sao+Paulo")
+  tableRes <- aq_measurements(limit=10, city="Chennai")
   expect_true(class(tableRes$location) == "character")
   expect_true(class(tableRes$parameter) == "character")
   expect_true(class(tableRes$value) == "numeric" |
