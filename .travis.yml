@@ -28,4 +28,4 @@ after_success:
   - Rscript -e 'library(covr); codecov()'
 
 env:
-- LINTR_COMMENT_BOT=false
+- LINTR_COMMENT_BOT=true
