@@ -9,7 +9,7 @@ aq_measurements(country = NULL, city = NULL, location = NULL,
   limit = 100, value_from = NULL, value_to = NULL, page = 1)
 }
 \arguments{
-\item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
+\item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}
 
 \item{city}{Limit results by a certain city.}
 

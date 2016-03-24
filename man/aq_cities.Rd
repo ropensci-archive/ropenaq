@@ -7,7 +7,7 @@
 aq_cities(country = NULL)
 }
 \arguments{
-\item{country}{Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.}
+\item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}
 }
 \value{
 a data.frame (dplyr "tbl_df") with 5 columns:
