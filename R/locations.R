@@ -74,6 +74,8 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
 
     locationsTable <- functionParameters(resTable =
                                            locationsTable)
+    names(locationsTable)[9] <- "longitude"
+    names(locationsTable)[10] <- "latitude"
     ####################################################
     # DONE!
     return(locationsTable)

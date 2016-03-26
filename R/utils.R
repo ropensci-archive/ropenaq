@@ -172,8 +172,7 @@ getResults <- function(urlAQ, argsList){
 
   # parse the data
   resTable <- jsonlite::fromJSON(contentPage,
-                                 flatten =TRUE,
-                                 simplifyDataFrame = TRUE)$results
+                                 flatten =TRUE)$results
   resTable <- dplyr::tbl_df(resTable)
 
   # for aq_measurements, get the count
