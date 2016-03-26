@@ -12,12 +12,10 @@ r_binary_packages:
   - igraph
   - knitr
   - XML
-
-r_github_packages:
-  - jimhester/covr
-  - jimhester/lintr
-  - hadley/dplyr
-  - hadley/lubridate
+  - covr
+  - lintr
+  - dplyr
+  - lubridate
 
 notifications:
     email:
