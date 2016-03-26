@@ -58,11 +58,13 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
       warning("No results for this query, returning an empty table.")
       return(tableOfResults)
     }
-    tableOfResults <- addGeo(tableOfResults)
     tableOfResults <- tidyr::unnest_(tableOfResults,
                                      "measurements")
+
     tableOfResults <- addCityURL(tableOfResults)
     tableOfResults <- addLocationURL(tableOfResults)
+    names(tableOfResults)[4] <- "longitude"
+    names(tableOfResults)[5] <- "latitude"
     tableOfResults <- functionTime(tableOfResults,
                                    "lastUpdated")
 

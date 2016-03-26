@@ -80,11 +80,14 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
 
     tableOfResults <- addCityURL(resTable = tableOfResults)
     tableOfResults <- addLocationURL(resTable = tableOfResults)
-    tableOfResults <- functionTime2(resTable = tableOfResults)
-
-    tableOfResults <- dplyr::select_(tableOfResults,
-                                      ~ - date)
-    tableOfResults <- addGeo(resTable = tableOfResults)
+    names(tableOfResults)[7:8] <- c("dateUTC", "dateLocal")
+    tableOfResults <- tableOfResults %>% mutate_(dateUTC =
+                                                   interp(~ lubridate::
+                                                            ymd_hms(dateUTC)))
+    tableOfResults <- tableOfResults %>% mutate_(dateLocal =
+                                                   interp(~ lubridate::
+                                                            ymd_hms(dateLocal)))
+    names(tableOfResults)[9:10] <- c("latitude", "longitude")
 
     ####################################################
     # DONE!

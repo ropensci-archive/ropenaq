@@ -166,13 +166,14 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 getResults <- function(urlAQ, argsList){
   page <- httr::GET(url = urlAQ,
                     query = argsList)
-
   # convert the http error to a R error
   httr::stop_for_status(page)
   contentPage <- httr::content(page, as = "text")
 
   # parse the data
-  resTable <- jsonlite::fromJSON(contentPage)$results
+  resTable <- jsonlite::fromJSON(contentPage,
+                                 flatten =TRUE,
+                                 simplifyDataFrame = TRUE)$results
   resTable <- dplyr::tbl_df(resTable)
 
   # for aq_measurements, get the count
