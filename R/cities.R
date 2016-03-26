@@ -4,7 +4,7 @@
 #' @importFrom dplyr mutate_ select_ "%>%"
 #' @importFrom httr GET content
 #' @importFrom jsonlite fromJSON
-#' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
+#' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
 #'
 #' @return a data.frame (dplyr "tbl_df") with 5 columns:
 #' \itemize{

@@ -3,7 +3,7 @@
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
 #'
-#' @param country Limit results by a certain country -- a two-letters codem see countries() for finding code based on name.
+#' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
 #' @param city Limit results by a certain city.
 #' @param location Limit results by a certain location.
 #' @param parameter Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
