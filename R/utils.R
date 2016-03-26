@@ -261,7 +261,7 @@ functionTime <- function(resTable, newColName) {
 
 # transform the date column
 # in two distinct POSIXct columns
-functionTime2 <- function(resTable) {
+functionTime2 <- function(resTable){
   mutateCall1 <- lazyeval::interp( ~ lubridate::ymd_hms(a[, "utc"]),
                                    a = as.name("date"))
   mutateCall2 <- lazyeval::interp( ~ lubridate::ymd_hms( # nolint
