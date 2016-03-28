@@ -220,13 +220,6 @@ addLocationURL <- function(resTable){
 }
 ######################################################################################
 # here I get coordinates
-# when there are some
-functionGeo <- function(resTable, newColName) {
-  mutateCall <- lazyeval::interp( ~ a$newColName,
-                                   a = as.name("coordinates"))
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                               newColName))
-}
 # where there are not any
 functionNotGeo <- function(resTable, newColName) {
   mutateCall <- lazyeval::interp( ~ NA)
@@ -236,16 +229,8 @@ functionNotGeo <- function(resTable, newColName) {
 # transform the table,
 # adding latitude and longitude columns
 addGeo <- function(resTable){
-  if ("coordinates" %in% names(resTable)){
-    resTable <- functionGeo(resTable, "longitude")
-    resTable <- functionGeo(resTable, "latitude")
-    resTable <- dplyr::select_( resTable,
-                                quote(- coordinates))
-  }
-  else{
     resTable <- functionNotGeo(resTable, "latitude")
     resTable <- functionNotGeo(resTable, "longitude")
-  }
   return(resTable)
 }
 ######################################################################################
@@ -258,19 +243,6 @@ functionTime <- function(resTable, newColName) {
                                                newColName))
 }
 
-# transform the date column
-# in two distinct POSIXct columns
-functionTime2 <- function(resTable){
-  mutateCall1 <- lazyeval::interp( ~ lubridate::ymd_hms(a[, "utc"]),
-                                   a = as.name("date"))
-  mutateCall2 <- lazyeval::interp( ~ lubridate::ymd_hms( # nolint
-                                                        gsub("\\+.*", "", a[, "local"])),# nolint
-                                   a = as.name("date"))
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall1),
-                                               "dateUTC")) %>%
-    dplyr::mutate_(.dots = setNames(list(mutateCall2),
-                                    "dateLocal"))
-}
 ######################################################################################
 # create the parameters column
 functionParameters <- function(resTable) {
