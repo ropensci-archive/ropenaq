@@ -16,7 +16,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # limit
   if (!is.null(limit)) {
     if (limit > 1000) {
-      stop("limit cannot be more than 1000")
+      #stop("limit cannot be more than 1000")
     }
   }
 
@@ -24,7 +24,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # country
   if (!is.null(country)) {
     if (!(country %in% aq_countries()$code)) {# nolint
-      stop("This country is not available within the platform. See ?countries")
+      #stop("This country is not available within the platform. See ?countries")
     }
   }
 
@@ -32,11 +32,11 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   if (!is.null(city)) {
     if (!is.null(country)) {
       if (!(city %in% aq_cities(country = country)$cityURL)) {# nolint
-        stop("This city is not available within the platform for this country. See ?cities.")# nolint
+        #stop("This city is not available within the platform for this country. See ?cities.")# nolint
       }
     } else {
       if (!(city %in% aq_cities()$cityURL)) {# nolint
-        stop("This city is not available within the platform. See ?cities")
+        #stop("This city is not available within the platform. See ?cities")
       }
     }
     # make sure it won't be re-encoded by httr
@@ -50,12 +50,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       if (!is.null(city)) {
         if (!(location %in%
               aq_locations(country = country, city = city)$locationURL)) {# nolint
-          stop("This location is not available within the platform for this country and this city. See ?locations")# nolint
+          #stop("This location is not available within the platform for this country and this city. See ?locations")# nolint
         }
       } else {
         if (!(location %in%
               aq_locations(country = country)$locationURL)) {# nolint
-          stop("This location is not available within the platform for this country. See ?locations")# nolint
+          #stop("This location is not available within the platform for this country. See ?locations")# nolint
         }
       }
     }
@@ -63,12 +63,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       if (!is.null(city)) {
         if (!(location %in%
               aq_locations(city = city)$locationURL)) {# nolint
-          stop("This location is not available within the platform for this city. See ?locations")# nolint
+          #stop("This location is not available within the platform for this city. See ?locations")# nolint
         }
       }
       else {
         if (!(location %in% aq_locations()$locationURL)) {# nolint
-          stop("This location is not available within the platform. See ?locations")# nolint
+          #stop("This location is not available within the platform. See ?locations")# nolint
         }
       }
     }
@@ -81,7 +81,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   if (!is.null(parameter)) {
     if (!(parameter %in% c("pm25", "pm10", "so2",
                            "no2", "o3", "co", "bc"))) {
-      stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
+      #stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
     }
 
 
@@ -89,7 +89,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                                 city = city,
                                 location = location)
     if (sum(grepl(parameter, locationsTable$parameters)) == 0) {
-      stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
+      #stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
     }
   }
 
@@ -107,20 +107,20 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # date_from
   if (!is.null(date_from)) {
     if (is.na(lubridate::ymd(date_from))) {
-      stop("date_from and date_to have to be inputed as year-month-day.")
+      #stop("date_from and date_to have to be inputed as year-month-day.")
     }
   }
   # date_to
   if (!is.null(date_to)) {
     if (is.na(lubridate::ymd(date_to))) {
-      stop("date_from and date_to have to be inputed as year-month-day.")
+      #stop("date_from and date_to have to be inputed as year-month-day.")
     }
   }
 
   # check dates
   if (!is.null(date_from) & !is.null(date_to)) {
     if (ymd(date_from) > ymd(date_to)) {
-      stop("The start date must be smaller than the end date.")
+      #stop("The start date must be smaller than the end date.")
     }
 
   }
@@ -128,21 +128,21 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # value_from
   if (!is.null(value_from)) {
     if (value_from < 0) {
-      stop("No negative value for value_from please!")
+      #stop("No negative value for value_from please!")
     }
   }
 
   # value_to
   if (!is.null(value_to)) {
     if (value_to < 0) {
-      stop("No negative value for value_to please!")
+      #stop("No negative value for value_to please!")
     }
   }
 
   # check values
   if (!is.null(value_from) & !is.null(value_to)) {
     if (value_to < value_from) {
-      stop("The max value must be bigger than the min value.")
+      #stop("The max value must be bigger than the min value.")
     }
 
   }

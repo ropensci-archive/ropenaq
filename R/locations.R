@@ -9,7 +9,9 @@
 #' @param parameter Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 #' If no parameter is given, all parameters are retrieved.
 #' @param has_geo Filter out items that have or do not have geographic information.
-#'
+#' @param limit Change the number of results returned, max is 1000.
+#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
+
 #' @return A data.frame (dplyr "tbl_df") with 12 columns:
 #'  \itemize{
 #'  \item the name of the location ("location"),
@@ -38,7 +40,8 @@
 #' aq_locations(country='IN')
 #' aq_locations(city='Houston', parameter='co')
 aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
-                      parameter = NULL, has_geo = NULL) {
+                      parameter = NULL, has_geo = NULL, limit = 100,
+                      page = 1) {
 
     ####################################################
     # BUILD QUERY base URL
@@ -47,7 +50,9 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
     argsList <- buildQuery(country = country, city = city,
                            location = location,
                            parameter = parameter,
-                           has_geo = has_geo)
+                           has_geo = has_geo,
+                           limit = limit,
+                           page = page)
 
     ####################################################
     # GET AND TRANSFORM RESULTS

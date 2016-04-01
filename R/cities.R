@@ -5,6 +5,9 @@
 #' @importFrom httr GET content
 #' @importFrom jsonlite fromJSON
 #' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
+#' @param limit Change the number of results returned, max is 1000.
+#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
+
 #'
 #' @return a data.frame (dplyr "tbl_df") with 5 columns:
 #' \itemize{
@@ -21,11 +24,14 @@
 #'
 #' @examples
 #' aq_cities(country='IN')
-aq_cities <- function(country = NULL) {# nolint
+aq_cities <- function(country = NULL, limit = 100,
+                      page = 1) {# nolint
     ####################################################
     # BUILD QUERY
     urlAQ <- paste0(base_url(), "cities")
-    argsList <- buildQuery(country = country)
+    argsList <- buildQuery(country = country,
+                           limit = limit,
+                           page = page)
 
     ####################################################
     # GET AND TRANSFORM RESULTS
