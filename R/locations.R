@@ -2,6 +2,7 @@
 #'
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
+#' @importFrom dplyr  "%>%" tbl_df
 #'
 #' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
 #' @param city Limit results by a certain city.
@@ -83,6 +84,6 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
     names(locationsTable)[9] <- "latitude"
     ####################################################
     # DONE!
-    return(locationsTable)
+    return(tbl_df(locationsTable))
 
 }

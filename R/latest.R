@@ -3,7 +3,7 @@
 #' @importFrom httr GET content
 #' @importFrom tidyr unnest
 #' @importFrom lubridate ymd_hms
-#' @importFrom dplyr bind_rows
+#' @importFrom dplyr bind_rows tbl_df "%>%"
 #' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
 #' @param city Limit results by a certain city.
 #' @param location Limit results by a certain location.
@@ -74,5 +74,5 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     tableOfResults <- functionTime(tableOfResults,
                                    "lastUpdated")
 
-    return(tableOfResults)
+    return(tbl_df(tableOfResults))
 }

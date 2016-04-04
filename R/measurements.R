@@ -1,6 +1,7 @@
 #' Function for getting measurements table from the openAQ API
 #'
-#' @importFrom dplyr tbl_df select_
+#' @importFrom dplyr tbl_df select_ mutate_
+#' @importFrom lazyeval interp
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET content
@@ -77,7 +78,6 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
       warning("No results for this query, returning an empty table.")
       return(tableOfResults)
     }
-
     tableOfResults <- addCityURL(resTable = tableOfResults)
     tableOfResults <- addLocationURL(resTable = tableOfResults)
     names(tableOfResults)[7:8] <- c("dateUTC", "dateLocal")
@@ -91,6 +91,6 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
 
     ####################################################
     # DONE!
-    return(tableOfResults)
+    return(tbl_df(tableOfResults))
 
 }

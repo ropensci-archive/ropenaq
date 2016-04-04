@@ -1,9 +1,26 @@
+.aq_countries <- function(limit = 100,
+                          page = 1) {# nolint
+  ####################################################
+  # BUILD QUERY base URL
+  urlAQ <- paste0(base_url(), "countries?")
+
+  argsList <- buildQuery(limit = limit,
+                         page = page)
+
+  ####################################################
+  # GET AND TRANSFORM RESULTS
+  countriesTable <- getResults(urlAQ, argsList)
+  return(tbl_df(countriesTable))
+}
+
+
 #' Providing a simple listing of countries within the platform.
 #'
 #' @param limit Change the number of results returned, max is 1000.
 #' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
 
 #' @importFrom httr GET content
+#' @importFrom memoise memoise timeout
 #' @return data.frame (dplyr "tbl_df") with 3 columns:
 #' \itemize{
 #' \item the number of measures for a country ("count"),
@@ -16,17 +33,5 @@
 #'
 #' @examples
 #' aq_countries()
-aq_countries <- function(limit = 100,
-                         page = 1) {# nolint
-  ####################################################
-  # BUILD QUERY base URL
-  urlAQ <- paste0(base_url(), "countries?")
+aq_countries <- memoise::memoise(.aq_countries, ~ timeout(360))
 
-  argsList <- buildQuery(limit = limit,
-                         page = page)
-
-  ####################################################
-  # GET AND TRANSFORM RESULTS
-  countriesTable <- getResults(urlAQ, argsList)
-    return(countriesTable)
-}
