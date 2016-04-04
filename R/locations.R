@@ -2,7 +2,7 @@
 #'
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom httr GET content
-#' @importFrom dplyr  "%>%" tbl_df
+#' @importFrom dplyr  "%>%" tbl_df rename_
 #'
 #' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
 #' @param city Limit results by a certain city.
@@ -63,8 +63,11 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
       warning("No results for this query, returning an empty table.")
       return(locationsTable)
     }
-    locationsTable <- addGeo(resTable =
-                               locationsTable)
+
+
+    locationsTable <- functionParameters(resTable =
+                                           locationsTable)
+
 
     locationsTable <- addCityURL(resTable =
                                    locationsTable)
@@ -78,12 +81,12 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
     locationsTable <- functionTime(resTable = locationsTable,
                                    "lastUpdated")
 
-    locationsTable <- functionParameters(resTable =
-                                          locationsTable)
-    names(locationsTable)[8] <- "longitude"
-    names(locationsTable)[9] <- "latitude"
+    names(locationsTable) <- gsub("coordinates\\.",
+                                  "",
+                                  names(locationsTable))
+
     ####################################################
     # DONE!
-    return(tbl_df(locationsTable))
+    return(locationsTable)
 
 }

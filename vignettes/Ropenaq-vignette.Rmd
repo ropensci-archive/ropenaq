@@ -49,7 +49,7 @@ kable(citiesTableIndia)
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
 ```{r, error=TRUE}
-aq_cities(country="PANEM")
+#aq_cities(country="PANEM")
 ```
 
 ## The `locations` function

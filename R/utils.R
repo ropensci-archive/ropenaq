@@ -81,7 +81,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   if (!is.null(parameter)) {
     if (!(parameter %in% c("pm25", "pm10", "so2",
                            "no2", "o3", "co", "bc"))) {
-      #stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
+      stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
     }
 
 
@@ -89,7 +89,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                                 city = city,
                                 location = location)
     if (sum(locationsTable[, parameter]) == 0) {
-      #stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
+      stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
     }
   }
 
@@ -174,7 +174,7 @@ getResults <- function(urlAQ, argsList){
   resTable <- jsonlite::fromJSON(contentPage,
                                  flatten =TRUE)$results
 
-
+  resTable <- dplyr::tbl_df(resTable)
   # for aq_measurements, get the count
   if (grepl("measurements", urlAQ)){
     meta <-  jsonlite::fromJSON(contentPage)$meta
@@ -254,14 +254,14 @@ functionParameters <- function(resTable) {
     lazyeval::interp( ~ .dot)
 
   resTable <- resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                               "parameters"))
- resTable <- mutate_(resTable,
-                     pm25 = lazyeval::interp(~ grepl("pm25", parameters)),
-                     pm10 = lazyeval::interp(~ grepl("pm10", parameters)),
-                     so2 = lazyeval::interp(~ grepl("so2", parameters)),
-                     no2 = lazyeval::interp(~ grepl("no2", parameters)),
-                     o3 = lazyeval::interp(~ grepl("o3", parameters)),
-                     co = lazyeval::interp(~ grepl("co", parameters)),
-                     bc = lazyeval::interp(~ grepl("bc", parameters))) %>%
-   select_(~ - parameters)
+                                                           "parameters"))
+  resTable$pm25 <-  grepl("pm25", resTable$parameters)
+  print(resTable$parameters)
+  #                     pm10 = lazyeval::interp(~ grepl("pm10", parameters)),
+  #                     so2 = lazyeval::interp(~ grepl("so2", parameters)),
+  #                     no2 = lazyeval::interp(~ grepl("no2", parameters)),
+  #                     o3 = lazyeval::interp(~ grepl("o3", parameters)),
+  #                     co = lazyeval::interp(~ grepl("co", parameters)),
+  #                     bc = lazyeval::interp(~ grepl("bc", parameters))) %>%
+  resTable <- resTable %>% select_(~ - parameters)
 }
