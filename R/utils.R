@@ -88,7 +88,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     locationsTable <- aq_locations(country = country,# nolint
                                 city = city,
                                 location = location)
-    if (sum(grepl(parameter, locationsTable$parameters)) == 0) {
+    if (sum(locationsTable$parameter) == 0) {
       #stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
     }
   }
@@ -253,6 +253,15 @@ functionParameters <- function(resTable) {
     lazyeval::interp( ~ gsub(.dot, pattern = "c\\)", sub = "")) %>%
     lazyeval::interp( ~ .dot)
 
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
+  resTable <- resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
                                                "parameters"))
+ resTable <- mutate_(resTable,
+                     pm25 = lazyeval::interp(~ grepl("pm25", parameters)),
+                     pm10 = lazyeval::interp(~ grepl("pm10", parameters)),
+                     so2 = lazyeval::interp(~ grepl("so2", parameters)),
+                     no2 = lazyeval::interp(~ grepl("no2", parameters)),
+                     o3 = lazyeval::interp(~ grepl("o3", parameters)),
+                     co = lazyeval::interp(~ grepl("co", parameters)),
+                     bc = lazyeval::interp(~ grepl("bc", parameters))) %>%
+   select_(~ - parameters)
 }
