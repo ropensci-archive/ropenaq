@@ -88,7 +88,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     locationsTable <- aq_locations(country = country,# nolint
                                 city = city,
                                 location = location)
-    if (sum(locationsTable$parameter) == 0) {
+    if (sum(locationsTable[, parameter]) == 0) {
       #stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
     }
   }
