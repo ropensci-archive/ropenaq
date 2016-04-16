@@ -2,20 +2,9 @@ language: r
 sudo: false
 cache: packages
 
-r_binary_packages:
-  - devtools
-  - ggplot2
-  - testthat
-  - xml2
-  - doParallel
-  - NMF
-  - igraph
-  - knitr
-  - XML
-  - covr
-  - lintr
-  - dplyr
-  - lubridate
+r_github_packages:
+  - jimhester/covr
+  - jimhester/lintr
 
 notifications:
     email:

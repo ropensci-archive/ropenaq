@@ -3,8 +3,10 @@ Type: Package
 Title: Access Air Quality Data From OpenAQ
 Version: 0.1
 Date: 2015-12-30
-Authors@R: person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role = c("aut", "cre"))
-Description: The package allows to access air quality data from the API of the OpenAQ platform <https://docs.openaq.org/>, with the different services the API offers (getting measurements for a given query, getting latest measurements, getting lists of available countries/cities/locations).
+Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role = c("aut", "cre")),
+             person("Andrew", "MacDonald", role = c("rev")),
+             person("Andy ", "Teucher", role = c("rev")))
+Description: The package allows access to air quality data from the API of the OpenAQ platform <https://docs.openaq.org/>, with the different services the API offers (getting measurements for a given query, getting latest measurements, getting lists of available countries/cities/locations).
 License: GPL (>= 2)
 LazyData: TRUE
 RoxygenNote: 5.0.1

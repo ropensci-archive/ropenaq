@@ -80,6 +80,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       stop(call. = FALSE, "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
     }
 
+<<<<<<< HEAD
 
     pagee <- 1
     locations <- NULL
@@ -96,6 +97,13 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     }
     if (apply(locations[, parameter], 2, sum) == 0) {
       stop(call. = FALSE, "This parameter is not available for any location corresponding to your query. See ?locations")# nolint
+=======
+    locationsTable <- aq_locations(country = country,# nolint
+                                city = city,
+                                location = location)
+    if (apply(locationsTable[, parameter], 2, sum) == 0) {
+      stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
+>>>>>>> origin/master
     }
   }
 
@@ -263,8 +271,9 @@ functionParameters <- function(resTable) {
     lazyeval::interp( ~ gsub(.dot, pattern = "c\\)", sub = "")) %>%
     lazyeval::interp( ~ .dot)
 
-  resTable <- resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
+  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
                                                            "parameters"))
+<<<<<<< HEAD
   resTable$pm25 <-  grepl("pm25", resTable$parameters)
   resTable$pm10 <-  grepl("pm10", resTable$parameters)
   resTable$no2 <-  grepl("no2", resTable$parameters)
@@ -272,4 +281,7 @@ functionParameters <- function(resTable) {
   resTable$co <-  grepl("co", resTable$parameters)
   resTable$bc <-  grepl("bc", resTable$parameters)
   resTable <- resTable %>% select_(~ - parameters)
+=======
+
+>>>>>>> origin/master
 }

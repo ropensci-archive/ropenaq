@@ -76,7 +76,15 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
 
     locationsTable <- functionParameters(resTable =
                                            locationsTable)
+    locationsTable$o3 <- grepl("o3", locationsTable$parameters)
+    locationsTable$pm25 <- grepl("pm25", locationsTable$parameters)
+    locationsTable$pm10 <- grepl("pm10", locationsTable$parameters)
+    locationsTable$so2 <- grepl("so2", locationsTable$parameters)
+    locationsTable$no2 <- grepl("no2", locationsTable$parameters)
+    locationsTable$co <- grepl("co", locationsTable$parameters)
+    locationsTable$bc <- grepl("bc", locationsTable$parameters)
 
+    locationsTable <- locationsTable %>% select_(~- parameters)
 
     locationsTable <- addCityURL(resTable =
                                    locationsTable)
