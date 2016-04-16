@@ -59,8 +59,9 @@ The `aq_countries` function allows to see for which countries information is ava
 library("Ropenaq")
 countriesTable <- aq_countries()
 library("knitr")
-kable(countriesTable)
-
+kable(countriesTable$results)
+kable(countriesTable$meta)
+kable(countriesTable$timestamp)
 ```
 
 ## The `aq_cities` function
@@ -69,20 +70,20 @@ Using the `aq_cities` functions one can get all cities for which information is 
 
 ```{r, cache=FALSE}
 citiesTable <- aq_cities()
-kable(head(citiesTable))
+kable(head(citiesTable$results))
 ```
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
 ```{r, cache=FALSE}
 citiesTableIndia <- aq_cities(country="IN")
-kable(citiesTableIndia)
+kable(citiesTableIndia$results)
 ```
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
 ```{r, error=TRUE}
-aq_cities(country="PANEM")
+#aq_cities(country="PANEM")
 ```
 
 ## The `locations` function
@@ -93,7 +94,7 @@ Here we only look for locations with PM2.5 information in India.
 
 ```{r, cache=FALSE}
 locationsIndia <- aq_locations(country="IN", parameter="pm25")
-kable(locationsIndia)
+kable(locationsIndia$results)
 ```
 
 
@@ -107,7 +108,9 @@ The `aq_measurements` function has many arguments for getting a query specific t
 
 ```{r, cache=FALSE}
 tableResults <- aq_measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
-kable(head(tableResults))
+kable(head(tableResults$results))
+kable(tableResults$timestamp)
+kable(tableResults$meta)
 ```
 
 One could also get all possible parameters in the same table.
@@ -120,14 +123,14 @@ This function gives a table with all newest measures for the locations that are 
 
 ```{r, cache=FALSE}
 tableLatest <- aq_latest()
-kable(head(tableLatest))
+kable(head(tableLatest$results))
 ```
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
 
 ```{r, cache=FALSE}
 tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")
-kable(head(tableLatest))
+kable(head(tableLatest$results))
 ```
 
 

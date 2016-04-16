@@ -20,13 +20,13 @@ library("dplyr")
 # Graph 1
 
 ```{r fig.width=7, fig.height=4}
-tbHanoi <- aq_measurements(city="Hanoi", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
+tbHanoi <- aq_measurements(city="Hanoi", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)$results
 
-tbJakarta <- aq_measurements(city="Jakarta", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
+tbJakarta <- aq_measurements(city="Jakarta", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)$results
 
-tbChennai <- aq_measurements(city="Chennai", location="US+Diplomatic+Post%3A+Chennai", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
+tbChennai <- aq_measurements(city="Chennai", location="US+Diplomatic+Post%3A+Chennai", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)$results
 
-tbWarsaw <- aq_measurements(city="Warszawa", location="Marsza%C5%82kowska", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
+tbWarsaw <- aq_measurements(city="Warszawa", location="Marsza%C5%82kowska", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)$results
 
 
 tbPM <- rbind(tbHanoi,
@@ -48,7 +48,7 @@ ggplot() + geom_line(data=tbPM,
 Another graph, for India.
 
 ```{r fig.width=7, fig.height=4}
-tbIndia <- aq_measurements(country="IN", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)
+tbIndia <- aq_measurements(country="IN", parameter="pm25", date_from=as.character(Sys.Date()-1), limit=1000)$results
 tbIndia <- filter(tbIndia, value>=0)
 ggplot() + geom_line(data=tbIndia,
                      aes(x=dateLocal, y=value, colour=location),

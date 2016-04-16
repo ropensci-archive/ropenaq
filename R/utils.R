@@ -16,80 +16,86 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # limit
   if (!is.null(limit)) {
     if (limit > 1000) {
-      #stop("limit cannot be more than 1000")
+      stop(call. = FALSE, "limit cannot be more than 1000")
     }
   }
 
-
-  # country
-  if (!is.null(country)) {
-    if (!(country %in% aq_countries()$code)) {# nolint
-      #stop("This country is not available within the platform. See ?countries")
+  # location
+  if (!is.null(location)) {
+    pagee <- 1
+    locations <- NULL
+    nrows <- 1000
+    while(nrows == 1000){
+      temp <- aq_locations(country = country,
+                           city = city,
+                           page = pagee,
+                           limit = 1000)
+      nrows <- nrow(temp$results)
+      pagee <- pagee + 1
+      locations <- dplyr::bind_rows(locations, temp$results)
     }
+      if (!(location %in% locations$locationURL)) {# nolint
+        stop(call. = FALSE, "This location/city/country combination is not available within the platform. See ?locations")# nolint
+      }
+    # make sure it won't be re-encoded by httr
+    Encoding(location) <- "UTF-8"
+    class(location) <- c("character", "AsIs")
   }
+
 
   # city
   if (!is.null(city)) {
-    if (!is.null(country)) {
-      if (!(city %in% aq_cities(country = country)$cityURL)) {# nolint
-        #stop("This city is not available within the platform for this country. See ?cities.")# nolint
-      }
-    } else {
-      if (!(city %in% aq_cities()$cityURL)) {# nolint
-        #stop("This city is not available within the platform. See ?cities")
-      }
+    pagee <- 1
+    cities <- NULL
+    nrows <- 1000
+    while(nrows == 1000){
+      temp <- aq_cities(country = country,
+                        page = pagee,
+                        limit = 1000)
+      nrows <- nrow(temp$results)
+      pagee <- pagee + 1
+      cities <- dplyr::bind_rows(cities, temp$results)
+    }
+
+    if (!(city %in% cities$cityURL)) {# nolint
+      stop(call. = FALSE, paste0("This city/country combination is not available within the platform. See ?cities."))# nolint
     }
     # make sure it won't be re-encoded by httr
     Encoding(city) <- "UTF-8"
     class(city) <- c("character", "AsIs")
   }
 
-  # location
-  if (!is.null(location)) {
-    if (!is.null(country)) {
-      if (!is.null(city)) {
-        if (!(location %in%
-              aq_locations(country = country, city = city)$locationURL)) {# nolint
-          #stop("This location is not available within the platform for this country and this city. See ?locations")# nolint
-        }
-      } else {
-        if (!(location %in%
-              aq_locations(country = country)$locationURL)) {# nolint
-          #stop("This location is not available within the platform for this country. See ?locations")# nolint
-        }
-      }
+  # country
+  if (!is.null(country)) {
+
+    if (!(country %in% aq_countries(limit = 1000)$results$code)) {# nolint
+      stop(call. = FALSE, "This country is not available within the platform. See ?countries")
     }
-    else {
-      if (!is.null(city)) {
-        if (!(location %in%
-              aq_locations(city = city)$locationURL)) {# nolint
-          #stop("This location is not available within the platform for this city. See ?locations")# nolint
-        }
-      }
-      else {
-        if (!(location %in% aq_locations()$locationURL)) {# nolint
-          #stop("This location is not available within the platform. See ?locations")# nolint
-        }
-      }
-    }
-    # make sure it won't be re-encoded by httr
-    Encoding(location) <- "UTF-8"
-    class(location) <- c("character", "AsIs")
   }
 
   # parameter
   if (!is.null(parameter)) {
     if (!(parameter %in% c("pm25", "pm10", "so2",
                            "no2", "o3", "co", "bc"))) {
-      stop("You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
+      stop(call. = FALSE, "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
     }
 
 
-    locationsTable <- aq_locations(country = country,# nolint
-                                city = city,
-                                location = location)
-    if (sum(locationsTable[, parameter]) == 0) {
-      stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
+    pagee <- 1
+    locations <- NULL
+    nrows <- 1000
+    while(nrows == 1000){
+      temp <- aq_locations(country = country,
+                           city = city,
+                           page = pagee,
+                           location = location,
+                           limit = 1000)
+      nrows <- nrow(temp$results)
+      pagee <- pagee + 1
+      locations <- dplyr::bind_rows(locations, temp$results)
+    }
+    if (apply(locations[, parameter], 2, sum) == 0) {
+      stop(call. = FALSE, "This parameter is not available for any location corresponding to your query. See ?locations")# nolint
     }
   }
 
@@ -107,20 +113,20 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # date_from
   if (!is.null(date_from)) {
     if (is.na(lubridate::ymd(date_from))) {
-      #stop("date_from and date_to have to be inputed as year-month-day.")
+      stop(call. = FALSE, "date_from and date_to have to be inputed as year-month-day.")
     }
   }
   # date_to
   if (!is.null(date_to)) {
     if (is.na(lubridate::ymd(date_to))) {
-      #stop("date_from and date_to have to be inputed as year-month-day.")
+      stop(call. = FALSE, "date_from and date_to have to be inputed as year-month-day.")
     }
   }
 
   # check dates
   if (!is.null(date_from) & !is.null(date_to)) {
     if (ymd(date_from) > ymd(date_to)) {
-      #stop("The start date must be smaller than the end date.")
+      stop(call. = FALSE, "The start date must be smaller than the end date.")
     }
 
   }
@@ -128,21 +134,21 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # value_from
   if (!is.null(value_from)) {
     if (value_from < 0) {
-      #stop("No negative value for value_from please!")
+      stop(call. = FALSE, "No negative value for value_from please!")
     }
   }
 
   # value_to
   if (!is.null(value_to)) {
     if (value_to < 0) {
-      #stop("No negative value for value_to please!")
+      stop(call. = FALSE, "No negative value for value_to please!")
     }
   }
 
   # check values
   if (!is.null(value_from) & !is.null(value_to)) {
     if (value_to < value_from) {
-      #stop("The max value must be bigger than the min value.")
+      stop(call. = FALSE, "The max value must be bigger than the min value.")
     }
 
   }
@@ -169,24 +175,28 @@ getResults <- function(urlAQ, argsList){
   # convert the http error to a R error
   httr::stop_for_status(page)
   contentPage <- httr::content(page, as = "text")
-
   # parse the data
-  resTable <- jsonlite::fromJSON(contentPage,
-                                 flatten =TRUE)$results
+  output <- jsonlite::fromJSON(contentPage,
+                                 flatten =TRUE)
 
-  resTable <- dplyr::tbl_df(resTable)
-  # for aq_measurements, get the count
-  if (grepl("measurements", urlAQ)){
-    meta <-  jsonlite::fromJSON(contentPage)$meta
-    found <- meta$found
-    limit <- meta$limit
-    nPages <- floor(found / limit) + 1
-    if (found > limit){
-      warning(paste0("Your query has yielded ", found," measurements. With the limit of ", limit, " you will need to query ", nPages, " pages to get them all. You can write a loop where you change the page argument of the aq_measurements function, and if needed of the limit argument with limit<=1000."))# nolint
-    }
-  }
+  results <- dplyr::tbl_df(output$results)
 
-  return(resTable)
+  # get the meta
+  meta <- dplyr::tbl_df(
+    as.data.frame(output$meta))
+
+  #get the time stamps
+  timestamp <- dplyr::tbl_df(data.frame(
+    lastModif = lubridate::dmy_hms(
+      httr::headers(page)$"last-modified",
+      tz = "GMT"),
+    queriedAt = lubridate::dmy_hms(
+      httr::headers(page)$date,
+    tz = "GMT")))
+
+  return(list(results = results,
+              meta = meta,
+              timestamp = timestamp))
 }
 
 ######################################################################################
@@ -256,12 +266,10 @@ functionParameters <- function(resTable) {
   resTable <- resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
                                                            "parameters"))
   resTable$pm25 <-  grepl("pm25", resTable$parameters)
-  print(resTable$parameters)
-  #                     pm10 = lazyeval::interp(~ grepl("pm10", parameters)),
-  #                     so2 = lazyeval::interp(~ grepl("so2", parameters)),
-  #                     no2 = lazyeval::interp(~ grepl("no2", parameters)),
-  #                     o3 = lazyeval::interp(~ grepl("o3", parameters)),
-  #                     co = lazyeval::interp(~ grepl("co", parameters)),
-  #                     bc = lazyeval::interp(~ grepl("bc", parameters))) %>%
+  resTable$pm10 <-  grepl("pm10", resTable$parameters)
+  resTable$no2 <-  grepl("no2", resTable$parameters)
+  resTable$o3 <-  grepl("o3", resTable$parameters)
+  resTable$co <-  grepl("co", resTable$parameters)
+  resTable$bc <-  grepl("bc", resTable$parameters)
   resTable <- resTable %>% select_(~ - parameters)
 }

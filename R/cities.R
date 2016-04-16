@@ -1,5 +1,41 @@
-.aq_cities <- function(country = NULL, limit = 100,
-                      page = 1) {# nolint
+#' Providing a simple listing of cities within the platform.
+#'
+#' @importFrom lazyeval interp
+#' @importFrom dplyr mutate_ select_ "%>%" tbl_df
+#' @importFrom httr GET content
+#' @importFrom jsonlite fromJSON
+#' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
+#' @param limit Change the number of results returned, max is 1000.
+#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
+
+#'
+#' @return  a list of 3 data.frames, a results data.frame (dplyr "tbl_df") with 5 columns:
+#' \itemize{
+#' \item city name ("city"), country code ("country"),
+#' \item number of measures in total for the city ("count"),
+#' \item number of locations ("locations"),
+#' \item and also an URL encoded string for the city ("cityURL") which can be useful for
+#' queries involving a city argument.
+#' }
+#' meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
+#' \itemize{
+#' \item the API name ("name"),
+#' \item the license of the data ("license"),
+#' \item the website url ("website"),
+#' \item the queried page ("page"),
+#' \item the limit on the number of results ("limit"),
+#' \item the number of results found on the platform for the query ("found")
+#' }
+#' last, a timestamp data.frame (dplyr "tbl_df") with the query time and the last time at which the data was modified on the platform.
+#' @details For queries involving a city argument,
+#' the URL-encoded name of the city (as in cityURL),
+#' not its name, should be used.
+#' @export
+#'
+#' @examples
+#' aq_cities(country='IN')
+aq_cities <- function(country = NULL, limit = 100,
+                       page = 1) {# nolint
   ####################################################
   # BUILD QUERY
   urlAQ <- paste0(base_url(), "cities")
@@ -9,45 +45,14 @@
 
   ####################################################
   # GET AND TRANSFORM RESULTS
-  citiesTable <- getResults(urlAQ, argsList)
-  # if no results
-  if (nrow(citiesTable) == 0){
-    warning("No results for this query, returning an empty table.")
-    return(citiesTable)
-  }
-  citiesTable <- addCityURL(citiesTable)
+  output <- getResults(urlAQ, argsList)
+
+  citiesTable <- addCityURL(output$results)
 
   ####################################################
   # DONE!
-  return(tbl_df(citiesTable))
+  return(list(results = citiesTable,
+              meta = output$meta,
+              timestamp = output$timestamp))
 }
 
-
-#' Providing a simple listing of cities within the platform.
-#'
-#' @importFrom lazyeval interp
-#' @importFrom dplyr mutate_ select_ "%>%" tbl_df
-#' @importFrom httr GET content
-#' @importFrom jsonlite fromJSON
-#' @importFrom memoise memoise timeout
-#' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
-#' @param limit Change the number of results returned, max is 1000.
-#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
-
-#'
-#' @return a data.frame (dplyr "tbl_df") with 5 columns:
-#' \itemize{
-#' \item city name ("city"), country code ("country"),
-#' \item number of measures in total for the city ("count"),
-#' \item number of locations ("locations"),
-#' \item and also an URL encoded string for the city ("cityURL") which can be useful for
-#' queries involving a city argument.
-#' }
-#' @details For queries involving a city argument,
-#' the URL-encoded name of the city (as in cityURL),
-#' not its name, should be used.
-#' @export
-#'
-#' @examples
-#' aq_cities(country='IN')
-aq_cities <- memoise::memoise(.aq_cities, ~ timeout(360))

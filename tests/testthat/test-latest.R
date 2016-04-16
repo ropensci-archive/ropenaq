@@ -3,15 +3,18 @@ library("Ropenaq")
 #################################################################################################
 context("latest")
 #################################################################################################
-test_that("latest returns a data.frame (tbl_df)", {
+test_that("latest returns a list of 3 data.frames (tbl_df)", {
   skip_on_cran()
-  expect_that(aq_latest(), is_a("tbl_df"))
-
+  output <- aq_latest()
+  expect_that(output$results, is_a("tbl_df"))
+  expect_that(output$meta, is_a("tbl_df"))
+  expect_that(output$timestamp, is_a("tbl_df"))
 })
 
 test_that("latest has the right columns", {
   skip_on_cran()
-  tableRes <- aq_latest()
+  output <- aq_latest()
+  tableRes <- output$results
   expect_true(all(names(tableRes) == c("location",
                                        "city",
                                        "country",
@@ -36,6 +39,12 @@ test_that("latest has the right columns", {
                 class(tableRes$longitude) == "logical")
   expect_true(class(tableRes$latitude) == "numeric" |
                 class(tableRes$latitude) == "logical")
+  meta <- output$meta
+  expect_true(all(names(meta) == c("name", "license",
+                                   "website", "page",
+                                   "limit", "found")))
+  expect_is(output$timestamp$lastModif, "POSIXt")
+  expect_is(output$timestamp$queriedAt, "POSIXt")
 })
 
 

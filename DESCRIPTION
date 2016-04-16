@@ -20,4 +20,4 @@ Suggests: knitr,
     devtools,
     animation
 VignetteBuilder: knitr
-Imports: httr, lubridate, dplyr, jsonlite, tidyr, lazyeval, memoise
+Imports: httr, lubridate, dplyr, jsonlite, tidyr, lazyeval

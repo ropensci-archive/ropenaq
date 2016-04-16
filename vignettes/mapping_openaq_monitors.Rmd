@@ -28,7 +28,8 @@ Getting coordinates and transformating it.
 
 
 ```{r, warning=FALSE, message=FALSE, eval=TRUE}
-dataGeo <- Ropenaq::aq_locations()
+dataGeo <- rbind(Ropenaq::aq_locations(limit = 1000, page = 1)$results,
+                 Ropenaq::aq_locations(limit = 1000, page = 2)$results)
 ```
 
 Getting the empty map.

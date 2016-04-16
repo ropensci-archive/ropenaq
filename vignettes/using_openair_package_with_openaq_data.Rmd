@@ -37,7 +37,7 @@ for(month in 9:12){
                                        limit=1000,
                                        parameter="pm25",
                                        date_from=dateFrom,
-                                       date_to=dateTo))
+                                       date_to=dateTo)$results)
 }
 
 # filter negative values
@@ -79,7 +79,7 @@ measurementsNL2 <- aq_measurements(country="IN",
                                 has_geo=TRUE,
                                 limit=1000,
                                 date_from="2016-01-21",
-                                date_to="2016-01-22")
+                                date_to="2016-01-22")$results
 
 measurementsNL2 <-  dplyr::mutate(measurementsNL2, date=dateLocal,
                                      pm25=value) %>%

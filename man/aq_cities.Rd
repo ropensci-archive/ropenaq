@@ -14,7 +14,7 @@ aq_cities(country = NULL, limit = 100, page = 1)
 \item{page}{The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.}
 }
 \value{
-a data.frame (dplyr "tbl_df") with 5 columns:
+a list of 3 data.frames, a results data.frame (dplyr "tbl_df") with 5 columns:
 \itemize{
 \item city name ("city"), country code ("country"),
 \item number of measures in total for the city ("count"),
@@ -22,6 +22,16 @@ a data.frame (dplyr "tbl_df") with 5 columns:
 \item and also an URL encoded string for the city ("cityURL") which can be useful for
 queries involving a city argument.
 }
+meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
+\itemize{
+\item the API name ("name"),
+\item the license of the data ("license"),
+\item the website url ("website"),
+\item the queried page ("page"),
+\item the limit on the number of results ("limit"),
+\item the number of results found on the platform for the query ("found")
+}
+last, a timestamp data.frame (dplyr "tbl_df") with the query time and the last time at which the data was modified on the platform.
 }
 \description{
 Providing a simple listing of cities within the platform.
