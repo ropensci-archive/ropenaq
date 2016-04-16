@@ -228,21 +228,7 @@ addLocationURL <- function(resTable){
                           newColName = "locationURL")
   return(resTable)
 }
-######################################################################################
-# here I get coordinates
-# where there are not any
-functionNotGeo <- function(resTable, newColName) {
-  mutateCall <- lazyeval::interp( ~ NA)
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                               newColName))
-}
-# transform the table,
-# adding latitude and longitude columns
-addGeo <- function(resTable){
-  resTable <- functionNotGeo(resTable, "latitude")
-  resTable <- functionNotGeo(resTable, "longitude")
-  return(resTable)
-}
+
 ######################################################################################
 # transform a given column in POSIXct
 functionTime <- function(resTable, newColName) {
