@@ -34,9 +34,9 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       pagee <- pagee + 1
       locations <- dplyr::bind_rows(locations, temp$results)
     }
-      if (!(location %in% locations$locationURL)) {# nolint
-        stop(call. = FALSE, "This location/city/country combination is not available within the platform. See ?locations")# nolint
-      }
+    if (!(location %in% locations$locationURL)) {# nolint
+      stop(call. = FALSE, "This location/city/country combination is not available within the platform. See ?locations")# nolint
+    }
     # make sure it won't be re-encoded by httr
     Encoding(location) <- "UTF-8"
     class(location) <- c("character", "AsIs")
@@ -80,7 +80,6 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       stop(call. = FALSE, "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
     }
 
-<<<<<<< HEAD
 
     pagee <- 1
     locations <- NULL
@@ -97,13 +96,6 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     }
     if (apply(locations[, parameter], 2, sum) == 0) {
       stop(call. = FALSE, "This parameter is not available for any location corresponding to your query. See ?locations")# nolint
-=======
-    locationsTable <- aq_locations(country = country,# nolint
-                                city = city,
-                                location = location)
-    if (apply(locationsTable[, parameter], 2, sum) == 0) {
-      stop("This parameter is not available for any location corresponding to your query. See ?locations")# nolint
->>>>>>> origin/master
     }
   }
 
@@ -185,7 +177,7 @@ getResults <- function(urlAQ, argsList){
   contentPage <- httr::content(page, as = "text")
   # parse the data
   output <- jsonlite::fromJSON(contentPage,
-                                 flatten =TRUE)
+                               flatten =TRUE)
 
   results <- dplyr::tbl_df(output$results)
 
@@ -200,7 +192,7 @@ getResults <- function(urlAQ, argsList){
       tz = "GMT"),
     queriedAt = lubridate::dmy_hms(
       httr::headers(page)$date,
-    tz = "GMT")))
+      tz = "GMT")))
 
   return(list(results = results,
               meta = meta,
@@ -223,8 +215,8 @@ functionURL <- function(resTable, col1, newColName) {
 # encoding city name
 addCityURL <- function(resTable){
   resTable <- functionURL(resTable,
-                col1 = "city",
-                newColName = "cityURL")
+                          col1 = "city",
+                          newColName = "cityURL")
 
   return(resTable)
 }
@@ -247,15 +239,15 @@ functionNotGeo <- function(resTable, newColName) {
 # transform the table,
 # adding latitude and longitude columns
 addGeo <- function(resTable){
-    resTable <- functionNotGeo(resTable, "latitude")
-    resTable <- functionNotGeo(resTable, "longitude")
+  resTable <- functionNotGeo(resTable, "latitude")
+  resTable <- functionNotGeo(resTable, "longitude")
   return(resTable)
 }
 ######################################################################################
 # transform a given column in POSIXct
 functionTime <- function(resTable, newColName) {
   mutateCall <- lazyeval::interp( ~ lubridate::ymd_hms(a),
-                                   a = as.name(newColName))
+                                  a = as.name(newColName))
 
   resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
                                                newColName))
@@ -271,9 +263,8 @@ functionParameters <- function(resTable) {
     lazyeval::interp( ~ gsub(.dot, pattern = "c\\)", sub = "")) %>%
     lazyeval::interp( ~ .dot)
 
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
+  resTable <- resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
                                                            "parameters"))
-<<<<<<< HEAD
   resTable$pm25 <-  grepl("pm25", resTable$parameters)
   resTable$pm10 <-  grepl("pm10", resTable$parameters)
   resTable$no2 <-  grepl("no2", resTable$parameters)
@@ -281,7 +272,4 @@ functionParameters <- function(resTable) {
   resTable$co <-  grepl("co", resTable$parameters)
   resTable$bc <-  grepl("bc", resTable$parameters)
   resTable <- resTable %>% select_(~ - parameters)
-=======
-
->>>>>>> origin/master
 }

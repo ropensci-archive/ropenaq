@@ -51,40 +51,32 @@
 #' aq_locations(country='IN')
 #' aq_locations(city='Houston', parameter='co')
 aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
-                      parameter = NULL, has_geo = NULL, limit = 100,
-                      page = 1) {
+                         parameter = NULL, has_geo = NULL, limit = 100,
+                         page = 1) {
 
-    ####################################################
-    # BUILD QUERY base URL
-    urlAQ <- paste0(base_url(), "locations")
+  ####################################################
+  # BUILD QUERY base URL
+  urlAQ <- paste0(base_url(), "locations")
 
-    argsList <- buildQuery(country = country, city = city,
-                           location = location,
-                           parameter = parameter,
-                           has_geo = has_geo,
-                           limit = limit,
-                           page = page)
+  argsList <- buildQuery(country = country, city = city,
+                         location = location,
+                         parameter = parameter,
+                         has_geo = has_geo,
+                         limit = limit,
+                         page = page)
 
-    ####################################################
-    # GET AND TRANSFORM RESULTS
-    output <- getResults(urlAQ, argsList)
-    locationsTable <- output$results
-    # if no results
-    if (nrow(locationsTable) != 0){
+  ####################################################
+  # GET AND TRANSFORM RESULTS
+  output <- getResults(urlAQ, argsList)
+  locationsTable <- output$results
+  # if no results
+  if (nrow(locationsTable) != 0){
 
 
 
     locationsTable <- functionParameters(resTable =
                                            locationsTable)
-    locationsTable$o3 <- grepl("o3", locationsTable$parameters)
-    locationsTable$pm25 <- grepl("pm25", locationsTable$parameters)
-    locationsTable$pm10 <- grepl("pm10", locationsTable$parameters)
-    locationsTable$so2 <- grepl("so2", locationsTable$parameters)
-    locationsTable$no2 <- grepl("no2", locationsTable$parameters)
-    locationsTable$co <- grepl("co", locationsTable$parameters)
-    locationsTable$bc <- grepl("bc", locationsTable$parameters)
 
-    locationsTable <- locationsTable %>% select_(~- parameters)
 
     locationsTable <- addCityURL(resTable =
                                    locationsTable)
@@ -101,11 +93,11 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
     names(locationsTable) <- gsub("coordinates\\.",
                                   "",
                                   names(locationsTable))
-    }
-    ####################################################
-    # DONE!
-    return(list(results = locationsTable,
-                meta = output$meta,
-                timestamp = output$timestamp))
+  }
+  ####################################################
+  # DONE!
+  return(list(results = locationsTable,
+              meta = output$meta,
+              timestamp = output$timestamp))
 
 }
