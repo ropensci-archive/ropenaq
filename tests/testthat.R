@@ -1,4 +1,4 @@
 library(testthat)
-library(Ropenaq)
+library(ropenaq)
 
-test_check("Ropenaq")
+test_check("ropenaq")

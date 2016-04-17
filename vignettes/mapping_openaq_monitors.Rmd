@@ -16,7 +16,7 @@ Loading packages. Note that an even nicer map could be drawn with the R package 
 ```{r, warning=FALSE, message=FALSE}
 library("ggmap")
 library("ggplot2")
-library("Ropenaq")
+library("ropenaq")
 library("dplyr")
 ```
 
@@ -28,8 +28,8 @@ Getting coordinates and transformating it.
 
 
 ```{r, warning=FALSE, message=FALSE, eval=TRUE}
-dataGeo <- rbind(Ropenaq::aq_locations(limit = 1000, page = 1)$results,
-                 Ropenaq::aq_locations(limit = 1000, page = 2)$results)
+dataGeo <- rbind(ropenaq::aq_locations(limit = 1000, page = 1)$results,
+                 ropenaq::aq_locations(limit = 1000, page = 2)$results)
 ```
 
 Getting the empty map.

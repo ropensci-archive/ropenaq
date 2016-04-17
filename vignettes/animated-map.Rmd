@@ -14,7 +14,7 @@ The goal of this vignette is to show how to use the gganimate package (see <http
 ```{r, warning=FALSE, message=FALSE}
 library("ggmap")
 library("ggplot2")
-library("Ropenaq")
+library("ropenaq")
 library("dplyr")
 library("tidyr")
 ```

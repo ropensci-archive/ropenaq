@@ -1,10 +1,10 @@
 ---
-title: "R package Ropenaq"
+title: "R package ropenaq"
 author: "M. Salmon"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{R Package Ropenaq}
+  %\VignetteIndexEntry{R Package ropenaq}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -23,7 +23,7 @@ Three functions of the package allow to get lists of available information. Meas
 The `aq_countries` function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument. The code for each country is its ISO 3166-1 alpha-2 code.
 
 ````{r, warning=FALSE, message=FALSE}
-library("Ropenaq")
+library("ropenaq")
 countriesTable <- aq_countries()
 library("knitr")
 kable(countriesTable$results)

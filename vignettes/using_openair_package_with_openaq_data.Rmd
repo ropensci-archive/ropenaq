@@ -12,7 +12,7 @@ vignette: >
 In this vignette I want to show how easy and useful it is to use the openair package with Open AQ data.
 
 ```{r, warning=FALSE, message=FALSE}
-library("Ropenaq")
+library("ropenaq")
 library("openair")
 library("dplyr")
 
