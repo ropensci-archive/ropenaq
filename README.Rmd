@@ -9,7 +9,7 @@ output:
 ropenaq
 =============
 
-[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq)
+[![Build Status](https://travis-ci.org/masalmon/ropenaq.svg?branch=master)](https://travis-ci.org/masalmon/ropenaq)
 [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/Ropenaq)
 [![codecov.io](https://codecov.io/github/masalmon/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
