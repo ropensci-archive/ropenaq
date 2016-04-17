@@ -1,7 +1,7 @@
 ropenaq
 =======
 
-[![Build Status](https://travis-ci.org/masalmon/ropenaq.svg)](https://travis-ci.org/masalmon/ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/ropenaq) [![codecov.io](https://codecov.io/github/masalmon/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/ropenaq?branch=master)
+[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/Ropenaq) [![codecov.io](https://codecov.io/github/masalmon/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
 Installation
 ============
@@ -91,7 +91,7 @@ kable(countriesTable$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-04-17 06:06:05 | 2016-04-17 06:12:41 |
+| 2016-04-17 06:06:05 | 2016-04-17 06:17:06 |
 
 The `aq_cities` function
 ------------------------
@@ -173,7 +173,7 @@ kable(locationsIndia$results)
 | Central School                                | Lucknow     | IN      | CPCB                |     34| 2016-04-16 10:00:00 | 2016-03-22 10:00:00 |   80.99633|  26.85273| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Lucknow     | Central+School                                |
 | Chandrapur                                    | Chandrapur  | IN      | CPCB                |    770| 2016-04-16 08:25:00 | 2016-03-22 00:25:00 |   79.30000|  19.95000| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Chandrapur  | Chandrapur                                    |
 | Collectorate - Gaya - BSPCB                   | Gaya        | IN      | CPCB                |   1095| 2016-04-17 05:35:00 | 2016-03-21 16:35:00 |   84.94384|  24.74897| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Gaya        | Collectorate+-+Gaya+-+BSPCB                   |
-| Collectorate Jodhpur - RSPCB                  | Jodhpur     | IN      | CPCB                |   1840| 2016-04-17 05:45:00 | 2016-03-21 18:30:00 |   73.03791|  26.29206| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jodhpur     | Collectorate+Jodhpur+-+RSPCB                  |
+| Collectorate Jodhpur - RSPCB                  | Jodhpur     | IN      | CPCB                |   1841| 2016-04-17 06:00:00 | 2016-03-21 18:30:00 |   73.03791|  26.29206| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jodhpur     | Collectorate+Jodhpur+-+RSPCB                  |
 | Collectorate - Muzaffarpur - BSPCB            | Muzaffarpur | IN      | CPCB                |   1361| 2016-04-16 17:20:00 | 2016-03-19 09:20:00 |   85.41150|  26.07620| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Muzaffarpur | Collectorate+-+Muzaffarpur+-+BSPCB            |
 | IGSC Planetarium Complex - Patna - BSPCB      | Patna       | IN      | CPCB                |    777| 2016-04-16 13:20:00 | 2016-03-21 19:30:00 |   85.07550|  25.36360| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Patna       | IGSC+Planetarium+Complex+-+Patna+-+BSPCB      |
 | Maharashtra Pollution Control Board Bandra    | Mumbai      | IN      | CPCB                |   1282| 2016-04-16 12:45:00 | 2016-03-21 16:15:00 |   72.86551|  19.04185| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Mumbai      | Maharashtra+Pollution+Control+Board+Bandra    |
@@ -193,7 +193,7 @@ kable(locationsIndia$results)
 | US Diplomatic Post: New Delhi                 | Delhi       | IN      | StateAir\_NewDelhi  |   2932| 2016-04-17 05:30:00 | 2015-12-11 21:30:00 |   77.18907|  28.59810| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | US+Diplomatic+Post%3A+New+Delhi               |
 | Vikas Sadan Gurgaon - HSPCB                   | Gurgaon     | IN      | CPCB                |    264| 2016-04-16 12:00:00 | 2016-03-25 07:15:00 |   77.02631|  28.45013| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Gurgaon     | Vikas+Sadan+Gurgaon+-+HSPCB                   |
 | VK Industrial Area Jaipur - RSPCB             | Jaipur      | IN      | CPCB                |   1679| 2016-04-16 15:00:00 | 2016-03-21 18:30:00 |   75.77388|  26.97388| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jaipur      | VK+Industrial+Area+Jaipur+-+RSPCB             |
-| ZooPark                                       | Hyderabad   | IN      | CPCB                |   1774| 2016-04-17 05:30:00 | 2016-03-21 18:30:00 |   78.45144|  17.34969| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | ZooPark                                       |
+| ZooPark                                       | Hyderabad   | IN      | CPCB                |   1775| 2016-04-17 05:45:00 | 2016-03-21 18:30:00 |   78.45144|  17.34969| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | ZooPark                                       |
 
 Getting data
 ============
@@ -225,7 +225,7 @@ kable(tableResults$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-04-17 06:06:05 | 2016-04-17 06:12:53 |
+| 2016-04-17 06:17:09 | 2016-04-17 06:17:17 |
 
 ``` r
 kable(tableResults$meta)
