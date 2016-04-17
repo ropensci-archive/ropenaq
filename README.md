@@ -1,7 +1,7 @@
 ropenaq
 =======
 
-[![Build Status](https://travis-ci.org/masalmon/ropenaq.svg?branch=master)](https://travis-ci.org/masalmon/ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/Ropenaq) [![codecov.io](https://codecov.io/github/masalmon/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
+[![Build Status](https://travis-ci.org/masalmon/ropenaq.svg?branch=master)](https://travis-ci.org/masalmon/ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/nlv73gmhnhw5r1h2?svg=true)](https://ci.appveyor.com/project/masalmon/ropenaq-4ryob) [![codecov.io](https://codecov.io/github/masalmon/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
 Installation
 ============
@@ -59,20 +59,20 @@ kable(countriesTable$results)
 |--------:|:-----|:---------------|
 |   434355| AU   | Australia      |
 |      895| BD   | Bangladesh     |
-|   679173| BR   | Brazil         |
+|   679286| BR   | Brazil         |
 |   123133| CA   | Canada         |
-|   992325| CL   | Chile          |
+|   992367| CL   | Chile          |
 |    21568| CN   | China          |
 |      736| CO   | Colombia       |
 |   501038| GB   | United Kingdom |
 |     5354| ID   | Indonesia      |
-|   304674| IN   | India          |
-|   605964| MN   | Mongolia       |
+|   304677| IN   | India          |
+|   606012| MN   | Mongolia       |
 |    72390| MX   | Mexico         |
 |  1203152| NL   | Netherlands    |
-|    43103| PE   | Peru           |
-|   249206| PL   | Poland         |
-|   587935| TH   | Thailand       |
+|    43157| PE   | Peru           |
+|   249240| PL   | Poland         |
+|   588070| TH   | Thailand       |
 |  1794709| US   | United States  |
 |     4037| VN   | Viet Nam       |
 |      202| XK   | NA             |
@@ -91,7 +91,7 @@ kable(countriesTable$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-04-17 06:17:09 | 2016-04-17 06:25:56 |
+| 2016-04-17 06:27:59 | 2016-04-17 06:28:15 |
 
 The `aq_cities` function
 ------------------------
@@ -126,7 +126,7 @@ kable(citiesTableIndia$results)
 | Chandrapur  | IN      |    4741|          1| Chandrapur  |
 | Chennai     | IN      |    6797|          4| Chennai     |
 | Delhi       | IN      |  167598|         11| Delhi       |
-| Faridabad   | IN      |    6388|          1| Faridabad   |
+| Faridabad   | IN      |    6391|          1| Faridabad   |
 | Gaya        | IN      |    4729|          1| Gaya        |
 | Gurgaon     | IN      |    1502|          1| Gurgaon     |
 | Haldia      | IN      |    5287|          1| Haldia      |
@@ -225,7 +225,7 @@ kable(tableResults$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-04-17 06:17:09 | 2016-04-17 06:26:12 |
+| 2016-04-17 06:27:59 | 2016-04-17 06:28:26 |
 
 ``` r
 kable(tableResults$meta)
@@ -249,11 +249,11 @@ kable(head(tableLatest$results))
 
 | location          | city                 | country |  longitude|  latitude| parameter |     value| lastUpdated         | unit  | cityURL              | locationURL       |
 |:------------------|:---------------------|:--------|----------:|---------:|:----------|---------:|:--------------------|:------|:---------------------|:------------------|
-| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| co        |  -142.000| 2016-04-17 05:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| no2       |    13.000| 2016-04-17 05:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| o3        |    74.000| 2016-04-17 05:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| pm10      |   131.000| 2016-04-17 05:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| so2       |     6.000| 2016-04-17 05:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| co        |  -144.000| 2016-04-17 06:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| no2       |    13.000| 2016-04-17 06:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| o3        |    75.000| 2016-04-17 06:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| pm10      |   131.000| 2016-04-17 06:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  106.92138|  47.93291| so2       |     6.000| 2016-04-17 06:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
 | 16th and Whitmore | Omaha-Council Bluffs | US      |  -95.93799|  41.32247| o3        |     0.033| 2016-04-17 04:00:00 | ppm   | Omaha-Council+Bluffs | 16th+and+Whitmore |
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
