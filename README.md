@@ -1,7 +1,7 @@
 ropenaq
 =======
 
-[![Build Status](https://travis-ci.org/masalmon/Ropenaq.svg)](https://travis-ci.org/masalmon/Ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/Ropenaq) [![codecov.io](https://codecov.io/github/masalmon/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
+[![Build Status](https://travis-ci.org/masalmon/ropenaq.svg?branch=master)](https://travis-ci.org/masalmon/ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/dgh82o8ldlgl6qrq?svg=true)](https://ci.appveyor.com/project/masalmon/Ropenaq) [![codecov.io](https://codecov.io/github/masalmon/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
 
 Installation
 ============
@@ -61,18 +61,18 @@ kable(countriesTable$results)
 |      895| BD   | Bangladesh     |
 |   679173| BR   | Brazil         |
 |   123133| CA   | Canada         |
-|   992303| CL   | Chile          |
+|   992325| CL   | Chile          |
 |    21568| CN   | China          |
 |      736| CO   | Colombia       |
 |   501038| GB   | United Kingdom |
 |     5354| ID   | Indonesia      |
-|   304654| IN   | India          |
-|   605962| MN   | Mongolia       |
+|   304674| IN   | India          |
+|   605964| MN   | Mongolia       |
 |    72390| MX   | Mexico         |
 |  1203152| NL   | Netherlands    |
 |    43103| PE   | Peru           |
-|   249199| PL   | Poland         |
-|   587928| TH   | Thailand       |
+|   249206| PL   | Poland         |
+|   587935| TH   | Thailand       |
 |  1794709| US   | United States  |
 |     4037| VN   | Viet Nam       |
 |      202| XK   | NA             |
@@ -91,7 +91,7 @@ kable(countriesTable$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-04-17 06:06:05 | 2016-04-17 06:17:06 |
+| 2016-04-17 06:17:09 | 2016-04-17 06:25:56 |
 
 The `aq_cities` function
 ------------------------
@@ -122,17 +122,17 @@ kable(citiesTableIndia$results)
 | city        | country |   count|  locations| cityURL     |
 |:------------|:--------|-------:|----------:|:------------|
 | Agra        | IN      |    3501|          1| Agra        |
-| Bengaluru   | IN      |   12083|          5| Bengaluru   |
+| Bengaluru   | IN      |   12086|          5| Bengaluru   |
 | Chandrapur  | IN      |    4741|          1| Chandrapur  |
 | Chennai     | IN      |    6797|          4| Chennai     |
 | Delhi       | IN      |  167598|         11| Delhi       |
-| Faridabad   | IN      |    6385|          1| Faridabad   |
+| Faridabad   | IN      |    6388|          1| Faridabad   |
 | Gaya        | IN      |    4729|          1| Gaya        |
 | Gurgaon     | IN      |    1502|          1| Gurgaon     |
 | Haldia      | IN      |    5287|          1| Haldia      |
-| Hyderabad   | IN      |   15576|          3| Hyderabad   |
+| Hyderabad   | IN      |   15584|          3| Hyderabad   |
 | Jaipur      | IN      |    9934|          1| Jaipur      |
-| Jodhpur     | IN      |   11181|          1| Jodhpur     |
+| Jodhpur     | IN      |   11187|          1| Jodhpur     |
 | Kanpur      | IN      |    4635|          1| Kanpur      |
 | Kolkata     | IN      |    2882|          1| Kolkata     |
 | Lucknow     | IN      |     291|          3| Lucknow     |
@@ -225,7 +225,7 @@ kable(tableResults$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-04-17 06:17:09 | 2016-04-17 06:17:17 |
+| 2016-04-17 06:17:09 | 2016-04-17 06:26:12 |
 
 ``` r
 kable(tableResults$meta)
