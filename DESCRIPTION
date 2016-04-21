@@ -10,8 +10,8 @@ Description: The package allows access to air quality data from the API of the O
 License: GPL (>= 2)
 LazyData: TRUE
 RoxygenNote: 5.0.1
-URL: http://github.com/masalmon/ropenaq
-BugReports: http://github.com/masalmon/ropenaq/issues
+URL: http://github.com/ropenscilabs/ropenaq
+BugReports: http://github.com/ropenscilabs/ropenaq/issues
 Suggests: knitr,
     rmarkdown,
     lintr,
