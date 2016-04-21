@@ -9,9 +9,9 @@ output:
 ropenaq
 =============
 
-[![Build Status](https://travis-ci.org/masalmon/ropenaq.svg?branch=master)](https://travis-ci.org/masalmon/ropenaq)
-[![Build status](https://ci.appveyor.com/api/projects/status/nlv73gmhnhw5r1h2?svg=true)](https://ci.appveyor.com/project/masalmon/ropenaq-4ryob)
-[![codecov.io](https://codecov.io/github/masalmon/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/masalmon/Ropenaq?branch=master)
+[![Build Status](https://travis-ci.org/ropenscilabs/ropenaq.svg?branch=master)](https://travis-ci.org/ropenscilabs/ropenaq)
+[![Build status](https://ci.appveyor.com/api/projects/status/nlv73gmhnhw5r1h2?svg=true)](https://ci.appveyor.com/project/ropenscilabs/ropenaq-4ryob)
+[![codecov.io](https://codecov.io/github/ropenscilabs/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/Ropenaq?branch=master)
 
 # Installation
 
@@ -19,7 +19,7 @@ To install the package, you will need the devtools package.
 
 ```{r, eval = FALSE}
 library("devtools")
-install_github("masalmon/ropenaq")
+install_github("ropenscilabs/ropenaq")
 
 ```
 
