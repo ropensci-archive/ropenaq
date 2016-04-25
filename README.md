@@ -271,3 +271,12 @@ kable(head(tableLatest$results))
 | Anand Vihar | Delhi | IN      | pm10      |     334.0| 2016-04-21 12:55:00 | µg/m³ | Delhi   | Anand+Vihar |
 | Anand Vihar | Delhi | IN      | pm25      |      81.0| 2016-04-21 12:55:00 | µg/m³ | Delhi   | Anand+Vihar |
 | Anand Vihar | Delhi | IN      | so2       |      18.0| 2016-03-21 14:45:00 | µg/m³ | Delhi   | Anand+Vihar |
+
+## Meta
+
+* Please [report any issues or bugs](https://github.com/ropensci/ropenaq/issues).
+* License: GPL
+* Get citation information for `ropenaq` in R doing `citation(package = 'ropenaq')`
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
