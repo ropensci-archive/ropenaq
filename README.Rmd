@@ -135,7 +135,7 @@ kable(head(tableLatest$results))
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropensci/ropenaq/issues).
+* Please [report any issues or bugs](https://github.com/ropenscilabs/ropenaq/issues).
 * License: GPL
 * Get citation information for `ropenaq` in R doing `citation(package = 'ropenaq')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
