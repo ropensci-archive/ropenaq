@@ -97,7 +97,8 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                                                             ymd_hms(dateUTC)))
     tableOfResults <- tableOfResults %>% mutate_(dateLocal =
                                                    interp(~ lubridate::
-                                                            ymd_hms(dateLocal)))
+                                                            ymd_hms(gsub("\\+.*", "",
+                                                                         dateLocal))))
     names(tableOfResults)[9:10] <- c("latitude", "longitude")
     }
     ####################################################
