@@ -99,7 +99,9 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                                                    interp(~ lubridate::
                                                             ymd_hms(gsub("\\+.*", "",
                                                                          dateLocal))))
-    names(tableOfResults)[9:10] <- c("latitude", "longitude")
+    if(ncol(tableOfResults) == 12){
+      names(tableOfResults)[9:10] <- c("latitude", "longitude")
+    }
     }
     ####################################################
     # DONE!

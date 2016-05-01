@@ -115,7 +115,7 @@ Then one can write a loop over pages. Note that the maximal value of `limit` is 
 ```{r, eval = FALSE}
 meas <- NULL
 for (page in 1:(ceiling(how_many$found/1000))){
-  meas <- rbind(meas,
+  meas <- bind_rows(meas,
                 aq_measurements(city = "Delhi",
                                 parameter = "pm25",
                                 page = page,
@@ -124,7 +124,7 @@ for (page in 1:(ceiling(how_many$found/1000))){
 
 ```
 
-If you really need a lot of data, you might consider downloading the csv files that contain all measurements per location [from this link](https://openaq.org/#/sources).
+
 
 ## Meta
 

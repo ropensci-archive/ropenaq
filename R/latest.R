@@ -78,10 +78,14 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
 
     tableOfResults <- addCityURL(tableOfResults)
     tableOfResults <- addLocationURL(tableOfResults)
-    names(tableOfResults)[4] <- "longitude"
-    names(tableOfResults)[5] <- "latitude"
+
     tableOfResults <- functionTime(tableOfResults,
                                    "lastUpdated")
+    if(ncol(tableOfResults) == 11){
+      names(tableOfResults)[4] <- "longitude"
+      names(tableOfResults)[5] <- "latitude"
+    }
+
     }
     return(list(results = tableOfResults,
                 meta = output$meta,
