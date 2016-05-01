@@ -158,7 +158,7 @@ for (page in 1:(ceiling(how_many$found/1000))){
 
 ```
 
-If you really need a lot of data, you might consider download the csv files that contain all measurements per location [from this link](https://openaq.org/#/sources).
+If you really need a lot of data, you might consider downloading the csv files that contain all measurements per location [from this link](https://openaq.org/#/sources).
 
 ## Meta
 
