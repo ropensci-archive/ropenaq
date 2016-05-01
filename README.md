@@ -38,8 +38,8 @@ Introduction
 
 This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <https://openaq.org/> and see the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.frame (dplyr "tbl\_df") objects, that can be further processed and analysed.
 
-Finding data availability
-=========================
+Finding measurements availability
+=================================
 
 Three functions of the package allow to get lists of available information. Measurements are obtained from *locations* that are in *cities* that are in *countries*.
 
@@ -62,18 +62,18 @@ kable(countriesTable$results)
 | Bangladesh             | BD   |       1|          1|     1233|
 | Brazil                 | BR   |      71|         95|   735032|
 | Canada                 | CA   |      10|        153|   156579|
-| Chile                  | CL   |      79|        101|  1073605|
+| Chile                  | CL   |      79|        101|  1073628|
 | China                  | CN   |       5|          5|    23258|
 | Colombia               | CO   |       1|          1|     1074|
 | United Kingdom         | GB   |     105|        151|   613407|
 | Indonesia              | ID   |       1|          2|     6030|
-| India                  | IN   |      25|         51|   390749|
-| Mongolia               | MN   |       1|         11|   645149|
+| India                  | IN   |      25|         51|   390789|
+| Mongolia               | MN   |       1|         11|   645154|
 | Mexico                 | MX   |       5|         47|   114265|
 | Netherlands            | NL   |      63|         93|  1291712|
 | Peru                   | PE   |       1|         11|    61783|
-| Poland                 | PL   |       9|         14|   268223|
-| Thailand               | TH   |      29|         57|   635454|
+| Poland                 | PL   |       9|         14|   268234|
+| Thailand               | TH   |      29|         57|   635459|
 | United States          | US   |     653|       1638|  2401202|
 | Viet Nam               | VN   |       2|          2|     4713|
 | Kosovo                 | XK   |       1|          1|      540|
@@ -92,7 +92,7 @@ kable(countriesTable$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-05-01 07:51:49 | 2016-05-01 07:53:32 |
+| 2016-05-01 08:01:52 | 2016-05-01 08:02:27 |
 
 The `aq_cities` function
 ------------------------
@@ -122,18 +122,18 @@ kable(citiesTableIndia$results)
 
 | city        | country |  locations|   count| cityURL     |
 |:------------|:--------|----------:|-------:|:------------|
-| Agra        | IN      |          1|    5003| Agra        |
-| Bengaluru   | IN      |          5|   19167| Bengaluru   |
-| Chandrapur  | IN      |          1|   10808| Chandrapur  |
-| Chennai     | IN      |          4|    9234| Chennai     |
-| Delhi       | IN      |         11|  177433| Delhi       |
+| Agra        | IN      |          1|    5006| Agra        |
+| Bengaluru   | IN      |          5|   19170| Bengaluru   |
+| Chandrapur  | IN      |          1|   10814| Chandrapur  |
+| Chennai     | IN      |          4|    9236| Chennai     |
+| Delhi       | IN      |         11|  177436| Delhi       |
 | Faridabad   | IN      |          1|    9445| Faridabad   |
 | Gaya        | IN      |          1|    7274| Gaya        |
 | Gurgaon     | IN      |          1|    4670| Gurgaon     |
 | Haldia      | IN      |          1|    7779| Haldia      |
-| Hyderabad   | IN      |          3|   22550| Hyderabad   |
-| Jaipur      | IN      |          1|   15116| Jaipur      |
-| Jodhpur     | IN      |          1|   17461| Jodhpur     |
+| Hyderabad   | IN      |          3|   22558| Hyderabad   |
+| Jaipur      | IN      |          1|   15120| Jaipur      |
+| Jodhpur     | IN      |          1|   17467| Jodhpur     |
 | Kanpur      | IN      |          1|    9546| Kanpur      |
 | Kolkata     | IN      |          1|    3220| Kolkata     |
 | Lucknow     | IN      |          3|     506| Lucknow     |
@@ -141,7 +141,7 @@ kable(citiesTableIndia$results)
 | Muzaffarpur | IN      |          1|   11598| Muzaffarpur |
 | Nagpur      | IN      |          4|    2328| Nagpur      |
 | Nashik      | IN      |          1|    1008| Nashik      |
-| Panchkula   | IN      |          1|    9679| Panchkula   |
+| Panchkula   | IN      |          1|    9684| Panchkula   |
 | Patna       | IN      |          1|    5484| Patna       |
 | Pune        | IN      |          1|     173| Pune        |
 | Rohtak      | IN      |          1|    3013| Rohtak      |
@@ -172,9 +172,9 @@ kable(locationsIndia$results)
 | Anand Vihar                                   | Delhi       | IN      | CPCB                |   4655| 2016-04-29 17:00:00 | 2015-06-29 14:30:00 |  28.65080|   77.31520| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | Anand+Vihar                                   |
 | Ardhali Bazar                                 | Varanasi    | IN      | CPCB                |   2294| 2016-04-30 12:25:00 | 2016-03-22 00:05:00 |  25.35056|   82.97833| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Varanasi    | Ardhali+Bazar                                 |
 | Central School                                | Lucknow     | IN      | CPCB                |     62| 2016-04-29 10:00:00 | 2016-03-22 10:00:00 |  26.85273|   80.99633| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Lucknow     | Central+School                                |
-| Chandrapur                                    | Chandrapur  | IN      | CPCB                |   1779| 2016-05-01 07:35:00 | 2016-03-22 00:25:00 |  19.95000|   79.30000| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Chandrapur  | Chandrapur                                    |
+| Chandrapur                                    | Chandrapur  | IN      | CPCB                |   1780| 2016-05-01 07:45:00 | 2016-03-22 00:25:00 |  19.95000|   79.30000| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Chandrapur  | Chandrapur                                    |
 | Collectorate - Gaya - BSPCB                   | Gaya        | IN      | CPCB                |   1720| 2016-04-27 12:05:00 | 2016-03-21 16:35:00 |  24.74897|   84.94384| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Gaya        | Collectorate+-+Gaya+-+BSPCB                   |
-| Collectorate Jodhpur - RSPCB                  | Jodhpur     | IN      | CPCB                |   2904| 2016-05-01 07:45:00 | 2016-03-21 18:30:00 |  26.29206|   73.03791| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jodhpur     | Collectorate+Jodhpur+-+RSPCB                  |
+| Collectorate Jodhpur - RSPCB                  | Jodhpur     | IN      | CPCB                |   2905| 2016-05-01 08:00:00 | 2016-03-21 18:30:00 |  26.29206|   73.03791| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jodhpur     | Collectorate+Jodhpur+-+RSPCB                  |
 | Collectorate - Muzaffarpur - BSPCB            | Muzaffarpur | IN      | CPCB                |   2289| 2016-05-01 07:10:00 | 2016-03-19 09:20:00 |  26.07620|   85.41150| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Muzaffarpur | Collectorate+-+Muzaffarpur+-+BSPCB            |
 | IGSC Planetarium Complex - Patna - BSPCB      | Patna       | IN      | CPCB                |   1355| 2016-04-30 19:30:00 | 2016-03-21 19:30:00 |  25.36360|   85.07550| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Patna       | IGSC+Planetarium+Complex+-+Patna+-+BSPCB      |
 | Maharashtra Pollution Control Board Bandra    | Mumbai      | IN      | CPCB                |   1833| 2016-05-01 07:45:00 | 2016-03-21 16:15:00 |  19.04185|   72.86551| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Mumbai      | Maharashtra+Pollution+Control+Board+Bandra    |
@@ -185,19 +185,19 @@ kable(locationsIndia$results)
 | Punjabi Bagh                                  | Delhi       | IN      | CPCB                |   9544| 2016-04-29 17:00:00 | 2015-06-29 00:30:00 |  28.66830|   77.11670| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | Punjabi+Bagh                                  |
 | R K Puram                                     | Delhi       | IN      | CPCB                |    992| 2016-04-29 17:05:00 | 2016-03-21 23:55:00 |  28.56480|   77.17440| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | R+K+Puram                                     |
 | RK Puram                                      | Delhi       | IN      | RK Puram            |   8593| 2016-03-22 00:10:00 | 2015-06-29 14:30:00 |        NA|         NA| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | RK+Puram                                      |
-| Sanjay Palace                                 | Agra        | IN      | CPCB                |   1663| 2016-05-01 07:20:00 | 2016-03-22 00:20:00 |  27.19866|   78.00598| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Agra        | Sanjay+Palace                                 |
-| Sector 6 Panchkula - HSPCB                    | Panchkula   | IN      | CPCB                |   1981| 2016-05-01 07:45:00 | 2016-03-21 18:30:00 |  30.70578|   76.85318| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Panchkula   | Sector+6+Panchkula+-+HSPCB                    |
+| Sanjay Palace                                 | Agra        | IN      | CPCB                |   1664| 2016-05-01 07:35:00 | 2016-03-22 00:20:00 |  27.19866|   78.00598| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Agra        | Sanjay+Palace                                 |
+| Sector 6 Panchkula - HSPCB                    | Panchkula   | IN      | CPCB                |   1982| 2016-05-01 08:00:00 | 2016-03-21 18:30:00 |  30.70578|   76.85318| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Panchkula   | Sector+6+Panchkula+-+HSPCB                    |
 | US Diplomatic Post: Chennai                   | Chennai     | IN      | StateAir\_Chennai   |   3220| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  13.05237|   80.25193| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai     | US+Diplomatic+Post%3A+Chennai                 |
 | US Diplomatic Post: Hyderabad                 | Hyderabad   | IN      | StateAir\_Hyderabad |   3220| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  17.44346|   78.47489| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | US+Diplomatic+Post%3A+Hyderabad               |
 | US Diplomatic Post: Kolkata                   | Kolkata     | IN      | StateAir\_Kolkata   |   3220| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  22.54714|   88.35105| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Kolkata     | US+Diplomatic+Post%3A+Kolkata                 |
 | US Diplomatic Post: Mumbai                    | Mumbai      | IN      | StateAir\_Mumbai    |   3220| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  19.06602|   72.86870| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Mumbai      | US+Diplomatic+Post%3A+Mumbai                  |
 | US Diplomatic Post: New Delhi                 | Delhi       | IN      | StateAir\_NewDelhi  |   3270| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  28.59810|   77.18907| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | US+Diplomatic+Post%3A+New+Delhi               |
 | Vikas Sadan Gurgaon - HSPCB                   | Gurgaon     | IN      | CPCB                |    951| 2016-05-01 07:45:00 | 2016-03-25 07:15:00 |  28.45013|   77.02631| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Gurgaon     | Vikas+Sadan+Gurgaon+-+HSPCB                   |
-| VK Industrial Area Jaipur - RSPCB             | Jaipur      | IN      | CPCB                |   2682| 2016-05-01 07:30:00 | 2016-03-21 18:30:00 |  26.97388|   75.77388| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jaipur      | VK+Industrial+Area+Jaipur+-+RSPCB             |
-| ZooPark                                       | Hyderabad   | IN      | CPCB                |   2650| 2016-05-01 07:30:00 | 2016-03-21 18:30:00 |  17.34969|   78.45144| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | ZooPark                                       |
+| VK Industrial Area Jaipur - RSPCB             | Jaipur      | IN      | CPCB                |   2683| 2016-05-01 07:45:00 | 2016-03-21 18:30:00 |  26.97388|   75.77388| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jaipur      | VK+Industrial+Area+Jaipur+-+RSPCB             |
+| ZooPark                                       | Hyderabad   | IN      | CPCB                |   2651| 2016-05-01 07:45:00 | 2016-03-21 18:30:00 |  17.34969|   78.45144| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | ZooPark                                       |
 
-Getting data
-============
+Getting measurements
+====================
 
 Two functions allow to get data: `aq_measurement` and `aq_latest`. In both of them the arguments city and location needs to be given as URL encoded strings.
 
@@ -226,7 +226,7 @@ kable(tableResults$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-05-01 07:51:49 | 2016-05-01 07:53:39 |
+| 2016-05-01 08:01:52 | 2016-05-01 08:02:35 |
 
 ``` r
 kable(tableResults$meta)
@@ -272,6 +272,40 @@ kable(head(tableLatest$results))
 | Anand Vihar | Delhi | IN      | pm10      |     591.0| 2016-04-29 17:00:00 | µg/m³ | Delhi   | Anand+Vihar |
 | Anand Vihar | Delhi | IN      | pm25      |     432.0| 2016-04-29 17:00:00 | µg/m³ | Delhi   | Anand+Vihar |
 | Anand Vihar | Delhi | IN      | so2       |      18.0| 2016-03-21 14:45:00 | µg/m³ | Delhi   | Anand+Vihar |
+
+Paging and limit
+================
+
+For all endpoints/functions, there a a `limit` and a `page` arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. Based on this, how to get all results corresponding to a query? First, look at the number of results, e.g.
+
+``` r
+how_many <- aq_measurements(city = "Delhi",
+                            parameter = "pm25")$meta
+knitr::kable(how_many)
+```
+
+| name       | license   | website                    |  page|  limit|  found|
+|:-----------|:----------|:---------------------------|-----:|------:|------:|
+| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  35742|
+
+``` r
+how_many$found
+```
+
+    ## [1] 35742
+
+Then one can write a loop over pages. Note that the maximal value of `limit` is 1000.
+
+``` r
+meas <- NULL
+for (page in 1:(ceiling(how_many$found/1000))){
+  meas <- rbind(meas,
+                aq_measurements(city = "Delhi",
+                                parameter = "pm25",
+                                page = page,
+                                limit = 1000))
+  }
+```
 
 Meta
 ----
