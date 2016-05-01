@@ -57,26 +57,26 @@ kable(countriesTable$results)
 
 | name                   | code |  cities|  locations|    count|
 |:-----------------------|:-----|-------:|----------:|--------:|
-| Australia              | AU   |      11|         28|   469338|
-| Bosnia and Herzegovina | BA   |       4|         10|     8097|
-| Bangladesh             | BD   |       1|          1|     1233|
-| Brazil                 | BR   |      71|         95|   735032|
-| Canada                 | CA   |      10|        153|   156579|
-| Chile                  | CL   |      79|        101|  1073628|
-| China                  | CN   |       5|          5|    23258|
-| Colombia               | CO   |       1|          1|     1074|
-| United Kingdom         | GB   |     105|        151|   613407|
-| Indonesia              | ID   |       1|          2|     6030|
-| India                  | IN   |      25|         51|   390789|
-| Mongolia               | MN   |       1|         11|   645154|
-| Mexico                 | MX   |       5|         47|   114265|
-| Netherlands            | NL   |      63|         93|  1291712|
-| Peru                   | PE   |       1|         11|    61783|
-| Poland                 | PL   |       9|         14|   268234|
-| Thailand               | TH   |      29|         57|   635459|
-| United States          | US   |     653|       1638|  2401202|
-| Viet Nam               | VN   |       2|          2|     4713|
-| Kosovo                 | XK   |       1|          1|      540|
+| Australia              | AU   |      11|         28|   469900|
+| Bosnia and Herzegovina | BA   |       4|         10|     8497|
+| Bangladesh             | BD   |       1|          1|     1238|
+| Brazil                 | BR   |      71|         95|   735836|
+| Canada                 | CA   |      10|        153|   157101|
+| Chile                  | CL   |      79|        101|  1074774|
+| China                  | CN   |       5|          5|    23283|
+| Colombia               | CO   |       1|          1|     1079|
+| United Kingdom         | GB   |     105|        151|   615145|
+| Indonesia              | ID   |       1|          2|     6040|
+| India                  | IN   |      25|         51|   391990|
+| Mongolia               | MN   |       1|         11|   645344|
+| Mexico                 | MX   |       5|         47|   114971|
+| Netherlands            | NL   |      63|         93|  1293062|
+| Peru                   | PE   |       1|         11|    62088|
+| Poland                 | PL   |       9|         14|   268526|
+| Thailand               | TH   |      29|         57|   636094|
+| United States          | US   |     653|       1638|  2410720|
+| Viet Nam               | VN   |       2|          2|     4722|
+| Kosovo                 | XK   |       1|          1|      545|
 
 ``` r
 kable(countriesTable$meta)
@@ -92,7 +92,7 @@ kable(countriesTable$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-05-01 08:01:52 | 2016-05-01 08:02:27 |
+| 2016-05-01 12:42:12 | 2016-05-01 12:50:59 |
 
 The `aq_cities` function
 ------------------------
@@ -106,12 +106,12 @@ kable(head(citiesTable$results))
 
 | city      | country |  locations|  count| cityURL   |
 |:----------|:--------|----------:|------:|:----------|
-| ABBEVILLE | US      |          1|    749| ABBEVILLE |
-| Aberdeen  | GB      |          3|   8275| Aberdeen  |
-| Aberdeen  | US      |          2|   1256| Aberdeen  |
-| ADA       | US      |          1|   2253| ADA       |
+| ABBEVILLE | US      |          1|    751| ABBEVILLE |
+| Aberdeen  | GB      |          3|   8305| Aberdeen  |
+| Aberdeen  | US      |          2|   1266| Aberdeen  |
+| ADA       | US      |          1|   2263| ADA       |
 | ADAIR     | US      |          1|   3347| ADAIR     |
-| ADAMS     | US      |          2|   3022| ADAMS     |
+| ADAMS     | US      |          2|   3037| ADAMS     |
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
@@ -122,27 +122,27 @@ kable(citiesTableIndia$results)
 
 | city        | country |  locations|   count| cityURL     |
 |:------------|:--------|----------:|-------:|:------------|
-| Agra        | IN      |          1|    5006| Agra        |
-| Bengaluru   | IN      |          5|   19170| Bengaluru   |
-| Chandrapur  | IN      |          1|   10814| Chandrapur  |
-| Chennai     | IN      |          4|    9236| Chennai     |
-| Delhi       | IN      |         11|  177436| Delhi       |
-| Faridabad   | IN      |          1|    9445| Faridabad   |
+| Agra        | IN      |          1|    5018| Agra        |
+| Bengaluru   | IN      |          5|   19256| Bengaluru   |
+| Chandrapur  | IN      |          1|   10928| Chandrapur  |
+| Chennai     | IN      |          4|    9298| Chennai     |
+| Delhi       | IN      |         11|  177500| Delhi       |
+| Faridabad   | IN      |          1|    9496| Faridabad   |
 | Gaya        | IN      |          1|    7274| Gaya        |
-| Gurgaon     | IN      |          1|    4670| Gurgaon     |
+| Gurgaon     | IN      |          1|    4742| Gurgaon     |
 | Haldia      | IN      |          1|    7779| Haldia      |
-| Hyderabad   | IN      |          3|   22558| Hyderabad   |
-| Jaipur      | IN      |          1|   15120| Jaipur      |
-| Jodhpur     | IN      |          1|   17467| Jodhpur     |
-| Kanpur      | IN      |          1|    9546| Kanpur      |
-| Kolkata     | IN      |          1|    3220| Kolkata     |
-| Lucknow     | IN      |          3|     506| Lucknow     |
-| Mumbai      | IN      |          3|   18675| Mumbai      |
-| Muzaffarpur | IN      |          1|   11598| Muzaffarpur |
-| Nagpur      | IN      |          4|    2328| Nagpur      |
-| Nashik      | IN      |          1|    1008| Nashik      |
-| Panchkula   | IN      |          1|    9684| Panchkula   |
-| Patna       | IN      |          1|    5484| Patna       |
+| Hyderabad   | IN      |          3|   22706| Hyderabad   |
+| Jaipur      | IN      |          1|   15198| Jaipur      |
+| Jodhpur     | IN      |          1|   17575| Jodhpur     |
+| Kanpur      | IN      |          1|    9656| Kanpur      |
+| Kolkata     | IN      |          1|    3224| Kolkata     |
+| Lucknow     | IN      |          3|     516| Lucknow     |
+| Mumbai      | IN      |          3|   18752| Mumbai      |
+| Muzaffarpur | IN      |          1|   11683| Muzaffarpur |
+| Nagpur      | IN      |          4|    2348| Nagpur      |
+| Nashik      | IN      |          1|    1020| Nashik      |
+| Panchkula   | IN      |          1|    9768| Panchkula   |
+| Patna       | IN      |          1|    5488| Patna       |
 | Pune        | IN      |          1|     173| Pune        |
 | Rohtak      | IN      |          1|    3013| Rohtak      |
 | Solapur     | IN      |          1|    8092| Solapur     |
@@ -171,30 +171,30 @@ kable(locationsIndia$results)
 | AAQMS Karve Road Pune                         | Pune        | IN      | CPCB                |     43| 2016-04-30 09:45:00 | 2016-03-21 08:00:00 |  18.49748|   73.81349| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Pune        | AAQMS+Karve+Road+Pune                         |
 | Anand Vihar                                   | Delhi       | IN      | CPCB                |   4655| 2016-04-29 17:00:00 | 2015-06-29 14:30:00 |  28.65080|   77.31520| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | Anand+Vihar                                   |
 | Ardhali Bazar                                 | Varanasi    | IN      | CPCB                |   2294| 2016-04-30 12:25:00 | 2016-03-22 00:05:00 |  25.35056|   82.97833| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Varanasi    | Ardhali+Bazar                                 |
-| Central School                                | Lucknow     | IN      | CPCB                |     62| 2016-04-29 10:00:00 | 2016-03-22 10:00:00 |  26.85273|   80.99633| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Lucknow     | Central+School                                |
-| Chandrapur                                    | Chandrapur  | IN      | CPCB                |   1780| 2016-05-01 07:45:00 | 2016-03-22 00:25:00 |  19.95000|   79.30000| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Chandrapur  | Chandrapur                                    |
+| Central School                                | Lucknow     | IN      | CPCB                |     63| 2016-05-01 10:00:00 | 2016-03-22 10:00:00 |  26.85273|   80.99633| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Lucknow     | Central+School                                |
+| Chandrapur                                    | Chandrapur  | IN      | CPCB                |   1799| 2016-05-01 12:15:00 | 2016-03-22 00:25:00 |  19.95000|   79.30000| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Chandrapur  | Chandrapur                                    |
 | Collectorate - Gaya - BSPCB                   | Gaya        | IN      | CPCB                |   1720| 2016-04-27 12:05:00 | 2016-03-21 16:35:00 |  24.74897|   84.94384| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Gaya        | Collectorate+-+Gaya+-+BSPCB                   |
-| Collectorate Jodhpur - RSPCB                  | Jodhpur     | IN      | CPCB                |   2905| 2016-05-01 08:00:00 | 2016-03-21 18:30:00 |  26.29206|   73.03791| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jodhpur     | Collectorate+Jodhpur+-+RSPCB                  |
-| Collectorate - Muzaffarpur - BSPCB            | Muzaffarpur | IN      | CPCB                |   2289| 2016-05-01 07:10:00 | 2016-03-19 09:20:00 |  26.07620|   85.41150| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Muzaffarpur | Collectorate+-+Muzaffarpur+-+BSPCB            |
-| IGSC Planetarium Complex - Patna - BSPCB      | Patna       | IN      | CPCB                |   1355| 2016-04-30 19:30:00 | 2016-03-21 19:30:00 |  25.36360|   85.07550| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Patna       | IGSC+Planetarium+Complex+-+Patna+-+BSPCB      |
-| Maharashtra Pollution Control Board Bandra    | Mumbai      | IN      | CPCB                |   1833| 2016-05-01 07:45:00 | 2016-03-21 16:15:00 |  19.04185|   72.86551| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Mumbai      | Maharashtra+Pollution+Control+Board+Bandra    |
+| Collectorate Jodhpur - RSPCB                  | Jodhpur     | IN      | CPCB                |   2923| 2016-05-01 12:30:00 | 2016-03-21 18:30:00 |  26.29206|   73.03791| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jodhpur     | Collectorate+Jodhpur+-+RSPCB                  |
+| Collectorate - Muzaffarpur - BSPCB            | Muzaffarpur | IN      | CPCB                |   2306| 2016-05-01 12:20:00 | 2016-03-19 09:20:00 |  26.07620|   85.41150| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Muzaffarpur | Collectorate+-+Muzaffarpur+-+BSPCB            |
+| IGSC Planetarium Complex - Patna - BSPCB      | Patna       | IN      | CPCB                |   1356| 2016-05-01 12:10:00 | 2016-03-21 19:30:00 |  25.36360|   85.07550| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Patna       | IGSC+Planetarium+Complex+-+Patna+-+BSPCB      |
+| Maharashtra Pollution Control Board Bandra    | Mumbai      | IN      | CPCB                |   1850| 2016-05-01 12:30:00 | 2016-03-21 16:15:00 |  19.04185|   72.86551| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Mumbai      | Maharashtra+Pollution+Control+Board+Bandra    |
 | Maharashtra Pollution Control Board - Solapur | Solapur     | IN      | CPCB                |   1345| 2016-04-09 12:15:00 | 2016-03-21 18:30:00 |  17.65992|   75.90639| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Solapur     | Maharashtra+Pollution+Control+Board+-+Solapur |
 | Mandir Marg                                   | Delhi       | IN      | CPCB                |   8688| 2016-04-29 17:00:00 | 2015-06-29 14:30:00 |  28.63410|   77.20050| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | Mandir+Marg                                   |
 | Navi Mumbai Municipal Corporation Airoli      | Mumbai      | IN      | CPCB                |   2033| 2016-04-29 10:15:00 | 2016-03-21 18:30:00 |  19.14940|   72.99860| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Mumbai      | Navi+Mumbai+Municipal+Corporation+Airoli      |
-| Nehru Nagar                                   | Kanpur      | IN      | CPCB                |   1897| 2016-05-01 07:45:00 | 2016-03-21 22:45:00 |  26.47031|   80.32517| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Kanpur      | Nehru+Nagar                                   |
+| Nehru Nagar                                   | Kanpur      | IN      | CPCB                |   1919| 2016-05-01 12:25:00 | 2016-03-21 22:45:00 |  26.47031|   80.32517| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Kanpur      | Nehru+Nagar                                   |
 | Punjabi Bagh                                  | Delhi       | IN      | CPCB                |   9544| 2016-04-29 17:00:00 | 2015-06-29 00:30:00 |  28.66830|   77.11670| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | Punjabi+Bagh                                  |
 | R K Puram                                     | Delhi       | IN      | CPCB                |    992| 2016-04-29 17:05:00 | 2016-03-21 23:55:00 |  28.56480|   77.17440| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | R+K+Puram                                     |
 | RK Puram                                      | Delhi       | IN      | RK Puram            |   8593| 2016-03-22 00:10:00 | 2015-06-29 14:30:00 |        NA|         NA| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | RK+Puram                                      |
-| Sanjay Palace                                 | Agra        | IN      | CPCB                |   1664| 2016-05-01 07:35:00 | 2016-03-22 00:20:00 |  27.19866|   78.00598| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Agra        | Sanjay+Palace                                 |
-| Sector 6 Panchkula - HSPCB                    | Panchkula   | IN      | CPCB                |   1982| 2016-05-01 08:00:00 | 2016-03-21 18:30:00 |  30.70578|   76.85318| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Panchkula   | Sector+6+Panchkula+-+HSPCB                    |
-| US Diplomatic Post: Chennai                   | Chennai     | IN      | StateAir\_Chennai   |   3220| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  13.05237|   80.25193| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai     | US+Diplomatic+Post%3A+Chennai                 |
-| US Diplomatic Post: Hyderabad                 | Hyderabad   | IN      | StateAir\_Hyderabad |   3220| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  17.44346|   78.47489| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | US+Diplomatic+Post%3A+Hyderabad               |
-| US Diplomatic Post: Kolkata                   | Kolkata     | IN      | StateAir\_Kolkata   |   3220| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  22.54714|   88.35105| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Kolkata     | US+Diplomatic+Post%3A+Kolkata                 |
-| US Diplomatic Post: Mumbai                    | Mumbai      | IN      | StateAir\_Mumbai    |   3220| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  19.06602|   72.86870| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Mumbai      | US+Diplomatic+Post%3A+Mumbai                  |
-| US Diplomatic Post: New Delhi                 | Delhi       | IN      | StateAir\_NewDelhi  |   3270| 2016-05-01 07:30:00 | 2015-12-11 21:30:00 |  28.59810|   77.18907| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | US+Diplomatic+Post%3A+New+Delhi               |
-| Vikas Sadan Gurgaon - HSPCB                   | Gurgaon     | IN      | CPCB                |    951| 2016-05-01 07:45:00 | 2016-03-25 07:15:00 |  28.45013|   77.02631| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Gurgaon     | Vikas+Sadan+Gurgaon+-+HSPCB                   |
-| VK Industrial Area Jaipur - RSPCB             | Jaipur      | IN      | CPCB                |   2683| 2016-05-01 07:45:00 | 2016-03-21 18:30:00 |  26.97388|   75.77388| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jaipur      | VK+Industrial+Area+Jaipur+-+RSPCB             |
-| ZooPark                                       | Hyderabad   | IN      | CPCB                |   2651| 2016-05-01 07:45:00 | 2016-03-21 18:30:00 |  17.34969|   78.45144| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | ZooPark                                       |
+| Sanjay Palace                                 | Agra        | IN      | CPCB                |   1668| 2016-05-01 11:05:00 | 2016-03-22 00:20:00 |  27.19866|   78.00598| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Agra        | Sanjay+Palace                                 |
+| Sector 6 Panchkula - HSPCB                    | Panchkula   | IN      | CPCB                |   1999| 2016-05-01 12:45:00 | 2016-03-21 18:30:00 |  30.70578|   76.85318| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Panchkula   | Sector+6+Panchkula+-+HSPCB                    |
+| US Diplomatic Post: Chennai                   | Chennai     | IN      | StateAir\_Chennai   |   3224| 2016-05-01 11:30:00 | 2015-12-11 21:30:00 |  13.05237|   80.25193| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai     | US+Diplomatic+Post%3A+Chennai                 |
+| US Diplomatic Post: Hyderabad                 | Hyderabad   | IN      | StateAir\_Hyderabad |   3224| 2016-05-01 11:30:00 | 2015-12-11 21:30:00 |  17.44346|   78.47489| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | US+Diplomatic+Post%3A+Hyderabad               |
+| US Diplomatic Post: Kolkata                   | Kolkata     | IN      | StateAir\_Kolkata   |   3224| 2016-05-01 11:30:00 | 2015-12-11 21:30:00 |  22.54714|   88.35105| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Kolkata     | US+Diplomatic+Post%3A+Kolkata                 |
+| US Diplomatic Post: Mumbai                    | Mumbai      | IN      | StateAir\_Mumbai    |   3224| 2016-05-01 11:30:00 | 2015-12-11 21:30:00 |  19.06602|   72.86870| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Mumbai      | US+Diplomatic+Post%3A+Mumbai                  |
+| US Diplomatic Post: New Delhi                 | Delhi       | IN      | StateAir\_NewDelhi  |   3274| 2016-05-01 11:30:00 | 2015-12-11 21:30:00 |  28.59810|   77.18907| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Delhi       | US+Diplomatic+Post%3A+New+Delhi               |
+| Vikas Sadan Gurgaon - HSPCB                   | Gurgaon     | IN      | CPCB                |    969| 2016-05-01 12:30:00 | 2016-03-25 07:15:00 |  28.45013|   77.02631| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Gurgaon     | Vikas+Sadan+Gurgaon+-+HSPCB                   |
+| VK Industrial Area Jaipur - RSPCB             | Jaipur      | IN      | CPCB                |   2701| 2016-05-01 12:15:00 | 2016-03-21 18:30:00 |  26.97388|   75.77388| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Jaipur      | VK+Industrial+Area+Jaipur+-+RSPCB             |
+| ZooPark                                       | Hyderabad   | IN      | CPCB                |   2669| 2016-05-01 12:15:00 | 2016-03-21 18:30:00 |  17.34969|   78.45144| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | Hyderabad   | ZooPark                                       |
 
 Getting measurements
 ====================
@@ -226,7 +226,7 @@ kable(tableResults$timestamp)
 
 | lastModif           | queriedAt           |
 |:--------------------|:--------------------|
-| 2016-05-01 08:01:52 | 2016-05-01 08:02:35 |
+| 2016-05-01 12:42:12 | 2016-05-01 12:51:10 |
 
 ``` r
 kable(tableResults$meta)
@@ -255,7 +255,7 @@ kable(head(tableLatest$results))
 | 100 ail           | Ulaanbaatar          | MN      |   47.93291|  106.92138| o3        |   52.000| 2016-05-01 03:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
 | 100 ail           | Ulaanbaatar          | MN      |   47.93291|  106.92138| pm10      |   46.000| 2016-05-01 03:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
 | 100 ail           | Ulaanbaatar          | MN      |   47.93291|  106.92138| so2       |   18.000| 2016-05-01 03:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 16th and Whitmore | Omaha-Council Bluffs | US      |   41.32247|  -95.93799| o3        |    0.031| 2016-05-01 06:00:00 | ppm   | Omaha-Council+Bluffs | 16th+and+Whitmore |
+| 16th and Whitmore | Omaha-Council Bluffs | US      |   41.32247|  -95.93799| o3        |    0.032| 2016-05-01 11:00:00 | ppm   | Omaha-Council+Bluffs | 16th+and+Whitmore |
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
 
@@ -286,13 +286,13 @@ knitr::kable(how_many)
 
 | name       | license   | website                    |  page|  limit|  found|
 |:-----------|:----------|:---------------------------|-----:|------:|------:|
-| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  35742|
+| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  35747|
 
 ``` r
 how_many$found
 ```
 
-    ## [1] 35742
+    ## [1] 35747
 
 Then one can write a loop over pages. Note that the maximal value of `limit` is 1000.
 
@@ -306,6 +306,8 @@ for (page in 1:(ceiling(how_many$found/1000))){
                                 limit = 1000))
   }
 ```
+
+If you really need a lot of data, you might consider download the csv files that contain all measurements per location [from this link](https://openaq.org/#/sources).
 
 Meta
 ----
