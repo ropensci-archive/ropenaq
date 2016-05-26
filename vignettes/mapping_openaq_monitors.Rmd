@@ -14,7 +14,6 @@ In this vignette I want to plot a map of the world with points to represent moni
 Loading packages. Note that an even nicer map could be drawn with the R package OpenStreetMaps which requires the rJava package.
 
 ```{r, warning=FALSE, message=FALSE}
-library("ggmap")
 library("ggplot2")
 library("ropenaq")
 library("dplyr")
@@ -26,28 +25,35 @@ Getting coordinates and transformating it.
 
 ## create a list to hold output
 
+For now I'm filtering out two stations with surprising coordinates.
 
 ```{r, warning=FALSE, message=FALSE, eval=TRUE}
 dataGeo <- rbind(ropenaq::aq_locations(limit = 1000, page = 1)$results,
-                 ropenaq::aq_locations(limit = 1000, page = 2)$results)
+                 ropenaq::aq_locations(limit = 1000, page = 2)$results,
+                 ropenaq::aq_locations(limit = 1000, page = 3)$results)
+dataGeo <- filter(dataGeo, location != "Test Prueba", location != "PA")
 ```
 
 Getting the empty map.
 
-```{r fig.width=7, fig.height=4}
+```{r fig.width=7, fig.height=4, warning=FALSE, message=FALSE}
 
-worldMap <- ggmap::get_map(location=c(-179.99999,
-                                      -60,
-                                      179.99999,
-                                      85))
-ggmap::ggmap(worldMap)
+
+library("rworldmap")
+
+worldMap <- map_data(map="world")
+
+gg <- ggplot() + geom_map(data=worldMap, map=worldMap,
+                          aes(map_id=region, x=long, y=lat),
+                          fill = "grey60")
+gg
 ```
 
 Map with monitors.
 
 ```{r fig.width=7, fig.height=4}
-plotMap <- ggmap::ggmap(worldMap)+
-  geom_point(data = dataGeo, aes(x=longitude, y=latitude), size=2, shape=7)+
+plotMap <- gg +
+  geom_point(data = dataGeo, aes(x=longitude, y=latitude), size=1, col = "#EE9F8E")+
   theme(axis.line=element_blank(),axis.text.x=element_blank(),
        axis.text.y=element_blank(),axis.ticks=element_blank(),
        axis.title.x=element_blank(),
