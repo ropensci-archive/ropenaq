@@ -254,6 +254,7 @@ functionParameters <- function(resTable) {
   resTable$pm25 <-  grepl("pm25", resTable$parameters)
   resTable$pm10 <-  grepl("pm10", resTable$parameters)
   resTable$no2 <-  grepl("no2", resTable$parameters)
+  resTable$so2 <-  grepl("so2", resTable$parameters)
   resTable$o3 <-  grepl("o3", resTable$parameters)
   resTable$co <-  grepl("co", resTable$parameters)
   resTable$bc <-  grepl("bc", resTable$parameters)
