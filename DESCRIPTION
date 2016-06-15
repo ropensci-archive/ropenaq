@@ -20,6 +20,7 @@ Suggests: knitr,
     openair,
     devtools,
     animation,
-    rworldmap
+    rworldmap,
+    ggmap
 VignetteBuilder: knitr
 Imports: httr, lubridate, dplyr, jsonlite, tidyr, lazyeval
