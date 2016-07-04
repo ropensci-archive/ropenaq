@@ -8,6 +8,13 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  purl = NOT_CRAN,
+  eval = NOT_CRAN
+)
 
 The goal of this vignette is to show how to use the gganimate package (see <https://github.com/dgrtwo/gganimate>) for making an animated map of air PM2.5 concentrations in India. Obviously this could be adapted to other subsets of OpenAQ data.
 
