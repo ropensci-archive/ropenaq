@@ -1,4 +1,4 @@
-
+#' @importFrom stats setNames
 ######################################################################################
 # base URL for all queries
 base_url <- function() {
