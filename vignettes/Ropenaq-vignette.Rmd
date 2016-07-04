@@ -8,6 +8,8 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
 NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -15,6 +17,7 @@ knitr::opts_chunk$set(
   purl = NOT_CRAN,
   eval = NOT_CRAN
 )
+```
 
 # Introduction
 
