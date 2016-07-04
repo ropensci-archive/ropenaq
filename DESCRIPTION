@@ -1,6 +1,6 @@
 Package: ropenaq
 Type: Package
-Title: Accesses Air Quality Data From the Open Data Platform OpenAQ
+Title: Accesses Air Quality Data from the Open Data Platform OpenAQ
 Version: 0.1.0
 Date: 2016-07-04
 Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role = c("aut", "cre")),
