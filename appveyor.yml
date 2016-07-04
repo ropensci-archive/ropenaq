@@ -16,10 +16,11 @@ environment:
     USE_RTOOLS: true
 
   matrix:
-  - R_VERSION: release
-    R_ARCH: x64
+  - R_VERSION: stable
 
   - R_VERSION: patched
+
+  - R_VERSION: oldrel
 
   GITHUB_PAT:
     secure: zuFCb2IKZvA6E+eE5aSCdvaSd2Z60lgMFfJdtKGmqK67DA4l3Uz+VEPkLvrQiNam
