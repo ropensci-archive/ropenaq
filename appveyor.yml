@@ -30,6 +30,12 @@ environment:
 # Adapt as necessary starting from here
 
 build_script:
+  - travis-tool.sh install_r httr
+  - travis-tool.sh install_r lubridate
+  - travis-tool.sh install_r dplyr
+  - travis-tool.sh install_r jsonlite
+  - travis-tool.sh install_r tidyr
+  - travis-tool.sh install_r lazyeval
   - travis-tool.sh install_deps
   - travis-tool.sh install_r testthat
 
