@@ -5,23 +5,19 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 2 note
-
-* This is a new release.
-
-* `Authors@R field gives persons with no valid roles:` the roles are MAC roles and now accepted by R devel.
+0 errors | 0 warnings | 0 note
 
 ## Re-submission
 
-In this version
+I am re-submitting very rapidly after the first submission because of a bug I have corrected in the `aq_measurements` function.
 
-* I corrected the DESCRIPTION
+The package used to output UTC time instead of local time for locations behind UTC time (US for instance) which I had not noticed previously.
 
-* I corrected the chunk of the vignette that did not work.
+I have now corrected the bug.
 
 ## Reverse dependencies
 
-This is a new release, so there are no reverse dependencies.
+There are no reverse dependencies.
 
 ---
 
