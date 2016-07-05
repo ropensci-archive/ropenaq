@@ -37,7 +37,7 @@ Getting coordinates and transformating it.
 
 For now I'm filtering out two stations with surprising coordinates.
 
-```{r, warning=FALSE, message=FALSE, eval=TRUE}
+```{r, warning=FALSE, message=FALSE}
 dataGeo <- rbind(ropenaq::aq_locations(limit = 1000, page = 1)$results,
                  ropenaq::aq_locations(limit = 1000, page = 2)$results,
                  ropenaq::aq_locations(limit = 1000, page = 3)$results)

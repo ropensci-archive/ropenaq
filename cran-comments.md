@@ -11,6 +11,14 @@
 
 * `Authors@R field gives persons with no valid roles:` the roles are MAC roles and now accepted by R devel.
 
+## Re-submission
+
+In this version
+
+* I corrected the DESCRIPTION
+
+* I corrected the chunk of the vignette that did not work.
+
 ## Reverse dependencies
 
 This is a new release, so there are no reverse dependencies.
