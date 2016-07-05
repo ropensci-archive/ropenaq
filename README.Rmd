@@ -9,13 +9,20 @@ output:
 ropenaq
 =============
 
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/ropenaq)](http://cran.r-project.org/package=ropenaq)
 [![Build Status](https://travis-ci.org/ropenscilabs/ropenaq.svg?branch=master)](https://travis-ci.org/ropenscilabs/ropenaq)
 [![Build status](https://ci.appveyor.com/api/projects/status/qurhlh0j8ra3qors?svg=true)](https://ci.appveyor.com/project/ropenscilabs/ropenaq)
 [![codecov.io](https://codecov.io/github/ropenscilabs/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/Ropenaq?branch=master)
 
 # Installation
 
-To install the package, you will need the devtools package.
+Install the package with:
+
+```{r eval = FALSE}
+install.packages("ropenaq")
+```
+
+Or install the development version using [devtools](https://github.com/hadley/devtools) with:
 
 ```{r, eval = FALSE}
 library("devtools")
