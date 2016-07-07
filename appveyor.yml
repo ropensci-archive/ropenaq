@@ -32,6 +32,8 @@ environment:
 build_script:
   - travis-tool.sh install_r httr
   - travis-tool.sh install_r lubridate
+  - travis-tool.sh install_r knitr
+  - travis-tool.sh install_r highr
   - travis-tool.sh install_r tibble
   - travis-tool.sh install_r dplyr
   - travis-tool.sh install_r jsonlite
