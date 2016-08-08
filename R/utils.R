@@ -187,12 +187,8 @@ getResults <- function(urlAQ, argsList){
 
   #get the time stamps
   timestamp <- dplyr::tbl_df(data.frame(
-    lastModif = lubridate::dmy_hms(
-      httr::headers(page)$"last-modified",
-      tz = "GMT"),
-    queriedAt = lubridate::dmy_hms(
-      httr::headers(page)$date,
-      tz = "GMT")))
+    lastModif = func_date_headers(httr::headers(page)$"last-modified"),
+    queriedAt = func_date_headers(httr::headers(page)$date)))
 
   return(list(results = results,
               meta = meta,
@@ -259,4 +255,23 @@ functionParameters <- function(resTable) {
   resTable$co <-  grepl("co", resTable$parameters)
   resTable$bc <-  grepl("bc", resTable$parameters)
   resTable <- resTable %>% select_(~ - parameters)
+}
+
+
+# dates abbreviation
+func_date_headers <- function(date){
+  date <- strsplit(date, ",")[[1]][2]
+  date <- gsub("Jan", "01", date)
+  date <- gsub("Feb", "02", date)
+  date <- gsub("Mar", "03", date)
+  date <- gsub("Apr", "04", date)
+  date <- gsub("May", "05", date)
+  date <- gsub("Jun", "06", date)
+  date <- gsub("Jul", "07", date)
+  date <- gsub("Aug", "08", date)
+  date <- gsub("Sep", "09", date)
+  date <- gsub("Oct", "10", date)
+  date <- gsub("Nov", "11", date)
+  date <- gsub("Dec", "12", date)
+  lubridate::dmy_hms(date, tz = "GMT")
 }
