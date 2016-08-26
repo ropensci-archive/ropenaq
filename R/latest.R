@@ -81,10 +81,8 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
 
     tableOfResults <- functionTime(tableOfResults,
                                    "lastUpdated")
-    if(ncol(tableOfResults) == 11){
-      names(tableOfResults)[4] <- "longitude"
-      names(tableOfResults)[5] <- "latitude"
-    }
+
+    names(tableOfResults) <- gsub("coordinates\\.", "", names(tableOfResults))
 
     }
     return(list(results = tableOfResults,

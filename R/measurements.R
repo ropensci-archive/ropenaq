@@ -98,9 +98,8 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
     tableOfResults <- tableOfResults %>% mutate_(dateLocal =
                                                    interp(~ lubridate::
                                                             ymd_hms(strptime(dateLocal, "%Y-%m-%dT%H:%M:%S"))))
-    if(ncol(tableOfResults) == 12){
-      names(tableOfResults)[9:10] <- c("latitude", "longitude")
-    }
+
+    names(tableOfResults) <- gsub("coordinates\\.", "", names(tableOfResults))
     }
     ####################################################
     # DONE!
