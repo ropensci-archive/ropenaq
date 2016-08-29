@@ -12,7 +12,10 @@
 #' If no parameter is given, all parameters are retrieved.
 #' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
 #' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
-#' @param has_geo Filter out items that have or do not have geographic information.
+#' @param has_geo has_geo Filter out items that have or do not have geographic information.
+#' @param latitude Latitude of the center point (lat, lon) used to get measurements within a certain area.
+#' @param longitude Longitude of the center point (lat, lon) used to get measurements within a certain area.
+#' @param radius Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude
 #' @param date_from Show results after a certain date. (character year-month-day, ex. '2015-12-20')
 #' @param date_to Show results before a certain date. (character year-month-day, ex. '2015-12-20')
 #' @param limit Change the number of results returned, max is 1000.
@@ -63,6 +66,7 @@
 aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolint
                          parameter = NULL, has_geo = NULL, date_from = NULL,
                          date_to = NULL, limit = 100, value_from = NULL,
+                         latitude = NULL, longitude = NULL, radius = NULL,
                          value_to = NULL, page = 1) {
 
     ####################################################
@@ -79,6 +83,9 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                           value_from = value_from,
                           value_to = value_to,
                           limit = limit,
+                          latitude = latitude,
+                          longitude = longitude,
+                          radius = radius,
                           page = page)
 
     ####################################################

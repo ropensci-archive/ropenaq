@@ -42,3 +42,10 @@ test_that("The format of date_from and date_to are checked", {
 test_that("An error is thrown is limit>1000",{
   expect_error(aq_measurements(has_geo=TRUE, limit=9999999, country="US"), "limit cannot be more than 1000")
 })
+
+test_that("Errors are thrown if the geographical arguments are wrong",{
+  expect_error(aq_latest(latitude = 1), "If you input")
+  expect_error(aq_latest(latitude = 10000, longitude = 2), "Latitude should be")
+  expect_error(aq_latest(latitude = 2, longitude = 2000), "Longitude should be")
+  expect_error(aq_latest(radius = 25), "Radius has to be used with latitude and longitude.")
+  })

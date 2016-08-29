@@ -12,6 +12,8 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        parameter = NULL, has_geo = NULL, date_from = NULL,
                        date_to = NULL, value_from = NULL,
                        value_to = NULL, limit = NULL,
+                       latitude = NULL, longitude = NULL,
+                       radius = NULL,
                        page = NULL){
   # limit
   if (!is.null(limit)) {
@@ -153,6 +155,29 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
   }
 
+  if(!is.null(latitude)|!is.null(longitude)){
+    if(is.null(latitude)|is.null(longitude)){
+      stop(call. = FALSE, "If you input a latitude or longitude, you have to input the other coordinate")
+    }
+    if (!dplyr::between(latitude, -90, 90)){
+      stop(call. = FALSE, "Latitude should be between -90 and 90.")
+    }
+    if (!dplyr::between(longitude, -180, 180)){
+      stop(call. = FALSE, "Longitude should be between -180 and 180.")
+    }
+    coordinates <- paste(latitude, longitude, sep = ",")
+  }else{
+    coordinates <- NULL
+  }
+
+  if(!is.null(radius)){
+    if(is.null(latitude)){
+      stop(call. = FALSE,
+           "Radius has to be used with latitude and longitude.")
+    }
+
+  }
+
   argsList <- list(country = country,
                    city = city,
                    location = location,
@@ -163,6 +188,8 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                    value_from = value_from,
                    value_to = value_to,
                    limit = limit,
+                   coordinates = coordinates,
+                   radius = radius,
                    page = page)
 
   return(argsList)
