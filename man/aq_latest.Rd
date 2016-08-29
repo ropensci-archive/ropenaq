@@ -5,7 +5,8 @@
 \title{Provides the latest value of each available parameter for every location in the system.}
 \usage{
 aq_latest(country = NULL, city = NULL, location = NULL,
-  parameter = NULL, has_geo = NULL, limit = 100, page = 1)
+  parameter = NULL, has_geo = NULL, limit = 100, latitude = NULL,
+  longitude = NULL, radius = NULL, page = 1)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}
@@ -20,6 +21,12 @@ If no parameter is given, all parameters are retrieved.}
 \item{has_geo}{has_geo Filter out items that have or do not have geographic information.}
 
 \item{limit}{Change the number of results returned, max is 1000.}
+
+\item{latitude}{Latitude of the center point (lat, lon) used to get measurements within a certain area.}
+
+\item{longitude}{Longitude of the center point (lat, lon) used to get measurements within a certain area.}
+
+\item{radius}{Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude}
 
 \item{page}{The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.}
 }

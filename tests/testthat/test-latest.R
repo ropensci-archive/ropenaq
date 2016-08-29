@@ -9,6 +9,10 @@ test_that("latest returns a list of 3 data.frames (tbl_df)", {
   expect_that(output$results, is_a("tbl_df"))
   expect_that(output$meta, is_a("tbl_df"))
   expect_that(output$timestamp, is_a("tbl_df"))
+  expect_that(aq_latest(latitude = 0, longitude = 0, radius = 10000000)$results,
+              is_a("tbl_df"))
+  expect_that(aq_latest(latitude = 0, longitude = 0)$results,
+              is_a("tbl_df"))
 })
 
 test_that("latest has the right columns", {

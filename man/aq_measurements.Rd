@@ -6,7 +6,8 @@
 \usage{
 aq_measurements(country = NULL, city = NULL, location = NULL,
   parameter = NULL, has_geo = NULL, date_from = NULL, date_to = NULL,
-  limit = 100, value_from = NULL, value_to = NULL, page = 1)
+  limit = 100, value_from = NULL, latitude = NULL, longitude = NULL,
+  radius = NULL, value_to = NULL, page = 1)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}
@@ -18,7 +19,7 @@ aq_measurements(country = NULL, city = NULL, location = NULL,
 \item{parameter}{Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 If no parameter is given, all parameters are retrieved.}
 
-\item{has_geo}{Filter out items that have or do not have geographic information.}
+\item{has_geo}{has_geo Filter out items that have or do not have geographic information.}
 
 \item{date_from}{Show results after a certain date. (character year-month-day, ex. '2015-12-20')}
 
@@ -27,6 +28,12 @@ If no parameter is given, all parameters are retrieved.}
 \item{limit}{Change the number of results returned, max is 1000.}
 
 \item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
+
+\item{latitude}{Latitude of the center point (lat, lon) used to get measurements within a certain area.}
+
+\item{longitude}{Longitude of the center point (lat, lon) used to get measurements within a certain area.}
+
+\item{radius}{Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude}
 
 \item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 
