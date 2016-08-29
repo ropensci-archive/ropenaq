@@ -7,7 +7,8 @@
 aq_measurements(country = NULL, city = NULL, location = NULL,
   parameter = NULL, has_geo = NULL, date_from = NULL, date_to = NULL,
   limit = 100, value_from = NULL, latitude = NULL, longitude = NULL,
-  radius = NULL, value_to = NULL, page = 1)
+  radius = NULL, attribution = FALSE, averaging_period = FALSE,
+  source_name = FALSE, value_to = NULL, page = 1)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}
@@ -34,6 +35,12 @@ If no parameter is given, all parameters are retrieved.}
 \item{longitude}{Longitude of the center point (lat, lon) used to get measurements within a certain area.}
 
 \item{radius}{Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude}
+
+\item{attribution}{Logical, whether to add a column with attribution information}
+
+\item{averaging_period}{Logical, whether to add a column with averaging_period information}
+
+\item{source_name}{Logical, whether to add a column with source_name information}
 
 \item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 
@@ -77,6 +84,8 @@ not its name, should be used.
   If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
   If you write city="Delhi", you do not need to write the code of the country, unless
   one day there is a city with the same name in another country.
+
+  If you choose to get the attribution in the output, lines might be repeated as there might be several attributions.
 }
 \examples{
 \dontrun{

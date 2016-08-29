@@ -17,6 +17,10 @@ test_that("measurements returns a data.frame (tbl_df)", {
   expect_that(output$results, is_a("tbl_df"))
   expect_that(output$timestamp, is_a("tbl_df"))
   expect_that(output$meta, is_a("tbl_df"))
+  expect_that(aq_measurements(attribution = TRUE)$results, is_a("tbl_df"))
+  expect_that(aq_measurements(source_name = TRUE)$results, is_a("tbl_df"))
+  expect_that(aq_measurements(averaging_period = TRUE)$results, is_a("tbl_df"))
+  expect_that(aq_measurements(averaging_period = TRUE, attribution = TRUE)$results, is_a("tbl_df"))
 
 })
 

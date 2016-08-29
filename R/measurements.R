@@ -18,6 +18,9 @@
 #' @param radius Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude
 #' @param date_from Show results after a certain date. (character year-month-day, ex. '2015-12-20')
 #' @param date_to Show results before a certain date. (character year-month-day, ex. '2015-12-20')
+#' @param attribution Logical, whether to add a column with attribution information
+#' @param averaging_period Logical, whether to add a column with averaging_period information
+#' @param source_name Logical, whether to add a column with source_name information
 #' @param limit Change the number of results returned, max is 1000.
 #' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
 
@@ -56,6 +59,8 @@
 #'   If you write city="Delhi", you do not need to write the code of the country, unless
 #'   one day there is a city with the same name in another country.
 #'
+#'   If you choose to get the attribution in the output, lines might be repeated as there might be several attributions.
+#'
 #' @examples
 #' \dontrun{
 #' aq_measurements(country='IN', limit=9, city='Chennai')
@@ -67,6 +72,8 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                          parameter = NULL, has_geo = NULL, date_from = NULL,
                          date_to = NULL, limit = 100, value_from = NULL,
                          latitude = NULL, longitude = NULL, radius = NULL,
+                         attribution = FALSE, averaging_period = FALSE,
+                         source_name = FALSE,
                          value_to = NULL, page = 1) {
 
     ####################################################
@@ -86,6 +93,9 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                           latitude = latitude,
                           longitude = longitude,
                           radius = radius,
+                          attribution = attribution,
+                          averaging_period = averaging_period,
+                          source_name = source_name,
                           page = page)
 
     ####################################################
@@ -98,7 +108,9 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
 
     tableOfResults <- addCityURL(resTable = tableOfResults)
     tableOfResults <- addLocationURL(resTable = tableOfResults)
-    names(tableOfResults)[7:8] <- c("dateUTC", "dateLocal")
+    tableOfResults <- dplyr::rename_(tableOfResults, .dots=setNames(list("date.utc"), "dateUTC"))
+    tableOfResults <- dplyr::rename_(tableOfResults, .dots=setNames(list("date.local"), "dateLocal"))
+
     tableOfResults <- tableOfResults %>% mutate_(dateUTC =
                                                    interp(~ lubridate::
                                                             ymd_hms(dateUTC)))
@@ -107,6 +119,13 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                                                             ymd_hms(strptime(dateLocal, "%Y-%m-%dT%H:%M:%S"))))
 
     names(tableOfResults) <- gsub("coordinates\\.", "", names(tableOfResults))
+
+    if("attribution" %in% names(tableOfResults)){
+      tableOfResults <- tidyr::unnest_(tableOfResults, "attribution", .drop = TRUE)
+      tableOfResults <- dplyr::rename_(tableOfResults, .dots=setNames(list("name"), "attribution_name"))
+      tableOfResults <- dplyr::rename_(tableOfResults, .dots=setNames(list("url"), "attribution_url"))
+    }
+
     }
     ####################################################
     # DONE!

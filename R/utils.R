@@ -13,6 +13,9 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        date_to = NULL, value_from = NULL,
                        value_to = NULL, limit = NULL,
                        latitude = NULL, longitude = NULL,
+                       attribution = NULL,
+                       averaging_period = NULL,
+                       source_name = NULL,
                        radius = NULL,
                        page = NULL){
   # limit
@@ -192,8 +195,25 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                    radius = radius,
                    page = page)
 
+  # argument only for measurements
+  include_fields <- c(attribution,
+                      averaging_period,
+                      source_name)
+  if(any(!is.null(include_fields))){
+
+    fields <-  c("attribution",
+                 "averagingPeriod",
+                 "sourceName")
+    fields <- fields[include_fields]
+    fields <- toString(fields)
+    fields <- gsub(", ", "%2C", fields)
+    argsList[["include_fields"]] <- fields
+print(fields)
+  }
+
   return(argsList)
 }
+
 ######################################################################################
 # does the query and then parses it
 getResults <- function(urlAQ, argsList){
