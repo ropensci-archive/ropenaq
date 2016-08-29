@@ -5,6 +5,7 @@ date: "`r Sys.Date()`"
 output:
   md_document:
     variant: markdown_github
+    toc: true
 ---
 ropenaq
 =============
@@ -165,7 +166,12 @@ for (page in 1:(ceiling(how_many$found/1000))){
 
 ```
 
+# Other packages of interest for getting air quality data
 
+* The [`rdefra` package](https://github.com/kehraProject/r_rdefra), also part of the rOpenSci project, 
+allows to  to interact with the UK AIR pollution database from DEFRA, including historical measures.
+
+* The [`openair` package](https://github.com/davidcarslaw/openair) gives access to the same data as `rdefra` but relies on a local and compressed copy of the data on servers at King's College (UK), periodically updated.
 
 ## Meta
 
