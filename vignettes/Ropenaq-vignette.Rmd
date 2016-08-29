@@ -64,7 +64,7 @@ If one inputs a country that is not in the platform (or misspells a code), then 
 
 ## The `locations` function
 
-The `aq_locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum, for a given circle outside a central point by the use of the `coordinates` and `radius` arguments. In the output table one also gets URL encoded strings for the city and the location. Below are several examples.
+The `aq_locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum, for a given circle outside a central point by the use of the `latitude`, `longitude` and `radius` arguments. In the output table one also gets URL encoded strings for the city and the location. Below are several examples.
 
 Here we only look for locations with PM2.5 information in India.
 
@@ -80,7 +80,7 @@ Two functions allow to get data: `aq_measurement` and `aq_latest`. In both of th
 
 ## The `aq_measurements` function
 
-The `aq_measurements` function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the `coordinates` and `radius` arguments. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
+The `aq_measurements` function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the `latitude`, `longitude` and `radius` arguments. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
 
 ```{r, cache=FALSE}
 tableResults <- aq_measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
