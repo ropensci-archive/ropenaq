@@ -206,9 +206,9 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                  "sourceName")
     fields <- fields[include_fields]
     fields <- toString(fields)
-    fields <- gsub(", ", "%2C", fields)
+    fields <- gsub(", ", ",", fields)
     argsList[["include_fields"]] <- fields
-print(fields)
+
   }
 
   return(argsList)
