@@ -173,6 +173,8 @@ allows to  to interact with the UK AIR pollution database from DEFRA, including 
 
 * The [`openair` package](https://github.com/davidcarslaw/openair) gives access to the same data as `rdefra` but relies on a local and compressed copy of the data on servers at King's College (UK), periodically updated.
 
+* The [`usaqmindia` package](https://github.com/masalmon/usaqmindia) provides data from the US air quality monitoring program in India for Delhi, Mumbai, Chennai, Hyderabad and Kolkata from 2013.
+
 ## Meta
 
 * Please [report any issues or bugs](https://github.com/ropenscilabs/ropenaq/issues).
