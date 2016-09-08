@@ -78,27 +78,27 @@ kable(countries_table)
 | name                   | code |  cities|  locations|    count|
 |:-----------------------|:-----|-------:|----------:|--------:|
 | Australia              | AU   |      11|         28|   801828|
-| Bosnia and Herzegovina | BA   |       4|         11|   162447|
+| Bosnia and Herzegovina | BA   |       4|         11|   162473|
 | Bangladesh             | BD   |       1|          2|     5722|
-| Brazil                 | BR   |      73|        113|  1236930|
+| Brazil                 | BR   |      73|        113|  1236982|
 | Canada                 | CA   |      11|        157|   569357|
-| Chile                  | CL   |      95|        104|  1821958|
+| Chile                  | CL   |      95|        104|  1822007|
 | China                  | CN   |       5|          6|    49906|
 | Colombia               | CO   |       1|          1|     4198|
 | Ethiopia               | ET   |       1|          1|      495|
 | United Kingdom         | GB   |     105|        152|  1611525|
 | Indonesia              | ID   |       2|          3|    15155|
 | Israel                 | IL   |       1|          1|     1826|
-| India                  | IN   |      34|         79|  1213070|
-| Mongolia               | MN   |       1|         12|   905281|
+| India                  | IN   |      34|         79|  1213180|
+| Mongolia               | MN   |       1|         12|   905330|
 | Mexico                 | MX   |       5|         48|   564711|
 | Nigeria                | NG   |       1|          1|     2541|
 | Netherlands            | NL   |      67|        109|  2132761|
-| Peru                   | PE   |       1|         11|   204170|
+| Peru                   | PE   |       1|         11|   204218|
 | Philippines            | PH   |       1|          1|      958|
-| Poland                 | PL   |      10|         15|   437808|
+| Poland                 | PL   |      10|         15|   437848|
 | Singapore              | SG   |       1|          1|     1275|
-| Thailand               | TH   |      33|         61|  1089483|
+| Thailand               | TH   |      33|         61|  1089593|
 | United States          | US   |     687|       1753|  8523035|
 | Viet Nam               | VN   |       2|          3|    11875|
 | Kosovo                 | XK   |       1|          1|     3664|
@@ -119,7 +119,7 @@ attr(countries_table, "timestamp")
     ## # A tibble: 1 × 2
     ##             lastModif           queriedAt
     ##                <dttm>              <dttm>
-    ## 1 2016-09-08 13:51:58 2016-09-08 13:52:18
+    ## 1 2016-09-08 14:12:13 2016-09-08 14:13:48
 
 The `aq_cities` function
 ------------------------
@@ -150,15 +150,15 @@ kable(cities_tableIndia)
 | city       | country |  locations|   count| cityURL    |
 |:-----------|:--------|----------:|-------:|:-----------|
 | Agra       | IN      |          1|   20632| Agra       |
-| Ahmedabad  | IN      |          1|   10741| Ahmedabad  |
+| Ahmedabad  | IN      |          1|   10744| Ahmedabad  |
 | Aurangabad | IN      |          1|    3752| Aurangabad |
 | Barddhaman | IN      |          1|    1797| Barddhaman |
-| Bengaluru  | IN      |          5|   68974| Bengaluru  |
-| Chandrapur | IN      |          2|   29674| Chandrapur |
-| Chennai    | IN      |          4|   45693| Chennai    |
+| Bengaluru  | IN      |          5|   68980| Bengaluru  |
+| Chandrapur | IN      |          2|   29680| Chandrapur |
+| Chennai    | IN      |          4|   45700| Chennai    |
 | Chittoor   | IN      |          1|    2013| Chittoor   |
-| Delhi      | IN      |         15|  280405| Delhi      |
-| Faridabad  | IN      |          1|   34249| Faridabad  |
+| Delhi      | IN      |         15|  280416| Delhi      |
+| Faridabad  | IN      |          1|   34252| Faridabad  |
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
@@ -199,12 +199,12 @@ kable(head(results_table))
 
 | location    | parameter |  value| unit  | country | city  | dateUTC             | dateLocal           |  latitude|  longitude| cityURL | locationURL |
 |:------------|:----------|------:|:------|:--------|:------|:--------------------|:--------------------|---------:|----------:|:--------|:------------|
+| Anand Vihar | pm25      |     87| µg/m³ | IN      | Delhi | 2016-09-08 13:35:00 | 2016-09-08 19:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
 | Anand Vihar | pm25      |     86| µg/m³ | IN      | Delhi | 2016-09-08 13:05:00 | 2016-09-08 18:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
 | Anand Vihar | pm25      |     86| µg/m³ | IN      | Delhi | 2016-09-08 12:35:00 | 2016-09-08 18:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
 | Anand Vihar | pm25      |     72| µg/m³ | IN      | Delhi | 2016-09-08 12:05:00 | 2016-09-08 17:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
 | Anand Vihar | pm25      |     72| µg/m³ | IN      | Delhi | 2016-09-08 11:35:00 | 2016-09-08 17:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
 | Anand Vihar | pm25      |     80| µg/m³ | IN      | Delhi | 2016-09-08 11:05:00 | 2016-09-08 16:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |     80| µg/m³ | IN      | Delhi | 2016-09-08 10:35:00 | 2016-09-08 16:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
 
 One could also get all possible parameters in the same table.
 
@@ -220,11 +220,11 @@ kable(head(tableLatest))
 
 | location          | city                 | country |  latitude|  longitude| parameter |    value| lastUpdated         | unit  | cityURL              | locationURL       |
 |:------------------|:---------------------|:--------|---------:|----------:|:----------|--------:|:--------------------|:------|:---------------------|:------------------|
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |  725.000| 2016-09-08 13:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |   24.000| 2016-09-08 13:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |   16.000| 2016-09-08 13:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |  153.000| 2016-09-08 13:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |    0.000| 2016-09-08 13:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |  709.000| 2016-09-08 14:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |   23.000| 2016-09-08 14:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |   17.000| 2016-09-08 14:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |  147.000| 2016-09-08 14:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |    0.000| 2016-09-08 14:00:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
 | 16th and Whitmore | Omaha-Council Bluffs | US      |  41.32247|  -95.93799| o3        |    0.013| 2016-09-08 12:00:00 | ppm   | Omaha-Council+Bluffs | 16th+and+Whitmore |
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
@@ -237,10 +237,10 @@ kable(head(tableLatest))
 | location    | city  | country |  latitude|  longitude| parameter |   value| lastUpdated         | unit  | cityURL | locationURL |
 |:------------|:------|:--------|---------:|----------:|:----------|-------:|:--------------------|:------|:--------|:------------|
 | Anand Vihar | Delhi | IN      |   28.6508|    77.3152| co        |  1300.0| 2016-03-21 14:45:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| no2       |    52.6| 2016-09-08 13:05:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| o3        |    43.5| 2016-09-08 13:05:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm10      |   740.0| 2016-09-08 13:05:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm25      |    86.0| 2016-09-08 13:05:00 | µg/m³ | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| no2       |    67.9| 2016-09-08 13:35:00 | µg/m³ | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| o3        |    20.2| 2016-09-08 13:35:00 | µg/m³ | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm10      |   633.0| 2016-09-08 13:35:00 | µg/m³ | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm25      |    87.0| 2016-09-08 13:35:00 | µg/m³ | Delhi   | Anand+Vihar |
 | Anand Vihar | Delhi | IN      |   28.6508|    77.3152| so2       |    18.0| 2016-03-21 14:45:00 | µg/m³ | Delhi   | Anand+Vihar |
 
 Paging and limit
@@ -256,13 +256,13 @@ knitr::kable(how_many)
 
 | name       | license   | website                    |  page|  limit|  found|
 |:-----------|:----------|:---------------------------|-----:|------:|------:|
-| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  51317|
+| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  51318|
 
 ``` r
 how_many$found
 ```
 
-    ## [1] 51317
+    ## [1] 51318
 
 Then one can write a loop over pages. Note that the maximal value of `limit` is 1000.
 
@@ -276,6 +276,8 @@ for (page in 1:(ceiling(how_many$found/1000))){
                                 limit = 1000))
   }
 ```
+
+If you really need a lot of data, maybe using the API and this package is not the best choice for you. You can look into downloading csv data from OpenAQ website, e.g. [here](https://openaq.org/#/locations?_k=jk7d09) or the daily csv output [here](http://openaq-data.s3.amazonaws.com/index.html). Or you might want to contact OpenAQ.
 
 Other packages of interest for getting air quality data
 =======================================================

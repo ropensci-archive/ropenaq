@@ -164,6 +164,8 @@ for (page in 1:(ceiling(how_many$found/1000))){
 
 ```
 
+If you really need a lot of data, maybe using the API and this package is not the best choice for you. You can look into downloading csv data from OpenAQ website, e.g. [here](https://openaq.org/#/locations?_k=jk7d09) or the daily csv output [here](http://openaq-data.s3.amazonaws.com/index.html). Or you might want to contact OpenAQ.
+
 # Other packages of interest for getting air quality data
 
 * The [`rdefra` package](https://github.com/kehraProject/r_rdefra), also part of the rOpenSci project, 
