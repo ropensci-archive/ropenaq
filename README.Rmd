@@ -65,11 +65,11 @@ The `aq_countries` function allows to see for which countries information is ava
 
 ````{r, warning=FALSE, message=FALSE}
 library("ropenaq")
-countriesTable <- aq_countries()
+countries_table <- aq_countries()
 library("knitr")
-kable(countriesTable$results)
-kable(countriesTable$meta)
-kable(countriesTable$timestamp)
+kable(countries_table)
+attr(countries_table, "meta")
+attr(countries_table, "timestamp")
 ```
 
 ## The `aq_cities` function
@@ -77,15 +77,15 @@ kable(countriesTable$timestamp)
 Using the `aq_cities` functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, the URL encoded string, and the country it is in.
 
 ```{r, cache=FALSE}
-citiesTable <- aq_cities()
-kable(head(citiesTable$results))
+cities_table <- aq_cities()
+kable(head(cities_table))
 ```
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
 ```{r, cache=FALSE}
-citiesTableIndia <- aq_cities(country="IN")
-kable(citiesTableIndia$results)
+cities_tableIndia <- aq_cities(country="IN", limit = 10)
+kable(cities_tableIndia)
 ```
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
@@ -94,15 +94,15 @@ If one inputs a country that is not in the platform (or misspells a code), then 
 #aq_cities(country="PANEM")
 ```
 
-## The `locations` function
+## The `aq_locations` function
 
 The `aq_locations` function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are "pm25", "pm10", "so2", "no2", "o3", "co" and "bc"), from a given date and/or up to a given date, for values between a minimum and a maximum, for a given circle outside a central point by the use of the `latitude`, `longitude` and `radius` arguments. In the output table one also gets URL encoded strings for the city and the location. Below are several examples.
 
-Here we only look for locations with PM2.5 information in India.
+Here we only look for locations with PM2.5 information in Chennai, India.
 
 ```{r, cache=FALSE}
-locationsIndia <- aq_locations(country="IN", parameter="pm25")
-kable(locationsIndia$results)
+locations_chennai <- aq_locations(country = "IN", city = "Chennai", parameter = "pm25")
+kable(locations_chennai)
 ```
 
 
@@ -115,10 +115,8 @@ Two functions allow to get data: `aq_measurement` and `aq_latest`. In both of th
 The `aq_measurements` function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the `latitude`, `longitude` and `radius` arguments. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
 
 ```{r, cache=FALSE}
-tableResults <- aq_measurements(country="IN", city="Delhi", location="Anand+Vihar", parameter="pm25")
-kable(head(tableResults$results))
-kable(tableResults$timestamp)
-kable(tableResults$meta)
+results_table <- aq_measurements(country = "IN", city = "Delhi", location = "Anand+Vihar", parameter = "pm25")
+kable(head(results_table))
 ```
 
 One could also get all possible parameters in the same table.
@@ -131,14 +129,14 @@ This function gives a table with all newest measures for the locations that are 
 
 ```{r, cache=FALSE}
 tableLatest <- aq_latest()
-kable(head(tableLatest$results))
+kable(head(tableLatest))
 ```
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
 
 ```{r, cache=FALSE}
 tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")
-kable(head(tableLatest$results))
+kable(head(tableLatest))
 ```
 
 # Paging and limit
@@ -146,8 +144,8 @@ kable(head(tableLatest$results))
 For all endpoints/functions, there a a `limit` and a `page` arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. Based on this, how to get all results corresponding to a query? First, look at the number of results, e.g.
 
 ```{r}
-how_many <- aq_measurements(city = "Delhi",
-                            parameter = "pm25")$meta
+how_many <- attr(aq_measurements(city = "Delhi",
+                            parameter = "pm25"), "meta")
 knitr::kable(how_many)
 how_many$found
 ```

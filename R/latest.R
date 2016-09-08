@@ -26,10 +26,13 @@
 #'   one day there is a city with the same name in another country.
 #' @examples
 #' \dontrun{
-#' aq_latest(country='IN', city='Chennai')
+#' latest_chennai <- aq_latest(country='IN', city='Chennai')
+#' latest_chennai
+#' attr(latest_chennai, "meta")
+#' attr(latest_chennai, "timestamp")
 #' aq_latest(parameter='co')
 #' }
-#' @return  a list of 3 data.frames, a results data.frame (dplyr "tbl_df") with 11 columns:
+#' @return  A results data.frame (dplyr "tbl_df") with 11 columns:
 #' \itemize{
 #'  \item the name of the location ("location"),
 #'  \item the city it is in ("city"),
@@ -42,7 +45,7 @@
 #'  \item and finally an URL encoded version of the city name ("cityURL")
 #'  \item and of the location name ("locationURL").
 #' }.
-#' meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
+#' and two attributes, a meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
 #' \itemize{
 #' \item the API name ("name"),
 #' \item the license of the data ("license"),
@@ -51,7 +54,7 @@
 #' \item the limit on the number of results ("limit"),
 #' \item the number of results found on the platform for the query ("found")
 #' }
-#' last, a timestamp data.frame (dplyr "tbl_df") with the query time and the last time at which the data was modified on the platform.
+#' and a timestamp data.frame (dplyr "tbl_df") with the query time and the last time at which the data was modified on the platform.
 #' @export
 aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
                    parameter = NULL, has_geo = NULL, limit = 100,
@@ -75,7 +78,7 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     ####################################################
     # GET AND TRANSFORM RESULTS
     output <- getResults(urlAQ, argsList)
-    tableOfResults <- output$results
+    tableOfResults <- output
     # if no results
     if (nrow(tableOfResults) != 0){
 
@@ -92,7 +95,8 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     names(tableOfResults) <- gsub("coordinates\\.", "", names(tableOfResults))
 
     }
-    return(list(results = tableOfResults,
-                meta = output$meta,
-                timestamp = output$timestamp))
+    attr(tableOfResults, "meta") <- attr(output, "meta")
+    attr(tableOfResults, "timestamp") <- attr(output, "timestamp")
+
+    return(tableOfResults)
 }

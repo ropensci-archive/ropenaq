@@ -35,9 +35,9 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                            city = city,
                            page = pagee,
                            limit = 1000)
-      nrows <- nrow(temp$results)
+      nrows <- nrow(temp)
       pagee <- pagee + 1
-      locations <- dplyr::bind_rows(locations, temp$results)
+      locations <- dplyr::bind_rows(locations, temp)
     }
     if (!(location %in% locations$locationURL)) {# nolint
       stop(call. = FALSE, "This location/city/country combination is not available within the platform. See ?locations")# nolint
@@ -57,9 +57,9 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       temp <- aq_cities(country = country,
                         page = pagee,
                         limit = 1000)
-      nrows <- nrow(temp$results)
+      nrows <- nrow(temp)
       pagee <- pagee + 1
-      cities <- dplyr::bind_rows(cities, temp$results)
+      cities <- dplyr::bind_rows(cities, temp)
     }
 
     if (!(city %in% cities$cityURL)) {# nolint
@@ -73,7 +73,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # country
   if (!is.null(country)) {
 
-    if (!(country %in% aq_countries(limit = 1000)$results$code)) {# nolint
+    if (!(country %in% aq_countries(limit = 1000)$code)) {# nolint
       stop(call. = FALSE, "This country is not available within the platform. See ?countries")
     }
   }
@@ -95,9 +95,9 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                            page = pagee,
                            location = location,
                            limit = 1000)
-      nrows <- nrow(temp$results)
+      nrows <- nrow(temp)
       pagee <- pagee + 1
-      locations <- dplyr::bind_rows(locations, temp$results)
+      locations <- dplyr::bind_rows(locations, temp)
     }
     if (apply(locations[, parameter], 2, sum) == 0) {
       stop(call. = FALSE, "This parameter is not available for any location corresponding to your query. See ?locations")# nolint
@@ -237,9 +237,10 @@ getResults <- function(urlAQ, argsList){
     lastModif = func_date_headers(httr::headers(page)$"last-modified"),
     queriedAt = func_date_headers(httr::headers(page)$date)))
 
-  return(list(results = results,
-              meta = meta,
-              timestamp = timestamp))
+  attr(results, "meta") <- meta
+  attr(results, "timestamp") <- timestamp
+
+  return(results)
 }
 
 ######################################################################################

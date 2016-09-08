@@ -31,7 +31,7 @@ If no parameter is given, all parameters are retrieved.}
 \item{page}{The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.}
 }
 \value{
-a list of 3 data.frames, a results data.frame (dplyr "tbl_df") with 12 columns:
+A results data.frame (dplyr "tbl_df") with 12 columns:
  \itemize{
  \item the name of the location ("location"),
  \item the city it is in ("city"),
@@ -45,7 +45,7 @@ a list of 3 data.frames, a results data.frame (dplyr "tbl_df") with 12 columns:
  \item and finally an URL encoded version of the city name ("cityURL")
  \item and of the location name ("locationURL").
  }
-meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
+and two attribues, a meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
 \itemize{
 \item the API name ("name"),
 \item the license of the data ("license"),
@@ -54,7 +54,7 @@ meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
 \item the limit on the number of results ("limit"),
 \item the number of results found on the platform for the query ("found")
 }
-last, a timestamp data.frame (dplyr "tbl_df") with the query time and the last time at which the data was modified on the platform.
+and a timestamp data.frame (dplyr "tbl_df") with the query time and the last time at which the data was modified on the platform.
 }
 \description{
 Providing data about distinct measurement locations.
@@ -70,7 +70,10 @@ not its name, should be used.
   one day there is a city with the same name in another country.
 }
 \examples{
-aq_locations(country='IN')
+india_locations <- aq_locations(country='IN')
+india_locations
+attr(india_locations, "meta")
+attr(india_locations, "timestamp")
 aq_locations(city='Houston', parameter='co')
 }
 

@@ -7,15 +7,15 @@ context("locations")
 test_that("locations returns a data.frame (tbl_df)", {
   skip_on_cran()
   output <- aq_locations(country="IN")
-  expect_that(output$results, is_a("tbl_df"))
-  expect_that(output$meta, is_a("tbl_df"))
-  expect_that(output$timestamp, is_a("tbl_df"))
+  expect_that(output, is_a("tbl_df"))
+  expect_that(attr(output, "meta"), is_a("tbl_df"))
+  expect_that(attr(output, "timestamp"), is_a("tbl_df"))
 })
 
 test_that("locations has the right columns", {
   skip_on_cran()
   output <- aq_locations(country="IN")
-  tableRes <- output$results
+  tableRes <- output
   expect_true(class(tableRes$location) == "character")
   expect_true(class(tableRes$sourceName) == "character")
   expect_true(class(tableRes$country) == "character")
@@ -28,10 +28,10 @@ test_that("locations has the right columns", {
                 class(tableRes$longitude) == "logical")
   expect_true(class(tableRes$latitude) == "numeric" |
                 class(tableRes$latitude) == "logical")
-  meta <- output$meta
+  meta <- attr(output, "meta")
   expect_true(all(names(meta) == c("name", "license",
                                    "website", "page",
                                    "limit", "found")))
-  expect_is(output$timestamp$lastModif, "POSIXt")
-  expect_is(output$timestamp$queriedAt, "POSIXt")
+  expect_is(attr(output, "timestamp")$lastModif, "POSIXt")
+  expect_is(attr(output, "timestamp")$queriedAt, "POSIXt")
 })

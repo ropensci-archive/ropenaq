@@ -6,19 +6,19 @@ context("latest")
 test_that("latest returns a list of 3 data.frames (tbl_df)", {
   skip_on_cran()
   output <- aq_latest()
-  expect_that(output$results, is_a("tbl_df"))
-  expect_that(output$meta, is_a("tbl_df"))
-  expect_that(output$timestamp, is_a("tbl_df"))
-  expect_that(aq_latest(latitude = 0, longitude = 0, radius = 10000000)$results,
+  expect_that(output, is_a("tbl_df"))
+  expect_that(attr(output, "meta"), is_a("tbl_df"))
+  expect_that(attr(output, "timestamp"), is_a("tbl_df"))
+  expect_that(aq_latest(latitude = 0, longitude = 0, radius = 10000000),
               is_a("tbl_df"))
-  expect_that(aq_latest(latitude = 0, longitude = 0)$results,
+  expect_that(aq_latest(latitude = 0, longitude = 0),
               is_a("tbl_df"))
 })
 
 test_that("latest has the right columns", {
   skip_on_cran()
   output <- aq_latest()
-  tableRes <- output$results
+  tableRes <- output
   expect_true(all(names(tableRes) == c("location",
                                        "city",
                                        "country",
@@ -43,12 +43,12 @@ test_that("latest has the right columns", {
                 class(tableRes$longitude) == "logical")
   expect_true(class(tableRes$latitude) == "numeric" |
                 class(tableRes$latitude) == "logical")
-  meta <- output$meta
+  meta <- attr(output, "meta")
   expect_true(all(names(meta) == c("name", "license",
                                    "website", "page",
                                    "limit", "found")))
-  expect_is(output$timestamp$lastModif, "POSIXt")
-  expect_is(output$timestamp$queriedAt, "POSIXt")
+  expect_is(attr(output, "timestamp")$lastModif, "POSIXt")
+  expect_is(attr(output, "timestamp")$queriedAt, "POSIXt")
 })
 
 

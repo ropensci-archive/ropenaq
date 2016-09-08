@@ -1,3 +1,7 @@
+# ropenaq 0.1.3
+
+* Now all functions outputs a single data.frame with meta and timestamp as attributes. It should be easier to deal with compared to the former format (a list of 3 data.frames).
+
 # ropenaq 0.1.2
 
 * adds `longitude`, `latitude` and `coordinates` arguments to `aq_latest`, `aq_locations` and `aq_measurements`.
