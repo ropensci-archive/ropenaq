@@ -1,23 +1,25 @@
 ## Test environments
-* local OS X install, R 3.3.1
-* ubuntu 12.04 (on travis-ci), R devel, release and oldrel
-* win-builder (devel, patched and release)
+* local x86_64-w64-mingw32/x64 install, R 3.3.1
+* Ubuntu 12.04 (on Travis CI), R devel, release and oldrel
+* Windows on Appveyor CI (stable, patched, oldrel and devel)
 
 ## R CMD check results
 
 0 errors | 0 warnings | 0 note
 
-## Update
+## Release summary
 
-I am updating very rapidly after the first submission because of a moderately serious bug I have corrected in the `aq_measurements` function:
+A few improvements
 
-The package used to output UTC time instead of local time for locations behind UTC time (US for instance) which I had not noticed previously: the package was tested a lot but locations ahead of UTC time.
+* Now all functions outputs a single data.frame with meta and timestamp as attributes. It should be easier to deal with compared to the former format (a list of 3 data.frames).
 
-I have now corrected the bug. Currently users could guess local time from UTC time and geographical coordinates but it is not optimal.
+* adds `longitude`, `latitude` and `coordinates` arguments to `aq_latest`, `aq_locations` and `aq_measurements`.
+
+* adds `attribution`, `source_name` and `averaging_period` arguments to `aq_measurements`.
 
 ## check results
 
-12 of them are there with "OK" status.
+All had "OK" status for the previous release.
 
 ## Reverse dependencies
 
