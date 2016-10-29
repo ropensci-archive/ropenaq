@@ -84,7 +84,10 @@ dailyIndia &lt;-<span class="st"> </span><span class="kw">complete</span>(dailyI
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tableGeo &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">select</span>(measurementsIndia, location,
                           longitude, latitude))
 
-dailyIndia &lt;-<span class="st"> </span>dailyIndia %&gt;%<span class="st"> </span><span class="kw">left_join</span>(tableGeo)</code></pre></div>
+dailyIndia &lt;-<span class="st"> </span>dailyIndia %&gt;%<span class="st"> </span><span class="kw">left_join</span>(tableGeo)
+<span class="co">#&gt; Joining, by = "location"</span>
+<span class="co">#&gt; Warning in left_join_impl(x, y, by$x, by$y, suffix$x, suffix$y): joining</span>
+<span class="co">#&gt; character vector and factor, coercing into character vector</span></code></pre></div>
 </div>
 <div id="open-map-for-india" class="section level1">
 <h1 class="hasAnchor"><html><body><a href="#open-map-for-india" class="anchor"> </a></body></html>Open map for India</h1>
@@ -92,7 +95,11 @@ dailyIndia &lt;-<span class="st"> </span>dailyIndia %&gt;%<span class="st"> </sp
                                  <span class="dv">6</span>,
                                  <span class="dv">97</span>,
                                  <span class="dv">36</span>))
+<span class="co">#&gt; Warning: bounding box given to google - spatial extent only approximate.</span>
+<span class="co">#&gt; converting bounding box to center/zoom specification. (experimental)</span>
+<span class="co">#&gt; Map from URL : http://maps.googleapis.com/maps/api/staticmap?center=21,81&amp;zoom=5&amp;size=640x640&amp;scale=2&amp;maptype=terrain&amp;language=en-EN&amp;sensor=false</span>
 <span class="kw">ggmap</span>(indiaMap)</code></pre></div>
+<p><img src="animated-map_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
 </div>
 <div id="make-the-animated-map" class="section level1">
 <h1 class="hasAnchor"><html><body><a href="#make-the-animated-map" class="anchor"> </a></body></html>Make the animated map</h1>

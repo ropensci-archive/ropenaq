@@ -78,6 +78,7 @@ gg &lt;-<span class="st"> </span><span class="kw">ggplot</span>() +<span class="
                           <span class="kw">aes</span>(<span class="dt">map_id=</span>region, <span class="dt">x=</span>long, <span class="dt">y=</span>lat),
                           <span class="dt">fill =</span> <span class="st">"grey60"</span>)
 gg</code></pre></div>
+<p><img src="mapping_openaq_monitors_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
 <p>Map with monitors.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plotMap &lt;-<span class="st"> </span>gg +
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> dataGeo, <span class="kw">aes</span>(<span class="dt">x=</span>longitude, <span class="dt">y=</span>latitude), <span class="dt">size=</span><span class="dv">1</span>, <span class="dt">col =</span> <span class="st">"#EE9F8E"</span>)+
@@ -89,7 +90,9 @@ gg</code></pre></div>
        <span class="dt">panel.grid.minor=</span><span class="kw">element_blank</span>(),<span class="dt">plot.background=</span><span class="kw">element_blank</span>())+
 <span class="st">   </span><span class="kw">ggtitle</span>(<span class="st">"OpenAQ data sources with geographical coordinates"</span>) +
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">lineheight=</span><span class="dv">1</span>, <span class="dt">face=</span><span class="st">"bold"</span>))
-<span class="kw">print</span>(plotMap)</code></pre></div>
+<span class="kw">print</span>(plotMap)
+<span class="co">#&gt; Warning: Removed 153 rows containing missing values (geom_point).</span></code></pre></div>
+<p><img src="mapping_openaq_monitors_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
 </div>
 </div>
   </div>
