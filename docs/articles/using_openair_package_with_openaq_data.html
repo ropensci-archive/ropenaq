@@ -93,26 +93,6 @@ measurementsNL &lt;-<span class="st"> </span><span class="kw">as.data.frame</spa
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># cool calendar plot</span>
 <span class="kw">calendarPlot</span>(<span class="dt">mydata=</span>measurementsNL, <span class="dt">pollutant =</span> <span class="st">"pm25"</span>, <span class="dt">year =</span><span class="dv">2015</span>)</code></pre></div>
 </div>
-<div id="googlemaps-plot-with-indian-data" class="section level1">
-<h1 class="hasAnchor"><html><body><a href="#googlemaps-plot-with-indian-data" class="anchor"> </a></body></html>Googlemaps plot with Indian data</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measurementsNL2 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">country=</span><span class="st">"IN"</span>,
-                                <span class="dt">parameter=</span><span class="st">"pm25"</span>,
-                                <span class="dt">has_geo=</span><span class="ot">TRUE</span>,
-                                <span class="dt">limit=</span><span class="dv">1000</span>,
-                                <span class="dt">date_from=</span><span class="st">"2016-01-21"</span>,
-                                <span class="dt">date_to=</span><span class="st">"2016-01-22"</span>)
-
-measurementsNL2 &lt;-<span class="st">  </span>dplyr::<span class="kw">mutate</span>(measurementsNL2, <span class="dt">date=</span>dateLocal,
-                                     <span class="dt">pm25=</span>value) %&gt;%
-<span class="st">  </span><span class="kw">filter</span>(value&gt;=<span class="dv">0</span>)
-<span class="co"># for now openair functions do not work with tbl_df objects</span>
-<span class="co"># on MY computer</span>
-measurementsNL2 &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(measurementsNL2)
-
-<span class="kw">GoogleMapsPlot</span>(measurementsNL2, <span class="dt">lat =</span> <span class="st">"latitude"</span>, <span class="dt">long =</span> <span class="st">"longitude"</span>,
-               <span class="dt">pollutant =</span> <span class="st">"pm25"</span>, <span class="dt">cex=</span><span class="dv">2</span>,
-               <span class="dt">type =</span> <span class="st">"date"</span>, <span class="dt">maptype =</span> <span class="st">"roadmap"</span>, <span class="dt">col =</span> <span class="st">"jet"</span>)</code></pre></div>
-</div>
 </div>
   </div>
 
@@ -122,7 +102,6 @@ measurementsNL2 &lt;-<span class="st"> </span><span class="kw">as.data.frame</sp
       <ul class="nav nav-pills nav-stacked"><li><a href="#load-data-for-the-netherlands">Load data for the Netherlands</a></li>
       <li><a href="#timeplot">Timeplot</a></li>
       <li><a href="#calendarplot">Calendarplot</a></li>
-      <li><a href="#googlemaps-plot-with-indian-data">Googlemaps plot with Indian data</a></li>
       </ul></div>
       </div>
 
