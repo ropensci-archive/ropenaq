@@ -30,7 +30,7 @@ library("viridis")
 ```
 # Graph 1
 
-```{r fig.width = 7, fig.height = 4}
+```{r, fig.width = 7, fig.height = 4}
 tbHanoi <- aq_measurements(city = "Hanoi", parameter = "pm25", date_from = as.character(Sys.Date()-1), limit = 1000)
 
 tbJakarta <- aq_measurements(city = "Jakarta", parameter = "pm25", date_from = as.character(Sys.Date()-1), limit = 1000)
@@ -60,7 +60,7 @@ ggplot() + geom_line(data = tbPM,
 
 Another graph, for Delhi.
 
-```{r fig.width = 7, fig.height = 4}
+```{r, fig.width = 7, fig.height = 4}
 tbIndia <- aq_measurements(country = "IN", city = "Delhi", parameter = "pm25", date_from = as.character(Sys.Date()-1), limit = 1000)
 tbIndia <- filter(tbIndia, value >= 0)
 ggplot() + geom_line(data = tbIndia,

@@ -73,53 +73,9 @@ library("ropenaq")
 countries_table <- aq_countries()
 library("knitr")
 kable(countries_table)
-```
-
-| name                   | code |  cities|  locations|     count|
-|:-----------------------|:-----|-------:|----------:|---------:|
-| Australia              | AU   |      11|         28|    932355|
-| Bosnia and Herzegovina | BA   |       4|         11|    204393|
-| Bangladesh             | BD   |       1|          2|      6944|
-| Brazil                 | BR   |      73|        113|   1436610|
-| Canada                 | CA   |      11|        157|    752193|
-| Chile                  | CL   |      99|        104|   2116543|
-| China                  | CN   |       5|          6|     56021|
-| Colombia               | CO   |       1|          1|      5421|
-| Ethiopia               | ET   |       1|          1|      1718|
-| United Kingdom         | GB   |     105|        152|   2015704|
-| Indonesia              | ID   |       2|          3|     17601|
-| Israel                 | IL   |       1|          1|      1826|
-| India                  | IN   |      35|         85|   1648742|
-| Mongolia               | MN   |       1|         12|   1042146|
-| Mexico                 | MX   |       5|         48|    741490|
-| Nigeria                | NG   |       1|          1|      2541|
-| Netherlands            | NL   |      67|        109|   2462971|
-| Peru                   | PE   |       1|         11|    249211|
-| Philippines            | PH   |       1|          1|       958|
-| Poland                 | PL   |      10|         15|    456354|
-| Singapore              | SG   |       1|          1|      1275|
-| Thailand               | TH   |      33|         61|   1243936|
-| United States          | US   |     689|       1763|  11085357|
-| Viet Nam               | VN   |       2|          3|     14321|
-| Kosovo                 | XK   |       1|          1|      4886|
-
-``` r
 attr(countries_table, "meta")
-```
-
-    ## # A tibble: 1 × 6
-    ##         name   license                  website  page limit found
-    ##       <fctr>    <fctr>                   <fctr> <int> <int> <int>
-    ## 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    25
-
-``` r
 attr(countries_table, "timestamp")
 ```
-
-    ## # A tibble: 1 × 2
-    ##             lastModif           queriedAt
-    ##                <dttm>              <dttm>
-    ## 1 2016-10-29 12:21:57 2016-10-29 12:27:29
 
 The `aq_cities` function
 ------------------------
@@ -131,34 +87,12 @@ cities_table <- aq_cities()
 kable(head(cities_table))
 ```
 
-| city      | country |  locations|  count| cityURL   |
-|:----------|:--------|----------:|------:|:----------|
-| 76t       | TH      |          1|      4| 76t       |
-| ABBEVILLE | US      |          1|   3419| ABBEVILLE |
-| Aberdeen  | GB      |          3|  32917| Aberdeen  |
-| Aberdeen  | US      |          2|   8539| Aberdeen  |
-| ADA       | US      |          1|  10237| ADA       |
-| ADAIR     | US      |          1|  14677| ADAIR     |
-
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
 ``` r
 cities_tableIndia <- aq_cities(country="IN", limit = 10)
 kable(cities_tableIndia)
 ```
-
-| city       | country |  locations|   count| cityURL    |
-|:-----------|:--------|----------:|-------:|:-----------|
-| Agra       | IN      |          1|   25980| Agra       |
-| Ahmedabad  | IN      |          1|   16941| Ahmedabad  |
-| Aurangabad | IN      |          1|   15358| Aurangabad |
-| Barddhaman | IN      |          3|    2470| Barddhaman |
-| Bengaluru  | IN      |          5|   91293| Bengaluru  |
-| Chandrapur | IN      |          2|   46612| Chandrapur |
-| Chennai    | IN      |          4|   62457| Chennai    |
-| Chittoor   | IN      |          1|    2013| Chittoor   |
-| Delhi      | IN      |         15|  339118| Delhi      |
-| Durgapur   | IN      |          1|    4865| Durgapur   |
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
@@ -178,10 +112,6 @@ locations_chennai <- aq_locations(country = "IN", city = "Chennai", parameter = 
 kable(locations_chennai)
 ```
 
-| location                    | city    | country | sourceName        |  count| lastUpdated         | firstUpdated        |  latitude|  longitude| pm25 | pm10  | no2   | so2   | o3    | co    | bc    | cityURL | locationURL                   |
-|:----------------------------|:--------|:--------|:------------------|------:|:--------------------|:--------------------|---------:|----------:|:-----|:------|:------|:------|:------|:------|:------|:--------|:------------------------------|
-| US Diplomatic Post: Chennai | Chennai | IN      | StateAir\_Chennai |   7567| 2016-10-29 12:30:00 | 2015-12-11 21:30:00 |  13.05237|   80.25193| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | US+Diplomatic+Post%3A+Chennai |
-
 Getting measurements
 ====================
 
@@ -197,15 +127,6 @@ results_table <- aq_measurements(country = "IN", city = "Delhi", location = "Ana
 kable(head(results_table))
 ```
 
-| location    | parameter |  value| unit  | country | city  | dateUTC             | dateLocal           |  latitude|  longitude| cityURL | locationURL |
-|:------------|:----------|------:|:------|:--------|:------|:--------------------|:--------------------|---------:|----------:|:--------|:------------|
-| Anand Vihar | pm25      |    293| µg/m³ | IN      | Delhi | 2016-10-29 11:35:00 | 2016-10-29 17:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    234| µg/m³ | IN      | Delhi | 2016-10-29 11:05:00 | 2016-10-29 16:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    234| µg/m³ | IN      | Delhi | 2016-10-29 10:35:00 | 2016-10-29 16:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    276| µg/m³ | IN      | Delhi | 2016-10-29 10:05:00 | 2016-10-29 15:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    276| µg/m³ | IN      | Delhi | 2016-10-29 09:35:00 | 2016-10-29 15:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    301| µg/m³ | IN      | Delhi | 2016-10-29 09:05:00 | 2016-10-29 14:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-
 One could also get all possible parameters in the same table.
 
 The `aq_latest` function
@@ -218,30 +139,12 @@ tableLatest <- aq_latest()
 kable(head(tableLatest))
 ```
 
-| location          | city                 | country |  latitude|  longitude| parameter |  value| lastUpdated         | unit  | cityURL              | locationURL       |
-|:------------------|:---------------------|:--------|---------:|----------:|:----------|------:|:--------------------|:------|:---------------------|:------------------|
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |    463| 2016-10-29 12:15:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |     36| 2016-10-29 12:15:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |     25| 2016-10-29 12:15:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |    227| 2016-10-29 12:15:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |     22| 2016-10-29 12:15:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 16th and Whitmore | Omaha-Council Bluffs | US      |  41.32247|  -95.93799| o3        |      0| 2016-10-29 10:00:00 | ppm   | Omaha-Council+Bluffs | 16th+and+Whitmore |
-
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
 
 ``` r
 tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")
 kable(head(tableLatest))
 ```
-
-| location    | city  | country |  latitude|  longitude| parameter |   value| lastUpdated         | unit  | cityURL | locationURL |
-|:------------|:------|:--------|---------:|----------:|:----------|-------:|:--------------------|:------|:--------|:------------|
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| co        |  1300.0| 2016-03-21 14:45:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| no2       |   174.6| 2016-10-29 11:35:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| o3        |    40.1| 2016-10-29 11:35:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm10      |   947.0| 2016-10-29 11:35:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm25      |   293.0| 2016-10-29 11:35:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| so2       |    18.0| 2016-03-21 14:45:00 | µg/m³ | Delhi   | Anand+Vihar |
 
 Paging and limit
 ================
@@ -252,17 +155,8 @@ For all endpoints/functions, there a a `limit` and a `page` arguments, which ind
 how_many <- attr(aq_measurements(city = "Delhi",
                             parameter = "pm25"), "meta")
 knitr::kable(how_many)
-```
-
-| name       | license   | website                    |  page|  limit|  found|
-|:-----------|:----------|:---------------------------|-----:|------:|------:|
-| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  59503|
-
-``` r
 how_many$found
 ```
-
-    ## [1] 59503
 
 Then one can write a loop over pages. Note that the maximal value of `limit` is 1000.
 

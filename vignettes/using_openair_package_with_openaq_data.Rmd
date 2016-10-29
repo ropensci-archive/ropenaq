@@ -64,7 +64,7 @@ measurementsNL <- as.data.frame(measurementsNL)
 
 # Timeplot
 
-```{r fig.width=7, fig.height=4}
+```{r, fig.width=7, fig.height=4}
 # useful timeplot
 timePlot(mydata=measurementsNL, pollutant = "pm25")
 
@@ -72,7 +72,7 @@ timePlot(mydata=measurementsNL, pollutant = "pm25")
 
 # Calendarplot
 
-```{r fig.width=7, fig.height=4}
+```{r, fig.width=7, fig.height=4}
 # cool calendar plot
 calendarPlot(mydata=measurementsNL, pollutant = "pm25", year =2015)
 
