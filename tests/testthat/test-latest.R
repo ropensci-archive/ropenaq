@@ -28,6 +28,7 @@ test_that("latest has the right columns", {
                                         "value",
                                        "lastUpdated",
                                        "unit",
+                                       "sourceName",
                                        "cityURL",
                                        "locationURL")))
   expect_true(class(tableRes$location) == "character")
