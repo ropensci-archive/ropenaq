@@ -11,9 +11,9 @@ ropenaq
 =============
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/ropenaq)](http://cran.r-project.org/package=ropenaq)
-[![Build Status](https://travis-ci.org/ropenscilabs/ropenaq.svg?branch=master)](https://travis-ci.org/ropenscilabs/ropenaq)
-[![Build status](https://ci.appveyor.com/api/projects/status/qurhlh0j8ra3qors?svg=true)](https://ci.appveyor.com/project/ropenscilabs/ropenaq)
-[![codecov.io](https://codecov.io/github/ropenscilabs/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/Ropenaq?branch=master)
+[![Build Status](https://travis-ci.org/ropensci/ropenaq.svg?branch=master)](https://travis-ci.org/ropensci/ropenaq)
+[![Build status](https://ci.appveyor.com/api/projects/status/qurhlh0j8ra3qors?svg=true)](https://ci.appveyor.com/project/ropensci/ropenaq)
+[![codecov.io](https://codecov.io/github/ropensci/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropensci/Ropenaq?branch=master)
 
 # Installation
 
@@ -27,7 +27,7 @@ Or install the development version using [devtools](https://github.com/hadley/de
 
 ```{r, eval = FALSE}
 library("devtools")
-install_github("ropenscilabs/ropenaq")
+install_github("ropensci/ropenaq")
 
 ```
 
@@ -177,7 +177,7 @@ allows to  to interact with the UK AIR pollution database from DEFRA, including 
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/ropenaq/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/ropenaq/issues).
 * License: GPL
 * Get citation information for `ropenaq` in R doing `citation(package = 'ropenaq')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

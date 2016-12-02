@@ -15,7 +15,7 @@
 ropenaq
 =======
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ropenaq)](http://cran.r-project.org/package=ropenaq) [![Build Status](https://travis-ci.org/ropenscilabs/ropenaq.svg?branch=master)](https://travis-ci.org/ropenscilabs/ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/qurhlh0j8ra3qors?svg=true)](https://ci.appveyor.com/project/ropenscilabs/ropenaq) [![codecov.io](https://codecov.io/github/ropenscilabs/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/Ropenaq?branch=master)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ropenaq)](http://cran.r-project.org/package=ropenaq) [![Build Status](https://travis-ci.org/ropensci/ropenaq.svg?branch=master)](https://travis-ci.org/ropensci/ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/qurhlh0j8ra3qors?svg=true)](https://ci.appveyor.com/project/ropensci/ropenaq) [![codecov.io](https://codecov.io/github/ropensci/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropensci/Ropenaq?branch=master)
 
 Installation
 ============
@@ -30,7 +30,7 @@ Or install the development version using [devtools](https://github.com/hadley/de
 
 ``` r
 library("devtools")
-install_github("ropenscilabs/ropenaq")
+install_github("ropensci/ropenaq")
 ```
 
 If you experience trouble using the package on a Linux machine, please run
@@ -77,31 +77,39 @@ kable(countries_table)
 
 | name                   | code |  cities|  locations|     count|
 |:-----------------------|:-----|-------:|----------:|---------:|
-| Australia              | AU   |      11|         28|    932589|
-| Bosnia and Herzegovina | BA   |       4|         11|    204470|
-| Bangladesh             | BD   |       1|          2|      6947|
-| Brazil                 | BR   |      73|        113|   1436959|
-| Canada                 | CA   |      11|        157|    752662|
-| Chile                  | CL   |      99|        104|   2117097|
-| China                  | CN   |       5|          6|     56031|
-| Colombia               | CO   |       1|          1|      5423|
-| Ethiopia               | ET   |       1|          1|      1720|
-| United Kingdom         | GB   |     105|        152|   2016728|
-| Indonesia              | ID   |       2|          3|     17605|
+| Austria                | AT   |     174|        174|     80612|
+| Australia              | AU   |      28|         28|   1018167|
+| Bosnia and Herzegovina | BA   |      11|         11|    232294|
+| Bangladesh             | BD   |       2|          2|      7757|
+| Belgium                | BE   |      98|         98|     86459|
+| Brazil                 | BR   |     144|        144|   1569367|
+| Canada                 | CA   |     157|        157|    872078|
+| Chile                  | CL   |     149|        149|   2316428|
+| China                  | CN   |       6|          6|     60081|
+| Colombia               | CO   |       1|          1|      6232|
+| Czech Republic         | CZ   |     102|        102|     70756|
+| Germany                | DE   |     433|        433|    105068|
+| Denmark                | DK   |      11|         11|      5454|
+| Spain                  | ES   |     332|        332|    176932|
+| Ethiopia               | ET   |       2|          2|      3096|
+| France                 | FR   |     462|        462|     41792|
+| United Kingdom         | GB   |     160|        160|   2207325|
+| Croatia                | HR   |      15|         15|      9402|
+| Indonesia              | ID   |       3|          3|     19225|
 | Israel                 | IL   |       1|          1|      1826|
-| India                  | IN   |      35|         85|   1649777|
-| Mongolia               | MN   |       1|         12|   1042496|
-| Mexico                 | MX   |       5|         48|    741945|
+| India                  | IN   |      89|         89|   1996454|
+| Mongolia               | MN   |      12|         12|   1139633|
+| Mexico                 | MX   |      48|         48|    863332|
 | Nigeria                | NG   |       1|          1|      2541|
-| Netherlands            | NL   |      67|        109|   2463511|
-| Peru                   | PE   |       1|         11|    249297|
+| Netherlands            | NL   |     110|        110|   2681492|
+| Peru                   | PE   |      11|         11|    286154|
 | Philippines            | PH   |       1|          1|       958|
-| Poland                 | PL   |      10|         15|    456354|
+| Poland                 | PL   |      17|         17|    491942|
 | Singapore              | SG   |       1|          1|      1275|
-| Thailand               | TH   |      33|         61|   1244196|
-| United States          | US   |     689|       1763|  11091803|
-| Viet Nam               | VN   |       2|          3|     14325|
-| Kosovo                 | XK   |       1|          1|      4889|
+| Thailand               | TH   |      65|         65|   1350561|
+| United States          | US   |    1803|       1803|  12611298|
+| Viet Nam               | VN   |       3|          3|     15944|
+| Kosovo                 | XK   |       1|          1|      5698|
 
 ``` r
 attr(countries_table, "meta")
@@ -110,7 +118,7 @@ attr(countries_table, "meta")
     ## # A tibble: 1 × 6
     ##         name   license                  website  page limit found
     ##       <fctr>    <fctr>                   <fctr> <int> <int> <int>
-    ## 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    25
+    ## 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    33
 
 ``` r
 attr(countries_table, "timestamp")
@@ -119,7 +127,7 @@ attr(countries_table, "timestamp")
     ## # A tibble: 1 × 2
     ##             lastModif           queriedAt
     ##                <dttm>              <dttm>
-    ## 1 2016-10-29 14:52:01 2016-10-29 14:52:14
+    ## 1 2016-12-02 08:53:54 2016-12-02 08:56:47
 
 The `aq_cities` function
 ------------------------
@@ -134,11 +142,11 @@ kable(head(cities_table))
 | city      | country |  locations|  count| cityURL   |
 |:----------|:--------|----------:|------:|:----------|
 | 76t       | TH      |          1|      4| 76t       |
-| ABBEVILLE | US      |          1|   3422| ABBEVILLE |
-| Aberdeen  | GB      |          3|  32935| Aberdeen  |
-| Aberdeen  | US      |          2|   8545| Aberdeen  |
-| ADA       | US      |          1|  10243| ADA       |
-| ADAIR     | US      |          1|  14689| ADAIR     |
+| ABBEVILLE | US      |          1|   3977| ABBEVILLE |
+| Aberdeen  | GB      |          3|  36175| Aberdeen  |
+| Aberdeen  | US      |          2|  10057| Aberdeen  |
+| ADA       | US      |          1|  11807| ADA       |
+| ADAIR     | US      |          1|  18254| ADAIR     |
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
@@ -149,16 +157,16 @@ kable(cities_tableIndia)
 
 | city       | country |  locations|   count| cityURL    |
 |:-----------|:--------|----------:|-------:|:-----------|
-| Agra       | IN      |          1|   25992| Agra       |
-| Ahmedabad  | IN      |          1|   16956| Ahmedabad  |
-| Aurangabad | IN      |          1|   15383| Aurangabad |
+| Agra       | IN      |          1|   29121| Agra       |
+| Ahmedabad  | IN      |          1|   21277| Ahmedabad  |
+| Aurangabad | IN      |          1|   27224| Aurangabad |
 | Barddhaman | IN      |          3|    2470| Barddhaman |
-| Bengaluru  | IN      |          5|   91355| Bengaluru  |
-| Chandrapur | IN      |          2|   46667| Chandrapur |
-| Chennai    | IN      |          4|   62494| Chennai    |
+| Bengaluru  | IN      |          5|  112411| Bengaluru  |
+| Chandrapur | IN      |          2|   60474| Chandrapur |
+| Chennai    | IN      |          4|   75860| Chennai    |
 | Chittoor   | IN      |          1|    2013| Chittoor   |
-| Delhi      | IN      |         15|  339269| Delhi      |
-| Durgapur   | IN      |          1|    4878| Durgapur   |
+| Delhi      | IN      |         16|  392126| Delhi      |
+| Durgapur   | IN      |          1|    8437| Durgapur   |
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
@@ -178,9 +186,9 @@ locations_chennai <- aq_locations(country = "IN", city = "Chennai", parameter = 
 kable(locations_chennai)
 ```
 
-| location                    | city    | country | sourceName        |  count| lastUpdated         | firstUpdated        |  latitude|  longitude| pm25 | pm10  | no2   | so2   | o3    | co    | bc    | cityURL | locationURL                   |
-|:----------------------------|:--------|:--------|:------------------|------:|:--------------------|:--------------------|---------:|----------:|:-----|:------|:------|:------|:------|:------|:------|:--------|:------------------------------|
-| US Diplomatic Post: Chennai | Chennai | IN      | StateAir\_Chennai |   7569| 2016-10-29 14:30:00 | 2015-12-11 21:30:00 |  13.05237|   80.25193| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | US+Diplomatic+Post%3A+Chennai |
+| location                    | city    | country |  count| sourceNames       | lastUpdated | firstUpdated | sourceName        |  latitude|  longitude| pm25 | pm10  | no2   | so2   | o3    | co    | bc    | cityURL | locationURL                   |
+|:----------------------------|:--------|:--------|------:|:------------------|:------------|:-------------|:------------------|---------:|----------:|:-----|:------|:------|:------|:------|:------|:------|:--------|:------------------------------|
+| US Diplomatic Post: Chennai | Chennai | IN      |   8379| StateAir\_Chennai | 1480667400  | 1449869400   | StateAir\_Chennai |  13.08784|   80.27847| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | US+Diplomatic+Post%3A+Chennai |
 
 Getting measurements
 ====================
@@ -199,12 +207,12 @@ kable(head(results_table))
 
 | location    | parameter |  value| unit  | country | city  | dateUTC             | dateLocal           |  latitude|  longitude| cityURL | locationURL |
 |:------------|:----------|------:|:------|:--------|:------|:--------------------|:--------------------|---------:|----------:|:--------|:------------|
-| Anand Vihar | pm25      |    521| µg/m³ | IN      | Delhi | 2016-10-29 14:05:00 | 2016-10-29 19:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    521| µg/m³ | IN      | Delhi | 2016-10-29 13:35:00 | 2016-10-29 19:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    398| µg/m³ | IN      | Delhi | 2016-10-29 13:05:00 | 2016-10-29 18:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    398| µg/m³ | IN      | Delhi | 2016-10-29 12:35:00 | 2016-10-29 18:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    293| µg/m³ | IN      | Delhi | 2016-10-29 12:05:00 | 2016-10-29 17:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    293| µg/m³ | IN      | Delhi | 2016-10-29 11:35:00 | 2016-10-29 17:05:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    256| µg/m³ | IN      | Delhi | 2016-12-02 08:15:00 | 2016-12-02 13:45:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    256| µg/m³ | IN      | Delhi | 2016-12-02 07:40:00 | 2016-12-02 13:10:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    272| µg/m³ | IN      | Delhi | 2016-12-02 07:25:00 | 2016-12-02 12:55:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    272| µg/m³ | IN      | Delhi | 2016-12-02 07:05:00 | 2016-12-02 12:35:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    356| µg/m³ | IN      | Delhi | 2016-12-02 05:00:00 | 2016-12-02 10:30:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    346| µg/m³ | IN      | Delhi | 2016-12-02 03:55:00 | 2016-12-02 09:25:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
 
 One could also get all possible parameters in the same table.
 
@@ -218,14 +226,14 @@ tableLatest <- aq_latest()
 kable(head(tableLatest))
 ```
 
-| location          | city                 | country |  latitude|  longitude| parameter |    value| lastUpdated         | unit  | cityURL              | locationURL       |
-|:------------------|:---------------------|:--------|---------:|----------:|:----------|--------:|:--------------------|:------|:---------------------|:------------------|
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |  388.000| 2016-10-29 14:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |   25.000| 2016-10-29 14:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |   29.000| 2016-10-29 14:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |  169.000| 2016-10-29 14:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |   15.000| 2016-10-29 14:45:00 | µg/m³ | Ulaanbaatar          | 100+ail           |
-| 16th and Whitmore | Omaha-Council Bluffs | US      |  41.32247|  -95.93799| o3        |    0.001| 2016-10-29 13:00:00 | ppm   | Omaha-Council+Bluffs | 16th+and+Whitmore |
+| location          | city                 | country |  latitude|  longitude| parameter |    value| lastUpdated         | unit  | sourceName | cityURL              | locationURL       |
+|:------------------|:---------------------|:--------|---------:|----------:|:----------|--------:|:--------------------|:------|:-----------|:---------------------|:------------------|
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |  579.000| 2016-12-02 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |   91.000| 2016-12-02 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |    4.000| 2016-12-02 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |   91.000| 2016-12-02 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |   71.000| 2016-12-02 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 16th and Whitmore | Omaha-Council Bluffs | US      |  41.32247|  -95.93799| o3        |    0.001| 2016-11-01 13:00:00 | ppm   | AirNow     | Omaha-Council+Bluffs | 16th+and+Whitmore |
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
 
@@ -234,14 +242,14 @@ tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")
 kable(head(tableLatest))
 ```
 
-| location    | city  | country |  latitude|  longitude| parameter |   value| lastUpdated         | unit  | cityURL | locationURL |
-|:------------|:------|:--------|---------:|----------:|:----------|-------:|:--------------------|:------|:--------|:------------|
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| co        |  1300.0| 2016-03-21 14:45:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| no2       |   167.4| 2016-10-29 14:05:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| o3        |    36.9| 2016-10-29 14:05:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm10      |   947.0| 2016-10-29 12:05:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm25      |   521.0| 2016-10-29 14:05:00 | µg/m³ | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| so2       |    18.0| 2016-03-21 14:45:00 | µg/m³ | Delhi   | Anand+Vihar |
+| location    | city  | country |  latitude|  longitude| parameter |   value| lastUpdated         | unit  | sourceName  | cityURL | locationURL |
+|:------------|:------|:--------|---------:|----------:|:----------|-------:|:--------------------|:------|:------------|:--------|:------------|
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| co        |  1300.0| 2016-03-21 14:45:00 | µg/m³ | Anand Vihar | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| no2       |   105.4| 2016-12-02 08:15:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| o3        |    27.9| 2016-12-02 08:15:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm10      |   599.0| 2016-12-02 08:15:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm25      |   256.0| 2016-12-02 08:15:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| so2       |    18.0| 2016-03-21 14:45:00 | µg/m³ | Anand Vihar | Delhi   | Anand+Vihar |
 
 Paging and limit
 ================
@@ -256,13 +264,13 @@ knitr::kable(how_many)
 
 | name       | license   | website                    |  page|  limit|  found|
 |:-----------|:----------|:---------------------------|-----:|------:|------:|
-| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  59525|
+| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  70849|
 
 ``` r
 how_many$found
 ```
 
-    ## [1] 59525
+    ## [1] 70849
 
 Then one can write a loop over pages. Note that the maximal value of `limit` is 1000.
 
@@ -291,7 +299,7 @@ Other packages of interest for getting air quality data
 Meta
 ----
 
--   Please [report any issues or bugs](https://github.com/ropenscilabs/ropenaq/issues).
+-   Please [report any issues or bugs](https://github.com/ropensci/ropenaq/issues).
 -   License: GPL
 -   Get citation information for `ropenaq` in R doing `citation(package = 'ropenaq')`
 -   Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

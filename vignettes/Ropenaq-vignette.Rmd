@@ -144,7 +144,7 @@ allows to  to interact with the UK AIR pollution database from DEFRA, including 
 * The [`usaqmindia` package](https://github.com/masalmon/usaqmindia) provides data from the US air quality monitoring program in India for Delhi, Mumbai, Chennai, Hyderabad and Kolkata from 2013.
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/ropenaq/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/ropenaq/issues).
 * License: GPL
 * Get citation information for `ropenaq` in R doing `citation(package = 'ropenaq')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

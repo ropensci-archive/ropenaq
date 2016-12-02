@@ -10,8 +10,8 @@ Description: Allows access to air quality data from the API of the OpenAQ platfo
 License: GPL (>= 2)
 LazyData: TRUE
 RoxygenNote: 5.0.1
-URL: http://github.com/ropenscilabs/ropenaq
-BugReports: http://github.com/ropenscilabs/ropenaq/issues
+URL: http://github.com/ropensci/ropenaq
+BugReports: http://github.com/ropensci/ropenaq/issues
 Suggests: knitr,
     rmarkdown,
     lintr,
