@@ -15,6 +15,10 @@ ropenaq
 [![Build status](https://ci.appveyor.com/api/projects/status/qurhlh0j8ra3qors?svg=true)](https://ci.appveyor.com/project/ropensci/ropenaq)
 [![codecov.io](https://codecov.io/github/ropensci/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropensci/Ropenaq?branch=master)
 
+# Special announcement for lovers of open air quality data
+
+If you like OpenAQ work and want to support their efforts please vote for OpenAQ in the [Open Science Prize](http://event.capconcorp.com/wp/osp/vote-now/).
+
 # Installation
 
 Install the package with:
