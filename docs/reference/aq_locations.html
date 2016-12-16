@@ -61,7 +61,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="http://github.com/ropenscilabs/ropenaq">
+  <a href="http://github.com/ropensci/ropenaq">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -169,50 +169,44 @@ not its name, should be used.
   one day there is a city with the same name in another country.</p>
     
 
-    <h2 class="hasAnchor" id="examples">
-      <a class="anchor" href="#examples"></a>
-      Examples
-    </h2>
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>india_locations</span> <span class='kw'>&lt;-</span> <span class='fu'>aq_locations</span>(<span class='kw'>country</span><span class='kw'>=</span><span class='st'>'IN'</span>)
-<span class='no'>india_locations</span></div><div class='output co'>#&gt; # A tibble: 85 × 18
-#&gt;                        location       city country  sourceName count
-#&gt;                           &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;
-#&gt; 1         AAQMS Karve Road Pune       Pune      IN        CPCB 41824
-#&gt; 2             Alandur Bus Depot    Chennai      IN        CPCB 15659
-#&gt; 3                   Anand Vihar      Delhi      IN Anand Vihar 44850
-#&gt; 4                   AP Tirumala   Chittoor      IN        CPCB  3172
-#&gt; 5                 Ardhali Bazar   Varanasi      IN        CPCB 66814
-#&gt; 6                    BTM Layout  Bengaluru      IN        CPCB 20120
-#&gt; 7         BWSSB Kadabesanahalli  Bengaluru      IN        CPCB 17245
-#&gt; 8                Central School    Lucknow      IN        CPCB 23940
-#&gt; 9                    Chandrapur Chandrapur      IN        CPCB 39870
-#&gt; 10 City Railway Station - KSPCB  Bengaluru      IN        CPCB 17079
-#&gt; # ... with 75 more rows, and 13 more variables: lastUpdated &lt;dttm&gt;,
-#&gt; #   firstUpdated &lt;dttm&gt;, latitude &lt;dbl&gt;, longitude &lt;dbl&gt;, pm25 &lt;lgl&gt;,
-#&gt; #   pm10 &lt;lgl&gt;, no2 &lt;lgl&gt;, so2 &lt;lgl&gt;, o3 &lt;lgl&gt;, co &lt;lgl&gt;, bc &lt;lgl&gt;,
-#&gt; #   cityURL &lt;chr&gt;, locationURL &lt;chr&gt;
-#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
+<span class='no'>india_locations</span></div><div class='output co'>#&gt; # A tibble: 86 × 19
+#&gt;                        location       city country count sourceNames
+#&gt;                           &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;      &lt;list&gt;
+#&gt; 1         AAQMS Karve Road Pune       Pune      IN 53857   &lt;chr [1]&gt;
+#&gt; 2             Alandur Bus Depot    Chennai      IN 21226   &lt;chr [1]&gt;
+#&gt; 3                   Anand Vihar      Delhi      IN 50725   &lt;chr [2]&gt;
+#&gt; 4                   AP Tirumala   Chittoor      IN  3172   &lt;chr [1]&gt;
+#&gt; 5                 Ardhali Bazar   Varanasi      IN 80312   &lt;chr [1]&gt;
+#&gt; 6                    BTM Layout  Bengaluru      IN 31531   &lt;chr [1]&gt;
+#&gt; 7         BWSSB Kadabesanahalli  Bengaluru      IN 22537   &lt;chr [1]&gt;
+#&gt; 8                Central School    Lucknow      IN 30304   &lt;chr [1]&gt;
+#&gt; 9                    Chandrapur Chandrapur      IN 51778   &lt;chr [1]&gt;
+#&gt; 10 City Railway Station - KSPCB  Bengaluru      IN 21546   &lt;chr [1]&gt;
+#&gt; # ... with 76 more rows, and 14 more variables: lastUpdated &lt;dttm&gt;,
+#&gt; #   firstUpdated &lt;dttm&gt;, sourceName &lt;chr&gt;, latitude &lt;dbl&gt;, longitude &lt;dbl&gt;,
+#&gt; #   pm25 &lt;lgl&gt;, pm10 &lt;lgl&gt;, no2 &lt;lgl&gt;, so2 &lt;lgl&gt;, o3 &lt;lgl&gt;, co &lt;lgl&gt;, bc &lt;lgl&gt;,
+#&gt; #   cityURL &lt;chr&gt;, locationURL &lt;chr&gt;</div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
 #&gt;         name   license                  website  page limit found
 #&gt;       &lt;fctr&gt;    &lt;fctr&gt;                   &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    85
-#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 2
+#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    86</div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 2
 #&gt;             lastModif           queriedAt
 #&gt;                &lt;dttm&gt;              &lt;dttm&gt;
-#&gt; 1 2016-10-29 14:52:01 2016-10-29 14:52:56
-#&gt; </div><div class='input'><span class='fu'>aq_locations</span>(<span class='kw'>city</span><span class='kw'>=</span><span class='st'>'Houston'</span>, <span class='kw'>parameter</span><span class='kw'>=</span><span class='st'>'co'</span>)</div><div class='output co'>#&gt; # A tibble: 7 × 18
-#&gt;                                location    city country sourceName count
-#&gt;                                   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt; &lt;int&gt;
-#&gt; 1               Clinton C403/C304/AH113 Houston      US      Texas  2877
-#&gt; 2 Hou.DeerPrk2 C35/235/1001/AFH139FP239 Houston      US      Texas  2859
-#&gt; 3              Houston North Loop C1052 Houston      US      Texas  2873
-#&gt; 4                UH Coastal Center C697 Houston      US      Texas  2716
-#&gt; 5                   UH Moody Tower C695 Houston      US      Texas  2660
-#&gt; 6                  UH West Liberty C699 Houston      US      Texas  2796
-#&gt; 7               UH WG Jones Forest C698 Houston      US      Texas  2906
-#&gt; # ... with 13 more variables: lastUpdated &lt;dttm&gt;, firstUpdated &lt;dttm&gt;,
-#&gt; #   latitude &lt;dbl&gt;, longitude &lt;dbl&gt;, pm25 &lt;lgl&gt;, pm10 &lt;lgl&gt;, no2 &lt;lgl&gt;,
-#&gt; #   so2 &lt;lgl&gt;, o3 &lt;lgl&gt;, co &lt;lgl&gt;, bc &lt;lgl&gt;, cityURL &lt;chr&gt;, locationURL &lt;chr&gt;
-#&gt; </div></pre>
+#&gt; 1 2016-12-16 10:24:21 2016-12-16 10:30:29</div><div class='input'><span class='fu'>aq_locations</span>(<span class='kw'>city</span><span class='kw'>=</span><span class='st'>'Houston'</span>, <span class='kw'>parameter</span><span class='kw'>=</span><span class='st'>'co'</span>)</div><div class='output co'>#&gt; # A tibble: 7 × 19
+#&gt;                                location    city country count sourceNames
+#&gt;                                   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;      &lt;list&gt;
+#&gt; 1               Clinton C403/C304/AH113 Houston      US  2877   &lt;chr [1]&gt;
+#&gt; 2 Hou.DeerPrk2 C35/235/1001/AFH139FP239 Houston      US  2859   &lt;chr [1]&gt;
+#&gt; 3              Houston North Loop C1052 Houston      US  2873   &lt;chr [1]&gt;
+#&gt; 4                UH Coastal Center C697 Houston      US  2716   &lt;chr [1]&gt;
+#&gt; 5                   UH Moody Tower C695 Houston      US  2660   &lt;chr [1]&gt;
+#&gt; 6                  UH West Liberty C699 Houston      US  2796   &lt;chr [1]&gt;
+#&gt; 7               UH WG Jones Forest C698 Houston      US  2906   &lt;chr [1]&gt;
+#&gt; # ... with 14 more variables: lastUpdated &lt;dttm&gt;, firstUpdated &lt;dttm&gt;,
+#&gt; #   sourceName &lt;chr&gt;, latitude &lt;dbl&gt;, longitude &lt;dbl&gt;, pm25 &lt;lgl&gt;, pm10 &lt;lgl&gt;,
+#&gt; #   no2 &lt;lgl&gt;, so2 &lt;lgl&gt;, o3 &lt;lgl&gt;, co &lt;lgl&gt;, bc &lt;lgl&gt;, cityURL &lt;chr&gt;,
+#&gt; #   locationURL &lt;chr&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
