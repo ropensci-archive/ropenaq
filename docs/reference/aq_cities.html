@@ -134,28 +134,34 @@ the URL-encoded name of the city (as in cityURL),
 not its name, should be used.</p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <h2 class="hasAnchor" id="examples">
+      <a class="anchor" href="#examples"></a>
+      Examples
+    </h2>
     <pre class="examples"><div class='input'><span class='no'>cities</span> <span class='kw'>&lt;-</span> <span class='fu'>aq_cities</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='st'>"IN"</span>)
 <span class='no'>cities</span></div><div class='output co'>#&gt; # A tibble: 35 × 5
 #&gt;          city country locations  count    cityURL
 #&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;  &lt;int&gt;      &lt;chr&gt;
-#&gt; 1        Agra      IN         1  30394       Agra
-#&gt; 2   Ahmedabad      IN         1  22875  Ahmedabad
-#&gt; 3  Aurangabad      IN         1  29546 Aurangabad
+#&gt; 1        Agra      IN         1  32841       Agra
+#&gt; 2   Ahmedabad      IN         1  26703  Ahmedabad
+#&gt; 3  Aurangabad      IN         1  36600 Aurangabad
 #&gt; 4  Barddhaman      IN         3   2470 Barddhaman
-#&gt; 5   Bengaluru      IN         5 120992  Bengaluru
-#&gt; 6  Chandrapur      IN         2  66817 Chandrapur
-#&gt; 7     Chennai      IN         4  79398    Chennai
+#&gt; 5   Bengaluru      IN         5 139797  Bengaluru
+#&gt; 6  Chandrapur      IN         2  77424 Chandrapur
+#&gt; 7     Chennai      IN         4  87417    Chennai
 #&gt; 8    Chittoor      IN         1   2013   Chittoor
-#&gt; 9       Delhi      IN        16 415826      Delhi
-#&gt; 10   Durgapur      IN         1  10508   Durgapur
-#&gt; # ... with 25 more rows</div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
+#&gt; 9       Delhi      IN        16 460335      Delhi
+#&gt; 10   Durgapur      IN         1  11218   Durgapur
+#&gt; # ... with 25 more rows
+#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
 #&gt;         name   license                  website  page limit found
 #&gt;       &lt;fctr&gt;    &lt;fctr&gt;                   &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    35</div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 2
+#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    35
+#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 2
 #&gt;             lastModif           queriedAt
 #&gt;                &lt;dttm&gt;              &lt;dttm&gt;
-#&gt; 1 2016-12-16 10:24:21 2016-12-16 10:30:27</div></pre>
+#&gt; 1 2017-01-15 08:54:37 2017-01-15 08:55:10
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

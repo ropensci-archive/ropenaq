@@ -1,5 +1,4 @@
 -   [ropenaq](#ropenaq)
--   [Special announcement for lovers of open air quality data](#special-announcement-for-lovers-of-open-air-quality-data)
 -   [Installation](#installation)
 -   [Introduction](#introduction)
 -   [Finding measurements availability](#finding-measurements-availability)
@@ -17,11 +16,6 @@ ropenaq
 =======
 
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ropenaq)](http://cran.r-project.org/package=ropenaq) [![Build Status](https://travis-ci.org/ropensci/ropenaq.svg?branch=master)](https://travis-ci.org/ropensci/ropenaq) [![Build status](https://ci.appveyor.com/api/projects/status/qurhlh0j8ra3qors?svg=true)](https://ci.appveyor.com/project/ropensci/ropenaq) [![codecov.io](https://codecov.io/github/ropensci/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropensci/Ropenaq?branch=master)
-
-Special announcement for lovers of open air quality data
-========================================================
-
-If you like OpenAQ work and want to support their efforts please vote for OpenAQ in the [Open Science Prize](http://event.capconcorp.com/wp/osp/vote-now/).
 
 Installation
 ============
@@ -83,46 +77,49 @@ kable(countries_table)
 
 | name                                       | code |  cities|  locations|     count|
 |:-------------------------------------------|:-----|-------:|----------:|---------:|
-| Austria                                    | AT   |     174|        174|    121987|
-| Australia                                  | AU   |      28|         28|   1053131|
-| Bosnia and Herzegovina                     | BA   |      11|         11|    244517|
-| Bangladesh                                 | BD   |       2|          2|      8094|
-| Belgium                                    | BE   |      98|         98|    161123|
-| Bahrain                                    | BH   |       1|          1|       349|
-| Brazil                                     | BR   |     144|        144|   1625091|
-| Canada                                     | CA   |     157|        157|    921017|
-| Chile                                      | CL   |     151|        151|   2402613|
-| China                                      | CN   |       6|          6|     61771|
-| Colombia                                   | CO   |       1|          1|      6570|
-| Czech Republic                             | CZ   |     102|        102|    143670|
-| Germany                                    | DE   |     433|        433|    212185|
-| Denmark                                    | DK   |      11|         11|     11818|
-| Spain                                      | ES   |     333|        333|    340946|
-| Ethiopia                                   | ET   |       2|          2|      3774|
-| Finland                                    | FI   |      50|         50|     11903|
+| Argentina                                  | AR   |       1|          1|      2448|
+| Austria                                    | AT   |     202|        202|    123499|
+| Australia                                  | AU   |      28|         28|   1127521|
+| Bosnia and Herzegovina                     | BA   |      11|         11|    273278|
+| Bangladesh                                 | BD   |       2|          2|      8812|
+| Belgium                                    | BE   |      98|         98|    192351|
+| Bahrain                                    | BH   |       1|          1|      1068|
+| Brazil                                     | BR   |     143|        143|   1743926|
+| Canada                                     | CA   |     157|        157|   1026452|
+| Chile                                      | CL   |     155|        155|   2583328|
+| China                                      | CN   |       6|          6|     65361|
+| Colombia                                   | CO   |       1|          1|      7288|
+| Czech Republic                             | CZ   |     102|        102|    172547|
+| Germany                                    | DE   |     436|        436|    272430|
+| Denmark                                    | DK   |      11|         11|     14988|
+| Spain                                      | ES   |     340|        340|    424751|
+| Ethiopia                                   | ET   |       2|          2|      5208|
+| Finland                                    | FI   |      50|         50|     22046|
 | France                                     | FR   |     462|        462|     52356|
-| United Kingdom                             | GB   |     160|        160|   2323983|
-| Gibraltar                                  | GI   |       3|          3|       560|
-| Croatia                                    | HR   |      15|         15|     16924|
-| Hungary                                    | HU   |      25|         25|      2096|
-| Indonesia                                  | ID   |       3|          3|     19901|
-| Ireland                                    | IE   |      11|         11|       699|
+| United Kingdom                             | GB   |     160|        160|   2561439|
+| Gibraltar                                  | GI   |       3|          3|      1167|
+| Croatia                                    | HR   |      15|         15|     19288|
+| Hungary                                    | HU   |      25|         25|      2581|
+| Indonesia                                  | ID   |       3|          3|     21337|
+| Ireland                                    | IE   |      11|         11|      1101|
 | Israel                                     | IL   |       1|          1|      1826|
-| India                                      | IN   |      89|         89|   2135175|
-| Macedonia, the Former Yugoslav Republic of | MK   |      15|         15|      6721|
-| Mongolia                                   | MN   |      12|         12|   1187824|
-| Mexico                                     | MX   |      48|         48|    912745|
+| India                                      | IN   |      89|         89|   2417355|
+| Macedonia, the Former Yugoslav Republic of | MK   |      15|         15|     13530|
+| Mongolia                                   | MN   |      12|         12|   1281484|
+| Mexico                                     | MX   |      48|         48|   1009459|
 | Nigeria                                    | NG   |       1|          1|      2541|
-| Netherlands                                | NL   |     110|        110|   2772414|
-| Norway                                     | NO   |      59|         59|     40777|
-| Peru                                       | PE   |      11|         11|    302799|
+| Netherlands                                | NL   |     110|        110|   2965286|
+| Norway                                     | NO   |      62|         62|    129269|
+| Peru                                       | PE   |      11|         11|    333820|
 | Philippines                                | PH   |       1|          1|       958|
-| Poland                                     | PL   |      16|         16|    512934|
+| Poland                                     | PL   |      16|         16|    547921|
 | Singapore                                  | SG   |       1|          1|      1275|
-| Thailand                                   | TH   |      63|         63|   1383771|
-| United States                              | US   |    1806|       1806|  13221025|
-| Viet Nam                                   | VN   |       3|          3|     16620|
-| Kosovo                                     | XK   |       1|          1|      6035|
+| Thailand                                   | TH   |      63|         63|   1481912|
+| Turkey                                     | TR   |     138|        138|    234862|
+| Taiwan, Province of China                  | TW   |      67|         67|    231057|
+| United States                              | US   |    1832|       1832|  14520200|
+| Viet Nam                                   | VN   |       3|          3|     18056|
+| Kosovo                                     | XK   |       1|          1|      6754|
 
 ``` r
 attr(countries_table, "meta")
@@ -131,7 +128,7 @@ attr(countries_table, "meta")
     ## # A tibble: 1 × 6
     ##         name   license                  website  page limit found
     ##       <fctr>    <fctr>                   <fctr> <int> <int> <int>
-    ## 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    40
+    ## 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    43
 
 ``` r
 attr(countries_table, "timestamp")
@@ -140,7 +137,7 @@ attr(countries_table, "timestamp")
     ## # A tibble: 1 × 2
     ##             lastModif           queriedAt
     ##                <dttm>              <dttm>
-    ## 1 2016-12-16 10:24:21 2016-12-16 10:29:48
+    ## 1 2017-01-15 08:54:37 2017-01-15 08:54:38
 
 The `aq_cities` function
 ------------------------
@@ -154,12 +151,12 @@ kable(head(cities_table))
 
 | city      | country |  locations|  count| cityURL   |
 |:----------|:--------|----------:|------:|:----------|
-| ABBEVILLE | US      |          1|   4216| ABBEVILLE |
-| Aberdeen  | GB      |          3|  38141| Aberdeen  |
-| Aberdeen  | US      |          2|  10506| Aberdeen  |
-| ADA       | US      |          1|  12458| ADA       |
-| ADAIR     | US      |          1|  19794| ADAIR     |
-| ADAMS     | US      |          2|  17127| ADAMS     |
+| ABBEVILLE | US      |          1|   4619| ABBEVILLE |
+| Aberdeen  | GB      |          3|  42006| Aberdeen  |
+| Aberdeen  | US      |          2|  11296| Aberdeen  |
+| ADA       | US      |          1|  13651| ADA       |
+| ADAIR     | US      |          1|  22974| ADAIR     |
+| ADAMS     | US      |          2|  19130| ADAMS     |
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
@@ -170,16 +167,16 @@ kable(cities_tableIndia)
 
 | city       | country |  locations|   count| cityURL    |
 |:-----------|:--------|----------:|-------:|:-----------|
-| Agra       | IN      |          1|   30394| Agra       |
-| Ahmedabad  | IN      |          1|   22875| Ahmedabad  |
-| Aurangabad | IN      |          1|   29546| Aurangabad |
+| Agra       | IN      |          1|   32841| Agra       |
+| Ahmedabad  | IN      |          1|   26703| Ahmedabad  |
+| Aurangabad | IN      |          1|   36600| Aurangabad |
 | Barddhaman | IN      |          3|    2470| Barddhaman |
-| Bengaluru  | IN      |          5|  120992| Bengaluru  |
-| Chandrapur | IN      |          2|   66817| Chandrapur |
-| Chennai    | IN      |          4|   79398| Chennai    |
+| Bengaluru  | IN      |          5|  139797| Bengaluru  |
+| Chandrapur | IN      |          2|   77424| Chandrapur |
+| Chennai    | IN      |          4|   87417| Chennai    |
 | Chittoor   | IN      |          1|    2013| Chittoor   |
-| Delhi      | IN      |         16|  415826| Delhi      |
-| Durgapur   | IN      |          1|   10508| Durgapur   |
+| Delhi      | IN      |         16|  460335| Delhi      |
+| Durgapur   | IN      |          1|   11218| Durgapur   |
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
@@ -201,7 +198,7 @@ kable(locations_chennai)
 
 | location                    | city    | country |  count| sourceNames       | lastUpdated | firstUpdated | sourceName        |  latitude|  longitude| pm25 | pm10  | no2   | so2   | o3    | co    | bc    | cityURL | locationURL                   |
 |:----------------------------|:--------|:--------|------:|:------------------|:------------|:-------------|:------------------|---------:|----------:|:-----|:------|:------|:------|:------|:------|:------|:--------|:------------------------------|
-| US Diplomatic Post: Chennai | Chennai | IN      |   8717| StateAir\_Chennai | 1481884200  | 1449869400   | StateAir\_Chennai |  13.08784|   80.27847| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | US+Diplomatic+Post%3A+Chennai |
+| US Diplomatic Post: Chennai | Chennai | IN      |   9434| StateAir\_Chennai | 1484465400  | 1449869400   | StateAir\_Chennai |  13.08784|   80.27847| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | US+Diplomatic+Post%3A+Chennai |
 
 Getting measurements
 ====================
@@ -220,12 +217,12 @@ kable(head(results_table))
 
 | location    | parameter |  value| unit  | country | city  | dateUTC             | dateLocal           |  latitude|  longitude| cityURL | locationURL |
 |:------------|:----------|------:|:------|:--------|:------|:--------------------|:--------------------|---------:|----------:|:--------|:------------|
-| Anand Vihar | pm25      |    137| µg/m³ | IN      | Delhi | 2016-12-16 09:55:00 | 2016-12-16 15:25:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    161| µg/m³ | IN      | Delhi | 2016-12-16 09:25:00 | 2016-12-16 14:55:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    161| µg/m³ | IN      | Delhi | 2016-12-16 08:55:00 | 2016-12-16 14:25:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    135| µg/m³ | IN      | Delhi | 2016-12-16 08:25:00 | 2016-12-16 13:55:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    135| µg/m³ | IN      | Delhi | 2016-12-16 07:55:00 | 2016-12-16 13:25:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
-| Anand Vihar | pm25      |    186| µg/m³ | IN      | Delhi | 2016-12-16 07:25:00 | 2016-12-16 12:55:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    370| µg/m³ | IN      | Delhi | 2017-01-13 16:40:00 | 2017-01-13 22:10:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    265| µg/m³ | IN      | Delhi | 2017-01-13 16:25:00 | 2017-01-13 21:55:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    265| µg/m³ | IN      | Delhi | 2017-01-13 15:55:00 | 2017-01-13 21:25:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    221| µg/m³ | IN      | Delhi | 2017-01-13 15:25:00 | 2017-01-13 20:55:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    221| µg/m³ | IN      | Delhi | 2017-01-13 14:55:00 | 2017-01-13 20:25:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
+| Anand Vihar | pm25      |    194| µg/m³ | IN      | Delhi | 2017-01-13 14:25:00 | 2017-01-13 19:55:00 |   28.6508|    77.3152| Delhi   | Anand+Vihar |
 
 One could also get all possible parameters in the same table.
 
@@ -241,11 +238,11 @@ kable(head(tableLatest))
 
 | location          | city                 | country |  latitude|  longitude| parameter |     value| lastUpdated         | unit  | sourceName | cityURL              | locationURL       |
 |:------------------|:---------------------|:--------|---------:|----------:|:----------|---------:|:--------------------|:------|:-----------|:---------------------|:------------------|
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |  5228.000| 2016-12-16 03:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |   108.000| 2016-12-16 03:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |     2.000| 2016-12-16 03:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |  2094.000| 2016-12-16 03:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |   242.000| 2016-12-16 03:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |  2194.000| 2017-01-15 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |    90.000| 2017-01-15 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |     5.000| 2017-01-15 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |   166.000| 2017-01-15 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |    78.000| 2017-01-15 08:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
 | 16th and Whitmore | Omaha-Council Bluffs | US      |  41.32247|  -95.93799| o3        |     0.001| 2016-11-01 13:00:00 | ppm   | AirNow     | Omaha-Council+Bluffs | 16th+and+Whitmore |
 
 Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
@@ -258,10 +255,10 @@ kable(head(tableLatest))
 | location    | city  | country |  latitude|  longitude| parameter |   value| lastUpdated         | unit  | sourceName  | cityURL | locationURL |
 |:------------|:------|:--------|---------:|----------:|:----------|-------:|:--------------------|:------|:------------|:--------|:------------|
 | Anand Vihar | Delhi | IN      |   28.6508|    77.3152| co        |  1300.0| 2016-03-21 14:45:00 | µg/m³ | Anand Vihar | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| no2       |     0.2| 2016-12-13 06:55:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| o3        |    11.0| 2016-12-16 09:55:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm10      |   359.0| 2016-12-16 09:55:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
-| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm25      |   137.0| 2016-12-16 09:55:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| no2       |   213.0| 2017-01-13 16:40:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| o3        |    12.4| 2017-01-13 16:40:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm10      |   891.0| 2017-01-13 16:40:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
+| Anand Vihar | Delhi | IN      |   28.6508|    77.3152| pm25      |   370.0| 2017-01-13 16:40:00 | µg/m³ | CPCB        | Delhi   | Anand+Vihar |
 | Anand Vihar | Delhi | IN      |   28.6508|    77.3152| so2       |    18.0| 2016-03-21 14:45:00 | µg/m³ | Anand Vihar | Delhi   | Anand+Vihar |
 
 Paging and limit
@@ -277,13 +274,13 @@ knitr::kable(how_many)
 
 | name       | license   | website                    |  page|  limit|  found|
 |:-----------|:----------|:---------------------------|-----:|------:|------:|
-| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  75763|
+| openaq-api | CC BY 4.0 | <https://docs.openaq.org/> |     1|    100|  84359|
 
 ``` r
 how_many$found
 ```
 
-    ## [1] 75763
+    ## [1] 84359
 
 Then one can write a loop over pages. Note that the maximal value of `limit` is 1000.
 
