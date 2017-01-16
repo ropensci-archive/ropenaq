@@ -282,7 +282,7 @@ how_many$found
 
     ## [1] 84359
 
-Then one can write a loop over pages. Note that the maximal value of `limit` is 1000.
+Then one can write a loop over pages. Note that the maximal value of `limit` is 10,000.
 
 ``` r
 meas <- NULL
