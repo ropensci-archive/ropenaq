@@ -5,7 +5,8 @@ Version: 0.1.3
 Date: 2016-09-08
 Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role = c("aut", "cre")),
              person("Andrew", "MacDonald", role = c("ctb"), comment = "Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
-             person("Andy ", "Teucher", role = c("ctb"), comment = "Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"))
+             person("Andy ", "Teucher", role = c("ctb"), comment = "Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
+             person("Mikayla ", "Murphy", role = c("ctb"))
 Description: Allows access to air quality data from the API of the OpenAQ platform <https://docs.openaq.org/>, with the different services the API offers (getting measurements for a given query, getting latest measurements, getting lists of available countries/cities/locations).
 License: GPL (>= 2)
 LazyData: TRUE
