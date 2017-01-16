@@ -26,7 +26,7 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{date_to}{Show results before a certain date. (character year-month-day, ex. '2015-12-20')}
 
-\item{limit}{Change the number of results returned, max is 1000.}
+\item{limit}{Change the number of results returned, max is 10000.}
 
 \item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
 

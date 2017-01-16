@@ -7,7 +7,7 @@
 aq_countries(limit = 100, page = 1)
 }
 \arguments{
-\item{limit}{Change the number of results returned, max is 1000.}
+\item{limit}{Change the number of results returned, max is 10000.}
 
 \item{page}{The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.}
 }

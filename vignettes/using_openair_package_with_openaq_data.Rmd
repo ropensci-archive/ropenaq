@@ -35,7 +35,6 @@ measurementsNL <- NULL
 # get all measurements for 2015
 # not very nice code regarding date sequences
 # but this way I get everything despite the limit
-# of 1000 measurements per call
 for(month in 9:12){
   dateFrom <- paste0("2015-", month, "-01")
   dateTo <- paste0("2015-", month+1, "-01")

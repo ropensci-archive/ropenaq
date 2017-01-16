@@ -20,7 +20,7 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{has_geo}{has_geo Filter out items that have or do not have geographic information.}
 
-\item{limit}{Change the number of results returned, max is 1000.}
+\item{limit}{Change the number of results returned, max is 10000.}
 
 \item{latitude}{Latitude of the center point (lat, lon) used to get measurements within a certain area.}
 

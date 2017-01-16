@@ -1,3 +1,7 @@
+# ropenaq 0.1.4
+
+* Thanks to Mikayla Murphy `ropenaq` functions now use the new maximal limit per call which is 10,000.
+
 # ropenaq 0.1.3
 
 * Now all functions outputs a single data.frame with meta and timestamp as attributes. It should be easier to deal with compared to the former format (a list of 3 data.frames).

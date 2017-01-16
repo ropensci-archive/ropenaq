@@ -10,3 +10,4 @@
 ^CONDUCT\.md$
 data_management.R
 ^cran-comments\.md$
+docs/

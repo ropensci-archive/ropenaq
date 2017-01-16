@@ -29,12 +29,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   if (!is.null(location)) {
     pagee <- 1
     locations <- NULL
-    nrows <- 1000
-    while(nrows == 1000){
+    nrows <- 10000
+    while(nrows == 10000){
       temp <- aq_locations(country = country,
                            city = city,
                            page = pagee,
-                           limit = 1000)
+                           limit = 10000)
       nrows <- nrow(temp)
       pagee <- pagee + 1
       locations <- dplyr::bind_rows(locations, temp)
@@ -52,11 +52,11 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   if (!is.null(city)) {
     pagee <- 1
     cities <- NULL
-    nrows <- 1000
-    while(nrows == 1000){
+    nrows <- 10000
+    while(nrows == 10000){
       temp <- aq_cities(country = country,
                         page = pagee,
-                        limit = 1000)
+                        limit = 10000)
       nrows <- nrow(temp)
       pagee <- pagee + 1
       cities <- dplyr::bind_rows(cities, temp)
@@ -88,13 +88,13 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
     pagee <- 1
     locations <- NULL
-    nrows <- 1000
-    while(nrows == 1000){
+    nrows <- 10000
+    while(nrows == 10000){
       temp <- aq_locations(country = country,
                            city = city,
                            page = pagee,
                            location = location,
-                           limit = 1000)
+                           limit = 10000)
       nrows <- nrow(temp)
       pagee <- pagee + 1
       locations <- dplyr::bind_rows(locations, temp)

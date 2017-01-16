@@ -13,7 +13,7 @@
 #' @param latitude Latitude of the center point (lat, lon) used to get measurements within a certain area.
 #' @param longitude Longitude of the center point (lat, lon) used to get measurements within a certain area.
 #' @param radius Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude
-#' @param limit Change the number of results returned, max is 1000.
+#' @param limit Change the number of results returned, max is 10000.
 #' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
 
 #' @details For queries involving a city or location argument,

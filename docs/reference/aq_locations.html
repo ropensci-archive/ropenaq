@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Providing data about distinct measurement locations. — aq_locations â€¢ ropenaq</title>
+<title>Providing data about distinct measurement locations. � aq_locations • ropenaq</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -102,7 +102,7 @@ If no parameter is given, all parameters are retrieved.</dd>
       <dt>has_geo</dt>
       <dd>has_geo Filter out items that have or do not have geographic information.</dd>
       <dt>limit</dt>
-      <dd>Change the number of results returned, max is 10,000.</dd>
+      <dd>Change the number of results returned, max is 10000.</dd>
       <dt>latitude</dt>
       <dd>Latitude of the center point (lat, lon) used to get measurements within a certain area.</dd>
       <dt>longitude</dt>
@@ -169,37 +169,31 @@ not its name, should be used.
   one day there is a city with the same name in another country.</p>
     
 
-    <h2 class="hasAnchor" id="examples">
-      <a class="anchor" href="#examples"></a>
-      Examples
-    </h2>
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>india_locations</span> <span class='kw'>&lt;-</span> <span class='fu'>aq_locations</span>(<span class='kw'>country</span><span class='kw'>=</span><span class='st'>'IN'</span>)
-<span class='no'>india_locations</span></div><div class='output co'>#&gt; # A tibble: 86 × 19
+<span class='no'>india_locations</span></div><div class='output co'>#&gt; # A tibble: 86 � 19
 #&gt;                        location       city country count sourceNames
 #&gt;                           &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;      &lt;list&gt;
-#&gt; 1         AAQMS Karve Road Pune       Pune      IN 62038   &lt;chr [1]&gt;
-#&gt; 2             Alandur Bus Depot    Chennai      IN 22762   &lt;chr [1]&gt;
-#&gt; 3                   Anand Vihar      Delhi      IN 55117   &lt;chr [2]&gt;
+#&gt; 1         AAQMS Karve Road Pune       Pune      IN 62314   &lt;chr [1]&gt;
+#&gt; 2             Alandur Bus Depot    Chennai      IN 22854   &lt;chr [1]&gt;
+#&gt; 3                   Anand Vihar      Delhi      IN 55141   &lt;chr [2]&gt;
 #&gt; 4                   AP Tirumala   Chittoor      IN  3172   &lt;chr [1]&gt;
 #&gt; 5                 Ardhali Bazar   Varanasi      IN 90463   &lt;chr [1]&gt;
-#&gt; 6                    BTM Layout  Bengaluru      IN 39661   &lt;chr [1]&gt;
-#&gt; 7         BWSSB Kadabesanahalli  Bengaluru      IN 26142   &lt;chr [1]&gt;
-#&gt; 8                Central School    Lucknow      IN 34508   &lt;chr [1]&gt;
-#&gt; 9                    Chandrapur Chandrapur      IN 59946   &lt;chr [1]&gt;
-#&gt; 10 City Railway Station - KSPCB  Bengaluru      IN 24797   &lt;chr [1]&gt;
+#&gt; 6                    BTM Layout  Bengaluru      IN 39934   &lt;chr [1]&gt;
+#&gt; 7         BWSSB Kadabesanahalli  Bengaluru      IN 26280   &lt;chr [1]&gt;
+#&gt; 8                Central School    Lucknow      IN 34644   &lt;chr [1]&gt;
+#&gt; 9                    Chandrapur Chandrapur      IN 60228   &lt;chr [1]&gt;
+#&gt; 10 City Railway Station - KSPCB  Bengaluru      IN 24818   &lt;chr [1]&gt;
 #&gt; # ... with 76 more rows, and 14 more variables: lastUpdated &lt;dttm&gt;,
 #&gt; #   firstUpdated &lt;dttm&gt;, sourceName &lt;chr&gt;, latitude &lt;dbl&gt;, longitude &lt;dbl&gt;,
 #&gt; #   pm25 &lt;lgl&gt;, pm10 &lt;lgl&gt;, no2 &lt;lgl&gt;, so2 &lt;lgl&gt;, o3 &lt;lgl&gt;, co &lt;lgl&gt;, bc &lt;lgl&gt;,
-#&gt; #   cityURL &lt;chr&gt;, locationURL &lt;chr&gt;
-#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
+#&gt; #   cityURL &lt;chr&gt;, locationURL &lt;chr&gt;</div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 � 6
 #&gt;         name   license                  website  page limit found
 #&gt;       &lt;fctr&gt;    &lt;fctr&gt;                   &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    86
-#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 2
+#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    86</div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 � 2
 #&gt;             lastModif           queriedAt
 #&gt;                &lt;dttm&gt;              &lt;dttm&gt;
-#&gt; 1 2017-01-15 08:54:37 2017-01-15 08:55:14
-#&gt; </div><div class='input'><span class='fu'>aq_locations</span>(<span class='kw'>city</span><span class='kw'>=</span><span class='st'>'Houston'</span>, <span class='kw'>parameter</span><span class='kw'>=</span><span class='st'>'co'</span>)</div><div class='output co'>#&gt; # A tibble: 7 × 19
+#&gt; 1 2017-01-16 08:15:08 2017-01-16 08:15:51</div><div class='input'><span class='fu'>aq_locations</span>(<span class='kw'>city</span><span class='kw'>=</span><span class='st'>'Houston'</span>, <span class='kw'>parameter</span><span class='kw'>=</span><span class='st'>'co'</span>)</div><div class='output co'>#&gt; # A tibble: 7 � 19
 #&gt;                                location    city country count sourceNames
 #&gt;                                   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;      &lt;list&gt;
 #&gt; 1               Clinton C403/C304/AH113 Houston      US  2877   &lt;chr [1]&gt;
@@ -212,8 +206,7 @@ not its name, should be used.
 #&gt; # ... with 14 more variables: lastUpdated &lt;dttm&gt;, firstUpdated &lt;dttm&gt;,
 #&gt; #   sourceName &lt;chr&gt;, latitude &lt;dbl&gt;, longitude &lt;dbl&gt;, pm25 &lt;lgl&gt;, pm10 &lt;lgl&gt;,
 #&gt; #   no2 &lt;lgl&gt;, so2 &lt;lgl&gt;, o3 &lt;lgl&gt;, co &lt;lgl&gt;, bc &lt;lgl&gt;, cityURL &lt;chr&gt;,
-#&gt; #   locationURL &lt;chr&gt;
-#&gt; </div></pre>
+#&gt; #   locationURL &lt;chr&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -232,7 +225,7 @@ not its name, should be used.
 
       <footer>
       <div class="copyright">
-  <p>Developed by MaÃ«lle Salmon.</p>
+  <p>Developed by Maëlle Salmon.</p>
 </div>
 
 <div class="pkgdown">

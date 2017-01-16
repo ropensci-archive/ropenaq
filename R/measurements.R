@@ -21,7 +21,7 @@
 #' @param attribution Logical, whether to add a column with attribution information
 #' @param averaging_period Logical, whether to add a column with averaging_period information
 #' @param source_name Logical, whether to add a column with source_name information
-#' @param limit Change the number of results returned, max is 1000.
+#' @param limit Change the number of results returned, max is 10000.
 #' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
 
 #'
