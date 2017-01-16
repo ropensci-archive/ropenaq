@@ -118,7 +118,7 @@ knitr::kable(how_many)
 how_many$found
 ```
 
-Then one can write a loop over pages. Note that the maximal value of `limit` is 1000.
+Then one can write a loop over pages. Note that the maximal value of `limit` is 10,000.
 
 ```{r, eval = FALSE}
 meas <- NULL

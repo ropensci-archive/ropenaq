@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Provides a simple listing of cities within the platform. � aq_cities • ropenaq</title>
+<title>Provides a simple listing of cities within the platform. — aq_cities â€¢ ropenaq</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -91,7 +91,7 @@
       <dt>country</dt>
       <dd>Limit results by a certain country -- a two-letters code see countries() for finding code based on name.</dd>
       <dt>limit</dt>
-      <dd>Change the number of results returned, max is 1000.</dd>
+      <dd>Change the number of results returned, max is 10,000.</dd>
       <dt>page</dt>
       <dd>The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.</dd>
     </dl>
@@ -139,7 +139,7 @@ not its name, should be used.</p>
       Examples
     </h2>
     <pre class="examples"><div class='input'><span class='no'>cities</span> <span class='kw'>&lt;-</span> <span class='fu'>aq_cities</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='st'>"IN"</span>)
-<span class='no'>cities</span></div><div class='output co'>#&gt; # A tibble: 35 � 5
+<span class='no'>cities</span></div><div class='output co'>#&gt; # A tibble: 35 × 5
 #&gt;          city country locations  count    cityURL
 #&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;  &lt;int&gt;      &lt;chr&gt;
 #&gt; 1        Agra      IN         1  32841       Agra
@@ -153,11 +153,11 @@ not its name, should be used.</p>
 #&gt; 9       Delhi      IN        16 460335      Delhi
 #&gt; 10   Durgapur      IN         1  11218   Durgapur
 #&gt; # ... with 25 more rows
-#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 � 6
+#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
 #&gt;         name   license                  website  page limit found
 #&gt;       &lt;fctr&gt;    &lt;fctr&gt;                   &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
 #&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    35
-#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 � 2
+#&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 2
 #&gt;             lastModif           queriedAt
 #&gt;                &lt;dttm&gt;              &lt;dttm&gt;
 #&gt; 1 2017-01-15 08:54:37 2017-01-15 08:55:10
@@ -180,7 +180,7 @@ not its name, should be used.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Maëlle Salmon.</p>
+  <p>Developed by MaÃ«lle Salmon.</p>
 </div>
 
 <div class="pkgdown">

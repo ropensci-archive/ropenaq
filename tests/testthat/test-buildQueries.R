@@ -39,8 +39,8 @@ test_that("The format of date_from and date_to are checked", {
   expect_error(aq_measurements(date_to="2014-12-29", date_from="2015-12-29"), "The start date must be smaller than the end date.")
 })
 
-test_that("An error is thrown is limit>1000",{
-  expect_error(aq_measurements(has_geo=TRUE, limit=9999999, country="US"), "limit cannot be more than 1000")
+test_that("An error is thrown is limit>10,000",{
+  expect_error(aq_measurements(has_geo=TRUE, limit=9999999, country="US"), "limit cannot be more than 10,000")
 })
 
 test_that("Errors are thrown if the geographical arguments are wrong",{

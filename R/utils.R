@@ -20,8 +20,8 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        page = NULL){
   # limit
   if (!is.null(limit)) {
-    if (limit > 1000) {
-      stop(call. = FALSE, "limit cannot be more than 1000")
+    if (limit > 10000) {
+      stop(call. = FALSE, "limit cannot be more than 10,000")
     }
   }
 
