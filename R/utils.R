@@ -214,13 +214,38 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   return(argsList)
 }
 
+############################################################
+#                                                          #
+#                       check status                       ####
+#                                                          #
+############################################################
+get_status <- function(){
+  status <- httr::GET(url = "https://api.openaq.org/status")
+  # convert the http error to a R error
+  httr::stop_for_status(status)
+  status <- httr::content(status)
+  return(status$results$healthStatus)
+  }
+
 ######################################################################################
 # does the query and then parses it
 getResults <- function(urlAQ, argsList){
   page <- httr::GET(url = urlAQ,
                     query = argsList)
-  # convert the http error to a R error
-  httr::stop_for_status(page)
+
+  try_number <- 1
+  while(page$status_code >= 400 && try_number < 6) {status <- get_status()
+  if(status %in% c("green", "yellow")){
+    message(paste0("Server returned nothing, trying again, try number", try_number))
+    Sys.sleep(2^try_number)
+    output <- httr::GET(url = urlAQ,
+                        query = argsList)
+    try_number <- try_number + 1
+  }else{
+    stop("uh oh, the OpenAQ API seems to be having some issues, try again later")
+  }
+
+  }
   contentPage <- httr::content(page, as = "text")
   # parse the data
   output <- jsonlite::fromJSON(contentPage,
