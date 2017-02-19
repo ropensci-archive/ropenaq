@@ -23,7 +23,6 @@ test_that("cities has the right columns", {
   expect_true(all(names(meta) == c("name", "license",
                                    "website", "page",
                                    "limit", "found")))
-  expect_is(attr(tableRes, "timestamp")$lastModif, "POSIXt")
   expect_is(attr(tableRes, "timestamp")$queriedAt, "POSIXt")
 
 })

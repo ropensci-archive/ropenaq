@@ -259,7 +259,6 @@ getResults <- function(urlAQ, argsList){
 
   #get the time stamps
   timestamp <- dplyr::tbl_df(data.frame(
-    lastModif = func_date_headers(httr::headers(page)$"last-modified"),
     queriedAt = func_date_headers(httr::headers(page)$date)))
 
   attr(results, "meta") <- meta

@@ -32,6 +32,5 @@ test_that("locations has the right columns", {
   expect_true(all(names(meta) == c("name", "license",
                                    "website", "page",
                                    "limit", "found")))
-  expect_is(attr(output, "timestamp")$lastModif, "POSIXt")
   expect_is(attr(output, "timestamp")$queriedAt, "POSIXt")
 })
