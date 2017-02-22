@@ -228,8 +228,10 @@ get_status <- function(){
   }
 
 ######################################################################################
-get_results <- function(urlAQ, argsList){
+# gets and parses
+getResults <- function(urlAQ, argsList){
   client <- crul::HttpClient$new(url = urlAQ)
+  argsList <- Filter(Negate(is.null), argsList)
   res <- client$get(query = argsList)
   while(res$status_code >= 400 && try_number < 6) {status <- get_status()
   if(status %in% c("green", "yellow")){
@@ -242,7 +244,7 @@ get_results <- function(urlAQ, argsList){
   }
 
   }
-  contentPage <- res$parse()
+  contentPage <- suppressMessages(res$parse())
   # parse the data
   output <- jsonlite::fromJSON(contentPage)
 
@@ -251,49 +253,18 @@ get_results <- function(urlAQ, argsList){
   # get the meta
   meta <- dplyr::tbl_df(
     as.data.frame(output$meta))
-
-
-
-  }
-
-# does the query and then parses it
-getResults <- function(urlAQ, argsList){
-  page <- httr::GET(url = urlAQ,
-                    query = argsList)
-
-  try_number <- 1
-  while(page$status_code >= 400 && try_number < 6) {status <- get_status()
-  if(status %in% c("green", "yellow")){
-    message(paste0("Server returned nothing, trying again, try number", try_number))
-    Sys.sleep(2^try_number)
-    output <- httr::GET(url = urlAQ,
-                        query = argsList)
-    try_number <- try_number + 1
-  }else{
-    stop("uh oh, the OpenAQ API seems to be having some issues, try again later")
-  }
-
-  }
-  contentPage <- httr::content(page, as = "text")
-  # parse the data
-  output <- jsonlite::fromJSON(contentPage,
-                               flatten =TRUE)
-
-  results <- dplyr::tbl_df(output$results)
-
-  # get the meta
-  meta <- dplyr::tbl_df(
-    as.data.frame(output$meta))
-
   #get the time stamps
   timestamp <- dplyr::tbl_df(data.frame(
-    queriedAt = func_date_headers(httr::headers(page)$date)))
+    queriedAt = func_date_headers(res$response_headers$date)))
 
   attr(results, "meta") <- meta
   attr(results, "timestamp") <- timestamp
 
   return(results)
-}
+
+  }
+
+
 
 ######################################################################################
 # for getting URL encoded versions of city and locations
