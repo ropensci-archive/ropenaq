@@ -228,6 +228,34 @@ get_status <- function(){
   }
 
 ######################################################################################
+get_results <- function(urlAQ, argsList){
+  client <- crul::HttpClient$new(url = urlAQ)
+  res <- client$get(query = argsList)
+  while(res$status_code >= 400 && try_number < 6) {status <- get_status()
+  if(status %in% c("green", "yellow")){
+    message(paste0("Server returned nothing, trying again, try number", try_number))
+    Sys.sleep(2^try_number)
+    res <- client$get(query = argsList)
+    try_number <- try_number + 1
+  }else{
+    stop("uh oh, the OpenAQ API seems to be having some issues, try again later")
+  }
+
+  }
+  contentPage <- res$parse()
+  # parse the data
+  output <- jsonlite::fromJSON(contentPage)
+
+  results <- dplyr::tbl_df(output$results)
+
+  # get the meta
+  meta <- dplyr::tbl_df(
+    as.data.frame(output$meta))
+
+
+
+  }
+
 # does the query and then parses it
 getResults <- function(urlAQ, argsList){
   page <- httr::GET(url = urlAQ,

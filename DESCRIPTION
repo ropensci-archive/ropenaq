@@ -23,7 +23,8 @@ Suggests: knitr,
     animation,
     rworldmap,
     ggmap,
-    viridis
+    viridis,
+    crul
 VignetteBuilder: knitr
 Imports: httr,
   lubridate,
