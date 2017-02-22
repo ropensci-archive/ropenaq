@@ -3,7 +3,6 @@ library("ropenaq")
 #################################################################################################
 context("buildQueries")
 #################################################################################################
-query <- paste0(base_url(), "measurements?page=1")
 test_that("Country, city and location are checked for consistency", {
   skip_on_cran()
   expect_error(aq_measurements(country="PANEM"), "not available within the platform")
