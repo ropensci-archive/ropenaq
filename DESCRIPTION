@@ -23,10 +23,9 @@ Suggests: knitr,
     animation,
     rworldmap,
     ggmap,
-    viridis,
-    crul
+    viridis
 VignetteBuilder: knitr
-Imports: httr,
+Imports: crul,
   lubridate,
   dplyr,
   jsonlite,

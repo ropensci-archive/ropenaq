@@ -2,7 +2,6 @@
 #'
 #' @importFrom lazyeval interp
 #' @importFrom dplyr mutate_ select_ "%>%" tbl_df
-#' @importFrom httr GET content
 #' @importFrom jsonlite fromJSON
 #' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
 #' @param limit Change the number of results returned, max is 10000.

@@ -42,7 +42,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     if (!(location %in% locations$locationURL)) {# nolint
       stop(call. = FALSE, "This location/city/country combination is not available within the platform. See ?locations")# nolint
     }
-    # make sure it won't be re-encoded by httr
+    # make sure it won't be re-encoded
     Encoding(location) <- "UTF-8"
     class(location) <- c("character", "AsIs")
   }
@@ -65,7 +65,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     if (!(city %in% cities$cityURL)) {# nolint
       stop(call. = FALSE, paste0("This city/country combination is not available within the platform. See ?cities."))# nolint
     }
-    # make sure it won't be re-encoded by httr
+    # make sure it won't be re-encoded
     Encoding(city) <- "UTF-8"
     class(city) <- c("character", "AsIs")
   }
@@ -220,10 +220,10 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 #                                                          #
 ############################################################
 get_status <- function(){
-  status <- httr::GET(url = "https://api.openaq.org/status")
-  # convert the http error to a R error
-  httr::stop_for_status(status)
-  status <- httr::content(status)
+  client <- crul::HttpClient$new(url = "https://api.openaq.org/status")
+  status <- client$get()
+  status <- suppressMessages(status$parse())
+  status <- jsonlite::fromJSON(status)
   return(status$results$healthStatus)
   }
 
@@ -248,7 +248,36 @@ getResults <- function(urlAQ, argsList){
   # parse the data
   output <- jsonlite::fromJSON(contentPage)
 
-  results <- dplyr::tbl_df(output$results)
+  coordinates <- output$results$coordinates
+  date <- output$results$date
+  averagingPeriod <- output$results$averagingPeriod
+
+  if(!is.null(date)){
+    date <- rename_(date, date.utc = "utc")
+    date <- rename_(date, date.local = "local")
+
+  }
+  if(!is.null(averagingPeriod)){
+    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.unit = "unit")
+    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.value = "value")
+
+  }
+  results <- output$results
+
+  if("averagingPeriod" %in% names(results)){
+    results <- dplyr::select_(results, quote(- averagingPeriod))
+  }
+  if("coordinates" %in% names(results)){
+    results <- dplyr::select_(results, quote(- coordinates))
+  }
+  if("date" %in% names(results)){
+    results <- dplyr::select_(results, quote(- date))
+  }
+  results <- dplyr::bind_cols(results, coordinates)
+  results <- dplyr::bind_cols(results, date)
+  results <- dplyr::bind_cols(results, averagingPeriod)
+
+  results <- dplyr::tbl_df(results)
 
   # get the meta
   meta <- dplyr::tbl_df(

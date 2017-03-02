@@ -1,3 +1,7 @@
+# ropenaq 0.2.0
+
+* The httr dependency has been replaced with crul.
+
 # ropenaq 0.1.4
 
 * Thanks to Mikayla Murphy `ropenaq` functions now use the new maximal limit per call which is 10,000.

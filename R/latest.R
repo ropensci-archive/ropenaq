@@ -1,6 +1,5 @@
 #' Provides the latest value of each available parameter for every location in the system.
 #'
-#' @importFrom httr GET content
 #' @importFrom tidyr unnest
 #' @importFrom lubridate ymd_hms
 #' @importFrom dplyr bind_rows tbl_df "%>%"

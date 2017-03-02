@@ -4,7 +4,6 @@
 #' @importFrom lazyeval interp
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom jsonlite fromJSON
-#' @importFrom httr GET content
 #' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
 #' @param city Limit results by a certain city.
 #' @param location Limit results by a certain location.
