@@ -58,7 +58,7 @@
 aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
                          parameter = NULL, has_geo = NULL, limit = 100,
                          latitude = NULL, longitude = NULL, radius = NULL,
-                         page = 1) {
+                         page = NULL) {
 
   ####################################################
   # BUILD QUERY base URL

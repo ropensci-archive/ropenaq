@@ -8,7 +8,7 @@ aq_measurements(country = NULL, city = NULL, location = NULL,
   parameter = NULL, has_geo = NULL, date_from = NULL, date_to = NULL,
   limit = 100, value_from = NULL, latitude = NULL, longitude = NULL,
   radius = NULL, attribution = FALSE, averaging_period = FALSE,
-  source_name = FALSE, value_to = NULL, page = 1)
+  source_name = FALSE, value_to = NULL, page = NULL)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}

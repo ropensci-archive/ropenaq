@@ -6,7 +6,7 @@
 \usage{
 aq_locations(country = NULL, city = NULL, location = NULL,
   parameter = NULL, has_geo = NULL, limit = 100, latitude = NULL,
-  longitude = NULL, radius = NULL, page = 1)
+  longitude = NULL, radius = NULL, page = NULL)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}

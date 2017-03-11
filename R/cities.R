@@ -37,7 +37,7 @@
 #' attr(cities, "meta")
 #' attr(cities, "timestamp")
 aq_cities <- function(country = NULL, limit = 100,
-                       page = 1) {# nolint
+                       page = NULL) {# nolint
   ####################################################
   # BUILD QUERY
   urlAQ <- paste0(base_url(), "cities")

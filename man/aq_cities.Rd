@@ -4,7 +4,7 @@
 \alias{aq_cities}
 \title{Provides a simple listing of cities within the platform.}
 \usage{
-aq_cities(country = NULL, limit = 100, page = 1)
+aq_cities(country = NULL, limit = 100, page = NULL)
 }
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}

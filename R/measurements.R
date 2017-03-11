@@ -75,7 +75,7 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                          latitude = NULL, longitude = NULL, radius = NULL,
                          attribution = FALSE, averaging_period = FALSE,
                          source_name = FALSE,
-                         value_to = NULL, page = 1) {
+                         value_to = NULL, page = NULL) {
 
     ####################################################
     # BUILD QUERY base URL
