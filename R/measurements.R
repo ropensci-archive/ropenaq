@@ -71,7 +71,7 @@
 
 aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolint
                          parameter = NULL, has_geo = NULL, date_from = NULL,
-                         date_to = NULL, limit = 100, value_from = NULL,
+                         date_to = NULL, limit = 10000, value_from = NULL,
                          latitude = NULL, longitude = NULL, radius = NULL,
                          attribution = FALSE, averaging_period = FALSE,
                          source_name = FALSE,

@@ -6,7 +6,7 @@ context("locations")
 
 test_that("locations returns a data.frame (tbl_df)", {
   skip_on_cran()
-  output <- aq_locations(country="IN")
+  output <- aq_locations(page = 1, country="IN")
   expect_that(output, is_a("tbl_df"))
   expect_that(attr(output, "meta"), is_a("tbl_df"))
   expect_that(attr(output, "timestamp"), is_a("tbl_df"))
@@ -14,7 +14,7 @@ test_that("locations returns a data.frame (tbl_df)", {
 
 test_that("locations has the right columns", {
   skip_on_cran()
-  output <- aq_locations(country="IN")
+  output <- aq_locations(page = 1, country="IN")
   tableRes <- output
   expect_true(class(tableRes$location) == "character")
   expect_true(class(tableRes$sourceName) == "character")

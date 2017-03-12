@@ -5,19 +5,19 @@ context("latest")
 #################################################################################################
 test_that("latest returns a list of 3 data.frames (tbl_df)", {
   skip_on_cran()
-  output <- aq_latest()
+  output <- aq_latest(page = 1)
   expect_that(output, is_a("tbl_df"))
   expect_that(attr(output, "meta"), is_a("tbl_df"))
   expect_that(attr(output, "timestamp"), is_a("tbl_df"))
-  expect_that(aq_latest(latitude = 0, longitude = 0, radius = 10000000),
+  expect_that(aq_latest(page = 1, latitude = 0, longitude = 0, radius = 10000000),
               is_a("tbl_df"))
-  expect_that(aq_latest(latitude = 0, longitude = 0),
+  expect_that(aq_latest(page = 1, latitude = 0, longitude = 0),
               is_a("tbl_df"))
 })
 
 test_that("latest has the right columns", {
   skip_on_cran()
-  output <- aq_latest()
+  output <- aq_latest(page = 1)
   tableRes <- output
   expect_true(all(names(tableRes) == c("location",
                                        "city",

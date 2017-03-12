@@ -230,6 +230,15 @@ get_status <- function(){
 ######################################################################################
 # gets and parses
 getResults <- function(urlAQ, argsList){
+  if(!is.null(argsList$page)){
+    getResults_bypage(urlAQ, argsList)
+  }else{
+    getResults_bymorepages(urlAQ, argsList)
+  }
+
+}
+getResults_bypage <- function(urlAQ, argsList){
+
   client <- crul::HttpClient$new(url = urlAQ)
   argsList <- Filter(Negate(is.null), argsList)
   res <- client$get(query = argsList)
@@ -244,56 +253,33 @@ getResults <- function(urlAQ, argsList){
   }
 
   }
-  contentPage <- suppressMessages(res$parse())
-  # parse the data
-  output <- jsonlite::fromJSON(contentPage)
-
-  coordinates <- output$results$coordinates
-  date <- output$results$date
-  averagingPeriod <- output$results$averagingPeriod
-
-  if(!is.null(date)){
-    date <- rename_(date, date.utc = "utc")
-    date <- rename_(date, date.local = "local")
-
-  }
-  if(!is.null(averagingPeriod)){
-    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.unit = "unit")
-    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.value = "value")
-
-  }
-  results <- output$results
-
-  if("averagingPeriod" %in% names(results)){
-    results <- dplyr::select_(results, quote(- averagingPeriod))
-  }
-  if("coordinates" %in% names(results)){
-    results <- dplyr::select_(results, quote(- coordinates))
-  }
-  if("date" %in% names(results)){
-    results <- dplyr::select_(results, quote(- date))
-  }
-  results <- dplyr::bind_cols(results, coordinates)
-  results <- dplyr::bind_cols(results, date)
-  results <- dplyr::bind_cols(results, averagingPeriod)
-
-  results <- dplyr::tbl_df(results)
-
-  # get the meta
-  meta <- dplyr::tbl_df(
-    as.data.frame(output$meta))
-  #get the time stamps
-  timestamp <- dplyr::tbl_df(data.frame(
-    queriedAt = func_date_headers(res$response_headers$date)))
-
-  attr(results, "meta") <- meta
-  attr(results, "timestamp") <- timestamp
-
+  results <- treat_res(res)
   return(results)
 
   }
 
-
+getResults_bymorepages <- function(urlAQ, argsList){
+  # find number of total pages
+  argsList2 <- argsList
+  argsList2$page <- 1
+  count <- getResults_bypage(urlAQ, argsList2)
+  url <- attr(count, "url")
+  url <- gsub("page=1", "page=", url)
+  count <- attr(count, "meta")$found
+  no_pages <- ceiling(count/10000)
+  if(no_pages == 1){
+    return(getResults_bypage(urlAQ, argsList))
+  }else{
+    urls <- unlist(vapply(1:no_pages,
+                          add_page, url = url,
+                          FUN.VALUE = ""))
+    # 10 urls by request
+    urls <- split(urls, ceiling(seq_along(urls)/10))
+    requests <- lapply(urls, create_async)
+    res_list <- lapply(requests, get_res)
+    dplyr::bind_rows(res_list)
+  }
+}
 
 ######################################################################################
 # for getting URL encoded versions of city and locations
@@ -374,4 +360,68 @@ func_date_headers <- function(date){
   date <- gsub("Nov", "11", date)
   date <- gsub("Dec", "12", date)
   lubridate::dmy_hms(date, tz = "GMT")
+}
+
+
+add_page <- function(page, url){
+  gsub("page=", paste0("page=", page), url)
+}
+
+treat_res <- function(res){
+  contentPage <- suppressMessages(res$parse())
+  # parse the data
+  output <- jsonlite::fromJSON(contentPage)
+
+  coordinates <- output$results$coordinates
+  date <- output$results$date
+  averagingPeriod <- output$results$averagingPeriod
+
+  if(!is.null(date)){
+    date <- rename_(date, date.utc = "utc")
+    date <- rename_(date, date.local = "local")
+
+  }
+  if(!is.null(averagingPeriod)){
+    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.unit = "unit")
+    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.value = "value")
+
+  }
+  results <- output$results
+
+  if("averagingPeriod" %in% names(results)){
+    results <- dplyr::select_(results, quote(- averagingPeriod))
+  }
+  if("coordinates" %in% names(results)){
+    results <- dplyr::select_(results, quote(- coordinates))
+  }
+  if("date" %in% names(results)){
+    results <- dplyr::select_(results, quote(- date))
+  }
+  results <- dplyr::bind_cols(results, coordinates)
+  results <- dplyr::bind_cols(results, date)
+  results <- dplyr::bind_cols(results, averagingPeriod)
+
+  results <- dplyr::tbl_df(results)
+
+  # get the meta
+  meta <- dplyr::tbl_df(
+    as.data.frame(output$meta))
+  #get the time stamps
+  timestamp <- dplyr::tbl_df(data.frame(
+    queriedAt = func_date_headers(res$response_headers$date)))
+
+  attr(results, "meta") <- meta
+  attr(results, "timestamp") <- timestamp
+  attr(results, "url") <- res$url
+  return(results)
+}
+
+
+create_async <- function(urls){
+  crul::Async$new(urls = urls)
+}
+
+get_res <- function(async){
+  res <- async$get()
+  lapply(res, treat_res) %>% bind_rows()
 }
