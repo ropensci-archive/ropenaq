@@ -28,7 +28,7 @@
 #' countries
 #' attr(countries, "meta")
 #' attr(countries, "timestamp")
-aq_countries <- function(limit = 100,
+aq_countries <- function(limit = 10000,
                          page = NULL) {# nolint
   ####################################################
   # BUILD QUERY base URL

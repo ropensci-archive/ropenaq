@@ -84,7 +84,7 @@
     <p>Provides a simple listing of countries within the platform.</p>
     
 
-    <pre><span class='fu'>aq_countries</span>(<span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
+    <pre><span class='fu'>aq_countries</span>(<span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -133,28 +133,28 @@ the code of the country, not its name, should be used.</p>
       Examples
     </h2>
     <pre class="examples"><div class='input'><span class='no'>countries</span> <span class='kw'>&lt;-</span> <span class='fu'>aq_countries</span>()
-<span class='no'>countries</span></div><div class='output co'>#&gt; # A tibble: 46 × 5
+<span class='no'>countries</span></div><div class='output co'>#&gt; # A tibble: 47 × 5
 #&gt;                      name  code cities locations   count
-#&gt; *                   &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;     &lt;int&gt;   &lt;int&gt;
+#&gt;                     &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;     &lt;int&gt;   &lt;int&gt;
 #&gt; 1               Argentina    AR      1         1    2448
-#&gt; 2                 Austria    AT    370       370  149732
-#&gt; 3               Australia    AU     56        56 1217398
-#&gt; 4  Bosnia and Herzegovina    BA     11        11  305480
-#&gt; 5              Bangladesh    BD      2         2    9658
-#&gt; 6                 Belgium    BE     98        98  200781
-#&gt; 7                 Bahrain    BH      1         1    1913
-#&gt; 8                  Brazil    BR    144       144 1886225
-#&gt; 9                  Canada    CA    157       157 1147776
-#&gt; 10                  Chile    CL    158       158 2767623
-#&gt; # ... with 36 more rows
+#&gt; 2                 Austria    AT    370       370  355343
+#&gt; 3               Australia    AU     56        56 1309978
+#&gt; 4  Bosnia and Herzegovina    BA     11        11  324443
+#&gt; 5              Bangladesh    BD      2         2   10157
+#&gt; 6                 Belgium    BE     98        98  311834
+#&gt; 7                 Bahrain    BH      1         1    2411
+#&gt; 8                  Brazil    BR    147       147 1970499
+#&gt; 9                  Canada    CA    157       157 1220901
+#&gt; 10                  Chile    CL    162       162 2885359
+#&gt; # ... with 37 more rows
 #&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>countries</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
 #&gt;         name   license                  website  page limit found
 #&gt;       &lt;fctr&gt;    &lt;fctr&gt;                   &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    46
+#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    47
 #&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>countries</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 1
 #&gt;             queriedAt
 #&gt;                &lt;dttm&gt;
-#&gt; 1 2017-02-19 14:12:00
+#&gt; 1 2017-03-12 14:11:05
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -86,6 +86,7 @@
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"> </a>Introduction</h1>
 <p>This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <a href="https://openaq.org/" class="uri">https://openaq.org/</a> and see the API documentation at <a href="https://docs.openaq.org/" class="uri">https://docs.openaq.org/</a>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the <code>dplyr</code> package: all output tables are data.frame (dplyr “tbl_df”) objects, that can be further processed and analysed.</p>
+<p>Check out <a href="https://ropensci.org/blog/blog/2017/02/21/ropenaq">this blog post</a> about OpenAQ.</p>
 </div>
 <div id="finding-measurements-availability" class="section level1">
 <h1 class="hasAnchor">
@@ -120,168 +121,168 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="left">AT</td>
 <td align="right">370</td>
 <td align="right">370</td>
-<td align="right">149732</td>
+<td align="right">355343</td>
 </tr>
 <tr class="odd">
 <td align="left">Australia</td>
 <td align="left">AU</td>
 <td align="right">56</td>
 <td align="right">56</td>
-<td align="right">1217398</td>
+<td align="right">1309978</td>
 </tr>
 <tr class="even">
 <td align="left">Bosnia and Herzegovina</td>
 <td align="left">BA</td>
 <td align="right">11</td>
 <td align="right">11</td>
-<td align="right">305480</td>
+<td align="right">324443</td>
 </tr>
 <tr class="odd">
 <td align="left">Bangladesh</td>
 <td align="left">BD</td>
 <td align="right">2</td>
 <td align="right">2</td>
-<td align="right">9658</td>
+<td align="right">10157</td>
 </tr>
 <tr class="even">
 <td align="left">Belgium</td>
 <td align="left">BE</td>
 <td align="right">98</td>
 <td align="right">98</td>
-<td align="right">200781</td>
+<td align="right">311834</td>
 </tr>
 <tr class="odd">
 <td align="left">Bahrain</td>
 <td align="left">BH</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">1913</td>
+<td align="right">2411</td>
 </tr>
 <tr class="even">
 <td align="left">Brazil</td>
 <td align="left">BR</td>
-<td align="right">144</td>
-<td align="right">144</td>
-<td align="right">1886225</td>
+<td align="right">147</td>
+<td align="right">147</td>
+<td align="right">1970499</td>
 </tr>
 <tr class="odd">
 <td align="left">Canada</td>
 <td align="left">CA</td>
 <td align="right">157</td>
 <td align="right">157</td>
-<td align="right">1147776</td>
+<td align="right">1220901</td>
 </tr>
 <tr class="even">
 <td align="left">Chile</td>
 <td align="left">CL</td>
-<td align="right">158</td>
-<td align="right">158</td>
-<td align="right">2767623</td>
+<td align="right">162</td>
+<td align="right">162</td>
+<td align="right">2885359</td>
 </tr>
 <tr class="odd">
 <td align="left">China</td>
 <td align="left">CN</td>
 <td align="right">6</td>
 <td align="right">6</td>
-<td align="right">69586</td>
+<td align="right">72081</td>
 </tr>
 <tr class="even">
 <td align="left">Colombia</td>
 <td align="left">CO</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">8133</td>
+<td align="right">8632</td>
 </tr>
 <tr class="odd">
 <td align="left">Czech Republic</td>
 <td align="left">CZ</td>
 <td align="right">102</td>
 <td align="right">102</td>
-<td align="right">175238</td>
+<td align="right">221773</td>
 </tr>
 <tr class="even">
 <td align="left">Germany</td>
 <td align="left">DE</td>
-<td align="right">651</td>
-<td align="right">651</td>
-<td align="right">331497</td>
+<td align="right">652</td>
+<td align="right">652</td>
+<td align="right">903897</td>
 </tr>
 <tr class="odd">
 <td align="left">Denmark</td>
 <td align="left">DK</td>
 <td align="right">13</td>
 <td align="right">13</td>
-<td align="right">19059</td>
+<td align="right">29818</td>
 </tr>
 <tr class="even">
 <td align="left">Spain</td>
 <td align="left">ES</td>
-<td align="right">555</td>
-<td align="right">555</td>
-<td align="right">512576</td>
+<td align="right">643</td>
+<td align="right">643</td>
+<td align="right">1077506</td>
 </tr>
 <tr class="odd">
 <td align="left">Ethiopia</td>
 <td align="left">ET</td>
 <td align="right">2</td>
 <td align="right">2</td>
-<td align="right">6900</td>
+<td align="right">7895</td>
 </tr>
 <tr class="even">
 <td align="left">Finland</td>
 <td align="left">FI</td>
 <td align="right">68</td>
 <td align="right">68</td>
-<td align="right">24846</td>
+<td align="right">67407</td>
 </tr>
 <tr class="odd">
 <td align="left">France</td>
 <td align="left">FR</td>
-<td align="right">598</td>
-<td align="right">598</td>
-<td align="right">89481</td>
+<td align="right">601</td>
+<td align="right">601</td>
+<td align="right">639038</td>
 </tr>
 <tr class="even">
 <td align="left">United Kingdom</td>
 <td align="left">GB</td>
-<td align="right">160</td>
-<td align="right">160</td>
-<td align="right">2842151</td>
+<td align="right">162</td>
+<td align="right">162</td>
+<td align="right">3013245</td>
 </tr>
 <tr class="odd">
 <td align="left">Gibraltar</td>
 <td align="left">GI</td>
 <td align="right">3</td>
 <td align="right">3</td>
-<td align="right">1606</td>
+<td align="right">4215</td>
 </tr>
 <tr class="even">
 <td align="left">Croatia</td>
 <td align="left">HR</td>
-<td align="right">31</td>
-<td align="right">31</td>
-<td align="right">20930</td>
+<td align="right">32</td>
+<td align="right">32</td>
+<td align="right">38995</td>
 </tr>
 <tr class="odd">
 <td align="left">Hungary</td>
 <td align="left">HU</td>
 <td align="right">25</td>
 <td align="right">25</td>
-<td align="right">2581</td>
+<td align="right">22259</td>
 </tr>
 <tr class="even">
 <td align="left">Indonesia</td>
 <td align="left">ID</td>
 <td align="right">3</td>
 <td align="right">3</td>
-<td align="right">23027</td>
+<td align="right">24023</td>
 </tr>
 <tr class="odd">
 <td align="left">Ireland</td>
 <td align="left">IE</td>
 <td align="right">12</td>
 <td align="right">12</td>
-<td align="right">1587</td>
+<td align="right">9701</td>
 </tr>
 <tr class="even">
 <td align="left">Israel</td>
@@ -293,37 +294,37 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <tr class="odd">
 <td align="left">India</td>
 <td align="left">IN</td>
-<td align="right">93</td>
-<td align="right">93</td>
-<td align="right">2758544</td>
+<td align="right">94</td>
+<td align="right">94</td>
+<td align="right">2989212</td>
 </tr>
 <tr class="even">
 <td align="left">Kuwait</td>
 <td align="left">KW</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">41</td>
+<td align="right">539</td>
 </tr>
 <tr class="odd">
 <td align="left">Macedonia, the Former Yugoslav Republic of</td>
 <td align="left">MK</td>
 <td align="right">30</td>
 <td align="right">30</td>
-<td align="right">21709</td>
+<td align="right">47851</td>
 </tr>
 <tr class="even">
 <td align="left">Mongolia</td>
 <td align="left">MN</td>
 <td align="right">12</td>
 <td align="right">12</td>
-<td align="right">1395501</td>
+<td align="right">1465955</td>
 </tr>
 <tr class="odd">
 <td align="left">Mexico</td>
 <td align="left">MX</td>
 <td align="right">48</td>
 <td align="right">48</td>
-<td align="right">1085772</td>
+<td align="right">1156907</td>
 </tr>
 <tr class="even">
 <td align="left">Nigeria</td>
@@ -337,98 +338,105 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="left">NL</td>
 <td align="right">110</td>
 <td align="right">110</td>
-<td align="right">3192322</td>
+<td align="right">3326015</td>
 </tr>
 <tr class="even">
 <td align="left">Norway</td>
 <td align="left">NO</td>
 <td align="right">64</td>
 <td align="right">64</td>
-<td align="right">235257</td>
+<td align="right">295983</td>
 </tr>
 <tr class="odd">
+<td align="left">Nepal</td>
+<td align="left">NP</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">904</td>
+</tr>
+<tr class="even">
 <td align="left">Peru</td>
 <td align="left">PE</td>
 <td align="right">11</td>
 <td align="right">11</td>
-<td align="right">380392</td>
+<td align="right">404001</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Philippines</td>
 <td align="left">PH</td>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">958</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Poland</td>
 <td align="left">PL</td>
 <td align="right">16</td>
 <td align="right">16</td>
 <td align="right">547921</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Sweden</td>
 <td align="left">SE</td>
 <td align="right">11</td>
 <td align="right">11</td>
-<td align="right">6669</td>
+<td align="right">18761</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Singapore</td>
 <td align="left">SG</td>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1275</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Thailand</td>
 <td align="left">TH</td>
 <td align="right">63</td>
 <td align="right">63</td>
-<td align="right">1596296</td>
+<td align="right">1663073</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Turkey</td>
 <td align="left">TR</td>
 <td align="right">138</td>
 <td align="right">138</td>
-<td align="right">562086</td>
+<td align="right">774462</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Taiwan, Province of China</td>
 <td align="left">TW</td>
 <td align="right">67</td>
 <td align="right">67</td>
-<td align="right">556448</td>
+<td align="right">747274</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Uganda</td>
 <td align="left">UG</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">37</td>
-</tr>
-<tr class="even">
-<td align="left">United States</td>
-<td align="left">US</td>
-<td align="right">1851</td>
-<td align="right">1851</td>
-<td align="right">16033724</td>
+<td align="right">534</td>
 </tr>
 <tr class="odd">
+<td align="left">United States</td>
+<td align="left">US</td>
+<td align="right">1863</td>
+<td align="right">1863</td>
+<td align="right">16986719</td>
+</tr>
+<tr class="even">
 <td align="left">Viet Nam</td>
 <td align="left">VN</td>
 <td align="right">3</td>
 <td align="right">3</td>
-<td align="right">19747</td>
+<td align="right">20744</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Kosovo</td>
 <td align="left">XK</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">7598</td>
+<td align="right">8097</td>
 </tr>
 </tbody>
 </table>
@@ -436,12 +444,12 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <pre><code>## # A tibble: 1 × 6
 ##         name   license                  website  page limit found
 ##       &lt;fctr&gt;    &lt;fctr&gt;                   &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-## 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    46</code></pre>
+## 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    47</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(countries_table, <span class="st">"timestamp"</span>)</code></pre></div>
 <pre><code>## # A tibble: 1 × 1
 ##             queriedAt
 ##                &lt;dttm&gt;
-## 1 2017-02-19 14:12:00</code></pre>
+## 1 2017-03-12 14:11:05</code></pre>
 </div>
 <div id="the-aq_cities-function" class="section level2">
 <h2 class="hasAnchor">
@@ -459,46 +467,46 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td align="left">21 de mayo</td>
+<td align="left">CL</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="left">21+de+mayo</td>
+</tr>
+<tr class="even">
 <td align="left">ABBEVILLE</td>
 <td align="left">US</td>
 <td align="right">1</td>
 <td align="right">4619</td>
 <td align="left">ABBEVILLE</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Aberdeen</td>
 <td align="left">GB</td>
 <td align="right">3</td>
-<td align="right">46181</td>
-<td align="left">Aberdeen</td>
-</tr>
-<tr class="odd">
-<td align="left">Aberdeen</td>
-<td align="left">US</td>
-<td align="right">2</td>
-<td align="right">12733</td>
+<td align="right">48940</td>
 <td align="left">Aberdeen</td>
 </tr>
 <tr class="even">
-<td align="left">ADA</td>
-<td align="left">US</td>
-<td align="right">1</td>
-<td align="right">15246</td>
-<td align="left">ADA</td>
-</tr>
-<tr class="odd">
-<td align="left">ADAIR</td>
-<td align="left">US</td>
-<td align="right">1</td>
-<td align="right">26640</td>
-<td align="left">ADAIR</td>
-</tr>
-<tr class="even">
-<td align="left">ADAMS</td>
+<td align="left">Aberdeen</td>
 <td align="left">US</td>
 <td align="right">2</td>
-<td align="right">21388</td>
-<td align="left">ADAMS</td>
+<td align="right">13476</td>
+<td align="left">Aberdeen</td>
+</tr>
+<tr class="odd">
+<td align="left">ADA</td>
+<td align="left">US</td>
+<td align="right">1</td>
+<td align="right">16182</td>
+<td align="left">ADA</td>
+</tr>
+<tr class="even">
+<td align="left">ADAIR</td>
+<td align="left">US</td>
+<td align="right">1</td>
+<td align="right">28748</td>
+<td align="left">ADAIR</td>
 </tr>
 </tbody>
 </table>
@@ -518,71 +526,71 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="left">Agra</td>
 <td align="left">IN</td>
 <td align="right">1</td>
-<td align="right">37226</td>
+<td align="right">39812</td>
 <td align="left">Agra</td>
 </tr>
 <tr class="even">
 <td align="left">Ahmedabad</td>
 <td align="left">IN</td>
 <td align="right">1</td>
-<td align="right">31510</td>
+<td align="right">35026</td>
 <td align="left">Ahmedabad</td>
 </tr>
 <tr class="odd">
+<td align="left">Amritsar</td>
+<td align="left">IN</td>
+<td align="right">1</td>
+<td align="right">3605</td>
+<td align="left">Amritsar</td>
+</tr>
+<tr class="even">
 <td align="left">Aurangabad</td>
 <td align="left">IN</td>
 <td align="right">1</td>
-<td align="right">44989</td>
+<td align="right">49392</td>
 <td align="left">Aurangabad</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Barddhaman</td>
 <td align="left">IN</td>
 <td align="right">3</td>
 <td align="right">2470</td>
 <td align="left">Barddhaman</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Bengaluru</td>
 <td align="left">IN</td>
 <td align="right">5</td>
-<td align="right">159902</td>
+<td align="right">175125</td>
 <td align="left">Bengaluru</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Chandrapur</td>
 <td align="left">IN</td>
 <td align="right">2</td>
-<td align="right">91648</td>
+<td align="right">99586</td>
 <td align="left">Chandrapur</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Chennai</td>
 <td align="left">IN</td>
 <td align="right">4</td>
-<td align="right">101627</td>
+<td align="right">113327</td>
 <td align="left">Chennai</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Chittoor</td>
 <td align="left">IN</td>
 <td align="right">1</td>
 <td align="right">2013</td>
 <td align="left">Chittoor</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Delhi</td>
 <td align="left">IN</td>
 <td align="right">16</td>
-<td align="right">513453</td>
+<td align="right">547434</td>
 <td align="left">Delhi</td>
-</tr>
-<tr class="even">
-<td align="left">Durgapur</td>
-<td align="left">IN</td>
-<td align="right">1</td>
-<td align="right">17698</td>
-<td align="left">Durgapur</td>
 </tr>
 </tbody>
 </table>
@@ -623,9 +631,9 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="left">Alandur Bus Depot</td>
 <td align="left">Chennai</td>
 <td align="left">IN</td>
-<td align="right">35</td>
+<td align="right">987</td>
 <td align="left">CPCB</td>
-<td align="left">1487511900</td>
+<td align="left">1489326300</td>
 <td align="left">1487450700</td>
 <td align="left">CPCB</td>
 <td align="right">12.99711</td>
@@ -644,10 +652,10 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="left">IIT</td>
 <td align="left">Chennai</td>
 <td align="left">IN</td>
-<td align="right">51</td>
+<td align="right">1407</td>
 <td align="left">CPCB</td>
-<td align="left">1487511900</td>
-<td align="left">1487451600</td>
+<td align="left">1489326300</td>
+<td align="left">1487442600</td>
 <td align="left">CPCB</td>
 <td align="right">12.99251</td>
 <td align="right">80.23745</td>
@@ -665,9 +673,9 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="left">Manali</td>
 <td align="left">Chennai</td>
 <td align="left">IN</td>
-<td align="right">35</td>
+<td align="right">1008</td>
 <td align="left">CPCB</td>
-<td align="left">1487511900</td>
+<td align="left">1489326300</td>
 <td align="left">1487452500</td>
 <td align="left">CPCB</td>
 <td align="right">13.16454</td>
@@ -686,9 +694,9 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="left">US Diplomatic Post: Chennai</td>
 <td align="left">Chennai</td>
 <td align="left">IN</td>
-<td align="right">10280</td>
+<td align="right">10779</td>
 <td align="left">StateAir_Chennai</td>
-<td align="left">1487511000</td>
+<td align="left">1489325400</td>
 <td align="left">1449869400</td>
 <td align="left">StateAir_Chennai</td>
 <td align="right">13.08784</td>
@@ -714,8 +722,8 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <div id="the-aq_measurements-function" class="section level2">
 <h2 class="hasAnchor">
 <a href="#the-aq_measurements-function" class="anchor"> </a>The <code>aq_measurements</code> function</h2>
-<p>The <code>aq_measurements</code> function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the <code>latitude</code>, <code>longitude</code> and <code>radius</code> arguments. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results_table &lt;-<span class="st"> </span><span class="kw"><a href="reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">country =</span> <span class="st">"IN"</span>, <span class="dt">city =</span> <span class="st">"Delhi"</span>, <span class="dt">location =</span> <span class="st">"Anand+Vihar"</span>, <span class="dt">parameter =</span> <span class="st">"pm25"</span>)
+<p>The <code>aq_measurements</code> function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the <code>latitude</code>, <code>longitude</code> and <code>radius</code> arguments. Below we get the PM2.5 measures for Delhi in India.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results_table &lt;-<span class="st"> </span><span class="kw"><a href="reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">country =</span> <span class="st">"IN"</span>, <span class="dt">city =</span> <span class="st">"Delhi"</span>, <span class="dt">parameter =</span> <span class="st">"pm25"</span>)
 <span class="kw">kable</span>(<span class="kw">head</span>(results_table))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
@@ -725,97 +733,97 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <th align="left">unit</th>
 <th align="left">country</th>
 <th align="left">city</th>
-<th align="left">dateUTC</th>
-<th align="left">dateLocal</th>
 <th align="right">latitude</th>
 <th align="right">longitude</th>
+<th align="left">dateUTC</th>
+<th align="left">dateLocal</th>
 <th align="left">cityURL</th>
 <th align="left">locationURL</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">Anand Vihar</td>
+<td align="left">Shadipur</td>
 <td align="left">pm25</td>
-<td align="right">86</td>
+<td align="right">41.39</td>
 <td align="left">µg/m³</td>
 <td align="left">IN</td>
 <td align="left">Delhi</td>
-<td align="left">2017-02-19 13:25:00</td>
-<td align="left">2017-02-19 18:55:00</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">28.65170</td>
+<td align="right">77.15810</td>
+<td align="left">2017-03-12 13:30:00</td>
+<td align="left">2017-03-12 19:00:00</td>
 <td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">Shadipur</td>
 </tr>
 <tr class="even">
-<td align="left">Anand Vihar</td>
+<td align="left">Delhi Technological University</td>
 <td align="left">pm25</td>
-<td align="right">86</td>
+<td align="right">27.00</td>
 <td align="left">µg/m³</td>
 <td align="left">IN</td>
 <td align="left">Delhi</td>
-<td align="left">2017-02-19 12:55:00</td>
-<td align="left">2017-02-19 18:25:00</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">28.74400</td>
+<td align="right">77.12000</td>
+<td align="left">2017-03-12 13:30:00</td>
+<td align="left">2017-03-12 19:00:00</td>
 <td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">Delhi+Technological+University</td>
 </tr>
 <tr class="odd">
-<td align="left">Anand Vihar</td>
+<td align="left">Income Tax Office</td>
 <td align="left">pm25</td>
-<td align="right">67</td>
+<td align="right">29.00</td>
 <td align="left">µg/m³</td>
 <td align="left">IN</td>
 <td align="left">Delhi</td>
-<td align="left">2017-02-19 12:25:00</td>
-<td align="left">2017-02-19 17:55:00</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">28.62350</td>
+<td align="right">77.24940</td>
+<td align="left">2017-03-12 13:30:00</td>
+<td align="left">2017-03-12 19:00:00</td>
 <td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">Income+Tax+Office</td>
 </tr>
 <tr class="even">
-<td align="left">Anand Vihar</td>
+<td align="left">IHBAS</td>
 <td align="left">pm25</td>
-<td align="right">67</td>
+<td align="right">43.50</td>
 <td align="left">µg/m³</td>
 <td align="left">IN</td>
 <td align="left">Delhi</td>
-<td align="left">2017-02-19 11:55:00</td>
-<td align="left">2017-02-19 17:25:00</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">28.68210</td>
+<td align="right">77.30500</td>
+<td align="left">2017-03-12 13:30:00</td>
+<td align="left">2017-03-12 19:00:00</td>
 <td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">IHBAS</td>
 </tr>
 <tr class="odd">
-<td align="left">Anand Vihar</td>
+<td align="left">US Diplomatic Post: New Delhi</td>
 <td align="left">pm25</td>
-<td align="right">46</td>
+<td align="right">17.60</td>
 <td align="left">µg/m³</td>
 <td align="left">IN</td>
 <td align="left">Delhi</td>
-<td align="left">2017-02-19 11:25:00</td>
-<td align="left">2017-02-19 16:55:00</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">28.63576</td>
+<td align="right">77.22445</td>
+<td align="left">2017-03-12 13:30:00</td>
+<td align="left">2017-03-12 19:00:00</td>
 <td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">US+Diplomatic+Post%3A+New+Delhi</td>
 </tr>
 <tr class="even">
-<td align="left">Anand Vihar</td>
+<td align="left">R K Puram</td>
 <td align="left">pm25</td>
-<td align="right">46</td>
+<td align="right">47.00</td>
 <td align="left">µg/m³</td>
 <td align="left">IN</td>
 <td align="left">Delhi</td>
-<td align="left">2017-02-19 10:55:00</td>
-<td align="left">2017-02-19 16:25:00</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">28.56480</td>
+<td align="right">77.17440</td>
+<td align="left">2017-03-12 13:25:00</td>
+<td align="left">2017-03-12 18:55:00</td>
 <td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">R+K+Puram</td>
 </tr>
 </tbody>
 </table>
@@ -850,8 +858,8 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="right">47.93291</td>
 <td align="right">106.92138</td>
 <td align="left">co</td>
-<td align="right">2556.000</td>
-<td align="left">2017-02-19 13:45:00</td>
+<td align="right">1050.00</td>
+<td align="left">2017-03-10 15:15:00</td>
 <td align="left">µg/m³</td>
 <td align="left">Agaar.mn</td>
 <td align="left">Ulaanbaatar</td>
@@ -864,8 +872,8 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="right">47.93291</td>
 <td align="right">106.92138</td>
 <td align="left">no2</td>
-<td align="right">68.000</td>
-<td align="left">2017-02-19 13:45:00</td>
+<td align="right">33.00</td>
+<td align="left">2017-03-10 15:15:00</td>
 <td align="left">µg/m³</td>
 <td align="left">Agaar.mn</td>
 <td align="left">Ulaanbaatar</td>
@@ -878,8 +886,8 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="right">47.93291</td>
 <td align="right">106.92138</td>
 <td align="left">o3</td>
-<td align="right">14.000</td>
-<td align="left">2017-02-19 13:45:00</td>
+<td align="right">33.00</td>
+<td align="left">2017-03-10 15:15:00</td>
 <td align="left">µg/m³</td>
 <td align="left">Agaar.mn</td>
 <td align="left">Ulaanbaatar</td>
@@ -892,8 +900,8 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="right">47.93291</td>
 <td align="right">106.92138</td>
 <td align="left">pm10</td>
-<td align="right">172.000</td>
-<td align="left">2017-02-19 13:45:00</td>
+<td align="right">88.00</td>
+<td align="left">2017-03-10 15:15:00</td>
 <td align="left">µg/m³</td>
 <td align="left">Agaar.mn</td>
 <td align="left">Ulaanbaatar</td>
@@ -906,8 +914,8 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="right">47.93291</td>
 <td align="right">106.92138</td>
 <td align="left">so2</td>
-<td align="right">38.000</td>
-<td align="left">2017-02-19 13:45:00</td>
+<td align="right">17.00</td>
+<td align="left">2017-03-10 15:00:00</td>
 <td align="left">µg/m³</td>
 <td align="left">Agaar.mn</td>
 <td align="left">Ulaanbaatar</td>
@@ -920,8 +928,8 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <td align="right">41.32247</td>
 <td align="right">-95.93799</td>
 <td align="left">o3</td>
-<td align="right">0.001</td>
-<td align="left">2016-11-01 13:00:00</td>
+<td align="right">0.02</td>
+<td align="left">2017-03-12 12:00:00</td>
 <td align="left">ppm</td>
 <td align="left">AirNow</td>
 <td align="left">Omaha-Council+Bluffs</td>
@@ -929,8 +937,8 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 </tr>
 </tbody>
 </table>
-<p>Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tableLatest &lt;-<span class="st"> </span><span class="kw"><a href="reference/aq_latest.html">aq_latest</a></span>(<span class="dt">country=</span><span class="st">"IN"</span>, <span class="dt">city=</span><span class="st">"Delhi"</span>, <span class="dt">location=</span><span class="st">"Anand+Vihar"</span>)
+<p>Below are the latest values for Hyderabad at the time this vignette was compiled.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tableLatest &lt;-<span class="st"> </span><span class="kw"><a href="reference/aq_latest.html">aq_latest</a></span>(<span class="dt">country=</span><span class="st">"IN"</span>, <span class="dt">city=</span><span class="st">"Hyderabad"</span>)
 <span class="kw">kable</span>(<span class="kw">head</span>(tableLatest))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
@@ -949,88 +957,88 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">Anand Vihar</td>
-<td align="left">Delhi</td>
+<td align="left">Bollaram Industrial Area</td>
+<td align="left">Hyderabad</td>
 <td align="left">IN</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 <td align="left">co</td>
-<td align="right">1300.0</td>
-<td align="left">2016-03-21 14:45:00</td>
+<td align="right">420.0</td>
+<td align="left">2017-02-17 05:15:00</td>
 <td align="left">µg/m³</td>
-<td align="left">Anand Vihar</td>
-<td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">CPCB</td>
+<td align="left">Hyderabad</td>
+<td align="left">Bollaram+Industrial+Area</td>
 </tr>
 <tr class="even">
-<td align="left">Anand Vihar</td>
-<td align="left">Delhi</td>
+<td align="left">Bollaram Industrial Area</td>
+<td align="left">Hyderabad</td>
 <td align="left">IN</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 <td align="left">no2</td>
-<td align="right">109.4</td>
-<td align="left">2017-02-19 13:25:00</td>
+<td align="right">16.2</td>
+<td align="left">2017-02-17 05:15:00</td>
 <td align="left">µg/m³</td>
 <td align="left">CPCB</td>
-<td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">Hyderabad</td>
+<td align="left">Bollaram+Industrial+Area</td>
 </tr>
 <tr class="odd">
-<td align="left">Anand Vihar</td>
-<td align="left">Delhi</td>
+<td align="left">Bollaram Industrial Area</td>
+<td align="left">Hyderabad</td>
 <td align="left">IN</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
-<td align="left">o3</td>
-<td align="right">11.8</td>
-<td align="left">2017-02-19 13:25:00</td>
-<td align="left">µg/m³</td>
-<td align="left">CPCB</td>
-<td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
-</tr>
-<tr class="even">
-<td align="left">Anand Vihar</td>
-<td align="left">Delhi</td>
-<td align="left">IN</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 <td align="left">pm10</td>
-<td align="right">511.0</td>
-<td align="left">2017-02-19 13:25:00</td>
+<td align="right">137.0</td>
+<td align="left">2017-02-17 05:15:00</td>
 <td align="left">µg/m³</td>
 <td align="left">CPCB</td>
-<td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
-</tr>
-<tr class="odd">
-<td align="left">Anand Vihar</td>
-<td align="left">Delhi</td>
-<td align="left">IN</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
-<td align="left">pm25</td>
-<td align="right">86.0</td>
-<td align="left">2017-02-19 13:25:00</td>
-<td align="left">µg/m³</td>
-<td align="left">CPCB</td>
-<td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">Hyderabad</td>
+<td align="left">Bollaram+Industrial+Area</td>
 </tr>
 <tr class="even">
-<td align="left">Anand Vihar</td>
-<td align="left">Delhi</td>
+<td align="left">Bollaram Industrial Area</td>
+<td align="left">Hyderabad</td>
 <td align="left">IN</td>
-<td align="right">28.6508</td>
-<td align="right">77.3152</td>
-<td align="left">so2</td>
-<td align="right">18.0</td>
-<td align="left">2016-03-21 14:45:00</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">pm25</td>
+<td align="right">55.0</td>
+<td align="left">2017-02-17 05:15:00</td>
 <td align="left">µg/m³</td>
-<td align="left">Anand Vihar</td>
-<td align="left">Delhi</td>
-<td align="left">Anand+Vihar</td>
+<td align="left">CPCB</td>
+<td align="left">Hyderabad</td>
+<td align="left">Bollaram+Industrial+Area</td>
+</tr>
+<tr class="odd">
+<td align="left">Bollaram Industrial Area</td>
+<td align="left">Hyderabad</td>
+<td align="left">IN</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">so2</td>
+<td align="right">16.8</td>
+<td align="left">2017-02-17 05:15:00</td>
+<td align="left">µg/m³</td>
+<td align="left">CPCB</td>
+<td align="left">Hyderabad</td>
+<td align="left">Bollaram+Industrial+Area</td>
+</tr>
+<tr class="even">
+<td align="left">Bollaram Industrial Area, Hyderabad - TSPCB</td>
+<td align="left">Hyderabad</td>
+<td align="left">IN</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">co</td>
+<td align="right">550.0</td>
+<td align="left">2017-03-12 13:15:00</td>
+<td align="left">µg/m³</td>
+<td align="left">CPCB</td>
+<td align="left">Hyderabad</td>
+<td align="left">Bollaram+Industrial+Area%2C+Hyderabad+-+TSPCB</td>
 </tr>
 </tbody>
 </table>
@@ -1039,39 +1047,9 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="referenc
 <div id="paging-and-limit" class="section level1">
 <h1 class="hasAnchor">
 <a href="#paging-and-limit" class="anchor"> </a>Paging and limit</h1>
-<p>For all endpoints/functions, there a a <code>limit</code> and a <code>page</code> arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. Based on this, how to get all results corresponding to a query? First, look at the number of results, e.g.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">how_many &lt;-<span class="st"> </span><span class="kw">attr</span>(<span class="kw"><a href="reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">city =</span> <span class="st">"Delhi"</span>,
-                            <span class="dt">parameter =</span> <span class="st">"pm25"</span>), <span class="st">"meta"</span>)
-knitr::<span class="kw">kable</span>(how_many)</code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">name</th>
-<th align="left">license</th>
-<th align="left">website</th>
-<th align="right">page</th>
-<th align="right">limit</th>
-<th align="right">found</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td align="left">openaq-api</td>
-<td align="left">CC BY 4.0</td>
-<td align="left"><a href="https://docs.openaq.org/" class="uri">https://docs.openaq.org/</a></td>
-<td align="right">1</td>
-<td align="right">100</td>
-<td align="right">93892</td>
-</tr></tbody>
-</table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">how_many$found</code></pre></div>
-<pre><code>## [1] 93892</code></pre>
-<p>Then one can write a loop over pages. Note that the maximal value of <code>limit</code> is 10,000.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">meas &lt;-<span class="st"> </span><span class="ot">NULL</span>
-for (page in <span class="dv">1</span>:(<span class="kw">ceiling</span>(how_many$found/<span class="dv">1000</span>))){
-  meas &lt;-<span class="st"> </span>dplyr::<span class="kw">bind_rows</span>(meas,
-                <span class="kw"><a href="reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">city =</span> <span class="st">"Delhi"</span>,
-                                <span class="dt">parameter =</span> <span class="st">"pm25"</span>,
-                                <span class="dt">page =</span> page,
-                                <span class="dt">limit =</span> <span class="dv">1000</span>))
-  }</code></pre></div>
+<p>For all endpoints/functions, there a a <code>limit</code> and a <code>page</code> arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. If you don’t enter the parameters by default all results for the query will be retrieved with async requests, but it might take a while nonetheless depending on the total number of results.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">city =</span> <span class="st">"Delhi"</span>,
+                            <span class="dt">parameter =</span> <span class="st">"pm25"</span>)</code></pre></div>
 <p>If you really need a lot of data, maybe using the API and this package is not the best choice for you. You can look into downloading csv data from OpenAQ website, e.g. <a href="https://openaq.org/#/locations?_k=jk7d09">here</a> or the daily csv output <a href="http://openaq-data.s3.amazonaws.com/index.html">here</a>. Or you might want to contact OpenAQ.</p>
 </div>
 <div id="other-packages-of-interest-for-getting-air-quality-data" class="section level1">
@@ -1080,20 +1058,14 @@ for (page in <span class="dv">1</span>:(<span class="kw">ceiling</span>(how_many
 <ul>
 <li><p>The <a href="https://github.com/kehraProject/r_rdefra"><code>rdefra</code> package</a>, also part of the rOpenSci project, allows to to interact with the UK AIR pollution database from DEFRA, including historical measures.</p></li>
 <li><p>The <a href="https://github.com/davidcarslaw/openair"><code>openair</code> package</a> gives access to the same data as <code>rdefra</code> but relies on a local and compressed copy of the data on servers at King’s College (UK), periodically updated.</p></li>
-<li><p>The <a href="https://github.com/masalmon/usaqmindia"><code>usaqmindia</code> package</a> provides data from the US air quality monitoring program in India for Delhi, Mumbai, Chennai, Hyderabad and Kolkata from 2013.</p></li>
-</ul>
-<div id="meta" class="section level2">
-<h2 class="hasAnchor">
-<a href="#meta" class="anchor"> </a>Meta</h2>
-<ul>
+<li><p>The <a href="https://github.com/masalmon/usaqmindia"><code>usaqmindia</code> package</a> provides data from the US air quality monitoring program in India for Delhi, Mumbai, Chennai, Hyderabad and Kolkata from 2013. ## Meta</p></li>
 <li>Please <a href="https://github.com/ropensci/ropenaq/issues">report any issues or bugs</a>.</li>
 <li>License: GPL</li>
 <li>Get citation information for <code>ropenaq</code> in R doing <code>citation(package = 'ropenaq')</code>
 </li>
-<li>Please note that this project is released with a <a href="CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</li>
+<li><p>Please note that this project is released with a <a href="CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p></li>
 </ul>
 <p><a href="http://ropensci.org"><img src="http://ropensci.org/public_images/github_footer.png" alt="ropensci_footer"></a></p>
-</div>
 </div>
 </div>
   </div>

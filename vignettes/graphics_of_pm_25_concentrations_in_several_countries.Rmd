@@ -35,15 +35,12 @@ tbHanoi <- aq_measurements(city = "Hanoi", parameter = "pm25", date_from = as.ch
 
 tbJakarta <- aq_measurements(city = "Jakarta", parameter = "pm25", date_from = as.character(Sys.Date()-1), limit = 1000)
 
-tbChennai <- aq_measurements(city = "Chennai", location = "US+Diplomatic+Post%3A+Chennai", parameter = "pm25", date_from = as.character(Sys.Date()-1), limit = 1000)
-
-tbWarsaw <- aq_measurements(city = "Warszawa", location = "Marsza%C5%82kowska", parameter = "pm25", date_from = as.character(Sys.Date()-1), limit = 1000)
+tbChennai <- aq_measurements(city = "Chennai", location = "Manali", parameter = "pm25", date_from = as.character(Sys.Date()-1), limit = 1000)
 
 
 tbPM <- rbind(tbHanoi,
             tbJakarta,
-            tbChennai,
-            tbWarsaw)
+            tbChennai)
 tbPM <- filter(tbPM, value >= 0)
 
 ggplot() + geom_line(data = tbPM,

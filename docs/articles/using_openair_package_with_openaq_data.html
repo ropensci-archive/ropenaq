@@ -60,7 +60,7 @@
       <h1>Using the R package openair</h1>
                         <h4 class="author">M. Salmon</h4>
             
-            <h4 class="date">2017-02-19</h4>
+            <h4 class="date">2017-03-12</h4>
           </div>
 
     
@@ -73,23 +73,9 @@
 <div id="load-data-for-the-netherlands" class="section level1">
 <h1 class="hasAnchor">
 <html><body><a href="#load-data-for-the-netherlands" class="anchor"> </a></body></html>Load data for the Netherlands</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measurementsNL &lt;-<span class="st"> </span><span class="ot">NULL</span>
-<span class="co"># get all measurements for 2015</span>
-<span class="co"># not very nice code regarding date sequences</span>
-<span class="co"># but this way I get everything despite the limit</span>
-for(month in <span class="dv">9</span>:<span class="dv">12</span>){
-  dateFrom &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"2015-"</span>, month, <span class="st">"-01"</span>)
-  dateTo &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"2015-"</span>, month<span class="dv">+1</span>, <span class="st">"-01"</span>)
-  if(month ==<span class="st"> </span><span class="dv">12</span>){
-    dateTo &lt;-<span class="st"> "2015-12-31"</span>
-  }
-  measurementsNL &lt;-<span class="st"> </span><span class="kw">rbind</span>(measurementsNL,
-                          <span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">location=</span><span class="st">"Amsterdam-Einsteinweg"</span>,
-                                       <span class="dt">limit=</span><span class="dv">1000</span>,
-                                       <span class="dt">parameter=</span><span class="st">"pm25"</span>,
-                                       <span class="dt">date_from=</span>dateFrom,
-                                       <span class="dt">date_to=</span>dateTo))
-}
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measurementsNL &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">location=</span><span class="st">"Amsterdam-Einsteinweg"</span>, <span class="dt">parameter=</span><span class="st">"pm25"</span>,
+                                       <span class="dt">date_from=</span><span class="st">"2015-09-01"</span>,
+                                       <span class="dt">date_to=</span><span class="st">"2015-12-31"</span>)
 
 <span class="co"># filter negative values</span>
 <span class="co"># and rename columns for compatibilities with openair</span>

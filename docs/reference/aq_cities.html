@@ -84,7 +84,7 @@
     <p>Provides a simple listing of cities within the platform.</p>
     
 
-    <pre><span class='fu'>aq_cities</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
+    <pre><span class='fu'>aq_cities</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -139,28 +139,28 @@ not its name, should be used.</p>
       Examples
     </h2>
     <pre class="examples"><div class='input'><span class='no'>cities</span> <span class='kw'>&lt;-</span> <span class='fu'>aq_cities</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='st'>"IN"</span>)
-<span class='no'>cities</span></div><div class='output co'>#&gt; # A tibble: 35 × 5
+<span class='no'>cities</span></div><div class='output co'>#&gt; # A tibble: 36 × 5
 #&gt;          city country locations  count    cityURL
 #&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;  &lt;int&gt;      &lt;chr&gt;
-#&gt; 1        Agra      IN         1  37226       Agra
-#&gt; 2   Ahmedabad      IN         1  31510  Ahmedabad
-#&gt; 3  Aurangabad      IN         1  44989 Aurangabad
-#&gt; 4  Barddhaman      IN         3   2470 Barddhaman
-#&gt; 5   Bengaluru      IN         5 159902  Bengaluru
-#&gt; 6  Chandrapur      IN         2  91648 Chandrapur
-#&gt; 7     Chennai      IN         4 101627    Chennai
-#&gt; 8    Chittoor      IN         1   2013   Chittoor
-#&gt; 9       Delhi      IN        16 513453      Delhi
-#&gt; 10   Durgapur      IN         1  17698   Durgapur
-#&gt; # ... with 25 more rows
+#&gt; 1        Agra      IN         1  39812       Agra
+#&gt; 2   Ahmedabad      IN         1  35026  Ahmedabad
+#&gt; 3    Amritsar      IN         1   3605   Amritsar
+#&gt; 4  Aurangabad      IN         1  49392 Aurangabad
+#&gt; 5  Barddhaman      IN         3   2470 Barddhaman
+#&gt; 6   Bengaluru      IN         5 175125  Bengaluru
+#&gt; 7  Chandrapur      IN         2  99586 Chandrapur
+#&gt; 8     Chennai      IN         4 113327    Chennai
+#&gt; 9    Chittoor      IN         1   2013   Chittoor
+#&gt; 10      Delhi      IN        16 547434      Delhi
+#&gt; # ... with 26 more rows
 #&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
 #&gt;         name   license                  website  page limit found
 #&gt;       &lt;fctr&gt;    &lt;fctr&gt;                   &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    35
+#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    36
 #&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>cities</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 1
 #&gt;             queriedAt
 #&gt;                &lt;dttm&gt;
-#&gt; 1 2017-02-19 14:12:35
+#&gt; 1 2017-03-12 14:14:02
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

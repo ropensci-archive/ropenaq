@@ -55,6 +55,8 @@ If it still doesn't work, please open a new issue!
 
 This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <https://openaq.org/> and see the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.frame (dplyr "tbl_df") objects, that can be further processed and analysed.
 
+Check out [this blog post](https://ropensci.org/blog/blog/2017/02/21/ropenaq) about OpenAQ.
+
 # Finding measurements availability
 
 Three functions of the package allow to get lists of available information. Measurements are obtained from *locations* that are in *cities* that are in *countries*.
@@ -112,10 +114,10 @@ Two functions allow to get data: `aq_measurement` and `aq_latest`. In both of th
 
 ## The `aq_measurements` function
 
-The `aq_measurements` function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the `latitude`, `longitude` and `radius` arguments. Below we get the PM2.5 measures for Anand Vihar in Delhi in India.
+The `aq_measurements` function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the `latitude`, `longitude` and `radius` arguments. Below we get the PM2.5 measures for Delhi in India.
 
 ```{r, cache=FALSE}
-results_table <- aq_measurements(country = "IN", city = "Delhi", location = "Anand+Vihar", parameter = "pm25")
+results_table <- aq_measurements(country = "IN", city = "Delhi", parameter = "pm25")
 kable(head(results_table))
 ```
 
@@ -132,36 +134,21 @@ tableLatest <- aq_latest()
 kable(head(tableLatest))
 ```
 
-Below are the latest values for Anand Vihar at the time this vignette was compiled (cache=FALSE).
+Below are the latest values for Hyderabad at the time this vignette was compiled.
 
 ```{r, cache=FALSE}
-tableLatest <- aq_latest(country="IN", city="Delhi", location="Anand+Vihar")
+tableLatest <- aq_latest(country="IN", city="Hyderabad")
 kable(head(tableLatest))
 ```
 
 # Paging and limit
 
-For all endpoints/functions, there a a `limit` and a `page` arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. Based on this, how to get all results corresponding to a query? First, look at the number of results, e.g.
+For all endpoints/functions, there a a `limit` and a `page` arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. If you don't enter the parameters by default all results for the query will be retrieved with async requests, but it might take a while nonetheless depending on the total number of results.
 
-```{r}
-how_many <- attr(aq_measurements(city = "Delhi",
-                            parameter = "pm25"), "meta")
-knitr::kable(how_many)
-how_many$found
-```
-
-Then one can write a loop over pages. Note that the maximal value of `limit` is 10,000.
 
 ```{r, eval = FALSE}
-meas <- NULL
-for (page in 1:(ceiling(how_many$found/1000))){
-  meas <- dplyr::bind_rows(meas,
-                aq_measurements(city = "Delhi",
-                                parameter = "pm25",
-                                page = page,
-                                limit = 1000))
-  }
-
+aq_measurements(city = "Delhi",
+                            parameter = "pm25")
 ```
 
 If you really need a lot of data, maybe using the API and this package is not the best choice for you. You can look into downloading csv data from OpenAQ website, e.g. [here](https://openaq.org/#/locations?_k=jk7d09) or the daily csv output [here](http://openaq-data.s3.amazonaws.com/index.html). Or you might want to contact OpenAQ.
@@ -174,7 +161,6 @@ allows to  to interact with the UK AIR pollution database from DEFRA, including 
 * The [`openair` package](https://github.com/davidcarslaw/openair) gives access to the same data as `rdefra` but relies on a local and compressed copy of the data on servers at King's College (UK), periodically updated.
 
 * The [`usaqmindia` package](https://github.com/masalmon/usaqmindia) provides data from the US air quality monitoring program in India for Delhi, Mumbai, Chennai, Hyderabad and Kolkata from 2013.
-
 ## Meta
 
 * Please [report any issues or bugs](https://github.com/ropensci/ropenaq/issues).

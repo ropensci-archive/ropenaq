@@ -5,7 +5,7 @@
 \title{Provides the latest value of each available parameter for every location in the system.}
 \usage{
 aq_latest(country = NULL, city = NULL, location = NULL,
-  parameter = NULL, has_geo = NULL, limit = 100, latitude = NULL,
+  parameter = NULL, has_geo = NULL, limit = 10000, latitude = NULL,
   longitude = NULL, radius = NULL, page = NULL)
 }
 \arguments{

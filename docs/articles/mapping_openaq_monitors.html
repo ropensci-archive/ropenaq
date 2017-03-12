@@ -60,7 +60,7 @@
       <h1>World Map of Open AQ Monitors</h1>
                         <h4 class="author">M. Salmon</h4>
             
-            <h4 class="date">2017-02-19</h4>
+            <h4 class="date">2017-03-12</h4>
           </div>
 
     
@@ -76,16 +76,7 @@
 <h2 class="hasAnchor">
 <html><body><a href="#create-a-list-to-hold-output" class="anchor"> </a></body></html>create a list to hold output</h2>
 <p>For now I’m filtering out two stations with surprising coordinates.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pagee &lt;-<span class="st"> </span><span class="dv">1</span>
-dataGeo &lt;-<span class="st"> </span><span class="ot">NULL</span>
-nrows &lt;-<span class="st"> </span><span class="dv">1000</span>
-while(nrows ==<span class="st"> </span><span class="dv">1000</span>){
-  temp &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_locations.html">aq_locations</a></span>(<span class="dt">page =</span> pagee,
-                       <span class="dt">limit =</span> <span class="dv">1000</span>)
-  nrows &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp)
-  pagee &lt;-<span class="st"> </span>pagee +<span class="st"> </span><span class="dv">1</span>
-  dataGeo &lt;-<span class="st"> </span>dplyr::<span class="kw">bind_rows</span>(dataGeo, temp)
-}
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataGeo &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_locations.html">aq_locations</a></span>()
 dataGeo &lt;-<span class="st"> </span><span class="kw">filter</span>(dataGeo, location !=<span class="st"> "Test Prueba"</span>, location !=<span class="st"> "PA"</span>)</code></pre></div>
 <p>Getting the empty map.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
@@ -111,7 +102,7 @@ gg</code></pre></div>
 <span class="st">   </span><span class="kw">ggtitle</span>(<span class="st">"OpenAQ data sources with geographical coordinates"</span>) +
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">lineheight=</span><span class="dv">1</span>, <span class="dt">face=</span><span class="st">"bold"</span>))
 <span class="kw">print</span>(plotMap)
-<span class="co">#&gt; Warning: Removed 159 rows containing missing values (geom_point).</span></code></pre></div>
+<span class="co">#&gt; Warning: Removed 164 rows containing missing values (geom_point).</span></code></pre></div>
 <p><img src="mapping_openaq_monitors_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
 </div>
 </div>

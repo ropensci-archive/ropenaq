@@ -20,7 +20,6 @@ Suggests: knitr,
     testthat,
     openair,
     devtools,
-    animation,
     rworldmap,
     ggmap,
     viridis

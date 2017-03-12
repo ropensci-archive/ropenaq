@@ -31,23 +31,9 @@ library("dplyr")
 # Load data for the Netherlands
 
 ```{r}
-measurementsNL <- NULL
-# get all measurements for 2015
-# not very nice code regarding date sequences
-# but this way I get everything despite the limit
-for(month in 9:12){
-  dateFrom <- paste0("2015-", month, "-01")
-  dateTo <- paste0("2015-", month+1, "-01")
-  if(month == 12){
-    dateTo <- "2015-12-31"
-  }
-  measurementsNL <- rbind(measurementsNL,
-                          aq_measurements(location="Amsterdam-Einsteinweg",
-                                       limit=1000,
-                                       parameter="pm25",
-                                       date_from=dateFrom,
-                                       date_to=dateTo))
-}
+measurementsNL <- aq_measurements(location="Amsterdam-Einsteinweg", parameter="pm25",
+                                       date_from="2015-09-01",
+                                       date_to="2015-12-31")
 
 # filter negative values
 # and rename columns for compatibilities with openair

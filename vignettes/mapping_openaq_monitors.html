@@ -12,7 +12,7 @@
 
 <meta name="author" content="M. Salmon" />
 
-<meta name="date" content="2017-01-16" />
+<meta name="date" content="2017-03-12" />
 
 <title>World Map of Open AQ Monitors</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">World Map of Open AQ Monitors</h1>
 <h4 class="author"><em>M. Salmon</em></h4>
-<h4 class="date"><em>2017-01-16</em></h4>
+<h4 class="date"><em>2017-03-12</em></h4>
 
 
 
@@ -83,16 +83,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="create-a-list-to-hold-output" class="section level2">
 <h2>create a list to hold output</h2>
 <p>For now I’m filtering out two stations with surprising coordinates.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pagee &lt;-<span class="st"> </span><span class="dv">1</span>
-dataGeo &lt;-<span class="st"> </span><span class="ot">NULL</span>
-nrows &lt;-<span class="st"> </span><span class="dv">1000</span>
-while(nrows ==<span class="st"> </span><span class="dv">1000</span>){
-  temp &lt;-<span class="st"> </span><span class="kw">aq_locations</span>(<span class="dt">page =</span> pagee,
-                       <span class="dt">limit =</span> <span class="dv">1000</span>)
-  nrows &lt;-<span class="st"> </span><span class="kw">nrow</span>(temp)
-  pagee &lt;-<span class="st"> </span>pagee +<span class="st"> </span><span class="dv">1</span>
-  dataGeo &lt;-<span class="st"> </span>dplyr::<span class="kw">bind_rows</span>(dataGeo, temp)
-}
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataGeo &lt;-<span class="st"> </span><span class="kw">aq_locations</span>()
 dataGeo &lt;-<span class="st"> </span><span class="kw">filter</span>(dataGeo, location !=<span class="st"> &quot;Test Prueba&quot;</span>, location !=<span class="st"> &quot;PA&quot;</span>)</code></pre></div>
 <p>Getting the empty map.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">

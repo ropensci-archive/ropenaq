@@ -5,7 +5,7 @@
 \title{Providing data about distinct measurement locations.}
 \usage{
 aq_locations(country = NULL, city = NULL, location = NULL,
-  parameter = NULL, has_geo = NULL, limit = 100, latitude = NULL,
+  parameter = NULL, has_geo = NULL, limit = 10000, latitude = NULL,
   longitude = NULL, radius = NULL, page = NULL)
 }
 \arguments{

@@ -36,7 +36,7 @@
 #' cities
 #' attr(cities, "meta")
 #' attr(cities, "timestamp")
-aq_cities <- function(country = NULL, limit = 100,
+aq_cities <- function(country = NULL, limit = 10000,
                        page = NULL) {# nolint
   ####################################################
   # BUILD QUERY

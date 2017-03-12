@@ -421,6 +421,7 @@ create_async <- function(urls){
   crul::Async$new(urls = urls)
 }
 
+# get results for an
 get_res <- function(async){
   res <- async$get()
   lapply(res, treat_res) %>% bind_rows()

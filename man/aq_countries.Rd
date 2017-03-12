@@ -4,7 +4,7 @@
 \alias{aq_countries}
 \title{Provides a simple listing of countries within the platform.}
 \usage{
-aq_countries(limit = 100, page = NULL)
+aq_countries(limit = 10000, page = NULL)
 }
 \arguments{
 \item{limit}{Change the number of results returned, max is 10000.}

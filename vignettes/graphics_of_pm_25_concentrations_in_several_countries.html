@@ -12,7 +12,7 @@
 
 <meta name="author" content="M. Salmon" />
 
-<meta name="date" content="2017-01-16" />
+<meta name="date" content="2017-03-12" />
 
 <title>A few graphics of PM2.5 concentrations in different countries</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">A few graphics of PM2.5 concentrations in different countries</h1>
 <h4 class="author"><em>M. Salmon</em></h4>
-<h4 class="date"><em>2017-01-16</em></h4>
+<h4 class="date"><em>2017-03-12</em></h4>
 
 
 
@@ -85,15 +85,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 tbJakarta &lt;-<span class="st"> </span><span class="kw">aq_measurements</span>(<span class="dt">city =</span> <span class="st">&quot;Jakarta&quot;</span>, <span class="dt">parameter =</span> <span class="st">&quot;pm25&quot;</span>, <span class="dt">date_from =</span> <span class="kw">as.character</span>(<span class="kw">Sys.Date</span>()-<span class="dv">1</span>), <span class="dt">limit =</span> <span class="dv">1000</span>)
 
-tbChennai &lt;-<span class="st"> </span><span class="kw">aq_measurements</span>(<span class="dt">city =</span> <span class="st">&quot;Chennai&quot;</span>, <span class="dt">location =</span> <span class="st">&quot;US+Diplomatic+Post%3A+Chennai&quot;</span>, <span class="dt">parameter =</span> <span class="st">&quot;pm25&quot;</span>, <span class="dt">date_from =</span> <span class="kw">as.character</span>(<span class="kw">Sys.Date</span>()-<span class="dv">1</span>), <span class="dt">limit =</span> <span class="dv">1000</span>)
-
-tbWarsaw &lt;-<span class="st"> </span><span class="kw">aq_measurements</span>(<span class="dt">city =</span> <span class="st">&quot;Warszawa&quot;</span>, <span class="dt">location =</span> <span class="st">&quot;Marsza%C5%82kowska&quot;</span>, <span class="dt">parameter =</span> <span class="st">&quot;pm25&quot;</span>, <span class="dt">date_from =</span> <span class="kw">as.character</span>(<span class="kw">Sys.Date</span>()-<span class="dv">1</span>), <span class="dt">limit =</span> <span class="dv">1000</span>)
+tbChennai &lt;-<span class="st"> </span><span class="kw">aq_measurements</span>(<span class="dt">city =</span> <span class="st">&quot;Chennai&quot;</span>, <span class="dt">location =</span> <span class="st">&quot;Manali&quot;</span>, <span class="dt">parameter =</span> <span class="st">&quot;pm25&quot;</span>, <span class="dt">date_from =</span> <span class="kw">as.character</span>(<span class="kw">Sys.Date</span>()-<span class="dv">1</span>), <span class="dt">limit =</span> <span class="dv">1000</span>)
 
 
 tbPM &lt;-<span class="st"> </span><span class="kw">rbind</span>(tbHanoi,
             tbJakarta,
-            tbChennai,
-            tbWarsaw)
+            tbChennai)
 tbPM &lt;-<span class="st"> </span><span class="kw">filter</span>(tbPM, value &gt;=<span class="st"> </span><span class="dv">0</span>)
 
 <span class="kw">ggplot</span>() +<span class="st"> </span><span class="kw">geom_line</span>(<span class="dt">data =</span> tbPM,

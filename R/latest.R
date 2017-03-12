@@ -56,7 +56,7 @@
 #' and a timestamp data.frame (dplyr "tbl_df") with the query time and the last time at which the data was modified on the platform.
 #' @export
 aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
-                   parameter = NULL, has_geo = NULL, limit = 100,
+                   parameter = NULL, has_geo = NULL, limit = 10000,
                    latitude = NULL, longitude = NULL, radius = NULL,
                    page = NULL) {
 
