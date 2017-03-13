@@ -259,23 +259,23 @@ getResults_bypage <- function(urlAQ, argsList){
   }
 
 getResults_bymorepages <- function(urlAQ, argsList){
+  argsList <- Filter(Negate(is.null), argsList)
   # find number of total pages
   argsList2 <- argsList
   argsList2$page <- 1
   count <- getResults_bypage(urlAQ, argsList2)
-  url <- attr(count, "url")
-  url <- gsub("page=1", "page=", url)
   count <- attr(count, "meta")$found
   no_pages <- ceiling(count/10000)
   if(no_pages == 1){
     return(getResults_bypage(urlAQ, argsList))
   }else{
-    urls <- unlist(vapply(1:no_pages,
-                          add_page, url = url,
-                          FUN.VALUE = ""))
+    queries <- lapply(1:no_pages,
+                      add_page,
+                      query = argsList)
     # 10 urls by request
-    urls <- split(urls, ceiling(seq_along(urls)/10))
-    requests <- lapply(urls, create_async)
+    requests <- lapply(queries, create_request,
+                       urlAQ = urlAQ)
+    requests <- split(requests, ceiling(seq_along(requests)/10))
     res_list <- lapply(requests, get_res)
     dplyr::bind_rows(res_list)
   }
@@ -363,8 +363,9 @@ func_date_headers <- function(date){
 }
 
 
-add_page <- function(page, url){
-  gsub("page=", paste0("page=", page), url)
+add_page <- function(page, query){
+  query$page <- page
+  return(query)
 }
 
 treat_res <- function(res){
@@ -417,12 +418,13 @@ treat_res <- function(res){
 }
 
 
-create_async <- function(urls){
-  crul::Async$new(urls = urls)
+create_request <- function(query, urlAQ){
+  crul::HttpRequest$new(url = urlAQ)$get(query = query)
 }
 
 # get results for an
 get_res <- function(async){
-  res <- async$get()
+  res <- crul::AsyncVaried$new(.list = async)
+  res$request()
   lapply(res, treat_res) %>% bind_rows()
 }
