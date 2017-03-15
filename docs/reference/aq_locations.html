@@ -85,7 +85,7 @@
     
 
     <pre><span class='fu'>aq_locations</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>city</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>location</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>parameter</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>has_geo</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>latitude</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>parameter</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>has_geo</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10000</span>, <span class='kw'>latitude</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>longitude</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
@@ -177,16 +177,16 @@ not its name, should be used.
 <span class='no'>india_locations</span></div><div class='output co'>#&gt; # A tibble: 91 × 19
 #&gt;                                       location      city country  count
 #&gt;                                          &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt;
-#&gt; 1                        AAQMS Karve Road Pune      Pune      IN  75553
-#&gt; 2                            Alandur Bus Depot   Chennai      IN  28930
-#&gt; 3                                  Anand Vihar     Delhi      IN  61947
+#&gt; 1                        AAQMS Karve Road Pune      Pune      IN  76301
+#&gt; 2                            Alandur Bus Depot   Chennai      IN  29374
+#&gt; 3                                  Anand Vihar     Delhi      IN  62352
 #&gt; 4                                  AP Tirumala  Chittoor      IN   3172
-#&gt; 5                                Ardhali Bazar  Varanasi      IN 107235
+#&gt; 5                                Ardhali Bazar  Varanasi      IN 108629
 #&gt; 6                     Bollaram Industrial Area Hyderabad      IN     25
-#&gt; 7  Bollaram Industrial Area, Hyderabad - TSPCB Hyderabad      IN   4225
-#&gt; 8                                   BTM Layout Bengaluru      IN  54696
-#&gt; 9                        BWSSB Kadabesanahalli Bengaluru      IN  31108
-#&gt; 10                              Central School   Lucknow      IN  43857
+#&gt; 7  Bollaram Industrial Area, Hyderabad - TSPCB Hyderabad      IN   4600
+#&gt; 8                                   BTM Layout Bengaluru      IN  55564
+#&gt; 9                        BWSSB Kadabesanahalli Bengaluru      IN  31557
+#&gt; 10                              Central School   Lucknow      IN  44433
 #&gt; # ... with 81 more rows, and 15 more variables: sourceNames &lt;list&gt;,
 #&gt; #   lastUpdated &lt;dttm&gt;, firstUpdated &lt;dttm&gt;, sourceName &lt;chr&gt;, latitude &lt;dbl&gt;,
 #&gt; #   longitude &lt;dbl&gt;, pm25 &lt;lgl&gt;, pm10 &lt;lgl&gt;, no2 &lt;lgl&gt;, so2 &lt;lgl&gt;, o3 &lt;lgl&gt;,
@@ -194,11 +194,11 @@ not its name, should be used.
 #&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"meta"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 6
 #&gt;         name   license                  website  page limit found
 #&gt;       &lt;fctr&gt;    &lt;fctr&gt;                   &lt;fctr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1   100    91
+#&gt; 1 openaq-api CC BY 4.0 https://docs.openaq.org/     1 10000    91
 #&gt; </div><div class='input'><span class='fu'>attr</span>(<span class='no'>india_locations</span>, <span class='st'>"timestamp"</span>)</div><div class='output co'>#&gt; # A tibble: 1 × 1
 #&gt;             queriedAt
 #&gt;                &lt;dttm&gt;
-#&gt; 1 2017-03-12 14:14:06
+#&gt; 1 2017-03-15 18:16:33
 #&gt; </div><div class='input'><span class='fu'>aq_locations</span>(<span class='kw'>city</span><span class='kw'>=</span><span class='st'>'Houston'</span>, <span class='kw'>parameter</span><span class='kw'>=</span><span class='st'>'co'</span>)</div><div class='output co'>#&gt; # A tibble: 7 × 19
 #&gt;                                location    city country count sourceNames
 #&gt;                                   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;      &lt;list&gt;
