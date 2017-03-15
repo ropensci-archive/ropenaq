@@ -214,6 +214,7 @@ getResults_bypage <- function(urlAQ, argsList){
   client <- crul::HttpClient$new(url = urlAQ)
   argsList <- Filter(Negate(is.null), argsList)
   res <- client$get(query = argsList)
+  try_number <- 1
   while(res$status_code >= 400 && try_number < 6) {status <- get_status()
   if(status %in% c("green", "yellow")){
     message(paste0("Server returned nothing, trying again, try number", try_number))
@@ -398,6 +399,19 @@ create_request <- function(query, urlAQ){
 # get results for an
 get_res <- function(async){
   res <- crul::AsyncVaried$new(.list = async)
-  res <- res$request()
-  lapply(res, treat_res) %>% bind_rows()
+  output <- res$request()
+  try_number <- 1
+  while(any(res$status_code() >= 400) && try_number < 6) {status <- get_status()
+  if(status %in% c("green", "yellow")){
+    message(paste0("Server returned nothing, trying again, try number", try_number))
+    Sys.sleep(2^try_number)
+    output <- res$request()
+    try_number <- try_number + 1
+  }else{
+    stop("uh oh, the OpenAQ API seems to be having some issues, try again later")
+  }
+
+  }
+
+  lapply(output, treat_res) %>% bind_rows()
 }
