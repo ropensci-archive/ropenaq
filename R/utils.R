@@ -276,6 +276,7 @@ getResults_bymorepages <- function(urlAQ, argsList){
     requests <- lapply(queries, create_request,
                        urlAQ = urlAQ)
     requests <- split(requests, ceiling(seq_along(requests)/10))
+
     res_list <- lapply(requests, get_res)
     dplyr::bind_rows(res_list)
   }
@@ -425,6 +426,6 @@ create_request <- function(query, urlAQ){
 # get results for an
 get_res <- function(async){
   res <- crul::AsyncVaried$new(.list = async)
-  res$request()
+  res <- res$request()
   lapply(res, treat_res) %>% bind_rows()
 }
