@@ -108,3 +108,8 @@ pre img {
   background-color: #fff;
   display: block;
 }
+
+table {
+    display: block;
+    overflow: auto;
+}
