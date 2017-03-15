@@ -27,18 +27,10 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
   # location
   if (!is.null(location)) {
-    pagee <- 1
-    locations <- NULL
-    nrows <- 10000
-    while(nrows == 10000){
-      temp <- aq_locations(country = country,
-                           city = city,
-                           page = pagee,
-                           limit = 10000)
-      nrows <- nrow(temp)
-      pagee <- pagee + 1
-      locations <- dplyr::bind_rows(locations, temp)
-    }
+
+    locations <- aq_locations(country = country,
+                           city = city)
+
     if (!(location %in% locations$locationURL)) {# nolint
       stop(call. = FALSE, "This location/city/country combination is not available within the platform. See ?locations")# nolint
     }
@@ -50,17 +42,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
   # city
   if (!is.null(city)) {
-    pagee <- 1
-    cities <- NULL
-    nrows <- 10000
-    while(nrows == 10000){
-      temp <- aq_cities(country = country,
-                        page = pagee,
-                        limit = 10000)
-      nrows <- nrow(temp)
-      pagee <- pagee + 1
-      cities <- dplyr::bind_rows(cities, temp)
-    }
+    cities <-  aq_cities(country = country)
 
     if (!(city %in% cities$cityURL)) {# nolint
       stop(call. = FALSE, paste0("This city/country combination is not available within the platform. See ?cities."))# nolint
@@ -73,7 +55,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # country
   if (!is.null(country)) {
 
-    if (!(country %in% aq_countries(limit = 1000)$code)) {# nolint
+    if (!(country %in% aq_countries()$code)) {# nolint
       stop(call. = FALSE, "This country is not available within the platform. See ?countries")
     }
   }
@@ -85,20 +67,10 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       stop(call. = FALSE, "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
     }
 
+  locations <-  aq_locations(country = country,
+                         city = city,
+                         location = location)
 
-    pagee <- 1
-    locations <- NULL
-    nrows <- 10000
-    while(nrows == 10000){
-      temp <- aq_locations(country = country,
-                           city = city,
-                           page = pagee,
-                           location = location,
-                           limit = 10000)
-      nrows <- nrow(temp)
-      pagee <- pagee + 1
-      locations <- dplyr::bind_rows(locations, temp)
-    }
     if (apply(locations[, parameter], 2, sum) == 0) {
       stop(call. = FALSE, "This parameter is not available for any location corresponding to your query. See ?locations")# nolint
     }
