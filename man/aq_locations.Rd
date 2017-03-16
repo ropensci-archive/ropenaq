@@ -76,4 +76,3 @@ attr(india_locations, "meta")
 attr(india_locations, "timestamp")
 aq_locations(city='Houston', parameter='co')
 }
-

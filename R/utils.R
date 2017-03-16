@@ -238,7 +238,7 @@ getResults_bymorepages <- function(urlAQ, argsList){
   argsList2$page <- 1
   count <- getResults_bypage(urlAQ, argsList2)
   count <- attr(count, "meta")$found
-  no_pages <- ceiling(count/10000)
+  no_pages <- ceiling(count/argsList$limit)
   if(no_pages == 1){
     return(getResults_bypage(urlAQ, argsList))
   }else{

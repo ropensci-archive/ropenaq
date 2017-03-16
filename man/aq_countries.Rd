@@ -42,4 +42,3 @@ countries
 attr(countries, "meta")
 attr(countries, "timestamp")
 }
-
