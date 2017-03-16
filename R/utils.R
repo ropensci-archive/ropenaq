@@ -226,6 +226,12 @@ getResults_bypage <- function(urlAQ, argsList){
   }
 
   }
+  if(argsList$limit == 0){
+    contentPage <- suppressMessages(res$parse())
+    # parse the data
+    output <- jsonlite::fromJSON(contentPage)
+    return(output$meta$found)
+  }
   results <- treat_res(res)
   return(results)
 
@@ -236,8 +242,8 @@ getResults_bymorepages <- function(urlAQ, argsList){
   # find number of total pages
   argsList2 <- argsList
   argsList2$page <- 1
+  argsList2$limit <- 0
   count <- getResults_bypage(urlAQ, argsList2)
-  count <- attr(count, "meta")$found
   if(is.na(argsList$limit)){
     limit <- 10000
   }else{
