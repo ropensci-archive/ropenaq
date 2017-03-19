@@ -253,9 +253,11 @@ getResults_bymorepages <- function(urlAQ, argsList){
   if(no_pages == 1){
     return(getResults_bypage(urlAQ, argsList))
   }else{
-    queries <- lapply(1:no_pages,
+    queries <- vapply(1:no_pages,
                       add_page,
-                      query = argsList)
+                      query = argsList,
+                      FUN.VALUE = vector("list",
+                                         length(argsList) + 1))
     # 10 urls by request
     requests <- lapply(queries, create_request,
                        urlAQ = urlAQ)
@@ -309,7 +311,7 @@ functionTime <- function(resTable, newColName) {
 ######################################################################################
 # create the parameters column
 functionParameters <- function(resTable) {
-  mutateCall <- lazyeval::interp( ~ unlist(lapply(a, toString)),
+  mutateCall <- lazyeval::interp( ~ unlist(vapply(a, toString, "")),
                                   a = as.name("parameters")) %>%
     lazyeval::interp( ~ gsub(.dot, pattern = "\"", sub = "")) %>%
     lazyeval::interp( ~ gsub(.dot, pattern = "\\(", sub = "")) %>%

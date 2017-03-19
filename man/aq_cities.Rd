@@ -47,3 +47,4 @@ cities
 attr(cities, "meta")
 attr(cities, "timestamp")
 }
+

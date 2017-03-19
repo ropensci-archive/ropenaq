@@ -7,13 +7,17 @@ Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role 
              person("Andrew", "MacDonald", role = c("ctb"), comment = "Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
              person("Andy ", "Teucher", role = c("ctb"), comment = "Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
              person("Mikayla ", "Murphy", role = c("ctb")))
-Description: Allows access to air quality data from the API of the OpenAQ platform <https://docs.openaq.org/>, with the different services the API offers (getting measurements for a given query, getting latest measurements, getting lists of available countries/cities/locations).
+Description: Allows access to air quality data from the API of the OpenAQ
+    platform <https://docs.openaq.org/>, with the different services the API offers
+    (getting measurements for a given query, getting latest measurements, getting
+    lists of available countries/cities/locations).
 License: GPL (>= 2)
 LazyData: TRUE
-RoxygenNote: 6.0.1
+RoxygenNote: 5.0.1
 URL: http://github.com/ropensci/ropenaq
 BugReports: http://github.com/ropensci/ropenaq/issues
-Suggests: knitr,
+Suggests:
+    knitr,
     rmarkdown,
     lintr,
     ggplot2,
@@ -24,10 +28,11 @@ Suggests: knitr,
     ggmap,
     viridis
 VignetteBuilder: knitr
-Imports: crul,
-  lubridate,
-  dplyr,
-  jsonlite,
-  tidyr,
-  lazyeval
+Imports:
+    crul,
+    lubridate,
+    dplyr,
+    jsonlite,
+    tidyr,
+    lazyeval
 Encoding: UTF-8
