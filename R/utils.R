@@ -253,11 +253,10 @@ getResults_bymorepages <- function(urlAQ, argsList){
   if(no_pages == 1){
     return(getResults_bypage(urlAQ, argsList))
   }else{
-    queries <- vapply(1:no_pages,
+    queries <- lapply(1:no_pages,
                       add_page,
-                      query = argsList,
-                      FUN.VALUE = vector("list",
-                                         length(argsList) + 1))
+                      query = argsList)
+
     # 10 urls by request
     requests <- lapply(queries, create_request,
                        urlAQ = urlAQ)
