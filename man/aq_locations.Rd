@@ -70,9 +70,5 @@ not its name, should be used.
   one day there is a city with the same name in another country.
 }
 \examples{
-india_locations <- aq_locations(country='IN')
-india_locations
-attr(india_locations, "meta")
-attr(india_locations, "timestamp")
 aq_locations(city='Delhi', parameter='co')
 }
