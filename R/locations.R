@@ -54,7 +54,7 @@
 #' india_locations
 #' attr(india_locations, "meta")
 #' attr(india_locations, "timestamp")
-#' aq_locations(city='Houston', parameter='co')
+#' aq_locations(city='Delhi', parameter='co')
 aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
                          parameter = NULL, has_geo = NULL, limit = 10000,
                          latitude = NULL, longitude = NULL, radius = NULL,

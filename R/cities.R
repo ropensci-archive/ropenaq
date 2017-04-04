@@ -32,7 +32,7 @@
 #' @export
 #'
 #' @examples
-#' cities <- aq_cities(country = "IN")
+#' cities <- aq_cities(country = "BA")
 #' cities
 #' attr(cities, "meta")
 #' attr(cities, "timestamp")

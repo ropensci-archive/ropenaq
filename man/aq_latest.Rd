@@ -77,4 +77,3 @@ attr(latest_chennai, "timestamp")
 aq_latest(parameter='co')
 }
 }
-

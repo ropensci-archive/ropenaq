@@ -74,6 +74,5 @@ india_locations <- aq_locations(country='IN')
 india_locations
 attr(india_locations, "meta")
 attr(india_locations, "timestamp")
-aq_locations(city='Houston', parameter='co')
+aq_locations(city='Delhi', parameter='co')
 }
-
