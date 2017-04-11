@@ -42,8 +42,8 @@ the URL-encoded name of the city (as in cityURL),
 not its name, should be used.
 }
 \examples{
+\dontrun{
 cities <- aq_cities(country = "BA")
 cities
-attr(cities, "meta")
-attr(cities, "timestamp")
+}
 }

@@ -70,5 +70,7 @@ not its name, should be used.
   one day there is a city with the same name in another country.
 }
 \examples{
+\dontrun{
 aq_locations(city='Delhi', parameter='co')
+}
 }

@@ -32,10 +32,10 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' cities <- aq_cities(country = "BA")
 #' cities
-#' attr(cities, "meta")
-#' attr(cities, "timestamp")
+#' }
 aq_cities <- function(country = NULL, limit = 10000,
                        page = NULL) {# nolint
   ####################################################

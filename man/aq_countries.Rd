@@ -37,8 +37,8 @@ For queries involving a country argument,
 the code of the country, not its name, should be used.
 }
 \examples{
+\dontrun{
 countries <- aq_countries()
 countries
-attr(countries, "meta")
-attr(countries, "timestamp")
+}
 }

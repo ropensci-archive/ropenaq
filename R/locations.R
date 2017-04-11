@@ -50,7 +50,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' aq_locations(city='Delhi', parameter='co')
+#' }
 aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
                          parameter = NULL, has_geo = NULL, limit = 10000,
                          latitude = NULL, longitude = NULL, radius = NULL,

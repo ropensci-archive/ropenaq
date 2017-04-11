@@ -1,7 +1,7 @@
 ## Test environments
 * local x86_64-w64-mingw32/x64 install, R 3.3.1
 * Ubuntu 12.04 (on Travis CI), R devel, release and oldrel
-* Windows on Appveyor CI (stable, patched, oldrel and devel)
+* Windows on Appveyor CI (stable, patched and devel)
 
 ## R CMD check results
 
@@ -9,21 +9,19 @@
 
 ## Release summary
 
-A few improvements
+* Adds async http requests, making the functions easier to use. For that, replaces the `httr` dependency with `crul`.
 
-* Now all functions outputs a single data.frame with meta and timestamp as attributes. It should be easier to deal with compared to the former format (a list of 3 data.frames).
+* Uses the status page of the API better. If the API status is not green, but orange, several calls are tried with increasing waiting time. If the status a red, an informative error message is returned.
 
-* adds `longitude`, `latitude` and `coordinates` arguments to `aq_latest`, `aq_locations` and `aq_measurements`.
-
-* adds `attribution`, `source_name` and `averaging_period` arguments to `aq_measurements`.
+* The package now uses the most recent limit for each API call.
 
 ## check results
 
-All had "OK" status for the previous release.
+An example failed and created an error. Now this error cannot happen any more because the output is parsed better.
 
 ## Reverse dependencies
 
-There are no reverse dependencies.
+The `rnoaa` vignette using `ropenaq` can still be built.
 
 ---
 

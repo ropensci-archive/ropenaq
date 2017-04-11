@@ -24,10 +24,10 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' countries <- aq_countries()
 #' countries
-#' attr(countries, "meta")
-#' attr(countries, "timestamp")
+#' }
 aq_countries <- function(limit = 10000,
                          page = NULL) {# nolint
   ####################################################
