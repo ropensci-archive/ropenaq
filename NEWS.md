@@ -1,12 +1,10 @@
-# ropenaq 0.2.0
+# ropenaq 0.1.4
 
 * The httr dependency has been replaced with crul.
 
 * Now if not giving a value to limit all pages corresponding to a query are automatically retrieved, using async requests.
 
 * Better use of the status page.
-
-# ropenaq 0.1.4
 
 * Thanks to Mikayla Murphy `ropenaq` functions now use the new maximal limit per call which is 10,000.
 
