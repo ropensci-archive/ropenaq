@@ -18,6 +18,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        source_name = NULL,
                        radius = NULL,
                        page = NULL){
+
   # limit
   if (!is.null(limit)) {
     if (limit > 10000) {
@@ -39,7 +40,6 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     class(location) <- c("character", "AsIs")
   }
 
-
   # city
   if (!is.null(city)) {
     cities <-  aq_cities(country = country)
@@ -50,6 +50,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     # make sure it won't be re-encoded
     Encoding(city) <- "UTF-8"
     class(city) <- c("character", "AsIs")
+
   }
 
   # country
@@ -154,8 +155,8 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   }
 
   argsList <- list(country = country,
-                   city = city,
-                   location = location,
+                   city = replace_plus(city),
+                   location = replace_plus(location),
                    parameter = parameter,
                    has_geo = has_geo,
                    date_from = date_from,
@@ -183,7 +184,18 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
   }
 
+
+
   return(argsList)
+}
+
+replace_plus <- function(x){
+  if(is.null(x)){
+    return(x)
+  }else{
+    gsub("\\+", " ", URLdecode(x))
+  }
+
 }
 
 ############################################################
