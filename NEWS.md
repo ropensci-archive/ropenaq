@@ -1,3 +1,9 @@
+# ropenaq 0.2.0
+
+* Increases version number at last (because of change to crul).
+
+* Fixes an encoding, see #31
+
 # ropenaq 0.1.4
 
 * The httr dependency has been replaced with crul.

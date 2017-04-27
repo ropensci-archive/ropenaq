@@ -48,3 +48,13 @@ test_that("Errors are thrown if the geographical arguments are wrong",{
   expect_error(aq_latest(page = 1, latitude = 2, longitude = 2000), "Longitude should be")
   expect_error(aq_latest(page = 1, radius = 25), "Radius has to be used with latitude and longitude.")
   })
+
+test_that("Queries work with spaces and accents",{
+  result1 <- aq_measurements(city = "Heinz+Ott", country = "DE",
+                             limit = 1, page = 1)
+  expect_is(result1, "tbl_df")
+  result2 <- aq_measurements(city = "Dagmar+G%C3%B6mer", country = "DE",
+                             limit = 1, page = 1)
+  expect_is(result2, "tbl_df")
+
+})
