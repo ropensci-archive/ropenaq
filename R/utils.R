@@ -193,7 +193,7 @@ replace_plus <- function(x){
   if(is.null(x)){
     return(x)
   }else{
-    gsub("\\+", " ", URLdecode(x))
+    gsub("\\+", " ", utils::URLdecode(x))
   }
 
 }
