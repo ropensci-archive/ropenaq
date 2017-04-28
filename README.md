@@ -79,52 +79,52 @@ kable(countries_table)
 | name                                       | code |  cities|  locations|     count|
 |:-------------------------------------------|:-----|-------:|----------:|---------:|
 | Argentina                                  | AR   |       1|          1|      2448|
-| Austria                                    | AT   |     370|        370|    393037|
-| Australia                                  | AU   |      56|         56|   1324005|
-| Bosnia and Herzegovina                     | BA   |      11|         11|    327361|
-| Bangladesh                                 | BD   |       2|          2|     10233|
-| Belgium                                    | BE   |      98|         98|    332928|
-| Bahrain                                    | BH   |       1|          1|      2487|
-| Brazil                                     | BR   |     147|        147|   1983551|
-| Canada                                     | CA   |     157|        157|   1231485|
-| Chile                                      | CL   |     162|        162|   2903337|
-| China                                      | CN   |       6|          6|     72461|
-| Colombia                                   | CO   |       1|          1|      8708|
-| Czech Republic                             | CZ   |     102|        102|    229702|
-| Germany                                    | DE   |     653|        653|   1010750|
-| Denmark                                    | DK   |      13|         13|     31874|
-| Spain                                      | ES   |     644|        644|   1191146|
-| Ethiopia                                   | ET   |       2|          2|      8047|
-| Finland                                    | FI   |      68|         68|     75490|
-| France                                     | FR   |     601|        601|    740317|
-| United Kingdom                             | GB   |     162|        162|   3040393|
-| Gibraltar                                  | GI   |       3|          3|      4646|
-| Croatia                                    | HR   |      32|         32|     42174|
-| Hungary                                    | HU   |      25|         25|     25857|
-| Indonesia                                  | ID   |       3|          3|     24175|
-| Ireland                                    | IE   |      12|         12|     11147|
+| Austria                                    | AT   |     370|        370|    846350|
+| Australia                                  | AU   |      56|         56|   1518432|
+| Bosnia and Herzegovina                     | BA   |      12|         12|    364986|
+| Bangladesh                                 | BD   |       2|          2|     11284|
+| Belgium                                    | BE   |      99|         99|    595381|
+| Bahrain                                    | BH   |       1|          1|      4112|
+| Brazil                                     | BR   |     148|        148|   2163751|
+| Canada                                     | CA   |     157|        157|   1408289|
+| Chile                                      | CL   |     168|        168|   3133655|
+| China                                      | CN   |       6|          6|     77716|
+| Colombia                                   | CO   |       1|          1|      9759|
+| Czech Republic                             | CZ   |     102|        102|    268954|
+| Germany                                    | DE   |     653|        653|   2238927|
+| Denmark                                    | DK   |      13|         13|     55679|
+| Spain                                      | ES   |     645|        645|   2224426|
+| Ethiopia                                   | ET   |       2|          2|     10149|
+| Finland                                    | FI   |      68|         68|    169703|
+| France                                     | FR   |     608|        608|   1837314|
+| United Kingdom                             | GB   |     162|        162|   3312515|
+| Gibraltar                                  | GI   |       3|          3|     10213|
+| Croatia                                    | HR   |      32|         32|     78539|
+| Hungary                                    | HU   |      25|         25|     76174|
+| Indonesia                                  | ID   |       3|          3|     26277|
+| Ireland                                    | IE   |      12|         12|     28580|
 | Israel                                     | IL   |       1|          1|      1826|
-| India                                      | IN   |      94|         94|   3025195|
-| Kuwait                                     | KW   |       1|          1|       615|
-| Macedonia, the Former Yugoslav Republic of | MK   |      30|         30|     52585|
-| Mongolia                                   | MN   |      12|         12|   1476444|
-| Mexico                                     | MX   |      48|         48|   1166957|
+| India                                      | IN   |     103|        103|   3503286|
+| Kuwait                                     | KW   |       1|          1|      1666|
+| Macedonia, the Former Yugoslav Republic of | MK   |      30|         30|    108490|
+| Mongolia                                   | MN   |      12|         12|   1624019|
+| Mexico                                     | MX   |      48|         48|   1327228|
 | Nigeria                                    | NG   |       1|          1|      2541|
-| Netherlands                                | NL   |     110|        110|   3346459|
-| Norway                                     | NO   |      64|         64|    305804|
-| Nepal                                      | NP   |       2|          2|      1208|
-| Peru                                       | PE   |      11|         11|    406689|
+| Netherlands                                | NL   |     110|        110|   3628235|
+| Norway                                     | NO   |      64|         64|    436471|
+| Nepal                                      | NP   |       2|          2|      3500|
+| Peru                                       | PE   |      11|         11|    416028|
 | Philippines                                | PH   |       1|          1|       958|
 | Poland                                     | PL   |      16|         16|    547921|
-| Sweden                                     | SE   |      11|         11|     20586|
+| Sweden                                     | SE   |      11|         11|     45832|
 | Singapore                                  | SG   |       1|          1|      1275|
-| Thailand                                   | TH   |      63|         63|   1673304|
-| Turkey                                     | TR   |     138|        138|    802242|
-| Taiwan, Province of China                  | TW   |      67|         67|    772963|
-| Uganda                                     | UG   |       1|          1|       610|
-| United States                              | US   |    1872|       1872|  17141155|
-| Viet Nam                                   | VN   |       3|          3|     20896|
-| Kosovo                                     | XK   |       1|          1|      8173|
+| Thailand                                   | TH   |      63|         63|   1819906|
+| Turkey                                     | TR   |     140|        140|   1257090|
+| Taiwan, Province of China                  | TW   |      67|         67|   1175931|
+| Uganda                                     | UG   |       1|          1|      1661|
+| United States                              | US   |    1892|       1892|  19371972|
+| Viet Nam                                   | VN   |       3|          3|     22998|
+| Kosovo                                     | XK   |       1|          1|      9224|
 
 ``` r
 attr(countries_table, "meta")
@@ -142,7 +142,7 @@ attr(countries_table, "timestamp")
     ## # A tibble: 1 × 1
     ##             queriedAt
     ##                <dttm>
-    ## 1 2017-03-15 18:25:10
+    ## 1 2017-04-28 13:15:07
 
 The `aq_cities` function
 ------------------------
@@ -158,10 +158,10 @@ kable(head(cities_table))
 |:-----------|:--------|----------:|------:|:-----------|
 | 21 de mayo | CL      |          1|      2| 21+de+mayo |
 | ABBEVILLE  | US      |          1|   4619| ABBEVILLE  |
-| Aberdeen   | GB      |          3|  49381| Aberdeen   |
-| Aberdeen   | US      |          2|  13609| Aberdeen   |
-| ADA        | US      |          1|  16316| ADA        |
-| ADAIR      | US      |          1|  29112| ADAIR      |
+| Aberdeen   | GB      |          3|  53749| Aberdeen   |
+| Aberdeen   | US      |          2|  15491| Aberdeen   |
+| ADA        | US      |          1|  17323| ADA        |
+| ADAIR      | US      |          1|  34045| ADAIR      |
 
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
@@ -170,18 +170,50 @@ cities_tableIndia <- aq_cities(country="IN", limit = 10)
 kable(cities_tableIndia)
 ```
 
-| city       | country |  locations|   count| cityURL    |
-|:-----------|:--------|----------:|-------:|:-----------|
-| Agra       | IN      |          1|   40043| Agra       |
-| Ahmedabad  | IN      |          1|   35598| Ahmedabad  |
-| Amritsar   | IN      |          1|    4397| Amritsar   |
-| Aurangabad | IN      |          1|   49844| Aurangabad |
-| Barddhaman | IN      |          3|    2470| Barddhaman |
-| Bengaluru  | IN      |          5|  177385| Bengaluru  |
-| Chandrapur | IN      |          2|  100679| Chandrapur |
-| Chennai    | IN      |          4|  115163| Chennai    |
-| Chittoor   | IN      |          1|    2013| Chittoor   |
-| Delhi      | IN      |         16|  553093| Delhi      |
+| city             | country |  locations|   count| cityURL          |
+|:-----------------|:--------|----------:|-------:|:-----------------|
+| Nagpur           | IN      |          5|   44255| Nagpur           |
+| Nashik           | IN      |          4|   30867| Nashik           |
+| Panchkula        | IN      |          1|   82178| Panchkula        |
+| Patna            | IN      |          1|   45229| Patna            |
+| Pune             | IN      |          1|   87180| Pune             |
+| Rohtak           | IN      |          1|   45364| Rohtak           |
+| Solapur          | IN      |          1|  177945| Solapur          |
+| Thane            | IN      |          3|   64211| Thane            |
+| Tirupati         | IN      |          3|   83099| Tirupati         |
+| Varanasi         | IN      |          1|  122278| Varanasi         |
+| Jodhpur          | IN      |          1|   93495| Jodhpur          |
+| Jorapokhar       | IN      |          1|    1948| Jorapokhar       |
+| Kanpur           | IN      |          2|  120102| Kanpur           |
+| Kolkata          | IN      |          5|  122526| Kolkata          |
+| Lucknow          | IN      |          4|  134537| Lucknow          |
+| Ludhiana         | IN      |          1|    3962| Ludhiana         |
+| Mandi Gobindgarh | IN      |          1|    6386| Mandi+Gobindgarh |
+| Medak            | IN      |          1|    2671| Medak            |
+| Mumbai           | IN      |          3|  200508| Mumbai           |
+| Muzaffarpur      | IN      |          1|   78906| Muzaffarpur      |
+| Dhanbad          | IN      |          1|       3| Dhanbad          |
+| Durgapur         | IN      |          1|   30858| Durgapur         |
+| Faridabad        | IN      |          1|   65569| Faridabad        |
+| Gaya             | IN      |          1|   47950| Gaya             |
+| Ghaziabad        | IN      |          2|    4281| Ghaziabad        |
+| Gurgaon          | IN      |          1|   78886| Gurgaon          |
+| Haldia           | IN      |          1|   62012| Haldia           |
+| Howrah           | IN      |          1|   23640| Howrah           |
+| Hyderabad        | IN      |         10|  215533| Hyderabad        |
+| Jaipur           | IN      |          1|   97012| Jaipur           |
+| Vijayawara       | IN      |          1|      72| Vijayawara       |
+| Visakhapatnam    | IN      |          6|   82632| Visakhapatnam    |
+| Agra             | IN      |          1|   45537| Agra             |
+| Ahmedabad        | IN      |          1|   37016| Ahmedabad        |
+| Amritsar         | IN      |          1|   13481| Amritsar         |
+| Aurangabad       | IN      |          1|   57904| Aurangabad       |
+| Barddhaman       | IN      |          3|    2470| Barddhaman       |
+| Bengaluru        | IN      |          5|  206532| Bengaluru        |
+| Chandrapur       | IN      |          2|  117804| Chandrapur       |
+| Chennai          | IN      |          4|  140222| Chennai          |
+| Chittoor         | IN      |          1|    2013| Chittoor         |
+| Delhi            | IN      |         16|  624212| Delhi            |
 
 If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.
 
@@ -203,10 +235,10 @@ kable(locations_chennai)
 
 | location                    | city    | country |  count| sourceNames       | lastUpdated | firstUpdated | sourceName        |  latitude|  longitude| pm25 | pm10  | no2   | so2   | o3    | co    | bc    | cityURL | locationURL                   |
 |:----------------------------|:--------|:--------|------:|:------------------|:------------|:-------------|:------------------|---------:|----------:|:-----|:------|:------|:------|:------|:------|:------|:--------|:------------------------------|
-| Alandur Bus Depot           | Chennai | IN      |   1135| CPCB              | 1489599900  | 1487450700   | CPCB              |  12.99711|   80.19152| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | Alandur+Bus+Depot             |
-| IIT                         | Chennai | IN      |   1622| CPCB              | 1489600800  | 1487442600   | CPCB              |  12.99251|   80.23745| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | IIT                           |
-| Manali                      | Chennai | IN      |   1160| CPCB              | 1489599900  | 1487452500   | CPCB              |  13.16454|   80.26285| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | Manali                        |
-| US Diplomatic Post: Chennai | Chennai | IN      |  10855| StateAir\_Chennai | 1489599000  | 1449869400   | StateAir\_Chennai |  13.08784|   80.27847| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | US+Diplomatic+Post%3A+Chennai |
+| Alandur Bus Depot           | Chennai | IN      |   3081| CPCB              | 1493383500  | 1487450700   | CPCB              |  12.99711|   80.19152| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | Alandur+Bus+Depot             |
+| IIT                         | Chennai | IN      |   4223| CPCB              | 1493382600  | 1487442600   | CPCB              |  12.99251|   80.23745| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | IIT                           |
+| Manali                      | Chennai | IN      |   3754| CPCB              | 1493382600  | 1487452500   | CPCB              |  13.16454|   80.26285| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | Manali                        |
+| US Diplomatic Post: Chennai | Chennai | IN      |  11905| StateAir\_Chennai | 1493379000  | 1449869400   | StateAir\_Chennai |  13.08784|   80.27847| TRUE | FALSE | FALSE | FALSE | FALSE | FALSE | FALSE | Chennai | US+Diplomatic+Post%3A+Chennai |
 
 Getting measurements
 ====================
@@ -223,14 +255,14 @@ results_table <- aq_measurements(country = "IN", city = "Delhi", parameter = "pm
 kable(head(results_table))
 ```
 
-| location                       | parameter |  value| unit  | country | city  |  latitude|  longitude| dateUTC             | dateLocal           | cityURL | locationURL                    |
-|:-------------------------------|:----------|------:|:------|:--------|:------|---------:|----------:|:--------------------|:--------------------|:--------|:-------------------------------|
-| Delhi Technological University | pm25      |   65.0| µg/m³ | IN      | Delhi |   28.7440|    77.1200| 2017-03-15 18:00:00 | 2017-03-15 23:30:00 | Delhi   | Delhi+Technological+University |
-| Income Tax Office              | pm25      |   86.0| µg/m³ | IN      | Delhi |   28.6235|    77.2494| 2017-03-15 18:00:00 | 2017-03-15 23:30:00 | Delhi   | Income+Tax+Office              |
-| IHBAS                          | pm25      |   38.4| µg/m³ | IN      | Delhi |   28.6821|    77.3050| 2017-03-15 18:00:00 | 2017-03-15 23:30:00 | Delhi   | IHBAS                          |
-| Shadipur                       | pm25      |  138.8| µg/m³ | IN      | Delhi |   28.6517|    77.1581| 2017-03-15 17:45:00 | 2017-03-15 23:15:00 | Delhi   | Shadipur                       |
-| Siri Fort                      | pm25      |   97.0| µg/m³ | IN      | Delhi |        NA|         NA| 2017-03-15 17:45:00 | 2017-03-15 23:15:00 | Delhi   | Siri+Fort                      |
-| Income Tax Office              | pm25      |   84.0| µg/m³ | IN      | Delhi |   28.6235|    77.2494| 2017-03-15 17:45:00 | 2017-03-15 23:15:00 | Delhi   | Income+Tax+Office              |
+| location                      | parameter |  value| unit  | country | city  |  latitude|  longitude| dateUTC             | dateLocal           | cityURL | locationURL                     |
+|:------------------------------|:----------|------:|:------|:--------|:------|---------:|----------:|:--------------------|:--------------------|:--------|:--------------------------------|
+| US Diplomatic Post: New Delhi | pm25      |  158.9| µg/m³ | IN      | Delhi |  28.63576|   77.22445| 2017-01-20 04:30:00 | 2017-01-20 10:00:00 | Delhi   | US+Diplomatic+Post%3A+New+Delhi |
+| Income Tax Office             | pm25      |  141.0| µg/m³ | IN      | Delhi |  28.62350|   77.24940| 2017-01-20 04:15:00 | 2017-01-20 09:45:00 | Delhi   | Income+Tax+Office               |
+| Siri Fort                     | pm25      |  168.3| µg/m³ | IN      | Delhi |        NA|         NA| 2017-01-20 04:15:00 | 2017-01-20 09:45:00 | Delhi   | Siri+Fort                       |
+| Punjabi Bagh                  | pm25      |  160.0| µg/m³ | IN      | Delhi |  28.66830|   77.11670| 2017-01-20 04:10:00 | 2017-01-20 09:40:00 | Delhi   | Punjabi+Bagh                    |
+| R K Puram                     | pm25      |  191.0| µg/m³ | IN      | Delhi |  28.56480|   77.17440| 2017-01-20 04:10:00 | 2017-01-20 09:40:00 | Delhi   | R+K+Puram                       |
+| Income Tax Office             | pm25      |  137.0| µg/m³ | IN      | Delhi |  28.62350|   77.24940| 2017-01-20 04:00:00 | 2017-01-20 09:30:00 | Delhi   | Income+Tax+Office               |
 
 One could also get all possible parameters in the same table.
 
@@ -246,12 +278,12 @@ kable(head(tableLatest))
 
 | location          | city                 | country |  latitude|  longitude| parameter |     value| lastUpdated         | unit  | sourceName | cityURL              | locationURL       |
 |:------------------|:---------------------|:--------|---------:|----------:|:----------|---------:|:--------------------|:------|:-----------|:---------------------|:------------------|
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |  1219.000| 2017-03-15 18:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |    32.000| 2017-03-15 18:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |    21.000| 2017-03-15 18:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |   169.000| 2017-03-15 18:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |    28.000| 2017-03-15 18:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
-| 16th and Whitmore | Omaha-Council Bluffs | US      |  41.32247|  -95.93799| o3        |     0.041| 2017-03-14 23:00:00 | ppm   | AirNow     | Omaha-Council+Bluffs | 16th+and+Whitmore |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| co        |  6125.000| 2017-04-28 11:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| no2       |    50.000| 2017-04-28 11:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| o3        |    40.000| 2017-04-28 11:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| pm10      |   135.000| 2017-04-28 11:45:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 100 ail           | Ulaanbaatar          | MN      |  47.93291|  106.92138| so2       |    64.000| 2017-03-27 02:00:00 | µg/m³ | Agaar.mn   | Ulaanbaatar          | 100+ail           |
+| 16th and Whitmore | Omaha-Council Bluffs | US      |  41.32247|  -95.93799| o3        |     0.024| 2017-04-28 11:00:00 | ppm   | AirNow     | Omaha-Council+Bluffs | 16th+and+Whitmore |
 
 Below are the latest values for Hyderabad at the time this vignette was compiled.
 
@@ -267,7 +299,7 @@ kable(head(tableLatest))
 | Bollaram Industrial Area                    | Hyderabad | IN      |        NA|         NA| pm10      |  137.0| 2017-02-17 05:15:00 | µg/m³ | CPCB       | Hyderabad | Bollaram+Industrial+Area                      |
 | Bollaram Industrial Area                    | Hyderabad | IN      |        NA|         NA| pm25      |   55.0| 2017-02-17 05:15:00 | µg/m³ | CPCB       | Hyderabad | Bollaram+Industrial+Area                      |
 | Bollaram Industrial Area                    | Hyderabad | IN      |        NA|         NA| so2       |   16.8| 2017-02-17 05:15:00 | µg/m³ | CPCB       | Hyderabad | Bollaram+Industrial+Area                      |
-| Bollaram Industrial Area, Hyderabad - TSPCB | Hyderabad | IN      |        NA|         NA| co        |  840.0| 2017-03-15 17:15:00 | µg/m³ | CPCB       | Hyderabad | Bollaram+Industrial+Area%2C+Hyderabad+-+TSPCB |
+| Bollaram Industrial Area, Hyderabad - TSPCB | Hyderabad | IN      |        NA|         NA| co        |  160.0| 2017-04-28 12:15:00 | µg/m³ | CPCB       | Hyderabad | Bollaram+Industrial+Area%2C+Hyderabad+-+TSPCB |
 
 Paging and limit
 ================
