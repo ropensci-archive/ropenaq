@@ -9,7 +9,7 @@
 
 ## Release summary
 
-* Fixes a bug, encoding in queries is now better handled.
+* Fixes a bug in vignette building (invalid link) and skips one test depending on API health.
 
 ## Reverse dependencies
 
