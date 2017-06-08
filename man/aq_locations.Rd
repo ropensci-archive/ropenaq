@@ -45,7 +45,7 @@ A results data.frame (dplyr "tbl_df") with 12 columns:
  \item and finally an URL encoded version of the city name ("cityURL")
  \item and of the location name ("locationURL").
  }
-and two attribues, a meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
+and two attributes, a meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
 \itemize{
 \item the API name ("name"),
 \item the license of the data ("license"),
