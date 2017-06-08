@@ -1,3 +1,9 @@
+# ropenaq 0.2.1
+
+* Skips some tests on CRAN since the API health can influence the results.
+
+* Changes the footer link in the vignette.
+
 # ropenaq 0.2.0
 
 * Increases version number at last (because of change to crul).

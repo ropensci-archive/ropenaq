@@ -50,6 +50,7 @@ test_that("Errors are thrown if the geographical arguments are wrong",{
   })
 
 test_that("Queries work with spaces and accents",{
+  skip_on_cran()
   result1 <- aq_measurements(city = "Heinz+Ott", country = "DE",
                              limit = 1, page = 1)
   expect_is(result1, "tbl_df")
