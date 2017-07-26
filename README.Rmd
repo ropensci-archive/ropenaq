@@ -14,6 +14,7 @@ ropenaq
 [![Build Status](https://travis-ci.org/ropensci/ropenaq.svg?branch=master)](https://travis-ci.org/ropensci/ropenaq)
 [![Build status](https://ci.appveyor.com/api/projects/status/qurhlh0j8ra3qors?svg=true)](https://ci.appveyor.com/project/ropensci/ropenaq)
 [![codecov.io](https://codecov.io/github/ropensci/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropensci/Ropenaq?branch=master)
+[![](https://badges.ropensci.org/24_status.svg)](https://github.com/ropensci/onboarding/issues/24)
 
 # Installation
 
