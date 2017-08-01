@@ -17,9 +17,9 @@ test_that("latest returns a list of 3 data.frames (tbl_df)", {
 
 test_that("latest has the right columns", {
   skip_on_cran()
-  output <- aq_latest(page = 1)
+  output <- aq_latest(page = 1, limit = 10)
   tableRes <- output
-  expect_true(all(names(tableRes) == c("location",
+  expect_true(all(names(tableRes) %in% c("location",
                                        "city",
                                        "country",
                                        "latitude",
@@ -30,7 +30,9 @@ test_that("latest has the right columns", {
                                        "unit",
                                        "sourceName",
                                        "cityURL",
-                                       "locationURL")))
+                                       "locationURL",
+                                       "averagingPeriod_unit",
+                                       "averagingPeriod_value")))
   expect_true(class(tableRes$location) == "character")
   expect_true(class(tableRes$parameter) == "character")
   expect_true(class(tableRes$value) == "numeric")

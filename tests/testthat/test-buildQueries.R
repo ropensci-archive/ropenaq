@@ -54,7 +54,7 @@ test_that("Queries work with spaces and accents",{
   result1 <- aq_measurements(city = "Heinz+Ott", country = "DE",
                              limit = 1, page = 1)
   expect_is(result1, "tbl_df")
-  result2 <- aq_measurements(city = "Dagmar+G%C3%B6mer", country = "DE",
+  result2 <- aq_measurements(city = "J%EF%BF%BDrgen+Friesel", country = "DE",
                              limit = 1, page = 1)
   expect_is(result2, "tbl_df")
 
