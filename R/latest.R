@@ -80,11 +80,10 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     tableOfResults <- output
     # if no results
     if (nrow(tableOfResults) != 0){
-
-
-    tableOfResults <- tidyr::unnest_(tableOfResults,
-                                     "measurements")
-
+      tableOfResults$row <- 1:nrow(tableOfResults)
+      tableOfResults <- split(tableOfResults, tableOfResults$row)
+      tableOfResults <- lapply(tableOfResults, denest) %>% dplyr::bind_rows()
+      tableOfResults <- dplyr::select_(tableOfResults, quote(- row))
     tableOfResults <- addCityURL(tableOfResults)
     tableOfResults <- addLocationURL(tableOfResults)
 
@@ -98,4 +97,29 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     attr(tableOfResults, "timestamp") <- attr(output, "timestamp")
 
     return(tableOfResults)
+}
+
+unlistaverage <- function(df){
+  lapply(df$averagingPeriod, unlist)
+}
+
+# since tidyr::unnest doesn't work on the data.frame with two levels of nestedness
+denest <- function(df){
+  measurements <- df$measurements
+  if("averagingPeriod" %in% names(measurements[[1]])){
+    average <- lapply(measurements, dplyr::select_, "averagingPeriod")
+    measurements <- lapply(measurements, dplyr::select_, quote(- averagingPeriod))
+    average <- lapply(average, unlistaverage) %>%
+      lapply(as.data.frame) %>%
+      dplyr::bind_rows()
+   names(average) <- paste0("averagingPeriod_", names(average))
+
+   measurements <- dplyr::bind_cols(measurements, average)
+   df <- dplyr::select_(df, quote(- measurements))
+   df <- df[rep(1, nrow(measurements)),]
+   dplyr::bind_cols(df, measurements)
+  }else{
+    tidyr::unnest_(df, "measurements")
+  }
+
 }

@@ -1,3 +1,7 @@
+# ropenaq 0.2.2
+
+* Fixes bug due to new output of the latest endpoint.
+
 # ropenaq 0.2.1
 
 * Skips some tests on CRAN since the API health can influence the results.

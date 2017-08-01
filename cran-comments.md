@@ -9,7 +9,7 @@
 
 ## Release summary
 
-* Fixes a bug in vignette building (invalid link) and skips one test depending on API health.
+* Fixes a bug introduced by a slightly new version of OpenAQ API.
 
 ## Reverse dependencies
 
