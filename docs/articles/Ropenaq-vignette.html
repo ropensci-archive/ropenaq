@@ -9,7 +9,7 @@
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
@@ -60,7 +60,7 @@
       <h1>R package ropenaq</h1>
                         <h4 class="author">M. Salmon</h4>
             
-            <h4 class="date">2017-04-28</h4>
+            <h4 class="date">2017-10-09</h4>
           </div>
 
     
@@ -68,16 +68,16 @@
 <div class="contents">
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
-<html><body><a href="#introduction" class="anchor"> </a></body></html>Introduction</h1>
+<a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <a href="https://openaq.org/" class="uri">https://openaq.org/</a> and see the API documentation at <a href="https://docs.openaq.org/" class="uri">https://docs.openaq.org/</a>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the <code>dplyr</code> package: all output tables are data.frame (dplyr “tbl_df”) objects, that can be further processed and analysed.</p>
 </div>
 <div id="finding-measurements-availability" class="section level1">
 <h1 class="hasAnchor">
-<html><body><a href="#finding-measurements-availability" class="anchor"> </a></body></html>Finding measurements availability</h1>
+<a href="#finding-measurements-availability" class="anchor"></a>Finding measurements availability</h1>
 <p>Three functions of the package allow to get lists of available information. Measurements are obtained from <em>locations</em> that are in <em>cities</em> that are in <em>countries</em>.</p>
 <div id="the-aq_countries-function" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#the-aq_countries-function" class="anchor"> </a></body></html>The <code>aq_countries</code> function</h2>
+<a href="#the-aq_countries-function" class="anchor"></a>The <code>aq_countries</code> function</h2>
 <p>The <code>aq_countries</code> function allows to see for which countries information is available within the platform. It is the easiest function because it does not have any argument. The code for each country is its ISO 3166-1 alpha-2 code.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"ropenaq"</span>)
 countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_countries.html">aq_countries</a></span>()
@@ -88,7 +88,7 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 </div>
 <div id="the-aq_cities-function" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#the-aq_cities-function" class="anchor"> </a></body></html>The <code>aq_cities</code> function</h2>
+<a href="#the-aq_cities-function" class="anchor"></a>The <code>aq_cities</code> function</h2>
 <p>Using the <code>aq_cities</code> functions one can get all cities for which information is available within the platform. For each city, one gets the number of locations and the count of measures for the city, the URL encoded string, and the country it is in.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_table &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_cities.html">aq_cities</a></span>()
 <span class="kw">kable</span>(<span class="kw">head</span>(cities_table))</code></pre></div>
@@ -100,7 +100,7 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 </div>
 <div id="the-aq_locations-function" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#the-aq_locations-function" class="anchor"> </a></body></html>The <code>aq_locations</code> function</h2>
+<a href="#the-aq_locations-function" class="anchor"></a>The <code>aq_locations</code> function</h2>
 <p>The <code>aq_locations</code> function has far more arguments than the first two functions. On can filter locations in a given country, city, location, for a given parameter (valid values are “pm25”, “pm10”, “so2”, “no2”, “o3”, “co” and “bc”), from a given date and/or up to a given date, for values between a minimum and a maximum, for a given circle outside a central point by the use of the <code>latitude</code>, <code>longitude</code> and <code>radius</code> arguments. In the output table one also gets URL encoded strings for the city and the location. Below are several examples.</p>
 <p>Here we only look for locations with PM2.5 information in Chennai, India.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">locations_chennai &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_locations.html">aq_locations</a></span>(<span class="dt">country =</span> <span class="st">"IN"</span>, <span class="dt">city =</span> <span class="st">"Chennai"</span>, <span class="dt">parameter =</span> <span class="st">"pm25"</span>)
@@ -109,11 +109,11 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 </div>
 <div id="getting-measurements" class="section level1">
 <h1 class="hasAnchor">
-<html><body><a href="#getting-measurements" class="anchor"> </a></body></html>Getting measurements</h1>
+<a href="#getting-measurements" class="anchor"></a>Getting measurements</h1>
 <p>Two functions allow to get data: <code>aq_measurement</code> and <code>aq_latest</code>. In both of them the arguments city and location needs to be given as URL encoded strings.</p>
 <div id="the-aq_measurements-function" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#the-aq_measurements-function" class="anchor"> </a></body></html>The <code>aq_measurements</code> function</h2>
+<a href="#the-aq_measurements-function" class="anchor"></a>The <code>aq_measurements</code> function</h2>
 <p>The <code>aq_measurements</code> function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the <code>latitude</code>, <code>longitude</code> and <code>radius</code> arguments. Below we get the PM2.5 measures for Delhi in India.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results_table &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">country =</span> <span class="st">"IN"</span>, <span class="dt">city =</span> <span class="st">"Delhi"</span>, <span class="dt">parameter =</span> <span class="st">"pm25"</span>)
 <span class="kw">kable</span>(<span class="kw">head</span>(results_table))</code></pre></div>
@@ -121,7 +121,7 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 </div>
 <div id="the-aq_latest-function" class="section level2">
 <h2 class="hasAnchor">
-<html><body><a href="#the-aq_latest-function" class="anchor"> </a></body></html>The <code>aq_latest</code> function</h2>
+<a href="#the-aq_latest-function" class="anchor"></a>The <code>aq_latest</code> function</h2>
 <p>This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are <code>NULL</code>, it gives all the newest measures for all locations.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tableLatest &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_latest.html">aq_latest</a></span>()
 <span class="kw">kable</span>(<span class="kw">head</span>(tableLatest))</code></pre></div>
@@ -132,7 +132,7 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 </div>
 <div id="paging-and-limit" class="section level1">
 <h1 class="hasAnchor">
-<html><body><a href="#paging-and-limit" class="anchor"> </a></body></html>Paging and limit</h1>
+<a href="#paging-and-limit" class="anchor"></a>Paging and limit</h1>
 <p>For all endpoints/functions, there a a <code>limit</code> and a <code>page</code> arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. If you don’t enter the parameters by default all results for the query will be retrieved with async requests, but it might take a while nonetheless depending on the total number of results.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">city =</span> <span class="st">"Delhi"</span>,
                             <span class="dt">parameter =</span> <span class="st">"pm25"</span>)</code></pre></div>
@@ -140,7 +140,7 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 </div>
 <div id="other-packages-of-interest-for-getting-air-quality-data" class="section level1">
 <h1 class="hasAnchor">
-<html><body><a href="#other-packages-of-interest-for-getting-air-quality-data" class="anchor"> </a></body></html>Other packages of interest for getting air quality data</h1>
+<a href="#other-packages-of-interest-for-getting-air-quality-data" class="anchor"></a>Other packages of interest for getting air quality data</h1>
 <ul>
 <li><p>The <a href="https://github.com/kehraProject/r_rdefra"><code>rdefra</code> package</a>, also part of the rOpenSci project, allows to to interact with the UK AIR pollution database from DEFRA, including historical measures.</p></li>
 <li><p>The <a href="https://github.com/davidcarslaw/openair"><code>openair</code> package</a> gives access to the same data as <code>rdefra</code> but relies on a local and compressed copy of the data on servers at King’s College (UK), periodically updated.</p></li>
@@ -151,7 +151,6 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 </li>
 <li><p>Please note that this project is released with a <a href="CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p></li>
 </ul>
-<p><a href="http://ropensci.org"><img src="http://ropensci.org/public_images/github_footer.png" alt="ropensci_footer"></a></p>
 </div>
 </div>
   </div>

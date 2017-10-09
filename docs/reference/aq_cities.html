@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,48 +86,41 @@
     <p>Provides a simple listing of cities within the platform.</p>
     
 
-    <pre><span class='fu'>aq_cities</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10000</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>aq_cities</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10000</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>country</dt>
-      <dd>Limit results by a certain country -- a two-letters code see countries() for finding code based on name.</dd>
-      <dt>limit</dt>
-      <dd>Change the number of results returned, max is 10000.</dd>
-      <dt>page</dt>
-      <dd>The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>country</th>
+      <td><p>Limit results by a certain country -- a two-letters code see countries() for finding code based on name.</p></td>
+    </tr>
+    <tr>
+      <th>limit</th>
+      <td><p>Change the number of results returned, max is 10000.</p></td>
+    </tr>
+    <tr>
+      <th>page</th>
+      <td><p>The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A results data.frame (dplyr &quot;tbl_df&quot;) with 5 columns:
-<ul>
-<li> city name (&quot;city&quot;), country code (&quot;country&quot;),
-</li>
-<li> number of measures in total for the city (&quot;count&quot;),
-</li>
-<li> number of locations (&quot;locations&quot;),
-</li>
-<li> and also an URL encoded string for the city (&quot;cityURL&quot;) which can be useful for
-queries involving a city argument.
-</li>
-</ul></p>
-    <p>and 2 attributes, a meta data.frame (dplyr &quot;tbl_df&quot;) with 1 line and 5 columns:
-<ul>
-<li> the API name (&quot;name&quot;),
-</li>
-<li> the license of the data (&quot;license&quot;),
-</li>
-<li> the website url (&quot;website&quot;),
-</li>
-<li> the queried page (&quot;page&quot;),
-</li>
-<li> the limit on the number of results (&quot;limit&quot;),
-</li>
-<li> the number of results found on the platform for the query (&quot;found&quot;)
-</li>
-</ul></p>
-    <p>and a timestamp data.frame (dplyr &quot;tbl_df&quot;) with the query time and the last time at which the data was modified on the platform.</p>
+    <p>A results data.frame (dplyr "tbl_df") with 5 columns:</p><ul>
+<li><p>city name ("city"), country code ("country"),</p></li>
+<li><p>number of measures in total for the city ("count"),</p></li>
+<li><p>number of locations ("locations"),</p></li>
+<li><p>and also an URL encoded string for the city ("cityURL") which can be useful for
+queries involving a city argument.</p></li>
+</ul><p>and 2 attributes, a meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:</p><ul>
+<li><p>the API name ("name"),</p></li>
+<li><p>the license of the data ("license"),</p></li>
+<li><p>the website url ("website"),</p></li>
+<li><p>the queried page ("page"),</p></li>
+<li><p>the limit on the number of results ("limit"),</p></li>
+<li><p>the number of results found on the platform for the query ("found")</p></li>
+</ul><p>and a timestamp data.frame (dplyr "tbl_df") with the query time and the last time at which the data was modified on the platform.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -135,10 +130,10 @@ not its name, should be used.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
-<span class='co'># cities &lt;- aq_cities(country = "BA")</span>
-<span class='co'># cities</span>
-<span class='co'>## ---------------------------------------------</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>not_run</span>({
+  <span class='no'>cities</span> <span class='kw'>&lt;-</span> <span class='fu'>aq_cities</span>(<span class='kw'>country</span> <span class='kw'>=</span> <span class='st'>"BA"</span>)
+  <span class='no'>cities</span>
+})</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
