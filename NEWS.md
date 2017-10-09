@@ -1,3 +1,7 @@
+# ropenaq 0.2.3
+
+* Adds waiting and messaging when too many requests.
+
 # ropenaq 0.2.2
 
 * Fixes bug due to new output of the latest endpoint.
