@@ -138,6 +138,11 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
                             <span class="dt">parameter =</span> <span class="st">"pm25"</span>)</code></pre></div>
 <p>If you really need a lot of data, maybe using the API and this package is not the best choice for you. You can look into downloading csv data from OpenAQ website, e.g. <a href="https://openaq.org/#/locations?_k=jk7d09">here</a> or the daily csv output <a href="http://openaq-data.s3.amazonaws.com/index.html">here</a>. Or you might want to contact OpenAQ.</p>
 </div>
+<div id="rate-limiting" class="section level1">
+<h1 class="hasAnchor">
+<a href="#rate-limiting" class="anchor"></a>Rate limiting</h1>
+<p>In October 2017 the API introduced a rate limit of 2,000 requests every 5 minutes. Please keep this in mind. In the case when the request receives a response status of 429 (too many requests), the package will wait 5 minutes.</p>
+</div>
 <div id="other-packages-of-interest-for-getting-air-quality-data" class="section level1">
 <h1 class="hasAnchor">
 <a href="#other-packages-of-interest-for-getting-air-quality-data" class="anchor"></a>Other packages of interest for getting air quality data</h1>
@@ -174,6 +179,7 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
       </ul>
 </li>
       <li><a href="#paging-and-limit">Paging and limit</a></li>
+      <li><a href="#rate-limiting">Rate limiting</a></li>
       <li><a href="#other-packages-of-interest-for-getting-air-quality-data">Other packages of interest for getting air quality data</a></li>
       </ul>
 </div>

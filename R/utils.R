@@ -227,6 +227,12 @@ getResults_bypage <- function(urlAQ, argsList){
   argsList <- Filter(Negate(is.null), argsList)
   res <- client$get(query = argsList)
   try_number <- 1
+  # rate limit
+  if(res$status_code == 429){
+    message("Too many requests, waiting 5 minutes.")
+    Sys.sleep(60*5+5)
+    res <- client$get(query = argsList)
+  }
   while(res$status_code >= 400 && try_number < 6) {status <- get_status()
   if(status %in% c("green", "yellow")){
     message(paste0("Server returned nothing, trying again, try number", try_number))
@@ -425,6 +431,13 @@ get_res <- function(async){
   res <- crul::AsyncVaried$new(.list = async)
   output <- res$request()
   try_number <- 1
+
+  # rate limit
+  if(any(res$status_code() == 429)){
+    message("Too many requests, waiting 5 minutes.")
+    Sys.sleep(60*5+5)
+    output <- res$request()
+  }
   while(any(res$status_code() >= 400) && try_number < 6) {status <- get_status()
   if(status %in% c("green", "yellow")){
     message(paste0("Server returned nothing, trying again, try number", try_number))
