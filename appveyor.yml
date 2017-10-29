@@ -29,7 +29,6 @@ environment:
 
 build_script:
   - travis-tool.sh install_deps
-  - travis-tool.sh install_r testthat
   - travis-tool.sh install_github davidcarslaw/openair
 
 test_script:
