@@ -1,5 +1,9 @@
 # ropenaq 0.2.3
 
+* Does no longer return an error if the API health status is unknown.
+
+# ropenaq 0.2.3
+
 * Adds waiting and messaging when too many requests.
 
 # ropenaq 0.2.2
