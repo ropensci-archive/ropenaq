@@ -9,7 +9,9 @@
 
 ## Release summary
 
-* Fixes a bug introduced by a slightly new version of OpenAQ API.
+* Tests less strictly for the API health status.
+
+* Now waits if the API tells so.
 
 ## Reverse dependencies
 
