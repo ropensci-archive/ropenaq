@@ -234,7 +234,7 @@ getResults_bypage <- function(urlAQ, argsList){
     res <- client$get(query = argsList)
   }
   while(res$status_code >= 400 && try_number < 6) {status <- get_status()
-  if(status %in% c("green", "yellow")){
+  if(status %in% c("green", "yellow", "unknown")){
     message(paste0("Server returned nothing, trying again, try number", try_number))
     Sys.sleep(2^try_number)
     res <- client$get(query = argsList)
