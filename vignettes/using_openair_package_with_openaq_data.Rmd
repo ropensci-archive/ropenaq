@@ -32,8 +32,8 @@ library("dplyr")
 
 ```{r}
 measurementsNL <- aq_measurements(location="Amsterdam-Einsteinweg", parameter="pm25",
-                                       date_from="2015-09-01",
-                                       date_to="2015-12-31")
+                                       date_from = as.character(Sys.Date() - 100),
+                                       date_to = as.character(Sys.Date()))
 
 # filter negative values
 # and rename columns for compatibilities with openair
@@ -51,7 +51,7 @@ measurementsNL <- as.data.frame(measurementsNL)
 
 ```{r, fig.width=7, fig.height=4}
 # useful timeplot
-timePlot(mydata=measurementsNL, pollutant = "pm25")
+timePlot(mydata = measurementsNL, pollutant = "pm25")
 
 ```
 
@@ -59,7 +59,8 @@ timePlot(mydata=measurementsNL, pollutant = "pm25")
 
 ```{r, fig.width=7, fig.height=4}
 # cool calendar plot
-calendarPlot(mydata=measurementsNL, pollutant = "pm25", year =2015)
+calendarPlot(mydata=measurementsNL, pollutant = "pm25",
+             year = as.numeric(format(Sys.Date(), "%Y")))
 
 ```
 

@@ -23,6 +23,10 @@ knitr::opts_chunk$set(
 
 This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <https://openaq.org/> and see the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.frame (dplyr "tbl_df") objects, that can be further processed and analysed.
 
+## What data can you get?
+
+Via the API since November 2017 the API only provides access to the latest 90 days of OpenAQ data. The whole OpenAQ data can be accessed via Amazon S3. See [this announcement](https://medium.com/@openaq/changes-to-the-openaq-api-and-how-to-access-the-full-archive-of-data-3324b136da8c). You can interact with Amazon S3 using [the `aws.s3` package]( https://CRAN.R-project.org/package=aws.s3) and the maintainer of `ropenaq` plans to write tutorials about how to access OpenAQ data and will also keep the documentation of `ropenaq` up-to-date regarding data access changes.
+
 # Finding measurements availability
 
 Three functions of the package allow to get lists of available information. Measurements are obtained from *locations* that are in *cities* that are in *countries*.
@@ -52,7 +56,7 @@ kable(head(cities_table))
 The optional `country` argument allows to do this for a given country instead of the whole world.
 
 ```{r, cache=FALSE}
-cities_tableIndia <- aq_cities(country="IN", limit = 10)
+cities_tableIndia <- aq_cities(country="IN", limit = 10, page = 1)
 kable(cities_tableIndia)
 ```
 
@@ -83,8 +87,8 @@ Two functions allow to get data: `aq_measurement` and `aq_latest`. In both of th
 The `aq_measurements` function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the `latitude`, `longitude` and `radius` arguments. Below we get the PM2.5 measures for Delhi in India.
 
 ```{r, cache=FALSE}
-results_table <- aq_measurements(country = "IN", city = "Delhi", parameter = "pm25")
-kable(head(results_table))
+results_table <- aq_measurements(country = "IN", city = "Delhi", parameter = "pm25", limit = 10, page = 1)
+kable(results_table)
 ```
 
 One could also get all possible parameters in the same table.
@@ -92,15 +96,7 @@ One could also get all possible parameters in the same table.
 
 ## The `aq_latest` function
 
-This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are `NULL`, it gives all the newest measures for all locations.
-
-
-```{r, cache=FALSE}
-tableLatest <- aq_latest()
-kable(head(tableLatest))
-```
-
-Below are the latest values for Hyderabad at the time this vignette was compiled.
+This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are `NULL`, it gives all the newest measures for all locations. Below are the latest values for Hyderabad at the time this vignette was compiled.
 
 ```{r, cache=FALSE}
 tableLatest <- aq_latest(country="IN", city="Hyderabad")
@@ -113,11 +109,8 @@ For all endpoints/functions, there a a `limit` and a `page` arguments, which ind
 
 
 ```{r, eval = FALSE}
-aq_measurements(city = "Delhi",
-                            parameter = "pm25")
+aq_measurements(city = "Delhi", parameter = "pm25")
 ```
-
-If you really need a lot of data, maybe using the API and this package is not the best choice for you. You can look into downloading csv data from OpenAQ website, e.g. [here](https://openaq.org/#/locations?_k=jk7d09) or the daily csv output [here](http://openaq-data.s3.amazonaws.com/index.html). Or you might want to contact OpenAQ.
 
 # Rate limiting
 

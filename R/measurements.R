@@ -15,7 +15,7 @@
 #' @param latitude Latitude of the center point (lat, lon) used to get measurements within a certain area.
 #' @param longitude Longitude of the center point (lat, lon) used to get measurements within a certain area.
 #' @param radius Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude
-#' @param date_from Show results after a certain date. (character year-month-day, ex. '2015-12-20')
+#' @param date_from Show results after a certain date. (character year-month-day, ex. '2015-12-20'). Note, since November 2017 the API only provides access to the last three months so if you need more data you need to fetch it via Amazon S3 (https://medium.com/@openaq/changes-to-the-openaq-api-and-how-to-access-the-full-archive-of-data-3324b136da8c), potentially using the aws.s3 package.
 #' @param date_to Show results before a certain date. (character year-month-day, ex. '2015-12-20')
 #' @param attribution Logical, whether to add a column with attribution information
 #' @param averaging_period Logical, whether to add a column with averaging_period information

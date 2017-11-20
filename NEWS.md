@@ -1,3 +1,7 @@
+# ropenaq 0.2.4
+
+* Updates documentation regarding data availability (90 days worth of data via the API).
+
 # ropenaq 0.2.3
 
 * Does no longer return an error if the API health status is unknown.

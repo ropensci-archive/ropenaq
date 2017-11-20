@@ -1,7 +1,7 @@
 ## Test environments
 * local x86_64-w64-mingw32/x64 install, R 3.3.1
 * Ubuntu 12.04 (on Travis CI), R devel, release and oldrel
-* Windows on Appveyor CI (stable, patched and devel)
+* Windows on Appveyor CI (stable, patched)
 
 ## R CMD check results
 
@@ -12,6 +12,8 @@
 * Tests less strictly for the API health status.
 
 * Now waits if the API tells so.
+
+* The documentation has been updated regarding data availability.
 
 ## Reverse dependencies
 

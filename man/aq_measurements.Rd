@@ -22,7 +22,7 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{has_geo}{has_geo Filter out items that have or do not have geographic information.}
 
-\item{date_from}{Show results after a certain date. (character year-month-day, ex. '2015-12-20')}
+\item{date_from}{Show results after a certain date. (character year-month-day, ex. '2015-12-20'). Note, since November 2017 the API only provides access to the last three months so if you need more data you need to fetch it via Amazon S3 (https://medium.com/@openaq/changes-to-the-openaq-api-and-how-to-access-the-full-archive-of-data-3324b136da8c), potentially using the aws.s3 package.}
 
 \item{date_to}{Show results before a certain date. (character year-month-day, ex. '2015-12-20')}
 

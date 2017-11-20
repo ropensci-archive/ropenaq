@@ -20,9 +20,6 @@ environment:
 
   - R_VERSION: patched
 
-  - R_VERSION: devel
-    PKGTYPE: source
-
   GITHUB_PAT:
     secure: zuFCb2IKZvA6E+eE5aSCdvaSd2Z60lgMFfJdtKGmqK67DA4l3Uz+VEPkLvrQiNam
 
