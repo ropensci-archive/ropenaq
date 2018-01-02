@@ -60,7 +60,7 @@
       <h1>Using the R package openair</h1>
                         <h4 class="author">M. Salmon</h4>
             
-            <h4 class="date">2017-10-09</h4>
+            <h4 class="date">2017-11-20</h4>
           </div>
 
     
@@ -74,9 +74,8 @@
 <h1 class="hasAnchor">
 <a href="#load-data-for-the-netherlands" class="anchor"></a>Load data for the Netherlands</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measurementsNL &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">location=</span><span class="st">"Amsterdam-Einsteinweg"</span>, <span class="dt">parameter=</span><span class="st">"pm25"</span>,
-                                       <span class="dt">date_from=</span><span class="st">"2015-09-01"</span>,
-                                       <span class="dt">date_to=</span><span class="st">"2015-12-31"</span>)
-<span class="co">#&gt; Warning: package 'bindrcpp' was built under R version 3.4.1</span>
+                                       <span class="dt">date_from =</span> <span class="kw">as.character</span>(<span class="kw">Sys.Date</span>() -<span class="st"> </span><span class="dv">100</span>),
+                                       <span class="dt">date_to =</span> <span class="kw">as.character</span>(<span class="kw">Sys.Date</span>()))
 
 <span class="co"># filter negative values</span>
 <span class="co"># and rename columns for compatibilities with openair</span>
@@ -93,15 +92,14 @@ measurementsNL &lt;-<span class="st"> </span><span class="kw">as.data.frame</spa
 <h1 class="hasAnchor">
 <a href="#timeplot" class="anchor"></a>Timeplot</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># useful timeplot</span>
-<span class="kw">timePlot</span>(<span class="dt">mydata=</span>measurementsNL, <span class="dt">pollutant =</span> <span class="st">"pm25"</span>)</code></pre></div>
-<p><img src="using_openair_package_with_openaq_data_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
+<span class="kw">timePlot</span>(<span class="dt">mydata =</span> measurementsNL, <span class="dt">pollutant =</span> <span class="st">"pm25"</span>)</code></pre></div>
 </div>
 <div id="calendarplot" class="section level1">
 <h1 class="hasAnchor">
 <a href="#calendarplot" class="anchor"></a>Calendarplot</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># cool calendar plot</span>
-<span class="kw">calendarPlot</span>(<span class="dt">mydata=</span>measurementsNL, <span class="dt">pollutant =</span> <span class="st">"pm25"</span>, <span class="dt">year =</span><span class="dv">2015</span>)</code></pre></div>
-<p><img src="using_openair_package_with_openaq_data_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
+<span class="kw">calendarPlot</span>(<span class="dt">mydata=</span>measurementsNL, <span class="dt">pollutant =</span> <span class="st">"pm25"</span>,
+             <span class="dt">year =</span> <span class="kw">as.numeric</span>(<span class="kw">format</span>(<span class="kw">Sys.Date</span>(), <span class="st">"%Y"</span>)))</code></pre></div>
 </div>
 </div>
   </div>

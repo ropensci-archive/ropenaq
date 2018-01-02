@@ -60,7 +60,7 @@
       <h1>R package ropenaq</h1>
                         <h4 class="author">M. Salmon</h4>
             
-            <h4 class="date">2017-10-09</h4>
+            <h4 class="date">2017-11-20</h4>
           </div>
 
     
@@ -70,6 +70,11 @@
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <a href="https://openaq.org/" class="uri">https://openaq.org/</a> and see the API documentation at <a href="https://docs.openaq.org/" class="uri">https://docs.openaq.org/</a>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the <code>dplyr</code> package: all output tables are data.frame (dplyr “tbl_df”) objects, that can be further processed and analysed.</p>
+<div id="what-data-can-you-get" class="section level2">
+<h2 class="hasAnchor">
+<a href="#what-data-can-you-get" class="anchor"></a>What data can you get?</h2>
+<p>Via the API since November 2017 the API only provides access to the latest 90 days of OpenAQ data. The whole OpenAQ data can be accessed via Amazon S3. See <a href="https://medium.com/@openaq/changes-to-the-openaq-api-and-how-to-access-the-full-archive-of-data-3324b136da8c">this announcement</a>. You can interact with Amazon S3 using <a href="https://CRAN.R-project.org/package=aws.s3">the <code>aws.s3</code> package</a> and the maintainer of <code>ropenaq</code> plans to write tutorials about how to access OpenAQ data and will also keep the documentation of <code>ropenaq</code> up-to-date regarding data access changes.</p>
+</div>
 </div>
 <div id="finding-measurements-availability" class="section level1">
 <h1 class="hasAnchor">
@@ -93,7 +98,7 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_table &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_cities.html">aq_cities</a></span>()
 <span class="kw">kable</span>(<span class="kw">head</span>(cities_table))</code></pre></div>
 <p>The optional <code>country</code> argument allows to do this for a given country instead of the whole world.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_tableIndia &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_cities.html">aq_cities</a></span>(<span class="dt">country=</span><span class="st">"IN"</span>, <span class="dt">limit =</span> <span class="dv">10</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_tableIndia &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_cities.html">aq_cities</a></span>(<span class="dt">country=</span><span class="st">"IN"</span>, <span class="dt">limit =</span> <span class="dv">10</span>, <span class="dt">page =</span> <span class="dv">1</span>)
 <span class="kw">kable</span>(cities_tableIndia)</code></pre></div>
 <p>If one inputs a country that is not in the platform (or misspells a code), then an error message is thrown.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#aq_cities(country="PANEM")</span></code></pre></div>
@@ -115,17 +120,14 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 <h2 class="hasAnchor">
 <a href="#the-aq_measurements-function" class="anchor"></a>The <code>aq_measurements</code> function</h2>
 <p>The <code>aq_measurements</code> function has many arguments for getting a query specific to, say, a given parameter in a given location or for a given circle outside a central point by the use of the <code>latitude</code>, <code>longitude</code> and <code>radius</code> arguments. Below we get the PM2.5 measures for Delhi in India.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results_table &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">country =</span> <span class="st">"IN"</span>, <span class="dt">city =</span> <span class="st">"Delhi"</span>, <span class="dt">parameter =</span> <span class="st">"pm25"</span>)
-<span class="kw">kable</span>(<span class="kw">head</span>(results_table))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results_table &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">country =</span> <span class="st">"IN"</span>, <span class="dt">city =</span> <span class="st">"Delhi"</span>, <span class="dt">parameter =</span> <span class="st">"pm25"</span>, <span class="dt">limit =</span> <span class="dv">10</span>, <span class="dt">page =</span> <span class="dv">1</span>)
+<span class="kw">kable</span>(results_table)</code></pre></div>
 <p>One could also get all possible parameters in the same table.</p>
 </div>
 <div id="the-aq_latest-function" class="section level2">
 <h2 class="hasAnchor">
 <a href="#the-aq_latest-function" class="anchor"></a>The <code>aq_latest</code> function</h2>
-<p>This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are <code>NULL</code>, it gives all the newest measures for all locations.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tableLatest &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_latest.html">aq_latest</a></span>()
-<span class="kw">kable</span>(<span class="kw">head</span>(tableLatest))</code></pre></div>
-<p>Below are the latest values for Hyderabad at the time this vignette was compiled.</p>
+<p>This function gives a table with all newest measures for the locations that are chosen by the arguments. If all arguments are <code>NULL</code>, it gives all the newest measures for all locations. Below are the latest values for Hyderabad at the time this vignette was compiled.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tableLatest &lt;-<span class="st"> </span><span class="kw"><a href="../reference/aq_latest.html">aq_latest</a></span>(<span class="dt">country=</span><span class="st">"IN"</span>, <span class="dt">city=</span><span class="st">"Hyderabad"</span>)
 <span class="kw">kable</span>(<span class="kw">head</span>(tableLatest))</code></pre></div>
 </div>
@@ -134,9 +136,7 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
 <h1 class="hasAnchor">
 <a href="#paging-and-limit" class="anchor"></a>Paging and limit</h1>
 <p>For all endpoints/functions, there a a <code>limit</code> and a <code>page</code> arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. If you don’t enter the parameters by default all results for the query will be retrieved with async requests, but it might take a while nonetheless depending on the total number of results.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">city =</span> <span class="st">"Delhi"</span>,
-                            <span class="dt">parameter =</span> <span class="st">"pm25"</span>)</code></pre></div>
-<p>If you really need a lot of data, maybe using the API and this package is not the best choice for you. You can look into downloading csv data from OpenAQ website, e.g. <a href="https://openaq.org/#/locations?_k=jk7d09">here</a> or the daily csv output <a href="http://openaq-data.s3.amazonaws.com/index.html">here</a>. Or you might want to contact OpenAQ.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/aq_measurements.html">aq_measurements</a></span>(<span class="dt">city =</span> <span class="st">"Delhi"</span>, <span class="dt">parameter =</span> <span class="st">"pm25"</span>)</code></pre></div>
 </div>
 <div id="rate-limiting" class="section level1">
 <h1 class="hasAnchor">
@@ -164,7 +164,11 @@ countries_table &lt;-<span class="st"> </span><span class="kw"><a href="../refer
         <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
+<li>
+<a href="#introduction">Introduction</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#what-data-can-you-get">What data can you get?</a></li>
+      </ul>
+</li>
       <li>
 <a href="#finding-measurements-availability">Finding measurements availability</a><ul class="nav nav-pills nav-stacked">
 <li><a href="#the-aq_countries-function">The <code>aq_countries</code> function</a></li>
