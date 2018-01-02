@@ -21,6 +21,7 @@ test_that("latest has the right columns", {
   tableRes <- output
   expect_true(all(names(tableRes) %in% c("location",
                                        "city",
+                                       "distance",
                                        "country",
                                        "latitude",
                                        "longitude",

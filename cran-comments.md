@@ -9,11 +9,7 @@
 
 ## Release summary
 
-* Tests less strictly for the API health status.
-
-* Now waits if the API tells so.
-
-* The documentation has been updated regarding data availability.
+* This is a bug fix in a vignette.
 
 ## Reverse dependencies
 

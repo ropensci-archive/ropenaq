@@ -19,6 +19,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r}
+Sys.getenv("NOT_CRAN"))
+```
+
 In this vignette I want to draw a graph inspired by <https://pbs.twimg.com/media/CYOAGowW8AQs4Fy.png:large>.
 
 ```{r, warning = FALSE, message = FALSE}
