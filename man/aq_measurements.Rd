@@ -89,7 +89,8 @@ not its name, should be used.
 }
 \examples{
 \dontrun{
-output <- aq_measurements(country='IN', limit=9, city='Chennai')
+output <- aq_measurements(country='IN', limit=9, city='Chennai',
+                          page = 1)
 output
 attr(output, "meta")
 attr(output, "timestamp")

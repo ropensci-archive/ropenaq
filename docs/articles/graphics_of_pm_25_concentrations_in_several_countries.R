@@ -1,9 +1,16 @@
 ## ---- echo  =  FALSE, warning = FALSE, message = FALSE-------------------
-NOT_CRAN <- !identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
 knitr::opts_chunk$set(
   collapse  =  TRUE,
   comment  =  "#>",
   purl  =  NOT_CRAN,
   eval  =  NOT_CRAN
 )
+
+## ---- warning = FALSE, message = FALSE-----------------------------------
+library("ropenaq")
+library("ggplot2")
+library("dplyr")
+library("viridis")
+
 

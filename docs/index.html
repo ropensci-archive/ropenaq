@@ -79,7 +79,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"devtools"</span>)
 <span class="kw">install_github</span>(<span class="st">"ropensci/ropenaq"</span>)</code></pre></div>
 <p>If you experience trouble using the package on a Linux machine, please run</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">url::<span class="kw">curl_version</span>()$ssl_version</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">url<span class="op">::</span><span class="kw">curl_version</span>()<span class="op">$</span>ssl_version</code></pre></div>
 <p>If it answers <code>GnuTLS</code>, run</p>
 <pre><code>apt-get install libcurl4-openssl-dev</code></pre>
 <p>And desinstall then re-install <code>curl</code>.</p>
@@ -115,7 +115,7 @@
 <p>GPL (&gt;= 2)</p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>MaÃ«lle Salmon <br><small class="roles"> Author, maintainer </small> </li>
+<li>Maëlle Salmon <br><small class="roles"> Author, maintainer </small> </li>
 <li><a href="authors.html">All authors...</a></li>
 </ul>
 <h2>Dev status</h2>

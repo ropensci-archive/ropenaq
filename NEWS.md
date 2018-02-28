@@ -1,3 +1,7 @@
+# ropenaq 0.2.6
+
+* Takes into account the fact that the Status API can be unavailable.
+
 # ropenaq 0.2.5
 
 * Changes the code for the calendar plot in the openair vignette: with only 90 days data, before February the calendar plot has to be made for the previos year.

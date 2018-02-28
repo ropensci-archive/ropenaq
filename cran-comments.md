@@ -1,5 +1,5 @@
 ## Test environments
-* local x86_64-w64-mingw32/x64 install, R 3.3.1
+* local x86_64-w64-mingw32/x64 install, R 3.4
 * Ubuntu 12.04 (on Travis CI), R devel, release and oldrel
 * Windows on Appveyor CI (stable, patched)
 
