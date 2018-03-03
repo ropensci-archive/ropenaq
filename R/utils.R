@@ -33,7 +33,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                            city = city)
 
     if (!(location %in% locations$locationURL)) {# nolint
-      stop(call. = FALSE, "This location/city/country combination is not available within the platform. See ?locations")# nolint
+      stop(call. = FALSE, "This location/city/country combination is not available within the platform. See ?aq_locations")# nolint
     }
     # make sure it won't be re-encoded
     Encoding(location) <- "UTF-8"
@@ -45,7 +45,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     cities <-  aq_cities(country = country)
 
     if (!(city %in% cities$cityURL)) {# nolint
-      stop(call. = FALSE, paste0("This city/country combination is not available within the platform. See ?cities."))# nolint
+      stop(call. = FALSE, paste0("This city/country combination is not available within the platform. See ?aq_cities."))# nolint
     }
     # make sure it won't be re-encoded
     Encoding(city) <- "UTF-8"
@@ -57,7 +57,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   if (!is.null(country)) {
 
     if (!(country %in% aq_countries()$code)) {# nolint
-      stop(call. = FALSE, "This country is not available within the platform. See ?countries")
+      stop(call. = FALSE, "This country is not available within the platform. See ?aq_countries")
     }
   }
 
@@ -73,7 +73,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                          location = location)
 
     if (apply(locations[, parameter], 2, sum) == 0) {
-      stop(call. = FALSE, "This parameter is not available for any location corresponding to your query. See ?locations")# nolint
+      stop(call. = FALSE, "This parameter is not available for any location corresponding to your query. See ?aq_locations")# nolint
     }
   }
 

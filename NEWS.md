@@ -1,3 +1,7 @@
+# dev
+
+* Have the right function names in error messages about cities and countries, see issue #38 by Birgit Fullerton
+
 # ropenaq 0.2.6
 
 * Takes into account the fact that the Status API can be unavailable.
