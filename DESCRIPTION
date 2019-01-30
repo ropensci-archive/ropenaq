@@ -9,7 +9,7 @@ Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role 
 Description: Allows access to air quality data from the API of the OpenAQ
     platform <https://docs.openaq.org/>, with the different services the API offers
     (getting measurements for a given query, getting latest measurements, getting
-    lists of available countries/cities/locations).
+    lists of available countries/cities/locations). This package has been peer-reviewed by rOpenSci (v. 0.1.0).
 License: GPL (>= 2)
 LazyData: TRUE
 RoxygenNote: 6.1.1
