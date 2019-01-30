@@ -8,35 +8,32 @@ init:
         Import-Module '..\appveyor-tool.ps1'
 
 install:
-  - ps: Bootstrap
-  - cmd: R -q -e "writeLines('options(repos = \'https://cloud.r-project.org\')', '~/.Rprofile')"
-  - cmd: R -q -e "getOption('repos')"
-  - cmd: R -q -e "install.packages('remotes'); remotes::install_github('ropenscilabs/tic'); tic::prepare_all_stages()"
+  ps: Bootstrap
 
-cache:
-- C:\RLibrary
+environment:
+  global:
+    WARNINGS_ARE_ERRORS: 1
+    USE_RTOOLS: true
 
-before_build: R -q -e "tic::before_install()"
-build_script: R -q -e "tic::install()"
-after_build: R -q -e "tic::after_install()"
-before_test: R -q -e "tic::before_script()"
-test_script: R -q -e "tic::script()"
-on_success: R -q -e "try(tic::after_success(), silent = TRUE)"
-on_failure: R -q -e "tic::after_failure()"
-before_deploy: R -q -e "tic::before_deploy()"
-deploy_script: R -q -e "tic::deploy()"
-after_deploy: R -q -e "tic::after_deploy()"
-on_finish: R -q -e "tic::after_script()"
+  matrix:
+  - R_VERSION: stable
+
+  - R_VERSION: patched
+
+  GITHUB_PAT:
+    secure: zuFCb2IKZvA6E+eE5aSCdvaSd2Z60lgMFfJdtKGmqK67DA4l3Uz+VEPkLvrQiNam
 
 # Adapt as necessary starting from here
 
-#on_failure:
-#  - 7z a failure.zip *.Rcheck\*
-#  - appveyor PushArtifact failure.zip
+build_script:
+  - travis-tool.sh install_deps
+  - travis-tool.sh install_github davidcarslaw/openair
 
-#environment:
-#  GITHUB_PAT:
-#    secure: VXO22OHLkl4YhVIomSMwCZyOTx03Xf2WICaVng9xH7gISlAg8a+qrt1DtFtk8sK5
+test_script:
+  - travis-tool.sh run_tests
+
+on_failure:
+  - travis-tool.sh dump_logs
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
@@ -56,3 +53,13 @@ artifacts:
 
   - path: '\*_*.zip'
     name: Bits
+
+notifications:
+ - provider: Email
+   to:
+     - maelle.salmon@yahoo.se
+   subject: 'ropenaq build {{status}}'                  # optional
+   message: "https://ci.appveyor.com/project/ropensci/ropenaq"    # optional
+   on_build_success: false
+   on_build_failure: true
+   on_build_status_changed: true
