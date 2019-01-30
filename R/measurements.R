@@ -24,7 +24,7 @@
 #' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
 
 #'
-#' @return A results data.frame (dplyr "tbl_df") with 12 columns:
+#' @return A results data.frame (dplyr "tbl_df") with at least 12 columns:
 #' \itemize{
 #'  \item the name of the location ("location"),
 #'  \item the parameter ("parameter")
@@ -121,12 +121,6 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
                                                             ymd_hms(strptime(dateLocal, "%Y-%m-%dT%H:%M:%S"))))
 
     names(tableOfResults) <- gsub("coordinates\\.", "", names(tableOfResults))
-
-    if("attribution" %in% names(tableOfResults)){
-      tableOfResults <- tidyr::unnest_(tableOfResults, "attribution", .drop = TRUE)
-      tableOfResults <- dplyr::rename_(tableOfResults, .dots=setNames(list("name"), "attribution_name"))
-      tableOfResults <- dplyr::rename_(tableOfResults, .dots=setNames(list("url"), "attribution_url"))
-    }
 
     }
     ####################################################

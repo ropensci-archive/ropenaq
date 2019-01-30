@@ -1,6 +1,10 @@
-# dev
+# ropenaq 0.2.7
 
 * Have the right function names in error messages about cities and countries, see issue #38 by Birgit Fullerton
+
+* Removes the unneeded ggmap dependency.
+
+* Stops trying to unnest attribution when it is returned by aq_measurements().
 
 # ropenaq 0.2.6
 

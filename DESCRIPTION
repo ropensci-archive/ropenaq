@@ -1,7 +1,7 @@
 Package: ropenaq
 Type: Package
 Title: Accesses Air Quality Data from the Open Data Platform OpenAQ
-Version: 0.2.6
+Version: 0.2.7
 Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role = c("aut", "cre")),
              person("Andrew", "MacDonald", role = c("rev"), comment = "Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
              person("Andy ", "Teucher", role = c("rev"), comment = "Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
@@ -12,7 +12,7 @@ Description: Allows access to air quality data from the API of the OpenAQ
     lists of available countries/cities/locations).
 License: GPL (>= 2)
 LazyData: TRUE
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
 URL: http://github.com/ropensci/ropenaq
 BugReports: http://github.com/ropensci/ropenaq/issues
 Suggests:

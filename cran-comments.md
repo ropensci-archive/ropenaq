@@ -1,7 +1,7 @@
 ## Test environments
-* local x86_64-w64-mingw32/x64 install, R 3.4
-* Ubuntu 12.04 (on Travis CI), R devel, release and oldrel
+* local Ubuntu install, R 3.4.4
 * Windows on Appveyor CI (stable, patched)
+* rhub::check_for_cran()
 
 ## R CMD check results
 
@@ -9,7 +9,9 @@
 
 ## Release summary
 
-* This is a bug fix in a vignette.
+* This is a bug fix in aq_measurements() when returning the attribution column.
+
+* Removes unneeded ggmap dependency.
 
 ## Reverse dependencies
 
