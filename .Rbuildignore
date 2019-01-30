@@ -1,3 +1,4 @@
+^tic\.R$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^appveyor\.yml$
