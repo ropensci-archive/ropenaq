@@ -24,7 +24,6 @@ Suggests:
     openair,
     devtools,
     rworldmap,
-    ggmap,
     viridis
 VignetteBuilder: knitr
 Imports:
