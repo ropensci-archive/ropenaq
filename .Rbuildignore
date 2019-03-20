@@ -1,3 +1,6 @@
+^pkgdown$
+^_pkgdown\.yml$
+^docs$
 ^tic\.R$
 ^.*\.Rproj$
 ^\.Rproj\.user$
