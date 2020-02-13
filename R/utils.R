@@ -222,9 +222,9 @@ getResults <- function(urlAQ, argsList){
 
 }
 getResults_bypage <- function(urlAQ, argsList){
-
   client <- crul::HttpClient$new(url = urlAQ)
   argsList <- Filter(Negate(is.null), argsList)
+  argsList <- argsList[argsList != ""]
   res <- client$get(query = argsList)
   try_number <- 1
   # rate limit
@@ -269,6 +269,7 @@ getResults_bymorepages <- function(urlAQ, argsList){
     limit <- argsList$limit
   }
   no_pages <- ceiling(count/limit)
+
   if(no_pages == 1){
     return(getResults_bypage(urlAQ, argsList))
   }else{
