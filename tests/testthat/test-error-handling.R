@@ -1,5 +1,5 @@
 test_that("error handling", {
-  webmockr::enable()
+
   stub <- webmockr::stub_request("get", paste0(ropenaq:::base_url(), "latest"))
   webmockr::to_raise(stub, fauxpas::HTTPTooManyRequests)
 
@@ -9,5 +9,4 @@ test_that("error handling", {
     print(output)
       expect_null(output)
 
-  webmockr::disable()
 })
