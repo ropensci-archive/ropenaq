@@ -1,7 +1,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.openaq.org/v1/latest?limit=100&coordinates=0%2C0&page=1
+    uri: https://api.openaq.org/v1/latest?limit=2&coordinates=0%2C0&page=1
     body:
       encoding: ''
       string: ''
@@ -17,7 +17,7 @@ http_interactions:
     headers:
       status: HTTP/1.1 200 OK
       content-type: application/json; charset=utf-8
-      content-length: '852'
+      transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-credentials: 'true'
       access-control-allow-headers: Authorization, Content-Type, If-None-Match
@@ -27,38 +27,18 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 10:00:03 GMT
+      date: Wed, 26 Feb 2020 10:28:34 GMT
       last-modified: Wed, 26 Feb 2020 09:42:46 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 fd4e0938b4c73969ed42c5d06bb1bd81.cloudfront.net (CloudFront)
-      x-amz-cf-pop: CDG3-C1
-      x-amz-cf-id: s_uOZjZ1ATDAz61ft8f0k-wn-jgJ7ZOB3GAZJTUT1SAPMtcTI77faA==
+      via: 1.1 8517cf95bad5514a037b3099aa429186.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: o6LmItXAkOiItkBJyTa7DW3tVgSEln9mPA_YTLiBWT9cyFrYlDegBQ==
     body:
       encoding: UTF-8
       file: no
-      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":100,"found":10},"results":[{"location":"7
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":10},"results":[{"location":"7
         Eylül","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"so2","value":31,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":-101,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":2428,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":3,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":45,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Adnan
-        Menderes","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"co","value":3,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":224,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":111,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Burncluith","city":"South
-        West Queensland","country":"AU","distance":0,"measurements":[{"parameter":"o3","value":-1111,"lastUpdated":"2018-07-13T00:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":-1111,"lastUpdated":"2018-07-13T00:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":-1111,"lastUpdated":"2018-07-13T00:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Hopeland","city":"South
-        West Queensland","country":"AU","distance":0,"measurements":[{"parameter":"pm10","value":3.6,"lastUpdated":"2020-02-26T09:00:00.000Z","unit":"µg/m³","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":1.8,"lastUpdated":"2020-02-26T09:00:00.000Z","unit":"µg/m³","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":0,"lastUpdated":"2019-05-21T03:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":0,"lastUpdated":"2019-05-21T03:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":0.023,"lastUpdated":"2020-02-26T09:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Miles
-        Airport","city":"South West Queensland","country":"AU","distance":0,"measurements":[{"parameter":"o3","value":0.024,"lastUpdated":"2020-02-26T09:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":-1111,"lastUpdated":"2020-02-26T09:00:00.000Z","unit":"µg/m³","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":-1111,"lastUpdated":"2020-02-26T09:00:00.000Z","unit":"µg/m³","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":-1111,"lastUpdated":"2019-05-21T03:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":-1111,"lastUpdated":"2019-05-21T03:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Nazilli","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"pm10","value":68,"lastUpdated":"2016-12-11T11:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":38,"lastUpdated":"2016-12-11T11:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":31,"lastUpdated":"2016-12-11T11:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":6192,"lastUpdated":"2016-12-11T11:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":23,"lastUpdated":"2016-12-11T11:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"PA","city":"SASKATCHEWAN","country":"CA","distance":0,"measurements":[{"parameter":"o3","value":0.022,"lastUpdated":"2018-07-23T20:00:00.000Z","unit":"ppm","sourceName":"AirNow","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Tara","city":"South
-        West Queensland","country":"AU","distance":0,"measurements":[{"parameter":"o3","value":0.027,"lastUpdated":"2019-09-17T11:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":0.1,"lastUpdated":"2019-05-21T03:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":0.002,"lastUpdated":"2019-05-21T03:00:00.000Z","unit":"ppm","sourceName":"Australia
-        - Queensland","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Turgutlu","city":"Manisa","country":"TR","distance":0,"measurements":[{"parameter":"co","value":862,"lastUpdated":"2016-06-21T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":126,"lastUpdated":"2016-06-21T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":74,"lastUpdated":"2016-06-21T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":5,"lastUpdated":"2016-06-21T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":29,"lastUpdated":"2016-06-21T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Yunusemre","city":"Manisa","country":"TR","distance":0,"measurements":[{"parameter":"o3","value":18,"lastUpdated":"2016-11-14T19:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":33,"lastUpdated":"2016-11-14T19:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":36,"lastUpdated":"2016-11-14T19:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":-35,"lastUpdated":"2016-11-14T19:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}}]}'
-  recorded_at: 2020-02-26 10:00:04 GMT
+        Menderes","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"co","value":3,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":224,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":111,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}}]}'
+  recorded_at: 2020-02-26 10:28:34 GMT
   recorded_with: vcr/0.4.0, webmockr/0.5.1.98

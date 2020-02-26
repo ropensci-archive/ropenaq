@@ -82,13 +82,18 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     if (nrow(tableOfResults) != 0){
 
       tableOfResults <- tidyr::unnest(tableOfResults, measurements)
-      tableOfResults <- tidyr::unpack(tableOfResults, averagingPeriod,
-                                      names_sep = "_")
+
+      if("averagingPeriod" %in% names(tableOfResults)) {
+        tableOfResults <- tidyr::unpack(tableOfResults, averagingPeriod,
+                                        names_sep = "_")
+
+      }
 
     tableOfResults <- addCityURL(tableOfResults)
     tableOfResults <- addLocationURL(tableOfResults)
 
     tableOfResults <- functionTime(tableOfResults, "lastUpdated")
+    tableOfResults$value <- as.numeric(tableOfResults$value)
 
     }
     attr(tableOfResults, "meta") <- attr(output, "meta")

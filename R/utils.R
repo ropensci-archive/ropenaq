@@ -410,6 +410,7 @@ treat_res <- function(res){
 
   results <- dplyr::tbl_df(results)
 
+
   # get the meta
   meta <- dplyr::tbl_df(
     as.data.frame(output$meta))
