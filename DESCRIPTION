@@ -47,7 +47,8 @@ Suggests:
     rworldmap,
     testthat (>= 2.1.0),
     vcr,
-    viridis
+    viridis,
+    fauxpas
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
