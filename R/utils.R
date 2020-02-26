@@ -283,7 +283,7 @@ getResults_bymorepages <- function(urlAQ, argsList){
     requests <- split(requests, ceiling(seq_along(requests)/10))
 
     res_list <- lapply(requests, get_res)
-    dplyr::bind_rows(res_list)
+    bind_keeping_attr(res_list)
   }
 }
 
@@ -452,5 +452,16 @@ get_res <- function(async){
 
   }
 
-  lapply(output, treat_res) %>% bind_rows()
+  res <- lapply(output, treat_res)
+
+  bind_keeping_attr(res)
+
+}
+
+bind_keeping_attr <- function(df_list) {
+  to_return <- dplyr::bind_rows(df_list)
+  attr(to_return, "meta") <- attr(df_list[[1]], "meta")
+  attr(to_return, "timestamp") <- attr(df_list[[1]], "timestamp")
+
+  return(to_return)
 }
