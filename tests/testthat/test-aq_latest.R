@@ -1,11 +1,9 @@
-library("ropenaq")
-
-#################################################################################################
-context("latest")
-#################################################################################################
 test_that("latest returns a list of 3 data.frames (tbl_df)", {
-  skip_on_cran()
-  output <- aq_latest(page = 1, limit = 100)
+
+  vcr::use_cassette("aq_latest_page1_limit100", {
+    output <- aq_latest(page = 1, limit = 100)
+  })
+
   expect_that(output, is_a("tbl_df"))
   expect_that(attr(output, "meta"), is_a("tbl_df"))
   expect_that(attr(output, "timestamp"), is_a("tbl_df"))
@@ -16,8 +14,11 @@ test_that("latest returns a list of 3 data.frames (tbl_df)", {
 })
 
 test_that("latest has the right columns", {
-  skip_on_cran()
-  output <- aq_latest(page = 1, limit = 10)
+
+  vcr::use_cassette("aq_latest_page1_limit100", {
+    output <- aq_latest(page = 1, limit = 100)
+  })
+
   tableRes <- output
   expect_true(all(names(tableRes) %in% c("location",
                                        "city",

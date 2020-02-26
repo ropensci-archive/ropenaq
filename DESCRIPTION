@@ -24,7 +24,8 @@ Suggests:
     openair,
     devtools,
     rworldmap,
-    viridis
+    viridis,
+    vcr
 VignetteBuilder: knitr
 Imports:
     crul,
