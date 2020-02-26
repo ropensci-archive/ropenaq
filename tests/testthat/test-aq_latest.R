@@ -7,10 +7,18 @@ test_that("latest returns a list of 3 data.frames (tbl_df)", {
   expect_that(output, is_a("tbl_df"))
   expect_that(attr(output, "meta"), is_a("tbl_df"))
   expect_that(attr(output, "timestamp"), is_a("tbl_df"))
-  expect_that(aq_latest(page = 1, latitude = 0, longitude = 0, radius = 10000000, limit = 100),
-              is_a("tbl_df"))
-  expect_that(aq_latest(page = 1, latitude = 0, longitude = 0, limit = 100),
-              is_a("tbl_df"))
+
+  vcr::use_cassette("aq_latest_00_radius", {
+    output2 <- aq_latest(page = 1, latitude = 0, longitude = 0, radius = 10000000, limit = 100)
+  })
+
+  expect_that(output2, is_a("tbl_df"))
+
+  vcr::use_cassette("aq_latest_00", {
+    output3 <- aq_latest(page = 1, latitude = 0, longitude = 0, limit = 100)
+  })
+
+  expect_that(output3, is_a("tbl_df"))
 })
 
 test_that("latest has the right columns", {

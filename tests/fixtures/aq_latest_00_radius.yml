@@ -1,0 +1,459 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/latest?limit=100&coordinates=0%2C0&radius=1e%2B07&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:00:02 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 fd4e0938b4c73969ed42c5d06bb1bd81.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: mZx7udnqhU928QgdAYosupBLv-opvS4MEvLI2SNnPuM9MitK9b7kFQ==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":100,"found":7361},"results":[{"location":"21
+        de Mayo","city":"Huasco","country":"CL","distance":8182788.077194428,"measurements":[{"parameter":"pm25","value":18.72,"lastUpdated":"2020-02-26T08:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"},{"parameter":"pm10","value":40.25,"lastUpdated":"2020-02-26T07:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"}],"coordinates":{"latitude":-28.467794,"longitude":-71.227295}},{"location":"21
+        de mayo","city":"21 de mayo","country":"CL","distance":8462887.154420584,"measurements":[{"parameter":"pm25","value":4,"lastUpdated":"2020-02-04T13:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"},{"parameter":"pm10","value":17,"lastUpdated":"2020-02-04T12:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"},{"parameter":"pm25","value":8,"lastUpdated":"2020-02-26T08:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"},{"parameter":"pm10","value":25,"lastUpdated":"2020-02-26T07:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"}],"coordinates":{"latitude":-37.471184,"longitude":-72.361465}},{"location":"40AB01
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5718547.170303686,"measurements":[{"parameter":"pm25","value":10,"lastUpdated":"2017-03-07T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.281013,"longitude":4.329848}},{"location":"40AB02
+        - BERENDRECHT","city":"Flanders","country":"BE","distance":5725104.669147403,"measurements":[{"parameter":"pm10","value":39.2,"lastUpdated":"2017-03-13T12:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":31,"lastUpdated":"2017-03-13T12:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.34073,"longitude":4.3218203}},{"location":"40AL01
+        - LINKEROEVER","city":"Flanders","country":"BE","distance":5713960.489020357,"measurements":[{"parameter":"pm10","value":16.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":5.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.236195,"longitude":4.385224}},{"location":"40AL04
+        - BEVEREN","city":"Flanders","country":"BE","distance":5719372.000018216,"measurements":[{"parameter":"pm25","value":40.5,"lastUpdated":"2017-06-28T08:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.29067,"longitude":4.2933292}},{"location":"40GK06
+        - GENK","city":"Flanders","country":"BE","distance":5688232.168662724,"measurements":[{"parameter":"pm25","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":16.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.92789,"longitude":5.47062}},{"location":"40GK09
+        - GENK","city":"Flanders","country":"BE","distance":5689166.836427848,"measurements":[{"parameter":"no2","value":46,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":3,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.93463,"longitude":5.4927883}},{"location":"40HB23
+        - HOBOKEN","city":"Flanders","country":"BE","distance":5706365.616550698,"measurements":[{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":17.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":12,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.1703,"longitude":4.341005}},{"location":"40LD01
+        - LAAKDAL","city":"Flanders","country":"BE","distance":5704529.434216399,"measurements":[{"parameter":"no2","value":0.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.109978,"longitude":5.004864}},{"location":"40LD02
+        - LAAKDAL","city":"Flanders","country":"BE","distance":5705810.052902842,"measurements":[{"parameter":"no2","value":8,"lastUpdated":"2017-07-13T14:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.120384,"longitude":5.021546}},{"location":"40OB01
+        - OOSTROZEBEK","city":"Flanders","country":"BE","distance":5672131.505930494,"measurements":[{"parameter":"pm10","value":53.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":40,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.91723,"longitude":3.3073857}},{"location":"40OB02
+        - WIELSBEKE","city":"Flanders","country":"BE","distance":5672240.665676313,"measurements":[{"parameter":"pm25","value":5.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":15.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.91495,"longitude":3.3762116}},{"location":"40R833
+        - STABROEK","city":"Flanders","country":"BE","distance":5723929.729591926,"measurements":[{"parameter":"no2","value":14,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.32766,"longitude":4.362261}},{"location":"40RL01
+        - ROESELARE","city":"Flanders","country":"BE","distance":5675178.060249567,"measurements":[{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":16.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.95318,"longitude":3.1211555}},{"location":"40SZ01
+        - STEENOKKERZ","city":"Flanders","country":"BE","distance":5679190.7752010105,"measurements":[{"parameter":"no2","value":10,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.914577,"longitude":4.5041833}},{"location":"40SZ02
+        - STEENOKKERZ","city":"Flanders","country":"BE","distance":5679075.179380259,"measurements":[{"parameter":"pm25","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":13.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":26,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.91302,"longitude":4.512184}},{"location":"40TS21
+        - TESSENDERLO","city":"Flanders","country":"BE","distance":5700447.48607102,"measurements":[{"parameter":"so2","value":2,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.06571,"longitude":5.1075363}},{"location":"40WZ02
+        - MOL","city":"Flanders","country":"BE","distance":5715406.994246709,"measurements":[{"parameter":"so2","value":0.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.1928,"longitude":5.2215343}},{"location":"41B004
+        - STE.CATHERI","city":"Brussels","country":"BE","distance":5671048.991823571,"measurements":[{"parameter":"no2","value":14,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":41,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":11,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.85081,"longitude":4.3485875}},{"location":"41B011
+        - BERCHEM S.A","city":"Brussels","country":"BE","distance":5671438.504618788,"measurements":[{"parameter":"o3","value":57.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":11.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":5.05,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.858032,"longitude":4.2883363}},{"location":"41MEU1
+        - MEUDON","city":"Brussels","country":"BE","distance":5676255.338195291,"measurements":[{"parameter":"pm10","value":8,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":34.2,"lastUpdated":"2017-03-13T12:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":4.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.8951,"longitude":4.392718}},{"location":"41N043
+        - HAREN","city":"Brussels","country":"BE","distance":5674910.617378813,"measurements":[{"parameter":"no2","value":14.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":12.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":2.35,"lastUpdated":"2017-07-20T19:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":2.5,"lastUpdated":"2017-07-20T19:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":12,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":52,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.88356,"longitude":4.382963}},{"location":"41R001
+        - MOLENBEEK","city":"Brussels","country":"BE","distance":5670821.427261219,"measurements":[{"parameter":"no2","value":10,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":11.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":49.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":15,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":12.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":4.6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.849667,"longitude":4.33382}},{"location":"41R002
+        - IXELLES","city":"Brussels","country":"BE","distance":5668454.777168176,"measurements":[{"parameter":"no2","value":30.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":12,"lastUpdated":"2017-07-20T21:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":3.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.825127,"longitude":4.384719}},{"location":"41R012
+        - UCCLE","city":"Brussels","country":"BE","distance":5665119.750943844,"measurements":[{"parameter":"pm10","value":14.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":5.45,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":49.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.79663,"longitude":4.3585386}},{"location":"41WOL1
+        - WOL.ST.L.","city":"Brussels","country":"BE","distance":5672220.754372606,"measurements":[{"parameter":"pm10","value":11,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":12,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":10,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":48,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.85658,"longitude":4.4257035}},{"location":"42M802
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5716973.176337709,"measurements":[{"parameter":"no2","value":15.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":17.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":3.5,"lastUpdated":"2017-03-14T11:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.26099,"longitude":4.424399}},{"location":"42N016
+        - DESSEL","city":"Flanders","country":"BE","distance":5719456.1913949605,"measurements":[{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":15.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":50.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":10,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.233654,"longitude":5.163979}},{"location":"42N027
+        - BREE","city":"Flanders","country":"BE","distance":5712128.00887751,"measurements":[{"parameter":"no2","value":13.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":47,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.133717,"longitude":5.6066594}},{"location":"42N035
+        - AARSCHOT","city":"Flanders","country":"BE","distance":5688601.022040496,"measurements":[{"parameter":"pm10","value":14.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":4.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":56.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.977543,"longitude":4.837618}},{"location":"42N040
+        - ST.P.LEEUWG","city":"Flanders","country":"BE","distance":5661061.424931341,"measurements":[{"parameter":"o3","value":48,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.76814,"longitude":4.2251945}},{"location":"42N045
+        - HASSELT","city":"Flanders","country":"BE","distance":5688668.250485093,"measurements":[{"parameter":"so2","value":1,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":49.5,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":2.5,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":38.7,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":25,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.939713,"longitude":5.3683786}},{"location":"42N046
+        - GELLIK","city":"Flanders","country":"BE","distance":5684490.862410306,"measurements":[{"parameter":"no2","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":45.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.882298,"longitude":5.618874}},{"location":"42N054
+        - WALSHOUTEM","city":"Flanders","country":"BE","distance":5661294.775731073,"measurements":[{"parameter":"o3","value":38,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":13,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":16.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.711704,"longitude":5.1031585}},{"location":"42R010
+        - ST.STEVENSW","city":"Flanders","country":"BE","distance":5673183.845480341,"measurements":[{"parameter":"no2","value":6.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.86511,"longitude":4.428427}},{"location":"42R020
+        - VILVOORDE","city":"Flanders","country":"BE","distance":5681683.937767866,"measurements":[{"parameter":"no2","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":4.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":14.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.941387,"longitude":4.436721}},{"location":"42R801
+        - BORGERHOUT","city":"Flanders","country":"BE","distance":5711343.117371744,"measurements":[{"parameter":"no2","value":23,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":17.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":33.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.209663,"longitude":4.431821}},{"location":"42R802
+        - BORGERHOUT","city":"Flanders","country":"BE","distance":5711327.091677207,"measurements":[{"parameter":"co","value":14,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":17.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":31,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.20952,"longitude":4.4317923}},{"location":"42R803
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5713419.275312374,"measurements":[{"parameter":"pm25","value":5.58,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":16.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":20.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.22863,"longitude":4.4284544}},{"location":"42R805
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5711113.831513661,"measurements":[{"parameter":"no2","value":23,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":14.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":4.65,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.20823,"longitude":4.4215593}},{"location":"42R811
+        - SCHOTEN","city":"Flanders","country":"BE","distance":5716452.87494437,"measurements":[{"parameter":"pm25","value":5.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":14.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":55.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":8.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.2521,"longitude":4.491362}},{"location":"42R815
+        - ZWIJNDRECHT","city":"Flanders","country":"BE","distance":5711221.594089465,"measurements":[{"parameter":"pm10","value":13.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-03-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":8,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.2147,"longitude":4.3322062}},{"location":"42R817
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5707646.633068783,"measurements":[{"parameter":"pm25","value":4.65,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":14.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":9.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.17713,"longitude":4.4179487}},{"location":"42R820
+        - KAPELLEN","city":"Flanders","country":"BE","distance":5723691.021553087,"measurements":[{"parameter":"no2","value":17,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":2.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.320415,"longitude":4.4448104}},{"location":"42R822
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5716772.743246482,"measurements":[{"parameter":"no2","value":23.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.26429,"longitude":4.34128}},{"location":"42R830
+        - DOEL","city":"Flanders","country":"BE","distance":5722219.864522303,"measurements":[{"parameter":"no2","value":4.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":8,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.31823,"longitude":4.262634}},{"location":"42R831
+        - BERENDRECHT","city":"Flanders","country":"BE","distance":5726117.741432055,"measurements":[{"parameter":"no2","value":11,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":54.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.348797,"longitude":4.3397098}},{"location":"42R834
+        - Boom","city":"Flanders","country":"BE","distance":5697963.806609219,"measurements":[{"parameter":"no2","value":12,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":4.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":13.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.092,"longitude":4.3801036}},{"location":"42R841
+        - MECHELEN","city":"Flanders","country":"BE","distance":5688678.154356829,"measurements":[{"parameter":"o3","value":3,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":44.5,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":24.5,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":30.7,"lastUpdated":"2017-01-06T10:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.002525,"longitude":4.4693213}},{"location":"42R891
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5716132.272873981,"measurements":[{"parameter":"no2","value":30,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":11,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.255806,"longitude":4.38536}},{"location":"42R892
+        - KALLO","city":"Flanders","country":"BE","distance":5716216.731071519,"measurements":[{"parameter":"no2","value":18,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":2.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.26304,"longitude":4.27889}},{"location":"42R893
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5718966.015012233,"measurements":[{"parameter":"so2","value":14.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":42.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.28138,"longitude":4.385771}},{"location":"42R894
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5718954.8274655,"measurements":[{"parameter":"no2","value":34.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":3.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.2835,"longitude":4.349496}},{"location":"42R897
+        - ANTWERPEN","city":"Flanders","country":"BE","distance":5715208.151554224,"measurements":[{"parameter":"no2","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.250107,"longitude":4.3421044}},{"location":"43H201
+        - LIEGE","city":"Wallonia","country":"BE","distance":5655466.769962196,"measurements":[{"parameter":"pm25","value":3.62,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":10.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0.5,"lastUpdated":"2016-12-21T13:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.624992,"longitude":5.5474644}},{"location":"43M204
+        - ANGLEUR","city":"Wallonia","country":"BE","distance":5654588.125586704,"measurements":[{"parameter":"pm10","value":16.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":4.1035,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.611923,"longitude":5.61115}},{"location":"43N060
+        - HAVINNES","city":"Wallonia","country":"BE","distance":5639606.929629753,"measurements":[{"parameter":"co","value":12,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":5.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":0.719,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":10.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":49.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.61672,"longitude":3.4576244}},{"location":"43N063
+        - CORROY L.G.","city":"Wallonia","country":"BE","distance":5651708.459768901,"measurements":[{"parameter":"co","value":10.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":0.719,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":8.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":53.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":7.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.655437,"longitude":4.6682878}},{"location":"43N066
+        - EUPEN","city":"Wallonia","country":"BE","distance":5660056.822455247,"measurements":[{"parameter":"no2","value":5.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":44.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.62886,"longitude":6.002329}},{"location":"43N067
+        - MEMBACH","city":"Wallonia","country":"BE","distance":5658138.195131875,"measurements":[{"parameter":"pm10","value":9.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":1.686,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.612278,"longitude":5.9927526}},{"location":"43N070
+        - MONS","city":"Wallonia","country":"BE","distance":5625654.626146286,"measurements":[{"parameter":"no2","value":16,"lastUpdated":"2017-07-19T01:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":41,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-01-06T09:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":12.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":1.686,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.46519,"longitude":3.9397144}},{"location":"43N073
+        - VEZIN","city":"Wallonia","country":"BE","distance":5637279.98163652,"measurements":[{"parameter":"o3","value":32.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":8.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":1.686,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":5.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.502716,"longitude":4.988423}},{"location":"43N085
+        - VIELSALM","city":"Wallonia","country":"BE","distance":5624160.790788576,"measurements":[{"parameter":"co","value":8,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":6.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":2.1695,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":44.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.303207,"longitude":6.001736}},{"location":"43N093
+        - SINSIN","city":"Wallonia","country":"BE","distance":5614081.198559668,"measurements":[{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":3.62,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":44,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":9.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.27448,"longitude":5.2351685}},{"location":"43N100
+        - DOURBES","city":"Wallonia","country":"BE","distance":5589243.221470185,"measurements":[{"parameter":"pm25","value":2.653,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":54,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":15.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.095684,"longitude":4.594763}},{"location":"43N113
+        - SAINT-ODE","city":"Wallonia","country":"BE","distance":5589889.465182094,"measurements":[{"parameter":"pm25","value":1.2025,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":4.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":3,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":45.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.027027,"longitude":5.593017}},{"location":"43N121
+        - OFFAGNE","city":"Wallonia","country":"BE","distance":5569917.449921374,"measurements":[{"parameter":"pm25","value":3.1365,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":7.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":4.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":44.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":49.87713,"longitude":5.2023873}},{"location":"43N132
+        - HABAY-LA-N.","city":"Wallonia","country":"BE","distance":5556279.549707035,"measurements":[{"parameter":"o3","value":40,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":0.719,"lastUpdated":"2017-07-20T14:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":1.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":10,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":1.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":49.71928,"longitude":5.630398}},{"location":"43R221
+        - LIEGE","city":"Wallonia","country":"BE","distance":5659869.745332124,"measurements":[{"parameter":"no2","value":20.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":32.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2016-12-21T13:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":12.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":2.653,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.658443,"longitude":5.6278353}},{"location":"43R222
+        - SERAING","city":"Wallonia","country":"BE","distance":5654389.249722718,"measurements":[{"parameter":"pm25","value":3.62,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":15.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":36.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":11.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":10,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.61341,"longitude":5.570223}},{"location":"43R223
+        - JEMEPPE","city":"Wallonia","country":"BE","distance":5654717.274037458,"measurements":[{"parameter":"co","value":12.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":26.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":8.925,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":12.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.62067,"longitude":5.5164046}},{"location":"43R240
+        - ENGIS","city":"Wallonia","country":"BE","distance":5649596.318312099,"measurements":[{"parameter":"pm10","value":19.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":3.62,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":3.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":10,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":40,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.583614,"longitude":5.397446}},{"location":"44M702
+        - ERTVELDE","city":"Flanders","country":"BE","distance":5702235.95267851,"measurements":[{"parameter":"no2","value":6.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.166023,"longitude":3.7621374}},{"location":"44M705
+        - ROESELARE","city":"Flanders","country":"BE","distance":5674464.53189271,"measurements":[{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":14.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":55,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.94536,"longitude":3.1524017}},{"location":"44N012
+        - MOERKERKE","city":"Flanders","country":"BE","distance":5709837.206851059,"measurements":[{"parameter":"o3","value":57,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":16.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.254574,"longitude":3.362536}},{"location":"44N029
+        - HOUTEM","city":"Flanders","country":"BE","distance":5679768.185376023,"measurements":[{"parameter":"pm25","value":5.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":13.2,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":53,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.01628,"longitude":2.5823228}},{"location":"44N051
+        - IDEGEM","city":"Flanders","country":"BE","distance":5662569.93075023,"measurements":[{"parameter":"o3","value":58.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.798916,"longitude":3.9302933}},{"location":"44N052
+        - ZWEVEGEM","city":"Flanders","country":"BE","distance":5660856.944157341,"measurements":[{"parameter":"pm10","value":14.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":54,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.814873,"longitude":3.3224943}},{"location":"44R701
+        - GENT","city":"Flanders","country":"BE","distance":5690107.228388345,"measurements":[{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":127.2,"lastUpdated":"2017-07-20T21:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":29,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":24,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":10.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":35,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.05833,"longitude":3.729298}},{"location":"44R702
+        - Gent (G.Carlierlaan)","city":"Flanders","country":"BE","distance":5688184.937259985,"measurements":[{"parameter":"pm10","value":15.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":14.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.040688,"longitude":3.7349715}},{"location":"44R710
+        - DESTELBERGE","city":"Flanders","country":"BE","distance":5690704.181766621,"measurements":[{"parameter":"no2","value":6.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":54,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":17.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.06128,"longitude":3.7752624}},{"location":"44R721
+        - WONDELGEM","city":"Flanders","country":"BE","distance":5693425.580700881,"measurements":[{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":6.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.08896,"longitude":3.7161193}},{"location":"44R731
+        - EVERGEM","city":"Flanders","country":"BE","distance":5697522.20867491,"measurements":[{"parameter":"pm10","value":16.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":11.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":1,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.12469,"longitude":3.7395043}},{"location":"44R740
+        - ST.KRUIS-WI","city":"Flanders","country":"BE","distance":5700750.226202574,"measurements":[{"parameter":"so2","value":1.5,"lastUpdated":"2017-01-06T09:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":45.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":16.7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":12.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.150135,"longitude":3.8087354}},{"location":"44R750
+        - ZELZATE","city":"Flanders","country":"BE","distance":5705924.661880626,"measurements":[{"parameter":"co","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":15,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":11,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.196064,"longitude":3.82292}},{"location":"45R501
+        - CHARLEROI","city":"Wallonia","country":"BE","distance":5622906.831575084,"measurements":[{"parameter":"pm25","value":3.1365,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":16.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":21,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":11.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.409313,"longitude":4.452172}},{"location":"45R502
+        - LODELINSART","city":"Wallonia","country":"BE","distance":5625131.573384783,"measurements":[{"parameter":"no2","value":26,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":1.2025,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":12.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":30.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.428997,"longitude":4.4586806}},{"location":"45R510
+        - CHATELINEAU","city":"Wallonia","country":"BE","distance":5624190.048777594,"measurements":[{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":1.686,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":12.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.416435,"longitude":4.52113}},{"location":"45R511
+        - MARCINELLE","city":"Wallonia","country":"BE","distance":5619201.2308003,"measurements":[{"parameter":"pm10","value":14.771,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":2.1695,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.377594,"longitude":4.4247003}},{"location":"45R512
+        - MARCHIENNE","city":"Wallonia","country":"BE","distance":5622341.983094597,"measurements":[{"parameter":"so2","value":0,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":16,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":9.271,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":0.719,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":10.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.40781,"longitude":4.395897}},{"location":"47E007
+        - Sint-Pieters-Leeuw","city":"Flanders","country":"BE","distance":5664252.436431352,"measurements":[{"parameter":"no2","value":4,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.7953,"longitude":4.2526283}},{"location":"47E008
+        - Grimbergen","city":"Flanders","country":"BE","distance":5679708.147863823,"measurements":[{"parameter":"no2","value":6,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.926094,"longitude":4.39592}},{"location":"47E009
+        - Zemst","city":"Flanders","country":"BE","distance":5683172.450708382,"measurements":[{"parameter":"no2","value":5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.954918,"longitude":4.435417}},{"location":"47E013
+        - Vorst","city":"Brussels","country":"BE","distance":5666581.579738036,"measurements":[{"parameter":"no2","value":10.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":50.811703,"longitude":4.328385}},{"location":"47E703
+        - OOSTEEKLO","city":"Flanders","country":"BE","distance":5704494.009996698,"measurements":[{"parameter":"no2","value":7,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.190315,"longitude":3.6872957}},{"location":"47E704
+        - WACHTEBEKE","city":"Flanders","country":"BE","distance":5703994.034212288,"measurements":[{"parameter":"no2","value":12.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.1761,"longitude":3.8699281}},{"location":"47E714
+        - DUDZELE","city":"Flanders","country":"BE","distance":5711957.420930356,"measurements":[{"parameter":"no2","value":8,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.278965,"longitude":3.248624}},{"location":"47E715
+        - ZUIENKERKE","city":"Flanders","country":"BE","distance":5707917.421273681,"measurements":[{"parameter":"no2","value":8,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.245865,"longitude":3.1749842}},{"location":"47E716
+        - MARIAKERKE","city":"Flanders","country":"BE","distance":5690797.046206783,"measurements":[{"parameter":"no2","value":5.5,"lastUpdated":"2017-07-20T22:00:00.000Z","unit":"µg/m³","sourceName":"EEA
+        Belgium","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":51.066986,"longitude":3.682813}}]}'
+  recorded_at: 2020-02-26 10:00:03 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
