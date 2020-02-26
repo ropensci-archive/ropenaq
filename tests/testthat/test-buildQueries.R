@@ -3,7 +3,7 @@ test_that("Country, city and location are checked for consistency", {
     expect_error(aq_measurements(page = 1, country="PANEM"),
                  "not available within the platform")
 
-    expect_error(aq_measurements(page = 1, country="IN", city="Barcelona"),
+    expect_error(aq_measurements(page = 1, country="AD", city="Barcelona"),
                  "not available within the platform")
 
     expect_error(aq_measurements(page = 1, city="Capitole"),
@@ -12,13 +12,13 @@ test_that("Country, city and location are checked for consistency", {
     expect_error(aq_measurements(page = 1, location="Nirgendwo"),
                  "not available within the platform")
 
-    expect_error(aq_measurements(page = 1, country="IN", location="Nirgendwo"),
+    expect_error(aq_measurements(page = 1, country="AD", location="Nirgendwo"),
                  "not available within the platform")
 
-    expect_error(aq_measurements(page = 1, country="IN", city="Chennai", location="Nirgendwo"),
+    expect_error(aq_measurements(page = 1, country="AD", city="Escaldes-Engordany", location="Nirgendwo"),
                  "not available within the platform")
 
-    expect_error(aq_measurements(page = 1, city="Chennai", location="Nirgendwo"),
+    expect_error(aq_measurements(page = 1, city="Escaldes-Engordany", location="Nirgendwo"),
                  "not available within the platform")
   })
 
@@ -30,7 +30,7 @@ test_that("Parameter has to be available", {
   expect_error(aq_measurements(page = 1, country = "AF", parameter="pm10"),
                "This parameter is not available for any location corresponding to your query.")
 
-  expect_error(aq_measurements(page = 1, city="Hyderabad", parameter="lalala"),
+  expect_error(aq_measurements(page = 1, city="Escaldes-Engordany", parameter="lalala"),
                "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")
 
   })
