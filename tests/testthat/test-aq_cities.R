@@ -1,7 +1,7 @@
 test_that("cities returns a data.frame (tbl_df)", {
 
   vcr::use_cassette("aq_cities_page1", {
-    output <- aq_cities(page = 1)
+    output <- aq_cities(page = 1, limit = 10)
   })
 
   expect_that(output, is_a("tbl_df"))
@@ -13,7 +13,7 @@ test_that("cities returns a data.frame (tbl_df)", {
 test_that("cities has the right columns", {
 
   vcr::use_cassette("aq_cities_page1_IN", {
-    tableRes <- aq_cities(page = 1, country="IN")
+    tableRes <- aq_cities(page = 1, country="IN", limit = 10)
   })
 
 
