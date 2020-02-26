@@ -81,11 +81,17 @@ aq_latest <- function(country = NULL, city = NULL, location = NULL,# nolint
     # if no results
     if (nrow(tableOfResults) != 0){
 
-      tableOfResults <- tidyr::unnest(tableOfResults, measurements)
+      tableOfResults <- tidyr::unnest(
+        tableOfResults,
+        .data$measurements
+        )
 
       if("averagingPeriod" %in% names(tableOfResults)) {
-        tableOfResults <- tidyr::unpack(tableOfResults, averagingPeriod,
-                                        names_sep = "_")
+        tableOfResults <- tidyr::unpack(
+          tableOfResults,
+          .data$averagingPeriod,
+          names_sep = "_"
+          )
 
       }
 

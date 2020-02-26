@@ -293,7 +293,7 @@ getResults_bymorepages <- function(urlAQ, argsList){
 functionURL <- function(resTable, col1, newColName) {
 
   resTable[newColName] <- gsub(
-    sapply(resTable[[col1]], URLencode, reserved = TRUE),
+    sapply(resTable[[col1]], utils::URLencode, reserved = TRUE),
     pattern = "\\%20", replacement = "+"
     )
 
