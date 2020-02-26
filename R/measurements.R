@@ -1,6 +1,5 @@
 #' Function for getting measurements table from the openAQ API
 #'
-#' @importFrom dplyr tbl_df select_ mutate_
 #' @importFrom lazyeval interp
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom jsonlite fromJSON
@@ -107,18 +106,17 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
     # if no results
     if (nrow(tableOfResults) != 0){
 
-
-    tableOfResults <- addCityURL(resTable = tableOfResults)
-    tableOfResults <- addLocationURL(resTable = tableOfResults)
-    tableOfResults <- dplyr::rename_(tableOfResults, .dots=setNames(list("date.utc"), "dateUTC"))
-    tableOfResults <- dplyr::rename_(tableOfResults, .dots=setNames(list("date.local"), "dateLocal"))
-
-    tableOfResults <- tableOfResults %>% mutate_(dateUTC =
-                                                   interp(~ lubridate::
-                                                            ymd_hms(dateUTC)))
-    tableOfResults <- tableOfResults %>% mutate_(dateLocal =
-                                                   interp(~ lubridate::
-                                                            ymd_hms(strptime(dateLocal, "%Y-%m-%dT%H:%M:%S"))))
+    tableOfResults <- tableOfResults %>%
+        addCityURL() %>%
+        addLocationURL() %>%
+        dplyr::rename(dateUTC = .data$date.utc) %>%
+        dplyr::rename(dateLocal = .data$date.local) %>%
+        dplyr::mutate(dateUTC = lubridate::ymd_hms(.data$dateUTC)) %>%
+        dplyr::mutate(
+            dateLocal = lubridate::ymd_hms(
+                strptime(
+                    .data$dateLocal, "%Y-%m-%dT%H:%M:%S"))
+            )
 
     names(tableOfResults) <- gsub("coordinates\\.", "", names(tableOfResults))
 

@@ -258,6 +258,7 @@ getResults_bypage <- function(urlAQ, argsList){
 
 getResults_bymorepages <- function(urlAQ, argsList){
   argsList <- Filter(Negate(is.null), argsList)
+  argsList <- argsList[argsList != ""]
   # find number of total pages
   argsList2 <- argsList
   argsList2$page <- 1
@@ -290,14 +291,13 @@ getResults_bymorepages <- function(urlAQ, argsList){
 ######################################################################################
 # for getting URL encoded versions of city and locations
 functionURL <- function(resTable, col1, newColName) {
-  mutateCall <- lazyeval::interp( ~ gsub(sapply(a, URLencode,
-                                                reserved = TRUE),
-                                         pattern = "\\%20",
-                                         replacement = "+"),
-                                  a = as.name(col1))
 
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                               newColName))
+  resTable[newColName] <- gsub(
+    sapply(resTable[[col1]], URLencode, reserved = TRUE),
+    pattern = "\\%20", replacement = "+"
+    )
+
+  resTable
 }
 
 # encoding city name
@@ -320,11 +320,8 @@ addLocationURL <- function(resTable){
 ######################################################################################
 # transform a given column in POSIXct
 functionTime <- function(resTable, newColName) {
-  mutateCall <- lazyeval::interp( ~ lubridate::ymd_hms(a),
-                                  a = as.name(newColName))
-
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                               newColName))
+  resTable[newColName] <- lubridate::ymd_hms(resTable[[newColName]])
+  resTable
 }
 
 ######################################################################################
@@ -337,8 +334,8 @@ functionParameters <- function(resTable) {
     lazyeval::interp( ~ gsub(.dot, pattern = "c\\)", sub = "")) %>%
     lazyeval::interp( ~ .dot)
 
-  resTable <- resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                                           "parameters"))
+  resTable <- dplyr::mutate(resTable,
+                            parameters = unlist(vapply(.data$parameters, toString, "")))
   resTable$pm25 <-  grepl("pm25", resTable$parameters)
   resTable$pm10 <-  grepl("pm10", resTable$parameters)
   resTable$no2 <-  grepl("no2", resTable$parameters)
@@ -443,10 +440,10 @@ get_res <- function(async){
   }
   while(any(res$status_code() >= 400) && try_number < 6) {status <- get_status()
   if(status %in% c("green", "yellow")){
-    message(paste0("Server returned nothing, trying again, try number", try_number))
-    Sys.sleep(2^try_number)
-    output <- res$request()
-    try_number <- try_number + 1
+      message(paste0("Server returned nothing, trying again, try number", try_number))
+      Sys.sleep(2^try_number)
+      output <- res$request()
+      try_number <- try_number + 1
   }else{
     stop("uh oh, the OpenAQ API seems to be having some issues, try again later")
   }

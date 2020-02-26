@@ -33,5 +33,6 @@ Imports:
     dplyr,
     jsonlite,
     tidyr,
-    lazyeval
+    lazyeval,
+    rlang
 Encoding: UTF-8
