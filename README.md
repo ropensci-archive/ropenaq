@@ -1,10 +1,10 @@
 ropenaq
 =======
 <!-- badges: start -->
-  [![R build status](https://github.com/ropensci/ropenaq/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/ropenaq)
+  [![R build status](https://github.com/ropensci/ropenaq/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/ropenaq/actions?query=workflow%3AR-CMD-check)
   [![codecov.io](https://codecov.io/github/ropensci/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropensci/Ropenaq?branch=master)
 [![](https://badges.ropensci.org/24_status.svg)](https://github.com/ropensci/onboarding/issues/24)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ropenaq)](http://cran.r-project.org/package=ropenaq)
+[![](https://www.r-pkg.org/badges/version/ropenaq)](https://cran.r-project.org/web/packages/ropenaq/index.html)
   <!-- badges: end -->
   
 # Introduction
