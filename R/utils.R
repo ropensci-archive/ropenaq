@@ -327,12 +327,6 @@ functionTime <- function(resTable, newColName) {
 ######################################################################################
 # create the parameters column
 functionParameters <- function(resTable) {
-  mutateCall <- lazyeval::interp( ~ unlist(vapply(a, toString, "")),
-                                  a = as.name("parameters")) %>%
-    lazyeval::interp( ~ gsub(.dot, pattern = "\"", sub = "")) %>%
-    lazyeval::interp( ~ gsub(.dot, pattern = "\\(", sub = "")) %>%
-    lazyeval::interp( ~ gsub(.dot, pattern = "c\\)", sub = "")) %>%
-    lazyeval::interp( ~ .dot)
 
   resTable <- dplyr::mutate(resTable,
                             parameters = unlist(vapply(.data$parameters, toString, "")))
@@ -343,7 +337,8 @@ functionParameters <- function(resTable) {
   resTable$o3 <-  grepl("o3", resTable$parameters)
   resTable$co <-  grepl("co", resTable$parameters)
   resTable$bc <-  grepl("bc", resTable$parameters)
-  resTable <- resTable %>% select_(~ - parameters)
+  dplyr::select(resTable, - .data$parameters)
+
 }
 
 
@@ -381,25 +376,33 @@ treat_res <- function(res){
   averagingPeriod <- output$results$averagingPeriod
 
   if(!is.null(date)){
-    date <- rename_(date, date.utc = "utc")
-    date <- rename_(date, date.local = "local")
+
+    date <- dplyr::rename(
+      date,
+      date.utc = .data$utc,
+      date.local = .data$local
+      )
 
   }
   if(!is.null(averagingPeriod)){
-    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.unit = "unit")
-    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.value = "value")
+
+    averagingPeriod <- dplyr::rename(
+      averagingPeriod,
+      averagingPeriod.unit = .data$unit,
+      averagingPeriod.value = .data$value
+    )
 
   }
   results <- output$results
 
   if("averagingPeriod" %in% names(results)){
-    results <- dplyr::select_(results, quote(- averagingPeriod))
+    results <- dplyr::select(results, - .data$averagingPeriod)
   }
   if("coordinates" %in% names(results)){
-    results <- dplyr::select_(results, quote(- coordinates))
+    results <- dplyr::select(results, - .data$coordinates)
   }
   if("date" %in% names(results)){
-    results <- dplyr::select_(results, quote(- date))
+    results <- dplyr::select(results, - .data$date)
   }
   results <- dplyr::bind_cols(results, coordinates)
   results <- dplyr::bind_cols(results, date)
