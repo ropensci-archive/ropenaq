@@ -90,13 +90,13 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
   # date_from
   if (!is.null(date_from)) {
-    if (is.na(lubridate::ymd(date_from))) {
+    if (is.na(suppressWarnings(lubridate::ymd(date_from)))) {
       stop(call. = FALSE, "date_from and date_to have to be inputed as year-month-day.")
     }
   }
   # date_to
   if (!is.null(date_to)) {
-    if (is.na(lubridate::ymd(date_to))) {
+    if (is.na(suppressWarnings(lubridate::ymd(date_to)))) {
       stop(call. = FALSE, "date_from and date_to have to be inputed as year-month-day.")
     }
   }
@@ -258,6 +258,7 @@ getResults_bypage <- function(urlAQ, argsList){
 
 getResults_bymorepages <- function(urlAQ, argsList){
   argsList <- Filter(Negate(is.null), argsList)
+  argsList <- argsList[argsList != ""]
   # find number of total pages
   argsList2 <- argsList
   argsList2$page <- 1
@@ -283,21 +284,20 @@ getResults_bymorepages <- function(urlAQ, argsList){
     requests <- split(requests, ceiling(seq_along(requests)/10))
 
     res_list <- lapply(requests, get_res)
-    dplyr::bind_rows(res_list)
+    bind_keeping_attr(res_list)
   }
 }
 
 ######################################################################################
 # for getting URL encoded versions of city and locations
 functionURL <- function(resTable, col1, newColName) {
-  mutateCall <- lazyeval::interp( ~ gsub(sapply(a, URLencode,
-                                                reserved = TRUE),
-                                         pattern = "\\%20",
-                                         replacement = "+"),
-                                  a = as.name(col1))
 
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                               newColName))
+  resTable[newColName] <- gsub(
+    sapply(resTable[[col1]], utils::URLencode, reserved = TRUE),
+    pattern = "\\%20", replacement = "+"
+    )
+
+  resTable
 }
 
 # encoding city name
@@ -320,25 +320,16 @@ addLocationURL <- function(resTable){
 ######################################################################################
 # transform a given column in POSIXct
 functionTime <- function(resTable, newColName) {
-  mutateCall <- lazyeval::interp( ~ lubridate::ymd_hms(a),
-                                  a = as.name(newColName))
-
-  resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                               newColName))
+  resTable[newColName] <- lubridate::ymd_hms(resTable[[newColName]])
+  resTable
 }
 
 ######################################################################################
 # create the parameters column
 functionParameters <- function(resTable) {
-  mutateCall <- lazyeval::interp( ~ unlist(vapply(a, toString, "")),
-                                  a = as.name("parameters")) %>%
-    lazyeval::interp( ~ gsub(.dot, pattern = "\"", sub = "")) %>%
-    lazyeval::interp( ~ gsub(.dot, pattern = "\\(", sub = "")) %>%
-    lazyeval::interp( ~ gsub(.dot, pattern = "c\\)", sub = "")) %>%
-    lazyeval::interp( ~ .dot)
 
-  resTable <- resTable %>% dplyr::mutate_(.dots = setNames(list(mutateCall),
-                                                           "parameters"))
+  resTable <- dplyr::mutate(resTable,
+                            parameters = unlist(vapply(.data$parameters, toString, "")))
   resTable$pm25 <-  grepl("pm25", resTable$parameters)
   resTable$pm10 <-  grepl("pm10", resTable$parameters)
   resTable$no2 <-  grepl("no2", resTable$parameters)
@@ -346,7 +337,8 @@ functionParameters <- function(resTable) {
   resTable$o3 <-  grepl("o3", resTable$parameters)
   resTable$co <-  grepl("co", resTable$parameters)
   resTable$bc <-  grepl("bc", resTable$parameters)
-  resTable <- resTable %>% select_(~ - parameters)
+  dplyr::select(resTable, - .data$parameters)
+
 }
 
 
@@ -384,31 +376,40 @@ treat_res <- function(res){
   averagingPeriod <- output$results$averagingPeriod
 
   if(!is.null(date)){
-    date <- rename_(date, date.utc = "utc")
-    date <- rename_(date, date.local = "local")
+
+    date <- dplyr::rename(
+      date,
+      date.utc = .data$utc,
+      date.local = .data$local
+      )
 
   }
   if(!is.null(averagingPeriod)){
-    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.unit = "unit")
-    averagingPeriod <- rename_(averagingPeriod, averagingPeriod.value = "value")
+
+    averagingPeriod <- dplyr::rename(
+      averagingPeriod,
+      averagingPeriod.unit = .data$unit,
+      averagingPeriod.value = .data$value
+    )
 
   }
   results <- output$results
 
   if("averagingPeriod" %in% names(results)){
-    results <- dplyr::select_(results, quote(- averagingPeriod))
+    results <- dplyr::select(results, - .data$averagingPeriod)
   }
   if("coordinates" %in% names(results)){
-    results <- dplyr::select_(results, quote(- coordinates))
+    results <- dplyr::select(results, - .data$coordinates)
   }
   if("date" %in% names(results)){
-    results <- dplyr::select_(results, quote(- date))
+    results <- dplyr::select(results, - .data$date)
   }
   results <- dplyr::bind_cols(results, coordinates)
   results <- dplyr::bind_cols(results, date)
   results <- dplyr::bind_cols(results, averagingPeriod)
 
   results <- dplyr::tbl_df(results)
+
 
   # get the meta
   meta <- dplyr::tbl_df(
@@ -442,15 +443,26 @@ get_res <- function(async){
   }
   while(any(res$status_code() >= 400) && try_number < 6) {status <- get_status()
   if(status %in% c("green", "yellow")){
-    message(paste0("Server returned nothing, trying again, try number", try_number))
-    Sys.sleep(2^try_number)
-    output <- res$request()
-    try_number <- try_number + 1
+      message(paste0("Server returned nothing, trying again, try number", try_number))
+      Sys.sleep(2^try_number)
+      output <- res$request()
+      try_number <- try_number + 1
   }else{
     stop("uh oh, the OpenAQ API seems to be having some issues, try again later")
   }
 
   }
 
-  lapply(output, treat_res) %>% bind_rows()
+  res <- lapply(output, treat_res)
+
+  bind_keeping_attr(res)
+
+}
+
+bind_keeping_attr <- function(df_list) {
+  to_return <- dplyr::bind_rows(df_list)
+  attr(to_return, "meta") <- attr(df_list[[1]], "meta")
+  attr(to_return, "timestamp") <- attr(df_list[[1]], "timestamp")
+
+  return(to_return)
 }

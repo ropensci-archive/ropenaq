@@ -1,0 +1,44 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/latest?limit=2&coordinates=0%2C0&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:28:34 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 8517cf95bad5514a037b3099aa429186.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: o6LmItXAkOiItkBJyTa7DW3tVgSEln9mPA_YTLiBWT9cyFrYlDegBQ==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":10},"results":[{"location":"7
+        Eylül","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"so2","value":31,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":-101,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":2428,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":3,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":45,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Adnan
+        Menderes","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"co","value":3,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":224,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":111,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}}]}'
+  recorded_at: 2020-02-26 10:28:34 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98

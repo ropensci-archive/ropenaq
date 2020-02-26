@@ -1,0 +1,671 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=0&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 09:53:52 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: 9iFHLRLHJzVp6XUS0dMgztPUUFRwuPc8-dKiGdhcWRxzpPwcQmCcBw==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":0,"found":93},"results":[]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=10000
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      content-encoding: gzip
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      cache-control: no-cache
+      date: Wed, 26 Feb 2020 09:53:53 GMT
+      vary: origin
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: jA0kMkqBmJ8uMIqOqLhZa2Gm8pernF9QNHkggpBaIQZ9eT-_06ryrQ==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10000,"found":93},"results":[{"code":"AD","count":112536,"locations":3,"cities":2,"name":"Andorra"},{"code":"AE","count":69397,"locations":4,"cities":3,"name":"United
+        Arab Emirates"},{"code":"AF","count":5414,"locations":2,"cities":2,"name":"Afghanistan"},{"code":"AR","count":14976,"locations":4,"cities":1,"name":"Argentina"},{"code":"AT","count":1521351,"locations":373,"cities":16,"name":"Austria"},{"code":"AU","count":6587237,"locations":166,"cities":52,"name":"Australia"},{"code":"BA","count":1064829,"locations":22,"cities":10,"name":"Bosnia
+        and Herzegovina"},{"code":"BD","count":32857,"locations":2,"cities":1,"name":"Bangladesh"},{"code":"BE","count":1794564,"locations":198,"cities":14,"name":"Belgium"},{"code":"BG","count":2859,"locations":1,"cities":1,"name":"Bulgaria"},{"code":"BH","count":46391,"locations":1,"cities":1,"name":"Bahrain"},{"code":"BK","count":2839,"locations":1,"cities":1},{"code":"BM","count":3537,"locations":1,"cities":1,"name":"Bermuda"},{"code":"BR","count":304267,"locations":61,"cities":31,"name":"Brazil"},{"code":"CA","count":6071867,"locations":213,"cities":12,"name":"Canada"},{"code":"CE","count":5492,"locations":1,"cities":1},{"code":"CH","count":1473679,"locations":30,"cities":15,"name":"Switzerland"},{"code":"CL","count":7876847,"locations":238,"cities":163,"name":"Chile"},{"code":"CN","count":94272538,"locations":1723,"cities":387,"name":"China"},{"code":"CO","count":614715,"locations":34,"cities":12,"name":"Colombia"},{"code":"CR","count":2038,"locations":1,"cities":1,"name":"Costa
+        Rica"},{"code":"CS","count":2695,"locations":2,"cities":1},{"code":"CW","count":21342,"locations":1,"cities":1,"name":"Curaçao"},{"code":"CZ","count":5911776,"locations":200,"cities":15,"name":"Czech
+        Republic"},{"code":"DE","count":12058708,"locations":1086,"cities":36,"name":"Germany"},{"code":"DK","count":568084,"locations":25,"cities":7,"name":"Denmark"},{"code":"DZ","count":6065,"locations":1,"cities":1,"name":"Algeria"},{"code":"ES","count":22960243,"locations":1235,"cities":115,"name":"Spain"},{"code":"ET","count":56608,"locations":3,"cities":2,"name":"Ethiopia"},{"code":"FI","count":1960885,"locations":119,"cities":35,"name":"Finland"},{"code":"FR","count":24426081,"locations":1504,"cities":135,"name":"France"},{"code":"GB","count":10841607,"locations":162,"cities":112,"name":"United
+        Kingdom"},{"code":"GH","count":1595,"locations":11,"cities":1,"name":"Ghana"},{"code":"GI","count":40842,"locations":6,"cities":2,"name":"Gibraltar"},{"code":"GT","count":5679,"locations":2,"cities":2,"name":"Guatemala"},{"code":"HK","count":1492052,"locations":16,"cities":9,"name":"Hong
+        Kong"},{"code":"HR","count":878182,"locations":50,"cities":17,"name":"Croatia"},{"code":"HU","count":2085718,"locations":50,"cities":14,"name":"Hungary"},{"code":"ID","count":76015,"locations":5,"cities":3,"name":"Indonesia"},{"code":"IE","count":470600,"locations":38,"cities":16,"name":"Ireland"},{"code":"IL","count":173130367,"locations":2041,"cities":14,"name":"Israel"},{"code":"IN","count":26819015,"locations":442,"cities":231,"name":"India"},{"code":"IQ","count":8332,"locations":1,"cities":1,"name":"Iraq"},{"code":"IT","count":3732708,"locations":104,"cities":45,"name":"Italy"},{"code":"IZ","count":1807,"locations":1,"cities":1},{"code":"JO","count":5485,"locations":2,"cities":2,"name":"Jordan"},{"code":"KE","count":2842,"locations":2,"cities":1,"name":"Kenya"},{"code":"KG","count":11186,"locations":2,"cities":2,"name":"Kyrgyzstan"},{"code":"KU","count":2696,"locations":1,"cities":1},{"code":"KV","count":2845,"locations":1,"cities":1},{"code":"KW","count":23626,"locations":1,"cities":1,"name":"Kuwait"},{"code":"KZ","count":11325,"locations":1,"cities":1,"name":"Kazakhstan"},{"code":"LA","count":8582,"locations":2,"cities":2,"name":"Lao
+        People''s Democratic Republic"},{"code":"LK","count":18448,"locations":1,"cities":1,"name":"Sri
+        Lanka"},{"code":"LT","count":438259,"locations":17,"cities":8,"name":"Lithuania"},{"code":"LU","count":440199,"locations":7,"cities":3,"name":"Luxembourg"},{"code":"LV","count":187165,"locations":4,"cities":4,"name":"Latvia"},{"code":"MG","count":2579,"locations":1,"cities":1,"name":"Madagascar"},{"code":"MK","count":1215910,"locations":45,"cities":16,"name":"Macedonia,
+        the Former Yugoslav Republic of"},{"code":"MM","count":9149,"locations":2,"cities":2,"name":"Myanmar"},{"code":"MN","count":2817085,"locations":44,"cities":25,"name":"Mongolia"},{"code":"MT","count":251780,"locations":4,"cities":4,"name":"Malta"},{"code":"MX","count":3245906,"locations":103,"cities":5,"name":"Mexico"},{"code":"NG","count":2541,"locations":1,"cities":1,"name":"Nigeria"},{"code":"NL","count":8750020,"locations":111,"cities":67,"name":"Netherlands"},{"code":"NO","count":3485160,"locations":86,"cities":37,"name":"Norway"},{"code":"NP","count":94696,"locations":5,"cities":2,"name":"Nepal"},{"code":"PE","count":706613,"locations":22,"cities":2,"name":"Peru"},{"code":"PH","count":958,"locations":1,"cities":1,"name":"Philippines"},{"code":"PK","count":36957,"locations":8,"cities":5,"name":"Pakistan"},{"code":"PL","count":7804726,"locations":233,"cities":172,"name":"Poland"},{"code":"PT","count":3570640,"locations":67,"cities":16,"name":"Portugal"},{"code":"RS","count":231646,"locations":6,"cities":4,"name":"Serbia"},{"code":"RU","count":186861,"locations":48,"cities":1,"name":"Russian
+        Federation"},{"code":"SA","count":5462,"locations":2,"cities":2,"name":"Saudi
+        Arabia"},{"code":"SE","count":293247,"locations":11,"cities":3,"name":"Sweden"},{"code":"SG","count":1275,"locations":1,"cities":1,"name":"Singapore"},{"code":"SI","count":143266,"locations":9,"cities":9,"name":"Slovenia"},{"code":"SK","count":2373372,"locations":38,"cities":8,"name":"Slovakia"},{"code":"TH","count":5171092,"locations":64,"cities":29,"name":"Thailand"},{"code":"TI","count":2858,"locations":1,"cities":1},{"code":"TJ","count":3063,"locations":1,"cities":1,"name":"Tajikistan"},{"code":"TM","count":3059,"locations":1,"cities":1,"name":"Turkmenistan"},{"code":"TR","count":5640285,"locations":159,"cities":43,"name":"Turkey"},{"code":"TW","count":7186882,"locations":144,"cities":30,"name":"Taiwan"},{"code":"TX","count":2713,"locations":1,"cities":1},{"code":"UG","count":26264,"locations":2,"cities":2,"name":"Uganda"},{"code":"US","count":65434083,"locations":2245,"cities":789,"name":"United
+        States"},{"code":"UZ","count":27153,"locations":2,"cities":2,"name":"Uzbekistan"},{"code":"VM","count":637,"locations":2,"cities":1},{"code":"VN","count":71607,"locations":5,"cities":3,"name":"Viet
+        Nam"},{"code":"XK","count":381851,"locations":9,"cities":8,"name":"Kosovo"},{"code":"ZA","count":239159,"locations":3,"cities":1,"name":"South
+        Africa"}]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/cities?country=DE&limit=0&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 09:53:56 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: Fn-GSccTHH2HCzgg0NRZ9wgzR3sLNU1A-uORQ2ms_ujfkxMAsUp4wg==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":0,"found":36},"results":[]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/cities?country=DE&limit=10000
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 09:53:56 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: jnBww-IV5ipHxVjD89jBiOSrj1HHyVd4NiDfrkVV5oo1DBeOUTnx_A==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10000,"found":36},"results":[{"country":"DE","name":"Andrea
+        Schemmel","city":"Andrea Schemmel","count":106915,"locations":10},{"country":"DE","name":"Andreas
+        Hainsch","city":"Andreas Hainsch","count":309554,"locations":38},{"country":"DE","name":"Annette
+        Pausch","city":"Annette Pausch","count":216793,"locations":34},{"country":"DE","name":"Baden-Württemberg","city":"Baden-Württemberg","count":646662,"locations":42},{"country":"DE","name":"Bayern","city":"Bayern","count":1082040,"locations":55},{"country":"DE","name":"Berlin","city":"Berlin","count":232795,"locations":16},{"country":"DE","name":"Brandenburg","city":"Brandenburg","count":574016,"locations":25},{"country":"DE","name":"Bremen","city":"Bremen","count":208709,"locations":8},{"country":"DE","name":"Christiane
+        Lutz-Holzhauer","city":"Christiane Lutz-Holzhauer","count":325381,"locations":54},{"country":"DE","name":"Dagmar
+        G�mer","city":"Dagmar G�mer","count":128932,"locations":15},{"country":"DE","name":"Dagmar
+        Gömer","city":"Dagmar Gömer","count":10897,"locations":17},{"country":"DE","name":"Hamburg","city":"Hamburg","count":268791,"locations":15},{"country":"DE","name":"Heinz
+        Ott","city":"Heinz Ott","count":550810,"locations":91},{"country":"DE","name":"Hessen","city":"Hessen","count":719028,"locations":35},{"country":"DE","name":"Ingrid
+        Zell","city":"Ingrid Zell","count":107420,"locations":17},{"country":"DE","name":"Joachim
+        Lehmhaus","city":"Joachim Lehmhaus","count":92962,"locations":24},{"country":"DE","name":"J�rgen
+        Friesel","city":"J�rgen Friesel","count":353519,"locations":62},{"country":"DE","name":"Jürgen
+        Friesel","city":"Jürgen Friesel","count":25079,"locations":59},{"country":"DE","name":"Manfred
+        Lotz","city":"Manfred Lotz","count":305411,"locations":31},{"country":"DE","name":"Margit
+        von D�hren","city":"Margit von D�hren","count":312986,"locations":27},{"country":"DE","name":"Margit
+        von Döhren","city":"Margit von Döhren","count":21085,"locations":27},{"country":"DE","name":"Mecklenburg-Vorpommern","city":"Mecklenburg-Vorpommern","count":354611,"locations":16},{"country":"DE","name":"Niedersachsen","city":"Niedersachsen","count":657438,"locations":30},{"country":"DE","name":"Nordrhein-Westfalen","city":"Nordrhein-Westfalen","count":820918,"locations":62},{"country":"DE","name":"Peter
+        Reischl","city":"Peter Reischl","count":203926,"locations":25},{"country":"DE","name":"Rainer
+        Nothard","city":"Rainer Nothard","count":121018,"locations":22},{"country":"DE","name":"Rheinland-Pfalz","city":"Rheinland-Pfalz","count":658971,"locations":27},{"country":"DE","name":"Ruprecht
+        Schleyer","city":"Ruprecht Schleyer","count":83229,"locations":8},{"country":"DE","name":"Saarland","city":"Saarland","count":205037,"locations":11},{"country":"DE","name":"Sachsen","city":"Sachsen","count":400969,"locations":28},{"country":"DE","name":"Sachsen-Anhalt","city":"Sachsen-Anhalt","count":488818,"locations":24},{"country":"DE","name":"Schleswig-Holstein","city":"Schleswig-Holstein","count":193208,"locations":16},{"country":"DE","name":"Stefan
+        Jacobi","city":"Stefan Jacobi","count":395359,"locations":45},{"country":"DE","name":"Thomas
+        Draheim","city":"Thomas Draheim","count":182497,"locations":21},{"country":"DE","name":"Thüringen","city":"Thüringen","count":429756,"locations":22},{"country":"DE","name":"Ulrich
+        Zimmermann","city":"Ulrich Zimmermann","count":263168,"locations":27}]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=0&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      content-encoding: gzip
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      cache-control: no-cache
+      date: Wed, 26 Feb 2020 09:53:57 GMT
+      vary: origin
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: fSCR4OQbU2xpwVTxp0OZAEfv6ov0gRFwAa-ZeJI4NruSqh5U7N9E5w==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":0,"found":93},"results":[]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=10000
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      content-encoding: gzip
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      cache-control: no-cache
+      date: Wed, 26 Feb 2020 09:53:57 GMT
+      vary: origin
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: He9_oeRdeQtE8W02qliIdooVnDjBLVbmVZr3Mv0n81EkaOIu2lcj9w==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10000,"found":93},"results":[{"code":"AD","count":112536,"locations":3,"cities":2,"name":"Andorra"},{"code":"AE","count":69397,"locations":4,"cities":3,"name":"United
+        Arab Emirates"},{"code":"AF","count":5414,"locations":2,"cities":2,"name":"Afghanistan"},{"code":"AR","count":14976,"locations":4,"cities":1,"name":"Argentina"},{"code":"AT","count":1521351,"locations":373,"cities":16,"name":"Austria"},{"code":"AU","count":6587237,"locations":166,"cities":52,"name":"Australia"},{"code":"BA","count":1064829,"locations":22,"cities":10,"name":"Bosnia
+        and Herzegovina"},{"code":"BD","count":32857,"locations":2,"cities":1,"name":"Bangladesh"},{"code":"BE","count":1794564,"locations":198,"cities":14,"name":"Belgium"},{"code":"BG","count":2859,"locations":1,"cities":1,"name":"Bulgaria"},{"code":"BH","count":46391,"locations":1,"cities":1,"name":"Bahrain"},{"code":"BK","count":2839,"locations":1,"cities":1},{"code":"BM","count":3537,"locations":1,"cities":1,"name":"Bermuda"},{"code":"BR","count":304267,"locations":61,"cities":31,"name":"Brazil"},{"code":"CA","count":6071867,"locations":213,"cities":12,"name":"Canada"},{"code":"CE","count":5492,"locations":1,"cities":1},{"code":"CH","count":1473679,"locations":30,"cities":15,"name":"Switzerland"},{"code":"CL","count":7876847,"locations":238,"cities":163,"name":"Chile"},{"code":"CN","count":94272538,"locations":1723,"cities":387,"name":"China"},{"code":"CO","count":614715,"locations":34,"cities":12,"name":"Colombia"},{"code":"CR","count":2038,"locations":1,"cities":1,"name":"Costa
+        Rica"},{"code":"CS","count":2695,"locations":2,"cities":1},{"code":"CW","count":21342,"locations":1,"cities":1,"name":"Curaçao"},{"code":"CZ","count":5911776,"locations":200,"cities":15,"name":"Czech
+        Republic"},{"code":"DE","count":12058708,"locations":1086,"cities":36,"name":"Germany"},{"code":"DK","count":568084,"locations":25,"cities":7,"name":"Denmark"},{"code":"DZ","count":6065,"locations":1,"cities":1,"name":"Algeria"},{"code":"ES","count":22960243,"locations":1235,"cities":115,"name":"Spain"},{"code":"ET","count":56608,"locations":3,"cities":2,"name":"Ethiopia"},{"code":"FI","count":1960885,"locations":119,"cities":35,"name":"Finland"},{"code":"FR","count":24426081,"locations":1504,"cities":135,"name":"France"},{"code":"GB","count":10841607,"locations":162,"cities":112,"name":"United
+        Kingdom"},{"code":"GH","count":1595,"locations":11,"cities":1,"name":"Ghana"},{"code":"GI","count":40842,"locations":6,"cities":2,"name":"Gibraltar"},{"code":"GT","count":5679,"locations":2,"cities":2,"name":"Guatemala"},{"code":"HK","count":1492052,"locations":16,"cities":9,"name":"Hong
+        Kong"},{"code":"HR","count":878182,"locations":50,"cities":17,"name":"Croatia"},{"code":"HU","count":2085718,"locations":50,"cities":14,"name":"Hungary"},{"code":"ID","count":76015,"locations":5,"cities":3,"name":"Indonesia"},{"code":"IE","count":470600,"locations":38,"cities":16,"name":"Ireland"},{"code":"IL","count":173130367,"locations":2041,"cities":14,"name":"Israel"},{"code":"IN","count":26819015,"locations":442,"cities":231,"name":"India"},{"code":"IQ","count":8332,"locations":1,"cities":1,"name":"Iraq"},{"code":"IT","count":3732708,"locations":104,"cities":45,"name":"Italy"},{"code":"IZ","count":1807,"locations":1,"cities":1},{"code":"JO","count":5485,"locations":2,"cities":2,"name":"Jordan"},{"code":"KE","count":2842,"locations":2,"cities":1,"name":"Kenya"},{"code":"KG","count":11186,"locations":2,"cities":2,"name":"Kyrgyzstan"},{"code":"KU","count":2696,"locations":1,"cities":1},{"code":"KV","count":2845,"locations":1,"cities":1},{"code":"KW","count":23626,"locations":1,"cities":1,"name":"Kuwait"},{"code":"KZ","count":11325,"locations":1,"cities":1,"name":"Kazakhstan"},{"code":"LA","count":8582,"locations":2,"cities":2,"name":"Lao
+        People''s Democratic Republic"},{"code":"LK","count":18448,"locations":1,"cities":1,"name":"Sri
+        Lanka"},{"code":"LT","count":438259,"locations":17,"cities":8,"name":"Lithuania"},{"code":"LU","count":440199,"locations":7,"cities":3,"name":"Luxembourg"},{"code":"LV","count":187165,"locations":4,"cities":4,"name":"Latvia"},{"code":"MG","count":2579,"locations":1,"cities":1,"name":"Madagascar"},{"code":"MK","count":1215910,"locations":45,"cities":16,"name":"Macedonia,
+        the Former Yugoslav Republic of"},{"code":"MM","count":9149,"locations":2,"cities":2,"name":"Myanmar"},{"code":"MN","count":2817085,"locations":44,"cities":25,"name":"Mongolia"},{"code":"MT","count":251780,"locations":4,"cities":4,"name":"Malta"},{"code":"MX","count":3245906,"locations":103,"cities":5,"name":"Mexico"},{"code":"NG","count":2541,"locations":1,"cities":1,"name":"Nigeria"},{"code":"NL","count":8750020,"locations":111,"cities":67,"name":"Netherlands"},{"code":"NO","count":3485160,"locations":86,"cities":37,"name":"Norway"},{"code":"NP","count":94696,"locations":5,"cities":2,"name":"Nepal"},{"code":"PE","count":706613,"locations":22,"cities":2,"name":"Peru"},{"code":"PH","count":958,"locations":1,"cities":1,"name":"Philippines"},{"code":"PK","count":36957,"locations":8,"cities":5,"name":"Pakistan"},{"code":"PL","count":7804726,"locations":233,"cities":172,"name":"Poland"},{"code":"PT","count":3570640,"locations":67,"cities":16,"name":"Portugal"},{"code":"RS","count":231646,"locations":6,"cities":4,"name":"Serbia"},{"code":"RU","count":186861,"locations":48,"cities":1,"name":"Russian
+        Federation"},{"code":"SA","count":5462,"locations":2,"cities":2,"name":"Saudi
+        Arabia"},{"code":"SE","count":293247,"locations":11,"cities":3,"name":"Sweden"},{"code":"SG","count":1275,"locations":1,"cities":1,"name":"Singapore"},{"code":"SI","count":143266,"locations":9,"cities":9,"name":"Slovenia"},{"code":"SK","count":2373372,"locations":38,"cities":8,"name":"Slovakia"},{"code":"TH","count":5171092,"locations":64,"cities":29,"name":"Thailand"},{"code":"TI","count":2858,"locations":1,"cities":1},{"code":"TJ","count":3063,"locations":1,"cities":1,"name":"Tajikistan"},{"code":"TM","count":3059,"locations":1,"cities":1,"name":"Turkmenistan"},{"code":"TR","count":5640285,"locations":159,"cities":43,"name":"Turkey"},{"code":"TW","count":7186882,"locations":144,"cities":30,"name":"Taiwan"},{"code":"TX","count":2713,"locations":1,"cities":1},{"code":"UG","count":26264,"locations":2,"cities":2,"name":"Uganda"},{"code":"US","count":65434083,"locations":2245,"cities":789,"name":"United
+        States"},{"code":"UZ","count":27153,"locations":2,"cities":2,"name":"Uzbekistan"},{"code":"VM","count":637,"locations":2,"cities":1},{"code":"VN","count":71607,"locations":5,"cities":3,"name":"Viet
+        Nam"},{"code":"XK","count":381851,"locations":9,"cities":8,"name":"Kosovo"},{"code":"ZA","count":239159,"locations":3,"cities":1,"name":"South
+        Africa"}]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/measurements?country=DE&city=Heinz%20Ott&limit=1&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 09:53:57 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: 7GP4zS6QeH1h7DSoXEPWjkdrPRMk7jh3Ocx2UqpJeIh06BvyLlRnqQ==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":1,"found":1620490},"results":[]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=0&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      content-encoding: gzip
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      cache-control: no-cache
+      date: Wed, 26 Feb 2020 09:53:58 GMT
+      vary: origin
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: TmJaxgUL0qx9RUF5G8Byt4L1ZTAeIQLYbCiyiDHXszo4Ul8q67ob3A==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":0,"found":93},"results":[]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=10000
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      content-encoding: gzip
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      cache-control: no-cache
+      date: Wed, 26 Feb 2020 09:53:57 GMT
+      vary: origin
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: zoM9Khie-kCqs-tXIK6sPumeD6oDZYlrTNPi9u_c9FezIQTDuumbOg==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10000,"found":93},"results":[{"code":"AD","count":112536,"locations":3,"cities":2,"name":"Andorra"},{"code":"AE","count":69397,"locations":4,"cities":3,"name":"United
+        Arab Emirates"},{"code":"AF","count":5414,"locations":2,"cities":2,"name":"Afghanistan"},{"code":"AR","count":14976,"locations":4,"cities":1,"name":"Argentina"},{"code":"AT","count":1521351,"locations":373,"cities":16,"name":"Austria"},{"code":"AU","count":6587237,"locations":166,"cities":52,"name":"Australia"},{"code":"BA","count":1064829,"locations":22,"cities":10,"name":"Bosnia
+        and Herzegovina"},{"code":"BD","count":32857,"locations":2,"cities":1,"name":"Bangladesh"},{"code":"BE","count":1794564,"locations":198,"cities":14,"name":"Belgium"},{"code":"BG","count":2859,"locations":1,"cities":1,"name":"Bulgaria"},{"code":"BH","count":46391,"locations":1,"cities":1,"name":"Bahrain"},{"code":"BK","count":2839,"locations":1,"cities":1},{"code":"BM","count":3537,"locations":1,"cities":1,"name":"Bermuda"},{"code":"BR","count":304267,"locations":61,"cities":31,"name":"Brazil"},{"code":"CA","count":6071867,"locations":213,"cities":12,"name":"Canada"},{"code":"CE","count":5492,"locations":1,"cities":1},{"code":"CH","count":1473679,"locations":30,"cities":15,"name":"Switzerland"},{"code":"CL","count":7876847,"locations":238,"cities":163,"name":"Chile"},{"code":"CN","count":94272538,"locations":1723,"cities":387,"name":"China"},{"code":"CO","count":614715,"locations":34,"cities":12,"name":"Colombia"},{"code":"CR","count":2038,"locations":1,"cities":1,"name":"Costa
+        Rica"},{"code":"CS","count":2695,"locations":2,"cities":1},{"code":"CW","count":21342,"locations":1,"cities":1,"name":"Curaçao"},{"code":"CZ","count":5911776,"locations":200,"cities":15,"name":"Czech
+        Republic"},{"code":"DE","count":12058708,"locations":1086,"cities":36,"name":"Germany"},{"code":"DK","count":568084,"locations":25,"cities":7,"name":"Denmark"},{"code":"DZ","count":6065,"locations":1,"cities":1,"name":"Algeria"},{"code":"ES","count":22960243,"locations":1235,"cities":115,"name":"Spain"},{"code":"ET","count":56608,"locations":3,"cities":2,"name":"Ethiopia"},{"code":"FI","count":1960885,"locations":119,"cities":35,"name":"Finland"},{"code":"FR","count":24426081,"locations":1504,"cities":135,"name":"France"},{"code":"GB","count":10841607,"locations":162,"cities":112,"name":"United
+        Kingdom"},{"code":"GH","count":1595,"locations":11,"cities":1,"name":"Ghana"},{"code":"GI","count":40842,"locations":6,"cities":2,"name":"Gibraltar"},{"code":"GT","count":5679,"locations":2,"cities":2,"name":"Guatemala"},{"code":"HK","count":1492052,"locations":16,"cities":9,"name":"Hong
+        Kong"},{"code":"HR","count":878182,"locations":50,"cities":17,"name":"Croatia"},{"code":"HU","count":2085718,"locations":50,"cities":14,"name":"Hungary"},{"code":"ID","count":76015,"locations":5,"cities":3,"name":"Indonesia"},{"code":"IE","count":470600,"locations":38,"cities":16,"name":"Ireland"},{"code":"IL","count":173130367,"locations":2041,"cities":14,"name":"Israel"},{"code":"IN","count":26819015,"locations":442,"cities":231,"name":"India"},{"code":"IQ","count":8332,"locations":1,"cities":1,"name":"Iraq"},{"code":"IT","count":3732708,"locations":104,"cities":45,"name":"Italy"},{"code":"IZ","count":1807,"locations":1,"cities":1},{"code":"JO","count":5485,"locations":2,"cities":2,"name":"Jordan"},{"code":"KE","count":2842,"locations":2,"cities":1,"name":"Kenya"},{"code":"KG","count":11186,"locations":2,"cities":2,"name":"Kyrgyzstan"},{"code":"KU","count":2696,"locations":1,"cities":1},{"code":"KV","count":2845,"locations":1,"cities":1},{"code":"KW","count":23626,"locations":1,"cities":1,"name":"Kuwait"},{"code":"KZ","count":11325,"locations":1,"cities":1,"name":"Kazakhstan"},{"code":"LA","count":8582,"locations":2,"cities":2,"name":"Lao
+        People''s Democratic Republic"},{"code":"LK","count":18448,"locations":1,"cities":1,"name":"Sri
+        Lanka"},{"code":"LT","count":438259,"locations":17,"cities":8,"name":"Lithuania"},{"code":"LU","count":440199,"locations":7,"cities":3,"name":"Luxembourg"},{"code":"LV","count":187165,"locations":4,"cities":4,"name":"Latvia"},{"code":"MG","count":2579,"locations":1,"cities":1,"name":"Madagascar"},{"code":"MK","count":1215910,"locations":45,"cities":16,"name":"Macedonia,
+        the Former Yugoslav Republic of"},{"code":"MM","count":9149,"locations":2,"cities":2,"name":"Myanmar"},{"code":"MN","count":2817085,"locations":44,"cities":25,"name":"Mongolia"},{"code":"MT","count":251780,"locations":4,"cities":4,"name":"Malta"},{"code":"MX","count":3245906,"locations":103,"cities":5,"name":"Mexico"},{"code":"NG","count":2541,"locations":1,"cities":1,"name":"Nigeria"},{"code":"NL","count":8750020,"locations":111,"cities":67,"name":"Netherlands"},{"code":"NO","count":3485160,"locations":86,"cities":37,"name":"Norway"},{"code":"NP","count":94696,"locations":5,"cities":2,"name":"Nepal"},{"code":"PE","count":706613,"locations":22,"cities":2,"name":"Peru"},{"code":"PH","count":958,"locations":1,"cities":1,"name":"Philippines"},{"code":"PK","count":36957,"locations":8,"cities":5,"name":"Pakistan"},{"code":"PL","count":7804726,"locations":233,"cities":172,"name":"Poland"},{"code":"PT","count":3570640,"locations":67,"cities":16,"name":"Portugal"},{"code":"RS","count":231646,"locations":6,"cities":4,"name":"Serbia"},{"code":"RU","count":186861,"locations":48,"cities":1,"name":"Russian
+        Federation"},{"code":"SA","count":5462,"locations":2,"cities":2,"name":"Saudi
+        Arabia"},{"code":"SE","count":293247,"locations":11,"cities":3,"name":"Sweden"},{"code":"SG","count":1275,"locations":1,"cities":1,"name":"Singapore"},{"code":"SI","count":143266,"locations":9,"cities":9,"name":"Slovenia"},{"code":"SK","count":2373372,"locations":38,"cities":8,"name":"Slovakia"},{"code":"TH","count":5171092,"locations":64,"cities":29,"name":"Thailand"},{"code":"TI","count":2858,"locations":1,"cities":1},{"code":"TJ","count":3063,"locations":1,"cities":1,"name":"Tajikistan"},{"code":"TM","count":3059,"locations":1,"cities":1,"name":"Turkmenistan"},{"code":"TR","count":5640285,"locations":159,"cities":43,"name":"Turkey"},{"code":"TW","count":7186882,"locations":144,"cities":30,"name":"Taiwan"},{"code":"TX","count":2713,"locations":1,"cities":1},{"code":"UG","count":26264,"locations":2,"cities":2,"name":"Uganda"},{"code":"US","count":65434083,"locations":2245,"cities":789,"name":"United
+        States"},{"code":"UZ","count":27153,"locations":2,"cities":2,"name":"Uzbekistan"},{"code":"VM","count":637,"locations":2,"cities":1},{"code":"VN","count":71607,"locations":5,"cities":3,"name":"Viet
+        Nam"},{"code":"XK","count":381851,"locations":9,"cities":8,"name":"Kosovo"},{"code":"ZA","count":239159,"locations":3,"cities":1,"name":"South
+        Africa"}]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/cities?country=DE&limit=0&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 09:53:56 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: j7sW0zyPRqT5-gCDABqVB79YdQf342Ze0SHsPa4XVVtQ_S553bbKxw==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":0,"found":36},"results":[]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/cities?country=DE&limit=10000
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 09:53:56 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: c5ZNjKaSmmJvCXuEeIOTw0PjFOqLzKq21X99ACgKOpFo9A3VxzZ9Pg==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10000,"found":36},"results":[{"country":"DE","name":"Andrea
+        Schemmel","city":"Andrea Schemmel","count":106915,"locations":10},{"country":"DE","name":"Andreas
+        Hainsch","city":"Andreas Hainsch","count":309554,"locations":38},{"country":"DE","name":"Annette
+        Pausch","city":"Annette Pausch","count":216793,"locations":34},{"country":"DE","name":"Baden-Württemberg","city":"Baden-Württemberg","count":646662,"locations":42},{"country":"DE","name":"Bayern","city":"Bayern","count":1082040,"locations":55},{"country":"DE","name":"Berlin","city":"Berlin","count":232795,"locations":16},{"country":"DE","name":"Brandenburg","city":"Brandenburg","count":574016,"locations":25},{"country":"DE","name":"Bremen","city":"Bremen","count":208709,"locations":8},{"country":"DE","name":"Christiane
+        Lutz-Holzhauer","city":"Christiane Lutz-Holzhauer","count":325381,"locations":54},{"country":"DE","name":"Dagmar
+        G�mer","city":"Dagmar G�mer","count":128932,"locations":15},{"country":"DE","name":"Dagmar
+        Gömer","city":"Dagmar Gömer","count":10897,"locations":17},{"country":"DE","name":"Hamburg","city":"Hamburg","count":268791,"locations":15},{"country":"DE","name":"Heinz
+        Ott","city":"Heinz Ott","count":550810,"locations":91},{"country":"DE","name":"Hessen","city":"Hessen","count":719028,"locations":35},{"country":"DE","name":"Ingrid
+        Zell","city":"Ingrid Zell","count":107420,"locations":17},{"country":"DE","name":"Joachim
+        Lehmhaus","city":"Joachim Lehmhaus","count":92962,"locations":24},{"country":"DE","name":"J�rgen
+        Friesel","city":"J�rgen Friesel","count":353519,"locations":62},{"country":"DE","name":"Jürgen
+        Friesel","city":"Jürgen Friesel","count":25079,"locations":59},{"country":"DE","name":"Manfred
+        Lotz","city":"Manfred Lotz","count":305411,"locations":31},{"country":"DE","name":"Margit
+        von D�hren","city":"Margit von D�hren","count":312986,"locations":27},{"country":"DE","name":"Margit
+        von Döhren","city":"Margit von Döhren","count":21085,"locations":27},{"country":"DE","name":"Mecklenburg-Vorpommern","city":"Mecklenburg-Vorpommern","count":354611,"locations":16},{"country":"DE","name":"Niedersachsen","city":"Niedersachsen","count":657438,"locations":30},{"country":"DE","name":"Nordrhein-Westfalen","city":"Nordrhein-Westfalen","count":820918,"locations":62},{"country":"DE","name":"Peter
+        Reischl","city":"Peter Reischl","count":203926,"locations":25},{"country":"DE","name":"Rainer
+        Nothard","city":"Rainer Nothard","count":121018,"locations":22},{"country":"DE","name":"Rheinland-Pfalz","city":"Rheinland-Pfalz","count":658971,"locations":27},{"country":"DE","name":"Ruprecht
+        Schleyer","city":"Ruprecht Schleyer","count":83229,"locations":8},{"country":"DE","name":"Saarland","city":"Saarland","count":205037,"locations":11},{"country":"DE","name":"Sachsen","city":"Sachsen","count":400969,"locations":28},{"country":"DE","name":"Sachsen-Anhalt","city":"Sachsen-Anhalt","count":488818,"locations":24},{"country":"DE","name":"Schleswig-Holstein","city":"Schleswig-Holstein","count":193208,"locations":16},{"country":"DE","name":"Stefan
+        Jacobi","city":"Stefan Jacobi","count":395359,"locations":45},{"country":"DE","name":"Thomas
+        Draheim","city":"Thomas Draheim","count":182497,"locations":21},{"country":"DE","name":"Thüringen","city":"Thüringen","count":429756,"locations":22},{"country":"DE","name":"Ulrich
+        Zimmermann","city":"Ulrich Zimmermann","count":263168,"locations":27}]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=0&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      content-encoding: gzip
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      cache-control: no-cache
+      date: Wed, 26 Feb 2020 09:53:59 GMT
+      vary: origin
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: Ojog5hk4YuNuspyYiWUC55B0FG1rkMthZl5ClCulusaRt_y8e2za8A==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":0,"found":93},"results":[]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=10000
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      content-encoding: gzip
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      cache-control: no-cache
+      date: Wed, 26 Feb 2020 09:53:59 GMT
+      vary: origin
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: 0gC225zrvPnF8qSmMVi2IhSOOXR_rETnSw2wR7PWpg2FJDU0qIDsbQ==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10000,"found":93},"results":[{"code":"AD","count":112536,"locations":3,"cities":2,"name":"Andorra"},{"code":"AE","count":69397,"locations":4,"cities":3,"name":"United
+        Arab Emirates"},{"code":"AF","count":5414,"locations":2,"cities":2,"name":"Afghanistan"},{"code":"AR","count":14976,"locations":4,"cities":1,"name":"Argentina"},{"code":"AT","count":1521351,"locations":373,"cities":16,"name":"Austria"},{"code":"AU","count":6587237,"locations":166,"cities":52,"name":"Australia"},{"code":"BA","count":1064829,"locations":22,"cities":10,"name":"Bosnia
+        and Herzegovina"},{"code":"BD","count":32857,"locations":2,"cities":1,"name":"Bangladesh"},{"code":"BE","count":1794564,"locations":198,"cities":14,"name":"Belgium"},{"code":"BG","count":2859,"locations":1,"cities":1,"name":"Bulgaria"},{"code":"BH","count":46391,"locations":1,"cities":1,"name":"Bahrain"},{"code":"BK","count":2839,"locations":1,"cities":1},{"code":"BM","count":3537,"locations":1,"cities":1,"name":"Bermuda"},{"code":"BR","count":304267,"locations":61,"cities":31,"name":"Brazil"},{"code":"CA","count":6071867,"locations":213,"cities":12,"name":"Canada"},{"code":"CE","count":5492,"locations":1,"cities":1},{"code":"CH","count":1473679,"locations":30,"cities":15,"name":"Switzerland"},{"code":"CL","count":7876847,"locations":238,"cities":163,"name":"Chile"},{"code":"CN","count":94272538,"locations":1723,"cities":387,"name":"China"},{"code":"CO","count":614715,"locations":34,"cities":12,"name":"Colombia"},{"code":"CR","count":2038,"locations":1,"cities":1,"name":"Costa
+        Rica"},{"code":"CS","count":2695,"locations":2,"cities":1},{"code":"CW","count":21342,"locations":1,"cities":1,"name":"Curaçao"},{"code":"CZ","count":5911776,"locations":200,"cities":15,"name":"Czech
+        Republic"},{"code":"DE","count":12058708,"locations":1086,"cities":36,"name":"Germany"},{"code":"DK","count":568084,"locations":25,"cities":7,"name":"Denmark"},{"code":"DZ","count":6065,"locations":1,"cities":1,"name":"Algeria"},{"code":"ES","count":22960243,"locations":1235,"cities":115,"name":"Spain"},{"code":"ET","count":56608,"locations":3,"cities":2,"name":"Ethiopia"},{"code":"FI","count":1960885,"locations":119,"cities":35,"name":"Finland"},{"code":"FR","count":24426081,"locations":1504,"cities":135,"name":"France"},{"code":"GB","count":10841607,"locations":162,"cities":112,"name":"United
+        Kingdom"},{"code":"GH","count":1595,"locations":11,"cities":1,"name":"Ghana"},{"code":"GI","count":40842,"locations":6,"cities":2,"name":"Gibraltar"},{"code":"GT","count":5679,"locations":2,"cities":2,"name":"Guatemala"},{"code":"HK","count":1492052,"locations":16,"cities":9,"name":"Hong
+        Kong"},{"code":"HR","count":878182,"locations":50,"cities":17,"name":"Croatia"},{"code":"HU","count":2085718,"locations":50,"cities":14,"name":"Hungary"},{"code":"ID","count":76015,"locations":5,"cities":3,"name":"Indonesia"},{"code":"IE","count":470600,"locations":38,"cities":16,"name":"Ireland"},{"code":"IL","count":173130367,"locations":2041,"cities":14,"name":"Israel"},{"code":"IN","count":26819015,"locations":442,"cities":231,"name":"India"},{"code":"IQ","count":8332,"locations":1,"cities":1,"name":"Iraq"},{"code":"IT","count":3732708,"locations":104,"cities":45,"name":"Italy"},{"code":"IZ","count":1807,"locations":1,"cities":1},{"code":"JO","count":5485,"locations":2,"cities":2,"name":"Jordan"},{"code":"KE","count":2842,"locations":2,"cities":1,"name":"Kenya"},{"code":"KG","count":11186,"locations":2,"cities":2,"name":"Kyrgyzstan"},{"code":"KU","count":2696,"locations":1,"cities":1},{"code":"KV","count":2845,"locations":1,"cities":1},{"code":"KW","count":23626,"locations":1,"cities":1,"name":"Kuwait"},{"code":"KZ","count":11325,"locations":1,"cities":1,"name":"Kazakhstan"},{"code":"LA","count":8582,"locations":2,"cities":2,"name":"Lao
+        People''s Democratic Republic"},{"code":"LK","count":18448,"locations":1,"cities":1,"name":"Sri
+        Lanka"},{"code":"LT","count":438259,"locations":17,"cities":8,"name":"Lithuania"},{"code":"LU","count":440199,"locations":7,"cities":3,"name":"Luxembourg"},{"code":"LV","count":187165,"locations":4,"cities":4,"name":"Latvia"},{"code":"MG","count":2579,"locations":1,"cities":1,"name":"Madagascar"},{"code":"MK","count":1215910,"locations":45,"cities":16,"name":"Macedonia,
+        the Former Yugoslav Republic of"},{"code":"MM","count":9149,"locations":2,"cities":2,"name":"Myanmar"},{"code":"MN","count":2817085,"locations":44,"cities":25,"name":"Mongolia"},{"code":"MT","count":251780,"locations":4,"cities":4,"name":"Malta"},{"code":"MX","count":3245906,"locations":103,"cities":5,"name":"Mexico"},{"code":"NG","count":2541,"locations":1,"cities":1,"name":"Nigeria"},{"code":"NL","count":8750020,"locations":111,"cities":67,"name":"Netherlands"},{"code":"NO","count":3485160,"locations":86,"cities":37,"name":"Norway"},{"code":"NP","count":94696,"locations":5,"cities":2,"name":"Nepal"},{"code":"PE","count":706613,"locations":22,"cities":2,"name":"Peru"},{"code":"PH","count":958,"locations":1,"cities":1,"name":"Philippines"},{"code":"PK","count":36957,"locations":8,"cities":5,"name":"Pakistan"},{"code":"PL","count":7804726,"locations":233,"cities":172,"name":"Poland"},{"code":"PT","count":3570640,"locations":67,"cities":16,"name":"Portugal"},{"code":"RS","count":231646,"locations":6,"cities":4,"name":"Serbia"},{"code":"RU","count":186861,"locations":48,"cities":1,"name":"Russian
+        Federation"},{"code":"SA","count":5462,"locations":2,"cities":2,"name":"Saudi
+        Arabia"},{"code":"SE","count":293247,"locations":11,"cities":3,"name":"Sweden"},{"code":"SG","count":1275,"locations":1,"cities":1,"name":"Singapore"},{"code":"SI","count":143266,"locations":9,"cities":9,"name":"Slovenia"},{"code":"SK","count":2373372,"locations":38,"cities":8,"name":"Slovakia"},{"code":"TH","count":5171092,"locations":64,"cities":29,"name":"Thailand"},{"code":"TI","count":2858,"locations":1,"cities":1},{"code":"TJ","count":3063,"locations":1,"cities":1,"name":"Tajikistan"},{"code":"TM","count":3059,"locations":1,"cities":1,"name":"Turkmenistan"},{"code":"TR","count":5640285,"locations":159,"cities":43,"name":"Turkey"},{"code":"TW","count":7186882,"locations":144,"cities":30,"name":"Taiwan"},{"code":"TX","count":2713,"locations":1,"cities":1},{"code":"UG","count":26264,"locations":2,"cities":2,"name":"Uganda"},{"code":"US","count":65434083,"locations":2245,"cities":789,"name":"United
+        States"},{"code":"UZ","count":27153,"locations":2,"cities":2,"name":"Uzbekistan"},{"code":"VM","count":637,"locations":2,"cities":1},{"code":"VN","count":71607,"locations":5,"cities":3,"name":"Viet
+        Nam"},{"code":"XK","count":381851,"locations":9,"cities":8,"name":"Kosovo"},{"code":"ZA","count":239159,"locations":3,"cities":1,"name":"South
+        Africa"}]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/measurements?country=DE&city=J%EF%BF%BDrgen%20Friesel&limit=1&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 09:53:59 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 880c8b2fd269bd7da77c5b0af696cfdc.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C1
+      x-amz-cf-id: CRJWUPkFtaZaPAecyKHyW6l6LipGsehXtF57hqMIJ7XmgoqCdZ-T6A==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":1,"found":1199516},"results":[]}'
+  recorded_at: 2020-02-26 09:54:00 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98

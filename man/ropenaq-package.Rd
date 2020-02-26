@@ -4,16 +4,20 @@
 \name{ropenaq-package}
 \alias{ropenaq}
 \alias{ropenaq-package}
-\title{ropenaq: Accesses Air Quality Data from the Open Data Platform OpenAQ}
+\title{ropenaq: Accesses Air Quality Data from the Open Data Platform
+    OpenAQ}
 \description{
-Allows access to air quality data from the API of the OpenAQ
-    platform <https://docs.openaq.org/>, with the different services the API offers
-    (getting measurements for a given query, getting latest measurements, getting
-    lists of available countries/cities/locations).
+Allows access to air quality data from the API of
+    the OpenAQ platform <https://docs.openaq.org/>, with the different
+    services the API offers (getting measurements for a given query,
+    getting latest measurements, getting lists of available
+    countries/cities/locations). This package has been peer-reviewed by
+    rOpenSci (v. 0.1.0).
 }
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://docs.ropensci.org/ropenaq}
   \item \url{http://github.com/ropensci/ropenaq}
   \item Report bugs at \url{http://github.com/ropensci/ropenaq/issues}
 }

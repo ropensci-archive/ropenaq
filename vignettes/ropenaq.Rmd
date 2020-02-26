@@ -105,7 +105,7 @@ kable(head(tableLatest))
 
 # Paging and limit
 
-For all endpoints/functions, there a a `limit` and a `page` arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. If you don't enter the parameters by default all results for the query will be retrieved with async requests, but it might take a while nonetheless depending on the total number of results.
+For all endpoints/functions, there a a `limit` and a `page` arguments, which indicate, respectively, how many results per page should be shown and which page should be queried. If you don't enter the parameters by default all results for the query, or results for 100 pages which is the maximum, will be retrieved with async requests, but it might take a while nonetheless depending on the total number of results.
 
 
 ```{r, eval = FALSE}

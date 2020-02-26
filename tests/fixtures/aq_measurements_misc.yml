@@ -1,0 +1,171 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/measurements?limit=2&page=1&include_fields=attribution
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:33:43 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 d30b80e15d08db34625ccde343c59236.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: VGHfonDwNGLSlpIyyTIRP5PKPjorEq9kA8AwGJDlJHShN-Uu_w6DvQ==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":530030125},"results":[{"location":"Coyhaique","parameter":"pm25","date":{"utc":"2028-08-05T20:00:00.000Z","local":"2028-08-05T16:00:00-04:00"},"value":81,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","attribution":[{"name":"SINCA","url":"http://sinca.mma.gob.cl/"},{"name":"Ministerio
+        del Medio Ambiente"}]},{"location":"Coyhaique","parameter":"pm10","date":{"utc":"2028-08-05T19:00:00.000Z","local":"2028-08-05T15:00:00-04:00"},"value":3,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","attribution":[{"name":"SINCA","url":"http://sinca.mma.gob.cl/"},{"name":"Ministerio
+        del Medio Ambiente"}]}]}'
+  recorded_at: 2020-02-26 10:33:44 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/measurements?limit=2&page=1&include_fields=sourceName
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:33:43 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 d30b80e15d08db34625ccde343c59236.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: _DiWMZ5sumRRRiZMEMb3579MA9QptMuxVuArvsfaUzCpF_D9hDMmOg==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":530030125},"results":[{"location":"Coyhaique","parameter":"pm25","date":{"utc":"2028-08-05T20:00:00.000Z","local":"2028-08-05T16:00:00-04:00"},"value":81,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","sourceName":"Chile
+        - SINCA"},{"location":"Coyhaique","parameter":"pm10","date":{"utc":"2028-08-05T19:00:00.000Z","local":"2028-08-05T15:00:00-04:00"},"value":3,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","sourceName":"Chile
+        - SINCA"}]}'
+  recorded_at: 2020-02-26 10:33:44 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/measurements?limit=2&page=1&include_fields=averagingPeriod
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:33:44 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 d30b80e15d08db34625ccde343c59236.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: umjx2zO29go4-h5Fi1Plpef5kXps-NlRWGMm1CfNgln2sU0QNSBZRA==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":530030125},"results":[{"location":"Coyhaique","parameter":"pm25","date":{"utc":"2028-08-05T20:00:00.000Z","local":"2028-08-05T16:00:00-04:00"},"value":81,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique"},{"location":"Coyhaique","parameter":"pm10","date":{"utc":"2028-08-05T19:00:00.000Z","local":"2028-08-05T15:00:00-04:00"},"value":3,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique"}]}'
+  recorded_at: 2020-02-26 10:33:44 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/measurements?limit=2&page=1&include_fields=attribution%2CaveragingPeriod
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:33:44 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 d30b80e15d08db34625ccde343c59236.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: b51ueTYbkRVh-gGGE3jgXTxy93TJ_yS3gylOFRdEkKFYq_tLWFV0lg==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":530030125},"results":[{"location":"Coyhaique","parameter":"pm25","date":{"utc":"2028-08-05T20:00:00.000Z","local":"2028-08-05T16:00:00-04:00"},"value":81,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","attribution":[{"name":"SINCA","url":"http://sinca.mma.gob.cl/"},{"name":"Ministerio
+        del Medio Ambiente"}]},{"location":"Coyhaique","parameter":"pm10","date":{"utc":"2028-08-05T19:00:00.000Z","local":"2028-08-05T15:00:00-04:00"},"value":3,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","attribution":[{"name":"SINCA","url":"http://sinca.mma.gob.cl/"},{"name":"Ministerio
+        del Medio Ambiente"}]}]}'
+  recorded_at: 2020-02-26 10:33:44 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98

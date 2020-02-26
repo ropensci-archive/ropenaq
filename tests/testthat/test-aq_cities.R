@@ -1,10 +1,9 @@
-library("ropenaq")
-#################################################################################################
-context("cities")
-#################################################################################################
 test_that("cities returns a data.frame (tbl_df)", {
-  skip_on_cran()
-  output <- aq_cities(page = 1)
+
+  vcr::use_cassette("aq_cities_page1", {
+    output <- aq_cities(page = 1, limit = 10)
+  })
+
   expect_that(output, is_a("tbl_df"))
   expect_that(attr(output, "meta"), is_a("tbl_df"))
   expect_that(attr(output, "timestamp"), is_a("tbl_df"))
@@ -12,8 +11,12 @@ test_that("cities returns a data.frame (tbl_df)", {
 })
 
 test_that("cities has the right columns", {
-  skip_on_cran()
-  tableRes <- aq_cities(page = 1, country="IN")
+
+  vcr::use_cassette("aq_cities_page1_IN", {
+    tableRes <- aq_cities(page = 1, country="IN", limit = 10)
+  })
+
+
   expect_true(class(tableRes$city) == "character")
   expect_true(class(tableRes$country) == "character")
   expect_true(class(tableRes$cityURL) == "character")
