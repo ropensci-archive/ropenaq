@@ -27,10 +27,10 @@ test_that("measurements returns a data.frame (tbl_df)", {
   expect_that(attr(output, "meta"), is_a("tbl_df"))
 
   vcr::use_cassette("aq_measurements_misc", {
-  expect_that(aq_measurements(page = 1, attribution = TRUE), is_a("tbl_df"))
-  expect_that(aq_measurements(page = 1, source_name = TRUE), is_a("tbl_df"))
-  expect_that(aq_measurements(page = 1, averaging_period = TRUE), is_a("tbl_df"))
-  expect_that(aq_measurements(page = 1, averaging_period = TRUE, attribution = TRUE), is_a("tbl_df"))
+  expect_that(aq_measurements(page = 1, attribution = TRUE, limit = 2), is_a("tbl_df"))
+  expect_that(aq_measurements(page = 1, source_name = TRUE, limit = 2), is_a("tbl_df"))
+  expect_that(aq_measurements(page = 1, averaging_period = TRUE, limit = 2), is_a("tbl_df"))
+  expect_that(aq_measurements(page = 1, averaging_period = TRUE, attribution = TRUE, limit = 2), is_a("tbl_df"))
   })
 
 })
