@@ -42,7 +42,6 @@ Suggests:
     ggplot2,
     knitr,
     lintr,
-    openair,
     rmarkdown,
     rworldmap,
     testthat,
@@ -53,3 +52,4 @@ VignetteBuilder:
 Encoding: UTF-8
 LazyData: TRUE
 RoxygenNote: 7.0.2
+Roxygen: list(markdown = TRUE)
