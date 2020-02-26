@@ -1,6 +1,5 @@
 #' Function for getting measurements table from the openAQ API
 #'
-#' @importFrom lazyeval interp
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom jsonlite fromJSON
 #' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.

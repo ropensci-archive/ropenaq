@@ -1,39 +1,55 @@
-Package: ropenaq
 Type: Package
-Title: Accesses Air Quality Data from the Open Data Platform OpenAQ
+Package: ropenaq
+Title: Accesses Air Quality Data from the Open Data Platform
+    OpenAQ
 Version: 0.2.7
-Authors@R: c(person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role = c("aut", "cre")),
-             person("Andrew", "MacDonald", role = c("rev"), comment = "Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
-             person("Andy ", "Teucher", role = c("rev"), comment = "Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
-             person("Mikayla ", "Murphy", role = c("ctb")))
-Description: Allows access to air quality data from the API of the OpenAQ
-    platform <https://docs.openaq.org/>, with the different services the API offers
-    (getting measurements for a given query, getting latest measurements, getting
-    lists of available countries/cities/locations). This package has been peer-reviewed by rOpenSci (v. 0.1.0).
+Authors@R: 
+    c(person(given = "Maëlle",
+             family = "Salmon",
+             role = c("aut", "cre"),
+             email = "maelle.salmon@yahoo.se"),
+      person(given = "Andrew",
+             family = "MacDonald",
+             role = "rev",
+             comment = "Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
+      person(given = "Andy ",
+             family = "Teucher",
+             role = "rev",
+             comment = "Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
+      person(given = "Mikayla ",
+             family = "Murphy",
+             role = "ctb"))
+Description: Allows access to air quality data from the API of
+    the OpenAQ platform <https://docs.openaq.org/>, with the different
+    services the API offers (getting measurements for a given query,
+    getting latest measurements, getting lists of available
+    countries/cities/locations). This package has been peer-reviewed by
+    rOpenSci (v. 0.1.0).
 License: GPL (>= 2)
-LazyData: TRUE
-RoxygenNote: 7.0.2
-URL: https://docs.ropensci.org/ropenaq, http://github.com/ropensci/ropenaq
+URL: https://docs.ropensci.org/ropenaq,
+    http://github.com/ropensci/ropenaq
 BugReports: http://github.com/ropensci/ropenaq/issues
-Suggests:
-    knitr,
-    rmarkdown,
-    lintr,
-    ggplot2,
-    testthat,
-    openair,
-    devtools,
-    rworldmap,
-    viridis,
-    vcr
-VignetteBuilder: knitr
 Imports:
     crul,
-    lubridate,
     dplyr,
     jsonlite,
-    tidyr,
-    lazyeval,
+    lubridate,
+    magrittr,
     rlang,
-    magrittr
+    tidyr
+Suggests:
+    devtools,
+    ggplot2,
+    knitr,
+    lintr,
+    openair,
+    rmarkdown,
+    rworldmap,
+    testthat,
+    vcr,
+    viridis
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
+LazyData: TRUE
+RoxygenNote: 7.0.2

@@ -1,6 +1,5 @@
 #' Provides a simple listing of cities within the platform.
 #'
-#' @importFrom lazyeval interp
 #' @importFrom rlang .data
 #' @importFrom magrittr "%>%"
 #' @importFrom jsonlite fromJSON
