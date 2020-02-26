@@ -27,18 +27,18 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 15:19:28 GMT
-      last-modified: Wed, 26 Feb 2020 14:22:23 GMT
+      date: Wed, 26 Feb 2020 18:57:06 GMT
+      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8411105b12842016b4473f6d89a20f3f.cloudfront.net (CloudFront)
+      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: uhonN0-QUjO-ftztdB4lUNriUiL_ItOFICkJv_uBNr8KcipoL1cCzA==
+      x-amz-cf-id: Sy2F3CQ5HQhKLYAetG3BzD6aPi4C2dbJDKDJOrL4Bfl3LcAGfC4AkQ==
     body:
       encoding: UTF-8
       file: no
       string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":10},"results":[{"location":"7
-        Eylül","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"o3","value":3,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":45,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":2428,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":-101,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":31,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Adnan
+        Eylül","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"co","value":2428,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":-101,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":31,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":3,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":45,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Adnan
         Menderes","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"co","value":3,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":224,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":111,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}}]}'
-  recorded_at: 2020-02-26 15:19:29 GMT
+  recorded_at: 2020-02-26 18:57:07 GMT
   recorded_with: vcr/0.4.0, webmockr/0.5.1.98

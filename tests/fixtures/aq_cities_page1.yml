@@ -27,20 +27,20 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 15:19:23 GMT
-      last-modified: Wed, 26 Feb 2020 14:22:23 GMT
+      date: Wed, 26 Feb 2020 18:57:01 GMT
+      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8411105b12842016b4473f6d89a20f3f.cloudfront.net (CloudFront)
+      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: VrhYKQDBPQ-Zl_omMC3JWQagT6g-QjrvdGUGvbCGPlK_nCzh1A89_g==
+      x-amz-cf-id: DfdtaB9Zi9FnXbp3NvCyVCmVoUFvttfoaXV-vdi5pAqLDk6UDR8R5g==
     body:
       encoding: UTF-8
       file: no
-      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10,"found":2866},"results":[{"country":"AD","name":"Escaldes-Engordany","city":"Escaldes-Engordany","count":103984,"locations":2},{"country":"AD","name":"unused","city":"unused","count":8582,"locations":1},{"country":"AE","name":"Abu
-        Dhabi","city":"Abu Dhabi","count":32799,"locations":1},{"country":"AE","name":"Dubai","city":"Dubai","count":25861,"locations":1},{"country":"AE","name":"N/A","city":"N/A","count":10781,"locations":2},{"country":"AF","name":"Kabul","city":"Kabul","count":3071,"locations":1},{"country":"AF","name":"N/A","city":"N/A","count":2353,"locations":1},{"country":"AR","name":"Buenos
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10,"found":2866},"results":[{"country":"AD","name":"Escaldes-Engordany","city":"Escaldes-Engordany","count":104008,"locations":2},{"country":"AD","name":"unused","city":"unused","count":8582,"locations":1},{"country":"AE","name":"Abu
+        Dhabi","city":"Abu Dhabi","count":32807,"locations":1},{"country":"AE","name":"Dubai","city":"Dubai","count":25869,"locations":1},{"country":"AE","name":"N/A","city":"N/A","count":10797,"locations":2},{"country":"AF","name":"Kabul","city":"Kabul","count":3075,"locations":1},{"country":"AF","name":"N/A","city":"N/A","count":2357,"locations":1},{"country":"AR","name":"Buenos
         Aires","city":"Buenos Aires","count":14976,"locations":4},{"country":"AT","name":"Amt
         der Burgenländischen Landesregierung","city":"Amt der Burgenländischen Landesregierung","count":471,"locations":1},{"country":"AT","name":"Amt
         der Burgenl�ndischen Landesregierung","city":"Amt der Burgenl�ndischen Landesregierung","count":35608,"locations":3}]}'
-  recorded_at: 2020-02-26 15:19:23 GMT
+  recorded_at: 2020-02-26 18:57:02 GMT
   recorded_with: vcr/0.4.0, webmockr/0.5.1.98

@@ -27,24 +27,24 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 15:19:27 GMT
-      last-modified: Wed, 26 Feb 2020 14:22:23 GMT
+      date: Wed, 26 Feb 2020 18:57:06 GMT
+      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8411105b12842016b4473f6d89a20f3f.cloudfront.net (CloudFront)
+      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: H_fBVs9ZSTxD8u6P9huTteTkGmmj9oEDS_7SFmFLoNBFXmBVt3kZYA==
+      x-amz-cf-id: uE7RCbBPLGqMDw_ElJnwrt0e1GcVQm-fEQ9lXYe7JfYhPt6oVy6nKA==
     body:
       encoding: UTF-8
       file: no
       string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":7361},"results":[{"location":"21
-        de Mayo","city":"Huasco","country":"CL","distance":8182788.077194428,"measurements":[{"parameter":"pm25","value":18.72,"lastUpdated":"2020-02-26T08:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"},{"parameter":"pm10","value":40.25,"lastUpdated":"2020-02-26T07:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        de Mayo","city":"Huasco","country":"CL","distance":8182788.077194428,"measurements":[{"parameter":"pm25","value":15.74,"lastUpdated":"2020-02-26T16:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"},{"parameter":"pm10","value":32.77,"lastUpdated":"2020-02-26T15:00:00.000Z","unit":"µg/m³","sourceName":"Chile
         - SINCA"}],"coordinates":{"latitude":-28.467794,"longitude":-71.227295}},{"location":"21
         de mayo","city":"21 de mayo","country":"CL","distance":8462887.154420584,"measurements":[{"parameter":"pm25","value":4,"lastUpdated":"2020-02-04T13:00:00.000Z","unit":"µg/m³","sourceName":"Chile
         - SINCA"},{"parameter":"pm10","value":17,"lastUpdated":"2020-02-04T12:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"},{"parameter":"pm25","value":11,"lastUpdated":"2020-02-26T13:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"},{"parameter":"pm10","value":37,"lastUpdated":"2020-02-26T12:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"},{"parameter":"pm25","value":10,"lastUpdated":"2020-02-26T17:00:00.000Z","unit":"µg/m³","sourceName":"Chile
+        - SINCA"},{"parameter":"pm10","value":32,"lastUpdated":"2020-02-26T16:00:00.000Z","unit":"µg/m³","sourceName":"Chile
         - SINCA"}],"coordinates":{"latitude":-37.471184,"longitude":-72.361465}}]}'
-  recorded_at: 2020-02-26 15:19:28 GMT
+  recorded_at: 2020-02-26 18:57:06 GMT
   recorded_with: vcr/0.4.0, webmockr/0.5.1.98

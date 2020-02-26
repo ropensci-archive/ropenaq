@@ -27,18 +27,18 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 15:19:29 GMT
-      last-modified: Wed, 26 Feb 2020 14:22:23 GMT
+      date: Wed, 26 Feb 2020 18:57:07 GMT
+      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8411105b12842016b4473f6d89a20f3f.cloudfront.net (CloudFront)
+      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: FP09FIp4Fc87dDu9Peluva8004Z0p05UeWYVKlDK7hSTAPKKGOBnXw==
+      x-amz-cf-id: 5oH5hfo-qKK2Q4ywlw-3RrDO-Fyiqc1U8OE85L7SHVT_B1sCgFvMjQ==
     body:
       encoding: UTF-8
       file: no
       string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":10809},"results":[{"location":"
-        淮河道","city":"天津市","country":"CN","distance":7105139.999106249,"measurements":[{"parameter":"co","value":600,"lastUpdated":"2019-03-19T07:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":23,"lastUpdated":"2019-03-19T06:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":191,"lastUpdated":"2019-03-19T07:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":19,"lastUpdated":"2019-03-19T06:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":76,"lastUpdated":"2019-03-19T06:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":110,"lastUpdated":"2019-03-19T06:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":39.2133,"longitude":117.1837}},{"location":"(Folkungagatan
+        淮河道","city":"天津市","country":"CN","distance":12316464.4069322,"measurements":[{"parameter":"no2","value":23,"lastUpdated":"2019-03-19T06:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":191,"lastUpdated":"2019-03-19T07:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":19,"lastUpdated":"2019-03-19T06:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"co","value":600,"lastUpdated":"2019-03-19T07:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm25","value":76,"lastUpdated":"2019-03-19T06:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":110,"lastUpdated":"2019-03-19T06:00:00.000Z","unit":"µg/m³","sourceName":"ChinaAQIData","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":39.2133,"longitude":117.1837}},{"location":"(Folkungagatan
         tillfälligt avstängd)","city":"Stockholm","country":"SE","measurements":[{"parameter":"pm10","value":-99,"lastUpdated":"2018-04-04T15:00:00.000Z","unit":"µg/m³","sourceName":"Sweden","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":-99,"lastUpdated":"2018-04-04T15:00:00.000Z","unit":"µg/m³","sourceName":"Sweden","averagingPeriod":{"value":1,"unit":"hours"}}]}]}'
-  recorded_at: 2020-02-26 15:19:29 GMT
+  recorded_at: 2020-02-26 18:57:07 GMT
   recorded_with: vcr/0.4.0, webmockr/0.5.1.98
