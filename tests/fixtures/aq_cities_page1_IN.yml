@@ -1,0 +1,250 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=0&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:02:39 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 40cf8ac59708b6770beb4d2d04bc6ae9.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: SheX-p9XfeZlh32WW6WIngjpMG7wJDRtsKChFi15KeUtsyn3fWGIpA==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":0,"found":93},"results":[]}'
+  recorded_at: 2020-02-26 10:04:18 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/countries?limit=10000
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:02:39 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 40cf8ac59708b6770beb4d2d04bc6ae9.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: aL7ZaqahclphGlkfkzFaUVCV64V4KRxYG6_pobtbZVevzhZSFWdD5A==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10000,"found":93},"results":[{"code":"AD","count":112536,"locations":3,"cities":2,"name":"Andorra"},{"code":"AE","count":69401,"locations":4,"cities":3,"name":"United
+        Arab Emirates"},{"code":"AF","count":5415,"locations":2,"cities":2,"name":"Afghanistan"},{"code":"AR","count":14976,"locations":4,"cities":1,"name":"Argentina"},{"code":"AT","count":1521351,"locations":373,"cities":16,"name":"Austria"},{"code":"AU","count":6587388,"locations":166,"cities":52,"name":"Australia"},{"code":"BA","count":1064830,"locations":22,"cities":10,"name":"Bosnia
+        and Herzegovina"},{"code":"BD","count":32858,"locations":2,"cities":1,"name":"Bangladesh"},{"code":"BE","count":1794564,"locations":198,"cities":14,"name":"Belgium"},{"code":"BG","count":2860,"locations":1,"cities":1,"name":"Bulgaria"},{"code":"BH","count":46391,"locations":1,"cities":1,"name":"Bahrain"},{"code":"BK","count":2839,"locations":1,"cities":1},{"code":"BM","count":3538,"locations":1,"cities":1,"name":"Bermuda"},{"code":"BR","count":304267,"locations":61,"cities":31,"name":"Brazil"},{"code":"CA","count":6071967,"locations":213,"cities":12,"name":"Canada"},{"code":"CE","count":5492,"locations":1,"cities":1},{"code":"CH","count":1473679,"locations":30,"cities":15,"name":"Switzerland"},{"code":"CL","count":7876932,"locations":238,"cities":163,"name":"Chile"},{"code":"CN","count":94272538,"locations":1723,"cities":387,"name":"China"},{"code":"CO","count":614716,"locations":34,"cities":12,"name":"Colombia"},{"code":"CR","count":2039,"locations":1,"cities":1,"name":"Costa
+        Rica"},{"code":"CS","count":2695,"locations":2,"cities":1},{"code":"CW","count":21343,"locations":1,"cities":1,"name":"Curaçao"},{"code":"CZ","count":5911776,"locations":200,"cities":15,"name":"Czech
+        Republic"},{"code":"DE","count":12058708,"locations":1086,"cities":36,"name":"Germany"},{"code":"DK","count":568084,"locations":25,"cities":7,"name":"Denmark"},{"code":"DZ","count":6066,"locations":1,"cities":1,"name":"Algeria"},{"code":"ES","count":22960243,"locations":1235,"cities":115,"name":"Spain"},{"code":"ET","count":56610,"locations":3,"cities":2,"name":"Ethiopia"},{"code":"FI","count":1960885,"locations":119,"cities":35,"name":"Finland"},{"code":"FR","count":24426081,"locations":1504,"cities":135,"name":"France"},{"code":"GB","count":10841947,"locations":162,"cities":112,"name":"United
+        Kingdom"},{"code":"GH","count":1595,"locations":11,"cities":1,"name":"Ghana"},{"code":"GI","count":40842,"locations":6,"cities":2,"name":"Gibraltar"},{"code":"GT","count":5680,"locations":2,"cities":2,"name":"Guatemala"},{"code":"HK","count":1492052,"locations":16,"cities":9,"name":"Hong
+        Kong"},{"code":"HR","count":878182,"locations":50,"cities":17,"name":"Croatia"},{"code":"HU","count":2085718,"locations":50,"cities":14,"name":"Hungary"},{"code":"ID","count":76016,"locations":5,"cities":3,"name":"Indonesia"},{"code":"IE","count":470600,"locations":38,"cities":16,"name":"Ireland"},{"code":"IL","count":173130367,"locations":2041,"cities":14,"name":"Israel"},{"code":"IN","count":26820242,"locations":442,"cities":231,"name":"India"},{"code":"IQ","count":8332,"locations":1,"cities":1,"name":"Iraq"},{"code":"IT","count":3732708,"locations":104,"cities":45,"name":"Italy"},{"code":"IZ","count":1807,"locations":1,"cities":1},{"code":"JO","count":5485,"locations":2,"cities":2,"name":"Jordan"},{"code":"KE","count":2842,"locations":2,"cities":1,"name":"Kenya"},{"code":"KG","count":11192,"locations":2,"cities":2,"name":"Kyrgyzstan"},{"code":"KU","count":2696,"locations":1,"cities":1},{"code":"KV","count":2845,"locations":1,"cities":1},{"code":"KW","count":23626,"locations":1,"cities":1,"name":"Kuwait"},{"code":"KZ","count":11325,"locations":1,"cities":1,"name":"Kazakhstan"},{"code":"LA","count":8582,"locations":2,"cities":2,"name":"Lao
+        People''s Democratic Republic"},{"code":"LK","count":18448,"locations":1,"cities":1,"name":"Sri
+        Lanka"},{"code":"LT","count":438259,"locations":17,"cities":8,"name":"Lithuania"},{"code":"LU","count":440199,"locations":7,"cities":3,"name":"Luxembourg"},{"code":"LV","count":187165,"locations":4,"cities":4,"name":"Latvia"},{"code":"MG","count":2579,"locations":1,"cities":1,"name":"Madagascar"},{"code":"MK","count":1215910,"locations":45,"cities":16,"name":"Macedonia,
+        the Former Yugoslav Republic of"},{"code":"MM","count":9149,"locations":2,"cities":2,"name":"Myanmar"},{"code":"MN","count":2817085,"locations":44,"cities":25,"name":"Mongolia"},{"code":"MT","count":251780,"locations":4,"cities":4,"name":"Malta"},{"code":"MX","count":3245911,"locations":103,"cities":5,"name":"Mexico"},{"code":"NG","count":2541,"locations":1,"cities":1,"name":"Nigeria"},{"code":"NL","count":8750020,"locations":111,"cities":67,"name":"Netherlands"},{"code":"NO","count":3485160,"locations":86,"cities":37,"name":"Norway"},{"code":"NP","count":94699,"locations":5,"cities":2,"name":"Nepal"},{"code":"PE","count":706613,"locations":22,"cities":2,"name":"Peru"},{"code":"PH","count":958,"locations":1,"cities":1,"name":"Philippines"},{"code":"PK","count":36957,"locations":8,"cities":5,"name":"Pakistan"},{"code":"PL","count":7804732,"locations":233,"cities":172,"name":"Poland"},{"code":"PT","count":3570640,"locations":67,"cities":16,"name":"Portugal"},{"code":"RS","count":231646,"locations":6,"cities":4,"name":"Serbia"},{"code":"RU","count":186861,"locations":48,"cities":1,"name":"Russian
+        Federation"},{"code":"SA","count":5462,"locations":2,"cities":2,"name":"Saudi
+        Arabia"},{"code":"SE","count":293247,"locations":11,"cities":3,"name":"Sweden"},{"code":"SG","count":1275,"locations":1,"cities":1,"name":"Singapore"},{"code":"SI","count":143266,"locations":9,"cities":9,"name":"Slovenia"},{"code":"SK","count":2373372,"locations":38,"cities":8,"name":"Slovakia"},{"code":"TH","count":5171092,"locations":64,"cities":29,"name":"Thailand"},{"code":"TI","count":2858,"locations":1,"cities":1},{"code":"TJ","count":3063,"locations":1,"cities":1,"name":"Tajikistan"},{"code":"TM","count":3059,"locations":1,"cities":1,"name":"Turkmenistan"},{"code":"TR","count":5640285,"locations":159,"cities":43,"name":"Turkey"},{"code":"TW","count":7186882,"locations":144,"cities":30,"name":"Taiwan"},{"code":"TX","count":2713,"locations":1,"cities":1},{"code":"UG","count":26264,"locations":2,"cities":2,"name":"Uganda"},{"code":"US","count":65434219,"locations":2245,"cities":789,"name":"United
+        States"},{"code":"UZ","count":27153,"locations":2,"cities":2,"name":"Uzbekistan"},{"code":"VM","count":638,"locations":2,"cities":1},{"code":"VN","count":71607,"locations":5,"cities":3,"name":"Viet
+        Nam"},{"code":"XK","count":381851,"locations":9,"cities":8,"name":"Kosovo"},{"code":"ZA","count":239159,"locations":3,"cities":1,"name":"South
+        Africa"}]}'
+  recorded_at: 2020-02-26 10:04:18 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+- request:
+    method: get
+    uri: https://api.openaq.org/v1/cities?country=IN&limit=10000&page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.58.0 r-curl/4.3 crul/0.9.1.9992
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-credentials: 'true'
+      access-control-allow-headers: Authorization, Content-Type, If-None-Match
+      access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      access-control-allow-origin: '*'
+      access-control-expose-headers: WWW-Authenticate, Server-Authorization
+      access-control-max-age: '86400'
+      cache-control: no-cache
+      content-encoding: gzip
+      date: Wed, 26 Feb 2020 10:02:35 GMT
+      last-modified: Wed, 26 Feb 2020 09:42:46 GMT
+      vary: origin,accept-encoding
+      x-cache: RefreshHit from cloudfront
+      via: 1.1 40cf8ac59708b6770beb4d2d04bc6ae9.cloudfront.net (CloudFront)
+      x-amz-cf-pop: CDG3-C2
+      x-amz-cf-id: OwUyqOo9zNstsQW88XrXegAIiqRj8z3FfUktStUKQSYBjscUf1r5Dg==
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":10000,"found":231},"results":[{"country":"IN","name":"203","city":"203","count":5841,"locations":1},{"country":"IN","name":"Administrative
+        Block","city":"Administrative Block","count":5874,"locations":1},{"country":"IN","name":"Agra","city":"Agra","count":211575,"locations":2},{"country":"IN","name":"Ahmedabad","city":"Ahmedabad","count":142849,"locations":1},{"country":"IN","name":"Ajmer","city":"Ajmer","count":144925,"locations":1},{"country":"IN","name":"Al
+        Afiya General Hospital","city":"Al Afiya General Hospital","count":10363,"locations":1},{"country":"IN","name":"Alwar","city":"Alwar","count":479,"locations":1},{"country":"IN","name":"
+        Alwar","city":" Alwar","count":161704,"locations":2},{"country":"IN","name":"Alwar
+        - Jaipur Rd","city":"Alwar - Jaipur Rd","count":11115,"locations":1},{"country":"IN","name":"Amaravati","city":"Amaravati","count":116507,"locations":1},{"country":"IN","name":"Ambala
+        ","city":"Ambala ","count":95177,"locations":1},{"country":"IN","name":"Ambuja
+        Cement Colony","city":"Ambuja Cement Colony","count":9406,"locations":1},{"country":"IN","name":"AMBUJA
+        CEMENTS LIMITED.\n(UNIT : BATHINDA)\nNEAR G.N.D.T.P.P","city":"AMBUJA CEMENTS
+        LIMITED.\n(UNIT : BATHINDA)\nNEAR G.N.D.T.P.P","count":9130,"locations":1},{"country":"IN","name":"Amritsar","city":"Amritsar","count":148628,"locations":1},{"country":"IN","name":"Ankleshwar","city":"Ankleshwar","count":81593,"locations":1},{"country":"IN","name":"Antodya
+        Bhawan Building","city":"Antodya Bhawan Building","count":10092,"locations":1},{"country":"IN","name":"Anuyogipuram","city":"Anuyogipuram","count":4330,"locations":1},{"country":"IN","name":"Asanol","city":"Asanol","count":8549,"locations":1},{"country":"IN","name":"Asansol","city":"Asansol","count":136915,"locations":2},{"country":"IN","name":"A.S.
+        College","city":"A.S. College","count":10420,"locations":1},{"country":"IN","name":"At
+        Plot 511","city":"At Plot 511","count":9725,"locations":1},{"country":"IN","name":"Auditorium
+        Hall","city":"Auditorium Hall","count":10983,"locations":1},{"country":"IN","name":"Aurangabad","city":"Aurangabad","count":127780,"locations":1},{"country":"IN","name":"Bagalkot","city":"Bagalkot","count":5019,"locations":1},{"country":"IN","name":"Baghpat","city":"Baghpat","count":114512,"locations":1},{"country":"IN","name":"Bahadurgarh
+        ","city":"Bahadurgarh ","count":97435,"locations":1},{"country":"IN","name":"Ballabgarh","city":"Ballabgarh","count":88485,"locations":1},{"country":"IN","name":"Bathinda
+        ","city":"Bathinda ","count":106383,"locations":1},{"country":"IN","name":"BDPO
+        Office","city":"BDPO Office","count":10357,"locations":1},{"country":"IN","name":"Bengaluru","city":"Bengaluru","count":1448052,"locations":18},{"country":"IN","name":"Bhiwadi","city":"Bhiwadi","count":145293,"locations":2},{"country":"IN","name":"Bhiwani","city":"Bhiwani","count":87149,"locations":1},{"country":"IN","name":"Bhopal","city":"Bhopal","count":52914,"locations":1},{"country":"IN","name":"Birla
+        Colony Campus","city":"Birla Colony Campus","count":5032,"locations":1},{"country":"IN","name":"Brajrajnagar","city":"Brajrajnagar","count":122767,"locations":1},{"country":"IN","name":"Bulandshahr","city":"Bulandshahr","count":113155,"locations":1},{"country":"IN","name":"Bulding
+        Of Ankleshwar Industries Association","city":"Bulding Of Ankleshwar Industries
+        Association","count":9429,"locations":1},{"country":"IN","name":"CAAQMS","city":"CAAQMS","count":6731,"locations":1},{"country":"IN","name":"CAAQMS-
+        Maharashtra Pollution Control Board","city":"CAAQMS- Maharashtra Pollution
+        Control Board","count":30225,"locations":3},{"country":"IN","name":"CAAQMS-Maharashtra
+        Pollution Control Board","city":"CAAQMS-Maharashtra Pollution Control Board","count":19173,"locations":2},{"country":"IN","name":"CAAQMS
+        MPCB","city":"CAAQMS MPCB","count":9811,"locations":1},{"country":"IN","name":"CAAQMS-MPCB","city":"CAAQMS-MPCB","count":10236,"locations":1},{"country":"IN","name":"CAAQM
+        Station","city":"CAAQM Station","count":10813,"locations":1},{"country":"IN","name":"Center
+        of Excellence (WTP side garden","city":"Center of Excellence (WTP side garden","count":9346,"locations":1},{"country":"IN","name":"Chamarajanagar","city":"Chamarajanagar","count":12783,"locations":1},{"country":"IN","name":"Chandigarh","city":"Chandigarh","count":56034,"locations":1},{"country":"IN","name":"Chandrapur","city":"Chandrapur","count":426464,"locations":3},{"country":"IN","name":"Chennai","city":"Chennai","count":708928,"locations":9},{"country":"IN","name":"Chikkaballapur","city":"Chikkaballapur","count":109912,"locations":1},{"country":"IN","name":"Chikkamagaluru","city":"Chikkamagaluru","count":6103,"locations":1},{"country":"IN","name":"Circuit
+        House","city":"Circuit House","count":10941,"locations":1},{"country":"IN","name":"Coimbatore","city":"Coimbatore","count":75748,"locations":1},{"country":"IN","name":"Collectorate
+        Campus","city":"Collectorate Campus","count":1821,"locations":1},{"country":"IN","name":"Damoh","city":"Damoh","count":51651,"locations":1},{"country":"IN","name":"Delhi","city":"Delhi","count":5073778,"locations":73},{"country":"IN","name":"Dewas","city":"Dewas","count":160827,"locations":1},{"country":"IN","name":"Dharuhera","city":"Dharuhera","count":90816,"locations":1},{"country":"IN","name":"Durgapur","city":"Durgapur","count":29565,"locations":1},{"country":"IN","name":"Eicher
+        Tractor (TMTL)\nPlot No. 1","city":"Eicher Tractor (TMTL)\nPlot No. 1","count":9559,"locations":1},{"country":"IN","name":"Eloor","city":"Eloor","count":89952,"locations":1},{"country":"IN","name":"Ernakulam","city":"Ernakulam","count":5274,"locations":1},{"country":"IN","name":"F-5","city":"F-5","count":10419,"locations":1},{"country":"IN","name":"Faridabad","city":"Faridabad","count":221588,"locations":4},{"country":"IN","name":"Fatehabad
+        ","city":"Fatehabad ","count":93872,"locations":1},{"country":"IN","name":"Gandhinagar","city":"Gandhinagar","count":13374,"locations":1},{"country":"IN","name":"GandhiNagar","city":"GandhiNagar","count":76969,"locations":1},{"country":"IN","name":"Ganga
+        Jalpariyojan","city":"Ganga Jalpariyojan","count":5492,"locations":1},{"country":"IN","name":"Gangapur
+        Road","city":"Gangapur Road","count":5538,"locations":1},{"country":"IN","name":"Gate
+        No.3","city":"Gate No.3","count":10572,"locations":1},{"country":"IN","name":"Gaya","city":"Gaya","count":199641,"locations":2},{"country":"IN","name":"Ghaziabad","city":"Ghaziabad","count":364859,"locations":5},{"country":"IN","name":"Government
+        District Hospital","city":"Government District Hospital","count":10741,"locations":1},{"country":"IN","name":"Government
+        PU college ","city":"Government PU college ","count":8352,"locations":1},{"country":"IN","name":"Government
+        School","city":"Government School","count":1033,"locations":1},{"country":"IN","name":"Govt.
+        K.P. College","city":"Govt. K.P. College","count":10167,"locations":1},{"country":"IN","name":"Greater
+        Noida","city":"Greater Noida","count":215888,"locations":2},{"country":"IN","name":"Gurgaon","city":"Gurgaon","count":153776,"locations":2},{"country":"IN","name":"Gurugram","city":"Gurugram","count":155165,"locations":4},{"country":"IN","name":"Guwahati","city":"Guwahati","count":87186,"locations":1},{"country":"IN","name":"GVMC
+        Building","city":"GVMC Building","count":9720,"locations":1},{"country":"IN","name":"Gwalior","city":"Gwalior","count":14443,"locations":2},{"country":"IN","name":"Haldia","city":"Haldia","count":215953,"locations":3},{"country":"IN","name":"Hapur","city":"Hapur","count":67624,"locations":1},{"country":"IN","name":"Hisar","city":"Hisar","count":94141,"locations":1},{"country":"IN","name":"Howrah","city":"Howrah","count":352360,"locations":3},{"country":"IN","name":"Hspcb
+        caaqms station","city":"Hspcb caaqms station","count":10776,"locations":1},{"country":"IN","name":"HSPCB
+        CAAQM Station","city":"HSPCB CAAQM Station","count":10934,"locations":1},{"country":"IN","name":"Hubballi","city":"Hubballi","count":73995,"locations":1},{"country":"IN","name":"Hyderabad","city":"Hyderabad","count":1071016,"locations":10},{"country":"IN","name":"India","city":"India","count":13082,"locations":5},{"country":"IN","name":"Indian
+        Association for the Cultivation Of Science","city":"Indian Association for
+        the Cultivation Of Science","count":10863,"locations":1},{"country":"IN","name":"Indira
+        Colony Vistar","city":"Indira Colony Vistar","count":10901,"locations":1},{"country":"IN","name":"Indore","city":"Indore","count":50163,"locations":1},{"country":"IN","name":"Inside
+        Govt ITI College Premise","city":"Inside Govt ITI College Premise","count":7372,"locations":1},{"country":"IN","name":"Jabalpur","city":"Jabalpur","count":53271,"locations":1},{"country":"IN","name":"Jaipur","city":"Jaipur","count":513354,"locations":4},{"country":"IN","name":"Jalandhar","city":"Jalandhar","count":118730,"locations":1},{"country":"IN","name":"JalKalVibhag","city":"JalKalVibhag","count":6562,"locations":1},{"country":"IN","name":"\nJawaharlal
+        Nehru Stadium","city":"\nJawaharlal Nehru Stadium","count":9204,"locations":1},{"country":"IN","name":"Jind","city":"Jind","count":93696,"locations":1},{"country":"IN","name":"Jodhpur","city":"Jodhpur","count":310595,"locations":2},{"country":"IN","name":"Jorapokhar","city":"Jorapokhar","count":130776,"locations":1},{"country":"IN","name":"Kaithal","city":"Kaithal","count":89441,"locations":1},{"country":"IN","name":"Kalaburagi","city":"Kalaburagi","count":88555,"locations":1},{"country":"IN","name":"Kalyan","city":"Kalyan","count":78400,"locations":1},{"country":"IN","name":"Kannur","city":"Kannur","count":5161,"locations":1},{"country":"IN","name":"Kanpur","city":"Kanpur","count":280969,"locations":3},{"country":"IN","name":"Karnal","city":"Karnal","count":84291,"locations":1},{"country":"IN","name":"Katni","city":"Katni","count":52159,"locations":1},{"country":"IN","name":"KERALA
+        STATE POLLUTION CONTROL BOARD","city":"KERALA STATE POLLUTION CONTROL BOARD","count":9565,"locations":1},{"country":"IN","name":"Kerala
+        State Pollution Control Board\nESIC Hospital","city":"Kerala State Pollution
+        Control Board\nESIC Hospital","count":10224,"locations":1},{"country":"IN","name":"Khanna","city":"Khanna","count":147242,"locations":1},{"country":"IN","name":"\nKhutala","city":"\nKhutala","count":6595,"locations":1},{"country":"IN","name":"K
+        J Somaiya Hospital","city":"K J Somaiya Hospital","count":6633,"locations":1},{"country":"IN","name":"Kochi","city":"Kochi","count":8063,"locations":1},{"country":"IN","name":"Kolkata","city":"Kolkata","count":582294,"locations":13},{"country":"IN","name":"Kota","city":"Kota","count":160587,"locations":1},{"country":"IN","name":"Kozhikode","city":"Kozhikode","count":8106,"locations":1},{"country":"IN","name":"KSPCB
+        CAAQMS Hubbali","city":"KSPCB CAAQMS Hubbali","count":721,"locations":1},{"country":"IN","name":"Kurla","city":"Kurla","count":1456,"locations":1},{"country":"IN","name":"Kurukshetra
+        ","city":"Kurukshetra ","count":94970,"locations":2},{"country":"IN","name":"Loni
+        Dehat","city":"Loni Dehat","count":9535,"locations":2},{"country":"IN","name":"Loni_Dehat","city":"Loni_Dehat","count":31315,"locations":1},{"country":"IN","name":"Lucknow","city":"Lucknow","count":733369,"locations":9},{"country":"IN","name":"Ludhiana","city":"Ludhiana","count":119553,"locations":1},{"country":"IN","name":"Mahanadi
+        Coal fields  Limited","city":"Mahanadi Coal fields  Limited","count":9562,"locations":1},{"country":"IN","name":"Maharashtra
+        Pollution Control Board","city":"Maharashtra Pollution Control Board","count":17227,"locations":2},{"country":"IN","name":"Mahatma
+        Gandhi Insititute for Combating Climate Change","city":"Mahatma Gandhi Insititute
+        for Combating Climate Change","count":7836,"locations":1},{"country":"IN","name":"Maihar","city":"Maihar","count":66462,"locations":1},{"country":"IN","name":"Mandideep","city":"Mandideep","count":153529,"locations":1},{"country":"IN","name":"Mandi
+        Gobindgarh","city":"Mandi Gobindgarh","count":144618,"locations":1},{"country":"IN","name":"Mandikhera","city":"Mandikhera","count":85687,"locations":2},{"country":"IN","name":"Manesar
+        ","city":"Manesar ","count":96629,"locations":2},{"country":"IN","name":"MCGM","city":"MCGM","count":5056,"locations":1},{"country":"IN","name":"Meerut","city":"Meerut","count":120518,"locations":3},{"country":"IN","name":"Mini
+        Secretariat","city":"Mini Secretariat","count":8092,"locations":1},{"country":"IN","name":"Mini
+        secretariat 301/13","city":"Mini secretariat 301/13","count":10330,"locations":1},{"country":"IN","name":"MINI  SECRETARIATE
+        OFFICE  3RD FLOOR  DISTT. BHIWANI","city":"MINI  SECRETARIATE OFFICE  3RD
+        FLOOR  DISTT. BHIWANI","count":10384,"locations":1},{"country":"IN","name":"MKN
+        Rd","city":"MKN Rd","count":9129,"locations":1},{"country":"IN","name":"Moradabad","city":"Moradabad","count":115302,"locations":1},{"country":"IN","name":"MPPCB
+        CAAQMS \n2nd floor of facility center mahakal temple \nJaisinghpura","city":"MPPCB
+        CAAQMS \n2nd floor of facility center mahakal temple \nJaisinghpura","count":10257,"locations":1},{"country":"IN","name":"Mumbai","city":"Mumbai","count":1136318,"locations":13},{"country":"IN","name":"MUNICIPAL
+        GUEST HOUSE COMPOUND","city":"MUNICIPAL GUEST HOUSE COMPOUND","count":337,"locations":1},{"country":"IN","name":"Muzaffarnagar","city":"Muzaffarnagar","count":110897,"locations":1},{"country":"IN","name":"Muzaffarpur","city":"Muzaffarpur","count":227597,"locations":3},{"country":"IN","name":"Mysore
+        Rd","city":"Mysore Rd","count":9397,"locations":1},{"country":"IN","name":"Mysuru","city":"Mysuru","count":53928,"locations":1},{"country":"IN","name":"Nagpur","city":"Nagpur","count":68982,"locations":1},{"country":"IN","name":"Nandesari","city":"Nandesari","count":75,"locations":1},{"country":"IN","name":"Narnaul","city":"Narnaul","count":85586,"locations":2},{"country":"IN","name":"Nashik","city":"Nashik","count":160487,"locations":1},{"country":"IN","name":"\nNational
+        Stadium","city":"\nNational Stadium","count":8170,"locations":1},{"country":"IN","name":"Navi
+        Mumbai","city":"Navi Mumbai","count":238609,"locations":4},{"country":"IN","name":"Near
+        Agarsen Ground","city":"Near Agarsen Ground","count":11005,"locations":1},{"country":"IN","name":"Near
+        Gate no 3","city":"Near Gate no 3","count":9209,"locations":1},{"country":"IN","name":"Near
+        GNC Toll Gate","city":"Near GNC Toll Gate","count":10679,"locations":1},{"country":"IN","name":"Near
+        Main Gate Number 7","city":"Near Main Gate Number 7","count":10082,"locations":1},{"country":"IN","name":"Near
+        musical Fountain ","city":"Near musical Fountain ","count":9933,"locations":1},{"country":"IN","name":"New
+        Delhi","city":"New Delhi","count":9498,"locations":1},{"country":"IN","name":"Noida","city":"Noida","count":444764,"locations":6},{"country":"IN","name":"On
+        the terrace of Water distribution Center","city":"On the terrace of Water
+        distribution Center","count":8764,"locations":1},{"country":"IN","name":"Opp.:
+        CBI Office","city":"Opp.: CBI Office","count":9389,"locations":1},{"country":"IN","name":"Ordali
+        Bazar","city":"Ordali Bazar","count":9156,"locations":1},{"country":"IN","name":"OSPCB
+        CAAQMS-1\nMahanadi Coal fields Limited\nNear Senior transit camp\nDera ","city":"OSPCB
+        CAAQMS-1\nMahanadi Coal fields Limited\nNear Senior transit camp\nDera ","count":8568,"locations":1},{"country":"IN","name":"Pali","city":"Pali","count":160745,"locations":1},{"country":"IN","name":"Palwal
+        ","city":"Palwal ","count":83549,"locations":2},{"country":"IN","name":"Panchayat
+        Bhawan","city":"Panchayat Bhawan","count":10894,"locations":1},{"country":"IN","name":"Panchkula","city":"Panchkula","count":284588,"locations":2},{"country":"IN","name":"Panipat","city":"Panipat","count":91726,"locations":2},{"country":"IN","name":"Patancheru","city":"Patancheru","count":11103,"locations":1},{"country":"IN","name":"Patiala","city":"Patiala","count":149592,"locations":1},{"country":"IN","name":"Patna","city":"Patna","count":256032,"locations":5},{"country":"IN","name":"Patparganj
+        ","city":"Patparganj ","count":7214,"locations":1},{"country":"IN","name":"Phase-lll","city":"Phase-lll","count":9913,"locations":1},{"country":"IN","name":"Pithampur","city":"Pithampur","count":158133,"locations":1},{"country":"IN","name":"Plot
+        no.- 57","city":"Plot no.- 57","count":10675,"locations":1},{"country":"IN","name":"POLLUTION
+        CONTROL BOARD ","city":"POLLUTION CONTROL BOARD ","count":8177,"locations":1},{"country":"IN","name":"Pune","city":"Pune","count":303188,"locations":3},{"country":"IN","name":"Rajamahendravaram","city":"Rajamahendravaram","count":152620,"locations":1},{"country":"IN","name":"Rajiv
+        Gandhi Institute of Chest Diseases","city":"Rajiv Gandhi Institute of Chest
+        Diseases","count":10872,"locations":1},{"country":"IN","name":"Ramanagara","city":"Ramanagara","count":44579,"locations":1},{"country":"IN","name":"Ratlam","city":"Ratlam","count":47061,"locations":1},{"country":"IN","name":"Regional
+        Office","city":"Regional Office","count":6463,"locations":1},{"country":"IN","name":"Regional
+        Office Cum Laboratory","city":"Regional Office Cum Laboratory","count":10483,"locations":1},{"country":"IN","name":"Rohtak","city":"Rohtak","count":231533,"locations":3},{"country":"IN","name":"Rooftop
+        of MV Block","city":"Rooftop of MV Block","count":9927,"locations":1},{"country":"IN","name":"Rupnagar","city":"Rupnagar","count":112631,"locations":2},{"country":"IN","name":"Sagar","city":"Sagar","count":7373,"locations":1},{"country":"IN","name":"Saraswati
+        Block Top Floor","city":"Saraswati Block Top Floor","count":10970,"locations":1},{"country":"IN","name":"Sardar
+        Patel Road","city":"Sardar Patel Road","count":4589,"locations":1},{"country":"IN","name":"Satna","city":"Satna","count":74114,"locations":3},{"country":"IN","name":"SD
+        College","city":"SD College","count":5652,"locations":1},{"country":"IN","name":"Sector
+        18","city":"Sector 18","count":10719,"locations":1},{"country":"IN","name":"
+        Sector 9","city":" Sector 9","count":8881,"locations":1},{"country":"IN","name":"Sector
+        E","city":"Sector E","count":11250,"locations":1},{"country":"IN","name":"S.E.
+        POLICE CONTROL ROOM","city":"S.E. POLICE CONTROL ROOM","count":3923,"locations":1},{"country":"IN","name":"Shalini
+        Playground 5th Block ","city":"Shalini Playground 5th Block ","count":10367,"locations":1},{"country":"IN","name":"Shastri
+        Nagar","city":"Shastri Nagar","count":11408,"locations":1},{"country":"IN","name":"Shillong","city":"Shillong","count":43022,"locations":1},{"country":"IN","name":"Shop
+        No-05","city":"Shop No-05","count":6877,"locations":1},{"country":"IN","name":"Siliguri","city":"Siliguri","count":97853,"locations":1},{"country":"IN","name":"Silkboard
+        Junction 323","city":"Silkboard Junction 323","count":7533,"locations":1},{"country":"IN","name":"Singrauli","city":"Singrauli","count":118826,"locations":1},{"country":"IN","name":"Sirsa
+        ","city":"Sirsa ","count":94066,"locations":1},{"country":"IN","name":"Solapur","city":"Solapur","count":295036,"locations":2},{"country":"IN","name":"Sonipat","city":"Sonipat","count":88905,"locations":1},{"country":"IN","name":"Sri
+        Venkateswara Anam Kala Kendram","city":"Sri Venkateswara Anam Kala Kendram","count":11311,"locations":1},{"country":"IN","name":"\nSuraj
+        Kund Road","city":"\nSuraj Kund Road","count":7777,"locations":1},{"country":"IN","name":"Surya
+        Kiran Bhawan","city":"Surya Kiran Bhawan","count":6681,"locations":1},{"country":"IN","name":"Talcher","city":"Talcher","count":116052,"locations":1},{"country":"IN","name":"Thane","city":"Thane","count":126569,"locations":1},{"country":"IN","name":"The
+        rooftop of Municipality Building","city":"The rooftop of Municipality Building","count":10206,"locations":1},{"country":"IN","name":"Thiruvananthapuram","city":"Thiruvananthapuram","count":163800,"locations":2},{"country":"IN","name":"Tirupati","city":"Tirupati","count":159469,"locations":1},{"country":"IN","name":"Tiwani
+        Chawl","city":"Tiwani Chawl","count":3474,"locations":1},{"country":"IN","name":"Top
+        Floor","city":"Top Floor","count":10458,"locations":1},{"country":"IN","name":"Udaipur","city":"Udaipur","count":157404,"locations":1},{"country":"IN","name":"Ujjain","city":"Ujjain","count":157613,"locations":1},{"country":"IN","name":"Vapi","city":"Vapi","count":87016,"locations":1},{"country":"IN","name":"Varanasi","city":"Varanasi","count":322880,"locations":2},{"country":"IN","name":"Vatva","city":"Vatva","count":86828,"locations":1},{"country":"IN","name":"Vijayapura","city":"Vijayapura","count":13001,"locations":1},{"country":"IN","name":"Vijayawada","city":"Vijayawada","count":76354,"locations":1},{"country":"IN","name":"Visakhapatnam","city":"Visakhapatnam","count":135056,"locations":1},{"country":"IN","name":"Vivek
+        Vihar","city":"Vivek Vihar","count":8053,"locations":1},{"country":"IN","name":"West
+        Bengal Pollution Control Board","city":"West Bengal Pollution Control Board","count":9404,"locations":1},{"country":"IN","name":"WEST
+        BENGAL POLLUTION CONTROL BOARD","city":"WEST BENGAL POLLUTION CONTROL BOARD","count":18929,"locations":2},{"country":"IN","name":"Yadgir","city":"Yadgir","count":43046,"locations":1},{"country":"IN","name":"Yamunanagar","city":"Yamunanagar","count":83789,"locations":1},{"country":"IN","name":"YamunaNagar","city":"YamunaNagar","count":3144,"locations":1},{"country":"IN","name":"Yamuna
+        Nagar","city":"Yamuna Nagar","count":7018,"locations":1}]}'
+  recorded_at: 2020-02-26 10:04:18 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
