@@ -12,7 +12,7 @@ Description: Allows access to air quality data from the API of the OpenAQ
     lists of available countries/cities/locations). This package has been peer-reviewed by rOpenSci (v. 0.1.0).
 License: GPL (>= 2)
 LazyData: TRUE
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 URL: https://docs.ropensci.org/ropenaq, http://github.com/ropensci/ropenaq
 BugReports: http://github.com/ropensci/ropenaq/issues
 Suggests:
@@ -34,5 +34,6 @@ Imports:
     jsonlite,
     tidyr,
     lazyeval,
-    rlang
+    rlang,
+    magrittr
 Encoding: UTF-8
