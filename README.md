@@ -1,5 +1,8 @@
 ropenaq
 =======
+
+> Access OpenAQ global and open air quality data
+
 <!-- badges: start -->
   [![R build status](https://github.com/ropensci/ropenaq/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/ropenaq/actions?query=workflow%3AR-CMD-check)
   [![codecov.io](https://codecov.io/github/ropensci/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropensci/Ropenaq?branch=master)
@@ -9,11 +12,11 @@ ropenaq
   
 # Introduction
 
-This R package is aimed at accessing the openaq API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <https://openaq.org/> and see the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are data.frame (dplyr "tbl_df") objects, that can be further processed and analysed.
+This R package is aimed at accessing the OpenAQ API. OpenAQ is a community of scientists, software developers, and lovers of open environmental data who are building an open, real-time database that provides programmatic and historical access to air quality data. See their website at <https://openaq.org/> and see the API documentation at <https://docs.openaq.org/>. The package contains 5 functions that correspond to the 5 different types of query offered by the openaq API: cities, countries, latest, locations and measurements. The package uses the `dplyr` package: all output tables are tibble objects, that can be further processed and analysed.
 
 Check out [this blog post](https://ropensci.org/blog/blog/2017/02/21/ropenaq) about OpenAQ.
 
-More details about the package can be found [in the vignettes](http://docs.ropensci.org/ropenaq/articles/index.html), in particular the [introductory vignette](http://docs.ropensci.org/ropenaq/articles/Ropenaq-vignette.html).
+More details about the package can be found [in the vignettes](http://docs.ropensci.org/ropenaq/articles/index.html), in particular the [introductory vignette](https://docs.ropensci.org/ropenaq/articles/ropenaq.html).
 
 Via the API since November 2017 the API only provides access to the latest 90 days of OpenAQ data. The whole OpenAQ data can be accessed via Amazon S3. See [this announcement](https://medium.com/@openaq/changes-to-the-openaq-api-and-how-to-access-the-full-archive-of-data-3324b136da8c). You can interact with Amazon S3 using [the `aws.s3` package]( https://CRAN.R-project.org/package=aws.s3) and the maintainer of `ropenaq` plans to write tutorials about how to access OpenAQ data and will also keep the documentation of `ropenaq` up-to-date regarding data access changes.
 
