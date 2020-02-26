@@ -27,9 +27,11 @@ aq_locations(
 \item{parameter}{Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 If no parameter is given, all parameters are retrieved.}
 
-\item{has_geo}{has_geo Filter out items that have or do not have geographic information.}
+\item{has_geo}{Filter out items that have or do not have geographic information.}
 
-\item{limit}{Change the number of results returned, max is 10000.}
+\item{limit}{Change the number of results returned, max is 10000 by page.
+If no \code{page} value, then all results or \code{limit} * 100 (maximal number of pages)
+is returned.}
 
 \item{latitude}{Latitude of the center point (lat, lon) used to get measurements within a certain area.}
 
@@ -37,23 +39,23 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{radius}{Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude}
 
-\item{page}{The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.}
+\item{page}{The page of the results to query (max 100).}
 }
 \value{
 A results data.frame (dplyr "tbl_df") with 12 columns:
- \itemize{
- \item the name of the location ("location"),
- \item the city it is in ("city"),
- \item the code of country it is in ("country"),
- \item the name of the source of the information ("sourceName"),
- \item the number of measures for this location in the platform ("count"),
- \item the last time and date at which measures were updated for this location ("lastUpdated"),
- \item the first time and date at which measures were updated for this location ("firstUpdated"),
- \item the parameters available for this location ("parameters"),
- \item its longitude ("longitude") and latitude if available ("latitude"),
- \item and finally an URL encoded version of the city name ("cityURL")
- \item and of the location name ("locationURL").
- }
+\itemize{
+\item the name of the location ("location"),
+\item the city it is in ("city"),
+\item the code of country it is in ("country"),
+\item the name of the source of the information ("sourceName"),
+\item the number of measures for this location in the platform ("count"),
+\item the last time and date at which measures were updated for this location ("lastUpdated"),
+\item the first time and date at which measures were updated for this location ("firstUpdated"),
+\item the parameters available for this location ("parameters"),
+\item its longitude ("longitude") and latitude if available ("latitude"),
+\item and finally an URL encoded version of the city name ("cityURL")
+\item and of the location name ("locationURL").
+}
 and two attributes, a meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
 \itemize{
 \item the API name ("name"),
@@ -72,11 +74,11 @@ Providing data about distinct measurement locations.
 For queries involving a city or location argument,
 the URL-encoded name of the city/location (as in cityURL/locationURL),
 not its name, should be used.
- You can query any nested combination of country/location/city (level 1, 2 and 3),
- with only one value for each argument.
-  If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
-  If you write city="Delhi", you do not need to write the code of the country, unless
-  one day there is a city with the same name in another country.
+You can query any nested combination of country/location/city (level 1, 2 and 3),
+with only one value for each argument.
+If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
+If you write city="Delhi", you do not need to write the code of the country, unless
+one day there is a city with the same name in another country.
 }
 \examples{
 \dontrun{

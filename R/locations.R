@@ -2,17 +2,16 @@
 #'
 #' @importFrom lubridate ymd ymd_hms
 #'
-#' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
-#' @param city Limit results by a certain city.
-#' @param location Limit results by a certain location.
-#' @param parameter Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
-#' If no parameter is given, all parameters are retrieved.
-#' @param has_geo has_geo Filter out items that have or do not have geographic information.
-#' @param latitude Latitude of the center point (lat, lon) used to get measurements within a certain area.
-#' @param longitude Longitude of the center point (lat, lon) used to get measurements within a certain area.
-#' @param radius Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude
-#' @param limit Change the number of results returned, max is 10000.
-#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
+#' @template country
+#' @template city
+#' @template location
+#' @template parameter
+#' @template has_geo
+#' @template latitude
+#' @template longitude
+#' @template radius
+#' @template limit
+#' @template page
 
 #' @return  A results data.frame (dplyr "tbl_df") with 12 columns:
 #'  \itemize{

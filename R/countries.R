@@ -1,7 +1,7 @@
 #' Provides a simple listing of countries within the platform.
 #'
-#' @param limit Change the number of results returned, max is 10000.
-#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
+#' @template limit
+#' @template page
 
 #' @return  A results data.frame (dplyr "tbl_df") with 3 columns:
 #' \itemize{

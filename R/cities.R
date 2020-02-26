@@ -3,9 +3,9 @@
 #' @importFrom rlang .data
 #' @importFrom magrittr "%>%"
 #' @importFrom jsonlite fromJSON
-#' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
-#' @param limit Change the number of results returned, max is 10000.
-#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
+#' @template country
+#' @template limit
+#' @template page
 
 #'
 #' @return  A results data.frame (dplyr "tbl_df") with 5 columns:

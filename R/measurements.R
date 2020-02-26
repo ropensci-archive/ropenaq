@@ -2,24 +2,23 @@
 #'
 #' @importFrom lubridate ymd ymd_hms
 #' @importFrom jsonlite fromJSON
-#' @param country Limit results by a certain country -- a two-letters code see countries() for finding code based on name.
-#' @param city Limit results by a certain city.
-#' @param location Limit results by a certain location.
-#' @param parameter Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
-#' If no parameter is given, all parameters are retrieved.
-#' @param value_from Show results above value threshold, useful in combination with \code{parameter}.
-#' @param value_to Show results below value threshold, useful in combination with \code{parameter}.
-#' @param has_geo has_geo Filter out items that have or do not have geographic information.
-#' @param latitude Latitude of the center point (lat, lon) used to get measurements within a certain area.
-#' @param longitude Longitude of the center point (lat, lon) used to get measurements within a certain area.
-#' @param radius Radius (in meters) used to get measurements within a certain area, must be used with latitude and longitude
+#' @template country
+#' @template city
+#' @template location
+#' @template parameter
+#' @param value_from Show results above value threshold, useful in combination with `parameter`.
+#' @param value_to Show results below value threshold, useful in combination with `parameter`.
+#' @template has_geo
+#' @template latitude
+#' @template longitude
+#' @template radius
 #' @param date_from Show results after a certain date. (character year-month-day, ex. '2015-12-20'). Note, since November 2017 the API only provides access to the last three months so if you need more data you need to fetch it via Amazon S3 (https://medium.com/@openaq/changes-to-the-openaq-api-and-how-to-access-the-full-archive-of-data-3324b136da8c), potentially using the aws.s3 package.
 #' @param date_to Show results before a certain date. (character year-month-day, ex. '2015-12-20')
 #' @param attribution Logical, whether to add a column with attribution information
 #' @param averaging_period Logical, whether to add a column with averaging_period information
 #' @param source_name Logical, whether to add a column with source_name information
-#' @param limit Change the number of results returned, max is 10000.
-#' @param page The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.
+#' @template limit
+#' @template page
 
 #'
 #' @return A results data.frame (dplyr "tbl_df") with at least 12 columns:

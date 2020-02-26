@@ -9,9 +9,11 @@ aq_cities(country = NULL, limit = 10000, page = NULL)
 \arguments{
 \item{country}{Limit results by a certain country -- a two-letters code see countries() for finding code based on name.}
 
-\item{limit}{Change the number of results returned, max is 10000.}
+\item{limit}{Change the number of results returned, max is 10000 by page.
+If no \code{page} value, then all results or \code{limit} * 100 (maximal number of pages)
+is returned.}
 
-\item{page}{The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.}
+\item{page}{The page of the results to query (max 100).}
 }
 \value{
 A results data.frame (dplyr "tbl_df") with 5 columns:

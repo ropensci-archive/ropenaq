@@ -34,13 +34,15 @@ aq_measurements(
 \item{parameter}{Limit to only a certain parameter (valid values are 'pm25', 'pm10', 'so2', 'no2', 'o3', 'co' and 'bc').
 If no parameter is given, all parameters are retrieved.}
 
-\item{has_geo}{has_geo Filter out items that have or do not have geographic information.}
+\item{has_geo}{Filter out items that have or do not have geographic information.}
 
 \item{date_from}{Show results after a certain date. (character year-month-day, ex. '2015-12-20'). Note, since November 2017 the API only provides access to the last three months so if you need more data you need to fetch it via Amazon S3 (https://medium.com/@openaq/changes-to-the-openaq-api-and-how-to-access-the-full-archive-of-data-3324b136da8c), potentially using the aws.s3 package.}
 
 \item{date_to}{Show results before a certain date. (character year-month-day, ex. '2015-12-20')}
 
-\item{limit}{Change the number of results returned, max is 10000.}
+\item{limit}{Change the number of results returned, max is 10000 by page.
+If no \code{page} value, then all results or \code{limit} * 100 (maximal number of pages)
+is returned.}
 
 \item{value_from}{Show results above value threshold, useful in combination with \code{parameter}.}
 
@@ -58,22 +60,22 @@ If no parameter is given, all parameters are retrieved.}
 
 \item{value_to}{Show results below value threshold, useful in combination with \code{parameter}.}
 
-\item{page}{The page of the results to query. This can be useful if e.g. there are 2000 measurements, then first use page=1 and page=2 with limit=100 to get all measurements for your query.}
+\item{page}{The page of the results to query (max 100).}
 }
 \value{
 A results data.frame (dplyr "tbl_df") with at least 12 columns:
 \itemize{
- \item the name of the location ("location"),
- \item the parameter ("parameter")
- \item the value of the measurement ("value")
- \item the unit of the measure ("unit")
- \item the code of country the location is in ("country"),
- \item the city it is in ("city"),
- \item and finally an URL encoded version of the city name ("cityURL")
- \item and of the location name ("locationURL"),
- \item the UTC POSIXct time ("dateUTC"),
- \item the local POSIXct time ("dateLocal"),
- \item its longitude ("longitude") and latitude if available ("latitude").
+\item the name of the location ("location"),
+\item the parameter ("parameter")
+\item the value of the measurement ("value")
+\item the unit of the measure ("unit")
+\item the code of country the location is in ("country"),
+\item the city it is in ("city"),
+\item and finally an URL encoded version of the city name ("cityURL")
+\item and of the location name ("locationURL"),
+\item the UTC POSIXct time ("dateUTC"),
+\item the local POSIXct time ("dateLocal"),
+\item its longitude ("longitude") and latitude if available ("latitude").
 }
 and two attributes, a meta data.frame (dplyr "tbl_df") with 1 line and 5 columns:
 \itemize{
@@ -93,13 +95,13 @@ Function for getting measurements table from the openAQ API
 For queries involving a city or location argument,
 the URL-encoded name of the city/location (as in cityURL/locationURL),
 not its name, should be used.
- You can query any nested combination of country/location/city (level 1, 2 and 3),
- with only one value for each argument.
-  If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
-  If you write city="Delhi", you do not need to write the code of the country, unless
-  one day there is a city with the same name in another country.
+You can query any nested combination of country/location/city (level 1, 2 and 3),
+with only one value for each argument.
+If you write inconsistent combination such as city="Paris" and country="IN", an error message will be returned.
+If you write city="Delhi", you do not need to write the code of the country, unless
+one day there is a city with the same name in another country.
 
-  If you choose to get the attribution in the output, lines might be repeated as there might be several attributions.
+If you choose to get the attribution in the output, lines might be repeated as there might be several attributions.
 }
 \examples{
 \dontrun{
