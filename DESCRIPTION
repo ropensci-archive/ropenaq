@@ -38,13 +38,14 @@ Imports:
     rlang,
     tidyr
 Suggests:
+    webmockr,
     devtools,
     ggplot2,
     knitr,
     lintr,
     rmarkdown,
     rworldmap,
-    testthat,
+    testthat (>= 2.1.0),
     vcr,
     viridis
 VignetteBuilder: 
