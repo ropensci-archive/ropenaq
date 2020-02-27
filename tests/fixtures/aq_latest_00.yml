@@ -27,18 +27,16 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 18:57:06 GMT
-      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
+      date: Thu, 27 Feb 2020 08:31:03 GMT
+      last-modified: Thu, 27 Feb 2020 08:10:14 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
+      via: 1.1 600423f2e5ca4aa7ee1f570d772003d4.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: Sy2F3CQ5HQhKLYAetG3BzD6aPi4C2dbJDKDJOrL4Bfl3LcAGfC4AkQ==
+      x-amz-cf-id: _AOu0NffnHsOiSlqGg8Gnb_QwKPan8AY9nJ7l7Ni-B8aiWmmBWUEQg==
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       file: no
-      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":10},"results":[{"location":"7
-        Eylül","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"co","value":2428,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":-101,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"so2","value":31,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"o3","value":3,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":45,"lastUpdated":"2016-12-28T16:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}},{"location":"Adnan
-        Menderes","city":"Aydın","country":"TR","distance":0,"measurements":[{"parameter":"co","value":3,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"pm10","value":224,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}},{"parameter":"no2","value":111,"lastUpdated":"2016-08-02T06:00:00.000Z","unit":"µg/m³","sourceName":"Turkey","averagingPeriod":{"value":1,"unit":"hours"}}],"coordinates":{"latitude":0,"longitude":0}}]}'
-  recorded_at: 2020-02-26 18:57:07 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+      string: eyJtZXRhIjp7Im5hbWUiOiJvcGVuYXEtYXBpIiwibGljZW5zZSI6IkNDIEJZIDQuMCIsIndlYnNpdGUiOiJodHRwczovL2RvY3Mub3BlbmFxLm9yZy8iLCJwYWdlIjoxLCJsaW1pdCI6MiwiZm91bmQiOjEwfSwicmVzdWx0cyI6W3sibG9jYXRpb24iOiI3IEV5bMO8bCIsImNpdHkiOiJBeWTEsW4iLCJjb3VudHJ5IjoiVFIiLCJkaXN0YW5jZSI6MCwibWVhc3VyZW1lbnRzIjpbeyJwYXJhbWV0ZXIiOiJwbTEwIiwidmFsdWUiOi0xMDEsImxhc3RVcGRhdGVkIjoiMjAxNi0xMi0yOFQxNjowMDowMC4wMDBaIiwidW5pdCI6IsK1Zy9twrMiLCJzb3VyY2VOYW1lIjoiVHVya2V5IiwiYXZlcmFnaW5nUGVyaW9kIjp7InZhbHVlIjoxLCJ1bml0IjoiaG91cnMifX0seyJwYXJhbWV0ZXIiOiJvMyIsInZhbHVlIjozLCJsYXN0VXBkYXRlZCI6IjIwMTYtMTItMjhUMTY6MDA6MDAuMDAwWiIsInVuaXQiOiLCtWcvbcKzIiwic291cmNlTmFtZSI6IlR1cmtleSIsImF2ZXJhZ2luZ1BlcmlvZCI6eyJ2YWx1ZSI6MSwidW5pdCI6ImhvdXJzIn19LHsicGFyYW1ldGVyIjoibm8yIiwidmFsdWUiOjQ1LCJsYXN0VXBkYXRlZCI6IjIwMTYtMTItMjhUMTY6MDA6MDAuMDAwWiIsInVuaXQiOiLCtWcvbcKzIiwic291cmNlTmFtZSI6IlR1cmtleSIsImF2ZXJhZ2luZ1BlcmlvZCI6eyJ2YWx1ZSI6MSwidW5pdCI6ImhvdXJzIn19LHsicGFyYW1ldGVyIjoiY28iLCJ2YWx1ZSI6MjQyOCwibGFzdFVwZGF0ZWQiOiIyMDE2LTEyLTI4VDE2OjAwOjAwLjAwMFoiLCJ1bml0IjoiwrVnL23CsyIsInNvdXJjZU5hbWUiOiJUdXJrZXkiLCJhdmVyYWdpbmdQZXJpb2QiOnsidmFsdWUiOjEsInVuaXQiOiJob3VycyJ9fSx7InBhcmFtZXRlciI6InNvMiIsInZhbHVlIjozMSwibGFzdFVwZGF0ZWQiOiIyMDE2LTEyLTI4VDE2OjAwOjAwLjAwMFoiLCJ1bml0IjoiwrVnL23CsyIsInNvdXJjZU5hbWUiOiJUdXJrZXkiLCJhdmVyYWdpbmdQZXJpb2QiOnsidmFsdWUiOjEsInVuaXQiOiJob3VycyJ9fV0sImNvb3JkaW5hdGVzIjp7ImxhdGl0dWRlIjowLCJsb25naXR1ZGUiOjB9fSx7ImxvY2F0aW9uIjoiQWRuYW4gTWVuZGVyZXMiLCJjaXR5IjoiQXlkxLFuIiwiY291bnRyeSI6IlRSIiwiZGlzdGFuY2UiOjAsIm1lYXN1cmVtZW50cyI6W3sicGFyYW1ldGVyIjoiY28iLCJ2YWx1ZSI6MywibGFzdFVwZGF0ZWQiOiIyMDE2LTA4LTAyVDA2OjAwOjAwLjAwMFoiLCJ1bml0IjoiwrVnL23CsyIsInNvdXJjZU5hbWUiOiJUdXJrZXkiLCJhdmVyYWdpbmdQZXJpb2QiOnsidmFsdWUiOjEsInVuaXQiOiJob3VycyJ9fSx7InBhcmFtZXRlciI6InBtMTAiLCJ2YWx1ZSI6MjI0LCJsYXN0VXBkYXRlZCI6IjIwMTYtMDgtMDJUMDY6MDA6MDAuMDAwWiIsInVuaXQiOiLCtWcvbcKzIiwic291cmNlTmFtZSI6IlR1cmtleSIsImF2ZXJhZ2luZ1BlcmlvZCI6eyJ2YWx1ZSI6MSwidW5pdCI6ImhvdXJzIn19LHsicGFyYW1ldGVyIjoibm8yIiwidmFsdWUiOjExMSwibGFzdFVwZGF0ZWQiOiIyMDE2LTA4LTAyVDA2OjAwOjAwLjAwMFoiLCJ1bml0IjoiwrVnL23CsyIsInNvdXJjZU5hbWUiOiJUdXJrZXkiLCJhdmVyYWdpbmdQZXJpb2QiOnsidmFsdWUiOjEsInVuaXQiOiJob3VycyJ9fV0sImNvb3JkaW5hdGVzIjp7ImxhdGl0dWRlIjowLCJsb25naXR1ZGUiOjB9fV19
+  recorded_at: 2020-02-27 08:31:04 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.5.1.98

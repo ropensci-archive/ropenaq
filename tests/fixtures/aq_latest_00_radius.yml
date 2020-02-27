@@ -27,24 +27,16 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 18:57:06 GMT
-      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
+      date: Thu, 27 Feb 2020 08:31:03 GMT
+      last-modified: Thu, 27 Feb 2020 08:10:14 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
+      via: 1.1 600423f2e5ca4aa7ee1f570d772003d4.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: uE7RCbBPLGqMDw_ElJnwrt0e1GcVQm-fEQ9lXYe7JfYhPt6oVy6nKA==
+      x-amz-cf-id: o-zmQdtKAIKMYsB7boE-mQ4zdQryeEuSShddDI911pS-17I_bI4Qaw==
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       file: no
-      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":7361},"results":[{"location":"21
-        de Mayo","city":"Huasco","country":"CL","distance":8182788.077194428,"measurements":[{"parameter":"pm25","value":15.74,"lastUpdated":"2020-02-26T16:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"},{"parameter":"pm10","value":32.77,"lastUpdated":"2020-02-26T15:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"}],"coordinates":{"latitude":-28.467794,"longitude":-71.227295}},{"location":"21
-        de mayo","city":"21 de mayo","country":"CL","distance":8462887.154420584,"measurements":[{"parameter":"pm25","value":4,"lastUpdated":"2020-02-04T13:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"},{"parameter":"pm10","value":17,"lastUpdated":"2020-02-04T12:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"},{"parameter":"pm25","value":10,"lastUpdated":"2020-02-26T17:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"},{"parameter":"pm10","value":32,"lastUpdated":"2020-02-26T16:00:00.000Z","unit":"µg/m³","sourceName":"Chile
-        - SINCA"}],"coordinates":{"latitude":-37.471184,"longitude":-72.361465}}]}'
-  recorded_at: 2020-02-26 18:57:06 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+      string: eyJtZXRhIjp7Im5hbWUiOiJvcGVuYXEtYXBpIiwibGljZW5zZSI6IkNDIEJZIDQuMCIsIndlYnNpdGUiOiJodHRwczovL2RvY3Mub3BlbmFxLm9yZy8iLCJwYWdlIjoxLCJsaW1pdCI6MiwiZm91bmQiOjczNjF9LCJyZXN1bHRzIjpbeyJsb2NhdGlvbiI6IjIxIGRlIE1heW8iLCJjaXR5IjoiSHVhc2NvIiwiY291bnRyeSI6IkNMIiwiZGlzdGFuY2UiOjgxODI3ODguMDc3MTk0NDI4LCJtZWFzdXJlbWVudHMiOlt7InBhcmFtZXRlciI6InBtMjUiLCJ2YWx1ZSI6MTMuMTUsImxhc3RVcGRhdGVkIjoiMjAyMC0wMi0yN1QwNjowMDowMC4wMDBaIiwidW5pdCI6IsK1Zy9twrMiLCJzb3VyY2VOYW1lIjoiQ2hpbGUgLSBTSU5DQSJ9LHsicGFyYW1ldGVyIjoicG0xMCIsInZhbHVlIjoyNy45MiwibGFzdFVwZGF0ZWQiOiIyMDIwLTAyLTI3VDA1OjAwOjAwLjAwMFoiLCJ1bml0IjoiwrVnL23CsyIsInNvdXJjZU5hbWUiOiJDaGlsZSAtIFNJTkNBIn1dLCJjb29yZGluYXRlcyI6eyJsYXRpdHVkZSI6LTI4LjQ2Nzc5NCwibG9uZ2l0dWRlIjotNzEuMjI3Mjk1fX0seyJsb2NhdGlvbiI6IjIxIGRlIG1heW8iLCJjaXR5IjoiMjEgZGUgbWF5byIsImNvdW50cnkiOiJDTCIsImRpc3RhbmNlIjo4NDYyODg3LjE1NDQyMDU4NCwibWVhc3VyZW1lbnRzIjpbeyJwYXJhbWV0ZXIiOiJwbTI1IiwidmFsdWUiOjQsImxhc3RVcGRhdGVkIjoiMjAyMC0wMi0wNFQxMzowMDowMC4wMDBaIiwidW5pdCI6IsK1Zy9twrMiLCJzb3VyY2VOYW1lIjoiQ2hpbGUgLSBTSU5DQSJ9LHsicGFyYW1ldGVyIjoicG0xMCIsInZhbHVlIjoxNywibGFzdFVwZGF0ZWQiOiIyMDIwLTAyLTA0VDEyOjAwOjAwLjAwMFoiLCJ1bml0IjoiwrVnL23CsyIsInNvdXJjZU5hbWUiOiJDaGlsZSAtIFNJTkNBIn0seyJwYXJhbWV0ZXIiOiJwbTI1IiwidmFsdWUiOjIsImxhc3RVcGRhdGVkIjoiMjAyMC0wMi0yN1QwNjowMDowMC4wMDBaIiwidW5pdCI6IsK1Zy9twrMiLCJzb3VyY2VOYW1lIjoiQ2hpbGUgLSBTSU5DQSJ9LHsicGFyYW1ldGVyIjoicG0xMCIsInZhbHVlIjoxOCwibGFzdFVwZGF0ZWQiOiIyMDIwLTAyLTI3VDA1OjAwOjAwLjAwMFoiLCJ1bml0IjoiwrVnL23CsyIsInNvdXJjZU5hbWUiOiJDaGlsZSAtIFNJTkNBIn1dLCJjb29yZGluYXRlcyI6eyJsYXRpdHVkZSI6LTM3LjQ3MTE4NCwibG9uZ2l0dWRlIjotNzIuMzYxNDY1fX1dfQ==
+  recorded_at: 2020-02-27 08:31:03 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.5.1.98

@@ -27,21 +27,19 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 18:57:14 GMT
-      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
+      date: Thu, 27 Feb 2020 08:31:12 GMT
+      last-modified: Thu, 27 Feb 2020 08:10:14 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
+      via: 1.1 600423f2e5ca4aa7ee1f570d772003d4.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: r12QodYnBDB570L-bfgjzHUpC8dVbkhd3T7hTqhhA25kMfEdiYA0nQ==
+      x-amz-cf-id: tmAkjgTJONuQPDy5-55RuzWr8x294KNXShF9W3sL2ip5etazjBZS5A==
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       file: no
-      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":530214947},"results":[{"location":"Coyhaique","parameter":"pm25","date":{"utc":"2028-08-05T20:00:00.000Z","local":"2028-08-05T16:00:00-04:00"},"value":81,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","attribution":[{"name":"SINCA","url":"http://sinca.mma.gob.cl/"},{"name":"Ministerio
-        del Medio Ambiente"}]},{"location":"Coyhaique","parameter":"pm10","date":{"utc":"2028-08-05T19:00:00.000Z","local":"2028-08-05T15:00:00-04:00"},"value":3,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","attribution":[{"name":"SINCA","url":"http://sinca.mma.gob.cl/"},{"name":"Ministerio
-        del Medio Ambiente"}]}]}'
-  recorded_at: 2020-02-26 18:57:15 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+      string: eyJtZXRhIjp7Im5hbWUiOiJvcGVuYXEtYXBpIiwibGljZW5zZSI6IkNDIEJZIDQuMCIsIndlYnNpdGUiOiJodHRwczovL2RvY3Mub3BlbmFxLm9yZy8iLCJwYWdlIjoxLCJsaW1pdCI6MiwiZm91bmQiOjUzMDUwOTYzNH0sInJlc3VsdHMiOlt7ImxvY2F0aW9uIjoiQ295aGFpcXVlIiwicGFyYW1ldGVyIjoicG0yNSIsImRhdGUiOnsidXRjIjoiMjAyOC0wOC0wNVQyMDowMDowMC4wMDBaIiwibG9jYWwiOiIyMDI4LTA4LTA1VDE2OjAwOjAwLTA0OjAwIn0sInZhbHVlIjo4MSwidW5pdCI6IsK1Zy9twrMiLCJjb29yZGluYXRlcyI6eyJsYXRpdHVkZSI6LTQ1LjU3OTk2NDQ3OTQ4LCJsb25naXR1ZGUiOi03Mi4wNjExMjU5ODc3NjZ9LCJjb3VudHJ5IjoiQ0wiLCJjaXR5IjoiQ295aGFpcXVlIiwiYXR0cmlidXRpb24iOlt7Im5hbWUiOiJTSU5DQSIsInVybCI6Imh0dHA6Ly9zaW5jYS5tbWEuZ29iLmNsLyJ9LHsibmFtZSI6Ik1pbmlzdGVyaW8gZGVsIE1lZGlvIEFtYmllbnRlIn1dfSx7ImxvY2F0aW9uIjoiQ295aGFpcXVlIiwicGFyYW1ldGVyIjoicG0xMCIsImRhdGUiOnsidXRjIjoiMjAyOC0wOC0wNVQxOTowMDowMC4wMDBaIiwibG9jYWwiOiIyMDI4LTA4LTA1VDE1OjAwOjAwLTA0OjAwIn0sInZhbHVlIjozLCJ1bml0IjoiwrVnL23CsyIsImNvb3JkaW5hdGVzIjp7ImxhdGl0dWRlIjotNDUuNTc5OTY0NDc5NDgsImxvbmdpdHVkZSI6LTcyLjA2MTEyNTk4Nzc2Nn0sImNvdW50cnkiOiJDTCIsImNpdHkiOiJDb3loYWlxdWUiLCJhdHRyaWJ1dGlvbiI6W3sibmFtZSI6IlNJTkNBIiwidXJsIjoiaHR0cDovL3NpbmNhLm1tYS5nb2IuY2wvIn0seyJuYW1lIjoiTWluaXN0ZXJpbyBkZWwgTWVkaW8gQW1iaWVudGUifV19XX0=
+  recorded_at: 2020-02-27 08:31:13 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.5.1.98
 - request:
     method: get
     uri: https://api.openaq.org/v1/measurements?limit=2&page=1&include_fields=sourceName
@@ -70,21 +68,19 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 18:57:14 GMT
-      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
+      date: Thu, 27 Feb 2020 08:31:12 GMT
+      last-modified: Thu, 27 Feb 2020 08:10:14 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
+      via: 1.1 600423f2e5ca4aa7ee1f570d772003d4.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: 7fI9jetUwWmhsLwwquobfhLhVQa6o0Dn01I0yLV2Rrtuad7BWKvh_g==
+      x-amz-cf-id: XIl4Z6cf_4uo_rooxZibykPJYA7S3M1YRVITr5q_0Qnf7zRcA5vx_g==
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       file: no
-      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":530214947},"results":[{"location":"Coyhaique","parameter":"pm25","date":{"utc":"2028-08-05T20:00:00.000Z","local":"2028-08-05T16:00:00-04:00"},"value":81,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","sourceName":"Chile
-        - SINCA"},{"location":"Coyhaique","parameter":"pm10","date":{"utc":"2028-08-05T19:00:00.000Z","local":"2028-08-05T15:00:00-04:00"},"value":3,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","sourceName":"Chile
-        - SINCA"}]}'
-  recorded_at: 2020-02-26 18:57:15 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+      string: eyJtZXRhIjp7Im5hbWUiOiJvcGVuYXEtYXBpIiwibGljZW5zZSI6IkNDIEJZIDQuMCIsIndlYnNpdGUiOiJodHRwczovL2RvY3Mub3BlbmFxLm9yZy8iLCJwYWdlIjoxLCJsaW1pdCI6MiwiZm91bmQiOjUzMDUwOTYzNH0sInJlc3VsdHMiOlt7ImxvY2F0aW9uIjoiQ295aGFpcXVlIiwicGFyYW1ldGVyIjoicG0yNSIsImRhdGUiOnsidXRjIjoiMjAyOC0wOC0wNVQyMDowMDowMC4wMDBaIiwibG9jYWwiOiIyMDI4LTA4LTA1VDE2OjAwOjAwLTA0OjAwIn0sInZhbHVlIjo4MSwidW5pdCI6IsK1Zy9twrMiLCJjb29yZGluYXRlcyI6eyJsYXRpdHVkZSI6LTQ1LjU3OTk2NDQ3OTQ4LCJsb25naXR1ZGUiOi03Mi4wNjExMjU5ODc3NjZ9LCJjb3VudHJ5IjoiQ0wiLCJjaXR5IjoiQ295aGFpcXVlIiwic291cmNlTmFtZSI6IkNoaWxlIC0gU0lOQ0EifSx7ImxvY2F0aW9uIjoiQ295aGFpcXVlIiwicGFyYW1ldGVyIjoicG0xMCIsImRhdGUiOnsidXRjIjoiMjAyOC0wOC0wNVQxOTowMDowMC4wMDBaIiwibG9jYWwiOiIyMDI4LTA4LTA1VDE1OjAwOjAwLTA0OjAwIn0sInZhbHVlIjozLCJ1bml0IjoiwrVnL23CsyIsImNvb3JkaW5hdGVzIjp7ImxhdGl0dWRlIjotNDUuNTc5OTY0NDc5NDgsImxvbmdpdHVkZSI6LTcyLjA2MTEyNTk4Nzc2Nn0sImNvdW50cnkiOiJDTCIsImNpdHkiOiJDb3loYWlxdWUiLCJzb3VyY2VOYW1lIjoiQ2hpbGUgLSBTSU5DQSJ9XX0=
+  recorded_at: 2020-02-27 08:31:13 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.5.1.98
 - request:
     method: get
     uri: https://api.openaq.org/v1/measurements?limit=2&page=1&include_fields=averagingPeriod
@@ -113,19 +109,19 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 18:57:15 GMT
-      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
+      date: Thu, 27 Feb 2020 08:31:13 GMT
+      last-modified: Thu, 27 Feb 2020 08:10:14 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
+      via: 1.1 600423f2e5ca4aa7ee1f570d772003d4.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: Bwc_WLqVvFUPBauxydkOiluh8QtXh-ctu-uSE5edwNstxIwXTWXJaw==
+      x-amz-cf-id: QoY-dlbTh9CxqvMnPV3gk9cRdcFdLrDH_dmS8w71Blp1vGVTk97b7Q==
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       file: no
-      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":530214947},"results":[{"location":"Coyhaique","parameter":"pm25","date":{"utc":"2028-08-05T20:00:00.000Z","local":"2028-08-05T16:00:00-04:00"},"value":81,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique"},{"location":"Coyhaique","parameter":"pm10","date":{"utc":"2028-08-05T19:00:00.000Z","local":"2028-08-05T15:00:00-04:00"},"value":3,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique"}]}'
-  recorded_at: 2020-02-26 18:57:15 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+      string: eyJtZXRhIjp7Im5hbWUiOiJvcGVuYXEtYXBpIiwibGljZW5zZSI6IkNDIEJZIDQuMCIsIndlYnNpdGUiOiJodHRwczovL2RvY3Mub3BlbmFxLm9yZy8iLCJwYWdlIjoxLCJsaW1pdCI6MiwiZm91bmQiOjUzMDUwOTYzNH0sInJlc3VsdHMiOlt7ImxvY2F0aW9uIjoiQ295aGFpcXVlIiwicGFyYW1ldGVyIjoicG0yNSIsImRhdGUiOnsidXRjIjoiMjAyOC0wOC0wNVQyMDowMDowMC4wMDBaIiwibG9jYWwiOiIyMDI4LTA4LTA1VDE2OjAwOjAwLTA0OjAwIn0sInZhbHVlIjo4MSwidW5pdCI6IsK1Zy9twrMiLCJjb29yZGluYXRlcyI6eyJsYXRpdHVkZSI6LTQ1LjU3OTk2NDQ3OTQ4LCJsb25naXR1ZGUiOi03Mi4wNjExMjU5ODc3NjZ9LCJjb3VudHJ5IjoiQ0wiLCJjaXR5IjoiQ295aGFpcXVlIn0seyJsb2NhdGlvbiI6IkNveWhhaXF1ZSIsInBhcmFtZXRlciI6InBtMTAiLCJkYXRlIjp7InV0YyI6IjIwMjgtMDgtMDVUMTk6MDA6MDAuMDAwWiIsImxvY2FsIjoiMjAyOC0wOC0wNVQxNTowMDowMC0wNDowMCJ9LCJ2YWx1ZSI6MywidW5pdCI6IsK1Zy9twrMiLCJjb29yZGluYXRlcyI6eyJsYXRpdHVkZSI6LTQ1LjU3OTk2NDQ3OTQ4LCJsb25naXR1ZGUiOi03Mi4wNjExMjU5ODc3NjZ9LCJjb3VudHJ5IjoiQ0wiLCJjaXR5IjoiQ295aGFpcXVlIn1dfQ==
+  recorded_at: 2020-02-27 08:31:13 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.5.1.98
 - request:
     method: get
     uri: https://api.openaq.org/v1/measurements?limit=2&page=1&include_fields=attribution%2CaveragingPeriod
@@ -154,18 +150,16 @@ http_interactions:
       access-control-max-age: '86400'
       cache-control: no-cache
       content-encoding: gzip
-      date: Wed, 26 Feb 2020 18:57:15 GMT
-      last-modified: Wed, 26 Feb 2020 18:31:56 GMT
+      date: Thu, 27 Feb 2020 08:31:13 GMT
+      last-modified: Thu, 27 Feb 2020 08:10:14 GMT
       vary: origin,accept-encoding
       x-cache: Miss from cloudfront
-      via: 1.1 8513b0b4c77c9a98d13a007d589042ff.cloudfront.net (CloudFront)
+      via: 1.1 600423f2e5ca4aa7ee1f570d772003d4.cloudfront.net (CloudFront)
       x-amz-cf-pop: CDG3-C2
-      x-amz-cf-id: ogR2yrUICF6-OU5NGOwOmLVVa9z9HhylJt2SuAaHWIUJ8EQaYeliRg==
+      x-amz-cf-id: 23dHwOvM5PrnT80nzMTLamoe30IqkVZ2C_Q4f4ZL1QJzIw9YXB82SQ==
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       file: no
-      string: '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":2,"found":530214947},"results":[{"location":"Coyhaique","parameter":"pm25","date":{"utc":"2028-08-05T20:00:00.000Z","local":"2028-08-05T16:00:00-04:00"},"value":81,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","attribution":[{"name":"SINCA","url":"http://sinca.mma.gob.cl/"},{"name":"Ministerio
-        del Medio Ambiente"}]},{"location":"Coyhaique","parameter":"pm10","date":{"utc":"2028-08-05T19:00:00.000Z","local":"2028-08-05T15:00:00-04:00"},"value":3,"unit":"µg/m³","coordinates":{"latitude":-45.57996447948,"longitude":-72.061125987766},"country":"CL","city":"Coyhaique","attribution":[{"name":"SINCA","url":"http://sinca.mma.gob.cl/"},{"name":"Ministerio
-        del Medio Ambiente"}]}]}'
-  recorded_at: 2020-02-26 18:57:15 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.1.98
+      string: eyJtZXRhIjp7Im5hbWUiOiJvcGVuYXEtYXBpIiwibGljZW5zZSI6IkNDIEJZIDQuMCIsIndlYnNpdGUiOiJodHRwczovL2RvY3Mub3BlbmFxLm9yZy8iLCJwYWdlIjoxLCJsaW1pdCI6MiwiZm91bmQiOjUzMDUwOTYzNH0sInJlc3VsdHMiOlt7ImxvY2F0aW9uIjoiQ295aGFpcXVlIiwicGFyYW1ldGVyIjoicG0yNSIsImRhdGUiOnsidXRjIjoiMjAyOC0wOC0wNVQyMDowMDowMC4wMDBaIiwibG9jYWwiOiIyMDI4LTA4LTA1VDE2OjAwOjAwLTA0OjAwIn0sInZhbHVlIjo4MSwidW5pdCI6IsK1Zy9twrMiLCJjb29yZGluYXRlcyI6eyJsYXRpdHVkZSI6LTQ1LjU3OTk2NDQ3OTQ4LCJsb25naXR1ZGUiOi03Mi4wNjExMjU5ODc3NjZ9LCJjb3VudHJ5IjoiQ0wiLCJjaXR5IjoiQ295aGFpcXVlIiwiYXR0cmlidXRpb24iOlt7Im5hbWUiOiJTSU5DQSIsInVybCI6Imh0dHA6Ly9zaW5jYS5tbWEuZ29iLmNsLyJ9LHsibmFtZSI6Ik1pbmlzdGVyaW8gZGVsIE1lZGlvIEFtYmllbnRlIn1dfSx7ImxvY2F0aW9uIjoiQ295aGFpcXVlIiwicGFyYW1ldGVyIjoicG0xMCIsImRhdGUiOnsidXRjIjoiMjAyOC0wOC0wNVQxOTowMDowMC4wMDBaIiwibG9jYWwiOiIyMDI4LTA4LTA1VDE1OjAwOjAwLTA0OjAwIn0sInZhbHVlIjozLCJ1bml0IjoiwrVnL23CsyIsImNvb3JkaW5hdGVzIjp7ImxhdGl0dWRlIjotNDUuNTc5OTY0NDc5NDgsImxvbmdpdHVkZSI6LTcyLjA2MTEyNTk4Nzc2Nn0sImNvdW50cnkiOiJDTCIsImNpdHkiOiJDb3loYWlxdWUiLCJhdHRyaWJ1dGlvbiI6W3sibmFtZSI6IlNJTkNBIiwidXJsIjoiaHR0cDovL3NpbmNhLm1tYS5nb2IuY2wvIn0seyJuYW1lIjoiTWluaXN0ZXJpbyBkZWwgTWVkaW8gQW1iaWVudGUifV19XX0=
+  recorded_at: 2020-02-27 08:31:13 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.5.1.98
