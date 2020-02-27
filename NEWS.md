@@ -1,3 +1,15 @@
+# ropenaq dev
+
+* Bug fixes (page has now a maximum argument; no longer passing an empty param in the query)
+
+* Replacement of tidyr and dplyr deprecated functions
+
+* Use of man-roxygen and `@template` to reduce `roxygen2` docs duplication
+
+* Tests with vcr
+
+* Removal of the openair vignette
+
 # ropenaq 0.2.7
 
 * Have the right function names in error messages about cities and countries, see issue #38 by Birgit Fullerton
