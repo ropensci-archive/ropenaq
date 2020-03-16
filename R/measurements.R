@@ -112,7 +112,7 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
         dplyr::mutate(dateUTC = lubridate::ymd_hms(.data$dateUTC)) %>%
         dplyr::mutate(
             dateLocal = lubridate::ymd_hms(
-                strptime(
+                strftime(
                     .data$dateLocal, "%Y-%m-%dT%H:%M:%S"))
             )
 
