@@ -1,5 +1,5 @@
 library("vcr")
 invisible(vcr::vcr_configure(
-  dir = "../../inst/fixtures",
+  dir = "../fixtures",
   preserve_exact_body_bytes = TRUE
 ))
