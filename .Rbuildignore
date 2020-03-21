@@ -17,3 +17,4 @@ data_management.R
 docs/
 ^\.github/workflows/R-CMD-check\.yaml$
 ^vignettes/articles$
+^man-roxygen$
