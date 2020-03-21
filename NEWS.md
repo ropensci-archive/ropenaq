@@ -1,14 +1,14 @@
-# ropenaq dev
+# ropenaq 0.2.8
 
 * Bug fixes (page has now a maximum argument; no longer passing an empty param in the query)
 
-* Replacement of tidyr and dplyr deprecated functions
+* Replacement of `tidyr` and `dplyr` deprecated functions
 
 * Use of man-roxygen and `@template` to reduce `roxygen2` docs duplication
 
-* Tests with vcr
+* Tests with `vcr`
 
-* Removal of the openair vignette
+* Removal of the `openair` vignette
 
 # ropenaq 0.2.7
 
