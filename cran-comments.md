@@ -1,6 +1,7 @@
 ## Test environments
-* local Ubuntu install, R 3.4.4
-* Windows on Appveyor CI (stable, patched)
+* local Ubuntu install, R 3.6
+* Windows, macOS, Ubuntu with GitHub Actions
+* Winbuilder R devel
 * rhub::check_for_cran()
 
 ## R CMD check results
@@ -9,9 +10,15 @@
 
 ## Release summary
 
-* This is a bug fix in aq_measurements() when returning the attribution column.
+* Bug fixes (page has now a maximum argument; no longer passing an empty param in the query)
 
-* Removes unneeded ggmap dependency.
+* Replacement of `tidyr` and `dplyr` deprecated functions
+
+* Use of man-roxygen and `@template` to reduce `roxygen2` docs duplication
+
+* Tests with `vcr`
+
+* Removal of the `openair` vignette
 
 ## Reverse dependencies
 
