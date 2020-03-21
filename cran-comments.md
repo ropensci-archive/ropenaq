@@ -2,7 +2,9 @@
 * local Ubuntu install, R 3.6
 * Windows, macOS, Ubuntu with GitHub Actions
 * Winbuilder R devel
-* rhub::check_for_cran()
+* R-hub windows-x86_64-devel (r-devel)
+* R-hub ubuntu-gcc-release (r-release)
+* R-hub fedora-clang-devel (r-devel)
 
 ## R CMD check results
 
