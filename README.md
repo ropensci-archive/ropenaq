@@ -6,8 +6,8 @@ ropenaq
 <!-- badges: start -->
   [![R build status](https://github.com/ropensci/ropenaq/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/ropenaq/actions?query=workflow%3AR-CMD-check)
   [![codecov.io](https://codecov.io/github/ropensci/ropenaq/coverage.svg?branch=master)](https://codecov.io/github/ropensci/Ropenaq?branch=master)
-[![](https://badges.ropensci.org/24_status.svg)](https://github.com/ropensci/onboarding/issues/24)
-[![](https://www.r-pkg.org/badges/version/ropenaq)](https://cran.r-project.org/web/packages/ropenaq/index.html)
+[![rOpenSci peer-review](https://badges.ropensci.org/24_status.svg)](https://github.com/ropensci/software-review/issues/24)
+[![CRAN](https://www.r-pkg.org/badges/version/ropenaq)](https://cran.r-project.org/web/packages/ropenaq/index.html)
   <!-- badges: end -->
   
 # Introduction
@@ -48,7 +48,7 @@ If it answers `GnuTLS`,  run
 apt-get install libcurl4-openssl-dev
 ```
 
-And desinstall then re-install `curl`.
+And uninstall then re-install `curl`.
 
 ```r
 install.packages("curl")

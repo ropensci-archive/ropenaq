@@ -29,9 +29,7 @@ library("ropenaq")
 library("dplyr")
 ```
 
-Getting coordinates and transformating it. 
-
-
+Getting coordinates and transforming it. 
 
 ## create a list to hold output
 

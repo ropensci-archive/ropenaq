@@ -11,8 +11,7 @@ Allows access to air quality data from the API of
     the OpenAQ platform <https://docs.openaq.org/>, with the different
     services the API offers (getting measurements for a given query,
     getting latest measurements, getting lists of available
-    countries/cities/locations). This package has been peer-reviewed by
-    rOpenSci (v. 0.1.0).
+    countries/cities/locations).
 }
 \seealso{
 Useful links:
@@ -28,8 +27,8 @@ Useful links:
 
 Other contributors:
 \itemize{
-  \item Andrew MacDonald (Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24) [reviewer]
-  \item Andy  Teucher (Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24) [reviewer]
+  \item Andrew MacDonald (Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/software-review/issues/24) [reviewer]
+  \item Andy  Teucher (Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/software-review/issues/24) [reviewer]
   \item Mikayla  Murphy [contributor]
 }
 

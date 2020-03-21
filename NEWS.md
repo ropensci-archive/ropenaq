@@ -24,7 +24,7 @@
 
 # ropenaq 0.2.5
 
-* Changes the code for the calendar plot in the openair vignette: with only 90 days data, before February the calendar plot has to be made for the previos year.
+* Changes the code for the calendar plot in the openair vignette: with only 90 days data, before February the calendar plot has to be made for the previous year.
 
 # ropenaq 0.2.4
 

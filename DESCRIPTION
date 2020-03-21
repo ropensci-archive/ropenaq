@@ -11,11 +11,11 @@ Authors@R:
       person(given = "Andrew",
              family = "MacDonald",
              role = "rev",
-             comment = "Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
+             comment = "Andrew MacDonald reviewed the package for rOpenSci, see https://github.com/ropensci/software-review/issues/24"),
       person(given = "Andy ",
              family = "Teucher",
              role = "rev",
-             comment = "Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/onboarding/issues/24"),
+             comment = "Andy Teucher reviewed the package for rOpenSci, see https://github.com/ropensci/software-review/issues/24"),
       person(given = "Mikayla ",
              family = "Murphy",
              role = "ctb"))
