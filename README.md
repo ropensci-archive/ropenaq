@@ -28,11 +28,11 @@ Install the package with:
 install.packages("ropenaq")
 ```
 
-Or install the development version using [devtools](https://github.com/hadley/devtools) with:
+Or install the development version:
 
 ```r
-library("devtools")
-install_github("ropensci/ropenaq")
+# install.packages("remotes")
+remotes::install_github("ropensci/ropenaq")
 
 ```
 

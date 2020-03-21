@@ -38,10 +38,8 @@ Imports:
     rlang,
     tidyr
 Suggests:
-    devtools,
     ggplot2,
     knitr,
-    lintr,
     rmarkdown,
     rworldmap,
     testthat,
