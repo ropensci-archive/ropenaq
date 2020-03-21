@@ -16,7 +16,7 @@ This R package is aimed at accessing the OpenAQ API. OpenAQ is a community of sc
 
 Check out [this blog post](https://ropensci.org/blog/blog/2017/02/21/ropenaq) about OpenAQ.
 
-More details about the package can be found [in the vignettes](http://docs.ropensci.org/ropenaq/articles/index.html), in particular the [introductory vignette](https://docs.ropensci.org/ropenaq/articles/ropenaq.html).
+More details about the package can be found [in the articles](http://docs.ropensci.org/ropenaq/articles/index.html), in particular the [introductory articles](https://docs.ropensci.org/ropenaq/articles/ropenaq.html).
 
 Via the API since November 2017 the API only provides access to the latest 90 days of OpenAQ data. The whole OpenAQ data can be accessed via Amazon S3. See [this announcement](https://medium.com/@openaq/changes-to-the-openaq-api-and-how-to-access-the-full-archive-of-data-3324b136da8c). You can interact with Amazon S3 using [the `aws.s3` package]( https://CRAN.R-project.org/package=aws.s3) and the maintainer of `ropenaq` plans to write tutorials about how to access OpenAQ data and will also keep the documentation of `ropenaq` up-to-date regarding data access changes.
 

@@ -16,3 +16,4 @@ data_management.R
 ^cran-comments\.md$
 docs/
 ^\.github/workflows/R-CMD-check\.yaml$
+^vignettes/articles$
