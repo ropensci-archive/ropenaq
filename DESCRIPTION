@@ -45,7 +45,7 @@ Suggests:
     rmarkdown,
     rworldmap,
     testthat,
-    vcr,
+    vcr (>= 0.5.0),
     viridis
 Encoding: UTF-8
 LazyData: TRUE

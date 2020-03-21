@@ -9,9 +9,6 @@ test_that("Country, city and location are checked for consistency", {
     expect_error(aq_measurements(page = 1, city="Capitole"),
                  "not available within the platform")
 
-    expect_error(aq_measurements(page = 1, location="Nirgendwo"),
-                 "not available within the platform")
-
     expect_error(aq_measurements(page = 1, country="AD", location="Nirgendwo"),
                  "not available within the platform")
 
