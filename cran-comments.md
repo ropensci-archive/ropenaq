@@ -12,15 +12,9 @@
 
 ## Release summary
 
-* Bug fixes (page has now a maximum argument; no longer passing an empty param in the query)
+* Skip a vcr-enabled test on CRAN because of a (known, under investigation) vcr problem with encoding. https://github.com/ropensci/vcr/issues/158
 
-* Replacement of `tidyr` and `dplyr` deprecated functions
-
-* Use of man-roxygen and `@template` to reduce `roxygen2` docs duplication
-
-* Tests with `vcr`
-
-* Removal of the `openair` vignette
+* Actually fixes the bug due to the max value of page, not only in the docs this time.
 
 ## Reverse dependencies
 
