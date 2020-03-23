@@ -1,5 +1,7 @@
 # ropenaq (development version)
 
+* Skip a vcr-enabled test on CRAN because of a vcr problem with encoding.
+
 # ropenaq 0.2.8
 
 * Bug fixes (page has now a maximum argument; no longer passing an empty param in the query)

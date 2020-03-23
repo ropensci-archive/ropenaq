@@ -79,7 +79,9 @@ test_that("Errors are thrown if the geographical arguments are wrong",{
   })
 
 test_that("Queries work with spaces and accents",{
+  # Both skipping because of https://github.com/ropensci/vcr/issues/158
   skip_on_os("windows")
+  skip_on_cran()
   vcr::use_cassette("buildQueries_accents", {
   result1 <- aq_measurements(city = "Heinz+Ott", country = "DE",
                              limit = 1, page = 1)
