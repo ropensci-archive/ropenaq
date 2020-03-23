@@ -269,7 +269,7 @@ getResults_bymorepages <- function(urlAQ, argsList){
   }else{
     limit <- argsList$limit
   }
-  no_pages <- ceiling(count/limit)
+  no_pages <- min(100, ceiling(count/limit))
 
   if(no_pages == 1){
     return(getResults_bypage(urlAQ, argsList))
@@ -441,7 +441,8 @@ get_res <- function(async){
     Sys.sleep(60*5+5)
     output <- res$request()
   }
-  while(any(res$status_code() >= 400) && try_number < 6) {status <- get_status()
+  while(any(res$status_code() >= 400) && try_number < 6) {
+    status <- get_status()
   if(status %in% c("green", "yellow")){
       message(paste0("Server returned nothing, trying again, try number", try_number))
       Sys.sleep(2^try_number)

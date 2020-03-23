@@ -1,6 +1,8 @@
 # ropenaq (development version)
 
-* Skip a vcr-enabled test on CRAN because of a vcr problem with encoding.
+* Skip a vcr-enabled test on CRAN because of a (known, under investigation) vcr problem with encoding. https://github.com/ropensci/vcr/issues/158
+
+* Actually fixes the bug due to the max value of page, not only in the docs this time.
 
 # ropenaq 0.2.8
 

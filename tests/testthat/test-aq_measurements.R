@@ -64,3 +64,17 @@ test_that("measurements has the right columns", {
                                    "limit", "found")))
   expect_is(attr(output, "timestamp")$queriedAt, "POSIXt")
 })
+
+test_that("the max value of page is used", {
+  # 3444 results but only 1000 pages with 1 can be obtained
+  # skipped on CRAN and offline because vcr doesn't support async yet
+  skip_on_cran()
+  skip_if_offline()
+  res <- aq_measurements(location = "DTU%2C+Delhi+-+CPCB",
+                         date_from = "2020-01-29",
+                         date_to = "2020-02-03",
+                         parameter = "no2",
+                         limit = 1)
+
+   expect_equal(nrow(res), 100)
+})
