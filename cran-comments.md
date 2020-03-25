@@ -1,3 +1,5 @@
+This is a patch release to fix a failing CRAN check and a missed bug, sorry.
+
 ## Test environments
 * local Ubuntu install, R 3.6
 * Windows, macOS, Ubuntu with GitHub Actions
@@ -8,7 +10,9 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 note
+0 errors | 0 warnings | 1 note
+
+Days since last update: 3
 
 ## Release summary
 
