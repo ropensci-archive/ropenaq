@@ -1,3 +1,5 @@
+# ropenaq (development version)
+
 # ropenaq 0.2.9
 
 * Skip a vcr-enabled test on CRAN because of a (known, under investigation) vcr problem with encoding. https://github.com/ropensci/vcr/issues/158
