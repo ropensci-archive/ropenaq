@@ -37,7 +37,7 @@ Imports:
     rlang,
     tidyr
 Suggests:
-    webmockr (>= 0.6.2.91),
+    webmockr (>= 0.6.2),
     fauxpas,
     ggplot2,
     knitr,
