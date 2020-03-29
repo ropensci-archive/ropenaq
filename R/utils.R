@@ -203,12 +203,23 @@ replace_plus <- function(x){
 #                       check status                       ####
 #                                                          #
 ############################################################
+
+status_url <- function() {
+  "https://api.openaq.org/status"
+}
+
 get_status <- function(){
-  client <- crul::HttpClient$new(url = "https://api.openaq.org/status")
-  status <- client$get()
-  status <- suppressMessages(status$parse())
-  status <- jsonlite::fromJSON(status)
-  return(status$results$healthStatus)
+  client <- crul::HttpClient$new(url = status_url())
+  status <- try(client$retry("get"), silent = TRUE)
+
+  if (is(status, "try-error")) {
+    return("red")
+  } else {
+    status <- suppressMessages(status$parse())
+    status <- jsonlite::fromJSON(status)
+    return(status$results$healthStatus)
+  }
+
   }
 
 ######################################################################################
