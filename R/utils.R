@@ -225,26 +225,27 @@ getResults_bypage <- function(urlAQ, argsList){
   client <- crul::HttpClient$new(url = urlAQ)
   argsList <- Filter(Negate(is.null), argsList)
   argsList <- argsList[argsList != ""]
-  res <- client$get(query = argsList)
-  try_number <- 1
-  # rate limit
-  if(res$status_code == 429){
-    message("Too many requests, waiting 5 minutes.")
-    Sys.sleep(60*5+5)
-    res <- client$get(query = argsList)
-  }
-  while(res$status_code >= 400 && try_number < 6) {status <- get_status()
 
-  if(status %in% c("green", "yellow", "unknown", "unavailable")){
-    message(paste0("Server returned nothing, trying again, try number", try_number))
-    Sys.sleep(2^try_number)
-    res <- client$get(query = argsList)
-    try_number <- try_number + 1
-  }else{
-    stop("uh oh, the OpenAQ API seems to be having some issues, try again later")
+  onwait <- function(resp, wait_time) {
+    status <- get_status()
+
+    if (!status %in% c("green", "yellow", "unknown", "unavailable")) {
+      stop("uh oh, the OpenAQ API seems to be having some issues, try again later")
+    }
   }
 
-  }
+  res <- client$retry(
+    verb = "get",
+    query = argsList,
+    pause_base = 1,
+    pause_cap = 60,
+    pause_min = 1,
+    times = 5,
+    terminate_on = NULL,
+    retry_only_on = NULL,
+    onwait = onwait
+  )
+
   if(argsList$limit == 0){
     contentPage <- suppressMessages(res$parse())
     # parse the data
