@@ -38,7 +38,6 @@ Imports:
     tidyr
 Suggests:
     webmockr (>= 0.6.2),
-    fauxpas,
     ggplot2,
     knitr,
     rmarkdown,
