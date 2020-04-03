@@ -210,9 +210,9 @@ status_url <- function() {
 
 get_status <- function(){
   client <- crul::HttpClient$new(url = status_url())
-  status <- try(client$retry("get"), silent = TRUE)
+  status <- client$retry("get")
 
-  if (is(status, "try-error")) {
+  if (status$status_code >= 400) {
     return("red")
   } else {
     status <- suppressMessages(status$parse())

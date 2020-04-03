@@ -10,7 +10,7 @@ test_that("get_status works as expected", {
   # when not all is well
   webmockr::enable()
   stub <- webmockr::stub_request("get", status_url())
-  webmockr::to_raise(stub, fauxpas::HTTPTooManyRequests)
+  webmockr::to_return(stub, status = 429)
   expect_equal(get_status(), "red")
   webmockr::disable()
 })
