@@ -17,7 +17,8 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        averaging_period = NULL,
                        source_name = NULL,
                        radius = NULL,
-                       page = NULL){
+                       page = NULL,
+                       siteType = NULL){
 
   # limit
   if (!is.null(limit)) {
@@ -67,6 +68,7 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                            "no2", "o3", "co", "bc"))) {
       stop(call. = FALSE, "You asked for an invalid parameter: see list of valid parameters in the Arguments section of the function help")# nolint
     }
+
 
   locations <-  aq_locations(country = country,
                          city = city,
@@ -154,6 +156,14 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
   }
 
+  if(!is.null(siteType)){
+    if (!(siteType %in% c("rural", "urban", "suburban", "other"))) {
+      stop(call. = FALSE, "You asked for an invalid siteType: see list of valid siteTypes in")
+    }
+  }
+
+
+
   argsList <- list(country = country,
                    city = replace_plus(city),
                    location = replace_plus(location),
@@ -166,7 +176,8 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                    limit = limit,
                    coordinates = coordinates,
                    radius = radius,
-                   page = page)
+                   page = page,
+                   siteType = siteType)
 
   # argument only for measurements
   include_fields <- c(attribution,

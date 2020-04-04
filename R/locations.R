@@ -12,6 +12,7 @@
 #' @template radius
 #' @template limit
 #' @template page
+#' @template siteType
 
 #' @return  A results data.frame (dplyr "tbl_df") with 12 columns:
 #'  \itemize{
@@ -54,7 +55,7 @@
 aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
                          parameter = NULL, has_geo = NULL, limit = 10000,
                          latitude = NULL, longitude = NULL, radius = NULL,
-                         page = NULL) {
+                         page = NULL, siteType = NULL) {
 
   ####################################################
   # BUILD QUERY base URL
@@ -68,7 +69,8 @@ aq_locations <- function(country = NULL, city = NULL, location = NULL,# nolint
                          latitude = latitude,
                          longitude = longitude,
                          radius = radius,
-                         page = page)
+                         page = page,
+                         siteType = siteType)
 
   ####################################################
   # GET AND TRANSFORM RESULTS
