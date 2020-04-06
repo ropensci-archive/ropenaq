@@ -18,7 +18,13 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                        source_name = NULL,
                        radius = NULL,
                        page = NULL,
-                       siteType = NULL){
+                       siteType = NULL,
+                       completeness_from = NULL,
+                       completeness_to = NULL,
+                       activation_date_from = NULL,
+                       activation_date_to = NULL,
+                       inletHeight_from = NULL,
+                       inletHeight_to = NULL){
 
   # limit
   if (!is.null(limit)) {
@@ -156,11 +162,68 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
 
   }
 
+  # siteType
   if(!is.null(siteType)){
     if (!(siteType %in% c("rural", "urban", "suburban", "other"))) {
       stop(call. = FALSE, "You asked for an invalid siteType: see list of valid siteTypes in")
     }
   }
+
+
+  # completeness_from and to
+  if(!is.null(completeness_from) | !is.null(completeness_to)){
+    if(is.null(completeness_from) | is.null(completeness_to)){
+      stop(call. = FALSE, "completeness requires 'from' and 'to' parameters")
+    }
+    if(!dplyr::between(completeness_from, 0, 1)){
+      stop(call. = FALSE, "completeness should start between 0 and 1")
+    }
+    if(!dplyr::between(completeness_to, 0, 1)){
+      stop(call. = FALSE, "completeness should end between 0 and 1")
+    }
+    if(completeness_from > completeness_to){
+      stop(call. = FALSE, "completeness_from shouls be smaller than completeness_to")
+    }
+    completeness = paste0("completeness[]=", completeness_from, "&", "completeness[]=", completeness_to)
+  } else{
+    completeness = NULL
+  }
+
+  # activation date
+  if(!is.null(activation_date_from) | !is.null(activation_date_to)){
+    if(is.null(activation_date_from) | is.null(activation_date_to)){
+      stop(call. = FALSE, "activation date requires start and end date")
+    }
+    if(is.na(suppressWarnings(lubridate::ymd(activation_date_from)))){
+      stop(call. = FALSE, "activation_date_from has to be inputed as year-month-day")
+    }
+    if(is.na(suppressWarnings(lubridate::ymd(activation_date_to)))){
+      stop(call. = FALSE, "activation_date_to has to be inputed as year-month-day")
+    }
+    if(lubridate::ymd(activation_date_from) > lubridate::ymd(activation_date_to)) {
+      stop(call. = FALSE, "activation_date_from should be smaller than activation_date_to")
+    }else{
+      activationDate = paste0("activationDate[]=", gsub("-", "/", activation_date_from),
+                               "&activationDate[]=", gsub("-", "/", activation_date_to))
+    }
+  }
+
+  # inlet height
+  if(!is.null(inletHeight_from) | !is.null(inletHeight_to)){
+    if(is.null(inletHeight_from) | is.null(inletHeight_to)){
+      stop(call. = FALSE, "inlet height requires min and max value")
+    }
+    if(inletHeight_from < 0){
+      stop(call. = FALSE, "start value for inletHeight has to be bigger than 0")
+    }
+    if(inletHeight_from > inletHeight_to){
+      stop(call. = FALSE, "start-value for inletHeight must be bigger than end-value")
+    }
+    else{
+      inletHeight = paste0("inletHeight[]=", inletHeight_from, "&inletHeight[]=", inletHeight_to)
+    }
+  }
+
 
 
 
@@ -177,7 +240,10 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
                    coordinates = coordinates,
                    radius = radius,
                    page = page,
-                   siteType = siteType)
+                   siteType = siteType,
+                   completeness = completeness,
+                   activationDate = activationDate,
+                   inletHeight = inletHeight)
 
   # argument only for measurements
   include_fields <- c(attribution,
@@ -314,7 +380,7 @@ functionURL <- function(resTable, col1, newColName) {
 
 # encoding city name
 addCityURL <- function(resTable){
-  resTable <- functionURL(resTable,
+resTable <- functionURL(resTable,
                           col1 = "city",
                           newColName = "cityURL")
 
