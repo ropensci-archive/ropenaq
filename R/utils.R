@@ -165,12 +165,12 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
   # siteType
   if(!is.null(siteType)){
     if (!(siteType %in% c("rural", "urban", "suburban", "other"))) {
-      stop(call. = FALSE, "You asked for an invalid siteType: see list of valid siteTypes in")
+      stop(call. = FALSE, "You asked for an invalid siteType. Check list of valid siteTypes")
     }
   }
 
 
-  # completeness_from and to
+  # completeness
   if(!is.null(completeness_from) | !is.null(completeness_to)){
     if(is.null(completeness_from) | is.null(completeness_to)){
       stop(call. = FALSE, "completeness requires 'from' and 'to' parameters")
@@ -182,14 +182,14 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
       stop(call. = FALSE, "completeness should end between 0 and 1")
     }
     if(completeness_from > completeness_to){
-      stop(call. = FALSE, "completeness_from shouls be smaller than completeness_to")
+      stop(call. = FALSE, "completeness_from should be smaller than completeness_to")
     }
     completeness = paste0("completeness[]=", completeness_from, "&", "completeness[]=", completeness_to)
   } else{
     completeness = NULL
   }
 
-  # activation date
+  # activationDate
   if(!is.null(activation_date_from) | !is.null(activation_date_to)){
     if(is.null(activation_date_from) | is.null(activation_date_to)){
       stop(call. = FALSE, "activation date requires start and end date")
@@ -202,13 +202,14 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     }
     if(lubridate::ymd(activation_date_from) > lubridate::ymd(activation_date_to)) {
       stop(call. = FALSE, "activation_date_from should be smaller than activation_date_to")
-    }else{
-      activationDate = paste0("activationDate[]=", gsub("-", "/", activation_date_from),
-                               "&activationDate[]=", gsub("-", "/", activation_date_to))
     }
+    activationDate = paste0("activationDate[]=", gsub("-", "/", activation_date_from),
+                               "&activationDate[]=", gsub("-", "/", activation_date_to))
+  }else{
+    activationDate = NULL
   }
 
-  # inlet height
+  # inletHeight
   if(!is.null(inletHeight_from) | !is.null(inletHeight_to)){
     if(is.null(inletHeight_from) | is.null(inletHeight_to)){
       stop(call. = FALSE, "inlet height requires min and max value")
@@ -219,10 +220,10 @@ buildQuery <- function(country = NULL, city = NULL, location = NULL,
     if(inletHeight_from > inletHeight_to){
       stop(call. = FALSE, "start-value for inletHeight must be bigger than end-value")
     }
-    else{
       inletHeight = paste0("inletHeight[]=", inletHeight_from, "&inletHeight[]=", inletHeight_to)
+  }else{
+      inletHeight = NULL
     }
-  }
 
 
 
