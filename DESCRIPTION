@@ -30,6 +30,7 @@ URL: https://docs.ropensci.org/ropenaq,
 BugReports: http://github.com/ropensci/ropenaq/issues
 Imports:
     crul,
+    webmockr (>= 0.6.2.92),
     dplyr,
     jsonlite,
     lubridate,
@@ -37,7 +38,6 @@ Imports:
     rlang,
     tidyr
 Suggests:
-    webmockr (>= 0.6.2),
     ggplot2,
     knitr,
     rmarkdown,
@@ -49,5 +49,5 @@ Encoding: UTF-8
 LazyData: TRUE
 RoxygenNote: 7.0.2
 Roxygen: list(markdown = TRUE)
-Remotes:  
+Remotes: 
     ropensci/webmockr
