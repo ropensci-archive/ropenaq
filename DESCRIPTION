@@ -37,14 +37,17 @@ Imports:
     rlang,
     tidyr
 Suggests:
+    webmockr (>= 0.6.2),
     ggplot2,
     knitr,
     rmarkdown,
     rworldmap,
-    testthat,
+    testthat (>= 2.1.0),
     vcr (>= 0.5.0),
     viridis
 Encoding: UTF-8
 LazyData: TRUE
 RoxygenNote: 7.0.2
 Roxygen: list(markdown = TRUE)
+Remotes:  
+    ropensci/webmockr
