@@ -19,8 +19,10 @@ test_that("API errors once status not", {
   webmockr::enable()
 
   webmockr::stub_request("get", paste0(base_url(), "countries?limit=0&page=1")) %>%
-    webmockr::to_return(status = 404, body = "retry!", times = 1) %>%
-    webmockr::to_return(status = 200, body = '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":100,"found":98}}') # here I want to use a real response and cassette
+    webmockr::to_return(status = 404, body = "retry!", times = 2) %>%
+    webmockr::to_return(status = 200,
+                        headers = list(date = "Thu, 09 Apr 2020 14:20:43 GMT"),
+                        body = '{"meta":{"name":"openaq-api","license":"CC BY 4.0","website":"https://docs.openaq.org/","page":1,"limit":100,"found":98}}') # here I want to use a real response and cassette
   # how do I do that?
 
   webmockr::stub_request("get", status_url()) %>%
