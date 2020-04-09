@@ -215,7 +215,7 @@ get_status <- function(){
   if (status$status_code >= 400) {
     return("red")
   } else {
-    status <- suppressMessages(status$parse())
+    status <- suppressMessages(status$parse(encoding = "UTF-8"))
     status <- jsonlite::fromJSON(status)
     return(status$results$healthStatus)
   }
@@ -257,7 +257,7 @@ getResults_bypage <- function(urlAQ, argsList){
 
   }
   if(argsList$limit == 0){
-    contentPage <- suppressMessages(res$parse())
+    contentPage <- suppressMessages(res$parse(encoding = "UTF-8"))
     # parse the data
     output <- jsonlite::fromJSON(contentPage)
     return(output$meta$found)
@@ -378,7 +378,7 @@ add_page <- function(page, query){
 }
 
 treat_res <- function(res){
-  contentPage <- suppressMessages(res$parse())
+  contentPage <- suppressMessages(res$parse(encoding = "UTF-8"))
   # parse the data
   output <- jsonlite::fromJSON(contentPage)
 
