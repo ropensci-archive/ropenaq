@@ -1,4 +1,4 @@
-test_that("API errors, status too", {
+test_that("API endoint errors, status API errors too", {
   library("magrittr")
   webmockr::enable()
 
@@ -13,7 +13,7 @@ test_that("API errors, status too", {
   webmockr::disable()
 })
 
-test_that("API errors once status not", {
+test_that("API errors twice, status not", {
   library("magrittr")
   # when not all is well
   webmockr::enable()
