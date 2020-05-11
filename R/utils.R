@@ -283,21 +283,25 @@ getResults_bymorepages <- function(urlAQ, argsList){
   }
   no_pages <- min(100, ceiling(count/limit))
 
+  if(no_pages == 0){
+    return(data.frame())
+  }
+
   if(no_pages == 1){
     return(getResults_bypage(urlAQ, argsList))
-  }else{
-    queries <- lapply(1:no_pages,
-                      add_page,
-                      query = argsList)
-
-    # 10 urls by request
-    requests <- lapply(queries, create_request,
-                       urlAQ = urlAQ)
-    requests <- split(requests, ceiling(seq_along(requests)/10))
-
-    res_list <- lapply(requests, get_res)
-    bind_keeping_attr(res_list)
   }
+  queries <- lapply(1:no_pages,
+                    add_page,
+                    query = argsList)
+
+  # 10 urls by request
+  requests <- lapply(queries, create_request,
+                     urlAQ = urlAQ)
+  requests <- split(requests, ceiling(seq_along(requests)/10))
+
+  res_list <- lapply(requests, get_res)
+  bind_keeping_attr(res_list)
+
 }
 
 ######################################################################################

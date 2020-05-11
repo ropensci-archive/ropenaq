@@ -71,8 +71,8 @@ test_that("the max value of page is used", {
   skip_on_cran()
   skip_if_offline()
   res <- aq_measurements(location = "DTU%2C+Delhi+-+CPCB",
-                         date_from = "2020-01-29",
-                         date_to = "2020-02-03",
+                         date_from = as.character(Sys.Date() - 5),
+                         date_to = as.character(Sys.Date() - 2),
                          parameter = "no2",
                          limit = 1)
 
