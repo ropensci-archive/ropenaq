@@ -104,20 +104,26 @@ aq_measurements <- function(country = NULL, city = NULL, location = NULL,# nolin
     # if no results
     if (nrow(tableOfResults) != 0){
 
-    tableOfResults <- tableOfResults %>%
-        addCityURL() %>%
-        addLocationURL() %>%
-        dplyr::rename(dateUTC = .data$date.utc) %>%
-        dplyr::rename(dateLocal = .data$date.local) %>%
-        dplyr::mutate(dateUTC = lubridate::ymd_hms(.data$dateUTC)) %>%
-        dplyr::mutate(
-            dateLocal = lubridate::ymd_hms(
-                strftime(
-                    .data$dateLocal, "%Y-%m-%dT%H:%M:%S"))
+        tableOfResults <- tableOfResults %>%
+            addCityURL() %>%
+            addLocationURL()
+
+        tableOfResults <- dplyr::mutate(tableOfResults,
+            dateUTC = lubridate::ymd_hms(.data$date.utc),
+            data.utc = NULL
+        )
+
+        if (!is.null(tableOfResults[["date.local"]])) {
+            tableOfResults <- dplyr::mutate(tableOfResults,
+                dateLocal = lubridate::ymd_hms(
+                    strftime(
+                        .data$date.local, "%Y-%m-%dT%H:%M:%S")
+                    ),
+                date.local = NULL
             )
+        }
 
-    names(tableOfResults) <- gsub("coordinates\\.", "", names(tableOfResults))
-
+        names(tableOfResults) <- gsub("coordinates\\.", "", names(tableOfResults))
     }
     ####################################################
     # DONE!

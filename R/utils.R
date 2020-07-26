@@ -392,13 +392,10 @@ treat_res <- function(res){
   averagingPeriod <- output$results$averagingPeriod
 
   if(!is.null(date)){
-
-    date <- dplyr::rename(
-      date,
-      date.utc = .data$utc,
-      date.local = .data$local
-      )
-
+    date <- dplyr::rename(date, date.utc = .data$utc)
+    if (!is.null(date[["local"]])) {
+      date <- dplyr::rename(date, date.local = .data$local)
+    }
   }
   if(!is.null(averagingPeriod)){
 
