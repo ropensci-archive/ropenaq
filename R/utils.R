@@ -424,14 +424,14 @@ treat_res <- function(res){
   results <- dplyr::bind_cols(results, date)
   results <- dplyr::bind_cols(results, averagingPeriod)
 
-  results <- dplyr::tbl_df(results)
+  results <- dplyr::as_tibble(results)
 
 
   # get the meta
-  meta <- dplyr::tbl_df(
+  meta <- dplyr::as_tibble(
     as.data.frame(output$meta))
   #get the time stamps
-  timestamp <- dplyr::tbl_df(data.frame(
+  timestamp <- dplyr::as_tibble(data.frame(
     queriedAt = func_date_headers(res$response_headers$date)))
 
   attr(results, "meta") <- meta
