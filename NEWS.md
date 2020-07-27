@@ -1,4 +1,4 @@
-# ropenaq (development version)
+# ropenaq 0.2.10
 
 # ropenaq 0.2.10
 
