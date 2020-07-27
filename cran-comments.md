@@ -1,7 +1,7 @@
 This is a patch release to fix a failing CRAN check and a missed bug, sorry.
 
 ## Test environments
-* local Ubuntu install, R 3.6
+* local Ubuntu install, R 4.0.2
 * Windows, macOS, Ubuntu with GitHub Actions
 * Winbuilder R devel
 * R-hub windows-x86_64-devel (r-devel)
@@ -10,19 +10,17 @@ This is a patch release to fix a failing CRAN check and a missed bug, sorry.
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-Days since last update: 3
+0 errors | 0 warnings | 0 note
 
 ## Release summary
 
-* Skip a vcr-enabled test on CRAN because of a (known, under investigation) vcr problem with encoding. https://github.com/ropensci/vcr/issues/158
+* Fix code using dplyr (@hadley, #57)
 
-* Actually fixes the bug due to the max value of page, not only in the docs this time.
+* Fix tests that used class() == .
 
 ## Reverse dependencies
 
-The `rnoaa` vignette using `ropenaq` can still be built.
+The `rnoaa` vignette using `ropenaq` has cached results. Changes in OpenAQ web API itself would break it, I notified the maintainer.
 
 ---
 
