@@ -43,21 +43,20 @@ test_that("measurements has the right columns", {
                               city="Chennai")
   })
 
-  expect_true(class(output$location) == "character")
-  expect_true(class(output$parameter) == "character")
-  expect_true(class(output$value) == "numeric" |
-                class(output$value) == "integer")
-  expect_true(class(output$unit) == "character")
-  expect_true(class(output$country) == "character")
-  expect_true(class(output$city) == "character")
-  expect_true(class(output$cityURL) == "character")
-  expect_true(class(output$locationURL) == "character")
-  expect_true(class(output$dateUTC)[1] == "POSIXct")
-  expect_true(class(output$dateLocal)[1] == "POSIXct")
-  expect_true(class(output$longitude) == "numeric" |
-                class(output$longitude) == "logical")
-  expect_true(class(output$latitude) == "numeric" |
-                class(output$latitude) == "logical")
+  expect_type(output$location, "character")
+  expect_type(output$parameter, "character")
+  expect_true(is(output$value, "numeric") || is(output$value, "integer"))
+  expect_type(output$unit, "character")
+  expect_type(output$country, "character")
+  expect_type(output$city, "character")
+  expect_type(output$cityURL, "character")
+  expect_type(output$locationURL, "character")
+  expect_type(output$dateUTC, "POSIXct")
+  expect_type(output$dateLocal, "POSIXct")
+  expect_true(is(output$longitude, "numeric") ||
+                is(output$longitude, "logical"))
+  expect_type(is(output$latitude, "numeric") ||
+                is(output$latitude, "logical"))
   meta <- attr(output, "meta")
   expect_true(all(names(meta) == c("name", "license",
                                    "website", "page",
