@@ -1,6 +1,6 @@
 # ropenaq (development version)
 
-# ropenaq 0.3.0
+# ropenaq 0.2.10
 
 * Fix code using dplyr (@hadley, #57)
 
