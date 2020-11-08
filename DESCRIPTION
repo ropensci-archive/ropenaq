@@ -26,8 +26,8 @@ Description: Allows access to air quality data from the API of
     countries/cities/locations). 
 License: GPL (>= 2)
 URL: https://docs.ropensci.org/ropenaq/,
-    http://github.com/ropensci/ropenaq/
-BugReports: http://github.com/ropensci/ropenaq/issues/
+    https://github.com/ropensci/ropenaq/
+BugReports: https://github.com/ropensci/ropenaq/issues/
 Imports:
     crul,
     dplyr,
