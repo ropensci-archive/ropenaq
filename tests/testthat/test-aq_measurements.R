@@ -53,7 +53,7 @@ test_that("measurements has the right columns", {
   expect_type(output$locationURL, "character")
 
   expect_true(is(output$dateUTC, "POSIXct"))
-  expect_true(is(output$dateLocal, "POSIXct") || is.null(output$dateLocal))
+  expect_true(is.null(output$dateLocal) || is(output$dateLocal, "POSIXct"))
   expect_true(is(output$longitude, "numeric") ||
                 is(output$longitude, "logical"))
   expect_true(is(output$latitude, "numeric") ||
