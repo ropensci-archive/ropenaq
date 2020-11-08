@@ -1,6 +1,8 @@
 # ropenaq (development version)
 
-* Changes code and docs around data availability since one can now download data from January 1, 2018.^
+* Changes docs around data availability since one can now download data from January 1, 2018.
+
+* Use vcr for all tests calling the API on CRAN.
 
 # ropenaq 0.2.10
 

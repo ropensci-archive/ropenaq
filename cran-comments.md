@@ -1,4 +1,4 @@
-This is a patch release to fix a failing CRAN check and a missed bug, sorry.
+This is release to fix a failing CRAN check, sorry.
 
 ## Test environments
 * local Ubuntu install, R 4.0.2
@@ -14,13 +14,13 @@ This is a patch release to fix a failing CRAN check and a missed bug, sorry.
 
 ## Release summary
 
-* Fix code using dplyr (@hadley, #57)
+* Use vcr for all tests calling the API on CRAN.
 
-* Fix tests that used class() == .
+* Changes docs around data availability since one can now download data from January 1, 2018.
 
 ## Reverse dependencies
 
-The `rnoaa` vignette using `ropenaq` has cached results. Changes in OpenAQ web API itself would break it, I notified the maintainer.
+The `rnoaa` vignette using `ropenaq` has cached results. I am in contact with the maintainer.
 
 ---
 
