@@ -16,9 +16,9 @@ Allows access to air quality data from the API of
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://docs.ropensci.org/ropenaq}
-  \item \url{http://github.com/ropensci/ropenaq}
-  \item Report bugs at \url{http://github.com/ropensci/ropenaq/issues}
+  \item \url{https://docs.ropensci.org/ropenaq/}
+  \item \url{http://github.com/ropensci/ropenaq/}
+  \item Report bugs at \url{http://github.com/ropensci/ropenaq/issues/}
 }
 
 }
