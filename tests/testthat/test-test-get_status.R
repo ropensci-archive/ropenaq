@@ -5,7 +5,7 @@ test_that("get_status works as expected", {
     output <- get_status()
   })
 
-  expect_equal(get_status(), "green")
+  expect_equal(output, "green")
 
   # when not all is well
   webmockr::enable()
