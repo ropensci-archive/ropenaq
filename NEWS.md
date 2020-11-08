@@ -1,6 +1,6 @@
 # ropenaq (development version)
 
-# ropenaq 0.2.10
+* Changes code and docs around data availability since one can now download data from January 1, 2018.^
 
 # ropenaq 0.2.10
 
