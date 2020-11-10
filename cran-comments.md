@@ -20,7 +20,7 @@ This is release to fix a failing CRAN check, sorry.
 
 ## Reverse dependencies
 
-The `rnoaa` vignette using `ropenaq` has cached results. I am in contact with the maintainer.
+The `rnoaa` vignette using `ropenaq` is fine.
 
 ---
 
