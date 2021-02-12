@@ -273,7 +273,6 @@ getResults_bymorepages <- function(urlAQ, argsList){
   argsList2 <- argsList
   argsList2$page <- 1
   argsList2$limit <- 1
-  browser()
   count <- attr(getResults_bypage(urlAQ, argsList2), "meta")$found
   if(is.na(argsList$limit)){
     limit <- 10000
